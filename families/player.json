@@ -1,0 +1,23 @@
+{
+	"name": "player",
+	"plugin-id": "Sprite",
+	"sid": 235070317475693,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Platform",
+			"sid": 833643288727227
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 979341130549079
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"player2",
+		"player1"
+	]
+}

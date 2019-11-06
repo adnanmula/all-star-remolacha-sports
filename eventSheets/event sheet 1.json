@@ -1,0 +1,363 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "gameplad_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 582292347997630
+		},
+		{
+			"eventType": "variable",
+			"name": "gamepad_deadzone",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 841128963519391
+		},
+		{
+			"eventType": "variable",
+			"name": "score_1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 354377308383668
+		},
+		{
+			"eventType": "variable",
+			"name": "score_2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 570010613212013
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "gamepad1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 303138800136166,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 516243847525588,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"button": "d-pad-up"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 295623034810883,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"axis": "left-analog-y-axis",
+								"comparison": 3,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 786687579637656,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 171819647734042
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player1",
+									"sid": 786034325393537,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 925079438833320
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 363745789604177,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 260359370572884,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 3,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player1",
+							"sid": 885111574976111,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "player1",
+							"sid": 449594852797931,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 250106521996711,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 475613837700368,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 423654529602503,
+							"parameters": {
+								"gamepad": "gameplad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 5,
+								"value": "gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player1",
+							"sid": 832080498877780,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "player1",
+							"sid": 772996724069429,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 979477975583647,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 729542161575798
+						}
+					],
+					"actions": [],
+					"sid": 162633184391096,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 808055762503307,
+									"parameters": {
+										"first-value": "angle(0,0, Gamepad.Axis(gameplad_index, 2), Gamepad.Axis(gameplad_index, 3))",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "player1",
+									"sid": 267532471379021,
+									"parameters": {
+										"angle": "angle(0,0, Gamepad.Axis(gameplad_index, 2), Gamepad.Axis(gameplad_index, 3)) + 90"
+									}
+								}
+							],
+							"sid": 749774429245224
+						}
+					]
+				}
+			],
+			"sid": 544177462450720
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "match_test",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "ball",
+							"sid": 659406612402013,
+							"parameters": {
+								"object": "Sprite"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 663561543143151,
+							"parameters": {
+								"instance-variable": "owner",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 192020295109217,
+							"parameters": {
+								"variable": "score_2",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 192951861598069,
+							"parameters": {
+								"text": "score_1 & \" - \" & score_2"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ball",
+							"sid": 879070359539820,
+							"parameters": {
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2"
+							}
+						}
+					],
+					"sid": 259739677825497
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "ball",
+							"sid": 878860452740030,
+							"parameters": {
+								"object": "Sprite"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Sprite",
+							"sid": 733335287094763,
+							"parameters": {
+								"instance-variable": "owner",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 751621296125273,
+							"parameters": {
+								"variable": "score_1",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 517381918726191,
+							"parameters": {
+								"text": "score_1 & \" - \" & score_2"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ball",
+							"sid": 141305882092199,
+							"parameters": {
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2"
+							}
+						}
+					],
+					"sid": 847263950220453
+				}
+			],
+			"sid": 392468805943606
+		}
+	],
+	"sid": 869789412645449
+}
