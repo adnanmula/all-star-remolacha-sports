@@ -357,6 +357,173 @@
 				}
 			],
 			"sid": 392468805943606
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 192030146124386
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object",
+					"objectClass": "feet_detector_p1",
+					"sid": 168663986497740,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "player1",
+						"mode": "position-angle"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "feet_detector_p1",
+					"sid": 390446772974626,
+					"parameters": {
+						"instance-variable": "owner",
+						"value": "player1.UID"
+					}
+				}
+			],
+			"sid": 100155748704777
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-button-down",
+					"objectClass": "Gamepad",
+					"sid": 601534704804232,
+					"parameters": {
+						"gamepad": "gameplad_index",
+						"button": "right-shoulder-button"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 352277600744878,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 147134960655341
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player1",
+							"sid": 134692503408825,
+							"parameters": {
+								"animation": "\"kick\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 360040731212011
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "feet_detector_p1",
+					"sid": 953210985758920,
+					"parameters": {
+						"object": "ball"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "feet_detector_p1",
+					"sid": 403883498306679,
+					"parameters": {
+						"object": "ball"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 458832303044785,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player1",
+							"sid": 339078135203188,
+							"parameters": {
+								"unique-id": "feet_detector_p1.owner"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 944333057581623,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player1",
+									"sid": 794193701534834,
+									"parameters": {
+										"animation": "\"kick\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-impulse-at-angle",
+									"objectClass": "ball",
+									"sid": 195256694279231,
+									"behaviorType": "Physics",
+									"parameters": {
+										"impulse": "50",
+										"angle": "angle(player1.X, player1.Y, ball.X, ball.Y)",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 467776723892718
+						}
+					]
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "player1",
+					"sid": 992138350692530,
+					"parameters": {
+						"animation": "\"kick\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "player1",
+					"sid": 420259095741976,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 344826442030084
 		}
 	],
 	"sid": 869789412645449

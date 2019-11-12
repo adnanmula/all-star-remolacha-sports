@@ -1,14 +1,21 @@
 {
-	"name": "ball",
+	"name": "feet_detector_p1",
 	"plugin-id": "Sprite",
-	"sid": 493654549648314,
+	"sid": 118217494157789,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 210358463591738
+		}
+	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 693692031679167
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 213474458943657
 		}
 	],
 	"effectTypes": [],
@@ -17,18 +24,18 @@
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 20,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7,
+						"imageSpriteId": 25,
 						"duration": 1
 					}
 				],
-				"sid": 972124243009505,
+				"sid": 333123295625181,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

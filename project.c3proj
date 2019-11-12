@@ -55,6 +55,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"version": "r171.3",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r171.3",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -64,8 +80,8 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"version": "r171.3",
 			"bundled": false
@@ -86,12 +102,14 @@
 			"Keyboard",
 			"Mouse",
 			"player1",
-			"Sprite2",
 			"Browser",
 			"ball",
 			"player2",
 			"Text",
-			"Sprite"
+			"Sprite",
+			"Sprite2",
+			"JSON",
+			"feet_detector_p1"
 		],
 		"subfolders": []
 	},

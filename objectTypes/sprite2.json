@@ -1,19 +1,19 @@
 {
 	"name": "Sprite2",
 	"plugin-id": "Sprite",
-	"sid": 662809686309464,
+	"sid": 944770095440853,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 595680624860657
+			"sid": 354240203122253
 		},
 		{
 			"behaviorId": "Physics",
 			"name": "Physics",
-			"sid": 405646762508828
+			"sid": 133090780814306
 		}
 	],
 	"effectTypes": [],
@@ -29,11 +29,11 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3,
+						"imageSpriteId": 23,
 						"duration": 1
 					}
 				],
-				"sid": 609893166655472,
+				"sid": 526136802441534,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
