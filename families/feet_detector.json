@@ -1,0 +1,19 @@
+{
+	"name": "feet_detector",
+	"plugin-id": "Sprite",
+	"sid": 652768303619510,
+	"instanceVariables": [
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 432974652371258
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"feet_detector_p2",
+		"feet_detector_p1"
+	]
+}

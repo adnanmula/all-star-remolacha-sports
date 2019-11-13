@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 17103,
+	"savedWithRelease": 17500,
 	"name": "remolacha",
 	"runtime": "c3",
 	"useWorker": false,
@@ -11,7 +11,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		},
 		{
@@ -91,7 +91,7 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r171.3",
+			"version": "r175",
 			"bundled": false
 		}
 	],
@@ -109,7 +109,8 @@
 			"Sprite",
 			"Sprite2",
 			"JSON",
-			"feet_detector_p1"
+			"feet_detector_p1",
+			"feet_detector_p2"
 		],
 		"subfolders": []
 	},
@@ -117,7 +118,8 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"player"
+			"player",
+			"feet_detector"
 		],
 		"subfolders": []
 	},
@@ -236,6 +238,7 @@
 		"orientations": "landscape",
 		"enableWebGL": true,
 		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "nearest",
 		"downscaling": "medium",
