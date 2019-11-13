@@ -8,6 +8,14 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r175",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
@@ -40,14 +48,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Browser",
-			"name": "Browser",
-			"author": "Scirra",
-			"version": "r175",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
@@ -55,9 +55,9 @@
 			"bundled": false
 		},
 		{
-			"type": "plugin",
-			"id": "Json",
-			"name": "JSON",
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
 			"author": "Scirra",
 			"version": "r175",
 			"bundled": false
@@ -80,14 +80,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
-			"author": "Scirra",
-			"version": "r175",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
@@ -97,22 +89,45 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"Gamepad",
-			"Keyboard",
-			"Mouse",
-			"player1",
-			"Browser",
-			"ball",
-			"player2",
-			"Text",
-			"Sprite",
-			"Sprite2",
-			"JSON",
-			"feet_detector_p1",
-			"feet_detector_p2"
-		],
-		"subfolders": []
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"Browser",
+					"Gamepad",
+					"Keyboard",
+					"Mouse"
+				],
+				"subfolders": [],
+				"name": "system"
+			},
+			{
+				"items": [
+					"Sprite",
+					"Text"
+				],
+				"subfolders": [],
+				"name": "test"
+			},
+			{
+				"items": [
+					"feet_detector_p1",
+					"feet_detector_p2",
+					"player1",
+					"player2"
+				],
+				"subfolders": [],
+				"name": "player"
+			},
+			{
+				"items": [
+					"ball",
+					"Sprite2"
+				],
+				"subfolders": [],
+				"name": "level"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -125,13 +140,13 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"main"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"main"
 		],
 		"subfolders": []
 	},
