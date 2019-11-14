@@ -2,7 +2,14 @@
 	"name": "player",
 	"plugin-id": "Sprite",
 	"sid": 235070317475693,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "gamepad_index",
+			"type": "number",
+			"desc": "",
+			"sid": 702767350279629
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Platform",

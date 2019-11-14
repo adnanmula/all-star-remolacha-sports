@@ -354,7 +354,9 @@
 						"live-preview": false
 					},
 					"uid": 5,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"gamepad_index": 0
+					},
 					"behaviors": {
 						"Platform": {
 							"properties": {
@@ -447,7 +449,9 @@
 						"live-preview": false
 					},
 					"uid": 12,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"gamepad_index": 0
+					},
 					"behaviors": {
 						"Platform": {
 							"properties": {
