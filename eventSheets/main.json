@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "gameplad_index",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 582292347997630
-		},
-		{
-			"eventType": "variable",
 			"name": "gamepad_deadzone",
 			"type": "number",
 			"initialValue": "25",
@@ -42,6 +32,26 @@
 			"sid": 570010613212013
 		},
 		{
+			"eventType": "variable",
+			"name": "player1_gamepad_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 551225133862946
+		},
+		{
+			"eventType": "variable",
+			"name": "player2_gamepad_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 505504752236601
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -51,6 +61,26 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 669393743753784,
+					"parameters": {
+						"object-to-create": "player1",
+						"layer": "\"main\"",
+						"x": "90",
+						"y": "200"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "feet_detector_p1",
+					"sid": 186406302793088,
+					"parameters": {
+						"object": "player1",
+						"image-point-optional": "\"feet_detector\""
+					}
+				},
 				{
 					"id": "pin-to-object",
 					"objectClass": "feet_detector_p1",
@@ -71,6 +101,60 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "player1",
+					"sid": 699805898685793,
+					"parameters": {
+						"instance-variable": "gamepad_index",
+						"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "feet_detector_p1",
+					"sid": 239875254805132,
+					"parameters": {
+						"z": "0"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "player1",
+					"sid": 794808124093889,
+					"parameters": {
+						"z": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 180605187984779,
+					"parameters": {
+						"variable": "player1_gamepad_index",
+						"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 578672492261183,
+					"parameters": {
+						"object-to-create": "player2",
+						"layer": "\"main\"",
+						"x": "500",
+						"y": "200"
+					}
+				},
+				{
+					"id": "set-position-to-another-object",
+					"objectClass": "feet_detector_p2",
+					"sid": 372033568089059,
+					"parameters": {
+						"object": "player2",
+						"image-point-optional": "\"feet_detector\""
+					}
+				},
+				{
 					"id": "pin-to-object",
 					"objectClass": "feet_detector_p2",
 					"sid": 909930766383756,
@@ -87,6 +171,67 @@
 					"parameters": {
 						"instance-variable": "owner",
 						"value": "player2.UID"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "player2",
+					"sid": 558501645461074,
+					"parameters": {
+						"instance-variable": "gamepad_index",
+						"value": "gamepad_selection.Get(\"player2_gamepad_index\")"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "feet_detector_p2",
+					"sid": 546952163920878,
+					"parameters": {
+						"z": "0"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "player2",
+					"sid": 556278617639216,
+					"parameters": {
+						"z": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 132508794412043,
+					"parameters": {
+						"variable": "player2_gamepad_index",
+						"value": "gamepad_selection.Get(\"player2_gamepad_index\")"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "player2",
+					"sid": 356057264662790,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 876983358303437,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 682683332091470,
+					"parameters": {
+						"object-to-create": "ball",
+						"layer": "\"main\"",
+						"x": "300",
+						"y": "100"
 					}
 				}
 			],
@@ -108,6 +253,22 @@
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 427280254694896
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 830443252095457,
+							"parameters": {
+								"variable": "gamepad_index",
+								"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
+							}
+						}
+					],
+					"sid": 324452851665528
 				},
 				{
 					"eventType": "block",
@@ -511,6 +672,438 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "gamepad2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "gamepad_index",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 601654717334805
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 573240862958015,
+							"parameters": {
+								"variable": "gamepad_index",
+								"value": "gamepad_selection.Get(\"player2_gamepad_index\")"
+							}
+						}
+					],
+					"sid": 893784568603783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 323598687102948,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-up"
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 867077656737241,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 540393454510709,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-y-axis",
+								"comparison": 3,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 742663718951640,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 385639418486100,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 429177450914353,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 880217463636342
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 477921486646061,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "jump"
+											}
+										}
+									],
+									"sid": 246217402353061
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 350509132106126,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 534069978651597,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 3,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 460348446495645,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 126785138926638,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 225252999076451,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player",
+									"sid": 732976104385378,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 822456683747568
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 362696126850621,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 439286295975457,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"axis": "left-analog-x-axis",
+								"comparison": 5,
+								"value": "gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 834248073643556,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 944850878678309,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 994110284912746,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player",
+									"sid": 428966389654282,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 948075201906442
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 363028932293990
+						}
+					],
+					"actions": [],
+					"sid": 655015495789644,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 492485136874923,
+									"parameters": {
+										"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
+										"comparison": 1,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 466548607776467,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 167665592855047,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = gamepad_index"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 384609839982196,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-jumping",
+													"objectClass": "player",
+													"sid": 675695697051538,
+													"behaviorType": "Platform"
+												},
+												{
+													"id": "is-falling",
+													"objectClass": "player",
+													"sid": 461509940515828,
+													"behaviorType": "Platform"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle",
+													"objectClass": "player",
+													"sid": 314032490334315,
+													"parameters": {
+														"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
+													}
+												}
+											],
+											"sid": 122311866851366,
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-on-floor",
+													"objectClass": "player",
+													"sid": 242366412110855,
+													"behaviorType": "Platform"
+												}
+											],
+											"actions": [],
+											"sid": 533113042148932,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 141157746128109,
+															"parameters": {
+																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
+																"comparison": 3,
+																"second-value": "-45"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 831819052589702,
+															"parameters": {
+																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
+																"comparison": 5,
+																"second-value": "-135"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-angle",
+															"objectClass": "player",
+															"sid": 259791030928272,
+															"parameters": {
+																"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
+															}
+														}
+													],
+													"sid": 784198764687207
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 613178160838645,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "right-shoulder-button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 874954976059742,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 552938670168293,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 309449855020872,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 844811443565017
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 887218021036584,
+											"parameters": {
+												"animation": "\"kick\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 699309822874289
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 606122396363958
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
 			"title": "keyboard+mouse",
 			"description": "",
 			"isActiveOnStart": true,
@@ -537,6 +1130,7 @@
 					],
 					"actions": [],
 					"sid": 527587421704829,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -558,7 +1152,8 @@
 									}
 								}
 							],
-							"sid": 526122183457598
+							"sid": 526122183457598,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -595,6 +1190,7 @@
 						}
 					],
 					"sid": 679953612584462,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -629,6 +1225,7 @@
 						}
 					],
 					"sid": 335317674715883,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -650,7 +1247,8 @@
 							}
 						}
 					],
-					"sid": 379181613808733
+					"sid": 379181613808733,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -667,6 +1265,7 @@
 					],
 					"actions": [],
 					"sid": 839191254156735,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -688,7 +1287,8 @@
 									}
 								}
 							],
-							"sid": 928205295879794
+							"sid": 928205295879794,
+							"disabled": true
 						}
 					]
 				}
@@ -802,7 +1402,7 @@
 					"conditions": [
 						{
 							"id": "is-on-floor",
-							"objectClass": "player",
+							"objectClass": "player1",
 							"sid": 250825076396185,
 							"behaviorType": "Platform"
 						}
@@ -816,7 +1416,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 225083765479043,
+									"sid": 332469078658817,
 									"parameters": {
 										"first-value": "player1.Angle",
 										"comparison": 3,
@@ -826,7 +1426,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 617850589522276,
+									"sid": 201835873690686,
 									"parameters": {
 										"first-value": "player1.Angle",
 										"comparison": 5,
@@ -837,7 +1437,7 @@
 							"actions": [
 								{
 									"id": "set-angle",
-									"objectClass": "player",
+									"objectClass": "player1",
 									"sid": 616471834668897,
 									"parameters": {
 										"angle": "315"
@@ -852,7 +1452,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 860149448917823,
+									"sid": 356932638781003,
 									"parameters": {
 										"first-value": "player1.Angle",
 										"comparison": 5,
@@ -862,7 +1462,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 960194667859262,
+									"sid": 569238220770076,
 									"parameters": {
 										"first-value": "player1.Angle",
 										"comparison": 2,
@@ -873,7 +1473,7 @@
 							"actions": [
 								{
 									"id": "set-angle",
-									"objectClass": "player",
+									"objectClass": "player1",
 									"sid": 559220414986259,
 									"parameters": {
 										"angle": "45"
@@ -881,6 +1481,93 @@
 								}
 							],
 							"sid": 934681368734216
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "player2",
+							"sid": 247591728890817,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [],
+					"sid": 138252392874492,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 573617709341827,
+									"parameters": {
+										"first-value": "player2.Angle",
+										"comparison": 3,
+										"second-value": "315"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 416064919392823,
+									"parameters": {
+										"first-value": "player2.Angle",
+										"comparison": 5,
+										"second-value": "180"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "player2",
+									"sid": 491906821153755,
+									"parameters": {
+										"angle": "315"
+									}
+								}
+							],
+							"sid": 119177120320138
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 214853630949374,
+									"parameters": {
+										"first-value": "player2.Angle",
+										"comparison": 5,
+										"second-value": "45"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 862657873087014,
+									"parameters": {
+										"first-value": "player2.Angle",
+										"comparison": 2,
+										"second-value": "180"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "player2",
+									"sid": 678263979937419,
+									"parameters": {
+										"angle": "45"
+									}
+								}
+							],
+							"sid": 865985204989107
 						}
 					]
 				}

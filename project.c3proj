@@ -55,6 +55,22 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r175",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r175",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
@@ -126,11 +142,44 @@
 				],
 				"subfolders": [],
 				"name": "level"
+			},
+			{
+				"items": [
+					"button_play",
+					"menu_debug",
+					"menu_gamepad_debug",
+					"menu_gamepad_selector",
+					"menu_title"
+				],
+				"subfolders": [],
+				"name": "menu"
+			},
+			{
+				"items": [
+					"gamepad_selection"
+				],
+				"subfolders": [],
+				"name": "shared"
 			}
 		]
 	},
 	"autosaveData": null,
-	"containers": [],
+	"containers": [
+		{
+			"members": [
+				"feet_detector_p2",
+				"player2"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"feet_detector_p1",
+				"player1"
+			],
+			"selectMode": "normal"
+		}
+	],
 	"families": {
 		"items": [
 			"player",
@@ -140,13 +189,16 @@
 	},
 	"layouts": {
 		"items": [
-			"main"
+			"main",
+			"menu",
+			"default"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"main"
+			"main",
+			"menu"
 		],
 		"subfolders": []
 	},
@@ -265,5 +317,5 @@
 	},
 	"viewportWidth": 640,
 	"viewportHeight": 360,
-	"firstLayout": null
+	"firstLayout": "menu"
 }

@@ -1,0 +1,329 @@
+{
+	"name": "menu",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "gamepad_in_use",
+			"type": "string",
+			"initialValue": "/",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 285792798641753
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 200550301755405
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "menu_debug",
+					"sid": 442568757165540,
+					"parameters": {
+						"text": "\"Mandos conectados: \" & Gamepad.GamepadCount & newline"
+					}
+				}
+			],
+			"sid": 659555600693162
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "gamepads-are-supported",
+					"objectClass": "Gamepad",
+					"sid": 750193141618086
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "menu_gamepad_debug",
+					"sid": 706916716082421,
+					"parameters": {
+						"text": "\"Soporte para mandos OK\""
+					}
+				}
+			],
+			"sid": 203889748646836
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "button_play",
+					"sid": 841010647448061
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 639568343181492,
+					"parameters": {
+						"layout": "main"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "gamepad_selection",
+					"sid": 762296962894343,
+					"parameters": {
+						"key": "\"player1\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "gamepad_selection",
+					"sid": 490270218053144,
+					"parameters": {
+						"key": "\"player2\"",
+						"value": "Gamepad.GamepadID(1)"
+					}
+				}
+			],
+			"sid": 430876934951932
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 576642631509922,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "savePlayerGamepad",
+					"sid": 686715210668525,
+					"parameters": [
+						"0"
+					]
+				}
+			],
+			"sid": 423729645586255
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 623753977043428,
+					"parameters": {
+						"gamepad": "1",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "savePlayerGamepad",
+					"sid": 685735252085597,
+					"parameters": [
+						"1"
+					]
+				}
+			],
+			"sid": 792254905919476
+		},
+		{
+			"functionName": "savePlayerGamepad",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionParameters": [
+				{
+					"name": "index",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 900299474148466
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 388682850180751,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "test-regex",
+							"objectClass": "System",
+							"sid": 710673497377144,
+							"parameters": {
+								"string": "gamepad_in_use",
+								"regex": "str(index)",
+								"flags": "\"gi\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 677201496614155,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "gamepad_selection",
+									"sid": 463096463729285,
+									"parameters": {
+										"key": "\"player1_gamepad_index\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 865949845060772,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "gamepad_selection",
+											"sid": 649086270467078,
+											"parameters": {
+												"key": "\"player2_gamepad_index\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-key",
+											"objectClass": "gamepad_selection",
+											"sid": 280109706743906,
+											"parameters": {
+												"key": "\"player2_gamepad_index\"",
+												"value": "index"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 997065825944126,
+											"parameters": {
+												"variable": "gamepad_in_use",
+												"value": "gamepad_in_use & \"/\" & index"
+											}
+										}
+									],
+									"sid": 116106799309233,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 562825914971756,
+													"parameters": {
+														"object": "menu_gamepad_selector",
+														"expression": "menu_gamepad_selector.player = 1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "menu_gamepad_selector",
+													"sid": 206711645252087,
+													"parameters": {
+														"animation": "\"player2_ok\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 833312169655102
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "gamepad_selection",
+									"sid": 433742836523835,
+									"parameters": {
+										"key": "\"player1_gamepad_index\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "gamepad_selection",
+									"sid": 437348214014152,
+									"parameters": {
+										"key": "\"player1_gamepad_index\"",
+										"value": "index"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 337979836173691,
+									"parameters": {
+										"variable": "gamepad_in_use",
+										"value": "gamepad_in_use & \"/\" & index"
+									}
+								}
+							],
+							"sid": 477255373292267,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 501858170116740,
+											"parameters": {
+												"object": "menu_gamepad_selector",
+												"expression": "menu_gamepad_selector.player = 0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "menu_gamepad_selector",
+											"sid": 963742375110774,
+											"parameters": {
+												"animation": "\"player1_ok\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 803217785172143
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 526329472040805
+}

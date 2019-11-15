@@ -31,6 +31,13 @@
 								1
 							]
 						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.825
+							}
+						],
 						"duration": 1
 					}
 				],

@@ -1,52 +1,10 @@
 {
-	"name": "main",
+	"name": "default",
 	"layers": [
 		{
-			"name": "bg",
+			"name": "Layer 0",
 			"overriden": 0,
 			"instances": [
-				{
-					"type": "Text",
-					"properties": {
-						"text": "Text",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 24,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "top-left"
-					},
-					"uid": 13,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 131.96332725603168,
-						"y": 20.431408629876927,
-						"width": 377.58349839491837,
-						"height": 54.58848439314255,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
 				{
 					"type": "Sprite",
 					"properties": {
@@ -56,14 +14,14 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 14,
+					"uid": 25,
 					"instanceVariables": {
 						"owner": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 12.435972567144205,
-						"y": 288.2037291991377,
+						"x": 191,
+						"y": 143,
 						"width": 20,
 						"height": 124.93887029574489,
 						"originX": 0.5,
@@ -79,7 +37,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "feet_detector_p1",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -87,16 +45,20 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 15,
+					"uid": 26,
 					"instanceVariables": {
-						"owner": 1
+						"owner": 0
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 626.465068940343,
-						"y": 292.6122705928576,
-						"width": -20.980807321904194,
-						"height": 124.93887029574489,
+						"x": 133,
+						"y": 197,
+						"width": 40.96917368030777,
+						"height": 22.801201989076453,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -110,43 +72,53 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "player1",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 6,
-					"instanceVariables": {},
+					"uid": 27,
+					"instanceVariables": {
+						"gamepad_index": 0
+					},
 					"behaviors": {
-						"Solid": {
+						"Platform": {
 							"properties": {
-								"enabled": true,
-								"tags": ""
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
 							}
 						},
 						"Physics": {
 							"properties": {
-								"immovable": true,
+								"immovable": false,
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.5,
 								"elasticity": 0.2,
 								"linear-damping": 0,
-								"angular-damping": 0.01,
+								"angular-damping": 1,
 								"bullet": false,
 								"enabled": true
 							}
 						}
 					},
 					"world": {
-						"x": 314.02159855925566,
-						"y": 370.20702958868424,
-						"width": 727.1641281333248,
-						"height": 34.83685292236629,
+						"x": 133,
+						"y": 168,
+						"width": 39.79333227580527,
+						"height": 79.58666455161054,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -160,7 +132,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "feet_detector_p2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -168,35 +140,20 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 7,
-					"instanceVariables": {},
+					"uid": 28,
+					"instanceVariables": {
+						"owner": 0
+					},
 					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
+						"Pin": {
+							"properties": {}
 						}
 					},
 					"world": {
-						"x": 314.02159855925566,
-						"y": -11.659584092696491,
-						"width": 727.1641281333248,
-						"height": 34.83685292236629,
+						"x": 87,
+						"y": 196,
+						"width": 41.49583618891999,
+						"height": 22.801201989076453,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -210,43 +167,53 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "player2",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 8,
-					"instanceVariables": {},
+					"uid": 29,
+					"instanceVariables": {
+						"gamepad_index": 0
+					},
 					"behaviors": {
-						"Solid": {
+						"Platform": {
 							"properties": {
-								"enabled": true,
-								"tags": ""
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
 							}
 						},
 						"Physics": {
 							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
+								"immovable": false,
+								"collision-mask": "bounding-box",
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.5,
 								"elasticity": 0.2,
 								"linear-damping": 0,
-								"angular-damping": 0.01,
+								"angular-damping": 1,
 								"bullet": false,
 								"enabled": true
 							}
 						}
 					},
 					"world": {
-						"x": -16.308545308215173,
-						"y": 172.13312753281357,
-						"width": 25.523033076478782,
-						"height": 406.1478041117414,
+						"x": 87,
+						"y": 167,
+						"width": 39.79333227580527,
+						"height": 79.58666455161054,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -260,7 +227,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "ball",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -268,23 +235,17 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 9,
+					"uid": 30,
 					"instanceVariables": {},
 					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
 						"Physics": {
 							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
+								"immovable": false,
+								"collision-mask": "circle",
 								"prevent-rotation": false,
 								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
+								"friction": 0.3,
+								"elasticity": 0.75,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
@@ -293,10 +254,10 @@
 						}
 					},
 					"world": {
-						"x": 658.012011534028,
-						"y": 173.37497017893187,
-						"width": 25.523033076478782,
-						"height": 406.1478041117414,
+						"x": 114,
+						"y": 78,
+						"width": 41.84701621719998,
+						"height": 41.84701621719998,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -310,7 +271,7 @@
 					}
 				}
 			],
-			"sid": 152936074033652,
+			"sid": 647629974793800,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"color": [
@@ -320,9 +281,9 @@
 				1
 			],
 			"backgroundColor": [
-				1,
-				1,
-				1,
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
 				1
 			],
 			"isTransparent": false,
@@ -333,48 +294,13 @@
 			"useRenderCells": false,
 			"blendMode": "normal",
 			"global": false
-		},
-		{
-			"name": "main",
-			"overriden": 0,
-			"instances": [],
-			"sid": 697908153890477,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"global": false
 		}
 	],
-	"sid": 141872593580032,
-	"nonworld-instances": [
-		{
-			"type": "gamepad_selection",
-			"properties": {},
-			"uid": 20,
-			"instanceVariables": {}
-		}
-	],
+	"sid": 887188353364385,
+	"nonworld-instances": [],
 	"effectTypes": [],
-	"width": 640,
-	"height": 360,
+	"width": 1280,
+	"height": 720,
 	"unboundedScrolling": false,
-	"eventSheet": "main"
+	"eventSheet": null
 }
