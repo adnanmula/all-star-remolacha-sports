@@ -82,7 +82,7 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"gamepad_index": 0
+						"gamepad_index": -1
 					},
 					"behaviors": {
 						"Platform": {
@@ -177,7 +177,7 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
-						"gamepad_index": 0
+						"gamepad_index": -1
 					},
 					"behaviors": {
 						"Platform": {
