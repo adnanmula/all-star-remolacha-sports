@@ -820,6 +820,64 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 775098850860370,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "left-shoulder-button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 362777338710402,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 282789090559670,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 241908115415776,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 780067621944592
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 180770428933151,
+											"parameters": {
+												"animation": "\"lift\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 454445606421097
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 544177462450720
@@ -1252,6 +1310,64 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 758252000296957,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "left-shoulder-button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 934320792042303,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 992540337796736,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 673297879162745,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 584974948698014
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 348619000201195,
+											"parameters": {
+												"animation": "\"lift\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 974709336362336
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 606122396363958
@@ -1511,7 +1627,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 240087820680863,
+											"sid": 393923754866081,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "30",
@@ -1521,6 +1637,33 @@
 										}
 									],
 									"sid": 598175532587487
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "player",
+											"sid": 779922902743992,
+											"parameters": {
+												"animation": "\"lift\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "ball",
+											"sid": 556650437738677,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "10",
+												"angle": "270",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 214658988149097
 								}
 							]
 						}
@@ -1551,6 +1694,31 @@
 						}
 					],
 					"sid": 944266880241238
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "player",
+							"sid": 433091389777685,
+							"parameters": {
+								"animation": "\"lift\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "player",
+							"sid": 272239839250383,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 903036614493574
 				},
 				{
 					"eventType": "block",

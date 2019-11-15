@@ -35,7 +35,7 @@
 							{
 								"name": "feet_detector",
 								"x": 0.5,
-								"y": 0.825
+								"y": 0.875
 							}
 						],
 						"duration": 1
@@ -72,11 +72,59 @@
 								1
 							]
 						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
 						"duration": 1
 					}
 				],
 				"sid": 701655289428117,
 				"name": "kick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 12,
+						"collisionPoly": {
+							"points": [
+								0.189,
+								0,
+								0.7929999999999998,
+								0,
+								0.7929999999999998,
+								1,
+								0.21,
+								1
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 529746835215191,
+				"name": "lift",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
