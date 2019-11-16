@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "dash_timer",
 			"type": "number",
-			"initialValue": "0.2",
+			"initialValue": "0.1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
