@@ -48,7 +48,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "goal_detector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -79,7 +79,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "goal_detector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -110,7 +110,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -160,7 +160,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -193,9 +193,9 @@
 						}
 					},
 					"world": {
-						"x": 28.18249586780422,
-						"y": 221,
-						"width": 53.16567045315503,
+						"x": 26.367994207597548,
+						"y": 226.08026537048403,
+						"width": 52.92351071306433,
 						"height": 11.83685292236629,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -210,7 +210,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -260,7 +260,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -310,7 +310,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -343,9 +343,9 @@
 						}
 					},
 					"world": {
-						"x": 611.0666136588356,
+						"x": 610.9741603780304,
 						"y": 224.99982863112996,
-						"width": 53.16567045315503,
+						"width": 53.35057701476546,
 						"height": 11.83685292236629,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -360,7 +360,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -420,9 +420,9 @@
 				1
 			],
 			"backgroundColor": [
-				1,
-				1,
-				1,
+				0.8509803921568627,
+				0.8509803921568627,
+				0.8509803921568627,
 				1
 			],
 			"isTransparent": false,
@@ -437,7 +437,66 @@
 		{
 			"name": "main",
 			"overriden": 0,
-			"instances": [],
+			"instances": [
+				{
+					"type": "goal",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 18,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 611.8937187224653,
+						"y": 286.5829029508982,
+						"width": 54.285506433653836,
+						"height": 134.03874037424535,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "goal",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 26.61978350344957,
+						"y": 286.4294078833872,
+						"width": -55.217770922976996,
+						"height": 134.03874037424535,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 697908153890477,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

@@ -1,39 +1,47 @@
 {
-	"name": "Sprite2",
+	"name": "goal_detector",
 	"plugin-id": "Sprite",
-	"sid": 944770095440853,
+	"sid": 661460845580055,
 	"isGlobal": false,
-	"instanceVariables": [],
-	"behaviorTypes": [
+	"instanceVariables": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 354240203122253
-		},
-		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 133090780814306
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 429328021574281
 		}
 	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 10,
+						"width": 20,
+						"height": 30,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 23,
+						"imageSpriteId": 8,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.3467741935483872,
+								0,
+								0.3491935483870968,
+								1,
+								0,
+								1
+							]
+						},
 						"duration": 1
 					}
 				],
-				"sid": 526136802441534,
+				"sid": 332629099864707,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

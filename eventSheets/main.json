@@ -52,6 +52,16 @@
 			"sid": 505504752236601
 		},
 		{
+			"eventType": "variable",
+			"name": "dash_timer",
+			"type": "number",
+			"initialValue": "0.2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 329742792604738
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -375,6 +385,14 @@
 								"layer": "\"main\"",
 								"x": "300",
 								"y": "100"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "ball",
+							"sid": 870778698715833,
+							"parameters": {
+								"z": "3"
 							}
 						}
 					],
@@ -878,6 +896,82 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 961813508885480,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "right-analog-button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 594882458024587,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 926442954459556,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 979370065472380,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"dash\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 218564455113137,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "apply-impulse-at-angle",
+									"objectClass": "player",
+									"sid": 629540239002144,
+									"behaviorType": "Physics",
+									"parameters": {
+										"impulse": "30",
+										"angle": "player.Angle - 90",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 977762091149545,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "dash_timer",
+										"type": "once",
+										"tag": "\"dash\""
+									}
+								}
+							],
+							"sid": 589213373713367
+						}
+					]
 				}
 			],
 			"sid": 544177462450720
@@ -1368,6 +1462,82 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 238586040272329,
+							"parameters": {
+								"gamepad": "gamepad_index",
+								"button": "right-analog-button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 110239733401187,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 248988024348395,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_index"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 812338388299970,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"dash\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 816749042853306,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "apply-impulse-at-angle",
+									"objectClass": "player",
+									"sid": 263860756282117,
+									"behaviorType": "Physics",
+									"parameters": {
+										"impulse": "30",
+										"angle": "player.Angle - 90",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 392084455446860,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "dash_timer",
+										"type": "once",
+										"tag": "\"dash\""
+									}
+								}
+							],
+							"sid": 386991250987449
+						}
+					]
 				}
 			],
 			"sid": 606122396363958
@@ -1574,6 +1744,42 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "timers",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-timer",
+									"objectClass": "player",
+									"sid": 383138633326774,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"dash\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 416941361867596,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 879746139346918
+						}
+					],
+					"sid": 439816105595064
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1637,14 +1843,54 @@
 										}
 									],
 									"sid": 598175532587487
-								},
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 563196265938794,
+							"parameters": {
+								"object": "ball"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "player",
+							"sid": 137933656856135,
+							"parameters": {
+								"object": "ball"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 458946785288444,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 375415297260149
+								}
+							],
+							"actions": [],
+							"sid": 876986064466276,
+							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
 											"id": "is-animation-playing",
 											"objectClass": "player",
-											"sid": 779922902743992,
+											"sid": 923275487831715,
 											"parameters": {
 												"animation": "\"lift\""
 											}
@@ -1654,7 +1900,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 556650437738677,
+											"sid": 862770013915901,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "10",
@@ -1663,7 +1909,7 @@
 											}
 										}
 									],
-									"sid": 214658988149097
+									"sid": 559880886434490
 								}
 							]
 						}
@@ -1719,6 +1965,10 @@
 						}
 					],
 					"sid": 903036614493574
+				},
+				{
+					"eventType": "comment",
+					"text": "Fix this"
 				},
 				{
 					"eventType": "block",
@@ -1912,12 +2162,12 @@
 							"objectClass": "ball",
 							"sid": 892384484999746,
 							"parameters": {
-								"object": "Sprite"
+								"object": "goal_detector"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "goal_detector",
 							"sid": 628269350795082,
 							"parameters": {
 								"instance-variable": "owner",
@@ -1964,12 +2214,12 @@
 							"objectClass": "ball",
 							"sid": 215500803604376,
 							"parameters": {
-								"object": "Sprite"
+								"object": "goal_detector"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Sprite",
+							"objectClass": "goal_detector",
 							"sid": 304003420186169,
 							"parameters": {
 								"instance-variable": "owner",

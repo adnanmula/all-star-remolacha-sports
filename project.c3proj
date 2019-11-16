@@ -101,6 +101,14 @@
 			"author": "Scirra",
 			"version": "r175",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r175",
+			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
@@ -119,14 +127,6 @@
 			},
 			{
 				"items": [
-					"Sprite",
-					"Text"
-				],
-				"subfolders": [],
-				"name": "test"
-			},
-			{
-				"items": [
 					"feet_detector_p1",
 					"feet_detector_p2",
 					"player1",
@@ -138,7 +138,10 @@
 			{
 				"items": [
 					"ball",
-					"Sprite2"
+					"solid_bound",
+					"goal",
+					"goal_detector",
+					"Text"
 				],
 				"subfolders": [],
 				"name": "level"

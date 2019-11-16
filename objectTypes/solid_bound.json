@@ -1,47 +1,39 @@
 {
-	"name": "Sprite",
+	"name": "solid_bound",
 	"plugin-id": "Sprite",
-	"sid": 661460845580055,
+	"sid": 944770095440853,
 	"isGlobal": false,
-	"instanceVariables": [
+	"instanceVariables": [],
+	"behaviorTypes": [
 		{
-			"name": "owner",
-			"type": "number",
-			"desc": "",
-			"sid": 429328021574281
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 354240203122253
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 133090780814306
 		}
 	],
-	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 20,
-						"height": 30,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.3467741935483872,
-								0,
-								0.3491935483870968,
-								1,
-								0,
-								1
-							]
-						},
+						"imageSpriteId": 23,
 						"duration": 1
 					}
 				],
-				"sid": 332629099864707,
+				"sid": 526136802441534,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
