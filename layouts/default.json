@@ -82,7 +82,8 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"gamepad_index": -1
+						"gamepad_index": -1,
+						"inputs": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -180,7 +181,8 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
-						"gamepad_index": -1
+						"gamepad_index": -1,
+						"inputs": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -200,7 +202,7 @@
 						"Physics": {
 							"properties": {
 								"immovable": false,
-								"collision-mask": "bounding-box",
+								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.5,

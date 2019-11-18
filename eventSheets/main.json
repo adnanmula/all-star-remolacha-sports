@@ -403,287 +403,217 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "gamepad1",
+			"title": "Controls",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "gamepad_index",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 427280254694896
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 830443252095457,
-							"parameters": {
-								"variable": "gamepad_index",
-								"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
-							}
-						}
-					],
-					"sid": 324452851665528
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 771085381950242,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-up"
-							}
-						},
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 303976482496648,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "button-a"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 130061861851092,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-y-axis",
-								"comparison": 3,
-								"value": "-gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 786687579637656,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 160869339222102,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 529399619749199,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 505825972295772
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 890256279604455,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "jump"
-											}
-										}
-									],
-									"sid": 173869866273107
-								}
-							]
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 636514101585467,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-left"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 439181787976428,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-x-axis",
-								"comparison": 3,
-								"value": "-gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 250106521996711,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 267269294190170,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 395509526966890,
-									"behaviorType": "Platform",
-									"parameters": {
-										"control": "left"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 265876540912912,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 929368920455836
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 761906104514042,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 933865059747162,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-x-axis",
-								"comparison": 5,
-								"value": "gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 979477975583647,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 159623440588010,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 212028665239341,
-									"behaviorType": "Platform",
-									"parameters": {
-										"control": "right"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 912211181570086,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 625930878502821
-						}
-					],
-					"isOrBlock": true
-				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 729542161575798
+							"sid": 308066170524266
 						}
 					],
 					"actions": [],
-					"sid": 162633184391096,
+					"sid": 670022968099235,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "for-each",
 									"objectClass": "System",
-									"sid": 997536560577622,
+									"sid": 920561203114782,
 									"parameters": {
-										"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
-										"comparison": 1,
-										"second-value": "0"
+										"object": "player"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 749774429245224,
+							"sid": 382045703321280,
 							"children": [
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY UP"
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 325723696370699,
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 768253125471516,
 											"parameters": {
-												"object": "player",
-												"expression": "player.gamepad_index = gamepad_index"
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-up"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 954497411966137,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-a"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 826819785611099,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
 											}
 										}
 									],
-									"actions": [],
-									"sid": 775574201737741,
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 277021252186945,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "jump"
+											}
+										}
+									],
+									"sid": 126024340281033,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY LEFT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 657038427666153,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 755909719730623,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 996208641421407,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 125760498188049,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 740402340043526,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 357956723576610,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-right"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 840954402806874,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 670917723679311,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 701339160545407,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 451393102103790,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "LEFT JOYSTICK"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 302507752947525,
+											"parameters": {
+												"first-value": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3))",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "player",
+											"sid": 888166895813662,
+											"parameters": {
+												"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+											}
+										}
+									],
+									"sid": 947728711055268,
 									"children": [
 										{
 											"eventType": "block",
@@ -691,13 +621,13 @@
 												{
 													"id": "is-jumping",
 													"objectClass": "player",
-													"sid": 966308306010402,
+													"sid": 651898560725147,
 													"behaviorType": "Platform"
 												},
 												{
 													"id": "is-falling",
 													"objectClass": "player",
-													"sid": 241074081110311,
+													"sid": 647567873252746,
 													"behaviorType": "Platform"
 												}
 											],
@@ -705,13 +635,14 @@
 												{
 													"id": "set-angle",
 													"objectClass": "player",
-													"sid": 900713150207441,
+													"sid": 311909968396060,
 													"parameters": {
-														"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
+														"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
 													}
 												}
 											],
-											"sid": 567434718498335,
+											"sid": 177176656751015,
+											"disabled": true,
 											"isOrBlock": true
 										},
 										{
@@ -720,12 +651,13 @@
 												{
 													"id": "is-on-floor",
 													"objectClass": "player",
-													"sid": 326900203681798,
+													"sid": 789404847929085,
 													"behaviorType": "Platform"
 												}
 											],
 											"actions": [],
-											"sid": 352354384639882,
+											"sid": 415543330387926,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -733,9 +665,9 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 835438188017471,
+															"sid": 927256330927807,
 															"parameters": {
-																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
+																"first-value": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3))",
 																"comparison": 3,
 																"second-value": "-45"
 															}
@@ -743,9 +675,9 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 583054031637125,
+															"sid": 100394804853934,
 															"parameters": {
-																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
+																"first-value": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3))",
 																"comparison": 5,
 																"second-value": "-135"
 															}
@@ -755,976 +687,168 @@
 														{
 															"id": "set-angle",
 															"objectClass": "player",
-															"sid": 147549120415330,
+															"sid": 566750992172108,
 															"parameters": {
-																"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
+																"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
 															}
 														}
 													],
-													"sid": 988004671534588
+													"sid": 837722611951753,
+													"disabled": true
 												}
 											]
 										}
 									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 625848183556261,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "right-shoulder-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 202679487594069,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
+								},
 								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 647791295107833,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 653434160762431,
-							"children": [
+									"eventType": "comment",
+									"text": "RB"
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 232327351624954
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 283304889514443,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-button"
+											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-animation",
 											"objectClass": "player",
-											"sid": 983361390741124,
+											"sid": 553407508471871,
 											"parameters": {
 												"animation": "\"kick\"",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 272282806172005
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 775098850860370,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "left-shoulder-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 362777338710402,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
+									"sid": 451714552464873
+								},
 								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 282789090559670,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 241908115415776,
-							"children": [
+									"eventType": "comment",
+									"text": "LB"
+								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 780067621944592
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 123381410268270,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "left-shoulder-button"
+											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-animation",
 											"objectClass": "player",
-											"sid": 180770428933151,
+											"sid": 816005696732590,
 											"parameters": {
 												"animation": "\"lift\"",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 454445606421097
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 961813508885480,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "right-analog-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 594882458024587,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 926442954459556,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
+									"sid": 912470815194441
 								},
 								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 979370065472380,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"dash\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 218564455113137,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "disabled"
-									}
+									"eventType": "comment",
+									"text": "L3"
 								},
-								{
-									"id": "apply-impulse-at-angle",
-									"objectClass": "player",
-									"sid": 629540239002144,
-									"behaviorType": "Physics",
-									"parameters": {
-										"impulse": "30",
-										"angle": "player.Angle - 90",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "start-timer",
-									"objectClass": "player",
-									"sid": 201642023210354,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "dash_timer",
-										"type": "once",
-										"tag": "\"dash\""
-									}
-								}
-							],
-							"sid": 589213373713367
-						}
-					]
-				}
-			],
-			"sid": 544177462450720
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "gamepad2",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "gamepad_index",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 601654717334805
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 573240862958015,
-							"parameters": {
-								"variable": "gamepad_index",
-								"value": "gamepad_selection.Get(\"player2_gamepad_index\")"
-							}
-						}
-					],
-					"sid": 893784568603783
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 323598687102948,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-up"
-							}
-						},
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 867077656737241,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "button-a"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 540393454510709,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-y-axis",
-								"comparison": 3,
-								"value": "-gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 742663718951640,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 385639418486100,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 429177450914353,
-							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 880217463636342
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 477921486646061,
-											"behaviorType": "Platform",
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 459772550621751,
 											"parameters": {
-												"control": "jump"
-											}
-										}
-									],
-									"sid": 246217402353061
-								}
-							]
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 350509132106126,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-left"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 534069978651597,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-x-axis",
-								"comparison": 3,
-								"value": "-gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 460348446495645,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 126785138926638,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 225252999076451,
-									"behaviorType": "Platform",
-									"parameters": {
-										"control": "left"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 732976104385378,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 822456683747568
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 362696126850621,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 439286295975457,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"axis": "left-analog-x-axis",
-								"comparison": 5,
-								"value": "gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 834248073643556,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 944850878678309,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 994110284912746,
-									"behaviorType": "Platform",
-									"parameters": {
-										"control": "right"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 428966389654282,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 948075201906442
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 363028932293990
-						}
-					],
-					"actions": [],
-					"sid": 655015495789644,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 492485136874923,
-									"parameters": {
-										"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
-										"comparison": 1,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 466548607776467,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 167665592855047,
-											"parameters": {
-												"object": "player",
-												"expression": "player.gamepad_index = gamepad_index"
+												"gamepad": "player.gamepad_index",
+												"button": "right-analog-button"
 											}
 										}
 									],
 									"actions": [],
-									"sid": 384609839982196,
+									"sid": 711113877254487,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-jumping",
+													"id": "is-timer-running",
 													"objectClass": "player",
-													"sid": 675695697051538,
-													"behaviorType": "Platform"
-												},
-												{
-													"id": "is-falling",
-													"objectClass": "player",
-													"sid": 461509940515828,
-													"behaviorType": "Platform"
+													"sid": 544597881091044,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"dash\""
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [
 												{
-													"id": "set-angle",
+													"id": "set-enabled",
 													"objectClass": "player",
-													"sid": 314032490334315,
+													"sid": 987960074199738,
+													"behaviorType": "Platform",
 													"parameters": {
-														"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "player",
+													"sid": 764802703903102,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "30",
+														"angle": "player.Angle - 90",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "player",
+													"sid": 506718115020736,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "dash_timer",
+														"type": "once",
+														"tag": "\"dash\""
 													}
 												}
 											],
-											"sid": 122311866851366,
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-on-floor",
-													"objectClass": "player",
-													"sid": 242366412110855,
-													"behaviorType": "Platform"
-												}
-											],
-											"actions": [],
-											"sid": 533113042148932,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-two-values",
-															"objectClass": "System",
-															"sid": 141157746128109,
-															"parameters": {
-																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
-																"comparison": 3,
-																"second-value": "-45"
-															}
-														},
-														{
-															"id": "compare-two-values",
-															"objectClass": "System",
-															"sid": 831819052589702,
-															"parameters": {
-																"first-value": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3))",
-																"comparison": 5,
-																"second-value": "-135"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-angle",
-															"objectClass": "player",
-															"sid": 259791030928272,
-															"parameters": {
-																"angle": "angle(0,0, Gamepad.Axis(gamepad_index, 2), Gamepad.Axis(gamepad_index, 3)) + 90"
-															}
-														}
-													],
-													"sid": 784198764687207
-												}
-											]
+											"sid": 195095286807143
 										}
 									]
 								}
 							]
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 613178160838645,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "right-shoulder-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 874954976059742,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 552938670168293,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 309449855020872,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 844811443565017
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 887218021036584,
-											"parameters": {
-												"animation": "\"kick\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 699309822874289
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-button-down",
-							"objectClass": "Gamepad",
-							"sid": 758252000296957,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "left-shoulder-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 934320792042303,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 992540337796736,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 673297879162745,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 584974948698014
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 348619000201195,
-											"parameters": {
-												"animation": "\"lift\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 974709336362336
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 238586040272329,
-							"parameters": {
-								"gamepad": "gamepad_index",
-								"button": "right-analog-button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 110239733401187,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 248988024348395,
-									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = gamepad_index"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 812338388299970,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"dash\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 816749042853306,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "apply-impulse-at-angle",
-									"objectClass": "player",
-									"sid": 263860756282117,
-									"behaviorType": "Physics",
-									"parameters": {
-										"impulse": "30",
-										"angle": "player.Angle - 90",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "start-timer",
-									"objectClass": "player",
-									"sid": 392084455446860,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "dash_timer",
-										"type": "once",
-										"tag": "\"dash\""
-									}
-								}
-							],
-							"sid": 386991250987449
-						}
-					]
 				}
 			],
-			"sid": 606122396363958
-		},
-		{
-			"eventType": "group",
-			"disabled": true,
-			"title": "keyboard+mouse",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 204633994929416,
-							"parameters": {
-								"key": 87
-							}
-						},
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 375569665941164,
-							"parameters": {
-								"key": 32
-							}
-						}
-					],
-					"actions": [],
-					"sid": 527587421704829,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 341237490495441
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player2",
-									"sid": 873436367748435,
-									"behaviorType": "Platform",
-									"parameters": {
-										"control": "jump"
-									}
-								}
-							],
-							"sid": 526122183457598,
-							"disabled": true
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 295815354934641,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player2",
-							"sid": 839141937730715,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "left"
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "player2",
-							"sid": 586685959578032,
-							"parameters": {
-								"state": "mirrored"
-							}
-						}
-					],
-					"sid": 679953612584462,
-					"disabled": true,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 762987447520268,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player2",
-							"sid": 740807219198831,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "right"
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "player2",
-							"sid": 280944353315588,
-							"parameters": {
-								"state": "not-mirrored"
-							}
-						}
-					],
-					"sid": 335317674715883,
-					"disabled": true,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 131884663134450
-						}
-					],
-					"actions": [
-						{
-							"id": "set-angle",
-							"objectClass": "player2",
-							"sid": 841300623976270,
-							"parameters": {
-								"angle": "angle(player2.X, player2.Y, Mouse.X, Mouse.Y) + 90"
-							}
-						}
-					],
-					"sid": 379181613808733,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 684904884539996,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 839191254156735,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 152975363408007
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "player2",
-									"sid": 315903434164465,
-									"parameters": {
-										"animation": "\"kick\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 928205295879794,
-							"disabled": true
-						}
-					]
-				}
+			"sid": 701064582362055,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
 			],
-			"sid": 781580275785128
+			"background-color": [
+				0.5019607843137255,
+				0,
+				1,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -1972,6 +1096,7 @@
 					],
 					"actions": [],
 					"sid": 712389154451521,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2007,7 +1132,8 @@
 									}
 								}
 							],
-							"sid": 809236049222094
+							"sid": 809236049222094,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2043,7 +1169,8 @@
 									}
 								}
 							],
-							"sid": 934681368734216
+							"sid": 934681368734216,
+							"disabled": true
 						}
 					]
 				},
@@ -2059,6 +1186,7 @@
 					],
 					"actions": [],
 					"sid": 138252392874492,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2094,7 +1222,8 @@
 									}
 								}
 							],
-							"sid": 119177120320138
+							"sid": 119177120320138,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -2130,7 +1259,8 @@
 									}
 								}
 							],
-							"sid": 865985204989107
+							"sid": 865985204989107,
+							"disabled": true
 						}
 					]
 				}
@@ -2291,108 +1421,283 @@
 						}
 					],
 					"sid": 837233948414406
+				},
+				{
+					"functionName": "resetPlayers",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 548235796500364,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "gamepad_selection",
+									"sid": 466109156065951,
+									"parameters": {
+										"key": "\"player1_gamepad_index\""
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 999610500433350,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_selection.Get(\"player1_gamepad_index\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "player",
+									"sid": 918495125022168,
+									"parameters": {
+										"x": "90",
+										"y": "200"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 567513222482819,
+									"parameters": {
+										"type": "log",
+										"message": "gamepad_selection.Get(\"player1_gamepad_index\")"
+									}
+								}
+							],
+							"sid": 855167111925866
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "gamepad_selection",
+									"sid": 591593372196960,
+									"parameters": {
+										"key": "\"player2_gamepad_index\""
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 285345608182967,
+									"parameters": {
+										"object": "player",
+										"expression": "player.gamepad_index = gamepad_selection.Get(\"player2_gamepad_index\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "player",
+									"sid": 328568034033750,
+									"parameters": {
+										"x": "500",
+										"y": "200"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 614232994917563,
+									"parameters": {
+										"type": "log",
+										"message": "gamepad_selection.Get(\"player2_gamepad_index\")"
+									}
+								}
+							],
+							"sid": 721390856636242
+						}
+					]
 				}
 			],
 			"sid": 561124492516002
 		},
 		{
-			"functionName": "resetPlayers",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 198394894753034,
+			"eventType": "group",
+			"disabled": true,
+			"title": "bit",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "has-key",
-							"objectClass": "gamepad_selection",
-							"sid": 892406655113047,
-							"parameters": {
-								"key": "\"player1_gamepad_index\""
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 165180892982468,
-							"parameters": {
-								"object": "player",
-								"expression": "player.gamepad_index = gamepad_selection.Get(\"player1_gamepad_index\")"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 322407471716792,
-							"parameters": {
-								"x": "90",
-								"y": "200"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 906157404591565,
-							"parameters": {
-								"type": "log",
-								"message": "gamepad_selection.Get(\"player1_gamepad_index\")"
-							}
-						}
-					],
-					"sid": 348476321954292
+					"eventType": "variable",
+					"name": "FALSE",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 149098434189802
+				},
+				{
+					"eventType": "variable",
+					"name": "TRUE",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 722845191091581
+				},
+				{
+					"eventType": "variable",
+					"name": "INPUT_A",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 862314471752652
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "has-key",
-							"objectClass": "gamepad_selection",
-							"sid": 998384516472741,
-							"parameters": {
-								"key": "\"player2_gamepad_index\""
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
+							"id": "for-each",
 							"objectClass": "System",
-							"sid": 663877120989189,
+							"sid": 207130658465300,
 							"parameters": {
-								"object": "player",
-								"expression": "player.gamepad_index = gamepad_selection.Get(\"player2_gamepad_index\")"
+								"object": "player"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 121865026482048,
+					"disabled": true,
+					"children": [
 						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 846917427162815,
-							"parameters": {
-								"x": "500",
-								"y": "200"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 993968749752199,
+									"parameters": {
+										"gamepad": "player.gamepad_index",
+										"button": "d-pad-up"
+									}
+								},
+								{
+									"id": "is-button-down",
+									"objectClass": "Gamepad",
+									"sid": 732412103966916,
+									"parameters": {
+										"gamepad": "player.gamepad_index",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 545541771296272,
+									"parameters": {
+										"gamepad": "player.gamepad_index",
+										"axis": "left-analog-y-axis",
+										"comparison": 3,
+										"value": "-gamepad_deadzone"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 411885108493218,
+									"parameters": {
+										"instance-variable": "inputs",
+										"value": "setbit(player.inputs, INPUT_A, TRUE)"
+									}
+								}
+							],
+							"sid": 614455813899587,
+							"disabled": true,
+							"isOrBlock": true
 						},
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 852716249704642,
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 788834726129106
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 467473283716702,
+									"parameters": {
+										"instance-variable": "inputs",
+										"value": "setbit(player.inputs, INPUT_A, FALSE)"
+									}
+								}
+							],
+							"sid": 448553489085367,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 318068231472733,
 							"parameters": {
-								"type": "log",
-								"message": "gamepad_selection.Get(\"player2_gamepad_index\")"
+								"object": "player"
 							}
 						}
 					],
-					"sid": 412218532509873
+					"actions": [],
+					"sid": 137464895219901,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 359794655350882,
+									"parameters": {
+										"first-value": "getbit(player.inputs, INPUT_A)",
+										"comparison": 0,
+										"second-value": "TRUE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 485902251816845,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 461761649033480,
+							"disabled": true
+						}
+					]
 				}
-			]
+			],
+			"sid": 509422355172216
 		}
 	],
 	"sid": 869789412645449
