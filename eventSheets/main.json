@@ -466,17 +466,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 967661518930670,
-							"parameters": {
-								"type": "log",
-								"message": "\"vivo1\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 786687579637656,
 					"children": [
 						{
@@ -960,7 +950,7 @@
 								{
 									"id": "start-timer",
 									"objectClass": "player",
-									"sid": 977762091149545,
+									"sid": 201642023210354,
 									"behaviorType": "Timer",
 									"parameters": {
 										"duration": "dash_timer",
@@ -1756,7 +1746,7 @@
 								{
 									"id": "on-timer",
 									"objectClass": "player",
-									"sid": 383138633326774,
+									"sid": 819171413351440,
 									"behaviorType": "Timer",
 									"parameters": {
 										"tag": "\"dash\""
@@ -1900,10 +1890,10 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 862770013915901,
+											"sid": 310788966243299,
 											"behaviorType": "Physics",
 											"parameters": {
-												"impulse": "10",
+												"impulse": "5",
 												"angle": "270",
 												"image-point": "0"
 											}
@@ -2160,7 +2150,7 @@
 						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "ball",
-							"sid": 892384484999746,
+							"sid": 725463174400072,
 							"parameters": {
 								"object": "goal_detector"
 							}
@@ -2168,7 +2158,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "goal_detector",
-							"sid": 628269350795082,
+							"sid": 394734182223206,
 							"parameters": {
 								"instance-variable": "owner",
 								"comparison": 0,
@@ -2180,7 +2170,7 @@
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 909994362807242,
+							"sid": 937212109319660,
 							"parameters": {
 								"variable": "score_2",
 								"value": "1"
@@ -2189,7 +2179,7 @@
 						{
 							"id": "set-text",
 							"objectClass": "Text",
-							"sid": 540294956966205,
+							"sid": 627443523197782,
 							"parameters": {
 								"text": "score_1 & \" - \" & score_2"
 							}
@@ -2197,14 +2187,36 @@
 						{
 							"id": "set-position",
 							"objectClass": "ball",
-							"sid": 195639503167428,
+							"sid": 291287566164913,
 							"parameters": {
 								"x": "LayoutWidth / 2",
 								"y": "LayoutHeight / 2"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 440073237216813,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 377718688939545,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"callFunction": "resetPlayers",
+							"sid": 337653478926953
 						}
 					],
-					"sid": 883886118942744
+					"sid": 591297349240269
 				},
 				{
 					"eventType": "block",
@@ -2254,12 +2266,99 @@
 								"x": "LayoutWidth / 2",
 								"y": "LayoutHeight / 2"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 863565878034499,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 941373056955041,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"callFunction": "resetPlayers",
+							"sid": 340572867183288
 						}
 					],
 					"sid": 837233948414406
 				}
 			],
 			"sid": 561124492516002
+		},
+		{
+			"functionName": "resetPlayers",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 198394894753034,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 165180892982468,
+							"parameters": {
+								"object": "player",
+								"expression": "player.gamepad_index = gamepad_selection.Get(\"player1_gamepad_index\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 322407471716792,
+							"parameters": {
+								"x": "90",
+								"y": "200"
+							}
+						}
+					],
+					"sid": 348476321954292
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 663877120989189,
+							"parameters": {
+								"object": "player",
+								"expression": "player.gamepad_index = gamepad_selection.Get(\"player2_gamepad_index\")"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 846917427162815,
+							"parameters": {
+								"x": "500",
+								"y": "200"
+							}
+						}
+					],
+					"sid": 412218532509873
+				}
+			]
 		}
 	],
 	"sid": 869789412645449
