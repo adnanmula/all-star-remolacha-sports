@@ -2310,6 +2310,14 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "has-key",
+							"objectClass": "gamepad_selection",
+							"sid": 892406655113047,
+							"parameters": {
+								"key": "\"player1_gamepad_index\""
+							}
+						},
+						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
 							"sid": 165180892982468,
@@ -2328,6 +2336,15 @@
 								"x": "90",
 								"y": "200"
 							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 906157404591565,
+							"parameters": {
+								"type": "log",
+								"message": "gamepad_selection.Get(\"player1_gamepad_index\")"
+							}
 						}
 					],
 					"sid": 348476321954292
@@ -2335,6 +2352,14 @@
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "gamepad_selection",
+							"sid": 998384516472741,
+							"parameters": {
+								"key": "\"player2_gamepad_index\""
+							}
+						},
 						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
@@ -2353,6 +2378,15 @@
 							"parameters": {
 								"x": "500",
 								"y": "200"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 852716249704642,
+							"parameters": {
+								"type": "log",
+								"message": "gamepad_selection.Get(\"player2_gamepad_index\")"
 							}
 						}
 					],
