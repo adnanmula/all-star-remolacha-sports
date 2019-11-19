@@ -82,8 +82,7 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"inputs": 0
+						"gamepad_index": -1
 					},
 					"behaviors": {
 						"Platform": {
@@ -181,8 +180,7 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"inputs": 0
+						"gamepad_index": -1
 					},
 					"behaviors": {
 						"Platform": {
@@ -297,6 +295,141 @@
 						"height": 70,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player_stickman",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 44,
+					"instanceVariables": {
+						"gamepad_index": -1
+					},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 1,
+								"bullet": true,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 29.94966891844345,
+						"y": 140.3999067448159,
+						"width": 39.79333227580527,
+						"height": 79.58666455161054,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player_fd_stickman",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 45,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 29.949668918443464,
+						"y": 168.57635095556645,
+						"width": 40.96917368030777,
+						"height": 22.801201989076453,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_selector",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "stretch",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 33,
+					"instanceVariables": {
+						"side": -1,
+						"gamepad_index": -1,
+						"char_index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 250.62126002693847,
+						"y": 69.30046808217432,
+						"width": 50,
+						"height": 75,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,

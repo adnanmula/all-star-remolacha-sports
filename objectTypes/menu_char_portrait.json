@@ -1,0 +1,86 @@
+{
+	"name": "menu_char_portrait",
+	"plugin-id": "Sprite",
+	"sid": 871396152323111,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "character",
+			"type": "string",
+			"desc": "",
+			"sid": 793085755135105
+		},
+		{
+			"name": "skin",
+			"type": "string",
+			"desc": "",
+			"sid": 828256033432233
+		},
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 126914314117590
+		},
+		{
+			"name": "side",
+			"type": "number",
+			"desc": "",
+			"sid": 697404320426159
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 13,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1
+					},
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 11,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 268553878195306,
+				"name": "stickman",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

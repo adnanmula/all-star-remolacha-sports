@@ -8,12 +8,6 @@
 			"type": "number",
 			"desc": "",
 			"sid": 702767350279629
-		},
-		{
-			"name": "inputs",
-			"type": "number",
-			"desc": "",
-			"sid": 437247120736091
 		}
 	],
 	"behaviorTypes": [
@@ -36,6 +30,7 @@
 	"effectTypes": [],
 	"members": [
 		"player2",
-		"player1"
+		"player1",
+		"player_stickman"
 	]
 }

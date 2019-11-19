@@ -1,0 +1,16 @@
+{
+	"name": "menu_char_name",
+	"plugin-id": "Text",
+	"sid": 194607894505904,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "side",
+			"type": "number",
+			"desc": "",
+			"sid": 418515753460772
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

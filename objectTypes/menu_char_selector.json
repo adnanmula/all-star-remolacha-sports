@@ -1,0 +1,38 @@
+{
+	"name": "menu_char_selector",
+	"plugin-id": "NinePatch",
+	"sid": 798346647749708,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "side",
+			"type": "number",
+			"desc": "",
+			"sid": 691768907430672
+		},
+		{
+			"name": "gamepad_index",
+			"type": "number",
+			"desc": "",
+			"sid": 907256334121804
+		},
+		{
+			"name": "char_index",
+			"type": "number",
+			"desc": "",
+			"sid": 390399185890795
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 50,
+		"height": 50,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 21
+	}
+}

@@ -1,0 +1,137 @@
+{
+	"name": "player_stickman",
+	"plugin-id": "Sprite",
+	"sid": 470434859441059,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 34,
+						"collisionPoly": {
+							"points": [
+								0.189,
+								0,
+								0.7929999999999998,
+								0,
+								0.7929999999999998,
+								1,
+								0.21,
+								1
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 691962275727652,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 32,
+						"collisionPoly": {
+							"points": [
+								0.189,
+								0,
+								0.7929999999999998,
+								0,
+								0.7929999999999998,
+								1,
+								0.21,
+								1
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 567020512469412,
+				"name": "kick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 33,
+						"collisionPoly": {
+							"points": [
+								0.189,
+								0,
+								0.7929999999999998,
+								0,
+								0.7929999999999998,
+								1,
+								0.21,
+								1
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 370316426747364,
+				"name": "lift",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}

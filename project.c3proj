@@ -56,6 +56,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r176",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Button",
 			"name": "Button",
 			"author": "Scirra",
@@ -130,7 +138,9 @@
 					"feet_detector_p1",
 					"feet_detector_p2",
 					"player1",
-					"player2"
+					"player2",
+					"player_fd_stickman",
+					"player_stickman"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -148,13 +158,29 @@
 			},
 			{
 				"items": [
-					"button_play",
 					"menu_debug",
 					"menu_gamepad_debug",
-					"menu_gamepad_selector",
 					"menu_title"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"menu_char_portrait",
+							"menu_char_selector",
+							"menu_char_name"
+						],
+						"subfolders": [],
+						"name": "char_selector"
+					},
+					{
+						"items": [
+							"button_play",
+							"menu_gamepad_selector"
+						],
+						"subfolders": [],
+						"name": "gamepad_selector"
+					}
+				],
 				"name": "menu"
 			},
 			{
@@ -179,6 +205,13 @@
 			"members": [
 				"feet_detector_p1",
 				"player1"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"player_fd_stickman",
+				"player_stickman"
 			],
 			"selectMode": "normal"
 		}
@@ -245,15 +278,15 @@
 					"type": "image/png"
 				},
 				{
-					"name": "icon-256.png",
-					"type": "image/png"
-				},
-				{
 					"name": "icon-128.png",
 					"type": "image/png"
 				},
 				{
 					"name": "icon-512.png",
+					"type": "image/png"
+				},
+				{
+					"name": "icon-256.png",
 					"type": "image/png"
 				}
 			],
