@@ -37,7 +37,7 @@
 					}
 				},
 				{
-					"type": "feet_detector_p1",
+					"type": "player1_fd",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -51,6 +51,9 @@
 					},
 					"behaviors": {
 						"Pin": {
+							"properties": {}
+						},
+						"Pin3": {
 							"properties": {}
 						}
 					},
@@ -82,7 +85,8 @@
 					},
 					"uid": 27,
 					"instanceVariables": {
-						"gamepad_index": -1
+						"gamepad_index": -1,
+						"name": "stickman2"
 					},
 					"behaviors": {
 						"Platform": {
@@ -135,7 +139,7 @@
 					}
 				},
 				{
-					"type": "feet_detector_p2",
+					"type": "player2_fd",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -149,6 +153,9 @@
 					},
 					"behaviors": {
 						"Pin": {
+							"properties": {}
+						},
+						"Pin3": {
 							"properties": {}
 						}
 					},
@@ -180,7 +187,8 @@
 					},
 					"uid": 29,
 					"instanceVariables": {
-						"gamepad_index": -1
+						"gamepad_index": -1,
+						"name": "stickman"
 					},
 					"behaviors": {
 						"Platform": {
@@ -316,7 +324,8 @@
 					},
 					"uid": 44,
 					"instanceVariables": {
-						"gamepad_index": -1
+						"gamepad_index": -1,
+						"name": ""
 					},
 					"behaviors": {
 						"Platform": {
@@ -383,6 +392,9 @@
 					},
 					"behaviors": {
 						"Pin": {
+							"properties": {}
+						},
+						"Pin3": {
 							"properties": {}
 						}
 					},

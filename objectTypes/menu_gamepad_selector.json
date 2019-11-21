@@ -30,12 +30,12 @@
 					}
 				],
 				"sid": 115889339621463,
-				"name": "player1_wait",
+				"name": "player0_wait",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -52,12 +52,12 @@
 					}
 				],
 				"sid": 687652301721963,
-				"name": "player2_wait",
+				"name": "player1_wait",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -74,12 +74,12 @@
 					}
 				],
 				"sid": 782701630955510,
-				"name": "player1_ok",
+				"name": "player0_ok",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -96,12 +96,12 @@
 					}
 				],
 				"sid": 948681578469526,
-				"name": "player2_ok",
+				"name": "player1_ok",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

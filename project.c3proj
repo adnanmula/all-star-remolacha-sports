@@ -135,8 +135,8 @@
 			},
 			{
 				"items": [
-					"feet_detector_p1",
-					"feet_detector_p2",
+					"player1_fd",
+					"player2_fd",
 					"player1",
 					"player2",
 					"player_fd_stickman",
@@ -196,15 +196,15 @@
 	"containers": [
 		{
 			"members": [
-				"feet_detector_p2",
-				"player2"
+				"player2",
+				"player2_fd"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
-				"feet_detector_p1",
-				"player1"
+				"player1",
+				"player1_fd"
 			],
 			"selectMode": "normal"
 		},
@@ -270,11 +270,11 @@
 					"type": "image/png"
 				},
 				{
-					"name": "icon-32.png",
+					"name": "icon-64.png",
 					"type": "image/png"
 				},
 				{
-					"name": "icon-64.png",
+					"name": "icon-32.png",
 					"type": "image/png"
 				},
 				{

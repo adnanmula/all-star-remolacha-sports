@@ -106,18 +106,18 @@
 				{
 					"id": "add-key",
 					"objectClass": "gamepad_selection",
-					"sid": 488083810548780,
+					"sid": 451378183374390,
 					"parameters": {
-						"key": "\"player1_character\"",
+						"key": "\"player0_character\"",
 						"value": "\"\""
 					}
 				},
 				{
 					"id": "add-key",
 					"objectClass": "gamepad_selection",
-					"sid": 963552555106232,
+					"sid": 871355382205296,
 					"parameters": {
-						"key": "\"player2_character\"",
+						"key": "\"player1_character\"",
 						"value": "\"\""
 					}
 				}
@@ -142,25 +142,25 @@
 						{
 							"id": "has-key",
 							"objectClass": "gamepad_selection",
-							"sid": 713036647061931,
+							"sid": 214659521697391,
 							"parameters": {
-								"key": "\"player1_gamepad_index\""
+								"key": "\"player0_gamepad_index\""
 							}
 						},
 						{
 							"id": "has-key",
 							"objectClass": "gamepad_selection",
-							"sid": 979505591182314,
+							"sid": 194641236536232,
 							"parameters": {
-								"key": "\"player2_gamepad_index\""
+								"key": "\"player1_gamepad_index\""
 							}
 						},
 						{
 							"id": "compare-value",
 							"objectClass": "gamepad_selection",
-							"sid": 573051424314765,
+							"sid": 759992940996402,
 							"parameters": {
-								"key": "\"player1_character\"",
+								"key": "\"player0_character\"",
 								"comparison": 1,
 								"value": "\"\""
 							}
@@ -168,9 +168,9 @@
 						{
 							"id": "compare-value",
 							"objectClass": "gamepad_selection",
-							"sid": 558419030947521,
+							"sid": 267121011673311,
 							"parameters": {
-								"key": "\"player2_character\"",
+								"key": "\"player1_character\"",
 								"comparison": 1,
 								"value": "\"\""
 							}
@@ -187,22 +187,6 @@
 						}
 					],
 					"sid": 180623586120452
-				},
-				{
-					"eventType": "comment",
-					"text": "TODO"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 421634667202025
-						}
-					],
-					"actions": [],
-					"sid": 359304570701383
 				}
 			]
 		},
@@ -228,17 +212,17 @@
 						{
 							"id": "has-key",
 							"objectClass": "gamepad_selection",
-							"sid": 972504571815468,
+							"sid": 152757104449443,
 							"parameters": {
-								"key": "\"player1_gamepad_index\""
+								"key": "\"player0_gamepad_index\""
 							}
 						},
 						{
 							"id": "has-key",
 							"objectClass": "gamepad_selection",
-							"sid": 866607212990598,
+							"sid": 972504571815468,
 							"parameters": {
-								"key": "\"player2_gamepad_index\""
+								"key": "\"player1_gamepad_index\""
 							}
 						},
 						{
@@ -360,17 +344,17 @@
 										{
 											"id": "has-key",
 											"objectClass": "gamepad_selection",
-											"sid": 718862168634327,
+											"sid": 224469464740421,
 											"parameters": {
-												"key": "\"player1_gamepad_index\""
+												"key": "\"player0_gamepad_index\""
 											}
 										},
 										{
 											"id": "has-key",
 											"objectClass": "gamepad_selection",
-											"sid": 392072360729815,
+											"sid": 401894063788275,
 											"parameters": {
-												"key": "\"player2_gamepad_index\""
+												"key": "\"player1_gamepad_index\""
 											},
 											"isInverted": true
 										}
@@ -379,9 +363,9 @@
 										{
 											"id": "add-key",
 											"objectClass": "gamepad_selection",
-											"sid": 701787114773203,
+											"sid": 370727394052329,
 											"parameters": {
-												"key": "\"player2_gamepad_index\"",
+												"key": "\"player1_gamepad_index\"",
 												"value": "index"
 											}
 										},
@@ -414,9 +398,9 @@
 												{
 													"id": "set-animation",
 													"objectClass": "menu_gamepad_selector",
-													"sid": 891058839382880,
+													"sid": 280181505723271,
 													"parameters": {
-														"animation": "\"player2_ok\"",
+														"animation": "\"player1_ok\"",
 														"from": "beginning"
 													}
 												}
@@ -431,9 +415,9 @@
 										{
 											"id": "has-key",
 											"objectClass": "gamepad_selection",
-											"sid": 609970099853474,
+											"sid": 733904842450461,
 											"parameters": {
-												"key": "\"player1_gamepad_index\""
+												"key": "\"player0_gamepad_index\""
 											},
 											"isInverted": true
 										}
@@ -442,9 +426,9 @@
 										{
 											"id": "add-key",
 											"objectClass": "gamepad_selection",
-											"sid": 690113208405211,
+											"sid": 198418293690071,
 											"parameters": {
-												"key": "\"player1_gamepad_index\"",
+												"key": "\"player0_gamepad_index\"",
 												"value": "index"
 											}
 										},
@@ -477,9 +461,9 @@
 												{
 													"id": "set-animation",
 													"objectClass": "menu_gamepad_selector",
-													"sid": 196012565770436,
+													"sid": 236777534409315,
 													"parameters": {
-														"animation": "\"player1_ok\"",
+														"animation": "\"player0_ok\"",
 														"from": "beginning"
 													}
 												}
@@ -688,9 +672,9 @@
 						{
 							"id": "set-key",
 							"objectClass": "gamepad_selection",
-							"sid": 713914920651465,
+							"sid": 635449527420423,
 							"parameters": {
-								"key": "\"player\"& str(side+1) &\"_character\"",
+								"key": "\"player\"& str(side) &\"_character\"",
 								"value": "char_name"
 							}
 						}
@@ -739,10 +723,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "menu_char_selector",
-							"sid": 655730378344249,
+							"sid": 219068628785810,
 							"parameters": {
 								"instance-variable": "gamepad_index",
-								"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
+								"value": "gamepad_selection.Get(\"player0_gamepad_index\")"
 							}
 						},
 						{
@@ -806,10 +790,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "menu_char_selector",
-							"sid": 385082635622100,
+							"sid": 899787913428465,
 							"parameters": {
 								"instance-variable": "gamepad_index",
-								"value": "gamepad_selection.Get(\"player2_gamepad_index\")"
+								"value": "gamepad_selection.Get(\"player1_gamepad_index\")"
 							}
 						},
 						{

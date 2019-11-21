@@ -8,6 +8,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 702767350279629
+		},
+		{
+			"name": "name",
+			"type": "string",
+			"desc": "",
+			"sid": 357197027746233
 		}
 	],
 	"behaviorTypes": [

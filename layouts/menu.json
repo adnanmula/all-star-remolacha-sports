@@ -165,7 +165,7 @@
 					"type": "menu_gamepad_selector",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "player1_wait",
+						"initial-animation": "player0_wait",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -196,7 +196,7 @@
 					"type": "menu_gamepad_selector",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "player2_wait",
+						"initial-animation": "player1_wait",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -263,7 +263,7 @@
 					},
 					"uid": 31,
 					"instanceVariables": {
-						"character": "stickman",
+						"character": "player1",
 						"skin": "",
 						"index": 0,
 						"side": 1
@@ -297,7 +297,7 @@
 					},
 					"uid": 32,
 					"instanceVariables": {
-						"character": "stickman2",
+						"character": "player2",
 						"skin": "",
 						"index": 1,
 						"side": 1
@@ -331,7 +331,7 @@
 					},
 					"uid": 37,
 					"instanceVariables": {
-						"character": "stickman",
+						"character": "player1",
 						"skin": "",
 						"index": 0,
 						"side": 0
@@ -365,7 +365,7 @@
 					},
 					"uid": 38,
 					"instanceVariables": {
-						"character": "stickman2",
+						"character": "player2",
 						"skin": "",
 						"index": 1,
 						"side": 0

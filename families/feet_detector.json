@@ -10,11 +10,17 @@
 			"sid": 432974652371258
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 584930782375814
+		}
+	],
 	"effectTypes": [],
 	"members": [
-		"feet_detector_p2",
-		"feet_detector_p1",
+		"player2_fd",
+		"player1_fd",
 		"player_fd_stickman"
 	]
 }

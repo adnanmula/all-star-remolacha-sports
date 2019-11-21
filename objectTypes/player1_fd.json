@@ -1,14 +1,14 @@
 {
-	"name": "feet_detector_p2",
+	"name": "player1_fd",
 	"plugin-id": "Sprite",
-	"sid": 682991147094823,
+	"sid": 118217494157789,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 614155556987822
+			"name": "Pin3",
+			"sid": 213474458943657
 		}
 	],
 	"effectTypes": [],
@@ -24,11 +24,11 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 25,
 						"duration": 1
 					}
 				],
-				"sid": 209627561308826,
+				"sid": 333123295625181,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
