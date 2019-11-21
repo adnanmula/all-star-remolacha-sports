@@ -1,16 +1,10 @@
 {
-	"name": "player_fd_stickman",
+	"name": "stickman3_fd",
 	"plugin-id": "Sprite",
 	"sid": 870401816640873,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin3",
-			"sid": 195352132763376
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [

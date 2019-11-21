@@ -52,9 +52,6 @@
 					"behaviors": {
 						"Pin": {
 							"properties": {}
-						},
-						"Pin3": {
-							"properties": {}
 						}
 					},
 					"world": {
@@ -153,9 +150,6 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
-						},
-						"Pin3": {
 							"properties": {}
 						}
 					},
@@ -314,7 +308,7 @@
 					}
 				},
 				{
-					"type": "player_stickman",
+					"type": "stickman3",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
@@ -325,7 +319,7 @@
 					"uid": 44,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": ""
+						"name": "stickman3"
 					},
 					"behaviors": {
 						"Platform": {
@@ -378,7 +372,7 @@
 					}
 				},
 				{
-					"type": "player_fd_stickman",
+					"type": "stickman3_fd",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
@@ -392,9 +386,6 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
-						},
-						"Pin3": {
 							"properties": {}
 						}
 					},

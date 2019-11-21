@@ -80,14 +80,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
-			"author": "Scirra",
-			"version": "r176",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
@@ -117,6 +109,14 @@
 			"author": "Scirra",
 			"version": "r176",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r176",
+			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
@@ -139,8 +139,8 @@
 					"player2_fd",
 					"player1",
 					"player2",
-					"player_fd_stickman",
-					"player_stickman"
+					"stickman3_fd",
+					"stickman3"
 				],
 				"subfolders": [],
 				"name": "player"
@@ -210,8 +210,8 @@
 		},
 		{
 			"members": [
-				"player_fd_stickman",
-				"player_stickman"
+				"stickman3_fd",
+				"stickman3"
 			],
 			"selectMode": "normal"
 		}

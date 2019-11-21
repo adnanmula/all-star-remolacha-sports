@@ -32,16 +32,6 @@
 			"sid": 787688540065900
 		},
 		{
-			"eventType": "variable",
-			"name": "menu_character_selector_max",
-			"type": "number",
-			"initialValue": "1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 410338006499145
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Info",
@@ -487,6 +477,16 @@
 			"isActiveOnStart": false,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "menu_character_selector_max",
+					"type": "number",
+					"initialValue": "2",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 672774273425322
+				},
+				{
 					"functionName": "requestCharIndex",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -556,9 +556,9 @@
 								{
 									"id": "set-function-return-value",
 									"objectClass": "Functions",
-									"sid": 569631304758757,
+									"sid": 508903862145289,
 									"parameters": {
-										"value": "current_index - 1 < 0 ? menu_character_selector_max : current_index - 1 < 0"
+										"value": "current_index - 1 < 0 ? menu_character_selector_max : current_index - 1"
 									}
 								}
 							],

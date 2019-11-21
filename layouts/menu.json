@@ -475,6 +475,74 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stickman",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 36,
+					"instanceVariables": {
+						"character": "stickman3",
+						"skin": "",
+						"index": 2,
+						"side": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 171.11077040558646,
+						"y": 174.04245389767362,
+						"width": -50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stickman",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 39,
+					"instanceVariables": {
+						"character": "stickman3",
+						"skin": "",
+						"index": 2,
+						"side": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 561.1109402609236,
+						"y": 168.9108727153665,
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 403528614028202,

@@ -33,19 +33,27 @@
 			"actions": [
 				{
 					"callFunction": "createPlayer",
-					"sid": 597047003866840,
+					"sid": 354283406948952,
 					"parameters": [
-						"0",
+						"gamepad_selection.Get(\"player0_gamepad_index\")",
 						"gamepad_selection.Get(\"player0_character\")",
 						"90",
 						"200"
 					]
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 303652646508052,
+					"parameters": {
+						"seconds": "0"
+					}
+				},
+				{
 					"callFunction": "createPlayer",
-					"sid": 998662848649079,
+					"sid": 993958963281435,
 					"parameters": [
-						"1",
+						"gamepad_selection.Get(\"player1_gamepad_index\")",
 						"gamepad_selection.Get(\"player1_character\")",
 						"500",
 						"200"
@@ -66,6 +74,24 @@
 						"300",
 						"100"
 					]
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 814577376436454,
+					"parameters": {
+						"type": "log",
+						"message": "gamepad_selection.Get(\"player0_gamepad_index\")"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 731148106202710,
+					"parameters": {
+						"type": "log",
+						"message": "gamepad_selection.Get(\"player1_gamepad_index\")"
+					}
 				}
 			],
 			"sid": 865610357669664
@@ -125,6 +151,15 @@
 								"x": "x",
 								"y": "y"
 							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 442350610925732,
+							"parameters": {
+								"type": "log",
+								"message": "gamepad_index"
+							}
 						}
 					],
 					"sid": 957118365534833,
@@ -181,10 +216,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
-									"sid": 505466765467215,
+									"sid": 779803715397562,
 									"parameters": {
 										"instance-variable": "gamepad_index",
-										"value": "gamepad_selection.Get(\"player\"&str(gamepad_index+1)&\"_gamepad_index\")"
+										"value": "gamepad_index"
 									}
 								},
 								{
