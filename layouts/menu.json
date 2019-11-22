@@ -176,8 +176,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 112.86125092713092,
-						"y": 84.7056918486153,
+						"x": 120.32536901048667,
+						"y": 284.83735795859087,
 						"width": 100,
 						"height": 20,
 						"originX": 0.5,
@@ -207,8 +207,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 490.73222889701515,
-						"y": 86.57172136945428,
+						"x": 504.26094292309745,
+						"y": 287.16989485963967,
 						"width": 100,
 						"height": 20,
 						"originX": 0.5,
@@ -264,14 +264,14 @@
 					"uid": 31,
 					"instanceVariables": {
 						"character": "player1",
-						"skin": "",
+						"skin": "0",
 						"index": 0,
 						"side": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 450.5486911512168,
-						"y": 169.37738009557626,
+						"x": 453.3477354324752,
+						"y": 231.88936904368052,
 						"width": 50,
 						"height": 75,
 						"originX": 0.5,
@@ -298,14 +298,14 @@
 					"uid": 32,
 					"instanceVariables": {
 						"character": "player2",
-						"skin": "",
+						"skin": "0",
 						"index": 1,
 						"side": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 504.1970398753361,
-						"y": 168.44436533515676,
+						"x": 506.99608415659446,
+						"y": 230.95635428326102,
 						"width": 50,
 						"height": 75,
 						"originX": 0.5,
@@ -332,14 +332,14 @@
 					"uid": 37,
 					"instanceVariables": {
 						"character": "player1",
-						"skin": "",
+						"skin": "0",
 						"index": 0,
 						"side": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 58.68249177504072,
-						"y": 173.10943913725413,
+						"x": 68.94565413965483,
+						"y": 231.42286166347083,
 						"width": -50,
 						"height": 75,
 						"originX": 0.5,
@@ -366,14 +366,14 @@
 					"uid": 38,
 					"instanceVariables": {
 						"character": "player2",
-						"skin": "",
+						"skin": "0",
 						"index": 1,
 						"side": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 115.1298847804184,
-						"y": 174.04245389767357,
+						"x": 125.39304714503251,
+						"y": 229.55683214263183,
 						"width": -50,
 						"height": 75,
 						"originX": 0.5,
@@ -416,8 +416,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 390.6802392787425,
-						"y": 100.80079520474538,
+						"x": 398.610864742308,
+						"y": 156.31517344970362,
 						"width": 200,
 						"height": 30,
 						"originX": 0,
@@ -460,8 +460,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 3.479113704663746,
-						"y": 98.93476568390645,
+						"x": 15.6083055901168,
+						"y": 160.51373987159124,
 						"width": 200,
 						"height": 30,
 						"originX": 0,
@@ -488,14 +488,14 @@
 					"uid": 36,
 					"instanceVariables": {
 						"character": "stickman3",
-						"skin": "",
+						"skin": "0",
 						"index": 2,
 						"side": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 171.11077040558646,
-						"y": 174.04245389767362,
+						"x": 181.37393277020058,
+						"y": 229.5568321426319,
 						"width": -50,
 						"height": 75,
 						"originX": 0.5,
@@ -522,16 +522,78 @@
 					"uid": 39,
 					"instanceVariables": {
 						"character": "stickman3",
-						"skin": "",
+						"skin": "0",
 						"index": 2,
 						"side": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 561.1109402609236,
-						"y": 168.9108727153665,
+						"x": 563.909984542182,
+						"y": 231.42286166347077,
 						"width": 50,
 						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait_big",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "player1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 40,
+					"instanceVariables": {
+						"side": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 124.86053278993387,
+						"y": 98.00285157140858,
+						"width": 132.5718062971228,
+						"height": 73.13397047916109,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait_big",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "player1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 41,
+					"instanceVariables": {
+						"side": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 506.46356980149574,
+						"y": 102.434671683401,
+						"width": -141.73453326620034,
+						"height": 85.72966974482387,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

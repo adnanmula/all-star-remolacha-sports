@@ -168,12 +168,8 @@
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 369994397137610,
-							"parameters": {
-								"layout": "main"
-							}
+							"callFunction": "goToMatch",
+							"sid": 436964614644053
 						}
 					],
 					"sid": 180623586120452
@@ -235,6 +231,26 @@
 					"sid": 533617136855875
 				}
 			]
+		},
+		{
+			"functionName": "goToMatch",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 355739442786059,
+					"parameters": {
+						"layout": "main"
+					}
+				}
+			],
+			"sid": 950631862525743
 		},
 		{
 			"eventType": "group",
@@ -593,7 +609,7 @@
 					]
 				},
 				{
-					"functionName": "updateCharName",
+					"functionName": "updateChar",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -642,6 +658,41 @@
 								}
 							],
 							"sid": 196669701948963
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 452541212065426,
+									"parameters": {
+										"object": "menu_char_portrait_big",
+										"expression": "menu_char_portrait_big.side = side"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "menu_char_portrait_big",
+									"sid": 294963094089710,
+									"parameters": {
+										"animation": "char_name",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 208682921943342,
+									"parameters": {
+										"type": "log",
+										"message": "side & \" / \" & char_name"
+									}
+								}
+							],
+							"sid": 975200158342268
 						}
 					]
 				},
@@ -730,7 +781,7 @@
 							}
 						},
 						{
-							"callFunction": "updateCharName",
+							"callFunction": "updateChar",
 							"sid": 457017007109568,
 							"parameters": [
 								"menu_char_portrait.side",
@@ -797,7 +848,7 @@
 							}
 						},
 						{
-							"callFunction": "updateCharName",
+							"callFunction": "updateChar",
 							"sid": 259675688809410,
 							"parameters": [
 								"menu_char_portrait.side",
@@ -898,7 +949,7 @@
 													}
 												},
 												{
-													"callFunction": "updateCharName",
+													"callFunction": "updateChar",
 													"sid": 192157354919691,
 													"parameters": [
 														"menu_char_portrait.side",
@@ -974,7 +1025,7 @@
 													}
 												},
 												{
-													"callFunction": "updateCharName",
+													"callFunction": "updateChar",
 													"sid": 446171769561703,
 													"parameters": [
 														"menu_char_portrait.side",
@@ -993,6 +1044,27 @@
 											"sid": 444692294508310
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 904650386934340,
+											"parameters": {
+												"gamepad": "menu_char_selector.gamepad_index",
+												"button": "start-menu"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatch",
+											"sid": 152524679058163
+										}
+									],
+									"sid": 526870157162481
 								}
 							]
 						}

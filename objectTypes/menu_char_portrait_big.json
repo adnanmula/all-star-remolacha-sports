@@ -1,0 +1,87 @@
+{
+	"name": "menu_char_portrait_big",
+	"plugin-id": "Sprite",
+	"sid": 180396613548664,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "side",
+			"type": "number",
+			"desc": "",
+			"sid": 559925739912820
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 24,
+						"duration": 1
+					}
+				],
+				"sid": 556405097684556,
+				"name": "player1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 26,
+						"duration": 1
+					}
+				],
+				"sid": 843415161708760,
+				"name": "player2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 22,
+						"duration": 1
+					}
+				],
+				"sid": 563906685881977,
+				"name": "stickman3",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

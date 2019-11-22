@@ -167,7 +167,8 @@
 						"items": [
 							"menu_char_portrait",
 							"menu_char_selector",
-							"menu_char_name"
+							"menu_char_name",
+							"menu_char_portrait_big"
 						],
 						"subfolders": [],
 						"name": "char_selector"
@@ -210,8 +211,8 @@
 		},
 		{
 			"members": [
-				"stickman3_fd",
-				"stickman3"
+				"stickman3",
+				"stickman3_fd"
 			],
 			"selectMode": "normal"
 		}
