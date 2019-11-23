@@ -132,36 +132,6 @@
 					}
 				},
 				{
-					"type": "button_play",
-					"properties": {
-						"type": "button",
-						"text": "play",
-						"tooltip": "",
-						"initially-visible": true,
-						"enabled": true,
-						"auto-font-size": true,
-						"checked": false,
-						"id": ""
-					},
-					"uid": 21,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 266.13158118230706,
-						"y": 308.949824766066,
-						"width": 72,
-						"height": 24,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						]
-					}
-				},
-				{
 					"type": "menu_gamepad_selector",
 					"properties": {
 						"initially-visible": true,

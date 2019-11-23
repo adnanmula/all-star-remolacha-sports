@@ -918,13 +918,14 @@
 											}
 										},
 										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 126789107445865,
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 487434945132426,
 											"parameters": {
-												"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
-												"comparison": 0,
-												"second-value": "0"
+												"gamepad": "menu_char_selector.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 2,
+												"value": "0"
 											}
 										}
 									],
@@ -935,20 +936,35 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 280934844504846,
+													"parameters": {
+														"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												},
+												{
 													"id": "pick-by-evaluate",
 													"objectClass": "System",
-													"sid": 542154234095447,
+													"sid": 839495341732291,
 													"parameters": {
 														"object": "menu_char_portrait",
 														"expression": "menu_char_selector.side = menu_char_portrait.side & Functions.requestCharIndex(menu_char_selector.char_index, \"left\") = menu_char_portrait.index"
 													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 900481732450029
 												}
 											],
 											"actions": [
 												{
 													"id": "set-x",
 													"objectClass": "menu_char_selector",
-													"sid": 688208334662871,
+													"sid": 828016458223001,
 													"parameters": {
 														"x": "menu_char_selector.side = 0 ? menu_char_portrait.X + (menu_char_portrait.Width / 2) : menu_char_portrait.ImagePointX(\"corner\")"
 													}
@@ -956,7 +972,7 @@
 												{
 													"id": "set-y",
 													"objectClass": "menu_char_selector",
-													"sid": 203342135573883,
+													"sid": 340884252746801,
 													"parameters": {
 														"y": "menu_char_portrait.ImagePointY(\"corner\")"
 													}
@@ -964,7 +980,7 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "menu_char_selector",
-													"sid": 939250506540036,
+													"sid": 354020824786069,
 													"parameters": {
 														"instance-variable": "char_index",
 														"value": "menu_char_portrait.index"
@@ -972,7 +988,7 @@
 												},
 												{
 													"callFunction": "updateChar",
-													"sid": 192157354919691,
+													"sid": 355419383785606,
 													"parameters": [
 														"menu_char_portrait.side",
 														"menu_char_portrait.character"
@@ -980,16 +996,17 @@
 												},
 												{
 													"callFunction": "saveCharKey",
-													"sid": 225602150117894,
+													"sid": 426297525157168,
 													"parameters": [
 														"menu_char_portrait.side",
 														"menu_char_portrait.character"
 													]
 												}
 											],
-											"sid": 195063683605626
+											"sid": 206461980438263
 										}
-									]
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -1004,13 +1021,14 @@
 											}
 										},
 										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 182977216769710,
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 791970874956099,
 											"parameters": {
-												"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
-												"comparison": 0,
-												"second-value": "0"
+												"gamepad": "menu_char_selector.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 4,
+												"value": "0"
 											}
 										}
 									],
@@ -1021,20 +1039,35 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 829099446741792,
+													"parameters": {
+														"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												},
+												{
 													"id": "pick-by-evaluate",
 													"objectClass": "System",
-													"sid": 811569069758900,
+													"sid": 933261118102799,
 													"parameters": {
 														"object": "menu_char_portrait",
 														"expression": "menu_char_selector.side = menu_char_portrait.side & Functions.requestCharIndex(menu_char_selector.char_index, \"right\") = menu_char_portrait.index"
 													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 758165634630588
 												}
 											],
 											"actions": [
 												{
 													"id": "set-x",
 													"objectClass": "menu_char_selector",
-													"sid": 934832384742233,
+													"sid": 684779551373164,
 													"parameters": {
 														"x": "menu_char_selector.side = 0 ? menu_char_portrait.X + (menu_char_portrait.Width / 2) : menu_char_portrait.ImagePointX(\"corner\")"
 													}
@@ -1042,7 +1075,7 @@
 												{
 													"id": "set-y",
 													"objectClass": "menu_char_selector",
-													"sid": 471376878526707,
+													"sid": 825676659048915,
 													"parameters": {
 														"y": "menu_char_portrait.ImagePointY(\"corner\")"
 													}
@@ -1050,7 +1083,7 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "menu_char_selector",
-													"sid": 754954371254074,
+													"sid": 519582339823788,
 													"parameters": {
 														"instance-variable": "char_index",
 														"value": "menu_char_portrait.index"
@@ -1058,7 +1091,7 @@
 												},
 												{
 													"callFunction": "updateChar",
-													"sid": 446171769561703,
+													"sid": 467060600212840,
 													"parameters": [
 														"menu_char_portrait.side",
 														"menu_char_portrait.character"
@@ -1066,16 +1099,17 @@
 												},
 												{
 													"callFunction": "saveCharKey",
-													"sid": 289647553984887,
+													"sid": 983337882368767,
 													"parameters": [
 														"menu_char_portrait.side",
 														"menu_char_portrait.character"
 													]
 												}
 											],
-											"sid": 444692294508310
+											"sid": 309085711148155
 										}
-									]
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",

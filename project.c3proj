@@ -64,14 +64,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Button",
-			"name": "Button",
-			"author": "Scirra",
-			"version": "r176",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
@@ -175,7 +167,6 @@
 					},
 					{
 						"items": [
-							"button_play",
 							"menu_gamepad_selector"
 						],
 						"subfolders": [],

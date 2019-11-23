@@ -42,14 +42,6 @@
 					]
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 303652646508052,
-					"parameters": {
-						"seconds": "0"
-					}
-				},
-				{
 					"callFunction": "createPlayer",
 					"sid": 993958963281435,
 					"parameters": [
@@ -74,24 +66,6 @@
 						"300",
 						"100"
 					]
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 814577376436454,
-					"parameters": {
-						"type": "log",
-						"message": "gamepad_selection.Get(\"player0_gamepad_index\")"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 731148106202710,
-					"parameters": {
-						"type": "log",
-						"message": "gamepad_selection.Get(\"player1_gamepad_index\")"
-					}
 				}
 			],
 			"sid": 865610357669664
@@ -150,15 +124,6 @@
 								"layer": "\"main\"",
 								"x": "x",
 								"y": "y"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 442350610925732,
-							"parameters": {
-								"type": "log",
-								"message": "gamepad_index"
 							}
 						}
 					],
@@ -239,7 +204,35 @@
 									}
 								}
 							],
-							"sid": 694646664824235
+							"sid": 694646664824235,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 463203984142562,
+											"parameters": {
+												"first-value": "x",
+												"comparison": 4,
+												"second-value": "LayoutWidth / 2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 877756293347349,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 423131172539926
+								}
+							]
 						}
 					]
 				},
@@ -767,7 +760,7 @@
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 332651104269726
+					"sid": 304508915648994
 				},
 				{
 					"eventType": "variable",
