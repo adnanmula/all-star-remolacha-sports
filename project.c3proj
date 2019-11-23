@@ -113,7 +113,11 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"menu_main_play",
+			"menu_main_settings",
+			"menu_main_selector"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -211,7 +215,8 @@
 	"families": {
 		"items": [
 			"player",
-			"feet_detector"
+			"feet_detector",
+			"menu_main_buttons"
 		],
 		"subfolders": []
 	},
