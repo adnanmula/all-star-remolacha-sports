@@ -8,7 +8,7 @@
 				{
 					"type": "goal_detector",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -466,7 +466,7 @@
 					}
 				},
 				{
-					"type": "solid_bound",
+					"type": "goal_crossbar",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -474,7 +474,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 21,
+					"uid": 14,
 					"instanceVariables": {},
 					"behaviors": {
 						"Solid": {
@@ -496,13 +496,16 @@
 								"bullet": false,
 								"enabled": true
 							}
+						},
+						"Pin": {
+							"properties": {}
 						}
 					},
 					"world": {
-						"x": 309.8854923685216,
-						"y": 200.2626682934543,
-						"width": 77.57663700722196,
-						"height": 7.258888835038647,
+						"x": 310.733,
+						"y": 200.9395375173319,
+						"width": 75,
+						"height": 7,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

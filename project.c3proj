@@ -143,7 +143,8 @@
 					"solid_bound",
 					"goal",
 					"goal_detector",
-					"Text"
+					"Text",
+					"goal_crossbar"
 				],
 				"subfolders": [],
 				"name": "level"
@@ -224,6 +225,7 @@
 		{
 			"members": [
 				"goal",
+				"goal_crossbar",
 				"goal_detector"
 			],
 			"selectMode": "normal"

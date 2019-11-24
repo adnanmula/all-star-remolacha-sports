@@ -1,35 +1,44 @@
 {
-	"name": "goal",
+	"name": "goal_crossbar",
 	"plugin-id": "Sprite",
-	"sid": 916246753504576,
+	"sid": 378438596066574,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 507667056449019
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 266772687102766
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 984126838595060
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 75,
-						"height": 120,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3,
-						"imagePoints": [
-							{
-								"name": "crossbar",
-								"x": 0.5,
-								"y": 5.551115123125783e-17
-							}
-						],
+						"imageSpriteId": 7,
 						"duration": 1
 					}
 				],
-				"sid": 294405869101835,
+				"sid": 764933125761125,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

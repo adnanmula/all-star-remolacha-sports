@@ -8,7 +8,7 @@
 				{
 					"type": "Text",
 					"properties": {
-						"text": "Text",
+						"text": "0 - 0",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 24,
@@ -85,56 +85,6 @@
 						"y": 375.30512267204995,
 						"width": 727.1641281333248,
 						"height": 34.83685292236629,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "solid_bound",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 27.39103062061662,
-						"y": 237.03715874848675,
-						"width": 74.96958353910247,
-						"height": 3.9230661663608544,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -235,56 +185,6 @@
 						"y": 173.37497017893187,
 						"width": 25.523033076478782,
 						"height": 406.1478041117414,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "solid_bound",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 5,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"world": {
-						"x": 613.3270207529818,
-						"y": 236.4705380687028,
-						"width": 74.38021098364902,
-						"height": 4.189713297317724,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
