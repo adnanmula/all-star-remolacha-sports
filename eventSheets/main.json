@@ -32,6 +32,22 @@
 			],
 			"actions": [
 				{
+					"callFunction": "createGoal",
+					"sid": 381504568874622,
+					"parameters": [
+						"26.99",
+						"298.339"
+					]
+				},
+				{
+					"callFunction": "createGoal",
+					"sid": 413975208661122,
+					"parameters": [
+						"613.894",
+						"298.339"
+					]
+				},
+				{
 					"callFunction": "createPlayer",
 					"sid": 354283406948952,
 					"parameters": [
@@ -581,6 +597,107 @@
 						}
 					],
 					"sid": 420284530329724
+				},
+				{
+					"functionName": "createGoal",
+					"functionDescription": "",
+					"functionCategory": "creator",
+					"functionReturnType": "none",
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 780029641981341
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 122035707588847
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 237808492924496,
+							"parameters": {
+								"object-to-create": "goal",
+								"layer": "\"main\"",
+								"x": "x",
+								"y": "y"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "goal_detector",
+							"sid": 512418777899756,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "goal",
+								"mode": "position-angle"
+							}
+						}
+					],
+					"sid": 601255731634027,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 458119600401292,
+									"parameters": {
+										"first-value": "x",
+										"comparison": 4,
+										"second-value": "LayoutWidth / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal",
+									"sid": 724776313409421,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "goal_detector",
+									"sid": 640397266479354,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal_detector",
+									"sid": 729167222171072,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "goal_detector",
+									"sid": 480616039735042,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 643476367268862
+						}
+					]
 				},
 				{
 					"eventType": "block",

@@ -48,68 +48,6 @@
 					}
 				},
 				{
-					"type": "goal_detector",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 14,
-					"instanceVariables": {
-						"owner": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 12.435972567144205,
-						"y": 291.41658994438376,
-						"width": 20,
-						"height": 118.51314880525271,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "goal_detector",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 15,
-					"instanceVariables": {
-						"owner": 1
-					},
-					"behaviors": {},
-					"world": {
-						"x": 626.465068940343,
-						"y": 293.19642709199326,
-						"width": -20.980807321904194,
-						"height": 123.7705572974736,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
@@ -143,8 +81,8 @@
 						}
 					},
 					"world": {
-						"x": 314.02159855925566,
-						"y": 370.20702958868424,
+						"x": 328.67861617393214,
+						"y": 375.30512267204995,
 						"width": 727.1641281333248,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -162,7 +100,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -193,10 +131,10 @@
 						}
 					},
 					"world": {
-						"x": 26.367994207597548,
-						"y": 226.08026537048403,
-						"width": 52.92351071306433,
-						"height": 11.83685292236629,
+						"x": 27.39103062061662,
+						"y": 237.03715874848675,
+						"width": 74.96958353910247,
+						"height": 3.9230661663608544,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -312,7 +250,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -343,10 +281,10 @@
 						}
 					},
 					"world": {
-						"x": 610.9741603780304,
-						"y": 224.99982863112996,
-						"width": 53.35057701476546,
-						"height": 11.83685292236629,
+						"x": 613.3270207529818,
+						"y": 236.4705380687028,
+						"width": 74.38021098364902,
+						"height": 4.189713297317724,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -437,66 +375,7 @@
 		{
 			"name": "main",
 			"overriden": 0,
-			"instances": [
-				{
-					"type": "goal",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 18,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 611.8937187224653,
-						"y": 286.5829029508982,
-						"width": 54.28550643365384,
-						"height": 134.03874037424535,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "goal",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 24,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 26.61978350344957,
-						"y": 286.4294078833872,
-						"width": -55.217770922976996,
-						"height": 134.03874037424535,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 697908153890477,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -513,9 +392,9 @@
 				1
 			],
 			"isTransparent": true,
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
 			"forceOwnTexture": false,
 			"useRenderCells": false,
 			"blendMode": "normal",

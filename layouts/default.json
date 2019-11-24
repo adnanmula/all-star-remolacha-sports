@@ -8,7 +8,7 @@
 				{
 					"type": "goal_detector",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -18,12 +18,16 @@
 					"instanceVariables": {
 						"owner": 0
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 286.89610239457113,
-						"y": 184.0535601754537,
+						"x": 320.39981424599745,
+						"y": 263.5718636202946,
 						"width": 20,
-						"height": 124.93887029574489,
+						"height": 118.57740602015761,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -274,8 +278,8 @@
 						}
 					},
 					"world": {
-						"x": 114,
-						"y": 78,
+						"x": 490.59868511476657,
+						"y": 282.4150520555377,
 						"width": 41,
 						"height": 41,
 						"originX": 0.5,
@@ -303,10 +307,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 231.0030509278348,
-						"y": 199.6271253888834,
-						"width": 50,
-						"height": 113.56064781975618,
+						"x": 310.73340318186195,
+						"y": 264.51406099987355,
+						"width": 75,
+						"height": 120,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -445,8 +449,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 240.2795234941906,
-						"y": 34.201241061939115,
+						"x": 540,
+						"y": 13,
 						"width": 50,
 						"height": 75,
 						"originX": 0,
@@ -495,9 +499,9 @@
 						}
 					},
 					"world": {
-						"x": 233.5479210614743,
-						"y": 126.04558507826945,
-						"width": 52.13077990487284,
+						"x": 309.8854923685216,
+						"y": 200.2626682934543,
+						"width": 77.57663700722196,
 						"height": 7.258888835038647,
 						"originX": 0.5,
 						"originY": 0.5,

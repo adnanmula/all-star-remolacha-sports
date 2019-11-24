@@ -88,6 +88,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r176",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
@@ -101,23 +109,11 @@
 			"author": "Scirra",
 			"version": "r176",
 			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Pin",
-			"name": "Pin",
-			"author": "Scirra",
-			"version": "r176",
-			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"menu_main_play",
-			"menu_main_settings",
-			"menu_main_selector"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -153,11 +149,7 @@
 				"name": "level"
 			},
 			{
-				"items": [
-					"menu_debug",
-					"menu_gamepad_debug",
-					"menu_title"
-				],
+				"items": [],
 				"subfolders": [
 					{
 						"items": [
@@ -175,6 +167,24 @@
 						],
 						"subfolders": [],
 						"name": "gamepad_selector"
+					},
+					{
+						"items": [
+							"menu_main_play",
+							"menu_main_selector",
+							"menu_main_settings"
+						],
+						"subfolders": [],
+						"name": "navigation"
+					},
+					{
+						"items": [
+							"menu_debug",
+							"menu_gamepad_debug",
+							"menu_title"
+						],
+						"subfolders": [],
+						"name": "main"
 					}
 				],
 				"name": "menu"
@@ -208,6 +218,13 @@
 			"members": [
 				"stickman3",
 				"stickman3_fd"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"goal",
+				"goal_detector"
 			],
 			"selectMode": "normal"
 		}
@@ -310,7 +327,7 @@
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
-		"pixelRounding": true,
+		"pixelRounding": false,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
 		"fullscreenQuality": "low",
