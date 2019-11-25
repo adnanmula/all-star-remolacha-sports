@@ -196,7 +196,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "menu_matchconfig_size_character_text",
+							"objectClass": "menu_matchconfig_size_goal_text",
 							"sid": 701520182306650,
 							"parameters": {
 								"text": "match_config.Get(\"size_goal\")"
@@ -1259,16 +1259,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "mn_current_view",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 305467735371099
-		},
-		{
-			"eventType": "variable",
 			"name": "MN_VIEW_MAIN",
 			"type": "string",
 			"initialValue": "main",
@@ -1939,28 +1929,85 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"functionName": "goToMatchConfigView",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionParameters": [
+								{
+									"name": "subview",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"sid": 244408917474586
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 129082804831847,
+									"parameters": {
+										"group-name": "\"GC - Goal amount\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 591106513227620,
+									"parameters": {
+										"group-name": "\"GC - Ball size\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 973384014789130,
+									"parameters": {
+										"group-name": "\"GC - Player size\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 818662662821798,
+									"parameters": {
+										"group-name": "\"GC - Goal size\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 220859240317432,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 571005837150351,
+									"parameters": {
+										"group-name": "subview",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 849314793325236
+						},
+						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "Goal amount",
+							"title": "GC - Goal amount",
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 725486995311234,
-											"parameters": {
-												"type": "log",
-												"message": "\"void\""
-											}
-										}
-									],
-									"sid": 539243681908714
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -1996,15 +2043,6 @@
 											"parameters": {
 												"text": "match_config.Get(\"goal_amount\")"
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 415475907700674,
-											"parameters": {
-												"type": "log",
-												"message": "\"trigger\""
-											}
 										}
 									],
 									"sid": 513906594791565,
@@ -2039,15 +2077,6 @@
 													"parameters": {
 														"width": "menu_matchconfig_goals_button.Width",
 														"height": "menu_matchconfig_goals_button.Height"
-													}
-												},
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 598795827580718,
-													"parameters": {
-														"type": "log",
-														"message": "menu_matchconfig_goals_button.Count - 1"
 													}
 												}
 											],
@@ -2251,38 +2280,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 823296244914586,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 572898121020119,
-													"parameters": {
-														"seconds": "0"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 984127179888671,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 111755698957430,
-													"parameters": {
-														"seconds": "0.1"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 766967543501170,
+													"parameters": [
+														"\"GC - Ball size\""
+													]
 												}
 											],
 											"sid": 606582810973113,
@@ -2368,26 +2370,10 @@
 						{
 							"eventType": "group",
 							"disabled": false,
-							"title": "Ball size",
+							"title": "GC - Ball size",
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 850219167480380,
-											"parameters": {
-												"type": "log",
-												"message": "\"void\""
-											}
-										}
-									],
-									"sid": 187420227881624
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -2422,15 +2408,6 @@
 											"sid": 349903856138105,
 											"parameters": {
 												"text": "match_config.Get(\"size_ball\")"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 208117540263026,
-											"parameters": {
-												"type": "log",
-												"message": "\"trigger\""
 											}
 										}
 									],
@@ -2669,38 +2646,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 571182041551384,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 868041258661605,
-													"parameters": {
-														"seconds": "0"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 213230237100830,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 254015722641618,
-													"parameters": {
-														"seconds": "0"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 927261841807650,
+													"parameters": [
+														"\"GC - Goal amount\""
+													]
 												}
 											],
 											"sid": 953766984053301,
@@ -2745,31 +2695,11 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 236161508834464,
-													"parameters": {
-														"group-name": "\"Player size\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 711459778134528,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 195500661041804,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "deactivated"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 405220342410852,
+													"parameters": [
+														"\"GC - Player size\""
+													]
 												}
 											],
 											"sid": 952589271185486
@@ -2853,8 +2783,8 @@
 						},
 						{
 							"eventType": "group",
-							"disabled": true,
-							"title": "Player size",
+							"disabled": false,
+							"title": "GC - Player size",
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
@@ -2896,7 +2826,6 @@
 										}
 									],
 									"sid": 920503871972570,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -2929,19 +2858,9 @@
 														"width": "menu_matchconfig_size_character_button.Width",
 														"height": "menu_matchconfig_size_character_button.Height"
 													}
-												},
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 657264472354250,
-													"parameters": {
-														"type": "log",
-														"message": "menu_matchconfig_size_character_button.Count - 1"
-													}
 												}
 											],
-											"sid": 368349342345067,
-											"disabled": true
+											"sid": 368349342345067
 										}
 									]
 								},
@@ -2961,7 +2880,6 @@
 									],
 									"actions": [],
 									"sid": 468466879145420,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -2978,7 +2896,6 @@
 											],
 											"actions": [],
 											"sid": 679812967386691,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3022,8 +2939,7 @@
 															}
 														}
 													],
-													"sid": 432491686246429,
-													"disabled": true
+													"sid": 432491686246429
 												}
 											],
 											"isOrBlock": true
@@ -3046,7 +2962,6 @@
 									],
 									"actions": [],
 									"sid": 371204918869270,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3063,7 +2978,6 @@
 											],
 											"actions": [],
 											"sid": 945876605291264,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3107,8 +3021,7 @@
 															}
 														}
 													],
-													"sid": 542146363241460,
-													"disabled": true
+													"sid": 542146363241460
 												}
 											],
 											"isOrBlock": true
@@ -3131,7 +3044,6 @@
 									],
 									"actions": [],
 									"sid": 792535717873534,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3148,43 +3060,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 876179454285517,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 137209100791133,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 861416295480474,
-													"parameters": {
-														"group-name": "\"Player size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 176257160157015,
-													"parameters": {
-														"seconds": "0"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 221817421182583,
+													"parameters": [
+														"\"GC - Ball size\""
+													]
 												}
 											],
 											"sid": 676961722141726,
-											"disabled": true,
 											"isOrBlock": true
 										}
 									]
@@ -3205,7 +3088,6 @@
 									],
 									"actions": [],
 									"sid": 397292117863386,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3222,43 +3104,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 146875150038046,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 734200698679069,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 356880850592966,
-													"parameters": {
-														"group-name": "\"Player size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 722056900025680,
-													"parameters": {
-														"seconds": "0"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 349030850950639,
+													"parameters": [
+														"\"GC - Goal size\""
+													]
 												}
 											],
 											"sid": 666095131169785,
-											"disabled": true,
 											"isOrBlock": true
 										}
 									]
@@ -3279,7 +3132,6 @@
 									],
 									"actions": [],
 									"sid": 823913335804534,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3296,7 +3148,6 @@
 											],
 											"actions": [],
 											"sid": 710364468278007,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3315,23 +3166,22 @@
 														{
 															"id": "set-key",
 															"objectClass": "match_config",
-															"sid": 225057240045393,
+															"sid": 857924505145179,
 															"parameters": {
-																"key": "\"size_ball\"",
+																"key": "\"size_player\"",
 																"value": "menu_matchconfig_size_character_button.size"
 															}
 														},
 														{
 															"id": "set-text",
-															"objectClass": "menu_matchconfig_size_ball_text",
+															"objectClass": "menu_matchconfig_size_character_text",
 															"sid": 438393997561404,
 															"parameters": {
 																"text": "match_config.Get(\"size_player\")"
 															}
 														}
 													],
-													"sid": 600989310669084,
-													"disabled": true
+													"sid": 600989310669084
 												}
 											],
 											"isOrBlock": true
@@ -3343,8 +3193,8 @@
 						},
 						{
 							"eventType": "group",
-							"disabled": true,
-							"title": "Goal size",
+							"disabled": false,
+							"title": "GC - Goal size",
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
@@ -3378,7 +3228,7 @@
 										},
 										{
 											"id": "set-text",
-											"objectClass": "menu_matchconfig_size_character_text",
+											"objectClass": "menu_matchconfig_size_goal_text",
 											"sid": 520846192137892,
 											"parameters": {
 												"text": "match_config.Get(\"size_goal\")"
@@ -3386,7 +3236,6 @@
 										}
 									],
 									"sid": 116856664531479,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3419,19 +3268,9 @@
 														"width": "menu_matchconfig_size_goal_button.Width",
 														"height": "menu_matchconfig_size_goal_button.Height"
 													}
-												},
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 743863694520984,
-													"parameters": {
-														"type": "log",
-														"message": "menu_matchconfig_size_goal_button.Count - 1"
-													}
 												}
 											],
-											"sid": 400289905268900,
-											"disabled": true
+											"sid": 400289905268900
 										}
 									]
 								},
@@ -3451,7 +3290,6 @@
 									],
 									"actions": [],
 									"sid": 844655763305108,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3468,7 +3306,6 @@
 											],
 											"actions": [],
 											"sid": 984709239827795,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3512,8 +3349,7 @@
 															}
 														}
 													],
-													"sid": 206394567782697,
-													"disabled": true
+													"sid": 206394567782697
 												}
 											],
 											"isOrBlock": true
@@ -3536,7 +3372,6 @@
 									],
 									"actions": [],
 									"sid": 322620406393316,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3553,7 +3388,6 @@
 											],
 											"actions": [],
 											"sid": 769630849444265,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3597,8 +3431,7 @@
 															}
 														}
 													],
-													"sid": 466991377467773,
-													"disabled": true
+													"sid": 466991377467773
 												}
 											],
 											"isOrBlock": true
@@ -3621,7 +3454,6 @@
 									],
 									"actions": [],
 									"sid": 365403506855067,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3638,52 +3470,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 603867634294454,
-													"parameters": {
-														"group-name": "\"Goal amount\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 834937350986604,
-													"parameters": {
-														"group-name": "\"Ball size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 113539204449116,
-													"parameters": {
-														"group-name": "\"Goal size\"",
-														"state": "deactivated"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 823823906622148,
-													"parameters": {
-														"group-name": "\"Player size\"",
-														"state": "activated"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 555947727910083,
-													"parameters": {
-														"seconds": "0"
-													}
+													"callFunction": "goToMatchConfigView",
+													"sid": 596427502297032,
+													"parameters": [
+														"\"GC - Player size\""
+													]
 												}
 											],
 											"sid": 684347022094693,
-											"disabled": true,
 											"isOrBlock": true
 										}
 									]
@@ -3704,7 +3498,6 @@
 									],
 									"actions": [],
 									"sid": 343357683662817,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -3721,7 +3514,6 @@
 											],
 											"actions": [],
 											"sid": 713821062114691,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -3740,23 +3532,22 @@
 														{
 															"id": "set-key",
 															"objectClass": "match_config",
-															"sid": 632425205023901,
+															"sid": 558341214498443,
 															"parameters": {
-																"key": "\"size_ball\"",
+																"key": "\"size_goal\"",
 																"value": "menu_matchconfig_size_goal_button.size"
 															}
 														},
 														{
 															"id": "set-text",
-															"objectClass": "menu_matchconfig_size_ball_text",
-															"sid": 115736217128678,
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 573896378363297,
 															"parameters": {
 																"text": "match_config.Get(\"size_goal\")"
 															}
 														}
 													],
-													"sid": 949837346682989,
-													"disabled": true
+													"sid": 949837346682989
 												}
 											],
 											"isOrBlock": true
@@ -4013,9 +3804,9 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 635633624696759,
+									"sid": 857283669989352,
 									"parameters": {
-										"group-name": "\"Goal amount\"",
+										"group-name": "\"GC - Goal amount\"",
 										"state": "activated"
 									}
 								}
