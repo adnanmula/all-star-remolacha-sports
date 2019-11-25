@@ -397,10 +397,10 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 234474691660337,
+											"sid": 408487264082780,
 											"behaviorType": "Physics",
 											"parameters": {
-												"impulse": "30",
+												"impulse": "15",
 												"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
 												"image-point": "0"
 											}
@@ -736,36 +736,9 @@
 							"parameters": {
 								"object": "goal_detector"
 							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "goal_detector",
-							"sid": 909022466344948,
-							"parameters": {
-								"instance-variable": "owner",
-								"comparison": 0,
-								"value": "0"
-							}
 						}
 					],
 					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 219786077876701,
-							"parameters": {
-								"variable": "score_2",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Text",
-							"sid": 180166314047011,
-							"parameters": {
-								"text": "score_1 & \" - \" & score_2"
-							}
-						},
 						{
 							"id": "set-position",
 							"objectClass": "ball",
@@ -798,81 +771,78 @@
 							"sid": 171055059314874
 						}
 					],
-					"sid": 942035504542019
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 942035504542019,
+					"children": [
 						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "ball",
-							"sid": 614279772570647,
-							"parameters": {
-								"object": "goal_detector"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "goal_detector",
+									"sid": 456838250654896,
+									"parameters": {
+										"instance-variable": "owner",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 849061573720273,
+									"parameters": {
+										"variable": "score_2",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 845609662565874
 						},
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "goal_detector",
-							"sid": 139358703138978,
-							"parameters": {
-								"instance-variable": "owner",
-								"comparison": 0,
-								"value": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "goal_detector",
+									"sid": 186000972094861,
+									"parameters": {
+										"instance-variable": "owner",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 296333921887641,
+									"parameters": {
+										"variable": "score_1",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 620159006654421
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 264678984967201,
+									"parameters": {
+										"text": "score_1 & \" - \" & score_2"
+									}
+								}
+							],
+							"sid": 671993039253764
 						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 760977190451740,
-							"parameters": {
-								"variable": "score_1",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "Text",
-							"sid": 575240999037085,
-							"parameters": {
-								"text": "score_1 & \" - \" & score_2"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "ball",
-							"sid": 963981209618351,
-							"parameters": {
-								"x": "LayoutWidth / 2",
-								"y": "LayoutHeight / 2"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "ball",
-							"sid": 281311133596830,
-							"behaviorType": "Physics",
-							"parameters": {
-								"mode": "disabled"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "ball",
-							"sid": 994353989072974,
-							"behaviorType": "Physics",
-							"parameters": {
-								"mode": "enabled"
-							}
-						},
-						{
-							"callFunction": "resetPlayers",
-							"sid": 888490983176745
-						}
-					],
-					"sid": 631354025471629
+					]
 				}
 			],
 			"sid": 594366020048459,

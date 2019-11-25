@@ -1,0 +1,49 @@
+{
+	"name": "menu_matchconfig_size_character_button",
+	"plugin-id": "Sprite",
+	"sid": 691699846329140,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 213357431308792
+		},
+		{
+			"name": "size",
+			"type": "string",
+			"desc": "",
+			"sid": 250076094537476
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 50,
+						"duration": 1
+					}
+				],
+				"sid": 894471714861116,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

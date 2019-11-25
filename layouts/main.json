@@ -308,6 +308,12 @@
 			"properties": {},
 			"uid": 20,
 			"instanceVariables": {}
+		},
+		{
+			"type": "match_config",
+			"properties": {},
+			"uid": 62,
+			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],
