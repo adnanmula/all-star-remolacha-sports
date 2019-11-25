@@ -1335,6 +1335,287 @@
 					"sid": 583299772061599
 				},
 				{
+					"functionName": "goToView",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionParameters": [
+						{
+							"name": "view",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 774609008386955
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 607823341230850,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 281094753765186,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MAIN"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 220947779279760,
+									"parameters": {
+										"x": "320",
+										"y": "180"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 965936073517761,
+									"parameters": {
+										"group-name": "\"Gamepad selector\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 611311336310312,
+									"parameters": {
+										"group-name": "\"Character selector\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 211966139729349
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 805476021316887,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_CHAR_SELECTOR"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 756057105529680,
+									"parameters": {
+										"group-name": "\"Gamepad selector\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 349410939964613,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 671347990498462,
+									"parameters": {
+										"x": "960",
+										"y": "180"
+									}
+								}
+							],
+							"sid": 631367916191793
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 573962533889837,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_SETTINGS"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 562908140187637,
+									"parameters": {
+										"x": "320",
+										"y": "180"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 932149348657911,
+									"parameters": {
+										"group-name": "\"Gamepad selector\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 960795237978913,
+									"parameters": {
+										"group-name": "\"Character selector\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 549995530935246
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 525136310322418,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_GAMEMODE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 834049544218506,
+									"parameters": {
+										"x": "320",
+										"y": "540"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 593440068145642,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 219533668472645,
+									"parameters": {
+										"group-name": "\"Gamemode view buttons\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 670604966846251
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 972238743228332,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH_CONFIG"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 854168964122041,
+									"parameters": {
+										"x": "320",
+										"y": "900"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 938193553159802,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 300484471508152,
+									"parameters": {
+										"group-name": "\"Gamemode view buttons\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 992021116220191,
+									"parameters": {
+										"group-name": "\"GC - Goal amount\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 506852503140731
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 704122505477169,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 893293199953622,
+									"parameters": {
+										"layout": "main"
+									}
+								}
+							],
+							"sid": 163266280032441
+						}
+					]
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "Main view buttons",
@@ -2030,10 +2311,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 584911798998243,
+											"sid": 337280256194451,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "0"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										},
 										{
@@ -2396,10 +2677,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 230552670080736,
+											"sid": 527217585836967,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "0"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										},
 										{
@@ -2810,10 +3091,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 552010576009852,
+											"sid": 517437030419592,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "0"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										},
 										{
@@ -3220,10 +3501,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 794950424296812,
+											"sid": 436475510514028,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "0"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										},
 										{
@@ -3559,287 +3840,6 @@
 						}
 					],
 					"sid": 741821841064489
-				},
-				{
-					"functionName": "goToView",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionParameters": [
-						{
-							"name": "view",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 774609008386955
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 610250546241747,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 978415494938081,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_MAIN"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "scroll-to-position",
-									"objectClass": "System",
-									"sid": 866352186942563,
-									"parameters": {
-										"x": "320",
-										"y": "180"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 268723469214723,
-									"parameters": {
-										"group-name": "\"Gamepad selector\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 920516609850083,
-									"parameters": {
-										"group-name": "\"Character selector\"",
-										"state": "deactivated"
-									}
-								}
-							],
-							"sid": 675933258663181
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 310533593220018,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_CHAR_SELECTOR"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 299397616814714,
-									"parameters": {
-										"group-name": "\"Gamepad selector\"",
-										"state": "activated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 872637533343911,
-									"parameters": {
-										"group-name": "\"Main view buttons\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "scroll-to-position",
-									"objectClass": "System",
-									"sid": 321330185013604,
-									"parameters": {
-										"x": "960",
-										"y": "180"
-									}
-								}
-							],
-							"sid": 219011862110773
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 946976193510605,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_SETTINGS"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "scroll-to-position",
-									"objectClass": "System",
-									"sid": 929644072501827,
-									"parameters": {
-										"x": "320",
-										"y": "180"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 880093006350302,
-									"parameters": {
-										"group-name": "\"Gamepad selector\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 854195026129474,
-									"parameters": {
-										"group-name": "\"Character selector\"",
-										"state": "deactivated"
-									}
-								}
-							],
-							"sid": 438787810116614
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 928157179643336,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_GAMEMODE"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "scroll-to-position",
-									"objectClass": "System",
-									"sid": 166192807325902,
-									"parameters": {
-										"x": "320",
-										"y": "540"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 617421035666434,
-									"parameters": {
-										"group-name": "\"Main view buttons\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 776407571523744,
-									"parameters": {
-										"group-name": "\"Gamemode view buttons\"",
-										"state": "activated"
-									}
-								}
-							],
-							"sid": 851147200087107
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 191990233578965,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_MATCH_CONFIG"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "scroll-to-position",
-									"objectClass": "System",
-									"sid": 796729314425187,
-									"parameters": {
-										"x": "320",
-										"y": "900"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 442968729924952,
-									"parameters": {
-										"group-name": "\"Main view buttons\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 369672298897726,
-									"parameters": {
-										"group-name": "\"Gamemode view buttons\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 857283669989352,
-									"parameters": {
-										"group-name": "\"GC - Goal amount\"",
-										"state": "activated"
-									}
-								}
-							],
-							"sid": 766185221347425
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 652217432077881,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "MN_VIEW_MATCH"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 959397598899732,
-									"parameters": {
-										"layout": "main"
-									}
-								}
-							],
-							"sid": 500913286182533
-						}
-					]
 				}
 			],
 			"sid": 568021957474665
