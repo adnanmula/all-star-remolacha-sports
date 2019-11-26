@@ -18,12 +18,17 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3,
+						"imageSpriteId": 41,
 						"imagePoints": [
 							{
 								"name": "crossbar",
 								"x": 0.5,
 								"y": 5.551115123125783e-17
+							},
+							{
+								"name": "goal_detector",
+								"x": 0.44666666666666666,
+								"y": 0.5
 							}
 						],
 						"duration": 1

@@ -30,61 +30,178 @@
 					"sid": 420969320230227
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 865610357669664,
+			"children": [
 				{
-					"callFunction": "createGoal",
-					"sid": 381504568874622,
-					"parameters": [
-						"26.99",
-						"298.339"
-					]
+					"eventType": "comment",
+					"text": "TODO refactor this"
 				},
 				{
-					"callFunction": "createGoal",
-					"sid": 413975208661122,
-					"parameters": [
-						"613.894",
-						"298.339"
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 732337706529655,
+							"parameters": {
+								"first-value": "match_config.Get(\"size_goal\")",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createGoal",
+							"sid": 415040305605134,
+							"parameters": [
+								"20",
+								"330",
+								"match_config.Get(\"size_goal\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 686864144197849,
+							"parameters": [
+								"620",
+								"330",
+								"match_config.Get(\"size_goal\")"
+							]
+						}
+					],
+					"sid": 827559280306437
 				},
 				{
-					"callFunction": "createPlayer",
-					"sid": 354283406948952,
-					"parameters": [
-						"gamepad_selection.Get(\"player0_gamepad_index\")",
-						"gamepad_selection.Get(\"player0_character\")",
-						"90",
-						"200"
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 461063389734444
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 627448280571403,
+							"parameters": {
+								"first-value": "match_config.Get(\"size_goal\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createGoal",
+							"sid": 424925564189955,
+							"parameters": [
+								"17",
+								"290",
+								"match_config.Get(\"size_goal\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 523736865464924,
+							"parameters": [
+								"622",
+								"290",
+								"match_config.Get(\"size_goal\")"
+							]
+						}
+					],
+					"sid": 457661793401249
 				},
 				{
-					"callFunction": "createPlayer",
-					"sid": 993958963281435,
-					"parameters": [
-						"gamepad_selection.Get(\"player1_gamepad_index\")",
-						"gamepad_selection.Get(\"player1_character\")",
-						"500",
-						"200"
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 528181672170199
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 766300752682695,
+							"parameters": {
+								"first-value": "match_config.Get(\"size_goal\")",
+								"comparison": 0,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createGoal",
+							"sid": 204678591469776,
+							"parameters": [
+								"9",
+								"210",
+								"match_config.Get(\"size_goal\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 348818026974244,
+							"parameters": [
+								"630",
+								"210",
+								"match_config.Get(\"size_goal\")"
+							]
+						}
+					],
+					"sid": 594527447888614
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 726659714951248,
-					"parameters": {
-						"seconds": "1"
-					}
-				},
-				{
-					"callFunction": "createBall",
-					"sid": 704236875142716,
-					"parameters": [
-						"300",
-						"100"
-					]
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "createPlayer",
+							"sid": 942137945468931,
+							"parameters": [
+								"gamepad_selection.Get(\"player0_gamepad_index\")",
+								"gamepad_selection.Get(\"player0_character\")",
+								"90",
+								"200",
+								"match_config.Get(\"size_player\")"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 669534051800450,
+							"parameters": [
+								"gamepad_selection.Get(\"player1_gamepad_index\")",
+								"gamepad_selection.Get(\"player1_character\")",
+								"500",
+								"200",
+								"match_config.Get(\"size_player\")"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 775116097894232,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"callFunction": "createBall",
+							"sid": 243036401787816,
+							"parameters": [
+								"300",
+								"100",
+								"match_config.Get(\"size_ball\")"
+							]
+						}
+					],
+					"sid": 538160440590707
 				}
-			],
-			"sid": 865610357669664
+			]
 		},
 		{
 			"eventType": "group",
@@ -126,6 +243,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 148999161280991
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 500014680887371
 						}
 					],
 					"eventType": "function-block",
@@ -571,32 +695,157 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 784277402236722
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 520115561399049
 						}
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 420284530329724,
+					"children": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 461741082212840,
-							"parameters": {
-								"object-to-create": "ball",
-								"layer": "\"main\"",
-								"x": "x",
-								"y": "y"
-							}
+							"eventType": "variable",
+							"name": "radius",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 538770264983103
 						},
 						{
-							"id": "set-z-elevation",
-							"objectClass": "ball",
-							"sid": 993381273605894,
-							"parameters": {
-								"z": "3"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 833529552360685,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 577701460241527,
+									"parameters": {
+										"variable": "radius",
+										"value": "20"
+									}
+								}
+							],
+							"sid": 869131670954523
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 577802663822170
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 436680118659986,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 565689304229442,
+									"parameters": {
+										"variable": "radius",
+										"value": "40"
+									}
+								}
+							],
+							"sid": 539674156926840
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 253592607281780
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 703418160959129,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 616557796685697,
+									"parameters": {
+										"variable": "radius",
+										"value": "60"
+									}
+								}
+							],
+							"sid": 341693431421630
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 466406580377954,
+									"parameters": {
+										"object-to-create": "ball",
+										"layer": "\"main\"",
+										"x": "x",
+										"y": "y"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "ball",
+									"sid": 312978111863191,
+									"parameters": {
+										"width": "radius",
+										"height": "radius"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "ball",
+									"sid": 511928973945536,
+									"parameters": {
+										"z": "3"
+									}
+								}
+							],
+							"sid": 318155488580847
 						}
-					],
-					"sid": 420284530329724
+					]
 				},
 				{
 					"functionName": "createGoal",
@@ -617,6 +866,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 122035707588847
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 742547072934588
 						}
 					],
 					"eventType": "function-block",
@@ -625,7 +881,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 237808492924496,
+							"sid": 743254944025383,
 							"parameters": {
 								"object-to-create": "goal",
 								"layer": "\"main\"",
@@ -636,7 +892,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_detector",
-							"sid": 641095019834958,
+							"sid": 282833862068215,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -644,38 +900,9 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_crossbar",
-							"sid": 269078232718603,
+							"sid": 741521968368407,
 							"parameters": {
 								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "pin-to-object",
-							"objectClass": "goal_detector",
-							"sid": 512418777899756,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "goal",
-								"mode": "position-angle"
-							}
-						},
-						{
-							"id": "set-position-to-another-object",
-							"objectClass": "goal_crossbar",
-							"sid": 350271404449779,
-							"parameters": {
-								"object": "goal",
-								"image-point-optional": "\"crossbar\""
-							}
-						},
-						{
-							"id": "pin-to-object",
-							"objectClass": "goal_crossbar",
-							"sid": 535118534584511,
-							"behaviorType": "Pin",
-							"parameters": {
-								"pin-to": "goal",
-								"mode": "position-angle"
 							}
 						}
 					],
@@ -687,7 +914,152 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 458119600401292,
+									"sid": 273644856982409,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 563992842976301,
+									"parameters": {
+										"width": "40",
+										"height": "67"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_crossbar",
+									"sid": 732511134717216,
+									"parameters": {
+										"width": "40",
+										"height": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_detector",
+									"sid": 283146297453370,
+									"parameters": {
+										"width": "4",
+										"height": "67"
+									}
+								}
+							],
+							"sid": 952070986387499
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 613154475762652
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 358190400398569,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 682870413788379,
+									"parameters": {
+										"width": "75",
+										"height": "140"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_crossbar",
+									"sid": 612170317150007,
+									"parameters": {
+										"width": "75",
+										"height": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_detector",
+									"sid": 254227311305908,
+									"parameters": {
+										"width": "4",
+										"height": "140"
+									}
+								}
+							],
+							"sid": 243511859654263
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 915122266324339
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 926485920755197,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 999861149995637,
+									"parameters": {
+										"width": "62",
+										"height": "300"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_crossbar",
+									"sid": 880632398815707,
+									"parameters": {
+										"width": "62",
+										"height": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_detector",
+									"sid": 922787182783602,
+									"parameters": {
+										"width": "4",
+										"height": "300"
+									}
+								}
+							],
+							"sid": 523925745762699
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 623820600984719,
 									"parameters": {
 										"first-value": "x",
 										"comparison": 4,
@@ -699,7 +1071,7 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "goal",
-									"sid": 724776313409421,
+									"sid": 505170257874383,
 									"parameters": {
 										"state": "mirrored"
 									}
@@ -707,7 +1079,7 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "goal_detector",
-									"sid": 729167222171072,
+									"sid": 791137310076753,
 									"parameters": {
 										"state": "mirrored"
 									}
@@ -715,14 +1087,59 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "goal_detector",
-									"sid": 480616039735042,
+									"sid": 332645043549257,
 									"parameters": {
 										"instance-variable": "owner",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 643476367268862
+							"sid": 140996773673487
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_detector",
+									"sid": 609194079366203,
+									"parameters": {
+										"object": "goal",
+										"image-point-optional": "\"goal_detector\""
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "goal_detector",
+									"sid": 750737504490343,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "goal",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_crossbar",
+									"sid": 454802187866857,
+									"parameters": {
+										"object": "goal",
+										"image-point-optional": "\"crossbar\""
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "goal_crossbar",
+									"sid": 619609016842094,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "goal",
+										"mode": "position-angle"
+									}
+								}
+							],
+							"sid": 502744232633630
 						}
 					]
 				},
