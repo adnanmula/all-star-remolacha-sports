@@ -1,20 +1,14 @@
 {
-	"name": "menu_matchconfig_size_ball_button",
+	"name": "menu_matchconfig_toCharSelect",
 	"plugin-id": "Sprite",
-	"sid": 846387624966459,
+	"sid": 490552579153323,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "index",
 			"type": "number",
 			"desc": "",
-			"sid": 782518984422757
-		},
-		{
-			"name": "amount",
-			"type": "number",
-			"desc": "",
-			"sid": 705512429120832
+			"sid": 591632953709288
 		}
 	],
 	"behaviorTypes": [],
@@ -31,11 +25,11 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 20,
+						"imageSpriteId": 37,
 						"duration": 1
 					}
 				],
-				"sid": 511087521675694,
+				"sid": 223522522586490,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

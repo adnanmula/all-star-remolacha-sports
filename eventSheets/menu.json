@@ -137,28 +137,28 @@
 						{
 							"id": "add-key",
 							"objectClass": "match_config",
-							"sid": 715038300934860,
+							"sid": 886721301852280,
 							"parameters": {
 								"key": "\"size_ball\"",
-								"value": "\"normal\""
+								"value": "1"
 							}
 						},
 						{
 							"id": "add-key",
 							"objectClass": "match_config",
-							"sid": 384067128209676,
+							"sid": 383170729390417,
 							"parameters": {
 								"key": "\"size_player\"",
-								"value": "\"normal\""
+								"value": "1"
 							}
 						},
 						{
 							"id": "add-key",
 							"objectClass": "match_config",
-							"sid": 950024321910377,
+							"sid": 369630018107180,
 							"parameters": {
 								"key": "\"size_goal\"",
-								"value": "\"normal\""
+								"value": "1"
 							}
 						},
 						{
@@ -2263,6 +2263,15 @@
 									}
 								},
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 105397470062008,
+									"parameters": {
+										"group-name": "\"GC - Go to char select\"",
+										"state": "deactivated"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 220859240317432,
@@ -2623,10 +2632,10 @@
 														{
 															"id": "set-key",
 															"objectClass": "match_config",
-															"sid": 863708914975083,
+															"sid": 725523101400692,
 															"parameters": {
 																"key": "\"goal_amount\"",
-																"value": "match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount > 0 ? match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount : 1"
+																"value": "(match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount > 0) ? match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount : 1"
 															}
 														},
 														{
@@ -2655,6 +2664,26 @@
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 874702894565076
+								},
+								{
+									"eventType": "variable",
+									"name": "max_amount",
+									"type": "number",
+									"initialValue": "2",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 165257545003585
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -3033,26 +3062,126 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 677142722366259,
+													"children": [
 														{
-															"id": "set-key",
-															"objectClass": "match_config",
-															"sid": 875537747402723,
-															"parameters": {
-																"key": "\"size_ball\"",
-																"value": "menu_matchconfig_size_ball_button.size"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 371021110353366,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																		"comparison": 5,
+																		"second-value": "max_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 610595185687200,
+																	"parameters": {
+																		"key": "\"size_ball\"",
+																		"value": "max_amount"
+																	}
+																}
+															],
+															"sid": 739507438024420
 														},
 														{
-															"id": "set-text",
-															"objectClass": "menu_matchconfig_size_ball_text",
-															"sid": 101769613644456,
-															"parameters": {
-																"text": "match_config.Get(\"size_ball\")"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 288580603769954
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 425086198455067,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																		"comparison": 3,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 846053966428086,
+																	"parameters": {
+																		"key": "\"size_ball\"",
+																		"value": "min_amount"
+																	}
+																}
+															],
+															"sid": 441987235859335
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 652480159808025
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 810081078984737,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																		"comparison": 3,
+																		"second-value": "max_amount"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 340996864936832,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																		"comparison": 5,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 390528983030001,
+																	"parameters": {
+																		"key": "\"size_ball\"",
+																		"value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount"
+																	}
+																}
+															],
+															"sid": 189526944998681
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "menu_matchconfig_size_ball_text",
+																	"sid": 610435009191701,
+																	"parameters": {
+																		"text": "match_config.Get(\"size_ball\")"
+																	}
+																}
+															],
+															"sid": 204484436344652
 														}
-													],
-													"sid": 677142722366259
+													]
 												}
 											],
 											"isOrBlock": true
@@ -3069,6 +3198,26 @@
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 452937118652181
+								},
+								{
+									"eventType": "variable",
+									"name": "max_amount",
+									"type": "number",
+									"initialValue": "2",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 920792814442414
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -3443,26 +3592,126 @@
 															}
 														}
 													],
-													"actions": [
+													"actions": [],
+													"sid": 600989310669084,
+													"children": [
 														{
-															"id": "set-key",
-															"objectClass": "match_config",
-															"sid": 857924505145179,
-															"parameters": {
-																"key": "\"size_player\"",
-																"value": "menu_matchconfig_size_character_button.size"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 744140606012107,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																		"comparison": 5,
+																		"second-value": "max_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 448330536809364,
+																	"parameters": {
+																		"key": "\"size_player\"",
+																		"value": "max_amount"
+																	}
+																}
+															],
+															"sid": 806875646601242
 														},
 														{
-															"id": "set-text",
-															"objectClass": "menu_matchconfig_size_character_text",
-															"sid": 438393997561404,
-															"parameters": {
-																"text": "match_config.Get(\"size_player\")"
-															}
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 617625639996336
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 405864413617911,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																		"comparison": 3,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 732689065439060,
+																	"parameters": {
+																		"key": "\"size_player\"",
+																		"value": "min_amount"
+																	}
+																}
+															],
+															"sid": 462219338939980
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 802994803041165
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 677210414181705,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																		"comparison": 3,
+																		"second-value": "max_amount"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 931788848006371,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																		"comparison": 5,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 485506746102954,
+																	"parameters": {
+																		"key": "\"size_player\"",
+																		"value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount"
+																	}
+																}
+															],
+															"sid": 147965698005251
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "menu_matchconfig_size_character_text",
+																	"sid": 400447418129314,
+																	"parameters": {
+																		"text": "match_config.Get(\"size_player\")"
+																	}
+																}
+															],
+															"sid": 846021841321255
 														}
-													],
-													"sid": 600989310669084
+													]
 												}
 											],
 											"isOrBlock": true
@@ -3479,6 +3728,26 @@
 							"description": "",
 							"isActiveOnStart": false,
 							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 147157622731032
+								},
+								{
+									"eventType": "variable",
+									"name": "max_amount",
+									"type": "number",
+									"initialValue": "2",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 546174306578085
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -3769,6 +4038,50 @@
 										{
 											"id": "for",
 											"objectClass": "System",
+											"sid": 899563952097343,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "MAX_GAMEPAD"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 557064158493243,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-button-pressed",
+													"objectClass": "Gamepad",
+													"sid": 699180300556882,
+													"parameters": {
+														"gamepad": "loopindex",
+														"button": "d-pad-down"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "goToMatchConfigView",
+													"sid": 959927924099281,
+													"parameters": [
+														"\"GC - Go to char select\""
+													]
+												}
+											],
+											"sid": 200421689180514,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
 											"sid": 582879782844636,
 											"parameters": {
 												"name": "\"\"",
@@ -3813,10 +4126,10 @@
 														{
 															"id": "set-key",
 															"objectClass": "match_config",
-															"sid": 558341214498443,
+															"sid": 144188821469313,
 															"parameters": {
 																"key": "\"size_goal\"",
-																"value": "menu_matchconfig_size_goal_button.size"
+																"value": "menu_matchconfig_size_goal_button.amount"
 															}
 														},
 														{
@@ -3828,7 +4141,125 @@
 															}
 														}
 													],
-													"sid": 949837346682989
+													"sid": 949837346682989,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 609521839397415,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																		"comparison": 5,
+																		"second-value": "max_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 967599818944025,
+																	"parameters": {
+																		"key": "\"size_goal\"",
+																		"value": "2"
+																	}
+																}
+															],
+															"sid": 949134962937228
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 566522942323172
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 425292950659467,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																		"comparison": 3,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 454962099490716,
+																	"parameters": {
+																		"key": "\"size_goal\"",
+																		"value": "min_amount"
+																	}
+																}
+															],
+															"sid": 377126954628632
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "else",
+																	"objectClass": "System",
+																	"sid": 241534642772010
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 786114623135052,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																		"comparison": 3,
+																		"second-value": "max_amount"
+																	}
+																},
+																{
+																	"id": "compare-two-values",
+																	"objectClass": "System",
+																	"sid": 545408291715025,
+																	"parameters": {
+																		"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																		"comparison": 5,
+																		"second-value": "min_amount"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-key",
+																	"objectClass": "match_config",
+																	"sid": 114067224817853,
+																	"parameters": {
+																		"key": "\"size_goal\"",
+																		"value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount"
+																	}
+																}
+															],
+															"sid": 409997599027050
+														},
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-text",
+																	"objectClass": "menu_matchconfig_size_goal_text",
+																	"sid": 422264820918625,
+																	"parameters": {
+																		"text": "match_config.Get(\"size_goal\")"
+																	}
+																}
+															],
+															"sid": 512258757139264
+														}
+													]
 												}
 											],
 											"isOrBlock": true
@@ -3837,6 +4268,198 @@
 								}
 							],
 							"sid": 967069443513459
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - Go to char select",
+							"description": "",
+							"isActiveOnStart": false,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 175524783401587
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 537078722495162,
+											"parameters": {
+												"variable": "mn_max_index",
+												"value": "menu_matchconfig_toCharSelect.Count - 1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 296987955646412,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_goal_text",
+											"sid": 972145142864477,
+											"parameters": {
+												"text": "match_config.Get(\"size_goal\")"
+											}
+										}
+									],
+									"sid": 199775981404606,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 656746247785602,
+													"parameters": {
+														"object": "menu_matchconfig_toCharSelect",
+														"expression": "menu_matchconfig_toCharSelect.index= mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "menu_main_selector",
+													"sid": 220954700866665,
+													"parameters": {
+														"x": "menu_matchconfig_toCharSelect.X",
+														"y": "menu_matchconfig_toCharSelect.Y"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "menu_main_selector",
+													"sid": 106127905588090,
+													"parameters": {
+														"width": "menu_matchconfig_toCharSelect.Width",
+														"height": "menu_matchconfig_toCharSelect.Height"
+													}
+												}
+											],
+											"sid": 916947665069189
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 693424916842250,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "MAX_GAMEPAD"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 523517258577462,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-button-pressed",
+													"objectClass": "Gamepad",
+													"sid": 141522869525550,
+													"parameters": {
+														"gamepad": "loopindex",
+														"button": "d-pad-up"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "goToMatchConfigView",
+													"sid": 886895354522519,
+													"parameters": [
+														"\"GC - Goal size\""
+													]
+												}
+											],
+											"sid": 973668902964831,
+											"isOrBlock": true
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 348387499384745,
+											"parameters": {
+												"name": "\"\"",
+												"start-index": "0",
+												"end-index": "MAX_GAMEPAD"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 363038253202172,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-button-pressed",
+													"objectClass": "Gamepad",
+													"sid": 938502116186500,
+													"parameters": {
+														"gamepad": "loopindex",
+														"button": "button-a"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 469354361098951,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 691386807328226,
+															"parameters": {
+																"object": "menu_matchconfig_toCharSelect",
+																"expression": "menu_matchconfig_toCharSelect.index = mn_selected_index"
+															}
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "goToView",
+															"sid": 558366305338449,
+															"parameters": [
+																"MN_VIEW_CHAR_SELECTOR"
+															]
+														}
+													],
+													"sid": 655946423489495
+												}
+											],
+											"isOrBlock": true
+										}
+									]
+								}
+							],
+							"sid": 125601001913477
 						}
 					],
 					"sid": 741821841064489

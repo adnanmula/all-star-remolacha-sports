@@ -123,7 +123,8 @@
 			"menu_matchconfig_size_goal_button",
 			"menu_matchconfig_size_ball_text",
 			"menu_matchconfig_size_character_text",
-			"menu_matchconfig_size_goal_text"
+			"menu_matchconfig_size_goal_text",
+			"menu_matchconfig_toCharSelect"
 		],
 		"subfolders": [
 			{
