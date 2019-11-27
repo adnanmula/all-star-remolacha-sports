@@ -30,130 +30,31 @@
 					"sid": 420969320230227
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"callFunction": "createGoal",
+					"sid": 287965838520334,
+					"parameters": [
+						"10",
+						"200",
+						"match_config.Get(\"size_goal\")"
+					]
+				},
+				{
+					"callFunction": "createGoal",
+					"sid": 298992056895405,
+					"parameters": [
+						"630",
+						"200",
+						"match_config.Get(\"size_goal\")"
+					]
+				}
+			],
 			"sid": 865610357669664,
 			"children": [
 				{
 					"eventType": "comment",
 					"text": "TODO refactor this"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 732337706529655,
-							"parameters": {
-								"first-value": "match_config.Get(\"size_goal\")",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "createGoal",
-							"sid": 415040305605134,
-							"parameters": [
-								"20",
-								"330",
-								"match_config.Get(\"size_goal\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 686864144197849,
-							"parameters": [
-								"620",
-								"330",
-								"match_config.Get(\"size_goal\")"
-							]
-						}
-					],
-					"sid": 827559280306437
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 461063389734444
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 627448280571403,
-							"parameters": {
-								"first-value": "match_config.Get(\"size_goal\")",
-								"comparison": 0,
-								"second-value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "createGoal",
-							"sid": 424925564189955,
-							"parameters": [
-								"17",
-								"290",
-								"match_config.Get(\"size_goal\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 523736865464924,
-							"parameters": [
-								"622",
-								"290",
-								"match_config.Get(\"size_goal\")"
-							]
-						}
-					],
-					"sid": 457661793401249
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 528181672170199
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 766300752682695,
-							"parameters": {
-								"first-value": "match_config.Get(\"size_goal\")",
-								"comparison": 0,
-								"second-value": "2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "createGoal",
-							"sid": 204678591469776,
-							"parameters": [
-								"9",
-								"210",
-								"match_config.Get(\"size_goal\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 348818026974244,
-							"parameters": [
-								"630",
-								"210",
-								"match_config.Get(\"size_goal\")"
-							]
-						}
-					],
-					"sid": 594527447888614
 				},
 				{
 					"eventType": "block",
@@ -904,6 +805,16 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
+						},
+						{
+							"id": "enabledisable-collisions",
+							"objectClass": "goal",
+							"sid": 669931198073453,
+							"behaviorType": "Physics",
+							"parameters": {
+								"object": "solid_bound",
+								"state": "disable"
+							}
 						}
 					],
 					"sid": 601255731634027,
@@ -976,9 +887,9 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal",
-									"sid": 682870413788379,
+									"sid": 930689746616098,
 									"parameters": {
-										"width": "75",
+										"width": "40",
 										"height": "140"
 									}
 								},
@@ -1026,9 +937,9 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal",
-									"sid": 999861149995637,
+									"sid": 481976395412371,
 									"parameters": {
-										"width": "62",
+										"width": "40",
 										"height": "300"
 									}
 								},
@@ -1142,6 +1053,31 @@
 							"sid": 502744232633630
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "goal",
+							"sid": 452880398324216,
+							"parameters": {
+								"object": "goal_solid_detector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "goal",
+							"sid": 466002132625846,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						}
+					],
+					"sid": 250985089517922
 				},
 				{
 					"eventType": "block",

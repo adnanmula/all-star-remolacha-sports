@@ -1,14 +1,19 @@
 {
-	"name": "goal",
+	"name": "goal_solid_detector",
 	"plugin-id": "Sprite",
-	"sid": 916246753504576,
+	"sid": 493665928733662,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 493660859908181
+		},
+		{
 			"behaviorId": "Physics",
 			"name": "Physics",
-			"sid": 305536323303087
+			"sid": 370260803031600
 		}
 	],
 	"effectTypes": [],
@@ -17,30 +22,18 @@
 			{
 				"frames": [
 					{
-						"width": 75,
-						"height": 120,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 41,
-						"imagePoints": [
-							{
-								"name": "crossbar",
-								"x": 0.5,
-								"y": 5.551115123125783e-17
-							},
-							{
-								"name": "goal_detector",
-								"x": 0.44666666666666666,
-								"y": 0.5
-							}
-						],
+						"imageSpriteId": 8,
 						"duration": 1
 					}
 				],
-				"sid": 294405869101835,
+				"sid": 149908021010758,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

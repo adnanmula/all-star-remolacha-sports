@@ -124,7 +124,8 @@
 			"menu_matchconfig_size_ball_text",
 			"menu_matchconfig_size_character_text",
 			"menu_matchconfig_size_goal_text",
-			"menu_matchconfig_toCharSelect"
+			"menu_matchconfig_toCharSelect",
+			"goal_solid_detector"
 		],
 		"subfolders": [
 			{
@@ -310,7 +311,7 @@
 					"type": "image/png"
 				},
 				{
-					"name": "icon-128.png",
+					"name": "icon-256.png",
 					"type": "image/png"
 				},
 				{
@@ -318,7 +319,7 @@
 					"type": "image/png"
 				},
 				{
-					"name": "icon-256.png",
+					"name": "icon-128.png",
 					"type": "image/png"
 				}
 			],
