@@ -500,7 +500,7 @@
 						},
 						"Physics": {
 							"properties": {
-								"immovable": true,
+								"immovable": false,
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,

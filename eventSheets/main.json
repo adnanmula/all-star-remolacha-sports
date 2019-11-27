@@ -33,7 +33,7 @@
 			"actions": [
 				{
 					"callFunction": "createGoal",
-					"sid": 287965838520334,
+					"sid": 211471711742086,
 					"parameters": [
 						"10",
 						"200",
@@ -42,7 +42,7 @@
 				},
 				{
 					"callFunction": "createGoal",
-					"sid": 298992056895405,
+					"sid": 250424268683680,
 					"parameters": [
 						"630",
 						"200",
@@ -815,6 +815,14 @@
 								"object": "solid_bound",
 								"state": "disable"
 							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 369030066552711,
+							"parameters": {
+								"collisions": "disabled"
+							}
 						}
 					],
 					"sid": 601255731634027,
@@ -825,7 +833,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 273644856982409,
+									"sid": 828119000422804,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -837,32 +845,14 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal",
-									"sid": 563992842976301,
+									"sid": 957868517589043,
 									"parameters": {
 										"width": "40",
-										"height": "67"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_crossbar",
-									"sid": 732511134717216,
-									"parameters": {
-										"width": "40",
-										"height": "2"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_detector",
-									"sid": 283146297453370,
-									"parameters": {
-										"width": "4",
 										"height": "67"
 									}
 								}
 							],
-							"sid": 952070986387499
+							"sid": 958510752289534
 						},
 						{
 							"eventType": "block",
@@ -870,12 +860,12 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 613154475762652
+									"sid": 827818462199730
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 358190400398569,
+									"sid": 728770782154521,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -887,32 +877,14 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal",
-									"sid": 930689746616098,
+									"sid": 846829266720673,
 									"parameters": {
 										"width": "40",
 										"height": "140"
 									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_crossbar",
-									"sid": 612170317150007,
-									"parameters": {
-										"width": "75",
-										"height": "2"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_detector",
-									"sid": 254227311305908,
-									"parameters": {
-										"width": "4",
-										"height": "140"
-									}
 								}
 							],
-							"sid": 243511859654263
+							"sid": 929047890313282
 						},
 						{
 							"eventType": "block",
@@ -920,12 +892,12 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 915122266324339
+									"sid": 386712310905758
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 926485920755197,
+									"sid": 796885340167858,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -937,32 +909,14 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal",
-									"sid": 481976395412371,
+									"sid": 820562554250259,
 									"parameters": {
 										"width": "40",
 										"height": "300"
 									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_crossbar",
-									"sid": 880632398815707,
-									"parameters": {
-										"width": "62",
-										"height": "2"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "goal_detector",
-									"sid": 922787182783602,
-									"parameters": {
-										"width": "4",
-										"height": "300"
-									}
 								}
 							],
-							"sid": 523925745762699
+							"sid": 613605750094093
 						},
 						{
 							"eventType": "block",
@@ -970,7 +924,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 623820600984719,
+									"sid": 881538865186862,
 									"parameters": {
 										"first-value": "x",
 										"comparison": 4,
@@ -982,7 +936,7 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "goal",
-									"sid": 505170257874383,
+									"sid": 861549022974223,
 									"parameters": {
 										"state": "mirrored"
 									}
@@ -990,7 +944,7 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "goal_detector",
-									"sid": 791137310076753,
+									"sid": 721404085227157,
 									"parameters": {
 										"state": "mirrored"
 									}
@@ -998,23 +952,41 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "goal_detector",
-									"sid": 332645043549257,
+									"sid": 633281898583578,
 									"parameters": {
 										"instance-variable": "owner",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 140996773673487
+							"sid": 707457567444287
 						},
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
+									"id": "set-size",
+									"objectClass": "goal_crossbar",
+									"sid": 994025124604388,
+									"parameters": {
+										"width": "goal.Width",
+										"height": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_detector",
+									"sid": 925776871062597,
+									"parameters": {
+										"width": "4",
+										"height": "goal.Height"
+									}
+								},
+								{
 									"id": "set-position-to-another-object",
 									"objectClass": "goal_detector",
-									"sid": 609194079366203,
+									"sid": 450410460148464,
 									"parameters": {
 										"object": "goal",
 										"image-point-optional": "\"goal_detector\""
@@ -1023,7 +995,7 @@
 								{
 									"id": "pin-to-object",
 									"objectClass": "goal_detector",
-									"sid": 750737504490343,
+									"sid": 254980024327733,
 									"behaviorType": "Pin",
 									"parameters": {
 										"pin-to": "goal",
@@ -1033,7 +1005,7 @@
 								{
 									"id": "set-position-to-another-object",
 									"objectClass": "goal_crossbar",
-									"sid": 454802187866857,
+									"sid": 963590594463204,
 									"parameters": {
 										"object": "goal",
 										"image-point-optional": "\"crossbar\""
@@ -1042,7 +1014,7 @@
 								{
 									"id": "pin-to-object",
 									"objectClass": "goal_crossbar",
-									"sid": 619609016842094,
+									"sid": 360535114983650,
 									"behaviorType": "Pin",
 									"parameters": {
 										"pin-to": "goal",
@@ -1050,7 +1022,7 @@
 									}
 								}
 							],
-							"sid": 502744232633630
+							"sid": 929746801094483
 						}
 					]
 				},
@@ -1074,6 +1046,32 @@
 							"behaviorType": "Physics",
 							"parameters": {
 								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 532786565699885,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 643168505551509,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"id": "set-immovable",
+							"objectClass": "goal_crossbar",
+							"sid": 890234469478327,
+							"behaviorType": "Physics",
+							"parameters": {
+								"setting": "immovable"
 							}
 						}
 					],
