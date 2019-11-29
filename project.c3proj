@@ -113,20 +113,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"menu_matchconfig_goals_button",
-			"wip_label_",
-			"gamemode_label",
-			"menu_matchconfig_goals_text",
-			"menu_matchconfig_size_ball_button",
-			"menu_matchconfig_size_character_button",
-			"menu_matchconfig_size_goal_button",
-			"menu_matchconfig_size_ball_text",
-			"menu_matchconfig_size_character_text",
-			"menu_matchconfig_size_goal_text",
-			"menu_matchconfig_toCharSelect",
-			"goal_solid_detector"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -157,7 +144,8 @@
 					"goal",
 					"goal_detector",
 					"Text",
-					"goal_crossbar"
+					"goal_crossbar",
+					"goal_solid_detector"
 				],
 				"subfolders": [],
 				"name": "level"
@@ -201,6 +189,23 @@
 						],
 						"subfolders": [],
 						"name": "main"
+					},
+					{
+						"items": [
+							"gamemode_label",
+							"menu_matchconfig_goals_button",
+							"menu_matchconfig_goals_text",
+							"menu_matchconfig_size_ball_button",
+							"menu_matchconfig_size_ball_text",
+							"menu_matchconfig_size_character_button",
+							"menu_matchconfig_size_character_text",
+							"menu_matchconfig_size_goal_button",
+							"menu_matchconfig_size_goal_text",
+							"menu_matchconfig_toCharSelect",
+							"wip_label_"
+						],
+						"subfolders": [],
+						"name": "match_config"
 					}
 				],
 				"name": "menu"

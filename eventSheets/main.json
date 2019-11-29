@@ -694,182 +694,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "createBall",
-					"functionDescription": "",
-					"functionCategory": "creator",
-					"functionReturnType": "none",
-					"functionParameters": [
-						{
-							"name": "x",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 265224624302215
-						},
-						{
-							"name": "y",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 784277402236722
-						},
-						{
-							"name": "size",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 520115561399049
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 420284530329724,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "variable",
-							"name": "radius",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"isStatic": false,
-							"isConstant": false,
-							"sid": 538770264983103
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 833529552360685,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 577701460241527,
-									"parameters": {
-										"variable": "radius",
-										"value": "20"
-									}
-								}
-							],
-							"sid": 869131670954523,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 577802663822170
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 436680118659986,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 565689304229442,
-									"parameters": {
-										"variable": "radius",
-										"value": "40"
-									}
-								}
-							],
-							"sid": 539674156926840,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 253592607281780
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 703418160959129,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 616557796685697,
-									"parameters": {
-										"variable": "radius",
-										"value": "60"
-									}
-								}
-							],
-							"sid": 341693431421630,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 466406580377954,
-									"parameters": {
-										"object-to-create": "ball",
-										"layer": "\"main\"",
-										"x": "x",
-										"y": "y"
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "ball",
-									"sid": 312978111863191,
-									"parameters": {
-										"width": "radius",
-										"height": "radius"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "ball",
-									"sid": 511928973945536,
-									"parameters": {
-										"z": "3"
-									}
-								}
-							],
-							"sid": 318155488580847,
-							"disabled": true
-						}
-					]
-				},
-				{
 					"functionName": "createGoal",
 					"functionDescription": "",
 					"functionCategory": "creator",
@@ -1715,6 +1539,63 @@
 				1,
 				1
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "TODO"
+		},
+		{
+			"functionName": "checkEndMatch",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-function-return-value",
+					"objectClass": "Functions",
+					"sid": 509127686485314,
+					"parameters": {
+						"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
+					}
+				}
+			],
+			"sid": 542915394050322
+		},
+		{
+			"functionName": "triggerEndMatch",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 826191009593719
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 340200258086604,
+					"parameters": {
+						"first-value": "Functions.checkEndMatch",
+						"comparison": 0,
+						"second-value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "triggerEndMatch",
+					"sid": 701134502190321
+				}
+			],
+			"sid": 974970981208232
 		}
 	],
 	"sid": 869789412645449

@@ -15,7 +15,7 @@ class BallInstance extends ISpriteInstance
 		switch(size) {
 			case 0:
 				diameter = 20;
-			break;
+			    break;
 			case 1:
 				diameter = 40;
 				break;
