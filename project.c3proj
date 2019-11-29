@@ -273,7 +273,16 @@
 	},
 	"rootFileFolders": {
 		"script": {
-			"items": [],
+			"items": [
+				{
+					"name": "ball.js",
+					"type": "application/javascript"
+				},
+				{
+					"name": "main.js",
+					"type": "application/javascript"
+				}
+			],
 			"subfolders": []
 		},
 		"sound": {

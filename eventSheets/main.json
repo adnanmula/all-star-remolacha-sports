@@ -53,8 +53,14 @@
 			"sid": 865610357669664,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "TODO refactor this"
+					"eventType": "variable",
+					"name": "size_ball",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 308331215530027
 				},
 				{
 					"eventType": "block",
@@ -91,13 +97,17 @@
 							}
 						},
 						{
-							"callFunction": "createBall",
-							"sid": 243036401787816,
-							"parameters": [
-								"300",
-								"100",
-								"match_config.Get(\"size_ball\")"
-							]
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 639866911943030,
+							"parameters": {
+								"variable": "size_ball",
+								"value": "match_config.Get(\"size_ball\")"
+							}
+						},
+						{
+							"type": "script",
+							"script": "BallInstance.create(runtime, 300, 100, localVars.size_ball);"
 						}
 					],
 					"sid": 538160440590707
@@ -715,6 +725,7 @@
 					"conditions": [],
 					"actions": [],
 					"sid": 420284530329724,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "variable",
@@ -751,7 +762,8 @@
 									}
 								}
 							],
-							"sid": 869131670954523
+							"sid": 869131670954523,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -783,7 +795,8 @@
 									}
 								}
 							],
-							"sid": 539674156926840
+							"sid": 539674156926840,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -815,7 +828,8 @@
 									}
 								}
 							],
-							"sid": 341693431421630
+							"sid": 341693431421630,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -850,7 +864,8 @@
 									}
 								}
 							],
-							"sid": 318155488580847
+							"sid": 318155488580847,
+							"disabled": true
 						}
 					]
 				},
