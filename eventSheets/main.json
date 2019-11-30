@@ -30,28 +30,32 @@
 					"sid": 420969320230227
 				}
 			],
-			"actions": [
-				{
-					"callFunction": "createGoal",
-					"sid": 211471711742086,
-					"parameters": [
-						"10",
-						"200",
-						"match_config.Get(\"size_goal\")"
-					]
-				},
-				{
-					"callFunction": "createGoal",
-					"sid": 250424268683680,
-					"parameters": [
-						"630",
-						"200",
-						"match_config.Get(\"size_goal\")"
-					]
-				}
-			],
+			"actions": [],
 			"sid": 865610357669664,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 124134873874904
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 439821708339315
+						},
+						{
+							"id": "reset-global-variables",
+							"objectClass": "System",
+							"sid": 278369555775271
+						}
+					],
+					"sid": 112478394653021
+				},
 				{
 					"eventType": "variable",
 					"name": "size_ball",
@@ -66,6 +70,24 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
+						{
+							"callFunction": "createGoal",
+							"sid": 568687238291379,
+							"parameters": [
+								"10",
+								"200",
+								"match_config.Get(\"size_goal\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 886381417109095,
+							"parameters": [
+								"630",
+								"200",
+								"match_config.Get(\"size_goal\")"
+							]
+						},
 						{
 							"callFunction": "createPlayer",
 							"sid": 942137945468931,
@@ -1158,6 +1180,184 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Match status",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 400661699411998,
+							"parameters": {
+								"first-value": "Functions.checkEndMatch",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "triggerEndMatch",
+							"sid": 824311107500495
+						}
+					],
+					"sid": 204508102461086
+				},
+				{
+					"functionName": "checkEndMatch",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 345078316143320,
+							"parameters": {
+								"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
+							}
+						}
+					],
+					"sid": 217290936833642
+				},
+				{
+					"functionName": "triggerEndMatch",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 136634384675727,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 708320430087363,
+									"parameters": {
+										"object": "ball"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ball",
+									"sid": 580271960901109
+								}
+							],
+							"sid": 692353553619657
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 789934645603052,
+									"parameters": {
+										"first-value": "score_1",
+										"comparison": 5,
+										"second-value": "match_config.Get(\"goal_amount\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 967390818936161,
+									"parameters": {
+										"text": "gamepad_selection.Get(\"player0_character\") & \"(player1) wins!\""
+									}
+								}
+							],
+							"sid": 332983335798831
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 354553049656662
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 251001665343443,
+									"parameters": {
+										"first-value": "score_2",
+										"comparison": 5,
+										"second-value": "match_config.Get(\"goal_amount\")"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 877076652148069,
+									"parameters": {
+										"text": "gamepad_selection.Get(\"player1_character\") & \"(player2) wins!\""
+									}
+								}
+							],
+							"sid": 981180519832191
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 761067943510856,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 366398107677395,
+									"parameters": {
+										"layout": "menu"
+									}
+								}
+							],
+							"sid": 194046766570197
+						}
+					]
+				}
+			],
+			"sid": 307104145014656,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.5019607843137255,
+				0.25098039215686274,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Controls",
 			"description": "",
 			"isActiveOnStart": true,
@@ -1539,63 +1739,6 @@
 				1,
 				1
 			]
-		},
-		{
-			"eventType": "comment",
-			"text": "TODO"
-		},
-		{
-			"functionName": "checkEndMatch",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "number",
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-function-return-value",
-					"objectClass": "Functions",
-					"sid": 509127686485314,
-					"parameters": {
-						"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
-					}
-				}
-			],
-			"sid": 542915394050322
-		},
-		{
-			"functionName": "triggerEndMatch",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 826191009593719
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 340200258086604,
-					"parameters": {
-						"first-value": "Functions.checkEndMatch",
-						"comparison": 0,
-						"second-value": "1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "triggerEndMatch",
-					"sid": 701134502190321
-				}
-			],
-			"sid": 974970981208232
 		}
 	],
 	"sid": 869789412645449

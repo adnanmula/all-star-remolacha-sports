@@ -204,8 +204,55 @@
 						}
 					],
 					"sid": 395599767942697
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 207727062368804
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 428670661894408
+						}
+					],
+					"sid": 607262318367214
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 110660553680744
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 880064335470126,
+					"disabled": true
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 314074776363816,
+					"disabled": true,
+					"parameters": {
+						"type": "log",
+						"message": "\"asda\""
+					}
+				}
+			],
+			"sid": 590789849683842
 		},
 		{
 			"eventType": "group",

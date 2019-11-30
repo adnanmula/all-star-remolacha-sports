@@ -329,11 +329,11 @@
 					"type": "image/png"
 				},
 				{
-					"name": "icon-32.png",
+					"name": "icon-128.png",
 					"type": "image/png"
 				},
 				{
-					"name": "icon-128.png",
+					"name": "icon-32.png",
 					"type": "image/png"
 				}
 			],
