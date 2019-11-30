@@ -652,12 +652,12 @@
 					"uid": 5,
 					"instanceVariables": {
 						"view": "",
-						"index": 1
+						"index": 2
 					},
 					"behaviors": {},
 					"world": {
-						"x": 449,
-						"y": 526,
+						"x": 321.09020744981405,
+						"y": 522.274472061645,
 						"width": 155.1644977098009,
 						"height": 149.04610012402497,
 						"originX": 0.5,
@@ -684,14 +684,14 @@
 					"uid": 15,
 					"instanceVariables": {
 						"view": "match-config",
-						"index": 0
+						"index": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 191.867450190755,
-						"y": 524.8521591801172,
+						"x": 155.74527253724884,
+						"y": 561.9434803039719,
 						"width": 150.0329165274939,
-						"height": 149.9013636544097,
+						"height": 69.32199983674923,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1719,6 +1719,70 @@
 							1
 						],
 						"angle": 6.267604790507903,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_gamemode_match",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 75,
+					"instanceVariables": {
+						"view": "",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 156.40199686081215,
+						"y": 482.1707707158245,
+						"width": 150.0329165274939,
+						"height": 69.32199983674923,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_gamemode_tournament",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 76,
+					"instanceVariables": {
+						"view": "",
+						"index": 3
+					},
+					"behaviors": {},
+					"world": {
+						"x": 486.87620070660853,
+						"y": 521.653550738586,
+						"width": 155.1644977098009,
+						"height": 149.04610012402497,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				},

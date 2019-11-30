@@ -226,35 +226,6 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 110660553680744
-				}
-			],
-			"actions": [
-				{
-					"id": "restart-layout",
-					"objectClass": "System",
-					"sid": 880064335470126,
-					"disabled": true
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 314074776363816,
-					"disabled": true,
-					"parameters": {
-						"type": "log",
-						"message": "\"asda\""
-					}
-				}
-			],
-			"sid": 590789849683842
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Gamepad selector",
@@ -1306,6 +1277,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "mn_current_view",
+			"type": "string",
+			"initialValue": "main",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 695750907280146
+		},
+		{
+			"eventType": "variable",
 			"name": "MN_VIEW_MAIN",
 			"type": "string",
 			"initialValue": "main",
@@ -1441,6 +1422,24 @@
 										"group-name": "\"Character selector\"",
 										"state": "deactivated"
 									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 927439864185797,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 487125367333234,
+									"parameters": {
+										"variable": "mn_current_view",
+										"value": "view"
+									}
 								}
 							],
 							"sid": 211966139729349
@@ -1485,6 +1484,15 @@
 									"parameters": {
 										"x": "960",
 										"y": "180"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 462727958642102,
+									"parameters": {
+										"variable": "mn_current_view",
+										"value": "view"
 									}
 								}
 							],
@@ -1531,6 +1539,15 @@
 										"group-name": "\"Character selector\"",
 										"state": "deactivated"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 279095273809328,
+									"parameters": {
+										"variable": "mn_current_view",
+										"value": "view"
+									}
 								}
 							],
 							"sid": 549995530935246
@@ -1575,6 +1592,15 @@
 									"parameters": {
 										"group-name": "\"Gamemode view buttons\"",
 										"state": "activated"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 724035098581294,
+									"parameters": {
+										"variable": "mn_current_view",
+										"value": "view"
 									}
 								}
 							],
@@ -1629,6 +1655,15 @@
 									"parameters": {
 										"group-name": "\"GC - Goal amount\"",
 										"state": "activated"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 701286288129266,
+									"parameters": {
+										"variable": "mn_current_view",
+										"value": "view"
 									}
 								}
 							],
@@ -1696,9 +1731,55 @@
 										"variable": "mn_selected_index",
 										"value": "0"
 									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 198939379347169,
+									"parameters": {
+										"type": "log",
+										"message": "menu_main_buttons.Count - 1"
+									}
 								}
 							],
-							"sid": 613028029462693
+							"sid": 613028029462693,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 339865777545879,
+											"parameters": {
+												"object": "menu_main_buttons",
+												"expression": "menu_main_buttons.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "menu_main_selector",
+											"sid": 164971343250180,
+											"parameters": {
+												"x": "menu_main_buttons.X",
+												"y": "menu_main_buttons.Y"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "menu_main_selector",
+											"sid": 389663079631314,
+											"parameters": {
+												"width": "menu_main_buttons.Width",
+												"height": "menu_main_buttons.Height"
+											}
+										}
+									],
+									"sid": 734503036541905
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1854,6 +1935,15 @@
 													"parameters": {
 														"width": "menu_main_buttons.Width",
 														"height": "menu_main_buttons.Height"
+													}
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 732560365472545,
+													"parameters": {
+														"type": "log",
+														"message": "mn_selected_index"
 													}
 												}
 											],
@@ -2040,6 +2130,15 @@
 												"gamepad": "loopindex",
 												"button": "d-pad-left"
 											}
+										},
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 247837786190387,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
 										}
 									],
 									"actions": [],
@@ -2121,6 +2220,15 @@
 											"parameters": {
 												"gamepad": "loopindex",
 												"button": "d-pad-right"
+											}
+										},
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 390797558846273,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
 											}
 										}
 									],
@@ -2245,6 +2353,66 @@
 									"isOrBlock": true
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 873150950711061,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 888166402247935,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 327877396135647,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-b"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 924944045036233,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 702897555674730,
+											"parameters": [
+												"MN_VIEW_MAIN"
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 357182863951056,
+											"parameters": {
+												"seconds": "0"
+											}
+										}
+									],
+									"sid": 826414153316579,
+									"isOrBlock": true
+								}
+							]
 						}
 					],
 					"sid": 865912878494687
@@ -2339,6 +2507,121 @@
 							"sid": 849314793325236
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 610771728743018,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 144938817023378,
+									"parameters": {
+										"first-value": "mn_current_view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH_CONFIG"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 716356342390537,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 531824395764202,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-b"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 109040520458658,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 397078002521590,
+											"parameters": {
+												"group-name": "\"GC - Goal amount\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 313294092127125,
+											"parameters": {
+												"group-name": "\"GC - Ball size\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 525974556414539,
+											"parameters": {
+												"group-name": "\"GC - Player size\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 638629727455007,
+											"parameters": {
+												"group-name": "\"GC - Goal size\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 205540139068189,
+											"parameters": {
+												"group-name": "\"GC - Go to char select\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 790290279658566,
+											"parameters": [
+												"MN_VIEW_GAMEMODE"
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 311133665919573,
+											"parameters": {
+												"seconds": "0"
+											}
+										}
+									],
+									"sid": 543003494089323,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
 							"eventType": "group",
 							"disabled": false,
 							"title": "GC - Goal amount",
@@ -2367,10 +2650,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 337280256194451,
+											"sid": 394524878805778,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+												"value": "0"
 											}
 										},
 										{
