@@ -148,6 +148,7 @@
 					"functionDescription": "",
 					"functionCategory": "creator",
 					"functionReturnType": "none",
+					"functionIsAsync": false,
 					"functionParameters": [
 						{
 							"name": "gamepad_index",
@@ -420,6 +421,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
@@ -720,6 +722,7 @@
 					"functionDescription": "",
 					"functionCategory": "creator",
 					"functionReturnType": "none",
+					"functionIsAsync": false,
 					"functionParameters": [
 						{
 							"name": "x",
@@ -1211,6 +1214,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
@@ -1231,6 +1235,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],

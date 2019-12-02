@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 17700,
+	"savedWithRelease": 17800,
 	"name": "remolacha",
 	"runtime": "c3",
 	"useWorker": false,
@@ -11,7 +11,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -91,7 +91,7 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -99,7 +99,7 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		},
 		{
@@ -107,7 +107,7 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r177",
+			"version": "r178",
 			"bundled": false
 		}
 	],
@@ -281,11 +281,13 @@
 			"items": [
 				{
 					"name": "ball.js",
-					"type": "application/javascript"
+					"type": "application/javascript",
+					"sid": 707533079939644
 				},
 				{
 					"name": "main.js",
-					"type": "application/javascript"
+					"type": "application/javascript",
+					"sid": 888291651729236
 				}
 			],
 			"subfolders": []
@@ -310,31 +312,38 @@
 			"items": [
 				{
 					"name": "loading-logo.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 388422432101060
 				},
 				{
 					"name": "icon-16.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 139958011698570
 				},
 				{
 					"name": "icon-512.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 555616852348101
 				},
 				{
 					"name": "icon-64.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 288604151112678
 				},
 				{
 					"name": "icon-256.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 821217793226999
 				},
 				{
 					"name": "icon-32.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 982194147625789
 				},
 				{
 					"name": "icon-128.png",
-					"type": "image/png"
+					"type": "image/png",
+					"sid": 474311748017190
 				}
 			],
 			"subfolders": []
