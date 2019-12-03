@@ -113,7 +113,9 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"menu_matchconfig_win"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -192,7 +194,7 @@
 					},
 					{
 						"items": [
-							"gamemode_label",
+							"menu_matchconfig_label",
 							"menu_matchconfig_goals_button",
 							"menu_matchconfig_goals_text",
 							"menu_matchconfig_size_ball_button",

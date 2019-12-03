@@ -1128,8 +1128,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 175.45622130001874,
-						"y": 805.9140869452326,
+						"x": 172.47977837092822,
+						"y": 849.4445647831802,
 						"width": 49.08781943193664,
 						"height": 19.594484620822705,
 						"originX": 0.5,
@@ -1160,8 +1160,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 318.5606580708837,
-						"y": 804.965620212344,
+						"x": 315.58421514179315,
+						"y": 848.4960980502916,
 						"width": 46.48684891863348,
 						"height": 18.556249936293728,
 						"originX": 0.5,
@@ -1206,7 +1206,7 @@
 					}
 				},
 				{
-					"type": "gamemode_label",
+					"type": "menu_matchconfig_label",
 					"properties": {
 						"text": "Goles",
 						"enable-bbcode": true,
@@ -1228,11 +1228,13 @@
 						"origin": "top-left"
 					},
 					"uid": 24,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"label": "win_condition"
+					},
 					"behaviors": {},
 					"world": {
-						"x": 27.455122432439936,
-						"y": 791.4354090871421,
+						"x": 22.24634730653159,
+						"y": 837.1982191219075,
 						"width": 97.36837635385837,
 						"height": 30,
 						"originX": 0,
@@ -1248,7 +1250,7 @@
 					}
 				},
 				{
-					"type": "gamemode_label",
+					"type": "menu_matchconfig_label",
 					"properties": {
 						"text": "Tipo",
 						"enable-bbcode": true,
@@ -1270,7 +1272,9 @@
 						"origin": "top-left"
 					},
 					"uid": 59,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"label": ""
+					},
 					"behaviors": {},
 					"world": {
 						"x": 37.238073105374696,
@@ -1290,7 +1294,7 @@
 					}
 				},
 				{
-					"type": "gamemode_label",
+					"type": "menu_matchconfig_label",
 					"properties": {
 						"text": "Tamaños:\nPelota\nPersonaje\nPorteria",
 						"enable-bbcode": true,
@@ -1312,11 +1316,13 @@
 						"origin": "top-left"
 					},
 					"uid": 60,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"label": ""
+					},
 					"behaviors": {},
 					"world": {
-						"x": 23.397652873964873,
-						"y": 849.9902202031445,
+						"x": 22.281486775555933,
+						"y": 877.5223172972311,
 						"width": 97.36837635385837,
 						"height": 119.19623658656724,
 						"originX": 0,
@@ -1357,8 +1363,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 204.9459509847647,
-						"y": 794.2348033576577,
+						"x": 201.96950805567417,
+						"y": 837.7652811956053,
 						"width": 80.94731657047572,
 						"height": 30,
 						"originX": 0,
@@ -1389,8 +1395,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 178.0129893992738,
-						"y": 858.5136423669811,
+						"x": 176.89682330086487,
+						"y": 886.0457394610677,
 						"width": 46.49303888839768,
 						"height": 23.19840099887685,
 						"originX": 0.5,
@@ -1421,8 +1427,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 312.0988005111358,
-						"y": 857.970504065452,
+						"x": 310.98263441272684,
+						"y": 885.5026011595386,
 						"width": 44.03705239910823,
 						"height": 21.972949602526448,
 						"originX": 0.5,
@@ -1453,8 +1459,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 316.5690182850671,
-						"y": 891.101151835683,
+						"x": 315.45285218665816,
+						"y": 918.6332489297696,
 						"width": 41.35955971369565,
 						"height": 20.636974358213894,
 						"originX": 0.5,
@@ -1485,8 +1491,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 171.07461805453312,
-						"y": 891.8308125164583,
+						"x": 169.95845195612418,
+						"y": 919.3629096105449,
 						"width": 44.72936536499344,
 						"height": 22.318389569096052,
 						"originX": 0.5,
@@ -1517,8 +1523,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 317.03926764663834,
-						"y": 924.7737564617596,
+						"x": 315.9231015482294,
+						"y": 952.3058535558462,
 						"width": 51.05693837763845,
 						"height": 25.475627289120446,
 						"originX": 0.5,
@@ -1549,8 +1555,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 175.50470112895914,
-						"y": 923.2472108384221,
+						"x": 174.3885350305502,
+						"y": 950.7793079325087,
 						"width": 51.3871553018313,
 						"height": 25.640393989839446,
 						"originX": 0.5,
@@ -1591,8 +1597,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 207.21658155623854,
-						"y": 850.0406769634371,
+						"x": 206.1004154578296,
+						"y": 877.5727740575237,
 						"width": 81.8424440566207,
 						"height": 26.76143636879192,
 						"originX": 0,
@@ -1633,8 +1639,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 195.58205712692302,
-						"y": 879.2907020683343,
+						"x": 194.46589102851408,
+						"y": 906.8227991624209,
 						"width": 94.83371639527934,
 						"height": 26.76143636879192,
 						"originX": 0,
@@ -1675,8 +1681,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 206.93778965430909,
-						"y": 912.3968890064253,
+						"x": 205.82162355590015,
+						"y": 939.9289861005119,
 						"width": 79.79119052946407,
 						"height": 26.76143636879192,
 						"originX": 0,
@@ -1774,6 +1780,114 @@
 						"y": 521.653550738586,
 						"width": 155.1644977098009,
 						"height": 149.04610012402497,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_label",
+					"properties": {
+						"text": "Win condition",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 77,
+					"instanceVariables": {
+						"label": ""
+					},
+					"behaviors": {},
+					"world": {
+						"x": 12.944963153124036,
+						"y": 795.5280181146416,
+						"width": 105.55359440885707,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_win",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 78,
+					"instanceVariables": {
+						"type": "GOALS",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 215.63282580116777,
+						"y": 809.3052455208444,
+						"width": 49.08781943193664,
+						"height": 19.594484620822705,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_win",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"type": "TIME",
+						"index": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 272.5572968200222,
+						"y": 809.677300886981,
+						"width": 49.08781943193664,
+						"height": 19.594484620822705,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
