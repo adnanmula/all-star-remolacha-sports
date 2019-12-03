@@ -1623,7 +1623,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 229741409526385,
+							"sid": 133303437149212,
 							"parameters": {
 								"group-name": "\"Gamepad selector\"",
 								"state": "deactivated"
@@ -1632,7 +1632,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 276205532442435,
+							"sid": 183044656259115,
 							"parameters": {
 								"group-name": "\"Character selector\"",
 								"state": "deactivated"
@@ -1641,7 +1641,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 990813997942725,
+							"sid": 647164401573999,
 							"parameters": {
 								"group-name": "\"Gamemode view buttons\"",
 								"state": "deactivated"
@@ -1650,7 +1650,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 516985684507660,
+							"sid": 895316262402440,
 							"parameters": {
 								"group-name": "\"Main view buttons\"",
 								"state": "deactivated"
@@ -1658,10 +1658,10 @@
 						},
 						{
 							"callFunction": "disableAllMatcConfigGroups",
-							"sid": 114475875679854
+							"sid": 629063365466592
 						}
 					],
-					"sid": 971546396659737
+					"sid": 556703289724260
 				},
 				{
 					"functionName": "goToView",
@@ -1681,7 +1681,7 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 607823341230850,
+					"sid": 229928182042465,
 					"children": [
 						{
 							"eventType": "block",
@@ -1689,7 +1689,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 308689111016635,
+									"sid": 819111598864373,
 									"parameters": {
 										"first-value": "view",
 										"comparison": 1,
@@ -1700,19 +1700,19 @@
 							"actions": [
 								{
 									"callFunction": "disableAllMenuNavigationButtons",
-									"sid": 481788977975451
+									"sid": 370689978059469
 								},
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 496698277197732,
+									"sid": 401338604749043,
 									"parameters": {
 										"variable": "mn_current_view",
 										"value": "view"
 									}
 								}
 							],
-							"sid": 211966139729349,
+							"sid": 590187895192840,
 							"children": [
 								{
 									"eventType": "block",
@@ -1720,7 +1720,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 414874797819569,
+											"sid": 347054947123437,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1732,7 +1732,7 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 444176009673701,
+											"sid": 670996345274849,
 											"parameters": {
 												"group-name": "\"Main view buttons\"",
 												"state": "activated"
@@ -1741,14 +1741,14 @@
 										{
 											"id": "scroll-to-position",
 											"objectClass": "System",
-											"sid": 970953062443314,
+											"sid": 768853737048729,
 											"parameters": {
 												"x": "320",
 												"y": "180"
 											}
 										}
 									],
-									"sid": 288299316304326
+									"sid": 345748413317526
 								},
 								{
 									"eventType": "block",
@@ -1756,7 +1756,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 492866355342770,
+											"sid": 162647936230867,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1768,7 +1768,7 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 824266877362529,
+											"sid": 109019657157701,
 											"parameters": {
 												"group-name": "\"Gamepad selector\"",
 												"state": "activated"
@@ -1777,14 +1777,14 @@
 										{
 											"id": "scroll-to-position",
 											"objectClass": "System",
-											"sid": 344047818201003,
+											"sid": 841021598276841,
 											"parameters": {
 												"x": "960",
 												"y": "180"
 											}
 										}
 									],
-									"sid": 906741314003629
+									"sid": 667094248561266
 								},
 								{
 									"eventType": "block",
@@ -1792,7 +1792,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 241112294183857,
+											"sid": 528075422157526,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1804,7 +1804,7 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 588215976084691,
+											"sid": 567561828492288,
 											"parameters": {
 												"group-name": "\"Main view buttons\"",
 												"state": "activated"
@@ -1813,14 +1813,14 @@
 										{
 											"id": "scroll-to-position",
 											"objectClass": "System",
-											"sid": 399811549515841,
+											"sid": 109604807685413,
 											"parameters": {
 												"x": "320",
 												"y": "180"
 											}
 										}
 									],
-									"sid": 294212682691283
+									"sid": 345989905116750
 								},
 								{
 									"eventType": "block",
@@ -1828,7 +1828,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 709254434524974,
+											"sid": 612378120962683,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1840,7 +1840,7 @@
 										{
 											"id": "scroll-to-position",
 											"objectClass": "System",
-											"sid": 936053254808441,
+											"sid": 656630385238908,
 											"parameters": {
 												"x": "320",
 												"y": "540"
@@ -1849,14 +1849,14 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 877262900051346,
+											"sid": 541007294260286,
 											"parameters": {
 												"group-name": "\"Gamemode view buttons\"",
 												"state": "activated"
 											}
 										}
 									],
-									"sid": 716802839672769
+									"sid": 371833972813892
 								},
 								{
 									"eventType": "block",
@@ -1864,7 +1864,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 368004684996994,
+											"sid": 463704830038643,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1876,7 +1876,7 @@
 										{
 											"id": "scroll-to-position",
 											"objectClass": "System",
-											"sid": 162090662693145,
+											"sid": 404908905274250,
 											"parameters": {
 												"x": "320",
 												"y": "900"
@@ -1885,14 +1885,14 @@
 										{
 											"id": "set-group-active",
 											"objectClass": "System",
-											"sid": 531336625064350,
+											"sid": 687670309438048,
 											"parameters": {
 												"group-name": "\"GC - Match type\"",
 												"state": "activated"
 											}
 										}
 									],
-									"sid": 834374177846405
+									"sid": 560034290302979
 								},
 								{
 									"eventType": "block",
@@ -1900,7 +1900,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 746049284210800,
+											"sid": 669847013445236,
 											"parameters": {
 												"first-value": "view",
 												"comparison": 0,
@@ -1912,17 +1912,77 @@
 										{
 											"id": "go-to-layout",
 											"objectClass": "System",
-											"sid": 861509929216905,
+											"sid": 769654846560702,
 											"parameters": {
 												"layout": "main"
 											}
 										}
 									],
-									"sid": 974137429889711
+									"sid": 643070962832039
 								}
 							]
 						}
 					]
+				},
+				{
+					"functionName": "setButtonSelectorTo",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 412668434715821
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 984529422010094
+						},
+						{
+							"name": "width",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 420956659847613
+						},
+						{
+							"name": "height",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 904320900864871
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "menu_main_selector",
+							"sid": 637690110257523,
+							"parameters": {
+								"x": "x - (width / 2)",
+								"y": "y - (height / 2)"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "menu_main_selector",
+							"sid": 954601049070604,
+							"parameters": {
+								"width": "width",
+								"height": "height"
+							}
+						}
+					],
+					"sid": 715339823543526
 				},
 				{
 					"eventType": "group",
@@ -1977,22 +2037,14 @@
 									],
 									"actions": [
 										{
-											"id": "set-position",
-											"objectClass": "menu_main_selector",
-											"sid": 164971343250180,
-											"parameters": {
-												"x": "menu_main_buttons.X",
-												"y": "menu_main_buttons.Y"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "menu_main_selector",
-											"sid": 389663079631314,
-											"parameters": {
-												"width": "menu_main_buttons.Width",
-												"height": "menu_main_buttons.Height"
-											}
+											"callFunction": "setButtonSelectorTo",
+											"sid": 816498177126345,
+											"parameters": [
+												"menu_main_buttons.X",
+												"menu_main_buttons.Y",
+												"menu_main_buttons.Width",
+												"menu_main_buttons.Height"
+											]
 										}
 									],
 									"sid": 734503036541905
@@ -2056,22 +2108,14 @@
 													}
 												},
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 758341480663818,
-													"parameters": {
-														"x": "menu_main_buttons.X",
-														"y": "menu_main_buttons.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 983024898937256,
-													"parameters": {
-														"width": "menu_main_buttons.Width",
-														"height": "menu_main_buttons.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 888877735761451,
+													"parameters": [
+														"menu_main_buttons.X",
+														"menu_main_buttons.Y",
+														"menu_main_buttons.Width",
+														"menu_main_buttons.Height"
+													]
 												}
 											],
 											"sid": 469168141878774
@@ -2138,22 +2182,14 @@
 													}
 												},
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 759842609563412,
-													"parameters": {
-														"x": "menu_main_buttons.X",
-														"y": "menu_main_buttons.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 797740244694394,
-													"parameters": {
-														"width": "menu_main_buttons.Width",
-														"height": "menu_main_buttons.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 244953962550659,
+													"parameters": [
+														"menu_main_buttons.X",
+														"menu_main_buttons.Y",
+														"menu_main_buttons.Width",
+														"menu_main_buttons.Height"
+													]
 												}
 											],
 											"sid": 515674110687990
@@ -2289,22 +2325,14 @@
 									],
 									"actions": [
 										{
-											"id": "set-position",
-											"objectClass": "menu_main_selector",
-											"sid": 388795964475353,
-											"parameters": {
-												"x": "menu_gamemode_buttons.X",
-												"y": "menu_gamemode_buttons.Y"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "menu_main_selector",
-											"sid": 769266180650938,
-											"parameters": {
-												"width": "menu_gamemode_buttons.Width",
-												"height": "menu_gamemode_buttons.Height"
-											}
+											"callFunction": "setButtonSelectorTo",
+											"sid": 863824017121354,
+											"parameters": [
+												"menu_gamemode_buttons.X",
+												"menu_gamemode_buttons.Y",
+												"menu_gamemode_buttons.Width",
+												"menu_gamemode_buttons.Height"
+											]
 										}
 									],
 									"sid": 602832976252421
@@ -2377,22 +2405,14 @@
 													}
 												},
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 308005873524340,
-													"parameters": {
-														"x": "menu_gamemode_buttons.X",
-														"y": "menu_gamemode_buttons.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 418294641969880,
-													"parameters": {
-														"width": "menu_gamemode_buttons.Width",
-														"height": "menu_gamemode_buttons.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 218506015813621,
+													"parameters": [
+														"menu_gamemode_buttons.X",
+														"menu_gamemode_buttons.Y",
+														"menu_gamemode_buttons.Width",
+														"menu_gamemode_buttons.Height"
+													]
 												}
 											],
 											"sid": 317536948847478
@@ -2468,22 +2488,14 @@
 													}
 												},
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 772746743173129,
-													"parameters": {
-														"x": "menu_gamemode_buttons.X",
-														"y": "menu_gamemode_buttons.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 146054190957950,
-													"parameters": {
-														"width": "menu_gamemode_buttons.Width",
-														"height": "menu_gamemode_buttons.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 369356619971898,
+													"parameters": [
+														"menu_gamemode_buttons.X",
+														"menu_gamemode_buttons.Y",
+														"menu_gamemode_buttons.Width",
+														"menu_gamemode_buttons.Height"
+													]
 												}
 											],
 											"sid": 190457454563403
@@ -2838,10 +2850,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 994285383913939,
+											"sid": 235325545216366,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "match_config.Get(\"win_condition\") = WIN_CONDITION_GOALS ? 0 : 1"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										}
 									],
@@ -2862,22 +2874,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 265577323233863,
-													"parameters": {
-														"x": "menu_matchconfig_type.X",
-														"y": "menu_matchconfig_type.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 631095944906763,
-													"parameters": {
-														"width": "menu_matchconfig_type.Width",
-														"height": "menu_matchconfig_type.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 772588989504931,
+													"parameters": [
+														"menu_matchconfig_type.X",
+														"menu_matchconfig_type.Y",
+														"menu_matchconfig_type.Width",
+														"menu_matchconfig_type.Height"
+													]
 												}
 											],
 											"sid": 309225904227644
@@ -2941,22 +2945,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 521491432517085,
-															"parameters": {
-																"x": "menu_matchconfig_type.X",
-																"y": "menu_matchconfig_type.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 430781659318386,
-															"parameters": {
-																"width": "menu_matchconfig_type.Width",
-																"height": "menu_matchconfig_type.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 410704364175507,
+															"parameters": [
+																"menu_matchconfig_type.X",
+																"menu_matchconfig_type.Y",
+																"menu_matchconfig_type.Width",
+																"menu_matchconfig_type.Height"
+															]
 														}
 													],
 													"sid": 377041207142105
@@ -3023,22 +3019,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 581350171049965,
-															"parameters": {
-																"x": "menu_matchconfig_type.X",
-																"y": "menu_matchconfig_type.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 416671236991499,
-															"parameters": {
-																"width": "menu_matchconfig_type.Width",
-																"height": "menu_matchconfig_type.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 972590850553354,
+															"parameters": [
+																"menu_matchconfig_type.X",
+																"menu_matchconfig_type.Y",
+																"menu_matchconfig_type.Width",
+																"menu_matchconfig_type.Height"
+															]
 														}
 													],
 													"sid": 475276050248462
@@ -3223,10 +3211,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 336369215454371,
+											"sid": 562432114243123,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "match_config.Get(\"win_condition\") = WIN_CONDITION_GOALS ? 0 : 1"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										}
 									],
@@ -3247,22 +3235,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 247853502690609,
-													"parameters": {
-														"x": "menu_matchconfig_win.X",
-														"y": "menu_matchconfig_win.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 420143139652471,
-													"parameters": {
-														"width": "menu_matchconfig_win.Width",
-														"height": "menu_matchconfig_win.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 337759372690763,
+													"parameters": [
+														"menu_matchconfig_win.X",
+														"menu_matchconfig_win.Y",
+														"menu_matchconfig_win.Width",
+														"menu_matchconfig_win.Height"
+													]
 												}
 											],
 											"sid": 839968863132536
@@ -3326,22 +3306,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 464906310802092,
-															"parameters": {
-																"x": "menu_matchconfig_win.X",
-																"y": "menu_matchconfig_win.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 197854092851112,
-															"parameters": {
-																"width": "menu_matchconfig_win.Width",
-																"height": "menu_matchconfig_win.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 629540349567125,
+															"parameters": [
+																"menu_matchconfig_win.X",
+																"menu_matchconfig_win.Y",
+																"menu_matchconfig_win.Width",
+																"menu_matchconfig_win.Height"
+															]
 														}
 													],
 													"sid": 225971334851329
@@ -3408,22 +3380,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 557056895846661,
-															"parameters": {
-																"x": "menu_matchconfig_win.X",
-																"y": "menu_matchconfig_win.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 132987573026173,
-															"parameters": {
-																"width": "menu_matchconfig_win.Width",
-																"height": "menu_matchconfig_win.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 438908922216635,
+															"parameters": [
+																"menu_matchconfig_win.X",
+																"menu_matchconfig_win.Y",
+																"menu_matchconfig_win.Width",
+																"menu_matchconfig_win.Height"
+															]
 														}
 													],
 													"sid": 764826679458085
@@ -3679,10 +3643,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 394524878805778,
+											"sid": 572514927239019,
 											"parameters": {
 												"variable": "mn_selected_index",
-												"value": "0"
+												"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 											}
 										},
 										{
@@ -3711,22 +3675,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 223835155541502,
-													"parameters": {
-														"x": "menu_matchconfig_goals_button.X",
-														"y": "menu_matchconfig_goals_button.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 973248943812369,
-													"parameters": {
-														"width": "menu_matchconfig_goals_button.Width",
-														"height": "menu_matchconfig_goals_button.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 644971970407807,
+													"parameters": [
+														"menu_matchconfig_goals_button.X",
+														"menu_matchconfig_goals_button.Y",
+														"menu_matchconfig_goals_button.Width",
+														"menu_matchconfig_goals_button.Height"
+													]
 												}
 											],
 											"sid": 384353274209689
@@ -3790,22 +3746,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 648696073065266,
-															"parameters": {
-																"x": "menu_matchconfig_goals_button.X",
-																"y": "menu_matchconfig_goals_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 298913482001763,
-															"parameters": {
-																"width": "menu_matchconfig_goals_button.Width",
-																"height": "menu_matchconfig_goals_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 492754188284820,
+															"parameters": [
+																"menu_matchconfig_goals_button.X",
+																"menu_matchconfig_goals_button.Y",
+																"menu_matchconfig_goals_button.Width",
+																"menu_matchconfig_goals_button.Height"
+															]
 														}
 													],
 													"sid": 845033271927060
@@ -3872,22 +3820,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 661170520042501,
-															"parameters": {
-																"x": "menu_matchconfig_goals_button.X",
-																"y": "menu_matchconfig_goals_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 155364701753951,
-															"parameters": {
-																"width": "menu_matchconfig_goals_button.Width",
-																"height": "menu_matchconfig_goals_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 984284885637084,
+															"parameters": [
+																"menu_matchconfig_goals_button.X",
+																"menu_matchconfig_goals_button.Y",
+																"menu_matchconfig_goals_button.Width",
+																"menu_matchconfig_goals_button.Height"
+															]
 														}
 													],
 													"sid": 333826394467578
@@ -4141,22 +4081,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 129834353338286,
-													"parameters": {
-														"x": "menu_matchconfig_size_ball_button.X",
-														"y": "menu_matchconfig_size_ball_button.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 101840255669283,
-													"parameters": {
-														"width": "menu_matchconfig_size_ball_button.Width",
-														"height": "menu_matchconfig_size_ball_button.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 359312027211603,
+													"parameters": [
+														"menu_matchconfig_size_ball_button.X",
+														"menu_matchconfig_size_ball_button.Y",
+														"menu_matchconfig_size_ball_button.Width",
+														"menu_matchconfig_size_ball_button.Height"
+													]
 												}
 											],
 											"sid": 329891942872112
@@ -4220,22 +4152,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 415401100665776,
-															"parameters": {
-																"x": "menu_matchconfig_size_ball_button.X",
-																"y": "menu_matchconfig_size_ball_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 913444817861858,
-															"parameters": {
-																"width": "menu_matchconfig_size_ball_button.Width",
-																"height": "menu_matchconfig_size_ball_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 274180115780241,
+															"parameters": [
+																"menu_matchconfig_size_ball_button.X",
+																"menu_matchconfig_size_ball_button.Y",
+																"menu_matchconfig_size_ball_button.Width",
+																"menu_matchconfig_size_ball_button.Height"
+															]
 														}
 													],
 													"sid": 330307983222841
@@ -4302,22 +4226,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 597661707888416,
-															"parameters": {
-																"x": "menu_matchconfig_size_ball_button.X",
-																"y": "menu_matchconfig_size_ball_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 228907265721208,
-															"parameters": {
-																"width": "menu_matchconfig_size_ball_button.Width",
-																"height": "menu_matchconfig_size_ball_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 289973647081044,
+															"parameters": [
+																"menu_matchconfig_size_ball_button.X",
+																"menu_matchconfig_size_ball_button.Y",
+																"menu_matchconfig_size_ball_button.Width",
+																"menu_matchconfig_size_ball_button.Height"
+															]
 														}
 													],
 													"sid": 759951414793048
@@ -4655,22 +4571,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 341045505877373,
-													"parameters": {
-														"x": "menu_matchconfig_size_character_button.X",
-														"y": "menu_matchconfig_size_character_button.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 227322939493772,
-													"parameters": {
-														"width": "menu_matchconfig_size_character_button.Width",
-														"height": "menu_matchconfig_size_character_button.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 577088020643251,
+													"parameters": [
+														"menu_matchconfig_size_character_button.X",
+														"menu_matchconfig_size_character_button.Y",
+														"menu_matchconfig_size_character_button.Width",
+														"menu_matchconfig_size_character_button.Height"
+													]
 												}
 											],
 											"sid": 368349342345067
@@ -4734,22 +4642,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 453629839173643,
-															"parameters": {
-																"x": "menu_matchconfig_size_character_button.X",
-																"y": "menu_matchconfig_size_character_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 964458096949389,
-															"parameters": {
-																"width": "menu_matchconfig_size_character_button.Width",
-																"height": "menu_matchconfig_size_character_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 310181934594777,
+															"parameters": [
+																"menu_matchconfig_size_character_button.X",
+																"menu_matchconfig_size_character_button.Y",
+																"menu_matchconfig_size_character_button.Width",
+																"menu_matchconfig_size_character_button.Height"
+															]
 														}
 													],
 													"sid": 432491686246429
@@ -4816,22 +4716,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 861580246878242,
-															"parameters": {
-																"x": "menu_matchconfig_size_character_button.X",
-																"y": "menu_matchconfig_size_character_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 314785381079590,
-															"parameters": {
-																"width": "menu_matchconfig_size_character_button.Width",
-																"height": "menu_matchconfig_size_character_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 672793012393199,
+															"parameters": [
+																"menu_matchconfig_size_character_button.X",
+																"menu_matchconfig_size_character_button.Y",
+																"menu_matchconfig_size_character_button.Width",
+																"menu_matchconfig_size_character_button.Height"
+															]
 														}
 													],
 													"sid": 542146363241460
@@ -5165,22 +5057,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 515829672629522,
-													"parameters": {
-														"x": "menu_matchconfig_size_goal_button.X",
-														"y": "menu_matchconfig_size_goal_button.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 110739693150963,
-													"parameters": {
-														"width": "menu_matchconfig_size_goal_button.Width",
-														"height": "menu_matchconfig_size_goal_button.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 878219522298387,
+													"parameters": [
+														"menu_matchconfig_size_goal_button.X",
+														"menu_matchconfig_size_goal_button.Y",
+														"menu_matchconfig_size_goal_button.Width",
+														"menu_matchconfig_size_goal_button.Height"
+													]
 												}
 											],
 											"sid": 400289905268900
@@ -5244,22 +5128,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 581722013126996,
-															"parameters": {
-																"x": "menu_matchconfig_size_goal_button.X",
-																"y": "menu_matchconfig_size_goal_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 771187957284536,
-															"parameters": {
-																"width": "menu_matchconfig_size_goal_button.Width",
-																"height": "menu_matchconfig_size_goal_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 689128029517707,
+															"parameters": [
+																"menu_matchconfig_size_goal_button.X",
+																"menu_matchconfig_size_goal_button.Y",
+																"menu_matchconfig_size_goal_button.Width",
+																"menu_matchconfig_size_goal_button.Height"
+															]
 														}
 													],
 													"sid": 206394567782697
@@ -5326,22 +5202,14 @@
 															}
 														},
 														{
-															"id": "set-position",
-															"objectClass": "menu_main_selector",
-															"sid": 414874604861596,
-															"parameters": {
-																"x": "menu_matchconfig_size_goal_button.X",
-																"y": "menu_matchconfig_size_goal_button.Y"
-															}
-														},
-														{
-															"id": "set-size",
-															"objectClass": "menu_main_selector",
-															"sid": 396759775305638,
-															"parameters": {
-																"width": "menu_matchconfig_size_goal_button.Width",
-																"height": "menu_matchconfig_size_goal_button.Height"
-															}
+															"callFunction": "setButtonSelectorTo",
+															"sid": 920522562158014,
+															"parameters": [
+																"menu_matchconfig_size_goal_button.X",
+																"menu_matchconfig_size_goal_button.Y",
+																"menu_matchconfig_size_goal_button.Width",
+																"menu_matchconfig_size_goal_button.Height"
+															]
 														}
 													],
 													"sid": 466991377467773
@@ -5655,22 +5523,14 @@
 											],
 											"actions": [
 												{
-													"id": "set-position",
-													"objectClass": "menu_main_selector",
-													"sid": 220954700866665,
-													"parameters": {
-														"x": "menu_matchconfig_toCharSelect.X",
-														"y": "menu_matchconfig_toCharSelect.Y"
-													}
-												},
-												{
-													"id": "set-size",
-													"objectClass": "menu_main_selector",
-													"sid": 106127905588090,
-													"parameters": {
-														"width": "menu_matchconfig_toCharSelect.Width",
-														"height": "menu_matchconfig_toCharSelect.Height"
-													}
+													"callFunction": "setButtonSelectorTo",
+													"sid": 369248587082702,
+													"parameters": [
+														"menu_matchconfig_toCharSelect.X",
+														"menu_matchconfig_toCharSelect.Y",
+														"menu_matchconfig_toCharSelect.Width",
+														"menu_matchconfig_toCharSelect.Height"
+													]
 												}
 											],
 											"sid": 916947665069189
