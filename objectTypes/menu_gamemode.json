@@ -1,5 +1,5 @@
 {
-	"name": "menu_gamemode_match",
+	"name": "menu_gamemode",
 	"plugin-id": "Sprite",
 	"sid": 141317302624202,
 	"isGlobal": false,
@@ -23,7 +23,7 @@
 					}
 				],
 				"sid": 526231924304123,
-				"name": "Animation 1",
+				"name": "match",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -45,7 +45,51 @@
 					}
 				],
 				"sid": 796691316635074,
-				"name": "Animation 2",
+				"name": "quick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 47,
+						"duration": 1
+					}
+				],
+				"sid": 363531188669395,
+				"name": "tournament",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 49,
+						"duration": 1
+					}
+				],
+				"sid": 927052275027643,
+				"name": "online",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

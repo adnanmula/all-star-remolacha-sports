@@ -1204,7 +1204,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
+									"objectClass": "match_scoreboard",
 									"sid": 264678984967201,
 									"parameters": {
 										"text": "score_1 & \" - \" & score_2"
@@ -1416,7 +1416,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
+									"objectClass": "match_scoreboard",
 									"sid": 912740275896394,
 									"parameters": {
 										"text": "gamepad_selection.Get(\"player0_character\") & \"(player1) wins!\""
@@ -1447,7 +1447,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
+									"objectClass": "match_scoreboard",
 									"sid": 719911950386375,
 									"parameters": {
 										"text": "gamepad_selection.Get(\"player1_character\") & \"(player2) wins!\""
@@ -1478,7 +1478,7 @@
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "Text",
+									"objectClass": "match_scoreboard",
 									"sid": 832840531200845,
 									"parameters": {
 										"text": "\"Draw!\""

@@ -113,9 +113,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"match_timer"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -145,9 +143,10 @@
 					"solid_bound",
 					"goal",
 					"goal_detector",
-					"Text",
+					"match_scoreboard",
 					"goal_crossbar",
-					"goal_solid_detector"
+					"goal_solid_detector",
+					"match_timer"
 				],
 				"subfolders": [],
 				"name": "level"
@@ -162,53 +161,83 @@
 							"menu_char_name",
 							"menu_char_portrait_big"
 						],
-						"subfolders": [],
+						"subfolders": [
+							{
+								"items": [
+									"menu_gamepad_selector"
+								],
+								"subfolders": [],
+								"name": "gamepad_selector"
+							}
+						],
 						"name": "char_selector"
 					},
 					{
 						"items": [
-							"menu_gamepad_selector"
-						],
-						"subfolders": [],
-						"name": "gamepad_selector"
-					},
-					{
-						"items": [
-							"menu_main_play",
-							"menu_main_selector",
-							"menu_main_settings",
-							"menu_gamemode_match",
-							"menu_gamemode_tournament"
+							"menu_main_selector"
 						],
 						"subfolders": [],
 						"name": "navigation"
 					},
 					{
-						"items": [
-							"menu_debug",
-							"menu_gamepad_debug",
-							"menu_title"
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"menu_debug",
+									"menu_gamepad_debug",
+									"menu_title"
+								],
+								"subfolders": [],
+								"name": "text"
+							},
+							{
+								"items": [
+									"menu_main_play",
+									"menu_main_settings"
+								],
+								"subfolders": [],
+								"name": "button"
+							}
 						],
-						"subfolders": [],
 						"name": "main"
 					},
 					{
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"menu_matchconfig_goals_button",
+									"menu_matchconfig_size_ball_button",
+									"menu_matchconfig_size_character_button",
+									"menu_matchconfig_size_goal_button",
+									"menu_matchconfig_toCharSelect",
+									"menu_matchconfig_type",
+									"menu_matchconfig_win"
+								],
+								"subfolders": [],
+								"name": "button"
+							},
+							{
+								"items": [
+									"menu_matchconfig_goals_text",
+									"menu_matchconfig_label",
+									"menu_matchconfig_size_ball_text",
+									"menu_matchconfig_size_character_text",
+									"menu_matchconfig_size_goal_text"
+								],
+								"subfolders": [],
+								"name": "text"
+							}
+						],
+						"name": "match_config"
+					},
+					{
 						"items": [
-							"menu_matchconfig_label",
-							"menu_matchconfig_goals_button",
-							"menu_matchconfig_goals_text",
-							"menu_matchconfig_size_ball_button",
-							"menu_matchconfig_size_ball_text",
-							"menu_matchconfig_size_character_button",
-							"menu_matchconfig_size_character_text",
-							"menu_matchconfig_size_goal_button",
-							"menu_matchconfig_size_goal_text",
-							"menu_matchconfig_toCharSelect",
-							"menu_matchconfig_type",
-							"menu_matchconfig_win"
+							"menu_gamemode"
 						],
 						"subfolders": [],
-						"name": "match_config"
+						"name": "gamemode"
 					}
 				],
 				"name": "menu"

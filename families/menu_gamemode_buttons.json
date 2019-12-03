@@ -19,7 +19,6 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"menu_gamemode_match",
-		"menu_gamemode_tournament"
+		"menu_gamemode"
 	]
 }

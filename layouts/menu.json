@@ -641,42 +641,10 @@
 					}
 				},
 				{
-					"type": "menu_gamemode_tournament",
+					"type": "menu_gamemode",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 5,
-					"instanceVariables": {
-						"view": "",
-						"index": 2
-					},
-					"behaviors": {},
-					"world": {
-						"x": 321.09020744981405,
-						"y": 522.274472061645,
-						"width": 155.1644977098009,
-						"height": 149.04610012402497,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "menu_gamemode_match",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
+						"initial-animation": "match",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -688,10 +656,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 155.74527253724884,
-						"y": 561.9434803039719,
-						"width": 150.0329165274939,
-						"height": 69.32199983674923,
+						"x": 173.30445607731394,
+						"y": 551.6340505135777,
+						"width": 174.4090401757344,
+						"height": 69.76361607029375,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1700,10 +1668,10 @@
 					}
 				},
 				{
-					"type": "menu_gamemode_match",
+					"type": "menu_gamemode",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Animation 2",
+						"initial-animation": "quick",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -1715,42 +1683,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 156.40199686081215,
-						"y": 482.1707707158245,
-						"width": 150.0329165274939,
-						"height": 69.32199983674923,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "menu_gamemode_tournament",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 2",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 76,
-					"instanceVariables": {
-						"view": "",
-						"index": 3
-					},
-					"behaviors": {},
-					"world": {
-						"x": 486.87620070660853,
-						"y": 521.653550738586,
-						"width": 155.1644977098009,
-						"height": 149.04610012402497,
+						"x": 173.30445607731397,
+						"y": 472.3515664598465,
+						"width": 174.4090401757344,
+						"height": 69.76361607029375,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1968,35 +1904,6 @@
 					}
 				},
 				{
-					"type": "menu_main_selector",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 47,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 92.466,
-						"y": 123.73,
-						"width": 101.32906237374976,
-						"height": 40.88604158249984,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "menu_matchconfig_label",
 					"properties": {
 						"text": "Porteria",
@@ -2074,6 +1981,99 @@
 						"height": 26.26174311270529,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_gamemode",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "online",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 85,
+					"instanceVariables": {
+						"view": "",
+						"index": 3
+					},
+					"behaviors": {},
+					"world": {
+						"x": 507.95221564833435,
+						"y": 511.9928084867121,
+						"width": 155.1644977098009,
+						"height": 149.04610012402497,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_gamemode",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "tournament",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {
+						"view": "",
+						"index": 2
+					},
+					"behaviors": {},
+					"world": {
+						"x": 345.8469538497211,
+						"y": 511.9928084867121,
+						"width": 155.1644977098009,
+						"height": 149.04610012402497,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_main_selector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 92.466,
+						"y": 123.73,
+						"width": 101.32906237374976,
+						"height": 40.88604158249984,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
