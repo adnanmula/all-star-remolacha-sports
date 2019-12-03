@@ -113,9 +113,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"menu_matchconfig_win"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -204,7 +202,8 @@
 							"menu_matchconfig_size_goal_button",
 							"menu_matchconfig_size_goal_text",
 							"menu_matchconfig_toCharSelect",
-							"wip_label_"
+							"menu_matchconfig_type",
+							"menu_matchconfig_win"
 						],
 						"subfolders": [],
 						"name": "match_config"

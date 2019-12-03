@@ -1,20 +1,20 @@
 {
-	"name": "menu_matchconfig_win",
+	"name": "menu_matchconfig_type",
 	"plugin-id": "Sprite",
-	"sid": 627498898667649,
+	"sid": 608845397397005,
 	"isGlobal": false,
 	"instanceVariables": [
 		{
 			"name": "type",
 			"type": "string",
 			"desc": "",
-			"sid": 709982538894327
+			"sid": 406205858917614
 		},
 		{
 			"name": "index",
 			"type": "number",
 			"desc": "",
-			"sid": 305225847640791
+			"sid": 442580188761744
 		}
 	],
 	"behaviorTypes": [],
@@ -31,7 +31,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 43,
+						"imageSpriteId": 70,
 						"duration": 1
 					},
 					{
@@ -42,12 +42,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 51,
+						"imageSpriteId": 68,
 						"duration": 1
 					}
 				],
-				"sid": 400530272287045,
-				"name": "goals",
+				"sid": 203981288331450,
+				"name": "football",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -64,7 +64,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 48,
+						"imageSpriteId": 71,
 						"duration": 1
 					},
 					{
@@ -75,12 +75,45 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 52,
+						"imageSpriteId": 69,
 						"duration": 1
 					}
 				],
-				"sid": 649538745901130,
-				"name": "time",
+				"sid": 785704690029739,
+				"name": "basket",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 72,
+						"duration": 1
+					},
+					{
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 73,
+						"duration": 1
+					}
+				],
+				"sid": 329024179702267,
+				"name": "volley",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
