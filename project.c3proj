@@ -96,16 +96,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r178",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"id": "Platform",
+			"name": "Platform",
 			"author": "Scirra",
 			"version": "r178",
 			"bundled": false
@@ -113,7 +113,9 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"match_timer"
+		],
 		"subfolders": [
 			{
 				"items": [

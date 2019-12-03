@@ -2595,19 +2595,19 @@
 									],
 									"actions": [
 										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 774683809797230,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
 											"callFunction": "goToView",
 											"sid": 702897555674730,
 											"parameters": [
 												"MN_VIEW_MAIN"
 											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 357182863951056,
-											"parameters": {
-												"seconds": "0"
-											}
 										}
 									],
 									"sid": 826414153316579,

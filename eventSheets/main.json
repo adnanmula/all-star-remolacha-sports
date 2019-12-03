@@ -27,11 +27,11 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 420969320230227
+					"sid": 977925960720504
 				}
 			],
 			"actions": [],
-			"sid": 865610357669664,
+			"sid": 330663426654972,
 			"children": [
 				{
 					"eventType": "block",
@@ -39,22 +39,72 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 124134873874904
+							"sid": 496321124767572
 						}
 					],
 					"actions": [
 						{
 							"id": "restart-layout",
 							"objectClass": "System",
-							"sid": 439821708339315
+							"sid": 226904534137647
 						},
 						{
 							"id": "reset-global-variables",
 							"objectClass": "System",
-							"sid": 278369555775271
+							"sid": 342438709360371
 						}
 					],
-					"sid": 112478394653021
+					"sid": 718724352854851
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 759206567242543,
+							"parameters": {
+								"first-value": "match_config.Get(\"win_condition\")",
+								"comparison": 0,
+								"second-value": "WIN_CONDITION_TIME"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "match_timer",
+							"sid": 682650263740140,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "match_config.Get(\"goal_amount\") * 60",
+								"type": "once",
+								"tag": "\"match_timer\""
+							}
+						}
+					],
+					"sid": 297523997213511
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 972521794222012
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "match_timer",
+							"sid": 901626954041367,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 454262827951489
 				},
 				{
 					"eventType": "variable",
@@ -64,7 +114,7 @@
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 308331215530027
+					"sid": 172813500609875
 				},
 				{
 					"eventType": "block",
@@ -72,7 +122,7 @@
 					"actions": [
 						{
 							"callFunction": "createGoal",
-							"sid": 568687238291379,
+							"sid": 410477912516647,
 							"parameters": [
 								"10",
 								"200",
@@ -81,7 +131,7 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 886381417109095,
+							"sid": 205142602444622,
 							"parameters": [
 								"630",
 								"200",
@@ -90,7 +140,7 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 942137945468931,
+							"sid": 123324153534841,
 							"parameters": [
 								"gamepad_selection.Get(\"player0_gamepad_index\")",
 								"gamepad_selection.Get(\"player0_character\")",
@@ -101,7 +151,7 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 669534051800450,
+							"sid": 789882196879274,
 							"parameters": [
 								"gamepad_selection.Get(\"player1_gamepad_index\")",
 								"gamepad_selection.Get(\"player1_character\")",
@@ -113,7 +163,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 775116097894232,
+							"sid": 904289680233478,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -121,7 +171,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 639866911943030,
+							"sid": 648928824948593,
 							"parameters": {
 								"variable": "size_ball",
 								"value": "match_config.Get(\"size_ball\")"
@@ -132,7 +182,7 @@
 							"script": "BallInstance.create(runtime, 300, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 538160440590707
+					"sid": 492573476546950
 				}
 			]
 		},
@@ -1210,6 +1260,52 @@
 					"sid": 204508102461086
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "match_timer",
+							"sid": 975254785525397,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"match_timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "match_timer",
+							"sid": 788950010865665,
+							"parameters": {
+								"text": "zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") /60%60),2)&\":\"&zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") %60),2)"
+							}
+						}
+					],
+					"sid": 754756289459089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "match_timer",
+							"sid": 989309162075041,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"match_timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "triggerEndMatch",
+							"sid": 460877133103852
+						}
+					],
+					"sid": 619648165598585
+				},
+				{
 					"functionName": "checkEndMatch",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -1218,17 +1314,57 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 217290936833642,
+					"children": [
 						{
-							"id": "set-function-return-value",
-							"objectClass": "Functions",
-							"sid": 345078316143320,
-							"parameters": {
-								"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 256304928765997,
+									"parameters": {
+										"first-value": "match_config.Get(\"win_condition\")",
+										"comparison": 0,
+										"second-value": "WIN_CONDITION_GOALS"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 767327518043003,
+									"parameters": {
+										"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
+									}
+								}
+							],
+							"sid": 993798732282337
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 410929376537010
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 686937021607275,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 761703981750025
 						}
-					],
-					"sid": 217290936833642
+					]
 				},
 				{
 					"functionName": "triggerEndMatch",
@@ -1248,7 +1384,7 @@
 								{
 									"id": "for-each",
 									"objectClass": "System",
-									"sid": 708320430087363,
+									"sid": 121720183439300,
 									"parameters": {
 										"object": "ball"
 									}
@@ -1258,10 +1394,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "ball",
-									"sid": 580271960901109
+									"sid": 646121015352856
 								}
 							],
-							"sid": 692353553619657
+							"sid": 252440966010315
 						},
 						{
 							"eventType": "block",
@@ -1269,11 +1405,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 789934645603052,
+									"sid": 975724473025630,
 									"parameters": {
 										"first-value": "score_1",
-										"comparison": 5,
-										"second-value": "match_config.Get(\"goal_amount\")"
+										"comparison": 4,
+										"second-value": "score_2"
 									}
 								}
 							],
@@ -1281,13 +1417,13 @@
 								{
 									"id": "set-text",
 									"objectClass": "Text",
-									"sid": 967390818936161,
+									"sid": 912740275896394,
 									"parameters": {
 										"text": "gamepad_selection.Get(\"player0_character\") & \"(player1) wins!\""
 									}
 								}
 							],
-							"sid": 332983335798831
+							"sid": 756558280819500
 						},
 						{
 							"eventType": "block",
@@ -1295,16 +1431,16 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 354553049656662
+									"sid": 875351220901791
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 251001665343443,
+									"sid": 739939505651744,
 									"parameters": {
 										"first-value": "score_2",
-										"comparison": 5,
-										"second-value": "match_config.Get(\"goal_amount\")"
+										"comparison": 4,
+										"second-value": "score_1"
 									}
 								}
 							],
@@ -1312,13 +1448,44 @@
 								{
 									"id": "set-text",
 									"objectClass": "Text",
-									"sid": 877076652148069,
+									"sid": 719911950386375,
 									"parameters": {
 										"text": "gamepad_selection.Get(\"player1_character\") & \"(player2) wins!\""
 									}
 								}
 							],
-							"sid": 981180519832191
+							"sid": 223400887124698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 521724082073385
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 171346119215131,
+									"parameters": {
+										"first-value": "score_1",
+										"comparison": 0,
+										"second-value": "score_2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 832840531200845,
+									"parameters": {
+										"text": "\"Draw!\""
+									}
+								}
+							],
+							"sid": 202323923177759
 						},
 						{
 							"eventType": "block",
@@ -1327,7 +1494,7 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 761067943510856,
+									"sid": 414891918056664,
 									"parameters": {
 										"seconds": "3"
 									}
@@ -1335,13 +1502,13 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 366398107677395,
+									"sid": 352142432299508,
 									"parameters": {
 										"layout": "menu"
 									}
 								}
 							],
-							"sid": 194046766570197
+							"sid": 950519862899185
 						}
 					]
 				}
