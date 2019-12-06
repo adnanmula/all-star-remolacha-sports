@@ -19,13 +19,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 50,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 37,
+						"imageSpriteId": 42,
 						"duration": 1
 					}
 				],

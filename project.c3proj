@@ -404,7 +404,7 @@
 		"pixelRounding": false,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-integer-scale",
-		"fullscreenQuality": "low",
+		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
 			0,

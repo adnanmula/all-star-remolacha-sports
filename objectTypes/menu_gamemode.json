@@ -18,7 +18,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 38,
+						"imageSpriteId": 10,
 						"duration": 1
 					}
 				],
@@ -55,14 +55,14 @@
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 40,
+						"width": 169,
+						"height": 143,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 47,
+						"imageSpriteId": 18,
 						"duration": 1
 					}
 				],
@@ -77,14 +77,14 @@
 			{
 				"frames": [
 					{
-						"width": 100,
-						"height": 40,
+						"width": 169,
+						"height": 143,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 49,
+						"imageSpriteId": 19,
 						"duration": 1
 					}
 				],
