@@ -380,14 +380,14 @@
 					"sid": 821217793226999
 				},
 				{
-					"name": "icon-32.png",
-					"type": "image/png",
-					"sid": 982194147625789
-				},
-				{
 					"name": "icon-128.png",
 					"type": "image/png",
 					"sid": 474311748017190
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 982194147625789
 				}
 			],
 			"subfolders": []

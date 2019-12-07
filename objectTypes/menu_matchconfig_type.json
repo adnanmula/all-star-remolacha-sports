@@ -75,7 +75,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 49,
+						"imageSpriteId": 48,
 						"duration": 1
 					}
 				],
@@ -97,7 +97,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 53,
+						"imageSpriteId": 35,
 						"duration": 1
 					},
 					{
@@ -108,7 +108,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 54,
+						"imageSpriteId": 49,
 						"duration": 1
 					}
 				],
