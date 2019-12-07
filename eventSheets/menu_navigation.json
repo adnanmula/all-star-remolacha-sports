@@ -1,0 +1,4143 @@
+{
+	"name": "menu_navigation",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "mn_selected_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 115995710051450
+		},
+		{
+			"eventType": "variable",
+			"name": "mn_max_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 371697760653185
+		},
+		{
+			"eventType": "variable",
+			"name": "mn_current_view",
+			"type": "string",
+			"initialValue": "main",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 870244887605231
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_MAIN",
+			"type": "string",
+			"initialValue": "main",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 881005569371700
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_CHAR_SELECTOR",
+			"type": "string",
+			"initialValue": "char_select",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 934243334889302
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_SETTINGS",
+			"type": "string",
+			"initialValue": "settings",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 658598824545058
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_MATCH",
+			"type": "string",
+			"initialValue": "match",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 515671579848415
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_GAMEMODE",
+			"type": "string",
+			"initialValue": "gamemode",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 654317672150051
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_MATCH_CONFIG",
+			"type": "string",
+			"initialValue": "match-config",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 359957509155327
+		},
+		{
+			"functionName": "disableAllMenuNavigationButtons",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 977073842921830,
+					"parameters": {
+						"group-name": "\"Gamepad selector\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 582434877834337,
+					"parameters": {
+						"group-name": "\"Character selector\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 586341370101865,
+					"parameters": {
+						"group-name": "\"Gamemode view buttons\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 496857775380574,
+					"parameters": {
+						"group-name": "\"Main view buttons\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"callFunction": "disableAllMatcConfigGroups",
+					"sid": 231998812279405
+				}
+			],
+			"sid": 170747260036514
+		},
+		{
+			"functionName": "goToView",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "view",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 774609008386955
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 330899960928418,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 206406108797615,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 1,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "disableAllMenuNavigationButtons",
+							"sid": 316441990110224
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 312323691942556,
+							"parameters": {
+								"variable": "mn_current_view",
+								"value": "view"
+							}
+						}
+					],
+					"sid": 674771928871254,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 198120765136657,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MAIN"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 379616115708574,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 725937119415911,
+									"parameters": {
+										"x": "320",
+										"y": "180"
+									}
+								}
+							],
+							"sid": 673816380704074
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 286063333139589,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_CHAR_SELECTOR"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 766863526916709,
+									"parameters": {
+										"group-name": "\"Gamepad selector\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 197463441190781,
+									"parameters": {
+										"x": "960",
+										"y": "180"
+									}
+								}
+							],
+							"sid": 461752925638518
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 477643209919483,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_SETTINGS"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 179417080781513,
+									"parameters": {
+										"group-name": "\"Main view buttons\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 376799746891804,
+									"parameters": {
+										"x": "320",
+										"y": "180"
+									}
+								}
+							],
+							"sid": 397466513636147
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 947696345591200,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_GAMEMODE"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 108210972278931,
+									"parameters": {
+										"x": "320",
+										"y": "540"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 603884874979912,
+									"parameters": {
+										"group-name": "\"Gamemode view buttons\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 278384737785942
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 957173523217458,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH_CONFIG"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 991774508471268,
+									"parameters": {
+										"x": "320",
+										"y": "900"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 275077692614884,
+									"parameters": {
+										"group-name": "\"GC - Match type\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 935199174240881
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 670261650769396,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 820923039834733,
+									"parameters": {
+										"layout": "main"
+									}
+								}
+							],
+							"sid": 700537308089304
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "setButtonSelectorTo",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 412668434715821
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 984529422010094
+				},
+				{
+					"name": "width",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 420956659847613
+				},
+				{
+					"name": "height",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 904320900864871
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "menu_main_selector",
+					"sid": 732874390888431,
+					"parameters": {
+						"x": "x - (width / 2)",
+						"y": "y - (height / 2)"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "menu_main_selector",
+					"sid": 792376977922133,
+					"parameters": {
+						"width": "width",
+						"height": "height"
+					}
+				}
+			],
+			"sid": 735636699188713
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main view buttons",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 375994029693985
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 560397395157126,
+							"parameters": {
+								"variable": "mn_max_index",
+								"value": "menu_main_buttons.Count - 1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 550538716856985,
+							"parameters": {
+								"variable": "mn_selected_index",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 835180460623465,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 515138061942565,
+									"parameters": {
+										"object": "menu_main_buttons",
+										"expression": "menu_main_buttons.index= mn_selected_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setButtonSelectorTo",
+									"sid": 803985291727941,
+									"parameters": [
+										"menu_main_buttons.X",
+										"menu_main_buttons.Y",
+										"menu_main_buttons.Width",
+										"menu_main_buttons.Height"
+									]
+								}
+							],
+							"sid": 569686352686137
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 561861618624446,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 214949579289228,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 170728843781017,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-up"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 999091000127725,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 190820271912082,
+											"parameters": {
+												"object": "menu_main_buttons",
+												"expression": "menu_main_buttons.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 513279208880582,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 766634228915913,
+											"parameters": [
+												"menu_main_buttons.X",
+												"menu_main_buttons.Y",
+												"menu_main_buttons.Width",
+												"menu_main_buttons.Height"
+											]
+										}
+									],
+									"sid": 444248587677848
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 594081119751336,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 640065895456860,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 226314870878432,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-down"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 610050574533119,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 328365532856602,
+											"parameters": {
+												"object": "menu_main_buttons",
+												"expression": "menu_main_buttons.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 988778356332949,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 630211995404974,
+											"parameters": [
+												"menu_main_buttons.X",
+												"menu_main_buttons.Y",
+												"menu_main_buttons.Width",
+												"menu_main_buttons.Height"
+											]
+										}
+									],
+									"sid": 563909990003400
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 431646546804119,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 221547506585866,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 733114089963715,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 408990175640498,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 834404499193293,
+											"parameters": {
+												"object": "menu_main_buttons",
+												"expression": "menu_main_buttons.index = mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 229743420334426,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 842134618835160,
+											"parameters": [
+												"menu_main_buttons.view"
+											]
+										}
+									],
+									"sid": 935493654653712
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 204309637466328
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gamemode view buttons",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 503561499964745
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 482938942255493,
+							"parameters": {
+								"variable": "mn_max_index",
+								"value": "menu_gamemode_buttons.Count - 1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 873105418626229,
+							"parameters": {
+								"variable": "mn_selected_index",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 881150241049298,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 600629160774142,
+									"parameters": {
+										"object": "menu_gamemode_buttons",
+										"expression": "menu_gamemode_buttons.index= mn_selected_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "setButtonSelectorTo",
+									"sid": 345474762579345,
+									"parameters": [
+										"menu_gamemode_buttons.X",
+										"menu_gamemode_buttons.Y",
+										"menu_gamemode_buttons.Width",
+										"menu_gamemode_buttons.Height"
+									]
+								}
+							],
+							"sid": 923530240042348
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 301615341275351,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 356268905572576,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 169002936287119,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-left"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 313743402572630,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-up"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 496987761424775,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 919197667799909,
+											"parameters": {
+												"object": "menu_gamemode_buttons",
+												"expression": "menu_gamemode_buttons.index= (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 783629562707470,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 745193867410164,
+											"parameters": [
+												"menu_gamemode_buttons.X",
+												"menu_gamemode_buttons.Y",
+												"menu_gamemode_buttons.Width",
+												"menu_gamemode_buttons.Height"
+											]
+										}
+									],
+									"sid": 343210145661163
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 758813731615716,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 583697079123876,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 462424226928942,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 730231502102431,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-down"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 338749386868285,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 862275501135064,
+											"parameters": {
+												"object": "menu_gamemode_buttons",
+												"expression": "menu_gamemode_buttons.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 479436206555455,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 792373285456800,
+											"parameters": [
+												"menu_gamemode_buttons.X",
+												"menu_gamemode_buttons.Y",
+												"menu_gamemode_buttons.Width",
+												"menu_gamemode_buttons.Height"
+											]
+										}
+									],
+									"sid": 681545457506023
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 579387098778158,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 542568352375125,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 916908314186663,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 132971776728474,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 991220761865005,
+											"parameters": {
+												"object": "menu_gamemode_buttons",
+												"expression": "menu_gamemode_buttons.index = mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 157084016955173,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 103427524051408,
+											"parameters": [
+												"menu_gamemode_buttons.view"
+											]
+										}
+									],
+									"sid": 224334553551086
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 144601669403962,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 555773900825789,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 682630934670547,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 123807030216655,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"callFunction": "goToView",
+									"sid": 448407192266446,
+									"parameters": [
+										"MN_VIEW_MAIN"
+									]
+								}
+							],
+							"sid": 231591622053116,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 808174652905599
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gamemode config",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "disableAllMatcConfigGroups",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 783222476524225,
+							"parameters": {
+								"group-name": "\"GC - Match type\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 549960037490962,
+							"parameters": {
+								"group-name": "\"GC - Win condition\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 333966215612213,
+							"parameters": {
+								"group-name": "\"GC - Goal amount\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 468257516818458,
+							"parameters": {
+								"group-name": "\"GC - Ball size\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 259182019122410,
+							"parameters": {
+								"group-name": "\"GC - Player size\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 453731576491589,
+							"parameters": {
+								"group-name": "\"GC - Goal size\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 458352518885477,
+							"parameters": {
+								"group-name": "\"GC - Go to char select\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 195905645230033
+				},
+				{
+					"functionName": "goToMatchConfigView",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "subview",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 244408917474586
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "disableAllMatcConfigGroups",
+							"sid": 471199409075762
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 235251420777540,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 438278326601167,
+							"parameters": {
+								"group-name": "subview",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 190127539325036
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 270948646702569,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 100746821536739,
+							"parameters": {
+								"first-value": "mn_current_view",
+								"comparison": 0,
+								"second-value": "MN_VIEW_MATCH_CONFIG"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 194695269977011,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 440327720281297,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 830208768395295,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"callFunction": "disableAllMatcConfigGroups",
+									"sid": 936266543391513
+								},
+								{
+									"callFunction": "goToView",
+									"sid": 549943536202236,
+									"parameters": [
+										"MN_VIEW_GAMEMODE"
+									]
+								}
+							],
+							"sid": 795282240436910,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Match type",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 508506259072611
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 110207883412789,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_type.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 954579014043155,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								}
+							],
+							"sid": 164209989954792,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 832513302020729,
+											"parameters": {
+												"object": "menu_matchconfig_type",
+												"expression": "menu_matchconfig_type.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 804263096712041,
+											"parameters": [
+												"menu_matchconfig_type.X",
+												"menu_matchconfig_type.Y",
+												"menu_matchconfig_type.Width",
+												"menu_matchconfig_type.Height"
+											]
+										}
+									],
+									"sid": 259714534530877
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 391096064473471,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 198770692661242,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 176308231485322,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171010373042573,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 727413101226828,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 794112854307067,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 261501508364797,
+													"parameters": [
+														"menu_matchconfig_type.X",
+														"menu_matchconfig_type.Y",
+														"menu_matchconfig_type.Width",
+														"menu_matchconfig_type.Height"
+													]
+												}
+											],
+											"sid": 971696160760051
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 578673414142870,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 136604298009433,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 694249330528114,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 360640933434529,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 361415869897819,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 746639213923983,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 742304959585624,
+													"parameters": [
+														"menu_matchconfig_type.X",
+														"menu_matchconfig_type.Y",
+														"menu_matchconfig_type.Width",
+														"menu_matchconfig_type.Height"
+													]
+												}
+											],
+											"sid": 775338709337369
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 782327675285595,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 452401784915229,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 441040758487834,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 216706447785561,
+											"parameters": [
+												"\"GC - Win condition\""
+											]
+										}
+									],
+									"sid": 920508995776015,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 566654999904563,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 889459762020029,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 640335371678934,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 217277273256022,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 966076311507377,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "match_config",
+													"sid": 934471506976896,
+													"parameters": {
+														"key": "\"match_type\"",
+														"value": "menu_matchconfig_type.type"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_type",
+													"sid": 945212208966789,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 739713871751450
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 141111038860426,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index",
+														"comparison": 1,
+														"value": "mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_type",
+													"sid": 491176599903430,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 991229909414046
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 939095881544824
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Win condition",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 857529675103068
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 351049894631535,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_win.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 456591369010836,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								}
+							],
+							"sid": 188691061742737,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 364645508019882,
+											"parameters": {
+												"object": "menu_matchconfig_win",
+												"expression": "menu_matchconfig_win.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 744702914573303,
+											"parameters": [
+												"menu_matchconfig_win.X",
+												"menu_matchconfig_win.Y",
+												"menu_matchconfig_win.Width",
+												"menu_matchconfig_win.Height"
+											]
+										}
+									],
+									"sid": 526387300845448
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 923074144400908,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 384708938857753,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 731512921617947,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 998905315430951,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 213013633236061,
+													"parameters": {
+														"object": "menu_matchconfig_win",
+														"expression": "menu_matchconfig_win.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 678778100348914,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 760873172249661,
+													"parameters": [
+														"menu_matchconfig_win.X",
+														"menu_matchconfig_win.Y",
+														"menu_matchconfig_win.Width",
+														"menu_matchconfig_win.Height"
+													]
+												}
+											],
+											"sid": 101440887571177
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 480173646533041,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 384381860576272,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 207011684243744,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 121164560390223,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 219757834169178,
+													"parameters": {
+														"object": "menu_matchconfig_win",
+														"expression": "menu_matchconfig_win.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 459683867859986,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 450284865314896,
+													"parameters": [
+														"menu_matchconfig_win.X",
+														"menu_matchconfig_win.Y",
+														"menu_matchconfig_win.Width",
+														"menu_matchconfig_win.Height"
+													]
+												}
+											],
+											"sid": 616200685008692
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 428540726466688,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 864804681558617,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 180735748379558,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 245333140158895,
+											"parameters": [
+												"\"GC - Match type\""
+											]
+										}
+									],
+									"sid": 639939189935359,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 968791974663184,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 220661231886058,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 134661258387079,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 798918340301719,
+											"parameters": [
+												"\"GC - Goal amount\""
+											]
+										}
+									],
+									"sid": 536006187751177,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 703396557578730,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 702951824974826,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 930278310166743,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 171675659045216,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 381692267231364,
+													"parameters": {
+														"object": "menu_matchconfig_win",
+														"expression": "menu_matchconfig_win.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "match_config",
+													"sid": 136948487402077,
+													"parameters": {
+														"key": "\"win_condition\"",
+														"value": "menu_matchconfig_win.type"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_win",
+													"sid": 462524974407234,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 672185882449595,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 208426356967463,
+															"parameters": {
+																"object": "menu_matchconfig_label",
+																"expression": "menu_matchconfig_label.label = \"win_condition\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_label",
+															"sid": 290801841004654,
+															"parameters": {
+																"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goles\" : \"Minutos\""
+															}
+														}
+													],
+													"sid": 305349952809795
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 709653771203747,
+													"parameters": {
+														"object": "menu_matchconfig_win",
+														"expression": "menu_matchconfig_win.index",
+														"comparison": 1,
+														"value": "mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_win",
+													"sid": 569057206046423,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 465475372120990
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 100001851554788
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Goal amount",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 905730618712341
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 264739653811814,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_goals_button.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 288639925312214,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "menu_matchconfig_goals_text",
+									"sid": 873830279532076,
+									"parameters": {
+										"text": "match_config.Get(\"goal_amount\")"
+									}
+								}
+							],
+							"sid": 512505559041764,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 330124596670247,
+											"parameters": {
+												"object": "menu_matchconfig_goals_button",
+												"expression": "menu_matchconfig_goals_button.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 340912145428315,
+											"parameters": [
+												"menu_matchconfig_goals_button.X",
+												"menu_matchconfig_goals_button.Y",
+												"menu_matchconfig_goals_button.Width",
+												"menu_matchconfig_goals_button.Height"
+											]
+										}
+									],
+									"sid": 180228261192573
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 673635598413759,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 716519429016391,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 828357654832007,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 129309395810702,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 168916698004054,
+													"parameters": {
+														"object": "menu_matchconfig_goals_button",
+														"expression": "menu_matchconfig_goals_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 784699440239389,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 140838759782877,
+													"parameters": [
+														"menu_matchconfig_goals_button.X",
+														"menu_matchconfig_goals_button.Y",
+														"menu_matchconfig_goals_button.Width",
+														"menu_matchconfig_goals_button.Height"
+													]
+												}
+											],
+											"sid": 996302727186254
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 658558326672803,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 773757257013385,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 690376039013225,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 508268133036462,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 792312479475511,
+													"parameters": {
+														"object": "menu_matchconfig_goals_button",
+														"expression": "menu_matchconfig_goals_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 758214843877330,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 907571641622911,
+													"parameters": [
+														"menu_matchconfig_goals_button.X",
+														"menu_matchconfig_goals_button.Y",
+														"menu_matchconfig_goals_button.Width",
+														"menu_matchconfig_goals_button.Height"
+													]
+												}
+											],
+											"sid": 458307005541699
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 226732689104563,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 903679093302469,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 689195466324202,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 670955580194781,
+											"parameters": [
+												"\"GC - Win condition\""
+											]
+										}
+									],
+									"sid": 100897265120512,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 191152560688379,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 509513353476037,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 414453763539250,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 646717289935361,
+											"parameters": [
+												"\"GC - Ball size\""
+											]
+										}
+									],
+									"sid": 778052132974549,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 997021860230410,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 137209457251922,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 984593354403496,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 415796973426281,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 109954473257233,
+													"parameters": {
+														"object": "menu_matchconfig_goals_button",
+														"expression": "menu_matchconfig_goals_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "match_config",
+													"sid": 913300132045205,
+													"parameters": {
+														"key": "\"goal_amount\"",
+														"value": "(match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount > 0) ? match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount : 1"
+													}
+												},
+												{
+													"id": "set-text",
+													"objectClass": "menu_matchconfig_goals_text",
+													"sid": 717034119640956,
+													"parameters": {
+														"text": "match_config.Get(\"goal_amount\")"
+													}
+												}
+											],
+											"sid": 243962653063870
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 855309177446020
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Ball size",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "min_amount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 111554353635467
+						},
+						{
+							"eventType": "variable",
+							"name": "max_amount",
+							"type": "number",
+							"initialValue": "2",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 443746702183351
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 224857456071167
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 537836743264758,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_size_ball_button.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 401078167680863,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "menu_matchconfig_size_ball_text",
+									"sid": 762733407378772,
+									"parameters": {
+										"text": "match_config.Get(\"size_ball\")"
+									}
+								}
+							],
+							"sid": 699005369477542,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 163676254245135,
+											"parameters": {
+												"object": "menu_matchconfig_size_ball_button",
+												"expression": "menu_matchconfig_size_ball_button.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 794981594272444,
+											"parameters": [
+												"menu_matchconfig_size_ball_button.X",
+												"menu_matchconfig_size_ball_button.Y",
+												"menu_matchconfig_size_ball_button.Width",
+												"menu_matchconfig_size_ball_button.Height"
+											]
+										}
+									],
+									"sid": 396313711675320
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 276276142293612,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 394962615960180,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 845551435921938,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 685454272463701,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 916315683300979,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 435511722324973,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 459297407522664,
+													"parameters": [
+														"menu_matchconfig_size_ball_button.X",
+														"menu_matchconfig_size_ball_button.Y",
+														"menu_matchconfig_size_ball_button.Width",
+														"menu_matchconfig_size_ball_button.Height"
+													]
+												}
+											],
+											"sid": 653110995754430
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 821708964143407,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 221699764703552,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 695493963194730,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 293523707754625,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 443806789955591,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 457970030123154,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 922559092851486,
+													"parameters": [
+														"menu_matchconfig_size_ball_button.X",
+														"menu_matchconfig_size_ball_button.Y",
+														"menu_matchconfig_size_ball_button.Width",
+														"menu_matchconfig_size_ball_button.Height"
+													]
+												}
+											],
+											"sid": 924864423857317
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 728944825610984,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 601732115332155,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 623073019445068,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 838613347344459,
+											"parameters": [
+												"\"GC - Goal amount\""
+											]
+										}
+									],
+									"sid": 875231681750441,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 637769498061072,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 531807601631559,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 864454290467546,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 458526146888473
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 744024460157381,
+											"parameters": [
+												"\"GC - Player size\""
+											]
+										}
+									],
+									"sid": 978080424551205
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 103195487254077,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 831880011610772,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 159030312852929,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 906431877232054,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 347941126105477,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 901860274803779,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 429635259979886,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 281678213587098,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 429427093937060
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 620587672080571
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 431214159378872,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 621327741567756,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 385572940249105
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 492932232446723
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 911633815072893,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount"
+															}
+														}
+													],
+													"sid": 502478622086958
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 215951385709083,
+															"parameters": {
+																"text": "match_config.Get(\"size_ball\")"
+															}
+														}
+													],
+													"sid": 776257590218291
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 599219506367914
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Player size",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "min_amount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 523894784732245
+						},
+						{
+							"eventType": "variable",
+							"name": "max_amount",
+							"type": "number",
+							"initialValue": "2",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 719544198159575
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 679096345492366
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 194681641011762,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_size_character_button.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 573871908282936,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "menu_matchconfig_size_character_text",
+									"sid": 827216054274429,
+									"parameters": {
+										"text": "match_config.Get(\"size_player\")"
+									}
+								}
+							],
+							"sid": 646611924424040,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 155520123200814,
+											"parameters": {
+												"object": "menu_matchconfig_size_character_button",
+												"expression": "menu_matchconfig_size_character_button.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 595191001985466,
+											"parameters": [
+												"menu_matchconfig_size_character_button.X",
+												"menu_matchconfig_size_character_button.Y",
+												"menu_matchconfig_size_character_button.Width",
+												"menu_matchconfig_size_character_button.Height"
+											]
+										}
+									],
+									"sid": 543255766033045
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 911107190860913,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 922813962739856,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 407230943731419,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 541487469693630,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 697334094588616,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 445129879327301,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 309565033471702,
+													"parameters": [
+														"menu_matchconfig_size_character_button.X",
+														"menu_matchconfig_size_character_button.Y",
+														"menu_matchconfig_size_character_button.Width",
+														"menu_matchconfig_size_character_button.Height"
+													]
+												}
+											],
+											"sid": 860154248782783
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 355250517712780,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 205076035365663,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 483969530814398,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 615247721301319,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 625929288177008,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 742374564971852,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 472162729929143,
+													"parameters": [
+														"menu_matchconfig_size_character_button.X",
+														"menu_matchconfig_size_character_button.Y",
+														"menu_matchconfig_size_character_button.Width",
+														"menu_matchconfig_size_character_button.Height"
+													]
+												}
+											],
+											"sid": 260890698406255
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 514701991276748,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 557351159728795,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 765837809538109,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 743440153858833,
+											"parameters": [
+												"\"GC - Ball size\""
+											]
+										}
+									],
+									"sid": 153168130328483,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 814551247909072,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 778347977128648,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 965183364827086,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 876710578120196,
+											"parameters": [
+												"\"GC - Goal size\""
+											]
+										}
+									],
+									"sid": 400649423250655,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 335387613104488,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 664117192866956,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 699879054836709,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 520535564176286,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 140182322972026,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 955394480164185,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 742261088646848,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 700542913590311,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 551584293719367
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 655322663091610
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 355106455355934,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 256083004279561,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 357739725585021
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 306667028964086
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 386790596527205,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount"
+															}
+														}
+													],
+													"sid": 713270069979711
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 126281782354174,
+															"parameters": {
+																"text": "match_config.Get(\"size_player\")"
+															}
+														}
+													],
+													"sid": 312069169448434
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 592981858105009
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Goal size",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "min_amount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 414031929640709
+						},
+						{
+							"eventType": "variable",
+							"name": "max_amount",
+							"type": "number",
+							"initialValue": "2",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 110242652248683
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 197970817358839
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 193708188020035,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_size_goal_button.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 819001213961136,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "menu_matchconfig_size_goal_text",
+									"sid": 911293560157538,
+									"parameters": {
+										"text": "match_config.Get(\"size_goal\")"
+									}
+								}
+							],
+							"sid": 421789317778665,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 102197451550225,
+											"parameters": {
+												"object": "menu_matchconfig_size_goal_button",
+												"expression": "menu_matchconfig_size_goal_button.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 474814187272885,
+											"parameters": [
+												"menu_matchconfig_size_goal_button.X",
+												"menu_matchconfig_size_goal_button.Y",
+												"menu_matchconfig_size_goal_button.Width",
+												"menu_matchconfig_size_goal_button.Height"
+											]
+										}
+									],
+									"sid": 293636012369135
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 395152894170405,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 103459947290367,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 293680290380113,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 514717775387767,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 208147460433415,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 940224169199371,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 701105126985088,
+													"parameters": [
+														"menu_matchconfig_size_goal_button.X",
+														"menu_matchconfig_size_goal_button.Y",
+														"menu_matchconfig_size_goal_button.Width",
+														"menu_matchconfig_size_goal_button.Height"
+													]
+												}
+											],
+											"sid": 685570098322027
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 350994474523327,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 961392084802475,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 939063855782075,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 332381426734866,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 889825674305843,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 138707938417514,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 877131567511311,
+													"parameters": [
+														"menu_matchconfig_size_goal_button.X",
+														"menu_matchconfig_size_goal_button.Y",
+														"menu_matchconfig_size_goal_button.Width",
+														"menu_matchconfig_size_goal_button.Height"
+													]
+												}
+											],
+											"sid": 964453074244624
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 122893884875542,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 850443392906756,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 867417754670726,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 858596507567515,
+											"parameters": [
+												"\"GC - Player size\""
+											]
+										}
+									],
+									"sid": 955506982256634,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 643886687266530,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 401447627284275,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 475030035100194,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 285761486047269,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 908460461759714,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 716382653881218,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 654595234644941,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 290228218169742,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 562740015004109,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 463720169229658,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 506432486469114,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 335267592720778,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 309453815009373,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "2"
+															}
+														}
+													],
+													"sid": 947887566801143
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 760759361359780
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 344839773923222,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 765543279840269,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 860552192810361
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 312562466446077
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 596988530931356,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount"
+															}
+														}
+													],
+													"sid": 118028392323371
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 240998406040659,
+															"parameters": {
+																"text": "match_config.Get(\"size_goal\")"
+															}
+														}
+													],
+													"sid": 294835077023525
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 669275522642981
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Go to char select",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 181268126497512
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 114831304993285,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_toCharSelect.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 670324983030807,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "menu_matchconfig_size_goal_text",
+									"sid": 292527043691145,
+									"parameters": {
+										"text": "match_config.Get(\"size_goal\")"
+									}
+								}
+							],
+							"sid": 890188526501026,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 745951933426246,
+											"parameters": {
+												"object": "menu_matchconfig_toCharSelect",
+												"expression": "menu_matchconfig_toCharSelect.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 983553178573064,
+											"parameters": [
+												"menu_matchconfig_toCharSelect.X",
+												"menu_matchconfig_toCharSelect.Y",
+												"menu_matchconfig_toCharSelect.Width",
+												"menu_matchconfig_toCharSelect.Height"
+											]
+										}
+									],
+									"sid": 728841864676330
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 223274838584539,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 530851626322806,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 826400413621844,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 157112390377954,
+											"parameters": [
+												"\"GC - Goal size\""
+											]
+										}
+									],
+									"sid": 610171830805199,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 184776002295847,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 777855316008883,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 935475567325455,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 198069728102305,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 238707473734292,
+													"parameters": {
+														"object": "menu_matchconfig_toCharSelect",
+														"expression": "menu_matchconfig_toCharSelect.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 435423755445444,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"callFunction": "goToView",
+													"sid": 256370647377395,
+													"parameters": [
+														"MN_VIEW_CHAR_SELECTOR"
+													]
+												}
+											],
+											"sid": 779656576016433
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 776562562529937
+				}
+			],
+			"sid": 557543373609569
+		}
+	],
+	"sid": 589652572334655
+}

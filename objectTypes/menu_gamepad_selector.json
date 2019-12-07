@@ -19,13 +19,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 16,
+						"imageSpriteId": 28,
 						"duration": 1
 					}
 				],
@@ -41,13 +41,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 15,
+						"imageSpriteId": 20,
 						"duration": 1
 					}
 				],
@@ -63,13 +63,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 17,
+						"imageSpriteId": 29,
 						"duration": 1
 					}
 				],
@@ -85,13 +85,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 14,
+						"imageSpriteId": 37,
 						"duration": 1
 					}
 				],
@@ -107,13 +107,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 36,
+						"imageSpriteId": 44,
 						"duration": 1
 					}
 				],
@@ -129,13 +129,13 @@
 				"frames": [
 					{
 						"width": 100,
-						"height": 20,
+						"height": 40,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 35,
+						"imageSpriteId": 45,
 						"duration": 1
 					}
 				],

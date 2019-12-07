@@ -1,0 +1,773 @@
+{
+	"name": "match",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Match objects",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "createGoal",
+					"functionDescription": "",
+					"functionCategory": "creator",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 780029641981341
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 122035707588847
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 742547072934588
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 743254944025383,
+							"parameters": {
+								"object-to-create": "goal",
+								"layer": "\"main\"",
+								"x": "x",
+								"y": "y"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "goal_detector",
+							"sid": 282833862068215,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "goal_crossbar",
+							"sid": 741521968368407,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "enabledisable-collisions",
+							"objectClass": "goal",
+							"sid": 669931198073453,
+							"behaviorType": "Physics",
+							"parameters": {
+								"object": "solid_bound",
+								"state": "disable"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 369030066552711,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 601255731634027,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 828119000422804,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 957868517589043,
+									"parameters": {
+										"width": "40",
+										"height": "67"
+									}
+								}
+							],
+							"sid": 958510752289534
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 827818462199730
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 728770782154521,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 846829266720673,
+									"parameters": {
+										"width": "40",
+										"height": "140"
+									}
+								}
+							],
+							"sid": 929047890313282
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 386712310905758
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 796885340167858,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal",
+									"sid": 820562554250259,
+									"parameters": {
+										"width": "40",
+										"height": "300"
+									}
+								}
+							],
+							"sid": 613605750094093
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 881538865186862,
+									"parameters": {
+										"first-value": "x",
+										"comparison": 4,
+										"second-value": "LayoutWidth / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal",
+									"sid": 861549022974223,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal_detector",
+									"sid": 721404085227157,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "goal_detector",
+									"sid": 633281898583578,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 707457567444287
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal_crossbar",
+									"sid": 994025124604388,
+									"parameters": {
+										"width": "goal.Width",
+										"height": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_detector",
+									"sid": 925776871062597,
+									"parameters": {
+										"width": "4",
+										"height": "goal.Height"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_detector",
+									"sid": 450410460148464,
+									"parameters": {
+										"object": "goal",
+										"image-point-optional": "\"goal_detector\""
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "goal_detector",
+									"sid": 254980024327733,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "goal",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_crossbar",
+									"sid": 963590594463204,
+									"parameters": {
+										"object": "goal",
+										"image-point-optional": "\"crossbar\""
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "goal_crossbar",
+									"sid": 360535114983650,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "goal",
+										"mode": "position-angle"
+									}
+								}
+							],
+							"sid": 929746801094483
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "goal",
+							"sid": 452880398324216,
+							"parameters": {
+								"object": "goal_solid_detector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "goal",
+							"sid": 466002132625846,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 532786565699885,
+							"parameters": {
+								"collisions": "enabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_crossbar",
+							"sid": 643168505551509,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"id": "set-immovable",
+							"objectClass": "goal_crossbar",
+							"sid": 890234469478327,
+							"behaviorType": "Physics",
+							"parameters": {
+								"setting": "immovable"
+							}
+						}
+					],
+					"sid": 250985089517922
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "ball",
+							"sid": 881318767283038,
+							"parameters": {
+								"object": "goal_detector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 994459322214803,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ball",
+							"sid": 230209442804754,
+							"parameters": {
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "ball",
+							"sid": 893021157049783,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						},
+						{
+							"callFunction": "resetPlayers",
+							"sid": 171055059314874
+						}
+					],
+					"sid": 942035504542019,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "goal_detector",
+									"sid": 456838250654896,
+									"parameters": {
+										"instance-variable": "owner",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 849061573720273,
+									"parameters": {
+										"variable": "score_2",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 845609662565874
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "goal_detector",
+									"sid": 186000972094861,
+									"parameters": {
+										"instance-variable": "owner",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 296333921887641,
+									"parameters": {
+										"variable": "score_1",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 620159006654421
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "match_scoreboard",
+									"sid": 264678984967201,
+									"parameters": {
+										"text": "score_1 & \" - \" & score_2"
+									}
+								}
+							],
+							"sid": 671993039253764
+						}
+					]
+				}
+			],
+			"sid": 594366020048459,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.9333333333333333,
+				0.4666666666666667,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Match status",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 400661699411998,
+							"parameters": {
+								"first-value": "Functions.checkEndMatch",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "triggerEndMatch",
+							"sid": 824311107500495
+						}
+					],
+					"sid": 204508102461086
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-timer-running",
+							"objectClass": "match_timer",
+							"sid": 975254785525397,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"match_timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "match_timer",
+							"sid": 788950010865665,
+							"parameters": {
+								"text": "zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") /60%60),2)&\":\"&zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") %60),2)"
+							}
+						}
+					],
+					"sid": 754756289459089
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "match_timer",
+							"sid": 989309162075041,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"match_timer\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "triggerEndMatch",
+							"sid": 460877133103852
+						}
+					],
+					"sid": 619648165598585
+				},
+				{
+					"functionName": "checkEndMatch",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 217290936833642,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 256304928765997,
+									"parameters": {
+										"first-value": "match_config.Get(\"win_condition\")",
+										"comparison": 0,
+										"second-value": "WIN_CONDITION_GOALS"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 767327518043003,
+									"parameters": {
+										"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
+									}
+								}
+							],
+							"sid": 993798732282337
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 410929376537010
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 686937021607275,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 761703981750025
+						}
+					]
+				},
+				{
+					"functionName": "triggerEndMatch",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 136634384675727,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 121720183439300,
+									"parameters": {
+										"object": "ball"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "ball",
+									"sid": 646121015352856
+								}
+							],
+							"sid": 252440966010315
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 975724473025630,
+									"parameters": {
+										"first-value": "score_1",
+										"comparison": 4,
+										"second-value": "score_2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "match_scoreboard",
+									"sid": 912740275896394,
+									"parameters": {
+										"text": "gamepad_selection.Get(\"player0_character\") & \"(player1) wins!\""
+									}
+								}
+							],
+							"sid": 756558280819500
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 875351220901791
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 739939505651744,
+									"parameters": {
+										"first-value": "score_2",
+										"comparison": 4,
+										"second-value": "score_1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "match_scoreboard",
+									"sid": 719911950386375,
+									"parameters": {
+										"text": "gamepad_selection.Get(\"player1_character\") & \"(player2) wins!\""
+									}
+								}
+							],
+							"sid": 223400887124698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 521724082073385
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 171346119215131,
+									"parameters": {
+										"first-value": "score_1",
+										"comparison": 0,
+										"second-value": "score_2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "match_scoreboard",
+									"sid": 832840531200845,
+									"parameters": {
+										"text": "\"Draw!\""
+									}
+								}
+							],
+							"sid": 202323923177759
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 414891918056664,
+									"parameters": {
+										"seconds": "3"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 352142432299508,
+									"parameters": {
+										"layout": "menu"
+									}
+								}
+							],
+							"sid": 950519862899185
+						}
+					]
+				}
+			],
+			"sid": 307104145014656,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.5019607843137255,
+				0.25098039215686274,
+				1
+			]
+		}
+	],
+	"sid": 250112746228024
+}

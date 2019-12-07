@@ -1,0 +1,320 @@
+{
+	"name": "menu_main",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "menu_navigation"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "menu_gamepad_selector"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "menu_character_selector"
+		},
+		{
+			"eventType": "variable",
+			"name": "gamepad_in_use",
+			"type": "string",
+			"initialValue": "/",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 285792798641753
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_GAMEPAD",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 279266289555057
+		},
+		{
+			"eventType": "variable",
+			"name": "WIN_CONDITION_GOALS",
+			"type": "string",
+			"initialValue": "GOALS",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 987034182342131
+		},
+		{
+			"eventType": "variable",
+			"name": "WIN_CONDITION_TIME",
+			"type": "string",
+			"initialValue": "TIME",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 221100975429394
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_TYPE_FOOTBALL",
+			"type": "string",
+			"initialValue": "TYPE_FOOTBALL",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 583945579335796
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_TYPE_BASKET",
+			"type": "string",
+			"initialValue": "TYPE_BASKET",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 228893654591006
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_TYPE_VOLLEY",
+			"type": "string",
+			"initialValue": "TYPE_VOLLEY",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 695984608825033
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Info",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 931336174910751
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "menu_debug",
+							"sid": 161171501650166,
+							"parameters": {
+								"text": "\"Mandos conectados: \" & Gamepad.GamepadCount & newline"
+							}
+						}
+					],
+					"sid": 465682349115706
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "gamepads-are-supported",
+							"objectClass": "Gamepad",
+							"sid": 472009046818599
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "menu_gamepad_debug",
+							"sid": 738291971053760,
+							"parameters": {
+								"text": "\"Soporte para mandos OK\""
+							}
+						}
+					],
+					"sid": 290516381576681
+				}
+			],
+			"sid": 989580447455776
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 835029512138918
+				}
+			],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "gamepad_selection",
+					"sid": 451378183374390,
+					"parameters": {
+						"key": "\"player0_character\"",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "gamepad_selection",
+					"sid": 871355382205296,
+					"parameters": {
+						"key": "\"player1_character\"",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "gamepad_selection",
+					"sid": 799897184608363,
+					"parameters": {
+						"key": "\"player0_ready\"",
+						"value": "0"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "gamepad_selection",
+					"sid": 596777619003764,
+					"parameters": {
+						"key": "\"player1_ready\"",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 151995379490177,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 114929736184743,
+							"parameters": {
+								"key": "\"match_type\"",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 611023936958808,
+							"parameters": {
+								"key": "\"match_type\"",
+								"value": "MATCH_TYPE_FOOTBALL"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 874999330604218,
+							"parameters": {
+								"key": "\"win_condition\"",
+								"value": "WIN_CONDITION_GOALS"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 528481718382460,
+							"parameters": {
+								"key": "\"goal_amount\"",
+								"value": "10"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 886721301852280,
+							"parameters": {
+								"key": "\"size_ball\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 383170729390417,
+							"parameters": {
+								"key": "\"size_player\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 369630018107180,
+							"parameters": {
+								"key": "\"size_goal\"",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "match_config",
+							"sid": 269347425090015,
+							"parameters": {
+								"key": "\"stadium\"",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_goals_text",
+							"sid": 965780682899976,
+							"parameters": {
+								"text": "match_config.Get(\"goal_amount\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_size_ball_text",
+							"sid": 591106335550996,
+							"parameters": {
+								"text": "match_config.Get(\"size_ball\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_size_character_text",
+							"sid": 537699937426727,
+							"parameters": {
+								"text": "match_config.Get(\"size_player\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_size_goal_text",
+							"sid": 701520182306650,
+							"parameters": {
+								"text": "match_config.Get(\"size_goal\")"
+							}
+						}
+					],
+					"sid": 395599767942697
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 207727062368804
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 428670661894408
+						}
+					],
+					"sid": 607262318367214
+				}
+			]
+		}
+	],
+	"sid": 526329472040805
+}

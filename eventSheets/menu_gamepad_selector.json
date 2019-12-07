@@ -1,0 +1,454 @@
+{
+	"name": "menu_gamepad_selector",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gamepad selector",
+			"description": "Starts disabled",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-key",
+							"objectClass": "gamepad_selection",
+							"sid": 623325174703831,
+							"parameters": {
+								"key": "\"player0_gamepad_index\""
+							}
+						},
+						{
+							"id": "has-key",
+							"objectClass": "gamepad_selection",
+							"sid": 247296346661041,
+							"parameters": {
+								"key": "\"player1_gamepad_index\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 270520942214834
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 450670041842020,
+							"parameters": {
+								"group-name": "\"Character selector\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 225569969156606
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 983113542373554,
+							"parameters": {
+								"gamepad": "gamepad_selection.Get(\"player0_gamepad_index\") | gamepad_selection.Get(\"player1_gamepad_index\")",
+								"button": "button-b"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 620708644932796
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 689822159813845,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 562162622690781,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 892687891732982,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "savePlayerGamepad",
+									"sid": 680167985737893,
+									"parameters": [
+										"loopindex"
+									]
+								}
+							],
+							"sid": 983719283694325
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 867189587941683,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 679076438540266,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 524177963759907,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 172562185818369,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 556431040526065,
+											"parameters": {
+												"first-value": "Functions.isSelectingChar",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 317005995226110,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 665007859671753,
+											"parameters": [
+												"MN_VIEW_MATCH_CONFIG"
+											]
+										}
+									],
+									"sid": 568790593189924
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 176636495392088,
+											"parameters": {
+												"first-value": "Functions.isSelectingChar",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 193858198073603,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 722704770981274,
+											"parameters": {
+												"group-name": "\"Character selector\"",
+												"state": "deactivated"
+											}
+										}
+									],
+									"sid": 819329886328120,
+									"disabled": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "savePlayerGamepad",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 900299474148466
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 189398752734386,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "test-regex",
+									"objectClass": "System",
+									"sid": 848497518533955,
+									"parameters": {
+										"string": "gamepad_in_use",
+										"regex": "str(index)",
+										"flags": "\"gi\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 711814314233123,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "gamepad_selection",
+											"sid": 224469464740421,
+											"parameters": {
+												"key": "\"player0_gamepad_index\""
+											}
+										},
+										{
+											"id": "has-key",
+											"objectClass": "gamepad_selection",
+											"sid": 401894063788275,
+											"parameters": {
+												"key": "\"player1_gamepad_index\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-key",
+											"objectClass": "gamepad_selection",
+											"sid": 370727394052329,
+											"parameters": {
+												"key": "\"player1_gamepad_index\"",
+												"value": "index"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 315117795261361,
+											"parameters": {
+												"variable": "gamepad_in_use",
+												"value": "gamepad_in_use & \"/\" & index"
+											}
+										}
+									],
+									"sid": 418750011490115,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 429467510626784,
+													"parameters": {
+														"object": "menu_gamepad_selector",
+														"expression": "menu_gamepad_selector.player = 1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "menu_gamepad_selector",
+													"sid": 280181505723271,
+													"parameters": {
+														"animation": "\"player1_ok\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 545321769335586
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-key",
+											"objectClass": "gamepad_selection",
+											"sid": 733904842450461,
+											"parameters": {
+												"key": "\"player0_gamepad_index\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-key",
+											"objectClass": "gamepad_selection",
+											"sid": 198418293690071,
+											"parameters": {
+												"key": "\"player0_gamepad_index\"",
+												"value": "index"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 270692856701854,
+											"parameters": {
+												"variable": "gamepad_in_use",
+												"value": "gamepad_in_use & \"/\" & index"
+											}
+										}
+									],
+									"sid": 179049611886943,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 199826207657880,
+													"parameters": {
+														"object": "menu_gamepad_selector",
+														"expression": "menu_gamepad_selector.player = 0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "menu_gamepad_selector",
+													"sid": 236777534409315,
+													"parameters": {
+														"animation": "\"player0_ok\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 746941256877003
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "isSelectingChar",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 570192622675540,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 427454904946036,
+									"parameters": {
+										"group-name": "\"Character selector\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 816556325432183,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 807708251006906
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 979857724586174
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 328748783027166,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 163866495191530
+						}
+					]
+				}
+			],
+			"sid": 363805874921494
+		}
+	],
+	"sid": 646022892636580
+}

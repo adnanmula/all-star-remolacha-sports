@@ -304,9 +304,21 @@
 	"eventSheets": {
 		"items": [
 			"main",
-			"menu"
+			"controls",
+			"match"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"menu_main",
+					"menu_navigation",
+					"menu_gamepad_selector",
+					"menu_character_selector"
+				],
+				"subfolders": [],
+				"name": "menu"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
