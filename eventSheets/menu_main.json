@@ -15,16 +15,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "gamepad_in_use",
-			"type": "string",
-			"initialValue": "/",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 285792798641753
-		},
-		{
-			"eventType": "variable",
 			"name": "MAX_GAMEPAD",
 			"type": "number",
 			"initialValue": "3",
@@ -161,6 +151,15 @@
 					"parameters": {
 						"key": "\"player1_character\"",
 						"value": "\"\""
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "gamepad_selection",
+					"sid": 818190850212561,
+					"parameters": {
+						"key": "\"player-1_ready\"",
+						"value": "0"
 					}
 				},
 				{

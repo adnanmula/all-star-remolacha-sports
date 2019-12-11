@@ -2,6 +2,26 @@
 	"name": "controls",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "gamepad_deadzone",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 782733475678648
+		},
+		{
+			"eventType": "variable",
+			"name": "dash_timer",
+			"type": "number",
+			"initialValue": "0.1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 795091050763897
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -13,26 +33,6 @@
 			"actions": [],
 			"sid": 332468720317026,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "gamepad_deadzone",
-					"type": "number",
-					"initialValue": "25",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 975320083103848
-				},
-				{
-					"eventType": "variable",
-					"name": "dash_timer",
-					"type": "number",
-					"initialValue": "0.1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": true,
-					"sid": 382657302915693
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -49,39 +49,404 @@
 					"sid": 217992914074213,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "DPAD/JOY UP"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 785166103044363,
+									"parameters": {
+										"first-value": "player.gamepad_index",
+										"comparison": 0,
+										"second-value": "-1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "controlsProcessKeyboardAndMouseInput",
+									"sid": 222328781298049,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 824172261296181
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-button-down",
-									"objectClass": "Gamepad",
-									"sid": 451515951672433,
-									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "d-pad-up"
-									}
+									"id": "else",
+									"objectClass": "System",
+									"sid": 172450058056548
+								}
+							],
+							"actions": [],
+							"sid": 124195886871638,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY UP"
 								},
 								{
-									"id": "is-button-down",
-									"objectClass": "Gamepad",
-									"sid": 436879403829084,
-									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "button-a"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 898813592783839,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-up"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 577081817885935,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-a"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 906598628841200,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 715608605894025,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "jump"
+											}
+										}
+									],
+									"sid": 345383002281832,
+									"isOrBlock": true
 								},
 								{
-									"id": "compare-axis",
-									"objectClass": "Gamepad",
-									"sid": 913456924067033,
+									"eventType": "comment",
+									"text": "DPAD/JOY LEFT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 793805937386685,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 352730308395835,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 427790610029621,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 353568165812277,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 903049768667422,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 544321827543442,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-right"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 100938036162491,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 387017718050790,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 329171746846419,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 908584093901722,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "LEFT JOYSTICK"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 101215994609382,
+											"parameters": {
+												"first-value": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3))",
+												"comparison": 1,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "player",
+											"sid": 527726391813174,
+											"parameters": {
+												"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+											}
+										}
+									],
+									"sid": 425049990404830
+								},
+								{
+									"eventType": "comment",
+									"text": "RB"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 835626482476403,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-button"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 718932851563696,
+											"parameters": {
+												"animation": "\"kick\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 977838637095191
+								},
+								{
+									"eventType": "comment",
+									"text": "LB"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 177784544535893,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "left-shoulder-button"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 904660734412155,
+											"parameters": {
+												"animation": "\"lift\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 439887323764770
+								},
+								{
+									"eventType": "comment",
+									"text": "L3"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 770767422792892,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-analog-button"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 425028491178531,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "player",
+													"sid": 326633609650687,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"dash\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-enabled",
+													"objectClass": "player",
+													"sid": 142044648192467,
+													"behaviorType": "Platform",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "player",
+													"sid": 482096337119994,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "30",
+														"angle": "player.Angle - 90",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "player",
+													"sid": 136601738227149,
+													"behaviorType": "Timer",
+													"parameters": {
+														"duration": "dash_timer",
+														"type": "once",
+														"tag": "\"dash\""
+													}
+												}
+											],
+											"sid": 407097966294895
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "controlsProcessKeyboardAndMouseInput",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "player_uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 419630763288368
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 177003655058688,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 937832337170667,
+							"parameters": {
+								"unique-id": "player_uid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 417649409283277,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 942329464940641,
 									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"axis": "left-analog-y-axis",
-										"comparison": 3,
-										"value": "-gamepad_deadzone"
+										"key": 87
 									}
 								}
 							],
@@ -89,41 +454,24 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "player",
-									"sid": 660151217788382,
+									"sid": 908252871132159,
 									"behaviorType": "Platform",
 									"parameters": {
 										"control": "jump"
 									}
 								}
 							],
-							"sid": 114245087036494,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "comment",
-							"text": "DPAD/JOY LEFT"
+							"sid": 875775010160532
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-button-down",
-									"objectClass": "Gamepad",
-									"sid": 968546666103177,
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 357182700022101,
 									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "d-pad-left"
-									}
-								},
-								{
-									"id": "compare-axis",
-									"objectClass": "Gamepad",
-									"sid": 715396190214561,
-									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"axis": "left-analog-x-axis",
-										"comparison": 3,
-										"value": "-gamepad_deadzone"
+										"key": 65
 									}
 								}
 							],
@@ -131,7 +479,7 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "player",
-									"sid": 438218926469428,
+									"sid": 578745291633237,
 									"behaviorType": "Platform",
 									"parameters": {
 										"control": "left"
@@ -140,40 +488,23 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "player",
-									"sid": 836946585866926,
+									"sid": 505078251705877,
 									"parameters": {
 										"state": "mirrored"
 									}
 								}
 							],
-							"sid": 422360294110824,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "comment",
-							"text": "DPAD/JOY RIGHT"
+							"sid": 203315875323924
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-button-down",
-									"objectClass": "Gamepad",
-									"sid": 143491118726455,
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 302012959492993,
 									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "d-pad-right"
-									}
-								},
-								{
-									"id": "compare-axis",
-									"objectClass": "Gamepad",
-									"sid": 573805634496658,
-									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"axis": "left-analog-x-axis",
-										"comparison": 5,
-										"value": "gamepad_deadzone"
+										"key": 68
 									}
 								}
 							],
@@ -181,7 +512,7 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "player",
-									"sid": 289012398591309,
+									"sid": 899388898539391,
 									"behaviorType": "Platform",
 									"parameters": {
 										"control": "right"
@@ -190,59 +521,23 @@
 								{
 									"id": "set-mirrored",
 									"objectClass": "player",
-									"sid": 298911032186452,
+									"sid": 257386809140736,
 									"parameters": {
 										"state": "not-mirrored"
 									}
 								}
 							],
-							"sid": 953835285338801,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "comment",
-							"text": "LEFT JOYSTICK"
+							"sid": 613390501116672
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 842289930879402,
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 396049919408999,
 									"parameters": {
-										"first-value": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3))",
-										"comparison": 1,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "player",
-									"sid": 379973767620126,
-									"parameters": {
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
-									}
-								}
-							],
-							"sid": 761932084957225
-						},
-						{
-							"eventType": "comment",
-							"text": "RB"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-button-pressed",
-									"objectClass": "Gamepad",
-									"sid": 874363577922894,
-									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "right-shoulder-button"
+										"mouse-button": "left"
 									}
 								}
 							],
@@ -250,29 +545,24 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player",
-									"sid": 725717455577505,
+									"sid": 737518887656500,
 									"parameters": {
 										"animation": "\"kick\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 797028334256566
-						},
-						{
-							"eventType": "comment",
-							"text": "LB"
+							"sid": 897970973513165
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-button-pressed",
-									"objectClass": "Gamepad",
-									"sid": 964183772062348,
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 843082363637445,
 									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "left-shoulder-button"
+										"mouse-button": "right"
 									}
 								}
 							],
@@ -280,34 +570,39 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player",
-									"sid": 160078498216951,
+									"sid": 578484585584346,
 									"parameters": {
 										"animation": "\"lift\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 222228409205504
-						},
-						{
-							"eventType": "comment",
-							"text": "L3"
+							"sid": 532675710785327
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-button-pressed",
-									"objectClass": "Gamepad",
-									"sid": 610864478741609,
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 262266591684250,
 									"parameters": {
-										"gamepad": "player.gamepad_index",
-										"button": "right-analog-button"
+										"key": 32
 									}
 								}
 							],
-							"actions": [],
-							"sid": 884899504893410,
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 517463517613587,
+									"parameters": {
+										"animation": "\"lift\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 837019183721211,
 							"children": [
 								{
 									"eventType": "block",
@@ -315,7 +610,7 @@
 										{
 											"id": "is-timer-running",
 											"objectClass": "player",
-											"sid": 678634248296271,
+											"sid": 163949514694890,
 											"behaviorType": "Timer",
 											"parameters": {
 												"tag": "\"dash\""
@@ -327,7 +622,7 @@
 										{
 											"id": "set-enabled",
 											"objectClass": "player",
-											"sid": 104033555362329,
+											"sid": 804656495403338,
 											"behaviorType": "Platform",
 											"parameters": {
 												"state": "disabled"
@@ -336,7 +631,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "player",
-											"sid": 420578960871288,
+											"sid": 920036021253907,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "30",
@@ -347,7 +642,7 @@
 										{
 											"id": "start-timer",
 											"objectClass": "player",
-											"sid": 495995833679676,
+											"sid": 928453182692134,
 											"behaviorType": "Timer",
 											"parameters": {
 												"duration": "dash_timer",
@@ -356,7 +651,7 @@
 											}
 										}
 									],
-									"sid": 458458697022695
+									"sid": 331776484987376
 								}
 							]
 						}
