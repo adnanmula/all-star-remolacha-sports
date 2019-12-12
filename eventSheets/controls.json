@@ -447,9 +447,19 @@
 											"parameters": {
 												"mouse-button": "middle"
 											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 939652087491287
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"callFunction": "toggleMouseMode",
+											"sid": 270589680940306
+										}
+									],
 									"sid": 142905381524087
 								},
 								{
@@ -704,6 +714,16 @@
 										"comparison": 5,
 										"second-value": "controls_mouse_data.Get(\"idle_ticks_threshold\")"
 									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "controls_mouse_data",
+									"sid": 250773657763136,
+									"parameters": {
+										"key": "\"mode\"",
+										"comparison": 0,
+										"value": "\"variable\""
+									}
 								}
 							],
 							"actions": [
@@ -836,6 +856,28 @@
 							"sid": 898339485324172
 						}
 					]
+				},
+				{
+					"functionName": "toggleMouseMode",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-key",
+							"objectClass": "controls_mouse_data",
+							"sid": 661415045997351,
+							"parameters": {
+								"key": "\"mode\"",
+								"value": "controls_mouse_data.Get(\"mode\") = \"fixed\" ? \"variable\" : \"fixed\""
+							}
+						}
+					],
+					"sid": 868712993349914
 				}
 			],
 			"sid": 543618043270986,
