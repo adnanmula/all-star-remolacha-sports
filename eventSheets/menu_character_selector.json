@@ -843,15 +843,6 @@
 										"menu_char_portrait.side",
 										"menu_char_portrait.character"
 									]
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 675332211263859,
-									"parameters": {
-										"type": "log",
-										"message": "\"aaaaaaaa\""
-									}
 								}
 							],
 							"sid": 404591071702792
@@ -941,15 +932,6 @@
 										"menu_char_portrait.side",
 										"menu_char_portrait.character"
 									]
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 418378919225201,
-									"parameters": {
-										"type": "log",
-										"message": "\"ddddddddddd\""
-									}
 								}
 							],
 							"sid": 628274806481027
@@ -1071,15 +1053,6 @@
 									"parameters": {
 										"animation": "\"player\"&str(menu_char_selector.side)&\"_ok\"",
 										"from": "beginning"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 672627774593918,
-									"parameters": {
-										"type": "log",
-										"message": "\"escapeeeeeeeeeeeeeeee\""
 									}
 								}
 							],

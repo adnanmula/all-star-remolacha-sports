@@ -164,24 +164,6 @@
 						{
 							"id": "add-key",
 							"objectClass": "controls_mouse_data",
-							"sid": 898303344456428,
-							"parameters": {
-								"key": "\"origin_x\"",
-								"value": "Mouse.X"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "controls_mouse_data",
-							"sid": 326625901389344,
-							"parameters": {
-								"key": "\"origin_y\"",
-								"value": "Mouse.Y"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "controls_mouse_data",
 							"sid": 366109002743008,
 							"parameters": {
 								"key": "\"last_x\"",
@@ -232,6 +214,14 @@
 								"key": "\"deadzone\"",
 								"value": "15"
 							}
+						},
+						{
+							"callFunction": "setNewMouseOrigin",
+							"sid": 406685744626619,
+							"parameters": [
+								"Mouse.X",
+								"Mouse.Y"
+							]
 						}
 					],
 					"sid": 200661241800158
