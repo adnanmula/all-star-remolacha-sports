@@ -30,6 +30,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 23,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],

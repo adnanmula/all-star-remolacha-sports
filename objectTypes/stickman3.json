@@ -31,6 +31,7 @@
 								1
 							]
 						},
+						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "feet_detector",
@@ -72,6 +73,7 @@
 								1
 							]
 						},
+						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "feet_detector",
@@ -113,6 +115,7 @@
 								1
 							]
 						},
+						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "feet_detector",

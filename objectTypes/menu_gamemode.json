@@ -19,6 +19,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 10,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -41,6 +42,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 3,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -63,6 +65,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 18,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -85,6 +88,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 19,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],

@@ -44,6 +44,7 @@
 								0
 							]
 						},
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],

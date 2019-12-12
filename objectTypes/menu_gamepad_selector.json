@@ -26,6 +26,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 28,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -48,6 +49,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 20,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -70,6 +72,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 29,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -92,6 +95,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 37,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -114,6 +118,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 44,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
@@ -136,6 +141,7 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 45,
+						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],

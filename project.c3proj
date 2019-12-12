@@ -113,7 +113,9 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"player_km_origin_indicator"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -245,7 +247,8 @@
 			{
 				"items": [
 					"gamepad_selection",
-					"match_config"
+					"match_config",
+					"controls_mouse_data"
 				],
 				"subfolders": [],
 				"name": "data"

@@ -1,47 +1,29 @@
 {
-	"name": "goal",
+	"name": "player_km_origin_indicator",
 	"plugin-id": "Sprite",
-	"sid": 916246753504576,
+	"sid": 266397640420005,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 305536323303087
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 75,
-						"height": 120,
+						"width": 10,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 41,
+						"imageSpriteId": 15,
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "crossbar",
-								"x": 0.5,
-								"y": 5.551115123125783e-17
-							},
-							{
-								"name": "goal_detector",
-								"x": 0.44666666666666666,
-								"y": 0.5
-							}
-						],
 						"duration": 1
 					}
 				],
-				"sid": 294405869101835,
+				"sid": 555364480380944,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
