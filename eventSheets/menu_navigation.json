@@ -1662,6 +1662,236 @@
 					"isActiveOnStart": false,
 					"children": [
 						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - MT - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 929342070002020,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 579435193291603,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 429386979257063,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 214635750977653,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 415730370962493,
+													"parameters": [
+														"menu_matchconfig_type.X",
+														"menu_matchconfig_type.Y",
+														"menu_matchconfig_type.Width",
+														"menu_matchconfig_type.Height"
+													]
+												}
+											],
+											"sid": 376591403390317
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 221662590062675,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										},
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 873801842902794,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 798501145864406,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 555832983594265,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 972557741132327,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 205990962251356,
+													"parameters": [
+														"menu_matchconfig_type.X",
+														"menu_matchconfig_type.Y",
+														"menu_matchconfig_type.Width",
+														"menu_matchconfig_type.Height"
+													]
+												}
+											],
+											"sid": 100973988120195
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 986505402259040,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 348397692593539,
+											"parameters": [
+												"\"GC - Win condition\""
+											]
+										}
+									],
+									"sid": 735191547224374,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 512797103741215,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 575592238588048,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 562497811636303,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "match_config",
+													"sid": 461940587142250,
+													"parameters": {
+														"key": "\"match_type\"",
+														"value": "menu_matchconfig_type.type"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_type",
+													"sid": 599764605270964,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 440707519418749
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 233217548403474,
+													"parameters": {
+														"object": "menu_matchconfig_type",
+														"expression": "menu_matchconfig_type.index",
+														"comparison": 1,
+														"value": "mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_type",
+													"sid": 836561208462665,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 993866504626398
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 908245671416325
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1965,6 +2195,268 @@
 					"description": "",
 					"isActiveOnStart": false,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 883879958243654,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [],
+							"sid": 911758033902356,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 937072747476803,
+											"parameters": {
+												"object": "menu_matchconfig_win",
+												"expression": "menu_matchconfig_win.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 165931484661603,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 355772399008177,
+											"parameters": [
+												"menu_matchconfig_win.X",
+												"menu_matchconfig_win.Y",
+												"menu_matchconfig_win.Width",
+												"menu_matchconfig_win.Height"
+											]
+										}
+									],
+									"sid": 423216301282223
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 931330356167046,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [],
+							"sid": 461254829268294,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 583660987026407,
+											"parameters": {
+												"object": "menu_matchconfig_win",
+												"expression": "menu_matchconfig_win.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 502220147727764,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 144666840508908,
+											"parameters": [
+												"menu_matchconfig_win.X",
+												"menu_matchconfig_win.Y",
+												"menu_matchconfig_win.Width",
+												"menu_matchconfig_win.Height"
+											]
+										}
+									],
+									"sid": 480014033008512
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 858972069957233,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 946638327120812,
+									"parameters": [
+										"\"GC - Match type\""
+									]
+								}
+							],
+							"sid": 997378183794185,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 542549517853439,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 513536823674080,
+									"parameters": [
+										"\"GC - Goal amount\""
+									]
+								}
+							],
+							"sid": 699896071661673,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 873008310233505,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [],
+							"sid": 917364038759805,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 381815111618835,
+											"parameters": {
+												"object": "menu_matchconfig_win",
+												"expression": "menu_matchconfig_win.index = mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "match_config",
+											"sid": 111933735717199,
+											"parameters": {
+												"key": "\"win_condition\"",
+												"value": "menu_matchconfig_win.type"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_matchconfig_win",
+											"sid": 606972641561420,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 412664298682564,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 885457515364950,
+													"parameters": {
+														"object": "menu_matchconfig_label",
+														"expression": "menu_matchconfig_label.label = \"win_condition\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "menu_matchconfig_label",
+													"sid": 444999748906531,
+													"parameters": {
+														"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goles\" : \"Minutos\""
+													}
+												}
+											],
+											"sid": 724334793310515
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 961692695253088,
+											"parameters": {
+												"object": "menu_matchconfig_win",
+												"expression": "menu_matchconfig_win.index",
+												"comparison": 1,
+												"value": "mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_matchconfig_win",
+											"sid": 943051007433902,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 842290794209125
+								}
+							],
+							"isOrBlock": true
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -2325,6 +2817,214 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 652777775886260,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [],
+							"sid": 207515704076256,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 613423004211114,
+											"parameters": {
+												"object": "menu_matchconfig_goals_button",
+												"expression": "menu_matchconfig_goals_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 109873569450397,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 781397797676702,
+											"parameters": [
+												"menu_matchconfig_goals_button.X",
+												"menu_matchconfig_goals_button.Y",
+												"menu_matchconfig_goals_button.Width",
+												"menu_matchconfig_goals_button.Height"
+											]
+										}
+									],
+									"sid": 410098246361809
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 131881406634422,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [],
+							"sid": 520970766269674,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 441161758513541,
+											"parameters": {
+												"object": "menu_matchconfig_goals_button",
+												"expression": "menu_matchconfig_goals_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 367918114826776,
+											"parameters": {
+												"variable": "mn_selected_index",
+												"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+											}
+										},
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 753966045367297,
+											"parameters": [
+												"menu_matchconfig_goals_button.X",
+												"menu_matchconfig_goals_button.Y",
+												"menu_matchconfig_goals_button.Width",
+												"menu_matchconfig_goals_button.Height"
+											]
+										}
+									],
+									"sid": 725075610923371
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 301423348868100,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 178438103927837,
+									"parameters": [
+										"\"GC - Win condition\""
+									]
+								}
+							],
+							"sid": 663396514135516,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 431924557334396,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 369713777041942,
+									"parameters": [
+										"\"GC - Ball size\""
+									]
+								}
+							],
+							"sid": 683357478748859,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 507362341827453,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [],
+							"sid": 854085357832275,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 916639886149320,
+											"parameters": {
+												"object": "menu_matchconfig_goals_button",
+												"expression": "menu_matchconfig_goals_button.index = mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "match_config",
+											"sid": 840514820636662,
+											"parameters": {
+												"key": "\"goal_amount\"",
+												"value": "(match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount > 0) ? match_config.Get(\"goal_amount\") + menu_matchconfig_goals_button.amount : 1"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_goals_text",
+											"sid": 457905829015064,
+											"parameters": {
+												"text": "match_config.Get(\"goal_amount\")"
+											}
+										}
+									],
+									"sid": 501594933070060
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 905730618712341
@@ -2650,6 +3350,304 @@
 							"isStatic": false,
 							"isConstant": false,
 							"sid": 443746702183351
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - BS - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 187915996811870,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 121827675377993,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 976104025634262,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 727776014387402,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 396130307499158,
+													"parameters": [
+														"menu_matchconfig_size_ball_button.X",
+														"menu_matchconfig_size_ball_button.Y",
+														"menu_matchconfig_size_ball_button.Width",
+														"menu_matchconfig_size_ball_button.Height"
+													]
+												}
+											],
+											"sid": 539524531135211
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 770558206823495,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 556434194401477,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 896449646006347,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 665502626596760,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 848021145865024,
+													"parameters": [
+														"menu_matchconfig_size_ball_button.X",
+														"menu_matchconfig_size_ball_button.Y",
+														"menu_matchconfig_size_ball_button.Width",
+														"menu_matchconfig_size_ball_button.Height"
+													]
+												}
+											],
+											"sid": 735316514094788
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 801629471580899,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 563109069809622,
+											"parameters": [
+												"\"GC - Goal amount\""
+											]
+										}
+									],
+									"sid": 731197354972916,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 835445732940365,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 431116091360453,
+											"parameters": [
+												"\"GC - Player size\""
+											]
+										}
+									],
+									"sid": 895255602895344,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 294038128033672,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 101941458168639,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 341474036760604,
+													"parameters": {
+														"object": "menu_matchconfig_size_ball_button",
+														"expression": "menu_matchconfig_size_ball_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 824922359092863,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 240490366978834,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 428229963190791,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 674856036805294
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 631014805515148
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 622944503864267,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 983235051350489,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 317863428519566
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 222241904600050
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 515683456769898,
+															"parameters": {
+																"key": "\"size_ball\"",
+																"value": "match_config.Get(\"size_ball\") + menu_matchconfig_size_ball_button.amount"
+															}
+														}
+													],
+													"sid": 868595709028398
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 157417320441163,
+															"parameters": {
+																"text": "match_config.Get(\"size_ball\")"
+															}
+														}
+													],
+													"sid": 478094346690290
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 996780209121865
 						},
 						{
 							"eventType": "block",
@@ -3066,6 +4064,304 @@
 							"sid": 719544198159575
 						},
 						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - PS - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 690285353224755,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 655894406254057,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 709342371102459,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 763499155058172,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 869272437649818,
+													"parameters": [
+														"menu_matchconfig_size_character_button.X",
+														"menu_matchconfig_size_character_button.Y",
+														"menu_matchconfig_size_character_button.Width",
+														"menu_matchconfig_size_character_button.Height"
+													]
+												}
+											],
+											"sid": 326317371124488
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 882960464997024,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 352805134056171,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 843027079169162,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 376802239414137,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 964227553716409,
+													"parameters": [
+														"menu_matchconfig_size_character_button.X",
+														"menu_matchconfig_size_character_button.Y",
+														"menu_matchconfig_size_character_button.Width",
+														"menu_matchconfig_size_character_button.Height"
+													]
+												}
+											],
+											"sid": 633275051680372
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 511796492081202,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 677831900212639,
+											"parameters": [
+												"\"GC - Ball size\""
+											]
+										}
+									],
+									"sid": 706038824486762,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 534352967096725,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 758441029040629,
+											"parameters": [
+												"\"GC - Goal size\""
+											]
+										}
+									],
+									"sid": 291009460504459,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 361440419245442,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 748056567300323,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 251083093111533,
+													"parameters": {
+														"object": "menu_matchconfig_size_character_button",
+														"expression": "menu_matchconfig_size_character_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 867290199143232,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 941687459975882,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 517416195492947,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 403379597602141
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 908399828973460
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 107911239319711,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 537953784415942,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 532448800791691
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 622160855283774
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 520356341544788,
+															"parameters": {
+																"key": "\"size_player\"",
+																"value": "match_config.Get(\"size_player\") + menu_matchconfig_size_character_button.amount"
+															}
+														}
+													],
+													"sid": 347077145550038
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 289857333743537,
+															"parameters": {
+																"text": "match_config.Get(\"size_player\")"
+															}
+														}
+													],
+													"sid": 433573099862854
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 695681441600412
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -3474,6 +4770,304 @@
 							"isStatic": false,
 							"isConstant": false,
 							"sid": 110242652248683
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - GS - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 589676888053854,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 297398774159701,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 631483831112305,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 275855407186238,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 800286937505406,
+													"parameters": [
+														"menu_matchconfig_size_goal_button.X",
+														"menu_matchconfig_size_goal_button.Y",
+														"menu_matchconfig_size_goal_button.Width",
+														"menu_matchconfig_size_goal_button.Height"
+													]
+												}
+											],
+											"sid": 485854434389377
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 105231045070437,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 320398633032696,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 245860546532385,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 121469346397566,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 629511359113032,
+													"parameters": [
+														"menu_matchconfig_size_goal_button.X",
+														"menu_matchconfig_size_goal_button.Y",
+														"menu_matchconfig_size_goal_button.Width",
+														"menu_matchconfig_size_goal_button.Height"
+													]
+												}
+											],
+											"sid": 939819562950591
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 420603640461716,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 732706934983375,
+											"parameters": [
+												"\"GC - Player size\""
+											]
+										}
+									],
+									"sid": 539003654258008,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 501522354985619,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 480128509179560,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 979619951550787,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 461924445778098,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 644655868743976,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 956612941618758,
+													"parameters": {
+														"object": "menu_matchconfig_size_goal_button",
+														"expression": "menu_matchconfig_size_goal_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 674434108378636,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 469188572491467,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 376384134871976,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "2"
+															}
+														}
+													],
+													"sid": 911102420319496
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 565875791759874
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 326606773945132,
+															"parameters": {
+																"first-value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 521206358917935,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 407964148779741
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 749570182526042
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "match_config",
+															"sid": 954429402447230,
+															"parameters": {
+																"key": "\"size_goal\"",
+																"value": "match_config.Get(\"size_goal\") + menu_matchconfig_size_goal_button.amount"
+															}
+														}
+													],
+													"sid": 767748355020801
+												},
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 456078987480893,
+															"parameters": {
+																"text": "match_config.Get(\"size_goal\")"
+															}
+														}
+													],
+													"sid": 586308141681418
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 519589825507796
 						},
 						{
 							"eventType": "block",
@@ -3932,6 +5526,89 @@
 									"sid": 728841864676330
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 732697845726145,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 816127725485050,
+									"parameters": [
+										"\"GC - Goal size\""
+									]
+								}
+							],
+							"sid": 602337067362667,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 898556633727213,
+									"parameters": {
+										"key": 32
+									}
+								}
+							],
+							"actions": [],
+							"sid": 250513903712812,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 233063105155739,
+											"parameters": {
+												"object": "menu_matchconfig_toCharSelect",
+												"expression": "menu_matchconfig_toCharSelect.index = mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 433794604181707,
+											"parameters": {
+												"type": "log",
+												"message": "\"AAAAAAAA\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 732698372062036,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"callFunction": "goToView",
+											"sid": 678640777562875,
+											"parameters": [
+												"MN_VIEW_CHAR_SELECTOR"
+											]
+										}
+									],
+									"sid": 573490083447956
+								}
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",

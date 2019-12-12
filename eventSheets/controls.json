@@ -164,6 +164,24 @@
 						{
 							"id": "add-key",
 							"objectClass": "controls_mouse_data",
+							"sid": 859474690702673,
+							"parameters": {
+								"key": "\"origin_x\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "controls_mouse_data",
+							"sid": 855104384036210,
+							"parameters": {
+								"key": "\"origin_y\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "controls_mouse_data",
 							"sid": 366109002743008,
 							"parameters": {
 								"key": "\"last_x\"",
@@ -213,6 +231,15 @@
 							"parameters": {
 								"key": "\"deadzone\"",
 								"value": "15"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "controls_mouse_data",
+							"sid": 315882582885145,
+							"parameters": {
+								"key": "\"mode\"",
+								"value": "\"variable\""
 							}
 						},
 						{
@@ -409,6 +436,21 @@
 										}
 									],
 									"sid": 319858300200749
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "mouse-button-is-down",
+											"objectClass": "Mouse",
+											"sid": 585846332018227,
+											"parameters": {
+												"mouse-button": "middle"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 142905381524087
 								},
 								{
 									"eventType": "block",

@@ -788,6 +788,16 @@
 									}
 								},
 								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 945466860452956,
+									"parameters": {
+										"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
 									"sid": 624046891833718,
@@ -874,6 +884,16 @@
 									"parameters": {
 										"object": "menu_char_selector",
 										"expression": "menu_char_selector.gamepad_index = -1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 180398650924932,
+									"parameters": {
+										"first-value": "gamepad_selection.Get(\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\")",
+										"comparison": 0,
+										"second-value": "0"
 									}
 								},
 								{
