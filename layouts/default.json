@@ -6,7 +6,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "goal_detector",
+					"type": "goal_football_detector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -295,7 +295,7 @@
 					}
 				},
 				{
-					"type": "goal",
+					"type": "goal_football",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -310,10 +310,10 @@
 							"properties": {
 								"immovable": false,
 								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": true,
+								"prevent-rotation": false,
 								"density": 1,
-								"friction": 1,
-								"elasticity": 0,
+								"friction": 0.5,
+								"elasticity": 0.2,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
@@ -550,6 +550,87 @@
 						"y": 56.149049773290926,
 						"width": 5.923173553742858,
 						"height": 5.923173553742858,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "goal_volley",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 48,
+					"instanceVariables": {},
+					"behaviors": {
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 392.0937863186122,
+						"y": 119.38725536759975,
+						"width": 12,
+						"height": 157.7870977969884,
+						"originX": 0.5833333333333334,
+						"originY": 0.5083333333333333,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "goal_volley_detector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 49,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 452.74579160426737,
+						"y": 191.27988951423515,
+						"width": 100,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

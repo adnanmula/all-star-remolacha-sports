@@ -81,6 +81,39 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "mapFunctions",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 956922963503830,
+							"parameters": {
+								"name": "\"matchProps\"",
+								"string": "\"createGoalTYPE_FOOTBALL\"",
+								"function": "createGoalFootball"
+							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 735968776890763,
+							"parameters": {
+								"name": "\"matchProps\"",
+								"string": "\"createGoalTYPE_VOLLEY\"",
+								"function": "createGoalVolley"
+							}
+						}
+					],
+					"sid": 347893878288915
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -90,6 +123,10 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "mapFunctions",
+							"sid": 411498276280392
+						},
 						{
 							"callFunction": "dataInitializeGamepadSelection",
 							"sid": 176148843874150
@@ -107,17 +144,17 @@
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 501644413114131
+									"sid": 529204066614247
 								}
 							],
 							"actions": [
 								{
 									"id": "restart-layout",
 									"objectClass": "System",
-									"sid": 781575592479887
+									"sid": 899594441971198
 								}
 							],
-							"sid": 750251664767335
+							"sid": 128874631900424
 						}
 					]
 				},
@@ -133,16 +170,7 @@
 					"actions": [
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
-							"sid": 429328387608670,
-							"parameters": {
-								"key": "\"match_type\"",
-								"value": "\"\""
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 408974791843552,
 							"parameters": {
 								"key": "\"match_type\"",
@@ -151,7 +179,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 529555272097572,
 							"parameters": {
 								"key": "\"win_condition\"",
@@ -160,7 +188,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 714351122991730,
 							"parameters": {
 								"key": "\"goal_amount\"",
@@ -169,7 +197,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 216997994990241,
 							"parameters": {
 								"key": "\"size_ball\"",
@@ -178,7 +206,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 610803242853311,
 							"parameters": {
 								"key": "\"size_player\"",
@@ -187,7 +215,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 133929714807751,
 							"parameters": {
 								"key": "\"size_goal\"",
@@ -196,7 +224,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "match_config",
+							"objectClass": "data_match_config",
 							"sid": 941077164445369,
 							"parameters": {
 								"key": "\"stadium\"",
@@ -208,7 +236,7 @@
 							"objectClass": "menu_matchconfig_goals_text",
 							"sid": 333531089743632,
 							"parameters": {
-								"text": "match_config.Get(\"goal_amount\")"
+								"text": "data_match_config.Get(\"goal_amount\")"
 							}
 						},
 						{
@@ -216,7 +244,7 @@
 							"objectClass": "menu_matchconfig_size_ball_text",
 							"sid": 193464512404281,
 							"parameters": {
-								"text": "match_config.Get(\"size_ball\")"
+								"text": "data_match_config.Get(\"size_ball\")"
 							}
 						},
 						{
@@ -224,7 +252,7 @@
 							"objectClass": "menu_matchconfig_size_character_text",
 							"sid": 371017390077172,
 							"parameters": {
-								"text": "match_config.Get(\"size_player\")"
+								"text": "data_match_config.Get(\"size_player\")"
 							}
 						},
 						{
@@ -232,7 +260,7 @@
 							"objectClass": "menu_matchconfig_size_goal_text",
 							"sid": 348842468786105,
 							"parameters": {
-								"text": "match_config.Get(\"size_goal\")"
+								"text": "data_match_config.Get(\"size_goal\")"
 							}
 						}
 					],
@@ -250,7 +278,7 @@
 					"actions": [
 						{
 							"id": "add-key",
-							"objectClass": "gamepad_selection",
+							"objectClass": "data_gamepad",
 							"sid": 279033472124843,
 							"parameters": {
 								"key": "\"player0_character\"",
@@ -259,7 +287,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "gamepad_selection",
+							"objectClass": "data_gamepad",
 							"sid": 452457784061605,
 							"parameters": {
 								"key": "\"player1_character\"",
@@ -268,7 +296,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "gamepad_selection",
+							"objectClass": "data_gamepad",
 							"sid": 607723336076210,
 							"parameters": {
 								"key": "\"player-1_ready\"",
@@ -277,7 +305,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "gamepad_selection",
+							"objectClass": "data_gamepad",
 							"sid": 156245417962678,
 							"parameters": {
 								"key": "\"player0_ready\"",
@@ -286,7 +314,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "gamepad_selection",
+							"objectClass": "data_gamepad",
 							"sid": 366098513607777,
 							"parameters": {
 								"key": "\"player1_ready\"",

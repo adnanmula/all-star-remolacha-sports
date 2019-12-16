@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 17900,
+	"savedWithRelease": 18000,
 	"name": "remolacha",
 	"runtime": "c3",
 	"useWorker": false,
@@ -11,7 +11,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -67,23 +67,7 @@
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r179",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
-			"author": "Scirra",
-			"version": "r179",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -91,7 +75,23 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r180",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -99,7 +99,7 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		},
 		{
@@ -107,15 +107,13 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r179",
+			"version": "r180",
 			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"player_km_origin_indicator"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -134,24 +132,58 @@
 					"player1",
 					"player2",
 					"stickman3_fd",
-					"stickman3"
+					"stickman3",
+					"player_km_origin_indicator"
 				],
 				"subfolders": [],
 				"name": "player"
 			},
 			{
 				"items": [
-					"ball",
 					"solid_bound",
-					"goal",
-					"goal_detector",
 					"match_scoreboard",
-					"goal_crossbar",
-					"goal_solid_detector",
 					"match_timer"
 				],
-				"subfolders": [],
-				"name": "level"
+				"subfolders": [
+					{
+						"items": [],
+						"subfolders": [
+							{
+								"items": [
+									"goal_football",
+									"goal_football_detector"
+								],
+								"subfolders": [],
+								"name": "football"
+							},
+							{
+								"items": [
+									"goal_crossbar",
+									"goal_solid_detector"
+								],
+								"subfolders": [],
+								"name": "shared"
+							},
+							{
+								"items": [
+									"goal_volley",
+									"goal_volley_detector"
+								],
+								"subfolders": [],
+								"name": "volley"
+							}
+						],
+						"name": "goal"
+					},
+					{
+						"items": [
+							"ball"
+						],
+						"subfolders": [],
+						"name": "ball"
+					}
+				],
+				"name": "props"
 			},
 			{
 				"items": [],
@@ -246,9 +278,9 @@
 			},
 			{
 				"items": [
-					"gamepad_selection",
-					"match_config",
-					"controls_mouse_data"
+					"data_gamepad",
+					"data_match_config",
+					"data_controls"
 				],
 				"subfolders": [],
 				"name": "data"
@@ -280,9 +312,9 @@
 		},
 		{
 			"members": [
-				"goal",
+				"goal_football",
 				"goal_crossbar",
-				"goal_detector"
+				"goal_football_detector"
 			],
 			"selectMode": "normal"
 		}
@@ -292,7 +324,9 @@
 			"player",
 			"feet_detector",
 			"menu_main_buttons",
-			"menu_gamemode_buttons"
+			"menu_gamemode_buttons",
+			"goal",
+			"goal_detector"
 		],
 		"subfolders": []
 	},
@@ -383,14 +417,14 @@
 					"sid": 288604151112678
 				},
 				{
-					"name": "icon-128.png",
-					"type": "image/png",
-					"sid": 474311748017190
-				},
-				{
 					"name": "icon-32.png",
 					"type": "image/png",
 					"sid": 982194147625789
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 474311748017190
 				}
 			],
 			"subfolders": []

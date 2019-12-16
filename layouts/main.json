@@ -421,6 +421,56 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "goal_solid_detector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 50,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 322.7340253566417,
+						"y": 376.642,
+						"width": 233.21518304391407,
+						"height": 34.83685292236629,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 697908153890477,
@@ -451,19 +501,19 @@
 	"sid": 141872593580032,
 	"nonworld-instances": [
 		{
-			"type": "gamepad_selection",
+			"type": "data_gamepad",
 			"properties": {},
 			"uid": 20,
 			"instanceVariables": {}
 		},
 		{
-			"type": "match_config",
+			"type": "data_match_config",
 			"properties": {},
 			"uid": 62,
 			"instanceVariables": {}
 		},
 		{
-			"type": "controls_mouse_data",
+			"type": "data_controls",
 			"properties": {},
 			"uid": 46,
 			"instanceVariables": {}

@@ -1,14 +1,14 @@
 {
-	"name": "goal",
+	"name": "goal_volley",
 	"plugin-id": "Sprite",
-	"sid": 916246753504576,
+	"sid": 937547023101095,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 305536323303087
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 497088035270801
 		}
 	],
 	"effectTypes": [],
@@ -17,31 +17,19 @@
 			{
 				"frames": [
 					{
-						"width": 75,
+						"width": 12,
 						"height": 120,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.5833333333333334,
+						"originY": 0.5083333333333333,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 41,
+						"imageSpriteId": 36,
 						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "crossbar",
-								"x": 0.5,
-								"y": 5.551115123125783e-17
-							},
-							{
-								"name": "goal_detector",
-								"x": 0.44666666666666666,
-								"y": 0.5
-							}
-						],
 						"duration": 1
 					}
 				],
-				"sid": 294405869101835,
+				"sid": 603376719649961,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

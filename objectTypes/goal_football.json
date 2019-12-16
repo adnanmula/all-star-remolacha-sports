@@ -1,42 +1,41 @@
 {
-	"name": "goal_detector",
+	"name": "goal_football",
 	"plugin-id": "Sprite",
-	"sid": 661460845580055,
+	"sid": 916246753504576,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "owner",
-			"type": "number",
-			"desc": "",
-			"sid": 429328021574281
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 646071293384382
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 7,
-						"height": 30,
+						"width": 75,
+						"height": 120,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 39,
+						"imageSpriteId": 41,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "crossbar",
+								"x": 0.5,
+								"y": 5.551115123125783e-17
+							},
+							{
+								"name": "goal_detector",
+								"x": 0.44666666666666666,
+								"y": 0.5
+							}
+						],
 						"duration": 1
 					}
 				],
-				"sid": 332629099864707,
+				"sid": 294405869101835,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

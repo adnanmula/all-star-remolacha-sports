@@ -72,7 +72,7 @@
 							"objectClass": "System",
 							"sid": 759206567242543,
 							"parameters": {
-								"first-value": "match_config.Get(\"win_condition\")",
+								"first-value": "data_match_config.Get(\"win_condition\")",
 								"comparison": 0,
 								"second-value": "WIN_CONDITION_TIME"
 							}
@@ -85,7 +85,7 @@
 							"sid": 682650263740140,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "match_config.Get(\"goal_amount\") * 60",
+								"duration": "data_match_config.Get(\"goal_amount\") * 60",
 								"type": "once",
 								"tag": "\"match_timer\""
 							}
@@ -130,42 +130,44 @@
 					"actions": [
 						{
 							"callFunction": "createGoal",
-							"sid": 410477912516647,
+							"sid": 448293709573911,
 							"parameters": [
 								"10",
 								"200",
-								"match_config.Get(\"size_goal\")"
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
 							]
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 205142602444622,
+							"sid": 948625290607753,
 							"parameters": [
 								"630",
 								"200",
-								"match_config.Get(\"size_goal\")"
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
 							]
 						},
 						{
 							"callFunction": "createPlayer",
 							"sid": 123324153534841,
 							"parameters": [
-								"gamepad_selection.Get(\"player0_gamepad_index\")",
-								"gamepad_selection.Get(\"player0_character\")",
+								"data_gamepad.Get(\"player0_gamepad_index\")",
+								"data_gamepad.Get(\"player0_character\")",
 								"90",
 								"200",
-								"match_config.Get(\"size_player\")"
+								"data_match_config.Get(\"size_player\")"
 							]
 						},
 						{
 							"callFunction": "createPlayer",
 							"sid": 789882196879274,
 							"parameters": [
-								"gamepad_selection.Get(\"player1_gamepad_index\")",
-								"gamepad_selection.Get(\"player1_character\")",
+								"data_gamepad.Get(\"player1_gamepad_index\")",
+								"data_gamepad.Get(\"player1_character\")",
 								"500",
 								"200",
-								"match_config.Get(\"size_player\")"
+								"data_match_config.Get(\"size_player\")"
 							]
 						},
 						{
@@ -194,7 +196,7 @@
 							"sid": 648928824948593,
 							"parameters": {
 								"variable": "size_ball",
-								"value": "match_config.Get(\"size_ball\")"
+								"value": "data_match_config.Get(\"size_ball\")"
 							}
 						},
 						{
@@ -507,7 +509,7 @@
 									"sid": 290455103112445,
 									"parameters": {
 										"object": "player",
-										"expression": "player.gamepad_index = gamepad_selection.Get(\"player0_gamepad_index\")"
+										"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
 									}
 								}
 							],
@@ -533,7 +535,7 @@
 									"sid": 729013260524540,
 									"parameters": {
 										"object": "player",
-										"expression": "player.gamepad_index = gamepad_selection.Get(\"player1_gamepad_index\")"
+										"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
 									}
 								}
 							],

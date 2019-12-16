@@ -163,7 +163,7 @@
 					"actions": [
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 859474690702673,
 							"parameters": {
 								"key": "\"origin_x\"",
@@ -172,7 +172,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 855104384036210,
 							"parameters": {
 								"key": "\"origin_y\"",
@@ -181,7 +181,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 366109002743008,
 							"parameters": {
 								"key": "\"last_x\"",
@@ -190,7 +190,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 719081116051319,
 							"parameters": {
 								"key": "\"last_y\"",
@@ -199,7 +199,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 360256173446451,
 							"parameters": {
 								"key": "\"idle_ticks\"",
@@ -208,7 +208,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 709987101370167,
 							"parameters": {
 								"key": "\"idle_ticks_threshold\"",
@@ -217,7 +217,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 342364790618629,
 							"parameters": {
 								"key": "\"last_angle\"",
@@ -226,7 +226,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 613276176566056,
 							"parameters": {
 								"key": "\"deadzone\"",
@@ -235,7 +235,7 @@
 						},
 						{
 							"id": "add-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 315882582885145,
 							"parameters": {
 								"key": "\"mode\"",
@@ -568,20 +568,20 @@
 									"objectClass": "System",
 									"sid": 580200291697038,
 									"parameters": {
-										"first-value": "distance(controls_mouse_data.Get(\"origin_x\"), controls_mouse_data.Get(\"origin_y\"), Mouse.X, Mouse.Y)",
+										"first-value": "distance(data_controls.Get(\"origin_x\"), data_controls.Get(\"origin_y\"), Mouse.X, Mouse.Y)",
 										"comparison": 4,
-										"second-value": "controls_mouse_data.Get(\"deadzone\")"
+										"second-value": "data_controls.Get(\"deadzone\")"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-key",
-									"objectClass": "controls_mouse_data",
+									"objectClass": "data_controls",
 									"sid": 242634076512035,
 									"parameters": {
 										"key": "\"last_angle\"",
-										"value": "angle(controls_mouse_data.Get(\"origin_x\"), controls_mouse_data.Get(\"origin_y\"), Mouse.X, Mouse.Y) + 90"
+										"value": "angle(data_controls.Get(\"origin_x\"), data_controls.Get(\"origin_y\"), Mouse.X, Mouse.Y) + 90"
 									}
 								}
 							],
@@ -605,7 +605,7 @@
 									"objectClass": "player",
 									"sid": 540811953731282,
 									"parameters": {
-										"angle": "controls_mouse_data.Get(\"last_angle\")"
+										"angle": "data_controls.Get(\"last_angle\")"
 									}
 								}
 							],
@@ -631,7 +631,7 @@
 											"objectClass": "System",
 											"sid": 721637236342033,
 											"parameters": {
-												"first-value": "controls_mouse_data.Get(\"last_x\")",
+												"first-value": "data_controls.Get(\"last_x\")",
 												"comparison": 0,
 												"second-value": "Mouse.X"
 											}
@@ -641,7 +641,7 @@
 											"objectClass": "System",
 											"sid": 890715816791149,
 											"parameters": {
-												"first-value": "controls_mouse_data.Get(\"last_y\")",
+												"first-value": "data_controls.Get(\"last_y\")",
 												"comparison": 0,
 												"second-value": "Mouse.Y"
 											}
@@ -650,11 +650,11 @@
 									"actions": [
 										{
 											"id": "set-key",
-											"objectClass": "controls_mouse_data",
+											"objectClass": "data_controls",
 											"sid": 164781248392672,
 											"parameters": {
 												"key": "\"idle_ticks\"",
-												"value": "controls_mouse_data.Get(\"idle_ticks\") + 1"
+												"value": "data_controls.Get(\"idle_ticks\") + 1"
 											}
 										}
 									],
@@ -672,7 +672,7 @@
 									"actions": [
 										{
 											"id": "set-key",
-											"objectClass": "controls_mouse_data",
+											"objectClass": "data_controls",
 											"sid": 292216706302418,
 											"parameters": {
 												"key": "\"last_x\"",
@@ -681,7 +681,7 @@
 										},
 										{
 											"id": "set-key",
-											"objectClass": "controls_mouse_data",
+											"objectClass": "data_controls",
 											"sid": 357282738570257,
 											"parameters": {
 												"key": "\"last_y\"",
@@ -690,7 +690,7 @@
 										},
 										{
 											"id": "set-key",
-											"objectClass": "controls_mouse_data",
+											"objectClass": "data_controls",
 											"sid": 649716351501426,
 											"parameters": {
 												"key": "\"idle_ticks\"",
@@ -710,14 +710,14 @@
 									"objectClass": "System",
 									"sid": 412783226512397,
 									"parameters": {
-										"first-value": "controls_mouse_data.Get(\"idle_ticks\")",
+										"first-value": "data_controls.Get(\"idle_ticks\")",
 										"comparison": 5,
-										"second-value": "controls_mouse_data.Get(\"idle_ticks_threshold\")"
+										"second-value": "data_controls.Get(\"idle_ticks_threshold\")"
 									}
 								},
 								{
 									"id": "compare-value",
-									"objectClass": "controls_mouse_data",
+									"objectClass": "data_controls",
 									"sid": 250773657763136,
 									"parameters": {
 										"key": "\"mode\"",
@@ -767,7 +767,7 @@
 					"actions": [
 						{
 							"id": "set-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 887706446915664,
 							"parameters": {
 								"key": "\"origin_x\"",
@@ -776,7 +776,7 @@
 						},
 						{
 							"id": "set-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 854639284643776,
 							"parameters": {
 								"key": "\"origin_y\"",
@@ -869,11 +869,11 @@
 					"actions": [
 						{
 							"id": "set-key",
-							"objectClass": "controls_mouse_data",
+							"objectClass": "data_controls",
 							"sid": 661415045997351,
 							"parameters": {
 								"key": "\"mode\"",
-								"value": "controls_mouse_data.Get(\"mode\") = \"fixed\" ? \"variable\" : \"fixed\""
+								"value": "data_controls.Get(\"mode\") = \"fixed\" ? \"variable\" : \"fixed\""
 							}
 						}
 					],

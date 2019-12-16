@@ -1,0 +1,19 @@
+{
+	"name": "goal_detector",
+	"plugin-id": "Sprite",
+	"sid": 915151127965948,
+	"instanceVariables": [
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 162851680219398
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"goal_football_detector",
+		"goal_volley_detector"
+	]
+}

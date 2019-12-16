@@ -2,6 +2,38 @@
 	"name": "match",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "temp_goal_volley_count",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 356891104412963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 171167740690845
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 700560069873193,
+					"parameters": {
+						"variable": "temp_goal_volley_count",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 351459953049445
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Match objects",
@@ -35,6 +67,105 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 742547072934588
+						},
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "football",
+							"comment": "",
+							"sid": 855856105510705
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 601255731634027,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 856935489862270,
+									"parameters": {
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "MATCH_TYPE_FOOTBALL"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 615140015046790,
+									"parameters": {
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "MATCH_TYPE_VOLLEY"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 955999908455566,
+									"parameters": {
+										"first-value": "type",
+										"comparison": 0,
+										"second-value": "MATCH_TYPE_BASKET"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "call-mapped-function",
+									"objectClass": "Functions",
+									"sid": 387490812861585,
+									"parameters": {
+										"name": "\"matchProps\"",
+										"string": "\"createGoal\" & type",
+										"forward-params": "0"
+									}
+								}
+							],
+							"sid": 747776207515302,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"functionName": "createGoalFootball",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 542825745088544
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 856669874969914
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 703613238673114
+						},
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 737534974322911
 						}
 					],
 					"eventType": "function-block",
@@ -43,9 +174,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 743254944025383,
+							"sid": 945156270168963,
 							"parameters": {
-								"object-to-create": "goal",
+								"object-to-create": "goal_football",
 								"layer": "\"main\"",
 								"x": "x",
 								"y": "y"
@@ -53,8 +184,8 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "goal_detector",
-							"sid": 282833862068215,
+							"objectClass": "goal_football_detector",
+							"sid": 467982135771642,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -62,15 +193,15 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_crossbar",
-							"sid": 741521968368407,
+							"sid": 942452547731706,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						},
 						{
 							"id": "enabledisable-collisions",
-							"objectClass": "goal",
-							"sid": 669931198073453,
+							"objectClass": "goal_football",
+							"sid": 691554295852209,
 							"behaviorType": "Physics",
 							"parameters": {
 								"object": "solid_bound",
@@ -80,13 +211,13 @@
 						{
 							"id": "set-collisions-enabled",
 							"objectClass": "goal_crossbar",
-							"sid": 369030066552711,
+							"sid": 927221139451155,
 							"parameters": {
 								"collisions": "disabled"
 							}
 						}
 					],
-					"sid": 601255731634027,
+					"sid": 416710035776654,
 					"children": [
 						{
 							"eventType": "block",
@@ -94,7 +225,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 828119000422804,
+									"sid": 973146538050356,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -105,15 +236,15 @@
 							"actions": [
 								{
 									"id": "set-size",
-									"objectClass": "goal",
-									"sid": 957868517589043,
+									"objectClass": "goal_football",
+									"sid": 383408649338677,
 									"parameters": {
 										"width": "40",
 										"height": "67"
 									}
 								}
 							],
-							"sid": 958510752289534
+							"sid": 414854011998139
 						},
 						{
 							"eventType": "block",
@@ -121,12 +252,12 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 827818462199730
+									"sid": 757510660285115
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 728770782154521,
+									"sid": 852947670104092,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -137,15 +268,15 @@
 							"actions": [
 								{
 									"id": "set-size",
-									"objectClass": "goal",
-									"sid": 846829266720673,
+									"objectClass": "goal_football",
+									"sid": 179978936884191,
 									"parameters": {
 										"width": "40",
 										"height": "140"
 									}
 								}
 							],
-							"sid": 929047890313282
+							"sid": 122138478049549
 						},
 						{
 							"eventType": "block",
@@ -153,12 +284,12 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 386712310905758
+									"sid": 684878299311595
 								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 796885340167858,
+									"sid": 390580087428183,
 									"parameters": {
 										"first-value": "size",
 										"comparison": 0,
@@ -169,15 +300,15 @@
 							"actions": [
 								{
 									"id": "set-size",
-									"objectClass": "goal",
-									"sid": 820562554250259,
+									"objectClass": "goal_football",
+									"sid": 342148614524425,
 									"parameters": {
 										"width": "40",
 										"height": "300"
 									}
 								}
 							],
-							"sid": 613605750094093
+							"sid": 666976623076409
 						},
 						{
 							"eventType": "block",
@@ -185,7 +316,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 881538865186862,
+									"sid": 809398384791000,
 									"parameters": {
 										"first-value": "x",
 										"comparison": 4,
@@ -196,31 +327,31 @@
 							"actions": [
 								{
 									"id": "set-mirrored",
-									"objectClass": "goal",
-									"sid": 861549022974223,
+									"objectClass": "goal_football",
+									"sid": 728372324808377,
 									"parameters": {
 										"state": "mirrored"
 									}
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "goal_detector",
-									"sid": 721404085227157,
+									"objectClass": "goal_football_detector",
+									"sid": 345427760851186,
 									"parameters": {
 										"state": "mirrored"
 									}
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "goal_detector",
-									"sid": 633281898583578,
+									"objectClass": "goal_football_detector",
+									"sid": 398997638617229,
 									"parameters": {
 										"instance-variable": "owner",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 707457567444287
+							"sid": 411471392734060
 						},
 						{
 							"eventType": "block",
@@ -229,61 +360,181 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_crossbar",
-									"sid": 994025124604388,
+									"sid": 446514113615379,
 									"parameters": {
-										"width": "goal.Width",
+										"width": "goal_football.Width",
 										"height": "2"
 									}
 								},
 								{
 									"id": "set-size",
-									"objectClass": "goal_detector",
-									"sid": 925776871062597,
+									"objectClass": "goal_football_detector",
+									"sid": 831819749854111,
 									"parameters": {
 										"width": "4",
-										"height": "goal.Height"
+										"height": "goal_football.Height"
 									}
 								},
 								{
 									"id": "set-position-to-another-object",
-									"objectClass": "goal_detector",
-									"sid": 450410460148464,
+									"objectClass": "goal_football_detector",
+									"sid": 818768822175933,
 									"parameters": {
-										"object": "goal",
+										"object": "goal_football",
 										"image-point-optional": "\"goal_detector\""
 									}
 								},
 								{
 									"id": "pin-to-object",
-									"objectClass": "goal_detector",
-									"sid": 254980024327733,
+									"objectClass": "goal_football_detector",
+									"sid": 491694090532239,
 									"behaviorType": "Pin",
 									"parameters": {
-										"pin-to": "goal",
+										"pin-to": "goal_football",
 										"mode": "position-angle"
 									}
 								},
 								{
 									"id": "set-position-to-another-object",
 									"objectClass": "goal_crossbar",
-									"sid": 963590594463204,
+									"sid": 507977651268885,
 									"parameters": {
-										"object": "goal",
+										"object": "goal_football",
 										"image-point-optional": "\"crossbar\""
 									}
 								},
 								{
 									"id": "pin-to-object",
 									"objectClass": "goal_crossbar",
-									"sid": 360535114983650,
+									"sid": 282226556618436,
 									"behaviorType": "Pin",
 									"parameters": {
-										"pin-to": "goal",
+										"pin-to": "goal_football",
 										"mode": "position-angle"
 									}
 								}
 							],
-							"sid": 929746801094483
+							"sid": 596336571708521
+						}
+					]
+				},
+				{
+					"functionName": "createGoalVolley",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 452940779068175
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 358424018833668
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 741658059053525
+						},
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 788292719007147
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 221178815212334,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 255528290975542,
+									"disabled": true,
+									"parameters": {
+										"first-value": "goal_volley.Count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 359816902348106,
+									"parameters": {
+										"first-value": "temp_goal_volley_count",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 736004456420726,
+									"parameters": {
+										"object-to-create": "goal_volley",
+										"layer": "\"main\"",
+										"x": "LayoutWidth / 2",
+										"y": "LayoutHeight / 2"
+									}
+								},
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "goal_volley",
+									"sid": 359993380066520,
+									"behaviorType": "Physics",
+									"parameters": {
+										"object": "solid_bound",
+										"state": "disable"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 215673079286317,
+									"parameters": {
+										"variable": "temp_goal_volley_count",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 297503897625766
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 119247005403720,
+									"parameters": {
+										"object-to-create": "goal_volley_detector",
+										"layer": "\"main\"",
+										"x": "x",
+										"y": "y"
+									}
+								}
+							],
+							"sid": 113111750096698
 						}
 					]
 				},
@@ -292,7 +543,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "goal",
+							"objectClass": "goal_football",
 							"sid": 452880398324216,
 							"parameters": {
 								"object": "goal_solid_detector"
@@ -302,8 +553,8 @@
 					"actions": [
 						{
 							"id": "set-enabled",
-							"objectClass": "goal",
-							"sid": 466002132625846,
+							"objectClass": "goal_football",
+							"sid": 889731108315604,
 							"behaviorType": "Physics",
 							"parameters": {
 								"mode": "disabled"
@@ -337,6 +588,31 @@
 						}
 					],
 					"sid": 250985089517922
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "goal_volley",
+							"sid": 883813761369149,
+							"parameters": {
+								"object": "goal_solid_detector"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-immovable",
+							"objectClass": "goal_volley",
+							"sid": 624927038531163,
+							"behaviorType": "Physics",
+							"parameters": {
+								"setting": "immovable"
+							}
+						}
+					],
+					"sid": 469915849203586
 				},
 				{
 					"eventType": "block",
@@ -391,7 +667,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "goal_detector",
-									"sid": 456838250654896,
+									"sid": 387708847966522,
 									"parameters": {
 										"instance-variable": "owner",
 										"comparison": 0,
@@ -418,7 +694,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "goal_detector",
-									"sid": 186000972094861,
+									"sid": 416508844250987,
 									"parameters": {
 										"instance-variable": "owner",
 										"comparison": 0,
@@ -566,7 +842,7 @@
 									"objectClass": "System",
 									"sid": 256304928765997,
 									"parameters": {
-										"first-value": "match_config.Get(\"win_condition\")",
+										"first-value": "data_match_config.Get(\"win_condition\")",
 										"comparison": 0,
 										"second-value": "WIN_CONDITION_GOALS"
 									}
@@ -578,7 +854,7 @@
 									"objectClass": "Functions",
 									"sid": 767327518043003,
 									"parameters": {
-										"value": "score_1 >= match_config.Get(\"goal_amount\") | score_2 >= match_config.Get(\"goal_amount\") ? 1 : 0"
+										"value": "score_1 >= data_match_config.Get(\"goal_amount\") | score_2 >= data_match_config.Get(\"goal_amount\") ? 1 : 0"
 									}
 								}
 							],
@@ -660,7 +936,7 @@
 									"objectClass": "match_scoreboard",
 									"sid": 912740275896394,
 									"parameters": {
-										"text": "gamepad_selection.Get(\"player0_character\") & \"(player1) wins!\""
+										"text": "data_gamepad.Get(\"player0_character\") & \"(player1) wins!\""
 									}
 								}
 							],
@@ -691,7 +967,7 @@
 									"objectClass": "match_scoreboard",
 									"sid": 719911950386375,
 									"parameters": {
-										"text": "gamepad_selection.Get(\"player1_character\") & \"(player2) wins!\""
+										"text": "data_gamepad.Get(\"player1_character\") & \"(player2) wins!\""
 									}
 								}
 							],

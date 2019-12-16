@@ -1,7 +1,7 @@
 {
-	"name": "match_config",
+	"name": "data_gamepad",
 	"plugin-id": "Dictionary",
-	"sid": 194465883411281,
+	"sid": 350248146395082,
 	"isGlobal": true,
 	"instanceVariables": []
 }
