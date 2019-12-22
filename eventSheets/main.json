@@ -60,6 +60,11 @@
 							"id": "reset-global-variables",
 							"objectClass": "System",
 							"sid": 342438709360371
+						},
+						{
+							"callFunction": "mapFunctions",
+							"sid": 820531011775586,
+							"disabled": true
 						}
 					],
 					"sid": 718724352854851
@@ -171,8 +176,30 @@
 							]
 						},
 						{
+							"callFunction": "createGoal",
+							"sid": 433377697332544,
+							"disabled": true,
+							"parameters": [
+								"10",
+								"200",
+								"1",
+								"MATCH_TYPE_VOLLEY"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 481480753221104,
+							"disabled": true,
+							"parameters": [
+								"630",
+								"200",
+								"1",
+								"MATCH_TYPE_VOLLEY"
+							]
+						},
+						{
 							"callFunction": "createPlayer",
-							"sid": 809726061302144,
+							"sid": 250955938105308,
 							"disabled": true,
 							"parameters": [
 								"-1",

@@ -312,8 +312,8 @@
 		},
 		{
 			"members": [
-				"goal_football",
 				"goal_crossbar",
+				"goal_football",
 				"goal_football_detector"
 			],
 			"selectMode": "normal"

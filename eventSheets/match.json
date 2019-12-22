@@ -78,7 +78,17 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 376912918186040,
+							"parameters": {
+								"type": "log",
+								"message": "\"asdasd\""
+							}
+						}
+					],
 					"sid": 601255731634027,
 					"children": [
 						{
@@ -525,12 +535,37 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 119247005403720,
+									"sid": 913112967156435,
 									"parameters": {
 										"object-to-create": "goal_volley_detector",
 										"layer": "\"main\"",
-										"x": "x",
-										"y": "y"
+										"x": "x < (LayoutWidth / 2) ? (LayoutWidth/4) : (LayoutWidth/4) * 3",
+										"y": "LayoutHeight - 3"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "goal_volley_detector",
+									"sid": 209279449796278,
+									"parameters": {
+										"width": "LayoutWidth/2"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "goal_volley_detector",
+									"sid": 536207252047182,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "x > LayoutWidth / 2 ? 1 : 0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "goal_volley_detector",
+									"sid": 298202247604564,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								}
 							],
