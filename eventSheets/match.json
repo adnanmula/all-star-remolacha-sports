@@ -674,10 +674,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "ball",
-							"sid": 230209442804754,
+							"sid": 523410681896038,
 							"parameters": {
 								"x": "LayoutWidth / 2",
-								"y": "LayoutHeight / 2"
+								"y": "100"
 							}
 						},
 						{

@@ -228,7 +228,7 @@
 						},
 						{
 							"type": "script",
-							"script": "BallInstance.create(runtime, 300, 100, localVars.size_ball);"
+							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
 						}
 					],
 					"sid": 492573476546950

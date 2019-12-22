@@ -73,6 +73,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MN_VIEW_QUICK_MATCH",
+			"type": "string",
+			"initialValue": "quick-match",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 780959504162320
+		},
+		{
+			"eventType": "variable",
 			"name": "MN_VIEW_GAMEMODE",
 			"type": "string",
 			"initialValue": "gamemode",
@@ -400,6 +410,105 @@
 								}
 							],
 							"sid": 700537308089304
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 575893390628934,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_QUICK_MATCH"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 341331373790925,
+									"parameters": {
+										"key": "\"match_type\"",
+										"value": "MATCH_TYPE_FOOTBALL"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 348365571654859,
+									"parameters": {
+										"key": "\"win_condition\"",
+										"value": "WIN_CONDITION_GOALS"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 315142093868773,
+									"parameters": {
+										"key": "\"goal_amount\"",
+										"value": "10"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 844325134828599,
+									"parameters": {
+										"key": "\"size_ball\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 644600926664949,
+									"parameters": {
+										"key": "\"size_player\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 280317148946154,
+									"parameters": {
+										"key": "\"size_goal\"",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 308308081379387,
+									"parameters": {
+										"key": "\"stadium\"",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 250918770390286,
+									"parameters": {
+										"group-name": "\"Gamepad selector\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "scroll-to-position",
+									"objectClass": "System",
+									"sid": 808030896835762,
+									"parameters": {
+										"x": "960",
+										"y": "180"
+									}
+								}
+							],
+							"sid": 990126781398351
 						}
 					]
 				}
@@ -1726,15 +1835,6 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-button-pressed",
-											"objectClass": "Gamepad",
-											"sid": 221662590062675,
-											"parameters": {
-												"gamepad": "loopindex",
-												"button": "d-pad-right"
-											}
-										},
-										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
 											"sid": 873801842902794,
@@ -2016,6 +2116,15 @@
 														"menu_matchconfig_type.Width",
 														"menu_matchconfig_type.Height"
 													]
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 521121519877862,
+													"parameters": {
+														"type": "log",
+														"message": "mn_selected_index& \" -/- \" & mn_max_index"
+													}
 												}
 											],
 											"sid": 311063972902965
@@ -2071,6 +2180,15 @@
 														"menu_matchconfig_type.Width",
 														"menu_matchconfig_type.Height"
 													]
+												},
+												{
+													"id": "log",
+													"objectClass": "Browser",
+													"sid": 286752479721568,
+													"parameters": {
+														"type": "log",
+														"message": "mn_selected_index& \" -/- \" & mn_max_index"
+													}
 												}
 											],
 											"sid": 723497860874214

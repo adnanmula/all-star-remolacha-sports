@@ -1238,7 +1238,7 @@
 					},
 					"uid": 75,
 					"instanceVariables": {
-						"view": "",
+						"view": "quick-match",
 						"index": 0
 					},
 					"behaviors": {},
