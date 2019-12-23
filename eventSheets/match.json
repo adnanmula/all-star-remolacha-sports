@@ -202,7 +202,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "goal_crossbar",
+							"objectClass": "goal_football_solid",
 							"sid": 942452547731706,
 							"parameters": {
 								"visibility": "invisible"
@@ -220,7 +220,7 @@
 						},
 						{
 							"id": "set-collisions-enabled",
-							"objectClass": "goal_crossbar",
+							"objectClass": "goal_football_solid",
 							"sid": 927221139451155,
 							"parameters": {
 								"collisions": "disabled"
@@ -369,7 +369,7 @@
 							"actions": [
 								{
 									"id": "set-size",
-									"objectClass": "goal_crossbar",
+									"objectClass": "goal_football_solid",
 									"sid": 446514113615379,
 									"parameters": {
 										"width": "goal_football.Width",
@@ -406,7 +406,7 @@
 								},
 								{
 									"id": "set-position-to-another-object",
-									"objectClass": "goal_crossbar",
+									"objectClass": "goal_football_solid",
 									"sid": 507977651268885,
 									"parameters": {
 										"object": "goal_football",
@@ -415,7 +415,7 @@
 								},
 								{
 									"id": "pin-to-object",
-									"objectClass": "goal_crossbar",
+									"objectClass": "goal_football_solid",
 									"sid": 282226556618436,
 									"behaviorType": "Pin",
 									"parameters": {
@@ -425,6 +425,237 @@
 								}
 							],
 							"sid": 596336571708521
+						}
+					]
+				},
+				{
+					"functionName": "createGoalBasket",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "x",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 411139319852290
+						},
+						{
+							"name": "y",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 365154833894120
+						},
+						{
+							"name": "size",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 186588225603807
+						},
+						{
+							"name": "type",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 407468028645680
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 993390509918051,
+							"parameters": {
+								"object-to-create": "goal_basket",
+								"layer": "\"main\"",
+								"x": "x > LayoutWidth/2 ? x - 30  : x + 30",
+								"y": "200"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "goal_basket_detector",
+							"sid": 344931066292149,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "goal_basket_solid",
+							"sid": 294068260942476,
+							"disabled": true,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "goal_basket_solid",
+							"sid": 219594105247690,
+							"parameters": {
+								"instance-variable": "owner",
+								"value": "goal_basket.UID"
+							}
+						}
+					],
+					"sid": 357576099125256,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 150715159844204,
+									"disabled": true,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal_basket",
+									"sid": 650532398830316,
+									"disabled": true,
+									"parameters": {
+										"width": "40",
+										"height": "67"
+									}
+								}
+							],
+							"sid": 258402094678624
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 459018189880627
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 191737075619283,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 253490446601390,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 408738994878913
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 685023282530872,
+									"parameters": {
+										"first-value": "size",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 871835429705990,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 315933049081583,
+									"parameters": {
+										"first-value": "x",
+										"comparison": 4,
+										"second-value": "LayoutWidth / 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal_basket",
+									"sid": 981052813939662,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "goal_basket_detector",
+									"sid": 723923454053236,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 715324017722702
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "goal_basket_solid",
+									"sid": 479463663835838,
+									"parameters": {
+										"width": "goal_basket.Width",
+										"height": "goal_basket.Height"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_basket_detector",
+									"sid": 620264981790155,
+									"parameters": {
+										"width": "goal_basket.Width",
+										"height": "35"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_basket_detector",
+									"sid": 586035863920068,
+									"parameters": {
+										"object": "goal_basket",
+										"image-point-optional": "\"detector\""
+									}
+								}
+							],
+							"sid": 411697749135030
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 946637623300429
 						}
 					]
 				},
@@ -597,7 +828,7 @@
 						},
 						{
 							"id": "set-collisions-enabled",
-							"objectClass": "goal_crossbar",
+							"objectClass": "goal_football_solid",
 							"sid": 532786565699885,
 							"parameters": {
 								"collisions": "enabled"
@@ -605,7 +836,7 @@
 						},
 						{
 							"id": "set-enabled",
-							"objectClass": "goal_crossbar",
+							"objectClass": "goal_football_solid",
 							"sid": 643168505551509,
 							"behaviorType": "Physics",
 							"parameters": {
@@ -614,7 +845,7 @@
 						},
 						{
 							"id": "set-immovable",
-							"objectClass": "goal_crossbar",
+							"objectClass": "goal_football_solid",
 							"sid": 890234469478327,
 							"behaviorType": "Physics",
 							"parameters": {

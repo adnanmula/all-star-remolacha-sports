@@ -13,6 +13,7 @@
 	"effectTypes": [],
 	"members": [
 		"goal_football",
-		"goal_volley"
+		"goal_volley",
+		"goal_basket"
 	]
 }

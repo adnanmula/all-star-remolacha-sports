@@ -151,14 +151,14 @@
 							{
 								"items": [
 									"goal_football",
-									"goal_football_detector"
+									"goal_football_detector",
+									"goal_football_solid"
 								],
 								"subfolders": [],
 								"name": "football"
 							},
 							{
 								"items": [
-									"goal_crossbar",
 									"goal_solid_detector"
 								],
 								"subfolders": [],
@@ -171,6 +171,15 @@
 								],
 								"subfolders": [],
 								"name": "volley"
+							},
+							{
+								"items": [
+									"goal_basket",
+									"goal_basket_detector",
+									"goal_basket_solid"
+								],
+								"subfolders": [],
+								"name": "basket"
 							}
 						],
 						"name": "goal"
@@ -312,9 +321,17 @@
 		},
 		{
 			"members": [
-				"goal_crossbar",
+				"goal_football_solid",
 				"goal_football",
 				"goal_football_detector"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"goal_basket",
+				"goal_basket_detector",
+				"goal_basket_solid"
 			],
 			"selectMode": "normal"
 		}

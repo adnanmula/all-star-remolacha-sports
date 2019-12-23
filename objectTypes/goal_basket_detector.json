@@ -1,24 +1,14 @@
 {
-	"name": "goal_crossbar",
+	"name": "goal_basket_detector",
 	"plugin-id": "Sprite",
-	"sid": 378438596066574,
+	"sid": 613376859654909,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 507667056449019
-		},
-		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 266772687102766
-		},
-		{
 			"behaviorId": "Pin",
 			"name": "Pin",
-			"sid": 984126838595060
+			"sid": 901580248701826
 		}
 	],
 	"effectTypes": [],
@@ -34,12 +24,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7,
+						"imageSpriteId": 64,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 764933125761125,
+				"sid": 279901343712371,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

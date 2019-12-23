@@ -14,6 +14,7 @@
 	"effectTypes": [],
 	"members": [
 		"goal_football_detector",
-		"goal_volley_detector"
+		"goal_volley_detector",
+		"goal_basket_detector"
 	]
 }

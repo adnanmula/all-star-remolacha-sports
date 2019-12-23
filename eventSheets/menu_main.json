@@ -109,6 +109,16 @@
 								"string": "\"createGoalTYPE_VOLLEY\"",
 								"function": "createGoalVolley"
 							}
+						},
+						{
+							"id": "map-function",
+							"objectClass": "Functions",
+							"sid": 458414117030647,
+							"parameters": {
+								"name": "\"matchProps\"",
+								"string": "\"createGoalTYPE_BASKET\"",
+								"function": "createGoalBasket"
+							}
 						}
 					],
 					"sid": 347893878288915
