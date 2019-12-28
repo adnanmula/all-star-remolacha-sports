@@ -1283,15 +1283,6 @@
 									"parameters": [
 										"MN_VIEW_MAIN"
 									]
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 836901136051677,
-									"parameters": {
-										"type": "log",
-										"message": "\"asaaaaaaaaaaaaa\""
-									}
 								}
 							],
 							"sid": 300203552577158,
@@ -2116,15 +2107,6 @@
 														"menu_matchconfig_type.Width",
 														"menu_matchconfig_type.Height"
 													]
-												},
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 521121519877862,
-													"parameters": {
-														"type": "log",
-														"message": "mn_selected_index& \" -/- \" & mn_max_index"
-													}
 												}
 											],
 											"sid": 311063972902965
@@ -2180,15 +2162,6 @@
 														"menu_matchconfig_type.Width",
 														"menu_matchconfig_type.Height"
 													]
-												},
-												{
-													"id": "log",
-													"objectClass": "Browser",
-													"sid": 286752479721568,
-													"parameters": {
-														"type": "log",
-														"message": "mn_selected_index& \" -/- \" & mn_max_index"
-													}
 												}
 											],
 											"sid": 723497860874214
@@ -5698,15 +5671,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 433794604181707,
-											"parameters": {
-												"type": "log",
-												"message": "\"AAAAAAAA\""
-											}
-										},
 										{
 											"id": "wait",
 											"objectClass": "System",

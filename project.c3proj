@@ -321,9 +321,9 @@
 		},
 		{
 			"members": [
-				"goal_football_solid",
 				"goal_football",
-				"goal_football_detector"
+				"goal_football_detector",
+				"goal_football_solid"
 			],
 			"selectMode": "normal"
 		},

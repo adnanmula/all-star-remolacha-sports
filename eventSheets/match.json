@@ -78,17 +78,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 376912918186040,
-							"parameters": {
-								"type": "log",
-								"message": "\"asdasd\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 601255731634027,
 					"children": [
 						{
@@ -894,31 +884,8 @@
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "ball",
-							"sid": 994459322214803,
-							"behaviorType": "Physics",
-							"parameters": {
-								"mode": "disabled"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "ball",
-							"sid": 523410681896038,
-							"parameters": {
-								"x": "LayoutWidth / 2",
-								"y": "100"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "ball",
-							"sid": 893021157049783,
-							"behaviorType": "Physics",
-							"parameters": {
-								"mode": "enabled"
-							}
+							"callFunction": "resetBall",
+							"sid": 615947570273446
 						},
 						{
 							"callFunction": "resetPlayers",
@@ -995,6 +962,84 @@
 								}
 							],
 							"sid": 671993039253764
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "ball",
+							"sid": 495459443818177
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "resetBall",
+							"sid": 467281466189334
+						},
+						{
+							"callFunction": "resetPlayers",
+							"sid": 641754156510072
+						}
+					],
+					"sid": 533309464380414
+				},
+				{
+					"functionName": "resetBall",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 205335213358813,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 265605533017929,
+									"parameters": {
+										"object": "ball"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "ball",
+									"sid": 684209604422775,
+									"behaviorType": "Physics",
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "ball",
+									"sid": 130195171340538,
+									"parameters": {
+										"x": "LayoutWidth / 2",
+										"y": "100"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "ball",
+									"sid": 144251473241510,
+									"behaviorType": "Physics",
+									"parameters": {
+										"mode": "enabled"
+									}
+								}
+							],
+							"sid": 236964631118374
 						}
 					]
 				}
