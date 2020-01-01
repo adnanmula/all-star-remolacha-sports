@@ -477,15 +477,6 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "goal_basket_solid",
-							"sid": 294068260942476,
-							"disabled": true,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
 							"id": "set-instvar-value",
 							"objectClass": "goal_basket_solid",
 							"sid": 219594105247690,
