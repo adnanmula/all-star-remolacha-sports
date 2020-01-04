@@ -331,7 +331,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 468225631203991,
+											"sid": 591573799319650,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -343,14 +343,24 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 786250706497168,
+											"sid": 644038356091190,
+											"disabled": true,
 											"parameters": {
 												"width": "29",
 												"height": "58"
 											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 294140438201771,
+											"parameters": {
+												"width": "player.Width * 0.5",
+												"height": "player.Height * 0.5"
+											}
 										}
 									],
-									"sid": 370358933618647
+									"sid": 502688050682563
 								},
 								{
 									"eventType": "block",
@@ -358,12 +368,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 659858288642939
+											"sid": 721652301388147
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 630879007989582,
+											"sid": 763586525426232,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -375,14 +385,24 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 772396185131641,
+											"sid": 153248295163590,
+											"disabled": true,
 											"parameters": {
 												"width": "46.978",
 												"height": "93.956"
 											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 694084650086730,
+											"parameters": {
+												"width": "player.Width * 1",
+												"height": "player.Height * 1"
+											}
 										}
 									],
-									"sid": 551741951547311
+									"sid": 776886380443274
 								},
 								{
 									"eventType": "block",
@@ -390,12 +410,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 506610108124255
+											"sid": 498681978204148
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 235985791380054,
+											"sid": 183450415683368,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -407,14 +427,24 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 217480974344155,
+											"sid": 985916827909691,
+											"disabled": true,
 											"parameters": {
 												"width": "68",
 												"height": "143"
 											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 511712703352757,
+											"parameters": {
+												"width": "player.Width * 1.5",
+												"height": "player.Height * 1.5"
+											}
 										}
 									],
-									"sid": 356642099481919
+									"sid": 308012723388889
 								},
 								{
 									"eventType": "block",
