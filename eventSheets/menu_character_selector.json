@@ -322,6 +322,16 @@
 							}
 						},
 						{
+							"id": "set-size",
+							"objectClass": "menu_char_selector",
+							"sid": 363644191376090,
+							"disabled": true,
+							"parameters": {
+								"width": "menu_char_portrait.Width",
+								"height": "menu_char_portrait.Height"
+							}
+						},
+						{
 							"id": "set-instvar-value",
 							"objectClass": "menu_char_selector",
 							"sid": 979811091008670,
@@ -386,6 +396,15 @@
 								"layer": "\"main\"",
 								"x": "menu_char_portrait.ImagePointX(\"corner\")",
 								"y": "menu_char_portrait.ImagePointY(\"corner\")"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "menu_char_selector",
+							"sid": 801799587808818,
+							"parameters": {
+								"width": "menu_char_portrait.Width",
+								"height": "menu_char_portrait.Height"
 							}
 						},
 						{

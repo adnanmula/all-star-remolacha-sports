@@ -76,7 +76,7 @@
 					}
 				},
 				{
-					"type": "player1",
+					"type": "MarcosHeredia",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
@@ -181,7 +181,7 @@
 					}
 				},
 				{
-					"type": "player2",
+					"type": "PopiFresco",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
@@ -339,7 +339,7 @@
 					}
 				},
 				{
-					"type": "stickman3",
+					"type": "SrHuevo",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "idle",
@@ -395,7 +395,7 @@
 						"x": 27.238379533998767,
 						"y": 156.3518479418998,
 						"width": 46,
-						"height": 93,
+						"height": 69.75,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -464,10 +464,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 325.0596161430343,
-						"y": 122.23726533836822,
+						"x": 325.3782469607447,
+						"y": 134.66386722907214,
 						"width": 50,
-						"height": 75,
+						"height": 50,
 						"originX": 0,
 						"originY": 0,
 						"color": [

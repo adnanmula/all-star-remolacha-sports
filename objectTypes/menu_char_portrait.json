@@ -37,32 +37,13 @@
 				"frames": [
 					{
 						"width": 50,
-						"height": 75,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 13,
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "corner",
-								"x": 0,
-								"y": 0
-							}
-						],
-						"duration": 1
-					},
-					{
-						"width": 50,
-						"height": 75,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 11,
+						"imageSpriteId": 81,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -74,8 +55,68 @@
 						"duration": 1
 					}
 				],
-				"sid": 268553878195306,
-				"name": "stickman",
+				"sid": 450480960320935,
+				"name": "MarcosHeredia",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 84,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 450720484072341,
+				"name": "SrHuevo",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 83,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 148446521916908,
+				"name": "PopiFresco",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

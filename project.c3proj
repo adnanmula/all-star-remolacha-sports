@@ -129,10 +129,10 @@
 				"items": [
 					"player1_fd",
 					"player2_fd",
-					"player1",
-					"player2",
+					"MarcosHeredia",
+					"PopiFresco",
 					"stickman3_fd",
-					"stickman3",
+					"SrHuevo",
 					"player_km_origin_indicator"
 				],
 				"subfolders": [],
@@ -300,21 +300,21 @@
 	"containers": [
 		{
 			"members": [
-				"player2",
+				"PopiFresco",
 				"player2_fd"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
-				"player1",
+				"MarcosHeredia",
 				"player1_fd"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
-				"stickman3",
+				"SrHuevo",
 				"stickman3_fd"
 			],
 			"selectMode": "normal"
