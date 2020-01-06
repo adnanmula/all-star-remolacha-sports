@@ -109,6 +109,14 @@
 			"author": "Scirra",
 			"version": "r180",
 			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "tint",
+			"name": "Tint",
+			"author": "Scirra",
+			"version": "r180",
+			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
@@ -300,8 +308,8 @@
 	"containers": [
 		{
 			"members": [
-				"PopiFresco",
-				"player2_fd"
+				"player2_fd",
+				"PopiFresco"
 			],
 			"selectMode": "normal"
 		},

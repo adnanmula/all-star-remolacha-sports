@@ -399,6 +399,16 @@
 							}
 						},
 						{
+							"id": "set-effect-parameter",
+							"objectClass": "menu_char_selector",
+							"sid": 798490998454799,
+							"parameters": {
+								"effect": "\"Tint\"",
+								"parameter-index": "0",
+								"value": "rgb(96, 133, 255)"
+							}
+						},
+						{
 							"id": "set-size",
 							"objectClass": "menu_char_selector",
 							"sid": 801799587808818,
@@ -707,6 +717,15 @@
 												"object": "menu_gamepad_selector",
 												"expression": "menu_gamepad_selector.player = menu_char_selector.side"
 											}
+										},
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 726362194609607,
+											"parameters": {
+												"object": "menu_char_portrait_big",
+												"expression": "menu_gamepad_selector.player = menu_char_portrait_big.side"
+											}
 										}
 									],
 									"actions": [
@@ -726,6 +745,14 @@
 											"parameters": {
 												"animation": "\"player\"&str(menu_char_selector.side)&\"_ready\"",
 												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_char_portrait_big",
+											"sid": 460841668201106,
+											"parameters": {
+												"frame-number": "1"
 											}
 										}
 									],
@@ -751,6 +778,15 @@
 												"object": "menu_gamepad_selector",
 												"expression": "menu_gamepad_selector.player = menu_char_selector.side"
 											}
+										},
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 838238646400681,
+											"parameters": {
+												"object": "menu_char_portrait_big",
+												"expression": "menu_gamepad_selector.player = menu_char_portrait_big.side"
+											}
 										}
 									],
 									"actions": [
@@ -770,6 +806,14 @@
 											"parameters": {
 												"animation": "\"player\"&str(menu_char_selector.side)&\"_ok\"",
 												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_char_portrait_big",
+											"sid": 563127313896309,
+											"parameters": {
+												"frame-number": "0"
 											}
 										}
 									],
@@ -1012,6 +1056,15 @@
 										"object": "menu_gamepad_selector",
 										"expression": "menu_gamepad_selector.player = menu_char_selector.side"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 453328216600677,
+									"parameters": {
+										"object": "menu_char_portrait_big",
+										"expression": "menu_gamepad_selector.player = menu_char_portrait_big.side"
+									}
 								}
 							],
 							"actions": [
@@ -1031,6 +1084,14 @@
 									"parameters": {
 										"animation": "\"player\"&str(menu_char_selector.side)&\"_ready\"",
 										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "menu_char_portrait_big",
+									"sid": 879613814106052,
+									"parameters": {
+										"frame-number": "1"
 									}
 								}
 							],
@@ -1073,6 +1134,15 @@
 										"object": "menu_gamepad_selector",
 										"expression": "menu_gamepad_selector.player = menu_char_selector.side"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 296465288875133,
+									"parameters": {
+										"object": "menu_char_portrait_big",
+										"expression": "menu_gamepad_selector.player = menu_char_portrait_big.side"
+									}
 								}
 							],
 							"actions": [
@@ -1092,6 +1162,14 @@
 									"parameters": {
 										"animation": "\"player\"&str(menu_char_selector.side)&\"_ok\"",
 										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "menu_char_portrait_big",
+									"sid": 969566362007287,
+									"parameters": {
+										"frame-number": "0"
 									}
 								}
 							],
