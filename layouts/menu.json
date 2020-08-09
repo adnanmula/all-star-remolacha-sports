@@ -1679,6 +1679,142 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "TunicaOldman",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 52,
+					"instanceVariables": {
+						"character": "TunicaOldman",
+						"skin": "0",
+						"index": 3,
+						"side": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 688.9570628129194,
+						"y": 135.32114095382147,
+						"width": -50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "TunicaOldman",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 54,
+					"instanceVariables": {
+						"character": "TunicaOldman",
+						"skin": "0",
+						"index": 3,
+						"side": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1231.3441874874184,
+						"y": 135.03834417985965,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Buko",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 56,
+					"instanceVariables": {
+						"character": "Buko",
+						"skin": "0",
+						"index": 4,
+						"side": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 745.8608397802014,
+						"y": 136.2367946383852,
+						"width": -50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Buko",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 57,
+					"instanceVariables": {
+						"character": "Buko",
+						"skin": "0",
+						"index": 4,
+						"side": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1176.7456840164489,
+						"y": 135.57253109731337,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 403528614028202,
