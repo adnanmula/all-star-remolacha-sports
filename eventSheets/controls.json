@@ -1035,6 +1035,39 @@
 										}
 									],
 									"sid": 794519248782469,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-jumping",
+													"objectClass": "player",
+													"sid": 806854786287204,
+													"behaviorType": "Platform",
+													"isInverted": true
+												},
+												{
+													"id": "is-falling",
+													"objectClass": "player",
+													"sid": 848850470965031,
+													"behaviorType": "Platform",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 141061062948384,
+													"parameters": {
+														"animation": "\"walking\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 452566989742458
+										}
+									],
 									"isOrBlock": true
 								},
 								{
@@ -1085,7 +1118,105 @@
 										}
 									],
 									"sid": 358677277860598,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-jumping",
+													"objectClass": "player",
+													"sid": 352923361788481,
+													"behaviorType": "Platform",
+													"isInverted": true
+												},
+												{
+													"id": "is-falling",
+													"objectClass": "player",
+													"sid": 778678289737168,
+													"behaviorType": "Platform",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 190917052228887,
+													"parameters": {
+														"animation": "\"walking\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 988434856808128
+										}
+									],
 									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "NO DPAD/JOY LEFT OR DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 760140988547821,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 162366149896851,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 331599094923475,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-right"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 715823945635804,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 177775023302606,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 216456053826118
 								},
 								{
 									"eventType": "comment",
@@ -1196,6 +1327,7 @@
 									],
 									"actions": [],
 									"sid": 732474229574779,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -1244,7 +1376,8 @@
 													}
 												}
 											],
-											"sid": 380447606082950
+											"sid": 380447606082950,
+											"disabled": true
 										}
 									]
 								}
