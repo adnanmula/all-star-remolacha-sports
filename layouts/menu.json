@@ -361,7 +361,7 @@
 				{
 					"type": "menu_char_name",
 					"properties": {
-						"text": "Text",
+						"text": "",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -405,7 +405,7 @@
 				{
 					"type": "menu_char_name",
 					"properties": {
-						"text": "Text",
+						"text": "",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
