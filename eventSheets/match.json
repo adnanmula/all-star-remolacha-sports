@@ -494,81 +494,6 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 150715159844204,
-									"disabled": true,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "goal_basket",
-									"sid": 650532398830316,
-									"disabled": true,
-									"parameters": {
-										"width": "40",
-										"height": "67"
-									}
-								}
-							],
-							"sid": 258402094678624
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 459018189880627
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 191737075619283,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 253490446601390,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 408738994878913
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 685023282530872,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "2"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 871835429705990,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
 									"sid": 315933049081583,
 									"parameters": {
 										"first-value": "x",
@@ -631,12 +556,6 @@
 								}
 							],
 							"sid": 411697749135030
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 946637623300429
 						}
 					]
 				},

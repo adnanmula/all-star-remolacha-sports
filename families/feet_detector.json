@@ -21,6 +21,9 @@
 	"members": [
 		"player2_fd",
 		"player1_fd",
-		"stickman3_fd"
+		"stickman3_fd",
+		"player4_fd",
+		"player5_fd",
+		"player6_fd"
 	]
 }

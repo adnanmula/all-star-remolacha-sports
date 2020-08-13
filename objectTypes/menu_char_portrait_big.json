@@ -136,24 +136,36 @@
 					}
 				],
 				"sid": 191513764180063,
-				"name": "deafault",
+				"name": "default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 50,
+						"height": 75,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7409358,
+						"imageSpriteId": 5055215,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 50,
+						"height": 75,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7473850,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -164,7 +176,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			},
 			{
 				"frames": [
@@ -177,26 +189,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 9071869,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.98,
-								0,
-								0.98,
-								0.5,
-								0.98,
-								0.9866666666666667,
-								0.5,
-								0.9866666666666667,
-								0,
-								0.9866666666666667,
-								0,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -209,26 +201,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 2423084,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.98,
-								0,
-								0.98,
-								0.5,
-								0.98,
-								0.9866666666666667,
-								0.5,
-								0.9866666666666667,
-								0,
-								0.9866666666666667,
-								0,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -239,7 +211,42 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 300,
+						"height": 419,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4099268,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 300,
+						"height": 419,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2882383,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 952305397742523,
+				"name": "DankElf",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
 			}
 		],
 		"subfolders": []

@@ -20,7 +20,9 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -55,7 +57,9 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -129,8 +133,8 @@
 						}
 					},
 					"world": {
-						"x": 35.9410502084405,
-						"y": 255.50476109842725,
+						"x": 30.994933485937118,
+						"y": 248.77804235582266,
 						"width": 89.49256540570389,
 						"height": 94.37397806419682,
 						"originX": 0.5,
@@ -160,7 +164,9 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -423,7 +429,9 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -525,7 +533,9 @@
 							}
 						},
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -714,7 +724,9 @@
 					},
 					"behaviors": {
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -770,7 +782,9 @@
 							}
 						},
 						"Pin": {
-							"properties": {}
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -778,6 +792,327 @@
 						"y": 272.17616847392196,
 						"width": 106.47282722354228,
 						"height": 101.82677173850928,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "DankElf",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 87,
+					"instanceVariables": {
+						"gamepad_index": -1,
+						"name": "stickman3"
+					},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 1,
+								"bullet": true,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 115.42268213075545,
+						"y": 262.8149680071101,
+						"width": 89.49256540570389,
+						"height": 94.37397806419682,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player4_fd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 88,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 115.55464297925042,
+						"y": 286.16063893732604,
+						"width": 60.76736324361572,
+						"height": 42.29618391383501,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "TunicaOldman",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 89,
+					"instanceVariables": {
+						"gamepad_index": -1,
+						"name": "stickman3"
+					},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 1,
+								"bullet": true,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 19.09388618221486,
+						"y": 383.9687639815327,
+						"width": 52.06840169059135,
+						"height": 133.42527933214035,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Buko",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 90,
+					"instanceVariables": {
+						"gamepad_index": -1,
+						"name": "stickman5"
+					},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": true,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 1,
+								"bullet": true,
+								"enabled": true
+							}
+						},
+						"Timer": {
+							"properties": {}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 127.71802858347289,
+						"y": 407.7212431199411,
+						"width": 97.62825316985878,
+						"height": 162.71375528309798,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player5_fd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 91,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 20.54220808089829,
+						"y": 408.590236259151,
+						"width": 60.76736324361572,
+						"height": 42.29618391383501,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "player6_fd",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 92,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 126.84903544426282,
+						"y": 432.9220441570331,
+						"width": 60.76736324361572,
+						"height": 42.29618391383501,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

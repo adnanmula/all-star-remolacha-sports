@@ -518,7 +518,7 @@
 					"type": "menu_char_portrait_big",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "deafault",
+						"initial-animation": "default",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -549,7 +549,7 @@
 					"type": "menu_char_portrait_big",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "deafault",
+						"initial-animation": "default",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -1698,8 +1698,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 688.9570628129194,
-						"y": 135.32114095382147,
+						"x": 689.219338743782,
+						"y": 135.57253109731337,
 						"width": -50,
 						"height": 50,
 						"originX": 0.5,
@@ -1732,8 +1732,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1231.3441874874184,
-						"y": 135.03834417985965,
+						"x": 1230.7150132009335,
+						"y": 135.57253109731337,
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
@@ -1766,8 +1766,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 745.8608397802014,
-						"y": 136.2367946383852,
+						"x": 745.6667317491597,
+						"y": 135.57253109731337,
 						"width": -50,
 						"height": 50,
 						"originX": 0.5,
@@ -1800,7 +1800,75 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1176.7456840164489,
+						"x": 1175.801112815346,
+						"y": 135.57253109731337,
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "DankElf",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"character": "DankElf",
+						"skin": "0",
+						"index": 5,
+						"side": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 801.6476173743278,
+						"y": 135.57253109731337,
+						"width": -50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "DankElf",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 76,
+					"instanceVariables": {
+						"character": "DankElf",
+						"skin": "0",
+						"index": 5,
+						"side": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1120.1527640912268,
 						"y": 135.57253109731337,
 						"width": 50,
 						"height": 50,

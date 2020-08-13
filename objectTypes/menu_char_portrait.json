@@ -134,26 +134,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 8906329,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.98,
-								0,
-								0.98,
-								0.5,
-								0.98,
-								0.98,
-								0.5,
-								0.98,
-								0,
-								0.98,
-								0,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -177,32 +157,47 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 4017577,
-						"collisionPoly": {
-							"points": [
-								0,
-								0,
-								0.5,
-								0,
-								0.98,
-								0,
-								0.98,
-								0.5,
-								0.98,
-								0.98,
-								0.5,
-								0.98,
-								0,
-								0.98,
-								0,
-								0.5
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
 				"sid": 628146945086576,
 				"name": "Buko",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 50,
+						"height": 50,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2598351,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 754955425142816,
+				"name": "DankElf",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

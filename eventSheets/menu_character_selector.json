@@ -12,7 +12,7 @@
 					"eventType": "variable",
 					"name": "menu_character_selector_max",
 					"type": "number",
-					"initialValue": "2",
+					"initialValue": "5",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
@@ -250,7 +250,63 @@
 									}
 								}
 							],
-							"sid": 975200158342268
+							"sid": 975200158342268,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 192632041437951,
+											"parameters": {
+												"first-value": "side",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "menu_char_portrait_big",
+											"sid": 776385183406472,
+											"parameters": {
+												"width": "101.769",
+												"height": "152.653"
+											}
+										}
+									],
+									"sid": 225338628597281
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 879013580785510,
+											"parameters": {
+												"first-value": "side",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "menu_char_portrait_big",
+											"sid": 969717125513802,
+											"parameters": {
+												"width": "-101.769",
+												"height": "152.653"
+											}
+										}
+									],
+									"sid": 163155096441091
+								}
+							]
 						}
 					]
 				},

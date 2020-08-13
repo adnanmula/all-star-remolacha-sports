@@ -343,16 +343,6 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 644038356091190,
-											"disabled": true,
-											"parameters": {
-												"width": "29",
-												"height": "58"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "player",
 											"sid": 294140438201771,
 											"parameters": {
 												"width": "player.Width * 0.5",
@@ -385,16 +375,6 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 153248295163590,
-											"disabled": true,
-											"parameters": {
-												"width": "46.978",
-												"height": "93.956"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "player",
 											"sid": 694084650086730,
 											"parameters": {
 												"width": "player.Width * 1",
@@ -424,16 +404,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "set-size",
-											"objectClass": "player",
-											"sid": 985916827909691,
-											"disabled": true,
-											"parameters": {
-												"width": "68",
-												"height": "143"
-											}
-										},
 										{
 											"id": "set-size",
 											"objectClass": "player",

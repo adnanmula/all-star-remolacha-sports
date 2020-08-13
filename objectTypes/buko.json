@@ -1,7 +1,7 @@
 {
-	"name": "MarcosHeredia",
+	"name": "Buko",
 	"plugin-id": "Sprite",
-	"sid": 209606527486378,
+	"sid": 333878053110922,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,14 +11,14 @@
 			{
 				"frames": [
 					{
-						"width": 55,
-						"height": 58,
+						"width": 60,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 54,
+						"imageSpriteId": 2262124,
 						"collisionPoly": {
 							"points": [
 								0.23636363636363636,
@@ -42,7 +42,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 808139685852058,
+				"sid": 549533785413032,
 				"name": "idle",
 				"isLooping": false,
 				"isPingPong": false,
@@ -53,14 +53,14 @@
 			{
 				"frames": [
 					{
-						"width": 55,
-						"height": 58,
+						"width": 60,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 12,
+						"imageSpriteId": 8221592,
 						"collisionPoly": {
 							"points": [
 								0.23636363636363636,
@@ -82,33 +82,9 @@
 							}
 						],
 						"duration": 1
-					},
-					{
-						"width": 55,
-						"height": 58,
-						"originX": 0.5,
-						"originY": 0.5,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 14,
-						"collisionPoly": {
-							"points": [
-								0.23636363636363636,
-								0,
-								0.7272727272727273,
-								0,
-								0.7272727272727273,
-								1,
-								0.23636363636363636,
-								1
-							]
-						},
-						"useCollisionPoly": true,
-						"duration": 1
 					}
 				],
-				"sid": 248101166953486,
+				"sid": 879870142913122,
 				"name": "kick",
 				"isLooping": false,
 				"isPingPong": false,
@@ -119,14 +95,14 @@
 			{
 				"frames": [
 					{
-						"width": 55,
-						"height": 58,
+						"width": 60,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9,
+						"imageSpriteId": 902639,
 						"collisionPoly": {
 							"points": [
 								0.23636363636363636,
@@ -150,7 +126,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 179520193948846,
+				"sid": 108712014634279,
 				"name": "lift",
 				"isLooping": false,
 				"isPingPong": false,
@@ -161,14 +137,14 @@
 			{
 				"frames": [
 					{
-						"width": 55,
-						"height": 58,
+						"width": 60,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8495535,
+						"imageSpriteId": 8338066,
 						"collisionPoly": {
 							"points": [
 								0.23636363636363636,
@@ -185,14 +161,14 @@
 						"duration": 1
 					},
 					{
-						"width": 55,
-						"height": 58,
+						"width": 60,
+						"height": 100,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4652392,
+						"imageSpriteId": 384160,
 						"collisionPoly": {
 							"points": [
 								0.23636363636363636,
@@ -209,7 +185,7 @@
 						"duration": 1
 					}
 				],
-				"sid": 355957217756457,
+				"sid": 621571331884911,
 				"name": "walking",
 				"isLooping": false,
 				"isPingPong": false,
