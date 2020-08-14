@@ -135,6 +135,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 8906329,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
 						"duration": 1
 					}
 				],
@@ -158,6 +165,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 4017577,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
 						"duration": 1
 					}
 				],
@@ -193,6 +207,13 @@
 							]
 						},
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
 						"duration": 1
 					}
 				],
