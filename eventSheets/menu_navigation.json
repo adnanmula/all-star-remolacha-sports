@@ -1942,7 +1942,31 @@
 										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
-											"sid": 235212784507656,
+											"sid": 304174372574036,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 275441437416546,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 401059308750028,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 577915020801779,
 											"parameters": {
 												"key": 83
 											}
@@ -1951,13 +1975,13 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 588821244471285,
+											"sid": 649845535973579,
 											"parameters": [
 												"\"GC - Win condition\""
 											]
 										}
 									],
-									"sid": 401059308750028,
+									"sid": 552622932120621,
 									"isOrBlock": true
 								},
 								{
@@ -2167,6 +2191,31 @@
 											"sid": 723497860874214
 										}
 									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 209696523350059,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 740133323855467,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 335250382689043,
 									"isOrBlock": true
 								},
 								{
@@ -5648,6 +5697,30 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
+									"sid": 888259910602960,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToMatchConfigView",
+									"sid": 164617801988508,
+									"parameters": [
+										"\"GC - Match type\""
+									]
+								}
+							],
+							"sid": 307759473222016,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
 									"sid": 898556633727213,
 									"parameters": {
 										"key": 32
@@ -5732,6 +5805,31 @@
 										}
 									],
 									"sid": 991537809917379,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 502481532025088,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 737126307856881,
+											"parameters": [
+												"\"GC - Match type\""
+											]
+										}
+									],
+									"sid": 188325487459179,
 									"isOrBlock": true
 								},
 								{

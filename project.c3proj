@@ -330,8 +330,8 @@
 		},
 		{
 			"members": [
-				"SrHuevo",
-				"player_fd_srhuevo"
+				"player_fd_srhuevo",
+				"SrHuevo"
 			],
 			"selectMode": "normal"
 		},
