@@ -1383,39 +1383,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 192,
-						"y": 752.3127201733528,
-						"width": 66.41535684996911,
-						"height": 26.511152938614636,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "menu_matchconfig_type",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "basket",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 81,
-					"instanceVariables": {
-						"type": "TYPE_BASKET",
-						"index": 1
-					},
-					"behaviors": {},
-					"world": {
-						"x": 275,
+						"x": 229,
 						"y": 752.3127201733528,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
@@ -1443,11 +1411,11 @@
 					"uid": 82,
 					"instanceVariables": {
 						"type": "TYPE_VOLLEY",
-						"index": 2
+						"index": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 359,
+						"x": 320,
 						"y": 752.3127201733528,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
