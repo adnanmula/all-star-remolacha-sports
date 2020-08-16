@@ -1,7 +1,7 @@
 {
-	"name": "player2_fd",
+	"name": "player_fd_dankelf",
 	"plugin-id": "Sprite",
-	"sid": 682991147094823,
+	"sid": 380078086235275,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1,
+						"imageSpriteId": 1733084,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 209627561308826,
+				"sid": 576852271511178,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -1063,6 +1063,13 @@
 														"animation": "\"walking\"",
 														"from": "beginning"
 													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 803989246867860,
+													"parameters": [
+														"player.UID"
+													]
 												}
 											],
 											"sid": 452566989742458
@@ -1146,6 +1153,13 @@
 														"animation": "\"walking\"",
 														"from": "beginning"
 													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 779666248786487,
+													"parameters": [
+														"player.UID"
+													]
 												}
 											],
 											"sid": 988434856808128
@@ -1214,6 +1228,13 @@
 												"animation": "\"idle\"",
 												"from": "beginning"
 											}
+										},
+										{
+											"callFunction": "setFeetDetector",
+											"sid": 777156383830789,
+											"parameters": [
+												"player.UID"
+											]
 										}
 									],
 									"sid": 216456053826118
@@ -1265,18 +1286,43 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 433556912162152,
+									"children": [
 										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 387901430503630,
-											"parameters": {
-												"animation": "\"kick\"",
-												"from": "beginning"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "player",
+													"sid": 722241033271643,
+													"parameters": {
+														"animation": "\"kick\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 331520764071566,
+													"parameters": {
+														"animation": "\"kick\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 596203443078613,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 757114542869327
 										}
-									],
-									"sid": 433556912162152
+									]
 								},
 								{
 									"eventType": "comment",
@@ -1295,18 +1341,43 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 195053655907661,
+									"children": [
 										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 773660938756410,
-											"parameters": {
-												"animation": "\"lift\"",
-												"from": "beginning"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "player",
+													"sid": 974187425573292,
+													"parameters": {
+														"animation": "\"lift\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 967894725708702,
+													"parameters": {
+														"animation": "\"lift\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 578318566703010,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 417447751905389
 										}
-									],
-									"sid": 195053655907661
+									]
 								}
 							]
 						}

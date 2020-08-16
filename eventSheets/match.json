@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "temp_goal_volley_count",
+			"name": "goal_volley_count",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -26,7 +26,7 @@
 					"objectClass": "System",
 					"sid": 700560069873193,
 					"parameters": {
-						"variable": "temp_goal_volley_count",
+						"variable": "goal_volley_count",
 						"value": "0"
 					}
 				}
@@ -637,7 +637,7 @@
 									"objectClass": "System",
 									"sid": 359816902348106,
 									"parameters": {
-										"first-value": "temp_goal_volley_count",
+										"first-value": "goal_volley_count",
 										"comparison": 0,
 										"second-value": "0"
 									}
@@ -670,7 +670,7 @@
 									"objectClass": "System",
 									"sid": 215673079286317,
 									"parameters": {
-										"variable": "temp_goal_volley_count",
+										"variable": "goal_volley_count",
 										"value": "1"
 									}
 								},

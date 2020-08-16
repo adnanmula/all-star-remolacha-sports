@@ -123,11 +123,11 @@
 	"objectTypes": {
 		"items": [
 			"DankElf",
-			"player4_fd",
+			"player_fd_dankelf",
 			"TunicaOldman",
 			"Buko",
-			"player5_fd",
-			"player6_fd",
+			"player_fd_tunicaoldman",
+			"player_fd_buko",
 			"goal_volley_barrier"
 		],
 		"subfolders": [
@@ -143,11 +143,11 @@
 			},
 			{
 				"items": [
-					"player1_fd",
-					"player2_fd",
+					"player_fd_marcosheredia",
+					"player_fd_popifresco",
 					"MarcosHeredia",
 					"PopiFresco",
-					"stickman3_fd",
+					"player_fd_srhuevo",
 					"SrHuevo",
 					"player_km_origin_indicator"
 				],
@@ -316,7 +316,7 @@
 	"containers": [
 		{
 			"members": [
-				"player2_fd",
+				"player_fd_popifresco",
 				"PopiFresco"
 			],
 			"selectMode": "normal"
@@ -324,14 +324,14 @@
 		{
 			"members": [
 				"MarcosHeredia",
-				"player1_fd"
+				"player_fd_marcosheredia"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
 				"SrHuevo",
-				"stickman3_fd"
+				"player_fd_srhuevo"
 			],
 			"selectMode": "normal"
 		},
@@ -354,13 +354,13 @@
 		{
 			"members": [
 				"DankElf",
-				"player4_fd"
+				"player_fd_dankelf"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
-				"player5_fd",
+				"player_fd_tunicaoldman",
 				"TunicaOldman"
 			],
 			"selectMode": "normal"
@@ -368,7 +368,7 @@
 		{
 			"members": [
 				"Buko",
-				"player6_fd"
+				"player_fd_buko"
 			],
 			"selectMode": "normal"
 		}

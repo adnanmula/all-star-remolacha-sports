@@ -695,11 +695,6 @@
 														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
 														"image-point": "0"
 													}
-												},
-												{
-													"type": "script",
-													"script": "BallInstance.getFirstInstance.applyImpulseAtAngle(5, 90, 0);",
-													"disabled": true
 												}
 											],
 											"sid": 412725192355901
@@ -724,11 +719,6 @@
 														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
 														"image-point": "0"
 													}
-												},
-												{
-													"type": "script",
-													"script": "BallInstance.getFirstInstance.applyImpulseAtAngle(15, 90, 0);",
-													"disabled": true
 												}
 											],
 											"sid": 709931976779558
@@ -871,6 +861,13 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "setFeetDetector",
+							"sid": 609497351990452,
+							"parameters": [
+								"player.UID"
+							]
 						}
 					],
 					"sid": 443230267201349
@@ -896,9 +893,81 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "setFeetDetector",
+							"sid": 290634740321263,
+							"parameters": [
+								"player.UID"
+							]
 						}
 					],
 					"sid": 814049786008150
+				},
+				{
+					"functionName": "setFeetDetector",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 833856048930772
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 769259271763590,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 861575410943616,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 611386230244109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 341015183908991,
+											"parameters": {
+												"object": "feet_detector",
+												"expression": "feet_detector.owner = player.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "feet_detector",
+											"sid": 923853365608422,
+											"parameters": {
+												"width": "abs(player.Width) + 20",
+												"height": "player.Height / 3 + 20"
+											}
+										}
+									],
+									"sid": 242906089127988
+								}
+							]
+						}
+					]
 				}
 			],
 			"sid": 752841824824843,

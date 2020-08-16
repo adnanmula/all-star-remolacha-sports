@@ -1,7 +1,7 @@
 {
-	"name": "player4_fd",
+	"name": "player_fd_marcosheredia",
 	"plugin-id": "Sprite",
-	"sid": 380078086235275,
+	"sid": 118217494157789,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1733084,
+						"imageSpriteId": 25,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 576852271511178,
+				"sid": 333123295625181,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

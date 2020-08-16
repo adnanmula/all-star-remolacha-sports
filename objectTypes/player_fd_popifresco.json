@@ -1,7 +1,7 @@
 {
-	"name": "player6_fd",
+	"name": "player_fd_popifresco",
 	"plugin-id": "Sprite",
-	"sid": 293639933026565,
+	"sid": 682991147094823,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7714700,
+						"imageSpriteId": 1,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 977790362253869,
+				"sid": 209627561308826,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

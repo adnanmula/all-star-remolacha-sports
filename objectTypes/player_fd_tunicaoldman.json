@@ -1,7 +1,7 @@
 {
-	"name": "player1_fd",
+	"name": "player_fd_tunicaoldman",
 	"plugin-id": "Sprite",
-	"sid": 118217494157789,
+	"sid": 450522677809142,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 25,
+						"imageSpriteId": 8422320,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 333123295625181,
+				"sid": 250556055019087,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

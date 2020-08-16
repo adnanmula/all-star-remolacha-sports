@@ -43,7 +43,7 @@
 					}
 				},
 				{
-					"type": "player1_fd",
+					"type": "player_fd_marcosheredia",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -91,7 +91,7 @@
 					"uid": 27,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman2"
+						"name": "MarcosHeredia"
 					},
 					"behaviors": {
 						"Platform": {
@@ -135,8 +135,8 @@
 					"world": {
 						"x": 202.49665401061404,
 						"y": 298.8556764598043,
-						"width": 89.49256540570389,
-						"height": 94.37397806419682,
+						"width": 43.93271392643645,
+						"height": 97.62825316985878,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -150,7 +150,7 @@
 					}
 				},
 				{
-					"type": "player2_fd",
+					"type": "player_fd_popifresco",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -198,7 +198,7 @@
 					"uid": 29,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman"
+						"name": "PopiFresco"
 					},
 					"behaviors": {
 						"Platform": {
@@ -356,7 +356,7 @@
 					"uid": 44,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman3"
+						"name": "SrHuevo"
 					},
 					"behaviors": {
 						"Platform": {
@@ -415,7 +415,7 @@
 					}
 				},
 				{
-					"type": "stickman3_fd",
+					"type": "player_fd_srhuevo",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -816,7 +816,7 @@
 					"uid": 87,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman3"
+						"name": "DankElf"
 					},
 					"behaviors": {
 						"Platform": {
@@ -860,9 +860,9 @@
 					"world": {
 						"x": 261.45698889496805,
 						"y": 298.3327802412243,
-						"width": 89.49256540570389,
-						"height": 94.37397806419682,
-						"originX": 0.5,
+						"width": 39.051301267943515,
+						"height": 97.62825316985878,
+						"originX": 0.5208333333333334,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -875,7 +875,7 @@
 					}
 				},
 				{
-					"type": "player4_fd",
+					"type": "player_fd_dankelf",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -923,7 +923,7 @@
 					"uid": 89,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman3"
+						"name": "TunicaOldman"
 					},
 					"behaviors": {
 						"Platform": {
@@ -993,7 +993,7 @@
 					"uid": 90,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": "stickman5"
+						"name": "Buko"
 					},
 					"behaviors": {
 						"Platform": {
@@ -1037,10 +1037,10 @@
 					"world": {
 						"x": 331.1116455251622,
 						"y": 274.40875117194423,
-						"width": 85.74019176231481,
-						"height": 142.900319603858,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 77.16617258608332,
+						"height": 110.03324609497066,
+						"originX": 0.46296296296296297,
+						"originY": 0.33766233766233766,
 						"color": [
 							1,
 							1,
@@ -1052,7 +1052,7 @@
 					}
 				},
 				{
-					"type": "player5_fd",
+					"type": "player_fd_tunicaoldman",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1089,7 +1089,7 @@
 					}
 				},
 				{
-					"type": "player6_fd",
+					"type": "player_fd_buko",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
