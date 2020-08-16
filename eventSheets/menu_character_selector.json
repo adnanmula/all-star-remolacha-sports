@@ -56,16 +56,61 @@
 							"parameters": {
 								"seconds": "0.5"
 							}
-						},
-						{
-							"callFunction": "goToView",
-							"sid": 255616860379711,
-							"parameters": [
-								"MN_VIEW_MATCH"
-							]
 						}
 					],
-					"sid": 565014660762583
+					"sid": 565014660762583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 862096377295591,
+									"parameters": {
+										"key": "\"match_players\"",
+										"comparison": 0,
+										"value": "MATCH_PLAYERS_1V1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToView",
+									"sid": 882287534562083,
+									"parameters": [
+										"MN_VIEW_MATCH"
+									]
+								}
+							],
+							"sid": 458430162687553
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 872162440529092,
+									"parameters": {
+										"key": "\"match_players\"",
+										"comparison": 0,
+										"value": "MATCH_PLAYERS_2V2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToView",
+									"sid": 703442088964977,
+									"parameters": [
+										"MN_VIEW_MATCH_2V2"
+									]
+								}
+							],
+							"sid": 988957678178816
+						}
+					]
 				},
 				{
 					"functionName": "requestCharIndex",

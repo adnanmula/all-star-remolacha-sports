@@ -73,6 +73,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MN_VIEW_MATCH_2V2",
+			"type": "string",
+			"initialValue": "match_2v2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 378758148867848
+		},
+		{
+			"eventType": "variable",
 			"name": "MN_VIEW_QUICK_MATCH",
 			"type": "string",
 			"initialValue": "quick-match",
@@ -410,6 +420,32 @@
 								}
 							],
 							"sid": 700537308089304
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 100092066101643,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH_2V2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 790271930990622,
+									"parameters": {
+										"layout": "pitch_2v2"
+									}
+								}
+							],
+							"sid": 682120276067183
 						},
 						{
 							"eventType": "block",

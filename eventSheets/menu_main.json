@@ -74,6 +74,26 @@
 			"sid": 695984608825033
 		},
 		{
+			"eventType": "variable",
+			"name": "MATCH_PLAYERS_1V1",
+			"type": "string",
+			"initialValue": "\"PLAYERS_1V1\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 400289975117314
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_PLAYERS_2V2",
+			"type": "string",
+			"initialValue": "\"PLAYERS_2V2\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 334455757014827
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Menu - Initialization",
@@ -134,6 +154,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 173880385389199,
+							"parameters": {
+								"width": "640",
+								"height": "360"
+							}
+						},
+						{
 							"callFunction": "mapFunctions",
 							"sid": 411498276280392
 						},
@@ -181,7 +210,26 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 408974791843552,
+							"sid": 702387546294314,
+							"disabled": true,
+							"parameters": {
+								"key": "\"match_players\"",
+								"value": "MATCH_PLAYERS_1V1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_match_config",
+							"sid": 601245501075529,
+							"parameters": {
+								"key": "\"match_players\"",
+								"value": "MATCH_PLAYERS_2V2"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_match_config",
+							"sid": 529547359899072,
 							"parameters": {
 								"key": "\"match_type\"",
 								"value": "MATCH_TYPE_FOOTBALL"

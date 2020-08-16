@@ -121,15 +121,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"DankElf",
-			"player_fd_dankelf",
-			"TunicaOldman",
-			"Buko",
-			"player_fd_tunicaoldman",
-			"player_fd_buko",
-			"goal_volley_barrier"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -143,15 +135,34 @@
 			},
 			{
 				"items": [
-					"player_fd_marcosheredia",
-					"player_fd_popifresco",
 					"MarcosHeredia",
 					"PopiFresco",
-					"player_fd_srhuevo",
 					"SrHuevo",
-					"player_km_origin_indicator"
+					"Buko",
+					"DankElf",
+					"TunicaOldman"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"player_km_origin_indicator"
+						],
+						"subfolders": [],
+						"name": "props"
+					},
+					{
+						"items": [
+							"player_fd_buko",
+							"player_fd_dankelf",
+							"player_fd_marcosheredia",
+							"player_fd_popifresco",
+							"player_fd_srhuevo",
+							"player_fd_tunicaoldman"
+						],
+						"subfolders": [],
+						"name": "feet_detector"
+					}
+				],
 				"name": "player"
 			},
 			{
@@ -183,7 +194,8 @@
 							{
 								"items": [
 									"goal_volley",
-									"goal_volley_detector"
+									"goal_volley_detector",
+									"goal_volley_barrier"
 								],
 								"subfolders": [],
 								"name": "volley"
@@ -388,7 +400,8 @@
 		"items": [
 			"main",
 			"menu",
-			"default"
+			"default",
+			"pitch_2v2"
 		],
 		"subfolders": []
 	},

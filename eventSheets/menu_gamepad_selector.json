@@ -202,9 +202,9 @@
 										},
 										{
 											"callFunction": "goToView",
-											"sid": 665007859671753,
+											"sid": 229036439048450,
 											"parameters": [
-												"MN_VIEW_MATCH_CONFIG"
+												"MN_VIEW_MAIN"
 											]
 										}
 									],
