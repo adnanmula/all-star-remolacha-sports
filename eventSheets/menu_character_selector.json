@@ -66,11 +66,11 @@
 								{
 									"id": "compare-value",
 									"objectClass": "data_match_config",
-									"sid": 862096377295591,
+									"sid": 778843553434592,
 									"parameters": {
-										"key": "\"match_players\"",
+										"key": "\"size_pitch\"",
 										"comparison": 0,
-										"value": "MATCH_PLAYERS_1V1"
+										"value": "MATCH_PITCH_SIZE_SMALL"
 									}
 								}
 							],
@@ -91,11 +91,11 @@
 								{
 									"id": "compare-value",
 									"objectClass": "data_match_config",
-									"sid": 872162440529092,
+									"sid": 896604640839743,
 									"parameters": {
-										"key": "\"match_players\"",
+										"key": "\"size_pitch\"",
 										"comparison": 0,
-										"value": "MATCH_PLAYERS_2V2"
+										"value": "MATCH_PITCH_SIZE_MEDIUM"
 									}
 								}
 							],
@@ -104,11 +104,36 @@
 									"callFunction": "goToView",
 									"sid": 703442088964977,
 									"parameters": [
-										"MN_VIEW_MATCH_2V2"
+										"MN_VIEW_MATCH_MEDIUM"
 									]
 								}
 							],
 							"sid": 988957678178816
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 849776403735539,
+									"parameters": {
+										"key": "\"size_pitch\"",
+										"comparison": 0,
+										"value": "MATCH_PITCH_SIZE_BIG"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "goToView",
+									"sid": 525349307496282,
+									"parameters": [
+										"MN_VIEW_MATCH_BIG"
+									]
+								}
+							],
+							"sid": 542400334527307
 						}
 					]
 				},

@@ -84,6 +84,15 @@
 							"callFunction": "mapFunctions",
 							"sid": 820531011775586,
 							"disabled": true
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 948398285436404,
+							"parameters": {
+								"type": "error",
+								"message": "data_match_config.Get(\"size_pitch\")"
+							}
 						}
 					],
 					"sid": 718724352854851
@@ -154,18 +163,18 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 583022579131357,
+							"sid": 267503448815670,
 							"parameters": {
-								"first-value": "data_match_config.Get(\"match_players\")",
+								"first-value": "data_match_config.Get(\"size_pitch\")",
 								"comparison": 0,
-								"second-value": "MATCH_PLAYERS_1V1"
+								"second-value": "MATCH_PITCH_SIZE_SMALL"
 							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "createGoal",
-							"sid": 781381975055421,
+							"sid": 685570643751423,
 							"parameters": [
 								"10",
 								"200",
@@ -175,7 +184,7 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 187738794117423,
+							"sid": 398263208717374,
 							"parameters": [
 								"630",
 								"200",
@@ -185,7 +194,7 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 250904259153591,
+							"sid": 139920612524752,
 							"parameters": [
 								"data_gamepad.Get(\"player0_gamepad_index\")",
 								"data_gamepad.Get(\"player0_character\")",
@@ -196,7 +205,7 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 243198807289543,
+							"sid": 477350569560228,
 							"parameters": [
 								"data_gamepad.Get(\"player1_gamepad_index\")",
 								"data_gamepad.Get(\"player1_character\")",
@@ -208,7 +217,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 940096753473327,
+							"sid": 644293186736981,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -216,7 +225,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 450260043506267,
+							"sid": 219226670931220,
 							"parameters": {
 								"variable": "size_ball",
 								"value": "data_match_config.Get(\"size_ball\")"
@@ -227,7 +236,7 @@
 							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 492573476546950
+					"sid": 468266215776606
 				},
 				{
 					"eventType": "block",
@@ -235,11 +244,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 630843360983284,
+							"sid": 951802136460867,
 							"parameters": {
-								"first-value": "data_match_config.Get(\"match_players\")",
+								"first-value": "data_match_config.Get(\"size_pitch\")",
 								"comparison": 0,
-								"second-value": "MATCH_PLAYERS_2V2"
+								"second-value": "MATCH_PITCH_SIZE_MEDIUM"
 							}
 						}
 					],
@@ -315,18 +324,99 @@
 						{
 							"type": "script",
 							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 826472933900555,
-							"parameters": {
-								"type": "log",
-								"message": "\"aaaaaaaaaaaaaaaaaaaaabdsgerger\""
-							}
 						}
 					],
 					"sid": 698722527793494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 371094025935596,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"size_pitch\")",
+								"comparison": 0,
+								"second-value": "MATCH_PITCH_SIZE_BIG"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 843823301508924,
+							"parameters": {
+								"width": "1280",
+								"height": "720"
+							}
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 166529305499425,
+							"parameters": [
+								"10",
+								"200",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 453326285310295,
+							"parameters": [
+								"630",
+								"200",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 132876458492762,
+							"parameters": [
+								"data_gamepad.Get(\"player0_gamepad_index\")",
+								"data_gamepad.Get(\"player0_character\")",
+								"90",
+								"200",
+								"data_match_config.Get(\"size_player\")"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 219952808292756,
+							"parameters": [
+								"data_gamepad.Get(\"player1_gamepad_index\")",
+								"data_gamepad.Get(\"player1_character\")",
+								"500",
+								"200",
+								"data_match_config.Get(\"size_player\")"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 444393726004686,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 801708872532124,
+							"parameters": {
+								"variable": "size_ball",
+								"value": "data_match_config.Get(\"size_ball\")"
+							}
+						},
+						{
+							"type": "script",
+							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
+						}
+					],
+					"sid": 975796612942102
 				}
 			]
 		},

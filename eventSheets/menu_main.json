@@ -75,9 +75,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "MATCH_PLAYERS_1V1",
+			"name": "MATCH_PITCH_SIZE_SMALL",
 			"type": "string",
-			"initialValue": "\"PLAYERS_1V1\"",
+			"initialValue": "\"pitch-small\"",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -85,13 +85,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "MATCH_PLAYERS_2V2",
+			"name": "MATCH_PITCH_SIZE_MEDIUM",
 			"type": "string",
-			"initialValue": "\"PLAYERS_2V2\"",
+			"initialValue": "\"pitch-medium\"",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 334455757014827
+			"sid": 393977979039421
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_PITCH_SIZE_BIG",
+			"type": "string",
+			"initialValue": "\"pitch-big\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 665610976014914
 		},
 		{
 			"eventType": "group",
@@ -210,20 +220,10 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 702387546294314,
-							"disabled": true,
+							"sid": 891543430625016,
 							"parameters": {
-								"key": "\"match_players\"",
-								"value": "MATCH_PLAYERS_1V1"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 601245501075529,
-							"parameters": {
-								"key": "\"match_players\"",
-								"value": "MATCH_PLAYERS_2V2"
+								"key": "\"size_pitch\"",
+								"value": "MATCH_PITCH_SIZE_BIG"
 							}
 						},
 						{

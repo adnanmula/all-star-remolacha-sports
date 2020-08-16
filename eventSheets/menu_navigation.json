@@ -73,13 +73,23 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "MN_VIEW_MATCH_2V2",
+			"name": "MN_VIEW_MATCH_MEDIUM",
 			"type": "string",
-			"initialValue": "match_2v2",
+			"initialValue": "match_medium",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 378758148867848
+		},
+		{
+			"eventType": "variable",
+			"name": "MN_VIEW_MATCH_BIG",
+			"type": "string",
+			"initialValue": "match_big",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 328663070051461
 		},
 		{
 			"eventType": "variable",
@@ -415,7 +425,7 @@
 									"objectClass": "System",
 									"sid": 820923039834733,
 									"parameters": {
-										"layout": "main"
+										"layout": "pitch_small"
 									}
 								}
 							],
@@ -431,7 +441,7 @@
 									"parameters": {
 										"first-value": "view",
 										"comparison": 0,
-										"second-value": "MN_VIEW_MATCH_2V2"
+										"second-value": "MN_VIEW_MATCH_MEDIUM"
 									}
 								}
 							],
@@ -441,11 +451,37 @@
 									"objectClass": "System",
 									"sid": 790271930990622,
 									"parameters": {
-										"layout": "pitch_2v2"
+										"layout": "pitch_medium"
 									}
 								}
 							],
 							"sid": 682120276067183
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 381187109678298,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "MN_VIEW_MATCH_BIG"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 816520471777613,
+									"parameters": {
+										"layout": "pitch_big"
+									}
+								}
+							],
+							"sid": 514114441658943
 						},
 						{
 							"eventType": "block",

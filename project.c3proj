@@ -398,12 +398,20 @@
 	},
 	"layouts": {
 		"items": [
-			"main",
 			"menu",
-			"default",
-			"pitch_2v2"
+			"default"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"pitch_medium",
+					"pitch_small",
+					"pitch_big"
+				],
+				"subfolders": [],
+				"name": "pitch"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
