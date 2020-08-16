@@ -1,0 +1,63 @@
+{
+	"name": "goal_volley_barrier",
+	"plugin-id": "Sprite",
+	"sid": 281902857625411,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 768967654277080
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 10,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6938012,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.100438596491228,
+								0,
+								0.10263157894736841,
+								0.8982456140350877,
+								0.8859649122807018,
+								0.8982456140350878,
+								0.8894736842105263,
+								0.0017543859649122805,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 338317678785553,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -38,7 +38,17 @@
 					"sid": 977925960720504
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-solid-collision-filter",
+					"objectClass": "ball",
+					"sid": 292324275345830,
+					"parameters": {
+						"mode": "exclusive",
+						"tags": "\"barrier\""
+					}
+				}
+			],
 			"sid": 330663426654972,
 			"children": [
 				{
@@ -657,20 +667,73 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 284223065494483,
+									"children": [
 										{
-											"id": "apply-impulse-at-angle",
-											"objectClass": "ball",
-											"sid": 408487264082780,
-											"behaviorType": "Physics",
-											"parameters": {
-												"impulse": "15",
-												"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
-												"image-point": "0"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 813621631488220,
+													"parameters": {
+														"key": "\"match_type\"",
+														"comparison": 0,
+														"value": "MATCH_TYPE_VOLLEY"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "ball",
+													"sid": 109353597642627,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "5",
+														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
+														"image-point": "0"
+													}
+												},
+												{
+													"type": "script",
+													"script": "BallInstance.getFirstInstance.applyImpulseAtAngle(5, 90, 0);",
+													"disabled": true
+												}
+											],
+											"sid": 412725192355901
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 715408503820176
+												}
+											],
+											"actions": [
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "ball",
+													"sid": 232765135786967,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "15",
+														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
+														"image-point": "0"
+													}
+												},
+												{
+													"type": "script",
+													"script": "BallInstance.getFirstInstance.applyImpulseAtAngle(15, 90, 0);",
+													"disabled": true
+												}
+											],
+											"sid": 709931976779558
 										}
-									],
-									"sid": 284223065494483
+									]
 								}
 							]
 						}
@@ -718,26 +781,69 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "player",
-											"sid": 663225743869764,
+											"sid": 109321303851947,
 											"parameters": {
 												"animation": "\"lift\""
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 359065502068060,
+									"children": [
 										{
-											"id": "apply-impulse-at-angle",
-											"objectClass": "ball",
-											"sid": 140753479906485,
-											"behaviorType": "Physics",
-											"parameters": {
-												"impulse": "5",
-												"angle": "270",
-												"image-point": "0"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 392539196561722,
+													"parameters": {
+														"key": "\"match_type\"",
+														"comparison": 0,
+														"value": "MATCH_TYPE_VOLLEY"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "ball",
+													"sid": 228365832977349,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "1",
+														"angle": "270",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 753736296097873
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 898666309773206
+												}
+											],
+											"actions": [
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "ball",
+													"sid": 600664919892510,
+													"behaviorType": "Physics",
+													"parameters": {
+														"impulse": "5",
+														"angle": "270",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 805645681721034
 										}
-									],
-									"sid": 100891138510154
+									]
 								}
 							]
 						}

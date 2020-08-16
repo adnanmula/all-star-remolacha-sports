@@ -215,6 +215,15 @@
 							"parameters": {
 								"collisions": "disabled"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_volley_barrier",
+							"sid": 967379783598173,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 416710035776654,
@@ -484,6 +493,15 @@
 								"instance-variable": "owner",
 								"value": "goal_basket.UID"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_volley_barrier",
+							"sid": 432955157476307,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 357576099125256,
@@ -654,6 +672,15 @@
 									"parameters": {
 										"variable": "temp_goal_volley_count",
 										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "goal_volley_barrier",
+									"sid": 227643770369192,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
 									}
 								}
 							],
