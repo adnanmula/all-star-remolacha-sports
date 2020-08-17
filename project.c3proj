@@ -121,7 +121,11 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"menu_matchconfig_size_pitch_button",
+			"menu_matchconfig_size_pitch_text",
+			"menu_matchconfig_players"
+		],
 		"subfolders": [
 			{
 				"items": [

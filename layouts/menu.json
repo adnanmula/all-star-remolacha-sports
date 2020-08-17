@@ -192,6 +192,176 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "menu_matchconfig_size_pitch_button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 117,
+					"instanceVariables": {
+						"index": 0,
+						"amount": -1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 224.4395651114997,
+						"y": 998.3958371486938,
+						"width": 66.41535684996911,
+						"height": 26.511152938614636,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_size_pitch_button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 118,
+					"instanceVariables": {
+						"index": 1,
+						"amount": 1
+					},
+					"behaviors": {},
+					"world": {
+						"x": 377.8253532602896,
+						"y": 998.6460018402845,
+						"width": -66.415357,
+						"height": 26.511152938614636,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_size_pitch_text",
+					"properties": {
+						"text": "n",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 119,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 263.55409005089234,
+						"y": 985.4926056876959,
+						"width": 80.947,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_players",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "1v1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 95,
+					"instanceVariables": {
+						"type": "TYPE_FOOTBALL",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 251.56082386829303,
+						"y": 748.0023649449912,
+						"width": 66.41535684996911,
+						"height": 26.511152938614636,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_matchconfig_players",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "2v2",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"type": "TYPE_FOOTBALL",
+						"index": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 343.9637610042971,
+						"y": 747.3651033095705,
+						"width": 66.41535684996911,
+						"height": 26.511152938614636,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 633151189240695,
@@ -656,8 +826,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 308.5868228124769,
-						"y": 865.2556408681053,
+						"x": 224.4395651114997,
+						"y": 858.8266401167907,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -688,8 +858,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 461.9726110362822,
-						"y": 866.7338407246821,
+						"x": 377.825353335305,
+						"y": 860.3048399733675,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -732,8 +902,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 852.9947407963937,
+						"x": 44.45750658658591,
+						"y": 846.5657400450791,
 						"width": 97.36837635385837,
 						"height": 30,
 						"originX": 0,
@@ -776,8 +946,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 781.0518845004391,
+						"x": 44.45750658658591,
+						"y": 774.6228837491245,
 						"width": 97.36837635385837,
 						"height": 30,
 						"originX": 0,
@@ -820,8 +990,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 889.9947407963937,
+						"x": 44.45750658658591,
+						"y": 883.5657400450791,
 						"width": 97.36837635385837,
 						"height": 26.26174311270529,
 						"originX": 0,
@@ -862,8 +1032,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 344.7235823338035,
-						"y": 856.1974984859824,
+						"x": 260.5763246328263,
+						"y": 849.7684977346678,
 						"width": 80.947,
 						"height": 30,
 						"originX": 0,
@@ -894,8 +1064,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 308.5868228124769,
-						"y": 899.2556408681053,
+						"x": 224.4395651114997,
+						"y": 892.8266401167907,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -926,8 +1096,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 461.9726110362822,
-						"y": 900.7338407246821,
+						"x": 377.825353335305,
+						"y": 894.3048399733675,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -958,8 +1128,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 461.9726110362822,
-						"y": 934.7338407246821,
+						"x": 377.825353335305,
+						"y": 928.3048399733675,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -990,8 +1160,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 308.5868228124769,
-						"y": 933.2556408681053,
+						"x": 224.4395651114997,
+						"y": 926.8266401167907,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1022,8 +1192,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 461.9726110362822,
-						"y": 968.7338407246821,
+						"x": 377.825353335305,
+						"y": 962.3048399733675,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1054,8 +1224,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 308.5868228124769,
-						"y": 967.2556408681053,
+						"x": 224.4395651114997,
+						"y": 960.8266401167907,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1096,8 +1266,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 344.7235823338035,
-						"y": 890.1974984859824,
+						"x": 260.5763246328263,
+						"y": 883.7684977346678,
 						"width": 80.947,
 						"height": 30,
 						"originX": 0,
@@ -1138,8 +1308,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 344.7235823338035,
-						"y": 924.1974984859824,
+						"x": 260.5763246328263,
+						"y": 917.7684977346678,
 						"width": 80.947,
 						"height": 30,
 						"originX": 0,
@@ -1180,8 +1350,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 344.7235823338035,
-						"y": 958.1974984859824,
+						"x": 260.5763246328263,
+						"y": 951.7684977346678,
 						"width": 80.947,
 						"height": 30,
 						"originX": 0,
@@ -1211,10 +1381,10 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 324.1555696630444,
-						"y": 1036.4049433525768,
-						"width": 172.8173803107657,
-						"height": 69.12695212430629,
+						"x": 299.8889182113408,
+						"y": 1042.2046058809885,
+						"width": 88.14776194283365,
+						"height": 35.259104777133466,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1287,8 +1457,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 120.41954623256441,
-						"y": 816.0046062286935,
+						"x": 36.27228853158721,
+						"y": 809.575605477379,
 						"width": 105.55359440885707,
 						"height": 30,
 						"originX": 0,
@@ -1319,8 +1489,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 339.4432757325324,
-						"y": 829.2601826980009,
+						"x": 255.2960180315552,
+						"y": 822.8311819466863,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1351,8 +1521,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 430.4432757325324,
-						"y": 829.2601826980009,
+						"x": 346.2960180315552,
+						"y": 822.8311819466863,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1383,8 +1553,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 339.4432757325324,
-						"y": 794.3074609697464,
+						"x": 255.2960180315552,
+						"y": 787.8784602184319,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1415,8 +1585,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 430.4432757325324,
-						"y": 794.3074609697464,
+						"x": 346.2960180315552,
+						"y": 787.8784602184319,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -1459,8 +1629,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 954.9947407963937,
+						"x": 44.45750658658591,
+						"y": 948.5657400450791,
 						"width": 97.36837635385837,
 						"height": 26.26174311270529,
 						"originX": 0,
@@ -1503,8 +1673,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 919.9947407963937,
+						"x": 44.45750658658591,
+						"y": 913.5657400450791,
 						"width": 97.36837635385837,
 						"height": 26.26174311270529,
 						"originX": 0,
@@ -1855,7 +2025,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Tipo",
+						"text": "Jugadores",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -1880,8 +2050,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 128.6047642875631,
-						"y": 744.4860769237517,
+						"x": 44.45750658658591,
+						"y": 738.0570761724372,
 						"width": 97.36837635385837,
 						"height": 30,
 						"originX": 0,
@@ -1897,59 +2067,39 @@
 					}
 				},
 				{
-					"type": "menu_matchconfig_type",
+					"type": "menu_matchconfig_label",
 					"properties": {
-						"initially-visible": true,
-						"initial-animation": "football",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 95,
-					"instanceVariables": {
-						"type": "TYPE_FOOTBALL",
-						"index": 0
-					},
-					"behaviors": {},
-					"world": {
-						"x": 339.4432757325324,
-						"y": 757.7416533930591,
-						"width": 66.41535684996911,
-						"height": 26.511152938614636,
-						"originX": 0.5,
-						"originY": 0.5,
+						"text": "Campo",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
 						"color": [
-							1,
-							1,
-							1,
+							0,
+							0,
+							0,
 							1
 						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "menu_matchconfig_type",
-					"properties": {
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
 						"initially-visible": true,
-						"initial-animation": "volley",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left"
 					},
-					"uid": 96,
+					"uid": 120,
 					"instanceVariables": {
-						"type": "TYPE_VOLLEY",
-						"index": 1
+						"label": "pitch"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 430.4432757325324,
-						"y": 757.7416533930591,
-						"width": 66.41535684996911,
-						"height": 26.511152938614636,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 44.45750658658591,
+						"y": 985.6954469022367,
+						"width": 97.36837635385837,
+						"height": 26.26174311270529,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,

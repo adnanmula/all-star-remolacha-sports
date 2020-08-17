@@ -66,11 +66,11 @@
 								{
 									"id": "compare-value",
 									"objectClass": "data_match_config",
-									"sid": 778843553434592,
+									"sid": 333890740601784,
 									"parameters": {
 										"key": "\"size_pitch\"",
 										"comparison": 0,
-										"value": "MATCH_PITCH_SIZE_SMALL"
+										"value": "0"
 									}
 								}
 							],
@@ -91,11 +91,11 @@
 								{
 									"id": "compare-value",
 									"objectClass": "data_match_config",
-									"sid": 896604640839743,
+									"sid": 723563159517392,
 									"parameters": {
 										"key": "\"size_pitch\"",
 										"comparison": 0,
-										"value": "MATCH_PITCH_SIZE_MEDIUM"
+										"value": "1"
 									}
 								}
 							],
@@ -116,11 +116,11 @@
 								{
 									"id": "compare-value",
 									"objectClass": "data_match_config",
-									"sid": 849776403735539,
+									"sid": 325414089586742,
 									"parameters": {
 										"key": "\"size_pitch\"",
 										"comparison": 0,
-										"value": "MATCH_PITCH_SIZE_BIG"
+										"value": "2"
 									}
 								}
 							],

@@ -74,36 +74,6 @@
 			"sid": 695984608825033
 		},
 		{
-			"eventType": "variable",
-			"name": "MATCH_PITCH_SIZE_SMALL",
-			"type": "string",
-			"initialValue": "\"pitch-small\"",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 400289975117314
-		},
-		{
-			"eventType": "variable",
-			"name": "MATCH_PITCH_SIZE_MEDIUM",
-			"type": "string",
-			"initialValue": "\"pitch-medium\"",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 393977979039421
-		},
-		{
-			"eventType": "variable",
-			"name": "MATCH_PITCH_SIZE_BIG",
-			"type": "string",
-			"initialValue": "\"pitch-big\"",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 665610976014914
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Menu - Initialization",
@@ -220,15 +190,6 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 891543430625016,
-							"parameters": {
-								"key": "\"size_pitch\"",
-								"value": "MATCH_PITCH_SIZE_BIG"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
 							"sid": 529547359899072,
 							"parameters": {
 								"key": "\"match_type\"",
@@ -283,10 +244,10 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 941077164445369,
+							"sid": 523705312363821,
 							"parameters": {
-								"key": "\"stadium\"",
-								"value": "\"\""
+								"key": "\"size_pitch\"",
+								"value": "1"
 							}
 						},
 						{
@@ -319,6 +280,14 @@
 							"sid": 348842468786105,
 							"parameters": {
 								"text": "data_match_config.Get(\"size_goal\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_size_pitch_text",
+							"sid": 287994763294667,
+							"parameters": {
+								"text": "data_match_config.Get(\"size_pitch\")"
 							}
 						}
 					],

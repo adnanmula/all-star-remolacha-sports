@@ -84,15 +84,6 @@
 							"callFunction": "mapFunctions",
 							"sid": 820531011775586,
 							"disabled": true
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 948398285436404,
-							"parameters": {
-								"type": "error",
-								"message": "data_match_config.Get(\"size_pitch\")"
-							}
 						}
 					],
 					"sid": 718724352854851
@@ -163,11 +154,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 267503448815670,
+							"sid": 709081274895168,
 							"parameters": {
 								"first-value": "data_match_config.Get(\"size_pitch\")",
 								"comparison": 0,
-								"second-value": "MATCH_PITCH_SIZE_SMALL"
+								"second-value": "0"
 							}
 						}
 					],
@@ -244,11 +235,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 951802136460867,
+							"sid": 817380119248396,
 							"parameters": {
 								"first-value": "data_match_config.Get(\"size_pitch\")",
 								"comparison": 0,
-								"second-value": "MATCH_PITCH_SIZE_MEDIUM"
+								"second-value": "1"
 							}
 						}
 					],
@@ -334,11 +325,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 371094025935596,
+							"sid": 843198430994836,
 							"parameters": {
 								"first-value": "data_match_config.Get(\"size_pitch\")",
 								"comparison": 0,
-								"second-value": "MATCH_PITCH_SIZE_BIG"
+								"second-value": "2"
 							}
 						}
 					],
