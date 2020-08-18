@@ -283,7 +283,7 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 263.55409005089234,
+						"x": 260.5763246328263,
 						"y": 985.4926056876959,
 						"width": 80.947,
 						"height": 30,
@@ -310,13 +310,13 @@
 					},
 					"uid": 95,
 					"instanceVariables": {
-						"type": "TYPE_FOOTBALL",
+						"type": "PLAYERS_1V1",
 						"index": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 251.56082386829303,
-						"y": 748.0023649449912,
+						"x": 255.2960180315552,
+						"y": 751.0023649449912,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -342,13 +342,13 @@
 					},
 					"uid": 96,
 					"instanceVariables": {
-						"type": "TYPE_FOOTBALL",
-						"index": 0
+						"type": "PLAYERS_2V2",
+						"index": 1
 					},
 					"behaviors": {},
 					"world": {
-						"x": 343.9637610042971,
-						"y": 747.3651033095705,
+						"x": 346.2960180315552,
+						"y": 750.3651033095705,
 						"width": 66.41535684996911,
 						"height": 26.511152938614636,
 						"originX": 0.5,
@@ -921,7 +921,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Tipo",
+						"text": "Type:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -965,7 +965,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Pelota",
+						"text": "Ball size:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -1432,7 +1432,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Win condition",
+						"text": "Win condition:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -1604,7 +1604,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Porteria",
+						"text": "Goal size:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -1648,7 +1648,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Personaje",
+						"text": "Player size:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -2025,7 +2025,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Jugadores",
+						"text": "Players:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,
@@ -2051,7 +2051,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 44.45750658658591,
-						"y": 738.0570761724372,
+						"y": 741.0570761724372,
 						"width": 97.36837635385837,
 						"height": 30,
 						"originX": 0,
@@ -2069,7 +2069,7 @@
 				{
 					"type": "menu_matchconfig_label",
 					"properties": {
-						"text": "Campo",
+						"text": "Pitch size:",
 						"enable-bbcode": true,
 						"font": "Arial",
 						"size": 12,

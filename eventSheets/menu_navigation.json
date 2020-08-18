@@ -394,11 +394,20 @@
 									}
 								},
 								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 551037495166616,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "0"
+									}
+								},
+								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 275077692614884,
+									"sid": 839460316924707,
 									"parameters": {
-										"group-name": "\"GC - Match type\"",
+										"group-name": "\"GC - Match players\"",
 										"state": "activated"
 									}
 								}
@@ -501,7 +510,16 @@
 								{
 									"id": "set-key",
 									"objectClass": "data_match_config",
-									"sid": 341331373790925,
+									"sid": 267488138531016,
+									"parameters": {
+										"key": "\"match_players\"",
+										"value": "MATCH_PLAYERS_1V1"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
+									"sid": 484582441850786,
 									"parameters": {
 										"key": "\"match_type\"",
 										"value": "MATCH_TYPE_FOOTBALL"
@@ -1610,7 +1628,16 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 783222476524225,
+							"sid": 820158972868139,
+							"parameters": {
+								"group-name": "\"GC - Match players\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 199020379306351,
 							"parameters": {
 								"group-name": "\"GC - Match type\"",
 								"state": "deactivated"
@@ -1838,6 +1865,571 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "GC - Match players",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 615572592890628
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 479455715712350,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_players.Count - 1"
+									}
+								}
+							],
+							"sid": 697636867570874,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 452835526906062,
+											"parameters": {
+												"object": "menu_matchconfig_players",
+												"expression": "menu_matchconfig_players.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 114796441607138,
+											"parameters": [
+												"menu_matchconfig_players.X",
+												"menu_matchconfig_players.Y",
+												"menu_matchconfig_players.Width",
+												"menu_matchconfig_players.Height"
+											]
+										}
+									],
+									"sid": 165183934933228
+								}
+							]
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - MP - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 376982510020354,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 536073558442027,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 616314190975464,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 271623201978590,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 207540514551568,
+													"parameters": [
+														"menu_matchconfig_players.X",
+														"menu_matchconfig_players.Y",
+														"menu_matchconfig_players.Width",
+														"menu_matchconfig_players.Height"
+													]
+												}
+											],
+											"sid": 138961136568425
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 109200640170477,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 141548113198159,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 900546330314582,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 676387309670104,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 125763762140993,
+													"parameters": [
+														"menu_matchconfig_players.X",
+														"menu_matchconfig_players.Y",
+														"menu_matchconfig_players.Width",
+														"menu_matchconfig_players.Height"
+													]
+												}
+											],
+											"sid": 790989388762706
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 941625886006008,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 779476923839622,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 987228334689214,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 468803698566371,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 667084042793247,
+											"parameters": [
+												"\"GC - Match type\""
+											]
+										}
+									],
+									"sid": 698240998693864,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 109532453754619,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 778615061959406,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 748194992782867,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 223050284886623,
+													"parameters": {
+														"key": "\"match_players\"",
+														"value": "menu_matchconfig_players.type"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_players",
+													"sid": 175435623683539,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 698616520548342
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 631438370726081,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index",
+														"comparison": 1,
+														"value": "mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_players",
+													"sid": 783202432711516,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 160025254045540
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 705296114769480
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 568324751559687,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 889897281542116,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 704194470690869,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 897935152812849,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 317072681171350,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 244021845128348,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 712288519170911,
+													"parameters": [
+														"menu_matchconfig_players.X",
+														"menu_matchconfig_players.Y",
+														"menu_matchconfig_players.Width",
+														"menu_matchconfig_players.Height"
+													]
+												}
+											],
+											"sid": 514423528056851
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 852232444793987,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 603407128384592,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 867036144804519,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 798666400116177,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 958294279304187,
+													"parameters": [
+														"menu_matchconfig_players.X",
+														"menu_matchconfig_players.Y",
+														"menu_matchconfig_players.Width",
+														"menu_matchconfig_players.Height"
+													]
+												}
+											],
+											"sid": 568040936813515
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 660978634323569,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 365622424908330,
+											"parameters": [
+												"\"GC - Go to char select\""
+											]
+										}
+									],
+									"sid": 357356191429238,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 997304144835529,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 177983595345957,
+											"parameters": [
+												"\"GC - Match type\""
+											]
+										}
+									],
+									"sid": 954048895735718,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 759275469988424,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 626608944783064,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 500630559221778,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 647106798211362,
+													"parameters": {
+														"key": "\"match_players\"",
+														"value": "menu_matchconfig_players.type"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_players",
+													"sid": 929228309666770,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 667344975936952
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 637028478913688,
+													"parameters": {
+														"object": "menu_matchconfig_players",
+														"expression": "menu_matchconfig_players.index",
+														"comparison": 1,
+														"value": "mn_selected_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "menu_matchconfig_players",
+													"sid": 552857038029412,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 650323273371398
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 311146303648174
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "GC - Match type",
 					"description": "",
 					"isActiveOnStart": false,
@@ -1865,6 +2457,7 @@
 									"id": "set-eventvar-value",
 									"objectClass": "System",
 									"sid": 505063856935976,
+									"disabled": true,
 									"parameters": {
 										"variable": "mn_selected_index",
 										"value": "0"
@@ -2032,9 +2625,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 275441437416546,
+											"sid": 159389346864128,
 											"parameters": [
-												"\"GC - Go to char select\""
+												"\"GC - Match players\""
 											]
 										}
 									],
@@ -2290,9 +2883,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 740133323855467,
+											"sid": 890521994603456,
 											"parameters": [
-												"\"GC - Go to char select\""
+												"\"GC - Match players\""
 											]
 										}
 									],
@@ -3849,18 +4442,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 833467816350210,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_ball_text",
-															"sid": 157417320441163,
+															"sid": 827948320087111,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_ball\")"
+																"text": "\"Small\""
 															}
 														}
 													],
 													"sid": 478094346690290
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 474458575042133,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 383746837619140,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 251214124861234
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 932628828524660,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 412790796197032,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 746215622349574
 												}
 											]
 										}
@@ -3897,18 +4553,88 @@
 										"variable": "mn_selected_index",
 										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "menu_matchconfig_size_ball_text",
-									"sid": 762733407378772,
-									"parameters": {
-										"text": "data_match_config.Get(\"size_ball\")"
-									}
 								}
 							],
 							"sid": 699005369477542,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 344860364361895,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_ball\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_ball_text",
+											"sid": 573731446573857,
+											"parameters": {
+												"text": "\"Small\""
+											}
+										}
+									],
+									"sid": 483826314495322
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 570867630213161,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_ball\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_ball_text",
+											"sid": 666503045015813,
+											"parameters": {
+												"text": "\"Medium\""
+											}
+										}
+									],
+									"sid": 845901514238140
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 957700807649067,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_ball\")",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_ball_text",
+											"sid": 440825153647830,
+											"parameters": {
+												"text": "\"Big\""
+											}
+										}
+									],
+									"sid": 554717696978324
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -4234,18 +4960,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 482134422478372,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_ball_text",
-															"sid": 215951385709083,
+															"sid": 349523985083332,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_ball\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 776257590218291
+													"sid": 610849303231106
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 289031034008028,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 926678802412646,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 438707972315833
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 208339572515507,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_ball\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_ball_text",
+															"sid": 545836554027501,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 937350617266283
 												}
 											]
 										}
@@ -4561,18 +5350,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 673609786456766,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_character_text",
-															"sid": 289857333743537,
+															"sid": 887508129547807,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_player\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 433573099862854
+													"sid": 397618715618523
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 394471635335557,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 472360196982199,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 215232175195551
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 363803489935869,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 421304368029123,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 394723293466774
 												}
 											]
 										}
@@ -4609,18 +5461,88 @@
 										"variable": "mn_selected_index",
 										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "menu_matchconfig_size_character_text",
-									"sid": 827216054274429,
-									"parameters": {
-										"text": "data_match_config.Get(\"size_player\")"
-									}
 								}
 							],
 							"sid": 646611924424040,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 204712879077159,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_player\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_character_text",
+											"sid": 389109878756072,
+											"parameters": {
+												"text": "\"Small\""
+											}
+										}
+									],
+									"sid": 827931870259797
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 761371459107767,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_player\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_character_text",
+											"sid": 968749380297923,
+											"parameters": {
+												"text": "\"Medium\""
+											}
+										}
+									],
+									"sid": 218537538435314
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 499070531249280,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_player\")",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_character_text",
+											"sid": 527473273295302,
+											"parameters": {
+												"text": "\"Big\""
+											}
+										}
+									],
+									"sid": 773016938313080
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -4942,18 +5864,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 245528787740411,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_character_text",
-															"sid": 126281782354174,
+															"sid": 618052358979453,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_player\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 312069169448434
+													"sid": 326858634348776
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 706251347663406,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 958151022210929,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 996995970729472
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 627935832467171,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_player\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_character_text",
+															"sid": 324397013311344,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 109199222288537
 												}
 											]
 										}
@@ -6495,9 +7480,9 @@
 							"actions": [
 								{
 									"callFunction": "goToMatchConfigView",
-									"sid": 164617801988508,
+									"sid": 396942104655281,
 									"parameters": [
-										"\"GC - Match type\""
+										"\"GC - Match players\""
 									]
 								}
 							],
@@ -6612,9 +7597,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 737126307856881,
+											"sid": 898201998914479,
 											"parameters": [
-												"\"GC - Match type\""
+												"\"GC - Match players\""
 											]
 										}
 									],

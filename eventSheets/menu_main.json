@@ -74,6 +74,26 @@
 			"sid": 695984608825033
 		},
 		{
+			"eventType": "variable",
+			"name": "MATCH_PLAYERS_1V1",
+			"type": "string",
+			"initialValue": "PLAYERS_1V1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 299680017169987
+		},
+		{
+			"eventType": "variable",
+			"name": "MATCH_PLAYERS_2V2",
+			"type": "string",
+			"initialValue": "PLAYERS_2V2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 794809255568474
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Menu - Initialization",
@@ -190,7 +210,16 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 529547359899072,
+							"sid": 884757066329900,
+							"parameters": {
+								"key": "\"match_players\"",
+								"value": "MATCH_PLAYERS_1V1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_match_config",
+							"sid": 304423419575256,
 							"parameters": {
 								"key": "\"match_type\"",
 								"value": "MATCH_TYPE_FOOTBALL"
