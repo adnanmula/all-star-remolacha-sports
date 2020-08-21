@@ -246,7 +246,16 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 216997994990241,
+							"sid": 489842724186633,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"value": "2"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_match_config",
+							"sid": 212933129938115,
 							"parameters": {
 								"key": "\"size_ball\"",
 								"value": "1"
@@ -273,10 +282,10 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 523705312363821,
+							"sid": 285800618705374,
 							"parameters": {
 								"key": "\"size_pitch\"",
-								"value": "1"
+								"value": "0"
 							}
 						},
 						{
@@ -289,34 +298,42 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "menu_matchconfig_size_ball_text",
-							"sid": 193464512404281,
+							"objectClass": "menu_matchconfig_ball_type_text",
+							"sid": 338017187899551,
 							"parameters": {
-								"text": "data_match_config.Get(\"size_ball\")"
+								"text": "\"Normal\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "menu_matchconfig_size_ball_text",
+							"sid": 481215305070446,
+							"parameters": {
+								"text": "\"Medium\""
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "menu_matchconfig_size_character_text",
-							"sid": 371017390077172,
+							"sid": 201684642724795,
 							"parameters": {
-								"text": "data_match_config.Get(\"size_player\")"
+								"text": "\"Medium\""
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "menu_matchconfig_size_goal_text",
-							"sid": 348842468786105,
+							"sid": 412082808456351,
 							"parameters": {
-								"text": "data_match_config.Get(\"size_goal\")"
+								"text": "\"Medium\""
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "menu_matchconfig_size_pitch_text",
-							"sid": 287994763294667,
+							"sid": 785738842648672,
 							"parameters": {
-								"text": "data_match_config.Get(\"size_pitch\")"
+								"text": "\"Small\""
 							}
 						}
 					],

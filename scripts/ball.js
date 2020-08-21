@@ -29,19 +29,4 @@ class BallInstance extends ISpriteInstance
 		instance.width = diameter;
 		instance.height = diameter;
 	}
-	
-	static applyKick(runtime, playerUid, matchType)
-	{
-		ball = runtime.objects.ball.getFirstInstance();
-		player = runtime.objects.player.getInstanceByUid(playerUid);
-			
-		angle = runtime.callFunction.angle(player.x, player.y, ball.x, ball.y);	
-		force = 15;
-		
-		if (runtime.globalVars.MATCH_TYPE_VOLLEY == matchType) {
-			force = 5;
-		}
-	
-		ball.applyImpulseAtAngle(force, angle, 0);
-	}
 }

@@ -121,11 +121,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"menu_matchconfig_size_pitch_button",
-			"menu_matchconfig_size_pitch_text",
-			"menu_matchconfig_players"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -288,7 +284,10 @@
 									"menu_matchconfig_size_goal_button",
 									"menu_matchconfig_toCharSelect",
 									"menu_matchconfig_type",
-									"menu_matchconfig_win"
+									"menu_matchconfig_win",
+									"menu_matchconfig_players",
+									"menu_matchconfig_size_pitch_button",
+									"menu_matchconfig_ball_type_button"
 								],
 								"subfolders": [],
 								"name": "button"
@@ -299,7 +298,9 @@
 									"menu_matchconfig_label",
 									"menu_matchconfig_size_ball_text",
 									"menu_matchconfig_size_character_text",
-									"menu_matchconfig_size_goal_text"
+									"menu_matchconfig_size_goal_text",
+									"menu_matchconfig_size_pitch_text",
+									"menu_matchconfig_ball_type_text"
 								],
 								"subfolders": [],
 								"name": "text"

@@ -546,6 +546,15 @@
 								{
 									"id": "set-key",
 									"objectClass": "data_match_config",
+									"sid": 512118528829122,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_match_config",
 									"sid": 844325134828599,
 									"parameters": {
 										"key": "\"size_ball\"",
@@ -573,10 +582,10 @@
 								{
 									"id": "set-key",
 									"objectClass": "data_match_config",
-									"sid": 193623363483534,
+									"sid": 478816434411567,
 									"parameters": {
 										"key": "\"size_pitch\"",
-										"value": "1"
+										"value": "0"
 									}
 								},
 								{
@@ -1664,7 +1673,16 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 468257516818458,
+							"sid": 454528978992818,
+							"parameters": {
+								"group-name": "\"GC - Ball type\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 220887015574679,
 							"parameters": {
 								"group-name": "\"GC - Ball size\"",
 								"state": "deactivated"
@@ -3231,9 +3249,9 @@
 												{
 													"id": "set-text",
 													"objectClass": "menu_matchconfig_label",
-													"sid": 444999748906531,
+													"sid": 171623024373925,
 													"parameters": {
-														"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goles\" : \"Minutos\""
+														"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goals:\" : \"Minutes:\""
 													}
 												}
 											],
@@ -3575,9 +3593,9 @@
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_label",
-															"sid": 290801841004654,
+															"sid": 297020420175194,
 															"parameters": {
-																"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goles\" : \"Minutos\""
+																"text": "menu_matchconfig_win.type = WIN_CONDITION_GOALS ? \"Goals:\" : \"Minutes:\""
 															}
 														}
 													],
@@ -3774,9 +3792,9 @@
 							"actions": [
 								{
 									"callFunction": "goToMatchConfigView",
-									"sid": 369713777041942,
+									"sid": 567084837562188,
 									"parameters": [
-										"\"GC - Ball size\""
+										"\"GC - Ball type\""
 									]
 								}
 							],
@@ -4071,9 +4089,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 332770175066578,
+											"sid": 689238237159900,
 											"parameters": [
-												"\"GC - Ball size\""
+												"\"GC - Ball type\""
 											]
 										}
 									],
@@ -4137,6 +4155,1070 @@
 						}
 					],
 					"sid": 855309177446020
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "GC - Ball type",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "min_amount",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 412513656787389
+						},
+						{
+							"eventType": "variable",
+							"name": "max_amount",
+							"type": "number",
+							"initialValue": "4",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 272125021110720
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "GC - BT - Keyboard",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 813834605390764,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [],
+									"sid": 673633465473353,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 768127880337333,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 765914642298243,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 413626290229087,
+													"parameters": [
+														"menu_matchconfig_ball_type_button.X",
+														"menu_matchconfig_ball_type_button.Y",
+														"menu_matchconfig_ball_type_button.Width",
+														"menu_matchconfig_ball_type_button.Height"
+													]
+												}
+											],
+											"sid": 327902898086571
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 322118377310306,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [],
+									"sid": 442163363802500,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 694603284837085,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 533685148572251,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 214181967505666,
+													"parameters": [
+														"menu_matchconfig_ball_type_button.X",
+														"menu_matchconfig_ball_type_button.Y",
+														"menu_matchconfig_ball_type_button.Width",
+														"menu_matchconfig_ball_type_button.Height"
+													]
+												}
+											],
+											"sid": 890321556925439
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 768170532857744,
+											"parameters": {
+												"key": 87
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 574091359922976,
+											"parameters": [
+												"\"GC - Goal amount\""
+											]
+										}
+									],
+									"sid": 438122947750331,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 559734371670880,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 428157279612012,
+											"parameters": [
+												"\"GC - Ball size\""
+											]
+										}
+									],
+									"sid": 744838866104316,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 595795473021932,
+											"parameters": {
+												"key": 32
+											}
+										}
+									],
+									"actions": [],
+									"sid": 895891957754165,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 722813835719208,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 650718385193407,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 381137591076865,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 857016010464779,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 514466816548060
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 234804570450571
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 572649404891609,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 666088572163757,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 887949316555074
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 711071098151524
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 591420355426661,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount"
+															}
+														}
+													],
+													"sid": 220123705953915
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 937518191608061,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 990932318416882,
+															"parameters": {
+																"text": "\"Heavy II\""
+															}
+														}
+													],
+													"sid": 274377681990884
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 417662952626730,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 351728631535426,
+															"parameters": {
+																"text": "\"Heavy\""
+															}
+														}
+													],
+													"sid": 787173910724412
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 770564648830887,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 475439666861645,
+															"parameters": {
+																"text": "\"Normal\""
+															}
+														}
+													],
+													"sid": 318741963971725
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 965003531440622,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 484854241042250,
+															"parameters": {
+																"text": "\"Light\""
+															}
+														}
+													],
+													"sid": 225775016377598
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 536955668135855,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 158730935232150,
+															"parameters": {
+																"text": "\"Bouncy\""
+															}
+														}
+													],
+													"sid": 571349325464584
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"sid": 139574394322532
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 377732415214826
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 695880739700871,
+									"parameters": {
+										"variable": "mn_max_index",
+										"value": "menu_matchconfig_ball_type_button.Count - 1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 227384222335656,
+									"parameters": {
+										"variable": "mn_selected_index",
+										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
+									}
+								}
+							],
+							"sid": 332109092827159,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 921210028601382,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"type_ball\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_ball_type_text",
+											"sid": 327389678864951,
+											"parameters": {
+												"text": "\"Heavy II\""
+											}
+										}
+									],
+									"sid": 389201900185738
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 726101718105837,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"type_ball\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_ball_type_text",
+											"sid": 955985929727762,
+											"parameters": {
+												"text": "\"Heavy\""
+											}
+										}
+									],
+									"sid": 271334141150847
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 439990850900763,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"type_ball\")",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_ball_type_text",
+											"sid": 672819395791650,
+											"parameters": {
+												"text": "\"Normal\""
+											}
+										}
+									],
+									"sid": 446494574577658
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 670463762202913,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"type_ball\")",
+												"comparison": 0,
+												"second-value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_ball_type_text",
+											"sid": 528636397963525,
+											"parameters": {
+												"text": "\"Light\""
+											}
+										}
+									],
+									"sid": 941696271473373
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 801174967580246,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"type_ball\")",
+												"comparison": 0,
+												"second-value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_ball_type_text",
+											"sid": 720258625773225,
+											"parameters": {
+												"text": "\"Bouncy\""
+											}
+										}
+									],
+									"sid": 456564396004604
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 898261899183086,
+											"parameters": {
+												"object": "menu_matchconfig_ball_type_button",
+												"expression": "menu_matchconfig_ball_type_button.index= mn_selected_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "setButtonSelectorTo",
+											"sid": 808925150169975,
+											"parameters": [
+												"menu_matchconfig_ball_type_button.X",
+												"menu_matchconfig_ball_type_button.Y",
+												"menu_matchconfig_ball_type_button.Width",
+												"menu_matchconfig_ball_type_button.Height"
+											]
+										}
+									],
+									"sid": 453388559834547
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 799751594449623,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "MAX_GAMEPAD"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 872676831824214,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 176148389868504,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-left"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 927612820977638,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 125072159140895,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = (mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 296729803832682,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index - 1 < 0 ? mn_max_index : mn_selected_index - 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 939441737968904,
+													"parameters": [
+														"menu_matchconfig_ball_type_button.X",
+														"menu_matchconfig_ball_type_button.Y",
+														"menu_matchconfig_ball_type_button.Width",
+														"menu_matchconfig_ball_type_button.Height"
+													]
+												}
+											],
+											"sid": 447484463282939
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 768493252785430,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-right"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 236151368039656,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 692372024376176,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = (mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1)"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 595386329383471,
+													"parameters": {
+														"variable": "mn_selected_index",
+														"value": "mn_selected_index + 1 > mn_max_index ? 0 : mn_selected_index + 1"
+													}
+												},
+												{
+													"callFunction": "setButtonSelectorTo",
+													"sid": 107262436759831,
+													"parameters": [
+														"menu_matchconfig_ball_type_button.X",
+														"menu_matchconfig_ball_type_button.Y",
+														"menu_matchconfig_ball_type_button.Width",
+														"menu_matchconfig_ball_type_button.Height"
+													]
+												}
+											],
+											"sid": 522642611525865
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 528155004536823,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-up"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 286260205350252,
+											"parameters": [
+												"\"GC - Goal amount\""
+											]
+										}
+									],
+									"sid": 446405191737465,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 345977060680524,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "d-pad-down"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 289454627366770
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "goToMatchConfigView",
+											"sid": 409857221801243,
+											"parameters": [
+												"\"GC - Ball size\""
+											]
+										}
+									],
+									"sid": 190905770071074
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 468104167150365,
+											"parameters": {
+												"gamepad": "loopindex",
+												"button": "button-a"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 834166491735054,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 393491967944457,
+													"parameters": {
+														"object": "menu_matchconfig_ball_type_button",
+														"expression": "menu_matchconfig_ball_type_button.index = mn_selected_index"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 863413744397947,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 661972632660740,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount",
+																"comparison": 5,
+																"second-value": "max_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 288488299387879,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "max_amount"
+															}
+														}
+													],
+													"sid": 968450961737358
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 777021316403086
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 848161755935693,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount",
+																"comparison": 3,
+																"second-value": "min_amount"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 222620482347775,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "min_amount"
+															}
+														}
+													],
+													"sid": 207146229044709
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 538615506125355
+														}
+													],
+													"actions": [
+														{
+															"id": "set-key",
+															"objectClass": "data_match_config",
+															"sid": 941864783958827,
+															"parameters": {
+																"key": "\"type_ball\"",
+																"value": "data_match_config.Get(\"type_ball\") + menu_matchconfig_ball_type_button.amount"
+															}
+														}
+													],
+													"sid": 556258191168513
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 261774660433355,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 297038352428139,
+															"parameters": {
+																"text": "\"Heavy II\""
+															}
+														}
+													],
+													"sid": 153306299249970
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 153809388442232,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 393143526236299,
+															"parameters": {
+																"text": "\"Heavy\""
+															}
+														}
+													],
+													"sid": 227653794641195
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 528225242086610,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 465554591421612,
+															"parameters": {
+																"text": "\"Normal\""
+															}
+														}
+													],
+													"sid": 849373728648457
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 327453837254821,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "3"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 943664279783007,
+															"parameters": {
+																"text": "\"Light\""
+															}
+														}
+													],
+													"sid": 233501510775925
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 549857121174544,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"type_ball\")",
+																"comparison": 0,
+																"second-value": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_ball_type_text",
+															"sid": 376501864646789,
+															"parameters": {
+																"text": "\"Bouncy\""
+															}
+														}
+													],
+													"sid": 598066879547348
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					],
+					"sid": 788333353258425
 				},
 				{
 					"eventType": "group",
@@ -4295,9 +5377,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 563109069809622,
+											"sid": 937320836567009,
 											"parameters": [
-												"\"GC - Goal amount\""
+												"\"GC - Ball type\""
 											]
 										}
 									],
@@ -4807,9 +5889,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 404067644254356,
+											"sid": 758667897017850,
 											"parameters": [
-												"\"GC - Goal amount\""
+												"\"GC - Ball type\""
 											]
 										}
 									],
@@ -6254,18 +7336,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 388107275389071,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_goal_text",
-															"sid": 456078987480893,
+															"sid": 950434714466933,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_goal\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 586308141681418
+													"sid": 633108697408481
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 752228290955047,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 376547777437928,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 714274400639247
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 470074943742474,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 308079918093728,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 523643723129905
 												}
 											]
 										}
@@ -6302,18 +7447,88 @@
 										"variable": "mn_selected_index",
 										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "menu_matchconfig_size_goal_text",
-									"sid": 911293560157538,
-									"parameters": {
-										"text": "data_match_config.Get(\"size_goal\")"
-									}
 								}
 							],
 							"sid": 421789317778665,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 411597435445943,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_goal\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_goal_text",
+											"sid": 884165586485462,
+											"parameters": {
+												"text": "\"Small\""
+											}
+										}
+									],
+									"sid": 962449627670570
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 625082372487564,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_goal\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_goal_text",
+											"sid": 490113687914467,
+											"parameters": {
+												"text": "\"Medium\""
+											}
+										}
+									],
+									"sid": 552402007052150
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 131489597788711,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_goal\")",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_goal_text",
+											"sid": 648848501542266,
+											"parameters": {
+												"text": "\"Big\""
+											}
+										}
+									],
+									"sid": 535263588614360
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -6635,18 +7850,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 816778310486773,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_goal_text",
-															"sid": 240998406040659,
+															"sid": 637555733083545,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_goal\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 294835077023525
+													"sid": 210360249059884
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 418813238454604,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 325544801244122,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 433982472841886
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 262642561685788,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_goal\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_goal_text",
+															"sid": 934216277688720,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 649147059524917
 												}
 											]
 										}
@@ -6897,10 +8175,10 @@
 														{
 															"id": "set-key",
 															"objectClass": "data_match_config",
-															"sid": 832032205936748,
+															"sid": 423251351932890,
 															"parameters": {
 																"key": "\"size_pitch\"",
-																"value": "2"
+																"value": "max_amount"
 															}
 														}
 													],
@@ -6962,18 +8240,81 @@
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 280487914700830,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_pitch_text",
-															"sid": 129426203752213,
+															"sid": 286890173892225,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_pitch\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 501009831240049
+													"sid": 342737060268888
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 736155517012168,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_pitch_text",
+															"sid": 589212664773640,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 221987872968145
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 664648787748563,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_pitch_text",
+															"sid": 454279773042862,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 864017193802500
 												}
 											]
 										}
@@ -7010,18 +8351,88 @@
 										"variable": "mn_selected_index",
 										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
 									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "menu_matchconfig_size_pitch_text",
-									"sid": 569465901959362,
-									"parameters": {
-										"text": "data_match_config.Get(\"size_pitch\")"
-									}
 								}
 							],
 							"sid": 303380940496134,
 							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 810416200646386,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_pitch\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_pitch_text",
+											"sid": 209659208792011,
+											"parameters": {
+												"text": "\"Small\""
+											}
+										}
+									],
+									"sid": 695769510414800
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 807290570943947,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_pitch\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_pitch_text",
+											"sid": 973583660549029,
+											"parameters": {
+												"text": "\"Medium\""
+											}
+										}
+									],
+									"sid": 627248049756001
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 583024852347043,
+											"parameters": {
+												"first-value": "data_match_config.Get(\"size_pitch\")",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "menu_matchconfig_size_pitch_text",
+											"sid": 901846765462322,
+											"parameters": {
+												"text": "\"Big\""
+											}
+										}
+									],
+									"sid": 368099189245075
+								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -7266,7 +8677,7 @@
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 750734931403875,
+															"sid": 715882871225744,
 															"parameters": {
 																"first-value": "data_match_config.Get(\"size_pitch\") + menu_matchconfig_size_pitch_button.amount",
 																"comparison": 5,
@@ -7278,14 +8689,14 @@
 														{
 															"id": "set-key",
 															"objectClass": "data_match_config",
-															"sid": 546567792895308,
+															"sid": 425728814562843,
 															"parameters": {
 																"key": "\"size_pitch\"",
-																"value": "2"
+																"value": "max_amount"
 															}
 														}
 													],
-													"sid": 564017168852163
+													"sid": 138462348203984
 												},
 												{
 													"eventType": "block",
@@ -7293,12 +8704,12 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 552797404617036
+															"sid": 119275463429566
 														},
 														{
 															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 766021452556295,
+															"sid": 772887454128396,
 															"parameters": {
 																"first-value": "data_match_config.Get(\"size_pitch\") + menu_matchconfig_size_pitch_button.amount",
 																"comparison": 3,
@@ -7310,14 +8721,14 @@
 														{
 															"id": "set-key",
 															"objectClass": "data_match_config",
-															"sid": 987653109396467,
+															"sid": 953122068144183,
 															"parameters": {
 																"key": "\"size_pitch\"",
 																"value": "min_amount"
 															}
 														}
 													],
-													"sid": 790605560441028
+													"sid": 638889845087308
 												},
 												{
 													"eventType": "block",
@@ -7325,36 +8736,99 @@
 														{
 															"id": "else",
 															"objectClass": "System",
-															"sid": 536345012008204
+															"sid": 706210347367649
 														}
 													],
 													"actions": [
 														{
 															"id": "set-key",
 															"objectClass": "data_match_config",
-															"sid": 865932700169643,
+															"sid": 576080394067575,
 															"parameters": {
 																"key": "\"size_pitch\"",
-																"value": "data_match_config.Get(\"size_goal\") + menu_matchconfig_size_pitch_button.amount"
+																"value": "data_match_config.Get(\"size_pitch\") + menu_matchconfig_size_pitch_button.amount"
 															}
 														}
 													],
-													"sid": 481400505617389
+													"sid": 432011208689337
 												},
 												{
 													"eventType": "block",
-													"conditions": [],
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 992707336708180,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
 													"actions": [
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_size_pitch_text",
-															"sid": 910631589853554,
+															"sid": 829822467737197,
 															"parameters": {
-																"text": "data_match_config.Get(\"size_pitch\")"
+																"text": "\"Small\""
 															}
 														}
 													],
-													"sid": 230754615989288
+													"sid": 561234485611407
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 649055872236034,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "1"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_pitch_text",
+															"sid": 834787495818741,
+															"parameters": {
+																"text": "\"Medium\""
+															}
+														}
+													],
+													"sid": 871424079017953
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 690498781458053,
+															"parameters": {
+																"first-value": "data_match_config.Get(\"size_pitch\")",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "menu_matchconfig_size_pitch_text",
+															"sid": 722976303859753,
+															"parameters": {
+																"text": "\"Big\""
+															}
+														}
+													],
+													"sid": 200204963457898
 												}
 											]
 										}
@@ -7399,14 +8873,6 @@
 									"parameters": {
 										"variable": "mn_selected_index",
 										"value": "mn_selected_index > mn_max_index ? mn_max_index : mn_selected_index"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "menu_matchconfig_size_goal_text",
-									"sid": 292527043691145,
-									"parameters": {
-										"text": "data_match_config.Get(\"size_goal\")"
 									}
 								}
 							],
@@ -7572,9 +9038,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 184868107001428,
+											"sid": 253687657861476,
 											"parameters": [
-												"\"GC - Goal size\""
+												"\"GC - Pitch size\""
 											]
 										}
 									],
