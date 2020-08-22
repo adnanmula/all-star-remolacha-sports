@@ -79,11 +79,6 @@
 							"id": "reset-global-variables",
 							"objectClass": "System",
 							"sid": 342438709360371
-						},
-						{
-							"callFunction": "mapFunctions",
-							"sid": 820531011775586,
-							"disabled": true
 						}
 					],
 					"sid": 718724352854851
@@ -185,11 +180,11 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 139920612524752,
+							"sid": 932195026682309,
 							"parameters": [
 								"data_gamepad.Get(\"player0_gamepad_index\")",
 								"data_gamepad.Get(\"player0_character\")",
-								"90",
+								"140",
 								"200",
 								"data_match_config.Get(\"size_player\")"
 							]
@@ -265,9 +260,9 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 179308785098566,
+							"sid": 744733034738031,
 							"parameters": [
-								"630",
+								"950",
 								"200",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
@@ -275,22 +270,22 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 455254751592902,
+							"sid": 115043862055178,
 							"parameters": [
 								"data_gamepad.Get(\"player0_gamepad_index\")",
 								"data_gamepad.Get(\"player0_character\")",
-								"90",
+								"140",
 								"200",
 								"data_match_config.Get(\"size_player\")"
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 818155809311003,
+							"sid": 512870555925456,
 							"parameters": [
 								"data_gamepad.Get(\"player1_gamepad_index\")",
 								"data_gamepad.Get(\"player1_character\")",
-								"500",
+								"820",
 								"200",
 								"data_match_config.Get(\"size_player\")"
 							]
@@ -314,7 +309,7 @@
 						},
 						{
 							"type": "script",
-							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
+							"script": "BallInstance.create(runtime, 480, 100, localVars.size_ball);"
 						}
 					],
 					"sid": 698722527793494
@@ -355,9 +350,9 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 453326285310295,
+							"sid": 387331559163519,
 							"parameters": [
-								"630",
+								"1270",
 								"200",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
@@ -365,22 +360,22 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 132876458492762,
+							"sid": 374378209573193,
 							"parameters": [
 								"data_gamepad.Get(\"player0_gamepad_index\")",
 								"data_gamepad.Get(\"player0_character\")",
-								"90",
+								"140",
 								"200",
 								"data_match_config.Get(\"size_player\")"
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 219952808292756,
+							"sid": 644425502735694,
 							"parameters": [
 								"data_gamepad.Get(\"player1_gamepad_index\")",
 								"data_gamepad.Get(\"player1_character\")",
-								"500",
+								"1140",
 								"200",
 								"data_match_config.Get(\"size_player\")"
 							]
@@ -404,7 +399,7 @@
 						},
 						{
 							"type": "script",
-							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
+							"script": "BallInstance.create(runtime, 640, 100, localVars.size_ball);"
 						}
 					],
 					"sid": 975796612942102
@@ -707,53 +702,214 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-evaluate",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 290455103112445,
+									"sid": 175109291934582,
 									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
+										"first-value": "data_match_config.Get(\"size_pitch\")",
+										"comparison": 0,
+										"second-value": "0"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 147449688234460,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 254765262708108,
-									"parameters": {
-										"x": "90",
-										"y": "200"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 300227998574461,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 249053586414577,
+											"parameters": {
+												"x": "140",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 633636246177496
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 364913173664573,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 670182257189129,
+											"parameters": {
+												"x": "500",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 546272589569158
 								}
-							],
-							"sid": 598936074863066
+							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-evaluate",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 729013260524540,
+									"sid": 449764683902787,
 									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
+										"first-value": "data_match_config.Get(\"size_pitch\")",
+										"comparison": 0,
+										"second-value": "1"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 219414194160798,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 865548881357000,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 480288775722629,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 119833336380113,
+											"parameters": {
+												"x": "140",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 215602261528952
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 949559558967267,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 482729436501062,
+											"parameters": {
+												"x": "820",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 816846320772647
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 705608672334162,
 									"parameters": {
-										"x": "500",
-										"y": "200"
+										"first-value": "data_match_config.Get(\"size_pitch\")",
+										"comparison": 0,
+										"second-value": "2"
 									}
 								}
 							],
-							"sid": 779791364496069
+							"actions": [],
+							"sid": 862036516087942,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 112709835738476,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 976940368853052,
+											"parameters": {
+												"x": "140",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 143480109843183
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 608946038349206,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 761864915936067,
+											"parameters": {
+												"x": "1140",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 833017812925284
+								}
+							]
 						}
 					]
 				},
@@ -1048,6 +1204,355 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ball",
+							"sid": 157442330662117
+						}
+					],
+					"actions": [],
+					"sid": 600755142838816,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "TYPE_HEAVY+"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 220435928921849,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 176479080515198,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "3"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 812741340303449,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.5"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 800913282278153,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.5"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 601308642593347,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 398770726779445,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "1"
+									}
+								}
+							],
+							"sid": 908020309466000
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_HEAVY"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 660601289954044,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 736486263717494,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "2"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 278303314768501,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.4"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 440610160981280,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.6"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 234325779770722,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0.1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 340558138061412,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.1"
+									}
+								}
+							],
+							"sid": 543176415793503
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_NORMAL"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 924169645281277,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 176957660586991,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "1"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 520935598492366,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.3"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 567996582523683,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.75"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 858114237665513,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 580797344955462,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.01"
+									}
+								}
+							],
+							"sid": 113759323599432
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_LIGHT"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 270098098547823,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 932412763425368,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "1"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 724598045098466,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "1"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 441437455429604,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 216218119441148,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 492747695549021,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "1"
+									}
+								}
+							],
+							"sid": 788931272341386
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_BOUNCY"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 406507384222282,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 517097199541525,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "0.8"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 461507857253635,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.2"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 279486442303449,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "1"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 947005226418739,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 330145454160055,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.01"
+									}
+								}
+							],
+							"sid": 626746513765445
+						}
+					]
 				}
 			],
 			"sid": 752841824824843,
@@ -1062,355 +1567,6 @@
 				0.4666666666666667,
 				0,
 				1
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "ball",
-					"sid": 850148595337024
-				}
-			],
-			"actions": [],
-			"sid": 733477767332048,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "TYPE_HEAVY+"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-value",
-							"objectClass": "data_match_config",
-							"sid": 955338239727740,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"comparison": 0,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-density",
-							"objectClass": "ball",
-							"sid": 438839032103898,
-							"behaviorType": "Physics",
-							"parameters": {
-								"density": "3"
-							}
-						},
-						{
-							"id": "set-friction",
-							"objectClass": "ball",
-							"sid": 717875078296856,
-							"behaviorType": "Physics",
-							"parameters": {
-								"friction": "0.5"
-							}
-						},
-						{
-							"id": "set-elasticity",
-							"objectClass": "ball",
-							"sid": 798501938660048,
-							"behaviorType": "Physics",
-							"parameters": {
-								"elasticity": "0.5"
-							}
-						},
-						{
-							"id": "set-linear-damping",
-							"objectClass": "ball",
-							"sid": 366764278389413,
-							"behaviorType": "Physics",
-							"parameters": {
-								"linear-damping": "1"
-							}
-						},
-						{
-							"id": "set-angular-damping",
-							"objectClass": "ball",
-							"sid": 186714528958449,
-							"behaviorType": "Physics",
-							"parameters": {
-								"angular-damping": "1"
-							}
-						}
-					],
-					"sid": 867262169748317
-				},
-				{
-					"eventType": "comment",
-					"text": "TYPE_HEAVY"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-value",
-							"objectClass": "data_match_config",
-							"sid": 664405795120781,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-density",
-							"objectClass": "ball",
-							"sid": 722523716041476,
-							"behaviorType": "Physics",
-							"parameters": {
-								"density": "2"
-							}
-						},
-						{
-							"id": "set-friction",
-							"objectClass": "ball",
-							"sid": 654058005963609,
-							"behaviorType": "Physics",
-							"parameters": {
-								"friction": "0.4"
-							}
-						},
-						{
-							"id": "set-elasticity",
-							"objectClass": "ball",
-							"sid": 272368681974274,
-							"behaviorType": "Physics",
-							"parameters": {
-								"elasticity": "0.6"
-							}
-						},
-						{
-							"id": "set-linear-damping",
-							"objectClass": "ball",
-							"sid": 503013230582216,
-							"behaviorType": "Physics",
-							"parameters": {
-								"linear-damping": "0.1"
-							}
-						},
-						{
-							"id": "set-angular-damping",
-							"objectClass": "ball",
-							"sid": 548059721765715,
-							"behaviorType": "Physics",
-							"parameters": {
-								"angular-damping": "0.1"
-							}
-						}
-					],
-					"sid": 265808906617822
-				},
-				{
-					"eventType": "comment",
-					"text": "TYPE_NORMAL"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-value",
-							"objectClass": "data_match_config",
-							"sid": 998511907224427,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"comparison": 0,
-								"value": "2"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-density",
-							"objectClass": "ball",
-							"sid": 548724925320010,
-							"behaviorType": "Physics",
-							"parameters": {
-								"density": "1"
-							}
-						},
-						{
-							"id": "set-friction",
-							"objectClass": "ball",
-							"sid": 618549317575478,
-							"behaviorType": "Physics",
-							"parameters": {
-								"friction": "0.3"
-							}
-						},
-						{
-							"id": "set-elasticity",
-							"objectClass": "ball",
-							"sid": 641337854991933,
-							"behaviorType": "Physics",
-							"parameters": {
-								"elasticity": "0.75"
-							}
-						},
-						{
-							"id": "set-linear-damping",
-							"objectClass": "ball",
-							"sid": 466126577254955,
-							"behaviorType": "Physics",
-							"parameters": {
-								"linear-damping": "0"
-							}
-						},
-						{
-							"id": "set-angular-damping",
-							"objectClass": "ball",
-							"sid": 807017158987595,
-							"behaviorType": "Physics",
-							"parameters": {
-								"angular-damping": "0.01"
-							}
-						}
-					],
-					"sid": 342573264324628
-				},
-				{
-					"eventType": "comment",
-					"text": "TYPE_LIGHT"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-value",
-							"objectClass": "data_match_config",
-							"sid": 774381117884083,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"comparison": 0,
-								"value": "3"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-density",
-							"objectClass": "ball",
-							"sid": 142153275406471,
-							"behaviorType": "Physics",
-							"parameters": {
-								"density": "1"
-							}
-						},
-						{
-							"id": "set-friction",
-							"objectClass": "ball",
-							"sid": 393218437894135,
-							"behaviorType": "Physics",
-							"parameters": {
-								"friction": "1"
-							}
-						},
-						{
-							"id": "set-elasticity",
-							"objectClass": "ball",
-							"sid": 818333915518704,
-							"behaviorType": "Physics",
-							"parameters": {
-								"elasticity": "0"
-							}
-						},
-						{
-							"id": "set-linear-damping",
-							"objectClass": "ball",
-							"sid": 988586454319172,
-							"behaviorType": "Physics",
-							"parameters": {
-								"linear-damping": "1"
-							}
-						},
-						{
-							"id": "set-angular-damping",
-							"objectClass": "ball",
-							"sid": 668369357133307,
-							"behaviorType": "Physics",
-							"parameters": {
-								"angular-damping": "1"
-							}
-						}
-					],
-					"sid": 798139084362130
-				},
-				{
-					"eventType": "comment",
-					"text": "TYPE_BOUNCY"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-value",
-							"objectClass": "data_match_config",
-							"sid": 648668367220056,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"comparison": 0,
-								"value": "4"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-density",
-							"objectClass": "ball",
-							"sid": 208552438035586,
-							"behaviorType": "Physics",
-							"parameters": {
-								"density": "0.8"
-							}
-						},
-						{
-							"id": "set-friction",
-							"objectClass": "ball",
-							"sid": 350345402316289,
-							"behaviorType": "Physics",
-							"parameters": {
-								"friction": "0.2"
-							}
-						},
-						{
-							"id": "set-elasticity",
-							"objectClass": "ball",
-							"sid": 603872008903186,
-							"behaviorType": "Physics",
-							"parameters": {
-								"elasticity": "1"
-							}
-						},
-						{
-							"id": "set-linear-damping",
-							"objectClass": "ball",
-							"sid": 712496646556477,
-							"behaviorType": "Physics",
-							"parameters": {
-								"linear-damping": "0"
-							}
-						},
-						{
-							"id": "set-angular-damping",
-							"objectClass": "ball",
-							"sid": 671704699021444,
-							"behaviorType": "Physics",
-							"parameters": {
-								"angular-damping": "0.01"
-							}
-						}
-					],
-					"sid": 934545890346744
-				}
 			]
 		}
 	],

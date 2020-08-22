@@ -624,17 +624,6 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 255528290975542,
-									"disabled": true,
-									"parameters": {
-										"first-value": "goal_volley.Count",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
 									"sid": 359816902348106,
 									"parameters": {
 										"first-value": "goal_volley_count",

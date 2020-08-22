@@ -1,11 +1,6 @@
 
 class BallInstance extends ISpriteInstance
 {
-	constructor()
-	{
-		super();
-	}
-	
 	static create(runtime, x, y, size)
 	{
 		const instance = runtime.objects.ball.createInstance("Main", x, y);
