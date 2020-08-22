@@ -163,6 +163,13 @@
 							}
 						},
 						{
+							"callFunction": "goToView",
+							"sid": 906170745625925,
+							"parameters": [
+								"MN_VIEW_MAIN"
+							]
+						},
+						{
 							"callFunction": "mapFunctions",
 							"sid": 832249680970321
 						},
@@ -332,7 +339,7 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_gamepad",
-							"sid": 279033472124843,
+							"sid": 540012095735692,
 							"parameters": {
 								"key": "\"player0_character\"",
 								"value": "\"\""
@@ -345,15 +352,6 @@
 							"parameters": {
 								"key": "\"player1_character\"",
 								"value": "\"\""
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 607723336076210,
-							"parameters": {
-								"key": "\"player-1_ready\"",
-								"value": "0"
 							}
 						},
 						{
