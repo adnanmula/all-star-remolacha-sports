@@ -833,63 +833,20 @@
 											}
 										}
 									],
-									"actions": [],
-									"sid": 284223065494483,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-value",
-													"objectClass": "data_match_config",
-													"sid": 813621631488220,
-													"parameters": {
-														"key": "\"match_type\"",
-														"comparison": 0,
-														"value": "MATCH_TYPE_VOLLEY"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "ball",
-													"sid": 109353597642627,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "5",
-														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
-														"image-point": "0"
-													}
-												}
-											],
-											"sid": 412725192355901
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 715408503820176
-												}
-											],
-											"actions": [
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "ball",
-													"sid": 232765135786967,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "15",
-														"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
-														"image-point": "0"
-													}
-												}
-											],
-											"sid": 709931976779558
+											"id": "apply-impulse-at-angle",
+											"objectClass": "ball",
+											"sid": 762510091033769,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "15",
+												"angle": "angle(player.X, player.Y, ball.X, ball.Y)",
+												"image-point": "0"
+											}
 										}
-									]
+									],
+									"sid": 284223065494483
 								}
 							]
 						}
@@ -943,63 +900,20 @@
 											}
 										}
 									],
-									"actions": [],
-									"sid": 359065502068060,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-value",
-													"objectClass": "data_match_config",
-													"sid": 392539196561722,
-													"parameters": {
-														"key": "\"match_type\"",
-														"comparison": 0,
-														"value": "MATCH_TYPE_VOLLEY"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "ball",
-													"sid": 228365832977349,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "1",
-														"angle": "270",
-														"image-point": "0"
-													}
-												}
-											],
-											"sid": 753736296097873
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 898666309773206
-												}
-											],
-											"actions": [
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "ball",
-													"sid": 600664919892510,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "5",
-														"angle": "270",
-														"image-point": "0"
-													}
-												}
-											],
-											"sid": 805645681721034
+											"id": "apply-impulse-at-angle",
+											"objectClass": "ball",
+											"sid": 883080059989745,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "5",
+												"angle": "270",
+												"image-point": "0"
+											}
 										}
-									]
+									],
+									"sid": 359065502068060
 								}
 							]
 						}
@@ -1148,6 +1062,355 @@
 				0.4666666666666667,
 				0,
 				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "ball",
+					"sid": 850148595337024
+				}
+			],
+			"actions": [],
+			"sid": 733477767332048,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "TYPE_HEAVY+"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 955338239727740,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-density",
+							"objectClass": "ball",
+							"sid": 438839032103898,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "3"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "ball",
+							"sid": 717875078296856,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "0.5"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "ball",
+							"sid": 798501938660048,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "0.5"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "ball",
+							"sid": 366764278389413,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "1"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "ball",
+							"sid": 186714528958449,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "1"
+							}
+						}
+					],
+					"sid": 867262169748317
+				},
+				{
+					"eventType": "comment",
+					"text": "TYPE_HEAVY"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 664405795120781,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-density",
+							"objectClass": "ball",
+							"sid": 722523716041476,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "2"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "ball",
+							"sid": 654058005963609,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "0.4"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "ball",
+							"sid": 272368681974274,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "0.6"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "ball",
+							"sid": 503013230582216,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "0.1"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "ball",
+							"sid": 548059721765715,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "0.1"
+							}
+						}
+					],
+					"sid": 265808906617822
+				},
+				{
+					"eventType": "comment",
+					"text": "TYPE_NORMAL"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 998511907224427,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-density",
+							"objectClass": "ball",
+							"sid": 548724925320010,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "1"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "ball",
+							"sid": 618549317575478,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "0.3"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "ball",
+							"sid": 641337854991933,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "0.75"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "ball",
+							"sid": 466126577254955,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "0"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "ball",
+							"sid": 807017158987595,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "0.01"
+							}
+						}
+					],
+					"sid": 342573264324628
+				},
+				{
+					"eventType": "comment",
+					"text": "TYPE_LIGHT"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 774381117884083,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-density",
+							"objectClass": "ball",
+							"sid": 142153275406471,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "1"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "ball",
+							"sid": 393218437894135,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "1"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "ball",
+							"sid": 818333915518704,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "0"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "ball",
+							"sid": 988586454319172,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "1"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "ball",
+							"sid": 668369357133307,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "1"
+							}
+						}
+					],
+					"sid": 798139084362130
+				},
+				{
+					"eventType": "comment",
+					"text": "TYPE_BOUNCY"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 648668367220056,
+							"parameters": {
+								"key": "\"type_ball\"",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-density",
+							"objectClass": "ball",
+							"sid": 208552438035586,
+							"behaviorType": "Physics",
+							"parameters": {
+								"density": "0.8"
+							}
+						},
+						{
+							"id": "set-friction",
+							"objectClass": "ball",
+							"sid": 350345402316289,
+							"behaviorType": "Physics",
+							"parameters": {
+								"friction": "0.2"
+							}
+						},
+						{
+							"id": "set-elasticity",
+							"objectClass": "ball",
+							"sid": 603872008903186,
+							"behaviorType": "Physics",
+							"parameters": {
+								"elasticity": "1"
+							}
+						},
+						{
+							"id": "set-linear-damping",
+							"objectClass": "ball",
+							"sid": 712496646556477,
+							"behaviorType": "Physics",
+							"parameters": {
+								"linear-damping": "0"
+							}
+						},
+						{
+							"id": "set-angular-damping",
+							"objectClass": "ball",
+							"sid": 671704699021444,
+							"behaviorType": "Physics",
+							"parameters": {
+								"angular-damping": "0.01"
+							}
+						}
+					],
+					"sid": 934545890346744
+				}
 			]
 		}
 	],

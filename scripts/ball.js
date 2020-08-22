@@ -1,14 +1,14 @@
 
 class BallInstance extends ISpriteInstance
 {
-	constructor(runtime)
+	constructor()
 	{
 		super();
 	}
 	
 	static create(runtime, x, y, size)
 	{
-		let instance = runtime.objects.ball.createInstance("Main", x, y);
+		const instance = runtime.objects.ball.createInstance("Main", x, y);
 
 		let diameter = 40;
 
@@ -23,8 +23,6 @@ class BallInstance extends ISpriteInstance
 				diameter = 60;
 				break;
 		}
-		
-		instance.set
 		
 		instance.width = diameter;
 		instance.height = diameter;
