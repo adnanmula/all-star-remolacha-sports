@@ -1683,6 +1683,7 @@
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 220887015574679,
+							"disabled": true,
 							"parameters": {
 								"group-name": "\"GC - Ball size\"",
 								"state": "deactivated"
@@ -1692,6 +1693,7 @@
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 259182019122410,
+							"disabled": true,
 							"parameters": {
 								"group-name": "\"GC - Player size\"",
 								"state": "deactivated"
@@ -4337,9 +4339,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 428157279612012,
+											"sid": 921709041589796,
 											"parameters": [
-												"\"GC - Ball size\""
+												"\"GC - Goal size\""
 											]
 										}
 									],
@@ -4645,9 +4647,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "menu_matchconfig_ball_type_text",
-											"sid": 327389678864951,
+											"sid": 469253293279937,
 											"parameters": {
-												"text": "\"Heavy II\""
+												"text": "\"Heavy+\""
 											}
 										}
 									],
@@ -4959,9 +4961,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 409857221801243,
+											"sid": 582909806793291,
 											"parameters": [
-												"\"GC - Ball size\""
+												"\"GC - Goal size\""
 											]
 										}
 									],
@@ -5098,9 +5100,9 @@
 														{
 															"id": "set-text",
 															"objectClass": "menu_matchconfig_ball_type_text",
-															"sid": 297038352428139,
+															"sid": 691869685770694,
 															"parameters": {
-																"text": "\"Heavy II\""
+																"text": "\"Heavy+\""
 															}
 														}
 													],
@@ -5222,7 +5224,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "GC - Ball size",
 					"description": "",
 					"isActiveOnStart": false,
@@ -5249,7 +5251,7 @@
 						},
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "GC - BS - Keyboard",
 							"description": "",
 							"isActiveOnStart": true,
@@ -5268,6 +5270,7 @@
 									],
 									"actions": [],
 									"sid": 121827675377993,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5303,7 +5306,8 @@
 													]
 												}
 											],
-											"sid": 539524531135211
+											"sid": 539524531135211,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -5322,6 +5326,7 @@
 									],
 									"actions": [],
 									"sid": 556434194401477,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5357,7 +5362,8 @@
 													]
 												}
 											],
-											"sid": 735316514094788
+											"sid": 735316514094788,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -5384,6 +5390,7 @@
 										}
 									],
 									"sid": 731197354972916,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -5408,6 +5415,7 @@
 										}
 									],
 									"sid": 895255602895344,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -5424,6 +5432,7 @@
 									],
 									"actions": [],
 									"sid": 101941458168639,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5440,6 +5449,7 @@
 											],
 											"actions": [],
 											"sid": 824922359092863,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -5466,7 +5476,8 @@
 															}
 														}
 													],
-													"sid": 674856036805294
+													"sid": 674856036805294,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -5498,7 +5509,8 @@
 															}
 														}
 													],
-													"sid": 317863428519566
+													"sid": 317863428519566,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -5520,7 +5532,8 @@
 															}
 														}
 													],
-													"sid": 868595709028398
+													"sid": 868595709028398,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -5546,7 +5559,8 @@
 															}
 														}
 													],
-													"sid": 478094346690290
+													"sid": 478094346690290,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -5572,7 +5586,8 @@
 															}
 														}
 													],
-													"sid": 251214124861234
+													"sid": 251214124861234,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -5598,7 +5613,8 @@
 															}
 														}
 													],
-													"sid": 746215622349574
+													"sid": 746215622349574,
+													"disabled": true
 												}
 											]
 										}
@@ -5638,6 +5654,7 @@
 								}
 							],
 							"sid": 699005369477542,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -5663,7 +5680,8 @@
 											}
 										}
 									],
-									"sid": 483826314495322
+									"sid": 483826314495322,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -5689,7 +5707,8 @@
 											}
 										}
 									],
-									"sid": 845901514238140
+									"sid": 845901514238140,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -5715,7 +5734,8 @@
 											}
 										}
 									],
-									"sid": 554717696978324
+									"sid": 554717696978324,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -5742,7 +5762,8 @@
 											]
 										}
 									],
-									"sid": 396313711675320
+									"sid": 396313711675320,
+									"disabled": true
 								}
 							]
 						},
@@ -5762,6 +5783,7 @@
 							],
 							"actions": [],
 							"sid": 831880011610772,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -5778,6 +5800,7 @@
 									],
 									"actions": [],
 									"sid": 233818336673111,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5813,7 +5836,8 @@
 													]
 												}
 											],
-											"sid": 931544641883446
+											"sid": 931544641883446,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -5833,6 +5857,7 @@
 									],
 									"actions": [],
 									"sid": 747549581961191,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5868,7 +5893,8 @@
 													]
 												}
 											],
-											"sid": 515777613178271
+											"sid": 515777613178271,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -5896,6 +5922,7 @@
 										}
 									],
 									"sid": 898131696967113,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -5925,7 +5952,8 @@
 											]
 										}
 									],
-									"sid": 339353544044351
+									"sid": 339353544044351,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -5942,6 +5970,7 @@
 									],
 									"actions": [],
 									"sid": 906431877232054,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -5958,6 +5987,7 @@
 											],
 											"actions": [],
 											"sid": 901860274803779,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -5984,7 +6014,8 @@
 															}
 														}
 													],
-													"sid": 429427093937060
+													"sid": 429427093937060,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6016,7 +6047,8 @@
 															}
 														}
 													],
-													"sid": 385572940249105
+													"sid": 385572940249105,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6038,7 +6070,8 @@
 															}
 														}
 													],
-													"sid": 502478622086958
+													"sid": 502478622086958,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6064,7 +6097,8 @@
 															}
 														}
 													],
-													"sid": 610849303231106
+													"sid": 610849303231106,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6090,7 +6124,8 @@
 															}
 														}
 													],
-													"sid": 438707972315833
+													"sid": 438707972315833,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6116,7 +6151,8 @@
 															}
 														}
 													],
-													"sid": 937350617266283
+													"sid": 937350617266283,
+													"disabled": true
 												}
 											]
 										}
@@ -6130,7 +6166,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "GC - Player size",
 					"description": "",
 					"isActiveOnStart": false,
@@ -6157,7 +6193,7 @@
 						},
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "GC - PS - Keyboard",
 							"description": "",
 							"isActiveOnStart": true,
@@ -6176,6 +6212,7 @@
 									],
 									"actions": [],
 									"sid": 655894406254057,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6211,7 +6248,8 @@
 													]
 												}
 											],
-											"sid": 326317371124488
+											"sid": 326317371124488,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -6230,6 +6268,7 @@
 									],
 									"actions": [],
 									"sid": 352805134056171,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6265,7 +6304,8 @@
 													]
 												}
 											],
-											"sid": 633275051680372
+											"sid": 633275051680372,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -6292,6 +6332,7 @@
 										}
 									],
 									"sid": 706038824486762,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -6316,6 +6357,7 @@
 										}
 									],
 									"sid": 291009460504459,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -6332,6 +6374,7 @@
 									],
 									"actions": [],
 									"sid": 748056567300323,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6348,6 +6391,7 @@
 											],
 											"actions": [],
 											"sid": 867290199143232,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -6374,7 +6418,8 @@
 															}
 														}
 													],
-													"sid": 403379597602141
+													"sid": 403379597602141,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6406,7 +6451,8 @@
 															}
 														}
 													],
-													"sid": 532448800791691
+													"sid": 532448800791691,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6428,7 +6474,8 @@
 															}
 														}
 													],
-													"sid": 347077145550038
+													"sid": 347077145550038,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6454,7 +6501,8 @@
 															}
 														}
 													],
-													"sid": 397618715618523
+													"sid": 397618715618523,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6480,7 +6528,8 @@
 															}
 														}
 													],
-													"sid": 215232175195551
+													"sid": 215232175195551,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6506,7 +6555,8 @@
 															}
 														}
 													],
-													"sid": 394723293466774
+													"sid": 394723293466774,
+													"disabled": true
 												}
 											]
 										}
@@ -6546,6 +6596,7 @@
 								}
 							],
 							"sid": 646611924424040,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -6571,7 +6622,8 @@
 											}
 										}
 									],
-									"sid": 827931870259797
+									"sid": 827931870259797,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -6597,7 +6649,8 @@
 											}
 										}
 									],
-									"sid": 218537538435314
+									"sid": 218537538435314,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -6623,7 +6676,8 @@
 											}
 										}
 									],
-									"sid": 773016938313080
+									"sid": 773016938313080,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -6650,7 +6704,8 @@
 											]
 										}
 									],
-									"sid": 543255766033045
+									"sid": 543255766033045,
+									"disabled": true
 								}
 							]
 						},
@@ -6670,6 +6725,7 @@
 							],
 							"actions": [],
 							"sid": 664117192866956,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -6686,6 +6742,7 @@
 									],
 									"actions": [],
 									"sid": 262393291932880,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6721,7 +6778,8 @@
 													]
 												}
 											],
-											"sid": 992737036738118
+											"sid": 992737036738118,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -6741,6 +6799,7 @@
 									],
 									"actions": [],
 									"sid": 410156323238207,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6776,7 +6835,8 @@
 													]
 												}
 											],
-											"sid": 493915409095381
+											"sid": 493915409095381,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -6804,6 +6864,7 @@
 										}
 									],
 									"sid": 970430654121620,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -6829,6 +6890,7 @@
 										}
 									],
 									"sid": 521279741652596,
+									"disabled": true,
 									"isOrBlock": true
 								},
 								{
@@ -6846,6 +6908,7 @@
 									],
 									"actions": [],
 									"sid": 520535564176286,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -6862,6 +6925,7 @@
 											],
 											"actions": [],
 											"sid": 955394480164185,
+											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
@@ -6888,7 +6952,8 @@
 															}
 														}
 													],
-													"sid": 551584293719367
+													"sid": 551584293719367,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6920,7 +6985,8 @@
 															}
 														}
 													],
-													"sid": 357739725585021
+													"sid": 357739725585021,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6942,7 +7008,8 @@
 															}
 														}
 													],
-													"sid": 713270069979711
+													"sid": 713270069979711,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6968,7 +7035,8 @@
 															}
 														}
 													],
-													"sid": 326858634348776
+													"sid": 326858634348776,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -6994,7 +7062,8 @@
 															}
 														}
 													],
-													"sid": 996995970729472
+													"sid": 996995970729472,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -7020,7 +7089,8 @@
 															}
 														}
 													],
-													"sid": 109199222288537
+													"sid": 109199222288537,
+													"disabled": true
 												}
 											]
 										}
@@ -7189,9 +7259,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 732706934983375,
+											"sid": 653952452052516,
 											"parameters": [
-												"\"GC - Player size\""
+												"\"GC - Ball type\""
 											]
 										}
 									],
@@ -7701,9 +7771,9 @@
 									"actions": [
 										{
 											"callFunction": "goToMatchConfigView",
-											"sid": 482374007139800,
+											"sid": 811603877917185,
 											"parameters": [
-												"\"GC - Player size\""
+												"\"GC - Ball type\""
 											]
 										}
 									],
@@ -7785,10 +7855,10 @@
 														{
 															"id": "set-key",
 															"objectClass": "data_match_config",
-															"sid": 309453815009373,
+															"sid": 448864219295758,
 															"parameters": {
 																"key": "\"size_goal\"",
-																"value": "2"
+																"value": "max_amount"
 															}
 														}
 													],

@@ -175,27 +175,7 @@
 							"sid": 998848978911667
 						}
 					],
-					"sid": 137089134286423,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 529204066614247
-								}
-							],
-							"actions": [
-								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 899594441971198
-								}
-							],
-							"sid": 128874631900424
-						}
-					]
+					"sid": 137089134286423
 				},
 				{
 					"functionName": "dataInitializeMatchConfig",
