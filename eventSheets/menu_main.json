@@ -357,7 +357,25 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_gamepad",
-							"sid": 156245417962678,
+							"sid": 268811040620849,
+							"parameters": {
+								"key": "\"player2_character\"",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 159604719739415,
+							"parameters": {
+								"key": "\"player3_character\"",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 428428428020783,
 							"parameters": {
 								"key": "\"player0_ready\"",
 								"value": "0"
@@ -369,6 +387,24 @@
 							"sid": 366098513607777,
 							"parameters": {
 								"key": "\"player1_ready\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 385677089510249,
+							"parameters": {
+								"key": "\"player2_ready\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 651295811136951,
+							"parameters": {
+								"key": "\"player3_ready\"",
 								"value": "0"
 							}
 						}

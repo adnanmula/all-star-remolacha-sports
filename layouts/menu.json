@@ -468,6 +468,68 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "menu_gamepad_selector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "player2_wait",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 125,
+					"instanceVariables": {
+						"player": 2
+					},
+					"behaviors": {},
+					"world": {
+						"x": 756.5707017541899,
+						"y": 273.42773763768116,
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_gamepad_selector",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "player3_wait",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 126,
+					"instanceVariables": {
+						"player": 3
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1159.036163194937,
+						"y": 273.42773763768116,
+						"width": 100,
+						"height": 40,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 633151189240695,

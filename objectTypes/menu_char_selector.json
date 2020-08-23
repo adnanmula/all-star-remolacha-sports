@@ -21,6 +21,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 390399185890795
+		},
+		{
+			"name": "player",
+			"type": "number",
+			"desc": "",
+			"sid": 516731583244202
 		}
 	],
 	"behaviorTypes": [],

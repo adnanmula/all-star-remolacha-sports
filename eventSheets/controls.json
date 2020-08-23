@@ -61,11 +61,11 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 838519907508704,
+											"sid": 420984369043190,
 											"parameters": {
 												"first-value": "player.gamepad_index",
 												"comparison": 0,
-												"second-value": "-1"
+												"second-value": "9"
 											}
 										}
 									],
