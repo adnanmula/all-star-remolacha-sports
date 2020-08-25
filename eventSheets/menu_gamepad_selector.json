@@ -299,6 +299,11 @@
 											"parameters": [
 												"MN_VIEW_MAIN"
 											]
+										},
+										{
+											"id": "restart-layout",
+											"objectClass": "System",
+											"sid": 986484913752261
 										}
 									],
 									"sid": 568790593189924

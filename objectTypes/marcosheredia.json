@@ -53,37 +53,6 @@
 			{
 				"frames": [
 					{
-						"width": 31,
-						"height": 59,
-						"originX": 0.532258064516129,
-						"originY": 0.4915254237288136,
-						"originalSource": "",
-						"exportFormat": "png",
-						"exportQuality": 0.8,
-						"imageSpriteId": 6707304,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
-						"useCollisionPoly": true,
-						"imagePoints": [
-							{
-								"name": "feet_detector",
-								"x": 0.532258064516129,
-								"y": 0.8601694915254238
-							}
-						],
-						"duration": 1
-					},
-					{
 						"width": 42,
 						"height": 60,
 						"originX": 0.39285714285714285,
@@ -110,7 +79,7 @@
 				],
 				"sid": 248101166953486,
 				"name": "kick",
-				"isLooping": true,
+				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
