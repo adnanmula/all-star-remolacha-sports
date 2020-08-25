@@ -111,6 +111,56 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 816799822642037,
+											"parameters": {
+												"object": "menu_gamepad_selector",
+												"expression": "menu_gamepad_selector.player = 2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "menu_gamepad_selector",
+											"sid": 639136086351872,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 781168564423986
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 600067337103886,
+											"parameters": {
+												"object": "menu_gamepad_selector",
+												"expression": "menu_gamepad_selector.player = 3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "menu_gamepad_selector",
+											"sid": 799762071273598,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 195651491771575
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "has-key",
 											"objectClass": "data_gamepad",
 											"sid": 317158217616947,

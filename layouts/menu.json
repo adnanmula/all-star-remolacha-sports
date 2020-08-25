@@ -146,7 +146,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 757.0690340606882,
+						"x": 717,
 						"y": 315.98277152323806,
 						"width": 100,
 						"height": 40,
@@ -177,7 +177,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1159.036163194937,
+						"x": 1199,
 						"y": 315.98277152323806,
 						"width": 100,
 						"height": 40,
@@ -472,7 +472,7 @@
 				{
 					"type": "menu_gamepad_selector",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "player2_wait",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -484,8 +484,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 756.5707017541899,
-						"y": 273.42773763768116,
+						"x": 841,
+						"y": 315.98277152323806,
 						"width": 100,
 						"height": 40,
 						"originX": 0.5,
@@ -503,7 +503,7 @@
 				{
 					"type": "menu_gamepad_selector",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "player3_wait",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -515,8 +515,8 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1159.036163194937,
-						"y": 273.42773763768116,
+						"x": 1075,
+						"y": 315.98277152323806,
 						"width": 100,
 						"height": 40,
 						"originX": 0.5,
