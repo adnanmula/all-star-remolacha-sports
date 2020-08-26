@@ -3086,12 +3086,12 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 		C3.Plugins.Sprite.Acts.SetSolidCollisionFilter,
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Behaviors.Timer.Acts.StartTimer,
-		C3.ScriptsInEvents.Main_Event13_Act5,
-		C3.ScriptsInEvents.Main_Event14_Act6,
-		C3.ScriptsInEvents.Main_Event15_Act6,
+		C3.Plugins.System.Exps.layoutwidth,
+		C3.ScriptsInEvents.Main_Event7_Act5,
+		C3.ScriptsInEvents.Main_Event8_Act6,
+		C3.ScriptsInEvents.Main_Event9_Act6,
 		C3.Plugins.System.Acts.CreateObjectByName,
 		C3.Plugins.System.Cnds.PickLastCreated,
-		C3.Plugins.System.Exps.layoutwidth,
 		C3.Plugins.Sprite.Acts.SetMirrored,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
 		C3.Behaviors.Pin.Acts.Pin,
@@ -3756,7 +3756,11 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("player0_character");
 		},
-		() => 140,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((f0() / 2) - (f1() / 4));
+		},
 		() => 200,
 		p => {
 			const n0 = p._GetNode(0);
@@ -3766,18 +3770,39 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("player1_character");
 		},
-		() => 500,
-		() => 820,
-		() => 1140,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((f0() / 2) + (f1() / 4));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((f0() / 4) - (f1() / 8));
+		},
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((f0() / 4) + (f1() / 8));
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("player2_character");
 		},
 		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => ((f0() / 2) + (f1() / 8));
+		},
+		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("player3_character");
 		},
-		() => 400,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			const f1 = p._GetNode(1).GetBoundMethod();
+			return () => (((f0() / 4) * 3) + (f1() / 8));
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject("match_type");
@@ -3826,6 +3851,16 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 			const n0 = p._GetNode(0);
 			const n1 = p._GetNode(1);
 			return () => ((n0.ExpInstVar_Family()) === (n1.ExpObject("player1_gamepad_index")) ? 1 : 0);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => ((n0.ExpInstVar_Family()) === (n1.ExpObject("player2_gamepad_index")) ? 1 : 0);
+		},
+		p => {
+			const n0 = p._GetNode(0);
+			const n1 = p._GetNode(1);
+			return () => ((n0.ExpInstVar_Family()) === (n1.ExpObject("player3_gamepad_index")) ? 1 : 0);
 		},
 		() => "dash",
 		() => "kick",
@@ -3951,6 +3986,7 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 		},
 		() => 40,
 		() => 67,
+		() => 140,
 		() => 300,
 		() => "goal_detector",
 		() => "crossbar",
@@ -4018,17 +4054,17 @@ VectorY(){return this._GetVectorY()},JumpSustain(){return this._GetJumpSustain()
 {
 	const scriptsInEvents = {
 
-		async Main_Event13_Act5(runtime, localVars)
+		async Main_Event7_Act5(runtime, localVars)
 		{
 			BallInstance.create(runtime, 320, 100, localVars.size_ball);
 		},
 
-		async Main_Event14_Act6(runtime, localVars)
+		async Main_Event8_Act6(runtime, localVars)
 		{
 			BallInstance.create(runtime, 480, 100, localVars.size_ball);
 		},
 
-		async Main_Event15_Act6(runtime, localVars)
+		async Main_Event9_Act6(runtime, localVars)
 		{
 			BallInstance.create(runtime, 640, 100, localVars.size_ball);
 		}
