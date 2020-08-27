@@ -1153,7 +1153,7 @@
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 486245131563871,
+											"sid": 143222251082173,
 											"parameters": {
 												"object": "menu_gamepad_selector",
 												"expression": "menu_gamepad_selector.player = menu_char_selector.player"
@@ -1162,7 +1162,7 @@
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 829761715547249,
+											"sid": 979673950421806,
 											"parameters": {
 												"object": "menu_char_portrait_big",
 												"expression": "menu_char_portrait_big.side = menu_gamepad_selector.player % 2"
@@ -1173,16 +1173,16 @@
 										{
 											"id": "set-key",
 											"objectClass": "data_gamepad",
-											"sid": 913808939327938,
+											"sid": 476117108240384,
 											"parameters": {
-												"key": "\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\"",
+												"key": "\"player\"&str(menu_char_selector.player)&\"_ready\"",
 												"value": "1"
 											}
 										},
 										{
 											"id": "set-animation",
 											"objectClass": "menu_gamepad_selector",
-											"sid": 953955141159027,
+											"sid": 866094468896464,
 											"parameters": {
 												"animation": "\"player\"&str(menu_char_selector.player)&\"_ready\"",
 												"from": "beginning"
@@ -1191,7 +1191,7 @@
 										{
 											"id": "set-animation-frame",
 											"objectClass": "menu_char_portrait_big",
-											"sid": 460841668201106,
+											"sid": 426154068035492,
 											"parameters": {
 												"frame-number": "1"
 											}
@@ -1234,9 +1234,9 @@
 										{
 											"id": "set-key",
 											"objectClass": "data_gamepad",
-											"sid": 867607528129257,
+											"sid": 872558889689377,
 											"parameters": {
-												"key": "\"player\"&str(menu_char_selector.gamepad_index)&\"_ready\"",
+												"key": "\"player\"&str(menu_char_selector.player)&\"_ready\"",
 												"value": "0"
 											}
 										},
@@ -1488,15 +1488,6 @@
 										"object": "menu_char_selector",
 										"expression": "menu_char_selector.gamepad_index = 9"
 									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 496195208777348,
-									"parameters": {
-										"object": "menu_gamepad_selector",
-										"expression": "menu_gamepad_selector.player = menu_char_selector.player"
-									}
 								}
 							],
 							"actions": [],
@@ -1505,6 +1496,15 @@
 								{
 									"eventType": "block",
 									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 616401352346402,
+											"parameters": {
+												"object": "menu_gamepad_selector",
+												"expression": "menu_gamepad_selector.player = menu_char_selector.player"
+											}
+										},
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
@@ -1519,7 +1519,7 @@
 										{
 											"id": "set-key",
 											"objectClass": "data_gamepad",
-											"sid": 389206276099571,
+											"sid": 193599389660394,
 											"parameters": {
 												"key": "\"player\"&str(menu_char_selector.player)&\"_ready\"",
 												"value": "1"
@@ -1540,6 +1540,15 @@
 											"sid": 579169296002631,
 											"parameters": {
 												"frame-number": "1"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 562229814553110,
+											"parameters": {
+												"type": "warn",
+												"message": "\"player\"&str(menu_char_selector.player)&\"_ready\""
 											}
 										}
 									],
