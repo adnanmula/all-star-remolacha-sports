@@ -29,6 +29,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 683462261761926,
+							"parameters": {
+								"variable": "main_menu_current_index",
+								"value": "0"
+							}
+						},
+						{
 							"callFunction": "mainMenuUpdate",
 							"sid": 162402409509524
 						}
@@ -136,6 +145,137 @@
 							"sid": 249743686072619
 						}
 					]
+				},
+				{
+					"functionName": "WIPgoToView",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "view",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 771822127120551
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 698212666423866,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 413811711834106,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_quick_match\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 256140790719000
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 563062102980950,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_match\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 886511247547219,
+									"parameters": {
+										"layout": "menu_match_config"
+									}
+								}
+							],
+							"sid": 575156814863358
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 829751845554262,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_tournament\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 855909752293295
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 130879976722733,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_settings\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 852117095942942,
+									"parameters": {
+										"layout": "menu_settings"
+									}
+								}
+							],
+							"sid": 762631384001109
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 587859300925447,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_quit\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "close",
+									"objectClass": "Browser",
+									"sid": 378476996253534
+								}
+							],
+							"sid": 601653282208061
+						}
+					]
 				}
 			],
 			"sid": 390075803924509
@@ -179,12 +319,12 @@
 								{
 									"id": "compare-axis",
 									"objectClass": "Gamepad",
-									"sid": 124116749157431,
+									"sid": 474157601043524,
 									"parameters": {
 										"gamepad": "loopindex",
 										"axis": "left-analog-y-axis",
 										"comparison": 2,
-										"value": "0"
+										"value": "-gamepad_deadzone"
 									}
 								}
 							],
@@ -235,12 +375,12 @@
 								{
 									"id": "compare-axis",
 									"objectClass": "Gamepad",
-									"sid": 536214375676313,
+									"sid": 805830804249583,
 									"parameters": {
 										"gamepad": "loopindex",
 										"axis": "left-analog-y-axis",
 										"comparison": 4,
-										"value": "0"
+										"value": "gamepad_deadzone"
 									}
 								}
 							],
@@ -423,128 +563,6 @@
 				}
 			],
 			"sid": 970166223712661
-		},
-		{
-			"functionName": "WIPgoToView",
-			"functionDescription": "",
-			"functionCategory": "menu",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "view",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 771822127120551
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [],
-			"sid": 926561851282083,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 605587608526077,
-							"parameters": {
-								"first-value": "view",
-								"comparison": 0,
-								"second-value": "\"menu_quick_match\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 651304920528988
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 218375289008641,
-							"parameters": {
-								"first-value": "view",
-								"comparison": 0,
-								"second-value": "\"menu_match\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 863950171512331
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 136485281750616,
-							"parameters": {
-								"first-value": "view",
-								"comparison": 0,
-								"second-value": "\"menu_tournament\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 878230109744411
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 597701986081152,
-							"parameters": {
-								"first-value": "view",
-								"comparison": 0,
-								"second-value": "\"menu_settings\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 325499417779814,
-							"parameters": {
-								"layout": "menu_settings"
-							}
-						}
-					],
-					"sid": 286772745221173
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 344564809704029,
-							"parameters": {
-								"first-value": "view",
-								"comparison": 0,
-								"second-value": "\"menu_quit\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "close",
-							"objectClass": "Browser",
-							"sid": 940273808937698
-						}
-					],
-					"sid": 912741840727686
-				}
-			]
 		}
 	],
 	"sid": 795016252309516

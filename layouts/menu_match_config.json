@@ -25,7 +25,7 @@
 						"x": 383.5,
 						"y": 270.5,
 						"width": 1153,
-						"height": 539,
+						"height": 647.3837852605697,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -122,8 +122,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 958,
-						"y": 322,
+						"x": 960,
+						"y": 307,
 						"width": 1131,
 						"height": 50,
 						"originX": 0.5,
@@ -165,7 +165,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 322,
+						"y": 307,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -207,7 +207,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 394,
+						"y": 379,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -249,7 +249,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 595,
-						"y": 465,
+						"y": 450,
 						"width": 350,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -291,7 +291,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 537,
+						"y": 522,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -309,7 +309,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "Ball size:",
+						"text": "Ball type:",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -333,7 +333,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 609,
+						"y": 594,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -375,7 +375,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 680,
+						"y": 665,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -417,7 +417,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 548,
-						"y": 752,
+						"y": 737,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -448,7 +448,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1493,
-						"y": 321.34331878014257,
+						"y": 306.34331878014257,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -479,7 +479,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1494,
-						"y": 393.34331878014257,
+						"y": 378.34331878014257,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -510,7 +510,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1493,
-						"y": 464.34331878014257,
+						"y": 449.34331878014257,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -541,7 +541,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1491,
-						"y": 536.3433187801426,
+						"y": 521.3433187801426,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -572,7 +572,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1493,
-						"y": 608.3433187801426,
+						"y": 593.3433187801426,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -603,7 +603,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1492,
-						"y": 679.3433187801426,
+						"y": 664.3433187801426,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -634,7 +634,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1491,
-						"y": 751.3433187801426,
+						"y": 736.3433187801426,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,
@@ -665,7 +665,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1090,
-						"y": 323.34331878014257,
+						"y": 308.34331878014257,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -696,7 +696,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1091,
-						"y": 395.34331878014257,
+						"y": 380.34331878014257,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -727,7 +727,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1090,
-						"y": 466.34331878014257,
+						"y": 451.34331878014257,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -758,7 +758,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1088,
-						"y": 538.3433187801426,
+						"y": 523.3433187801426,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -789,7 +789,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1090,
-						"y": 610.3433187801426,
+						"y": 595.3433187801426,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -820,7 +820,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1089,
-						"y": 681.3433187801426,
+						"y": 666.3433187801426,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -851,7 +851,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1088,
-						"y": 753.3433187801426,
+						"y": 738.3433187801426,
 						"width": -19,
 						"height": 32,
 						"originX": 0.5,
@@ -869,7 +869,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "1v1",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -886,14 +886,14 @@
 					},
 					"uid": 166,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "match_players",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 322,
+						"y": 307,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -911,7 +911,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "Football",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -928,14 +928,14 @@
 					},
 					"uid": 167,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "match_type",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 394,
+						"y": 379,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -953,7 +953,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "Goals",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -970,14 +970,14 @@
 					},
 					"uid": 168,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "win_condition",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 465,
+						"y": 450,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -995,7 +995,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "10",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -1012,14 +1012,14 @@
 					},
 					"uid": 169,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "goal_amount",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 537,
+						"y": 522,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -1037,7 +1037,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "Normal",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -1054,14 +1054,14 @@
 					},
 					"uid": 170,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "type_ball",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 609,
+						"y": 594,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -1079,7 +1079,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "Normal",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -1096,14 +1096,14 @@
 					},
 					"uid": 171,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "size_goal",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 680,
+						"y": 665,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -1121,7 +1121,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "test",
+						"text": "Small",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -1138,14 +1138,98 @@
 					},
 					"uid": 172,
 					"instanceVariables": {
-						"action": "menu_quick_match",
+						"action": "size_pitch",
 						"index": 0,
 						"type": "menu_config_value"
 					},
 					"behaviors": {},
 					"world": {
 						"x": 1291,
-						"y": 752,
+						"y": 737,
+						"width": 256,
+						"height": 49.313362439714865,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "pixel_spritefont",
+					"properties": {
+						"text": "GO!",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 174,
+					"instanceVariables": {
+						"action": "go",
+						"index": 7,
+						"type": "menu_match_config"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 809,
+						"width": 256,
+						"height": 49.313362439714865,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "pixel_spritefont",
+					"properties": {
+						"text": "Back :(",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 1,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 175,
+					"instanceVariables": {
+						"action": "back",
+						"index": 8,
+						"type": "menu_match_config"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 881.1092319146787,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
