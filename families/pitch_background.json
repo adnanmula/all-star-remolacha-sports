@@ -1,0 +1,12 @@
+{
+	"name": "pitch_background",
+	"plugin-id": "TiledBg",
+	"sid": 339333723837925,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"background_ground",
+		"background_forest"
+	]
+}

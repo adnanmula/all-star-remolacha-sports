@@ -4,7 +4,41 @@
 		{
 			"name": "bg",
 			"overriden": 0,
-			"instances": [],
+			"instances": [
+				{
+					"type": "background_forest",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 127,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -64,
+						"y": -145,
+						"width": 1073,
+						"height": 691,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
 			"sid": 165600892472603,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

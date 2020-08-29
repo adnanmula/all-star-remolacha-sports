@@ -56,6 +56,14 @@
 						"mode": "exclusive",
 						"tags": "\"barrier\""
 					}
+				},
+				{
+					"id": "set-image-offset-x",
+					"objectClass": "pitch_background",
+					"sid": 625815348653233,
+					"parameters": {
+						"offset-x": "random(0,100)"
+					}
 				}
 			],
 			"sid": 330663426654972,

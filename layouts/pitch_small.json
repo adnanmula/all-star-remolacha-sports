@@ -48,6 +48,68 @@
 					}
 				},
 				{
+					"type": "background_ground",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0
+					},
+					"uid": 130,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": -39,
+						"y": -310,
+						"width": 725,
+						"height": 696,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 152936074033652,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.8509803921568627,
+				0.8509803921568627,
+				0.8509803921568627,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 0,
+			"parallaxY": 0,
+			"scaleRate": 0,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "main",
+			"overriden": 0,
+			"instances": [
+				{
 					"type": "solid_bound",
 					"properties": {
 						"initially-visible": true,
@@ -246,36 +308,7 @@
 						"angle": 0,
 						"zElevation": 0
 					}
-				}
-			],
-			"sid": 152936074033652,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.8509803921568627,
-				0.8509803921568627,
-				0.8509803921568627,
-				1
-			],
-			"isTransparent": false,
-			"parallaxX": 0,
-			"parallaxY": 0,
-			"scaleRate": 0,
-			"forceOwnTexture": false,
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"global": false
-		},
-		{
-			"name": "main",
-			"overriden": 0,
-			"instances": [
+				},
 				{
 					"type": "goal_solid_detector",
 					"properties": {
