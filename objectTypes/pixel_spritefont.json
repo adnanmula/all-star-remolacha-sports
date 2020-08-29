@@ -5,7 +5,7 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "view",
+			"name": "action",
 			"type": "string",
 			"desc": "",
 			"sid": 661036970799639

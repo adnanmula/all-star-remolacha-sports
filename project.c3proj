@@ -139,7 +139,9 @@
 	"objectTypes": {
 		"items": [
 			"pixel_spritefont",
-			"main_menu_selector"
+			"main_menu_selector",
+			"9patch",
+			"Sprite"
 		],
 		"subfolders": [
 			{
@@ -447,7 +449,11 @@
 			},
 			{
 				"items": [
-					"menu_wip"
+					"menu_wip",
+					"menu_settings",
+					"menu_match_gamepad",
+					"menu_match_characters",
+					"menu_match_config"
 				],
 				"subfolders": [],
 				"name": "menu"
@@ -473,7 +479,8 @@
 			},
 			{
 				"items": [
-					"menu_wip"
+					"menu_wip",
+					"menu_match_config"
 				],
 				"subfolders": [],
 				"name": "menu_wip"

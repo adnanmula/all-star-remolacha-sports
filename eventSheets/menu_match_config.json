@@ -1,0 +1,473 @@
+{
+	"name": "menu_match_config",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "menu_match_config_current_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 462769737089921
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 123603491169793
+				}
+			],
+			"actions": [
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 712656301659180,
+					"parameters": {
+						"key": "\"match_players\"",
+						"value": "MATCH_PLAYERS_1V1"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 240240654871100,
+					"parameters": {
+						"key": "\"match_type\"",
+						"value": "MATCH_TYPE_FOOTBALL"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 354930380955587,
+					"parameters": {
+						"key": "\"win_condition\"",
+						"value": "WIN_CONDITION_GOALS"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 209055200489258,
+					"parameters": {
+						"key": "\"goal_amount\"",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 582317800028576,
+					"parameters": {
+						"key": "\"type_ball\"",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 243437460609664,
+					"parameters": {
+						"key": "\"size_ball\"",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 478455714825192,
+					"parameters": {
+						"key": "\"size_player\"",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 157490673243199,
+					"parameters": {
+						"key": "\"size_goal\"",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-key",
+					"objectClass": "data_match_config",
+					"sid": 729147697826155,
+					"parameters": {
+						"key": "\"size_pitch\"",
+						"value": "0"
+					}
+				},
+				{
+					"callFunction": "menuMatchConfigUpdate",
+					"sid": 438191919148556
+				}
+			],
+			"sid": 920427657456148
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 225738192055659,
+					"parameters": {
+						"first-value": "menu_match_config_current_index",
+						"comparison": 2,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 868235828375681,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "6"
+					}
+				},
+				{
+					"callFunction": "menuMatchConfigUpdate",
+					"sid": 753361411294757
+				}
+			],
+			"sid": 674697360782594
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 357350217807332,
+					"parameters": {
+						"first-value": "menu_match_config_current_index",
+						"comparison": 4,
+						"second-value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 325358292849038,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "0"
+					}
+				},
+				{
+					"callFunction": "menuMatchConfigUpdate",
+					"sid": 793563752163449
+				}
+			],
+			"sid": 288462030801477
+		},
+		{
+			"functionName": "menuMatchConfigUpdate",
+			"functionDescription": "",
+			"functionCategory": "menu",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 707011931859639,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 900037811907669,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "Sprite",
+							"sid": 796278453099146,
+							"parameters": {
+								"y": "pixel_spritefont.Y"
+							}
+						}
+					],
+					"sid": 702787509692262
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 952121529907185,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [],
+			"sid": 963876101263115,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 630774991531551,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "menuMatchConfigUpdateValue",
+							"sid": 368370379951259,
+							"parameters": [
+								"pixel_spritefont.action",
+								"0"
+							]
+						}
+					],
+					"sid": 599368688630850
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 823589233380065,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [],
+			"sid": 157485551293927,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 784497388285148,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "menuMatchConfigUpdateValue",
+							"sid": 221876819189435,
+							"parameters": [
+								"pixel_spritefont.action",
+								"1"
+							]
+						}
+					],
+					"sid": 833482582464492
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 654852146025069,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 841136584589724,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "1"
+					}
+				},
+				{
+					"callFunction": "menuMatchConfigUpdate",
+					"sid": 552837568282563
+				}
+			],
+			"sid": 260500302027829
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 956494518550569,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 817564523656042,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "1"
+					}
+				},
+				{
+					"callFunction": "menuMatchConfigUpdate",
+					"sid": 441477318985220
+				}
+			],
+			"sid": 703863716969235
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 319514032013286,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "pick-by-evaluate",
+					"objectClass": "System",
+					"sid": 753941468544307,
+					"parameters": {
+						"object": "pixel_spritefont",
+						"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 947234747353802
+		},
+		{
+			"functionName": "menuMatchConfigUpdateValue",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "index",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 702579767502835
+				},
+				{
+					"name": "action",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 841183729589724
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 977217601709998,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 106250525482618,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"match_players\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 526093617632219
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 920260155494880,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"match_type\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 849992453851617
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 715384026500087,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"win_condition\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 238894014088051
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 579569101968195
+						}
+					],
+					"actions": [],
+					"sid": 928721148715417
+				}
+			]
+		}
+	],
+	"sid": 449976845993604
+}

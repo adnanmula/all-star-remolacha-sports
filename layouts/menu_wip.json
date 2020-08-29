@@ -25,7 +25,7 @@
 					},
 					"uid": 132,
 					"instanceVariables": {
-						"view": "",
+						"action": "",
 						"index": 0,
 						"type": "label"
 					},
@@ -67,14 +67,14 @@
 					},
 					"uid": 129,
 					"instanceVariables": {
-						"view": "",
+						"action": "menu_quick_match",
 						"index": 0,
-						"type": "menu_option"
+						"type": "main_menu_option"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 197,
-						"y": 771,
+						"x": 187,
+						"y": 819,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -109,14 +109,14 @@
 					},
 					"uid": 131,
 					"instanceVariables": {
-						"view": "",
+						"action": "menu_match",
 						"index": 1,
-						"type": "menu_option"
+						"type": "main_menu_option"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 197,
-						"y": 818,
+						"x": 187,
+						"y": 866,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -151,14 +151,14 @@
 					},
 					"uid": 133,
 					"instanceVariables": {
-						"view": "",
+						"action": "menu_tournament",
 						"index": 2,
-						"type": "menu_option"
+						"type": "main_menu_option"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 197,
-						"y": 866,
+						"x": 187,
+						"y": 914,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -193,14 +193,14 @@
 					},
 					"uid": 134,
 					"instanceVariables": {
-						"view": "",
+						"action": "menu_settings",
 						"index": 3,
-						"type": "menu_option"
+						"type": "main_menu_option"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 197,
-						"y": 913,
+						"x": 187,
+						"y": 961,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -235,14 +235,14 @@
 					},
 					"uid": 135,
 					"instanceVariables": {
-						"view": "",
+						"action": "menu_quit",
 						"index": 4,
-						"type": "menu_option"
+						"type": "main_menu_option"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 197,
-						"y": 960,
+						"x": 187,
+						"y": 1008,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -384,7 +384,7 @@
 						"x": 1267,
 						"y": 756,
 						"width": 390.35183781081275,
-						"height": 1000.2765843902077,
+						"height": 1000.2765843902076,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -687,11 +687,13 @@
 						"live-preview": false
 					},
 					"uid": 142,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"type": "main_menu"
+					},
 					"behaviors": {},
 					"world": {
-						"x": -48,
-						"y": 685,
+						"x": -43,
+						"y": 821,
 						"width": 19,
 						"height": 32,
 						"originX": 0.5,

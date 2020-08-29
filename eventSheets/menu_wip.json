@@ -115,10 +115,10 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 201946848377953,
+									"sid": 539099230792435,
 									"parameters": {
 										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_option\" & pixel_spritefont.index = main_menu_current_index"
+										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
 									}
 								}
 							],
@@ -291,7 +291,32 @@
 							],
 							"actions": [],
 							"sid": 133041010922326,
-							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 444298022261210,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "WIPgoToView",
+											"sid": 648501399418318,
+											"parameters": [
+												"pixel_spritefont.action"
+											]
+										}
+									],
+									"sid": 364265124493039
+								}
+							],
 							"isOrBlock": true
 						}
 					]
@@ -363,9 +388,163 @@
 						}
 					],
 					"sid": 970986644025927
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 100493714896147,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 169532645904059,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "WIPgoToView",
+							"sid": 185700740563170,
+							"parameters": [
+								"pixel_spritefont.action"
+							]
+						}
+					],
+					"sid": 102392822629586
 				}
 			],
 			"sid": 970166223712661
+		},
+		{
+			"functionName": "WIPgoToView",
+			"functionDescription": "",
+			"functionCategory": "menu",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "view",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 771822127120551
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 926561851282083,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 605587608526077,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 0,
+								"second-value": "\"menu_quick_match\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 651304920528988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 218375289008641,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 0,
+								"second-value": "\"menu_match\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 863950171512331
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 136485281750616,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 0,
+								"second-value": "\"menu_tournament\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 878230109744411
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 597701986081152,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 0,
+								"second-value": "\"menu_settings\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 325499417779814,
+							"parameters": {
+								"layout": "menu_settings"
+							}
+						}
+					],
+					"sid": 286772745221173
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 344564809704029,
+							"parameters": {
+								"first-value": "view",
+								"comparison": 0,
+								"second-value": "\"menu_quit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "close",
+							"objectClass": "Browser",
+							"sid": 940273808937698
+						}
+					],
+					"sid": 912741840727686
+				}
+			]
 		}
 	],
 	"sid": 795016252309516

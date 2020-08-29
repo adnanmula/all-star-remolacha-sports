@@ -154,7 +154,7 @@
 				{
 					"functionName": "controlsInitializeMouseSettings",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -256,7 +256,7 @@
 				{
 					"functionName": "controlsProcessKeyboardAndMouseInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -535,7 +535,7 @@
 				{
 					"functionName": "controlsProcessMouseInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -743,7 +743,7 @@
 				{
 					"functionName": "setNewMouseOrigin",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -860,7 +860,7 @@
 				{
 					"functionName": "toggleMouseMode",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -904,7 +904,7 @@
 				{
 					"functionName": "controlsProcessGamepadInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
