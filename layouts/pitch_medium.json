@@ -508,7 +508,7 @@
 				{
 					"type": "goal_volley_barrier",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -526,9 +526,9 @@
 					},
 					"world": {
 						"x": 480,
-						"y": 196.84636939167086,
-						"width": 5.618768366396523,
-						"height": 398.04731750019994,
+						"y": 267.97008457844686,
+						"width": 30,
+						"height": 542.2474303735519,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

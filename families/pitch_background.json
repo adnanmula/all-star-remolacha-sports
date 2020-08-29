@@ -7,6 +7,7 @@
 	"effectTypes": [],
 	"members": [
 		"background_ground",
-		"background_forest"
+		"background_forest",
+		"background_castle"
 	]
 }

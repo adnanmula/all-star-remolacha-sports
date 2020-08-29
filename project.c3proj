@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 21300,
-	"name": "All star remolacha soccer",
+	"name": "All star remolacha sports",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,
@@ -79,6 +79,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r213",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
@@ -129,7 +137,10 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"pixel_spritefont",
+			"main_menu_selector"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -433,6 +444,13 @@
 				],
 				"subfolders": [],
 				"name": "pitch"
+			},
+			{
+				"items": [
+					"menu_wip"
+				],
+				"subfolders": [],
+				"name": "menu"
 			}
 		]
 	},
@@ -452,6 +470,13 @@
 				],
 				"subfolders": [],
 				"name": "menu"
+			},
+			{
+				"items": [
+					"menu_wip"
+				],
+				"subfolders": [],
+				"name": "menu_wip"
 			}
 		]
 	},
@@ -608,7 +633,7 @@
 		"enhancedAccelerationPrecision": true,
 		"cordovaiOSScheme": "file"
 	},
-	"viewportWidth": 640,
-	"viewportHeight": 360,
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
 	"firstLayout": "menu"
 }

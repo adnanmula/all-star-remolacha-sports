@@ -1,0 +1,372 @@
+{
+	"name": "menu_wip",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "main_menu_current_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 779946231865196
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main menu navigation - Common",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 781786093675246
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 162402409509524
+						}
+					],
+					"sid": 749104560716369
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 187096337386332,
+							"parameters": {
+								"first-value": "main_menu_current_index",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 761518091866977,
+							"parameters": {
+								"variable": "main_menu_current_index",
+								"value": "4"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 403624017309799
+						}
+					],
+					"sid": 345959233930774
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 361523582372555,
+							"parameters": {
+								"first-value": "main_menu_current_index",
+								"comparison": 4,
+								"second-value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 502171545490993,
+							"parameters": {
+								"variable": "main_menu_current_index",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 490106299385129
+						}
+					],
+					"sid": 865933008831863
+				},
+				{
+					"functionName": "mainMenuUpdate",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 158504151858767,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 201946848377953,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_option\" & pixel_spritefont.index = main_menu_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "main_menu_selector",
+									"sid": 235440428043655,
+									"parameters": {
+										"x": "pixel_spritefont.X - (pixel_spritefont.Width / 2 + main_menu_selector.Width)",
+										"y": "pixel_spritefont.Y"
+									}
+								}
+							],
+							"sid": 249743686072619
+						}
+					]
+				}
+			],
+			"sid": 390075803924509
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main menu navigation - Gamepad",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 318890160702903,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 599209846322376,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 795867221361208,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-up"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 124116749157431,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 543056171162108,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 934555255264856
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 332820407739670,
+											"parameters": {
+												"variable": "main_menu_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "mainMenuUpdate",
+											"sid": 970349536293322
+										}
+									],
+									"sid": 241193796237815
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 644204714310098,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-down"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 536214375676313,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 454722357181168,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 823031220189486
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 360499181031985,
+											"parameters": {
+												"variable": "main_menu_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "mainMenuUpdate",
+											"sid": 112409341390350
+										}
+									],
+									"sid": 900113661076485
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 770987884061938,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 133041010922326,
+							"disabled": true,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 577776575781846
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Main menu navigation - Keyboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 410872870234442,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 331658037761582,
+							"parameters": {
+								"variable": "main_menu_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 194545352063218
+						}
+					],
+					"sid": 790694335328366
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 779141985277486,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 364582597231370,
+							"parameters": {
+								"variable": "main_menu_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 163400817794914
+						}
+					],
+					"sid": 970986644025927
+				}
+			],
+			"sid": 970166223712661
+		}
+	],
+	"sid": 795016252309516
+}
