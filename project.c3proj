@@ -141,7 +141,9 @@
 			"pixel_spritefont",
 			"main_menu_selector",
 			"9patch",
-			"Sprite"
+			"Sprite",
+			"Sprite2",
+			"Sprite3"
 		],
 		"subfolders": [
 			{
@@ -480,7 +482,9 @@
 			{
 				"items": [
 					"menu_wip",
-					"menu_match_config"
+					"menu_match_config",
+					"menu_common",
+					"menu_match_gamepad"
 				],
 				"subfolders": [],
 				"name": "menu_wip"

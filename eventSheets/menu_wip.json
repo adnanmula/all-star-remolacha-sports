@@ -3,13 +3,23 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "main_menu_current_index",
+			"name": "menu_main_current_index",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 779946231865196
+		},
+		{
+			"eventType": "variable",
+			"name": "menu_match_is_quick",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 767221767370858
 		},
 		{
 			"eventType": "group",
@@ -33,7 +43,7 @@
 							"objectClass": "System",
 							"sid": 683462261761926,
 							"parameters": {
-								"variable": "main_menu_current_index",
+								"variable": "menu_main_current_index",
 								"value": "0"
 							}
 						},
@@ -52,7 +62,7 @@
 							"objectClass": "System",
 							"sid": 187096337386332,
 							"parameters": {
-								"first-value": "main_menu_current_index",
+								"first-value": "menu_main_current_index",
 								"comparison": 2,
 								"second-value": "0"
 							}
@@ -64,7 +74,7 @@
 							"objectClass": "System",
 							"sid": 761518091866977,
 							"parameters": {
-								"variable": "main_menu_current_index",
+								"variable": "menu_main_current_index",
 								"value": "4"
 							}
 						},
@@ -83,7 +93,7 @@
 							"objectClass": "System",
 							"sid": 361523582372555,
 							"parameters": {
-								"first-value": "main_menu_current_index",
+								"first-value": "menu_main_current_index",
 								"comparison": 4,
 								"second-value": "4"
 							}
@@ -95,7 +105,7 @@
 							"objectClass": "System",
 							"sid": 502171545490993,
 							"parameters": {
-								"variable": "main_menu_current_index",
+								"variable": "menu_main_current_index",
 								"value": "0"
 							}
 						},
@@ -127,7 +137,7 @@
 									"sid": 539099230792435,
 									"parameters": {
 										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
 									}
 								}
 							],
@@ -180,7 +190,25 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 645457467102522,
+									"parameters": {
+										"variable": "menu_match_is_quick",
+										"value": "true"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 306956851968446,
+									"parameters": {
+										"layout": "menu_match_config"
+									}
+								}
+							],
 							"sid": 256140790719000
 						},
 						{
@@ -198,6 +226,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 719904818504855,
+									"parameters": {
+										"variable": "menu_match_is_quick",
+										"value": "false"
+									}
+								},
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
@@ -346,7 +383,7 @@
 											"objectClass": "System",
 											"sid": 332820407739670,
 											"parameters": {
-												"variable": "main_menu_current_index",
+												"variable": "menu_main_current_index",
 												"value": "1"
 											}
 										},
@@ -402,7 +439,7 @@
 											"objectClass": "System",
 											"sid": 360499181031985,
 											"parameters": {
-												"variable": "main_menu_current_index",
+												"variable": "menu_main_current_index",
 												"value": "1"
 											}
 										},
@@ -441,7 +478,7 @@
 											"sid": 444298022261210,
 											"parameters": {
 												"object": "pixel_spritefont",
-												"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+												"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
 											}
 										}
 									],
@@ -489,7 +526,7 @@
 							"objectClass": "System",
 							"sid": 331658037761582,
 							"parameters": {
-								"variable": "main_menu_current_index",
+								"variable": "menu_main_current_index",
 								"value": "1"
 							}
 						},
@@ -518,7 +555,7 @@
 							"objectClass": "System",
 							"sid": 364582597231370,
 							"parameters": {
-								"variable": "main_menu_current_index",
+								"variable": "menu_main_current_index",
 								"value": "1"
 							}
 						},
@@ -541,25 +578,59 @@
 							}
 						},
 						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 169532645904059,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 632746687427255,
 							"parameters": {
-								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = main_menu_current_index"
+								"key": 69
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 518258772093367,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 743695448576524,
+							"parameters": {
+								"key": 13
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 102392822629586,
+					"children": [
 						{
-							"callFunction": "WIPgoToView",
-							"sid": 185700740563170,
-							"parameters": [
-								"pixel_spritefont.action"
-							]
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 205280691637785,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "WIPgoToView",
+									"sid": 625605234809624,
+									"parameters": [
+										"pixel_spritefont.action"
+									]
+								}
+							],
+							"sid": 263090369095013
 						}
 					],
-					"sid": 102392822629586
+					"isOrBlock": true
 				}
 			],
 			"sid": 970166223712661

@@ -2,6 +2,10 @@
 	"name": "menu_match_config",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "menu_common"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_match_config_current_index",
 			"type": "number",
@@ -38,74 +42,41 @@
 							}
 						},
 						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 400144421561932,
-							"parameters": {
-								"key": "\"match_players\"",
-								"value": "MATCH_PLAYERS_1V1"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 900178511036264,
-							"parameters": {
-								"key": "\"match_type\"",
-								"value": "MATCH_TYPE_FOOTBALL"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 936215100913046,
-							"parameters": {
-								"key": "\"win_condition\"",
-								"value": "WIN_CONDITION_GOALS"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 173253721882979,
-							"parameters": {
-								"key": "\"goal_amount\"",
-								"value": "10"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 946816846657433,
-							"parameters": {
-								"key": "\"type_ball\"",
-								"value": "2"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 977328689718779,
-							"parameters": {
-								"key": "\"size_goal\"",
-								"value": "1"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_match_config",
-							"sid": 599587747747474,
-							"parameters": {
-								"key": "\"size_pitch\"",
-								"value": "0"
-							}
+							"callFunction": "menuConfigSetDefaultMatch",
+							"sid": 447332894816404
 						},
 						{
 							"callFunction": "menuMatchConfigUpdate",
 							"sid": 439400120134302
 						}
 					],
-					"sid": 561368506102206
+					"sid": 561368506102206,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 650500655551782,
+									"parameters": {
+										"variable": "menu_match_is_quick"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 528982731726150,
+									"parameters": [
+										"\"go\"",
+										"1"
+									]
+								}
+							],
+							"sid": 101478512002749
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1702,7 +1673,34 @@
 						}
 					],
 					"actions": [],
-					"sid": 993005027285226
+					"sid": 993005027285226,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 588495291187015,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 245384244672916,
+									"parameters": [
+										"pixel_spritefont.action",
+										"0"
+									]
+								}
+							],
+							"sid": 734444174682335
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -1718,9 +1716,25 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 747090309279154,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 491906082954785,
 							"parameters": {
 								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 654507766183948,
+							"parameters": {
+								"key": 13
 							}
 						}
 					],
