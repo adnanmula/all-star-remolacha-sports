@@ -1541,15 +1541,6 @@
 											"parameters": {
 												"frame-number": "1"
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 562229814553110,
-											"parameters": {
-												"type": "warn",
-												"message": "\"player\"&str(menu_char_selector.player)&\"_ready\""
-											}
 										}
 									],
 									"sid": 458836685554427

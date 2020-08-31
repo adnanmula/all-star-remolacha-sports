@@ -50,6 +50,10 @@
 						{
 							"callFunction": "mainMenuUpdate",
 							"sid": 162402409509524
+						},
+						{
+							"callFunction": "menuConfigSetDefaultMatch",
+							"sid": 374173661746355
 						}
 					],
 					"sid": 749104560716369
@@ -634,6 +638,82 @@
 				}
 			],
 			"sid": 970166223712661
+		},
+		{
+			"functionName": "menuConfigSetDefaultMatch",
+			"functionDescription": "",
+			"functionCategory": "menu",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 400144421561932,
+					"parameters": {
+						"key": "\"match_players\"",
+						"value": "MATCH_PLAYERS_1V1"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 900178511036264,
+					"parameters": {
+						"key": "\"match_type\"",
+						"value": "MATCH_TYPE_FOOTBALL"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 936215100913046,
+					"parameters": {
+						"key": "\"win_condition\"",
+						"value": "WIN_CONDITION_GOALS"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 173253721882979,
+					"parameters": {
+						"key": "\"goal_amount\"",
+						"value": "10"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 946816846657433,
+					"parameters": {
+						"key": "\"type_ball\"",
+						"value": "2"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 977328689718779,
+					"parameters": {
+						"key": "\"size_goal\"",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-key",
+					"objectClass": "data_match_config",
+					"sid": 599587747747474,
+					"parameters": {
+						"key": "\"size_pitch\"",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 344062938956399
 		}
 	],
 	"sid": 795016252309516

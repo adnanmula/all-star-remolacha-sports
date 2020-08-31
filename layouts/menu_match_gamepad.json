@@ -34,10 +34,10 @@
 						}
 					},
 					"world": {
-						"x": 960,
-						"y": 301.80326107878864,
-						"width": 60,
-						"height": 60,
+						"x": 958,
+						"y": 247,
+						"width": 169.54483979828598,
+						"height": 85.96903092798107,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -80,9 +80,9 @@
 					},
 					"world": {
 						"x": 960,
-						"y": 371.80326107878864,
-						"width": 60,
-						"height": 60,
+						"y": 395,
+						"width": 185.7293994884583,
+						"height": 185.7293994884583,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -125,9 +125,9 @@
 					},
 					"world": {
 						"x": 960,
-						"y": 442.80326107878864,
-						"width": 60,
-						"height": 60,
+						"y": 527,
+						"width": 185.7293994884583,
+						"height": 185.7293994884583,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -170,9 +170,9 @@
 					},
 					"world": {
 						"x": 960,
-						"y": 512.8032610787886,
-						"width": 60,
-						"height": 60,
+						"y": 660,
+						"width": 185.7293994884583,
+						"height": 185.7293994884583,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -215,9 +215,9 @@
 					},
 					"world": {
 						"x": 960,
-						"y": 582.8032610787886,
-						"width": 60,
-						"height": 60,
+						"y": 792,
+						"width": 185.7293994884583,
+						"height": 185.7293994884583,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -233,9 +233,9 @@
 				{
 					"type": "Sprite3",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
-						"initial-frame": 0,
+						"initial-frame": 1,
 						"enable-collisions": true,
 						"live-preview": false
 					},
@@ -243,10 +243,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 957.5648904071287,
-						"y": 711.7387877409187,
-						"width": 90.35347731694641,
-						"height": 73.05174761795666,
+						"x": 960,
+						"y": 958.1761866447006,
+						"width": 162.52614954331082,
+						"height": 131.40412090735768,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -262,17 +262,17 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "------------------",
+						"text": "Team1",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
 						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
 						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
-						"scale": 1,
+						"scale": 2.5,
 						"character-spacing": 0,
 						"line-height": 0,
-						"horizontal-alignment": "left",
-						"vertical-alignment": "center",
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
 						"origin": "center"
@@ -281,14 +281,56 @@
 					"instanceVariables": {
 						"action": "",
 						"index": 0,
-						"type": "menu_gamepad_output"
+						"type": "label"
 					},
 					"behaviors": {},
 					"world": {
-						"x": 966.7037873999238,
-						"y": 776.4007426794022,
-						"width": 256,
-						"height": 49.313362439714865,
+						"x": 343,
+						"y": 96,
+						"width": 359,
+						"height": 110,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "pixel_spritefont",
+					"properties": {
+						"text": "Team2",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 2.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 183,
+					"instanceVariables": {
+						"action": "",
+						"index": 0,
+						"type": "label"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1560,
+						"y": 96,
+						"width": 359,
+						"height": 110,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -89,6 +89,42 @@
 								"key": "\"player3_ready\"",
 								"value": "0"
 							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 558338438974737,
+							"parameters": {
+								"key": "\"player0_index\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 176816887017473,
+							"parameters": {
+								"key": "\"player1_index\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 403537897508694,
+							"parameters": {
+								"key": "\"player2_index\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 635498054465621,
+							"parameters": {
+								"key": "\"player3_index\"",
+								"value": "0"
+							}
 						}
 					],
 					"sid": 759214566047908
@@ -393,9 +429,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 564166736277024,
+													"sid": 996365390848929,
 													"parameters": {
-														"x": "100"
+														"x": "343"
 													}
 												}
 											],
@@ -419,9 +455,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 969417129863810,
+													"sid": 273312126718923,
 													"parameters": {
-														"x": "1000"
+														"x": "958"
 													}
 												}
 											],
@@ -445,9 +481,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 943456514924950,
+													"sid": 387254506146842,
 													"parameters": {
-														"x": "1500"
+														"x": "1560"
 													}
 												}
 											],
@@ -590,9 +626,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 583332451165368,
+													"sid": 982009231171171,
 													"parameters": {
-														"x": "100"
+														"x": "343"
 													}
 												}
 											],
@@ -616,9 +652,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 658733506431129,
+													"sid": 604159204234279,
 													"parameters": {
-														"x": "1000"
+														"x": "958"
 													}
 												}
 											],
@@ -642,9 +678,9 @@
 												{
 													"id": "set-x",
 													"objectClass": "Sprite2",
-													"sid": 419570093431249,
+													"sid": 137610502974932,
 													"parameters": {
-														"x": "1500"
+														"x": "1560"
 													}
 												}
 											],
@@ -653,6 +689,98 @@
 									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 439362603357261,
+									"parameters": {
+										"first-value": "Functions.menuGamepadAssertValidConfig",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite3",
+									"sid": 722375499190522,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"callFunction": "menuGamepadSaveIndexes",
+									"sid": 545072710044189
+								}
+							],
+							"sid": 314577533610874
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 276560496918270,
+									"parameters": {
+										"first-value": "Functions.menuGamepadAssertValidConfig",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sprite3",
+									"sid": 226432866872733,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_gamepad",
+									"sid": 464011162831930,
+									"parameters": {
+										"key": "\"player0_index\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_gamepad",
+									"sid": 487627923970296,
+									"parameters": {
+										"key": "\"player1_index\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_gamepad",
+									"sid": 494278800991171,
+									"parameters": {
+										"key": "\"player2_index\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-key",
+									"objectClass": "data_gamepad",
+									"sid": 962411554394856,
+									"parameters": {
+										"key": "\"player3_index\"",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 306308731312440
 						}
 					]
 				},
@@ -726,6 +854,354 @@
 								}
 							],
 							"sid": 912056558469190
+						}
+					]
+				},
+				{
+					"functionName": "menuGamepadSaveIndexes",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 513392971977546,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "current_left_index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 839419164868940
+						},
+						{
+							"eventType": "variable",
+							"name": "current_right_index",
+							"type": "number",
+							"initialValue": "1",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 278955416648780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each-ordered",
+									"objectClass": "System",
+									"sid": 587267302064494,
+									"parameters": {
+										"object": "Sprite2",
+										"expression": "Sprite2.index",
+										"order": "ascending"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 259016741553478,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sprite2",
+											"sid": 662168266898920,
+											"parameters": {
+												"instance-variable": "position",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_gamepad",
+											"sid": 605090539831680,
+											"parameters": {
+												"key": "\"player\" & current_left_index & \"_index\"",
+												"value": "Sprite2.index"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 725383016239512,
+											"parameters": {
+												"variable": "current_left_index",
+												"value": "2"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 242922416629617,
+											"parameters": {
+												"type": "log",
+												"message": "\"player\" & current_left_index & \"_index\" & \" / \" & Sprite2.index"
+											}
+										}
+									],
+									"sid": 452736465933276
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sprite2",
+											"sid": 163989820219430,
+											"parameters": {
+												"instance-variable": "position",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_gamepad",
+											"sid": 425782184868419,
+											"parameters": {
+												"key": "\"player\" & current_right_index & \"_index\"",
+												"value": "Sprite2.index"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 654775384365333,
+											"parameters": {
+												"variable": "current_right_index",
+												"value": "2"
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 123579548656175,
+											"parameters": {
+												"type": "log",
+												"message": "\"player\" & current_left_index & \"_index\" & \" / \" & Sprite2.index"
+											}
+										}
+									],
+									"sid": 179194914906996
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "menuGamepadAssertValidConfig",
+					"functionDescription": "",
+					"functionCategory": "menu",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 637218006537929,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "current_left_side",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 645799835585680
+						},
+						{
+							"eventType": "variable",
+							"name": "current_right_side",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 213324182572295
+						},
+						{
+							"eventType": "variable",
+							"name": "return",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 117479174448605
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 165380847296205,
+									"parameters": {
+										"object": "Sprite2",
+										"expression": "Sprite2.position = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 922665225649650,
+									"parameters": {
+										"variable": "current_left_side",
+										"value": "Sprite2.PickedCount"
+									}
+								}
+							],
+							"sid": 926952442082997
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 336911300776575,
+									"parameters": {
+										"object": "Sprite2",
+										"expression": "Sprite2.position = 2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 506968063379742,
+									"parameters": {
+										"variable": "current_right_side",
+										"value": "Sprite2.PickedCount"
+									}
+								}
+							],
+							"sid": 398004773218982
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 401172335011236,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1V1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 791177335007464,
+									"parameters": {
+										"first-value": "current_left_side",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 770779571323715,
+									"parameters": {
+										"first-value": "current_right_side",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 993687534796831,
+									"parameters": {
+										"variable": "return",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 166534456931599
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 120360327187004,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_2V2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 496254154629054,
+									"parameters": {
+										"first-value": "current_left_side",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 927495205257740,
+									"parameters": {
+										"first-value": "current_right_side",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 290008862786900,
+									"parameters": {
+										"variable": "return",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 389909072670722
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 667227594617142,
+									"parameters": {
+										"value": "return"
+									}
+								}
+							],
+							"sid": 291237726793569
 						}
 					]
 				}
@@ -820,6 +1296,125 @@
 								}
 							],
 							"sid": 211033358382340
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 664621518710701,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 856228392105013,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 981632042988180,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 456609724398598,
+									"parameters": {
+										"first-value": "Functions.menuGamepadAssertValidConfig",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 154437050625068,
+									"parameters": {
+										"layout": "menu_match_characters"
+									}
+								}
+							],
+							"sid": 449755651740175
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 291512351517489,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [],
+					"sid": 692159689820762,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 705567834177268,
+									"parameters": {
+										"variable": "menu_match_is_quick"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 805331248099562,
+									"parameters": {
+										"layout": "menu_wip"
+									}
+								}
+							],
+							"sid": 513280478551392
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 838103856987950,
+									"parameters": {
+										"variable": "menu_match_is_quick"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 535715154773499,
+									"parameters": {
+										"layout": "menu_match_config"
+									}
+								}
+							],
+							"sid": 852266837072087
 						}
 					],
 					"isOrBlock": true
@@ -935,6 +1530,119 @@
 										}
 									],
 									"sid": 744327037994834
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 310612017141229,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "start-menu"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 706514852987047,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 913089622295483,
+											"parameters": {
+												"first-value": "Functions.menuGamepadAssertValidConfig",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 862127870757729,
+											"parameters": {
+												"layout": "menu_match_characters"
+											}
+										}
+									],
+									"sid": 525148707679040
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 651862482180195,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 963347618717442,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 986813163127556,
+											"parameters": {
+												"variable": "menu_match_is_quick"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 287904153439146,
+											"parameters": {
+												"layout": "menu_wip"
+											}
+										}
+									],
+									"sid": 413982773712669
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 897572676639834,
+											"parameters": {
+												"variable": "menu_match_is_quick"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 469156197839074,
+											"parameters": {
+												"layout": "menu_match_config"
+											}
+										}
+									],
+									"sid": 199929658485904
 								}
 							],
 							"isOrBlock": true

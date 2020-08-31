@@ -2,10 +2,6 @@
 	"name": "menu_match_config",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "menu_common"
-		},
-		{
 			"eventType": "variable",
 			"name": "menu_match_config_current_index",
 			"type": "number",
@@ -42,12 +38,12 @@
 							}
 						},
 						{
-							"callFunction": "menuConfigSetDefaultMatch",
-							"sid": 447332894816404
-						},
-						{
 							"callFunction": "menuMatchConfigUpdate",
 							"sid": 439400120134302
+						},
+						{
+							"callFunction": "menuMatchConfigUpdateLabels",
+							"sid": 836745253009250
 						}
 					],
 					"sid": 561368506102206,
