@@ -452,56 +452,6 @@
 					}
 				},
 				{
-					"type": "menu_char_selector",
-					"properties": {
-						"left-margin": 16,
-						"right-margin": 16,
-						"top-margin": 16,
-						"bottom-margin": 16,
-						"edges": "stretch",
-						"fill": "stretch",
-						"initially-visible": true,
-						"origin": "top-left",
-						"seams": "overlap"
-					},
-					"uid": 33,
-					"instanceVariables": {
-						"side": -1,
-						"gamepad_index": -1,
-						"char_index": 0,
-						"player": -1
-					},
-					"behaviors": {},
-					"effects": {
-						"Tint": {
-							"parameters": {
-								"color": [
-									0.7019607843137254,
-									0.36470588235294116,
-									0.3215686274509804,
-									1
-								]
-							}
-						}
-					},
-					"world": {
-						"x": 4.61390633576643,
-						"y": 141.43629116960108,
-						"width": 50,
-						"height": 50,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "goal_football_solid",
 					"properties": {
 						"initially-visible": true,

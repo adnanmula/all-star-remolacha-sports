@@ -164,7 +164,7 @@
 							"actions": [
 								{
 									"id": "set-y",
-									"objectClass": "Sprite",
+									"objectClass": "menu_match_config_selector",
 									"sid": 920529899450320,
 									"parameters": {
 										"y": "pixel_spritefont.Y"
@@ -824,7 +824,7 @@
 									"objectClass": "System",
 									"sid": 262929276781854,
 									"parameters": {
-										"layout": "menu_wip"
+										"layout": "menu_main"
 									}
 								}
 							],
@@ -1822,6 +1822,31 @@
 						}
 					],
 					"sid": 843544809153076
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 816179052249733,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 314294714183840,
+							"parameters": {
+								"layout": "menu_main"
+							}
+						}
+					],
+					"sid": 806391644669960,
+					"isOrBlock": true
 				}
 			],
 			"sid": 147547378705767

@@ -2,11 +2,40 @@
 	"name": "menu_match_config",
 	"layers": [
 		{
-			"name": "Layer 1",
+			"name": "bg",
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "9patch",
+					"type": "backgroundGradient",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 5,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1020,
+						"y": 642,
+						"width": 2480,
+						"height": 2273,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.805012016846583,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_match_config_frame",
 					"properties": {
 						"left-margin": 3,
 						"right-margin": 3,
@@ -64,7 +93,7 @@
 			"global": false
 		},
 		{
-			"name": "Layer 0",
+			"name": "main",
 			"overriden": 0,
 			"instances": [
 				{
@@ -110,7 +139,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "menu_match_config_selector",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

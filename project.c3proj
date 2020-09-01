@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 21300,
+	"savedWithRelease": 21400,
 	"name": "All star remolacha sports",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -11,7 +11,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -67,15 +67,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r213",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Dictionary",
-			"name": "Dictionary",
-			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -83,7 +75,15 @@
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -91,7 +91,7 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -99,7 +99,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -107,7 +107,7 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -115,7 +115,15 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -123,7 +131,7 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -131,20 +139,13 @@
 			"id": "tint",
 			"name": "Tint",
 			"author": "Scirra",
-			"version": "r213",
+			"version": "r214",
 			"bundled": false
 		}
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"pixel_spritefont",
-			"main_menu_selector",
-			"9patch",
-			"Sprite",
-			"Sprite2",
-			"Sprite3"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -260,92 +261,36 @@
 					{
 						"items": [
 							"menu_char_portrait",
-							"menu_char_selector",
-							"menu_char_name",
-							"menu_char_portrait_big"
+							"menu_char_portrait_big",
+							"menu_char_selector"
 						],
-						"subfolders": [
-							{
-								"items": [
-									"menu_gamepad_selector"
-								],
-								"subfolders": [],
-								"name": "gamepad_selector"
-							}
-						],
-						"name": "char_selector"
+						"subfolders": [],
+						"name": "character"
 					},
 					{
 						"items": [
-							"menu_main_selector"
+							"menu_match_gamepad_icon",
+							"menu_match_gamepad_start"
 						],
 						"subfolders": [],
-						"name": "navigation"
+						"name": "gamepad"
 					},
 					{
-						"items": [],
-						"subfolders": [
-							{
-								"items": [
-									"menu_debug",
-									"menu_gamepad_debug",
-									"menu_title"
-								],
-								"subfolders": [],
-								"name": "text"
-							},
-							{
-								"items": [
-									"menu_main_play",
-									"menu_main_settings"
-								],
-								"subfolders": [],
-								"name": "button"
-							}
+						"items": [
+							"menu_match_config_frame",
+							"menu_match_config_selector"
 						],
-						"name": "main"
-					},
-					{
-						"items": [],
-						"subfolders": [
-							{
-								"items": [
-									"menu_matchconfig_goals_button",
-									"menu_matchconfig_size_ball_button",
-									"menu_matchconfig_size_character_button",
-									"menu_matchconfig_size_goal_button",
-									"menu_matchconfig_toCharSelect",
-									"menu_matchconfig_type",
-									"menu_matchconfig_win",
-									"menu_matchconfig_players",
-									"menu_matchconfig_size_pitch_button",
-									"menu_matchconfig_ball_type_button"
-								],
-								"subfolders": [],
-								"name": "button"
-							},
-							{
-								"items": [
-									"menu_matchconfig_goals_text",
-									"menu_matchconfig_label",
-									"menu_matchconfig_size_ball_text",
-									"menu_matchconfig_size_character_text",
-									"menu_matchconfig_size_goal_text",
-									"menu_matchconfig_size_pitch_text",
-									"menu_matchconfig_ball_type_text"
-								],
-								"subfolders": [],
-								"name": "text"
-							}
-						],
+						"subfolders": [],
 						"name": "match_config"
 					},
 					{
 						"items": [
-							"menu_gamemode"
+							"main_menu_selector",
+							"pixel_spritefont",
+							"backgroundGradient"
 						],
 						"subfolders": [],
-						"name": "gamemode"
+						"name": "main"
 					}
 				],
 				"name": "menu"
@@ -426,8 +371,6 @@
 		"items": [
 			"player",
 			"feet_detector",
-			"menu_main_buttons",
-			"menu_gamemode_buttons",
 			"goal",
 			"goal_detector",
 			"pitch_background"
@@ -436,7 +379,6 @@
 	},
 	"layouts": {
 		"items": [
-			"menu",
 			"default"
 		],
 		"subfolders": [
@@ -451,7 +393,7 @@
 			},
 			{
 				"items": [
-					"menu_wip",
+					"menu_main",
 					"menu_settings",
 					"menu_match_gamepad",
 					"menu_match_characters",
@@ -472,22 +414,12 @@
 			{
 				"items": [
 					"menu_main",
-					"menu_navigation",
-					"menu_gamepad_selector",
-					"menu_character_selector"
+					"menu_match_config",
+					"menu_match_gamepad",
+					"menu_match_character"
 				],
 				"subfolders": [],
 				"name": "menu"
-			},
-			{
-				"items": [
-					"menu_wip",
-					"menu_match_config",
-					"menu_common",
-					"menu_match_gamepad"
-				],
-				"subfolders": [],
-				"name": "menu_wip"
 			}
 		]
 	},
@@ -646,5 +578,5 @@
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
-	"firstLayout": "menu"
+	"firstLayout": "menu_main"
 }

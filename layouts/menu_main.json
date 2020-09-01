@@ -1,8 +1,66 @@
 {
-	"name": "menu_wip",
+	"name": "menu_main",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "bg",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "backgroundGradient",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 199,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1020,
+						"y": 642,
+						"width": 2480,
+						"height": 2273,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.805012016846583,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 129354506516470,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "main",
 			"overriden": 0,
 			"instances": [
 				{
@@ -263,7 +321,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 136,
@@ -333,7 +391,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 141,
@@ -403,7 +461,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 137,
@@ -473,7 +531,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 140,
@@ -543,7 +601,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 139,
@@ -613,7 +671,7 @@
 						"initially-visible": true,
 						"initial-animation": "idle",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 138,
@@ -724,7 +782,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
@@ -740,5 +798,5 @@
 	"width": 1920,
 	"height": 1080,
 	"unboundedScrolling": false,
-	"eventSheet": "menu_wip"
+	"eventSheet": "menu_main"
 }

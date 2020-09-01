@@ -57,42 +57,6 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_gamepad",
-							"sid": 934124132641640,
-							"parameters": {
-								"key": "\"player0_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 658279602456385,
-							"parameters": {
-								"key": "\"player1_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 572761675785912,
-							"parameters": {
-								"key": "\"player2_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 817746584840037,
-							"parameters": {
-								"key": "\"player3_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
 							"sid": 558338438974737,
 							"parameters": {
 								"key": "\"player0_index\"",
@@ -123,6 +87,46 @@
 							"sid": 635498054465621,
 							"parameters": {
 								"key": "\"player3_index\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 660628312140692,
+							"disabled": true,
+							"parameters": {
+								"key": "\"player0_ready\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 461905330258837,
+							"disabled": true,
+							"parameters": {
+								"key": "\"player1_ready\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 467833193284026,
+							"disabled": true,
+							"parameters": {
+								"key": "\"player2_ready\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_gamepad",
+							"sid": 249093272149971,
+							"disabled": true,
+							"parameters": {
+								"key": "\"player3_ready\"",
 								"value": "0"
 							}
 						}
@@ -194,13 +198,13 @@
 									"objectClass": "System",
 									"sid": 721411379502535,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.index = index"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.index = index"
 									}
 								},
 								{
 									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Sprite2",
+									"objectClass": "menu_match_gamepad_icon",
 									"sid": 586819348687522,
 									"parameters": {
 										"instance-variable": "enabled"
@@ -215,7 +219,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 592493166850940,
 											"parameters": {
 												"instance-variable": "position",
@@ -227,7 +231,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 871198850682700,
 											"parameters": {
 												"instance-variable": "position",
@@ -251,7 +255,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 225816084888339,
 											"parameters": {
 												"instance-variable": "position",
@@ -263,7 +267,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 554052930474147,
 											"parameters": {
 												"instance-variable": "position",
@@ -298,7 +302,7 @@
 											"sid": 360204638916301,
 											"parameters": {
 												"variable": "new_index",
-												"value": "Sprite2.position + action"
+												"value": "menu_match_gamepad_icon.position + action"
 											}
 										}
 									],
@@ -331,13 +335,13 @@
 											"objectClass": "System",
 											"sid": 871458746096474,
 											"parameters": {
-												"object": "Sprite2",
-												"expression": "Sprite2.index = index"
+												"object": "menu_match_gamepad_icon",
+												"expression": "menu_match_gamepad_icon.index = index"
 											}
 										},
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 296340248429325,
 											"parameters": {
 												"instance-variable": "enabled"
@@ -347,7 +351,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 672117820401869,
 											"parameters": {
 												"instance-variable": "position",
@@ -362,7 +366,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 601677723539221,
 													"parameters": {
 														"instance-variable": "position",
@@ -374,7 +378,7 @@
 											"actions": [
 												{
 													"id": "set-instvar-value",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 827143313569011,
 													"parameters": {
 														"instance-variable": "position",
@@ -389,7 +393,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 665702804158880,
 													"parameters": {
 														"instance-variable": "position",
@@ -401,7 +405,7 @@
 											"actions": [
 												{
 													"id": "set-instvar-value",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 635100526831533,
 													"parameters": {
 														"instance-variable": "position",
@@ -416,7 +420,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 728618220804564,
 													"parameters": {
 														"instance-variable": "position",
@@ -428,7 +432,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 996365390848929,
 													"parameters": {
 														"x": "343"
@@ -442,7 +446,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 322286209006834,
 													"parameters": {
 														"instance-variable": "position",
@@ -454,7 +458,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 273312126718923,
 													"parameters": {
 														"x": "958"
@@ -468,7 +472,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 674648872088293,
 													"parameters": {
 														"instance-variable": "position",
@@ -480,7 +484,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 387254506146842,
 													"parameters": {
 														"x": "1560"
@@ -528,13 +532,13 @@
 											"objectClass": "System",
 											"sid": 313769070390892,
 											"parameters": {
-												"object": "Sprite2",
-												"expression": "Sprite2.index = index"
+												"object": "menu_match_gamepad_icon",
+												"expression": "menu_match_gamepad_icon.index = index"
 											}
 										},
 										{
 											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 216729290993333,
 											"parameters": {
 												"instance-variable": "enabled"
@@ -544,7 +548,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 802458736134116,
 											"parameters": {
 												"instance-variable": "position",
@@ -559,7 +563,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 834305223912042,
 													"parameters": {
 														"instance-variable": "position",
@@ -571,7 +575,7 @@
 											"actions": [
 												{
 													"id": "set-instvar-value",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 369902767607925,
 													"parameters": {
 														"instance-variable": "position",
@@ -586,7 +590,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 771742839119069,
 													"parameters": {
 														"instance-variable": "position",
@@ -598,7 +602,7 @@
 											"actions": [
 												{
 													"id": "set-instvar-value",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 881293812485188,
 													"parameters": {
 														"instance-variable": "position",
@@ -613,7 +617,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 601521096966835,
 													"parameters": {
 														"instance-variable": "position",
@@ -625,7 +629,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 982009231171171,
 													"parameters": {
 														"x": "343"
@@ -639,7 +643,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 894936466355324,
 													"parameters": {
 														"instance-variable": "position",
@@ -651,7 +655,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 604159204234279,
 													"parameters": {
 														"x": "958"
@@ -665,7 +669,7 @@
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 321788699587031,
 													"parameters": {
 														"instance-variable": "position",
@@ -677,7 +681,7 @@
 											"actions": [
 												{
 													"id": "set-x",
-													"objectClass": "Sprite2",
+													"objectClass": "menu_match_gamepad_icon",
 													"sid": 137610502974932,
 													"parameters": {
 														"x": "1560"
@@ -707,7 +711,7 @@
 							"actions": [
 								{
 									"id": "set-animation-frame",
-									"objectClass": "Sprite3",
+									"objectClass": "menu_match_gamepad_start",
 									"sid": 722375499190522,
 									"parameters": {
 										"frame-number": "0"
@@ -737,7 +741,7 @@
 							"actions": [
 								{
 									"id": "set-animation-frame",
-									"objectClass": "Sprite3",
+									"objectClass": "menu_match_gamepad_start",
 									"sid": 226432866872733,
 									"parameters": {
 										"frame-number": "1"
@@ -822,8 +826,8 @@
 									"objectClass": "System",
 									"sid": 759946750757588,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.position = position"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.position = position"
 									}
 								}
 							],
@@ -834,7 +838,7 @@
 									"sid": 241778077573597,
 									"parameters": {
 										"variable": "return",
-										"value": "Sprite2.PickedCount"
+										"value": "menu_match_gamepad_icon.PickedCount"
 									}
 								}
 							],
@@ -897,8 +901,8 @@
 									"objectClass": "System",
 									"sid": 587267302064494,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.index",
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.index",
 										"order": "ascending"
 									}
 								}
@@ -911,7 +915,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 662168266898920,
 											"parameters": {
 												"instance-variable": "position",
@@ -927,7 +931,7 @@
 											"sid": 605090539831680,
 											"parameters": {
 												"key": "\"player\" & current_left_index & \"_index\"",
-												"value": "Sprite2.index"
+												"value": "menu_match_gamepad_icon.index"
 											}
 										},
 										{
@@ -938,15 +942,6 @@
 												"variable": "current_left_index",
 												"value": "2"
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 242922416629617,
-											"parameters": {
-												"type": "log",
-												"message": "\"player\" & current_left_index & \"_index\" & \" / \" & Sprite2.index"
-											}
 										}
 									],
 									"sid": 452736465933276
@@ -956,7 +951,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Sprite2",
+											"objectClass": "menu_match_gamepad_icon",
 											"sid": 163989820219430,
 											"parameters": {
 												"instance-variable": "position",
@@ -972,7 +967,7 @@
 											"sid": 425782184868419,
 											"parameters": {
 												"key": "\"player\" & current_right_index & \"_index\"",
-												"value": "Sprite2.index"
+												"value": "menu_match_gamepad_icon.index"
 											}
 										},
 										{
@@ -982,15 +977,6 @@
 											"parameters": {
 												"variable": "current_right_index",
 												"value": "2"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 123579548656175,
-											"parameters": {
-												"type": "log",
-												"message": "\"player\" & current_left_index & \"_index\" & \" / \" & Sprite2.index"
 											}
 										}
 									],
@@ -1050,8 +1036,8 @@
 									"objectClass": "System",
 									"sid": 165380847296205,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.position = 0"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.position = 0"
 									}
 								}
 							],
@@ -1062,7 +1048,7 @@
 									"sid": 922665225649650,
 									"parameters": {
 										"variable": "current_left_side",
-										"value": "Sprite2.PickedCount"
+										"value": "menu_match_gamepad_icon.PickedCount"
 									}
 								}
 							],
@@ -1076,8 +1062,8 @@
 									"objectClass": "System",
 									"sid": 336911300776575,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.position = 2"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.position = 2"
 									}
 								}
 							],
@@ -1088,7 +1074,7 @@
 									"sid": 506968063379742,
 									"parameters": {
 										"variable": "current_right_side",
-										"value": "Sprite2.PickedCount"
+										"value": "menu_match_gamepad_icon.PickedCount"
 									}
 								}
 							],
@@ -1238,8 +1224,8 @@
 									"objectClass": "System",
 									"sid": 950609406686275,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.index = -1"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.index = -1"
 									}
 								}
 							],
@@ -1248,7 +1234,7 @@
 									"callFunction": "menuGamepadAssignSide",
 									"sid": 100524839797443,
 									"parameters": [
-										"Sprite2.index",
+										"menu_match_gamepad_icon.index",
 										"-1"
 									]
 								}
@@ -1280,8 +1266,8 @@
 									"objectClass": "System",
 									"sid": 233050303347279,
 									"parameters": {
-										"object": "Sprite2",
-										"expression": "Sprite2.index = -1"
+										"object": "menu_match_gamepad_icon",
+										"expression": "menu_match_gamepad_icon.index = -1"
 									}
 								}
 							],
@@ -1290,7 +1276,7 @@
 									"callFunction": "menuGamepadAssignSide",
 									"sid": 256330337771931,
 									"parameters": [
-										"Sprite2.index",
+										"menu_match_gamepad_icon.index",
 										"1"
 									]
 								}
@@ -1385,7 +1371,7 @@
 									"objectClass": "System",
 									"sid": 805331248099562,
 									"parameters": {
-										"layout": "menu_wip"
+										"layout": "menu_main"
 									}
 								}
 							],
@@ -1470,8 +1456,8 @@
 											"objectClass": "System",
 											"sid": 106256108140360,
 											"parameters": {
-												"object": "Sprite2",
-												"expression": "Sprite2.index = loopindex"
+												"object": "menu_match_gamepad_icon",
+												"expression": "menu_match_gamepad_icon.index = loopindex"
 											}
 										}
 									],
@@ -1480,7 +1466,7 @@
 											"callFunction": "menuGamepadAssignSide",
 											"sid": 448876717678330,
 											"parameters": [
-												"Sprite2.index",
+												"menu_match_gamepad_icon.index",
 												"-1"
 											]
 										}
@@ -1514,8 +1500,8 @@
 											"objectClass": "System",
 											"sid": 520599222839727,
 											"parameters": {
-												"object": "Sprite2",
-												"expression": "Sprite2.index = loopindex"
+												"object": "menu_match_gamepad_icon",
+												"expression": "menu_match_gamepad_icon.index = loopindex"
 											}
 										}
 									],
@@ -1524,7 +1510,7 @@
 											"callFunction": "menuGamepadAssignSide",
 											"sid": 966897332379298,
 											"parameters": [
-												"Sprite2.index",
+												"menu_match_gamepad_icon.index",
 												"1"
 											]
 										}
@@ -1613,7 +1599,7 @@
 											"objectClass": "System",
 											"sid": 287904153439146,
 											"parameters": {
-												"layout": "menu_wip"
+												"layout": "menu_main"
 											}
 										}
 									],

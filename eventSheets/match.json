@@ -1252,14 +1252,6 @@
 									"parameters": {
 										"seconds": "3"
 									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 352142432299508,
-									"parameters": {
-										"layout": "menu"
-									}
 								}
 							],
 							"sid": 950519862899185

@@ -2,11 +2,69 @@
 	"name": "menu_match_gamepad",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "bg",
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "Sprite2",
+					"type": "backgroundGradient",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 201,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 1020,
+						"y": 642,
+						"width": 2480,
+						"height": 2273,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.80496509213314,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 100771836798875,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "main",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "menu_match_gamepad_icon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -51,7 +109,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "menu_match_gamepad_icon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -96,7 +154,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "menu_match_gamepad_icon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -141,7 +199,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "menu_match_gamepad_icon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -186,7 +244,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "menu_match_gamepad_icon",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -231,7 +289,7 @@
 					}
 				},
 				{
-					"type": "Sprite3",
+					"type": "menu_match_gamepad_start",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -359,7 +417,7 @@
 				0.3686274509803922,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,
