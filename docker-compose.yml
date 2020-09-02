@@ -7,6 +7,6 @@ services:
     container_name: football_nginx
     working_dir: /var/www/html
     volumes:
-    - ./export:/var/www/html:ro
+    - ./export/html:/var/www/html:ro
     ports:
     - ${PORT}:80
