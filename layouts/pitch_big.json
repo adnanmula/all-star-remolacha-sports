@@ -6,26 +6,26 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "background_castle",
+					"type": "background_ground",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
 						"wrap-horizontal": "repeat",
 						"wrap-vertical": "repeat",
 						"image-offset-x": 0,
-						"image-offset-y": 10,
+						"image-offset-y": -60,
 						"image-scale-x": 1,
-						"image-scale-y": 1,
+						"image-scale-y": 1.2,
 						"image-angle": 0
 					},
-					"uid": 128,
+					"uid": 16,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": -31,
-						"y": -90,
-						"width": 1343,
-						"height": 861,
+						"x": -45,
+						"y": -19,
+						"width": 1366,
+						"height": 867,
 						"originX": 0,
 						"originY": 0,
 						"color": [

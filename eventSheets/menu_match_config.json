@@ -686,16 +686,6 @@
 										"comparison": 0,
 										"second-value": "\"size_goal\""
 									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 644441314433393,
-									"parameters": {
-										"first-value": "index",
-										"comparison": 0,
-										"second-value": "\"size_pitch\""
-									}
 								}
 							],
 							"actions": [],
@@ -774,6 +764,100 @@
 										}
 									],
 									"sid": 555936543951281
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 587559299754103,
+									"parameters": {
+										"first-value": "index",
+										"comparison": 0,
+										"second-value": "\"size_pitch\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 675342887028575,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_value",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 556992294082501
+								},
+								{
+									"eventType": "variable",
+									"name": "max_value",
+									"type": "number",
+									"initialValue": "2",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 458834192482935
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 995762583449956,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 171915858167007,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) - 1 < min_value ? max_value : data_match_config.Get(index) - 1"
+											}
+										}
+									],
+									"sid": 599804913336465
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 653359428838490,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 567978233737350,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) + 1 > max_value ? min_value: data_match_config.Get(index) + 1"
+											}
+										}
+									],
+									"sid": 458903772703260
 								}
 							],
 							"isOrBlock": true

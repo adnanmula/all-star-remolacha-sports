@@ -177,6 +177,31 @@
 								}
 							],
 							"sid": 552953272379525
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 292650087236248,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"main_menu_version\" & pixel_spritefont.index = 0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 771692848887972,
+									"parameters": {
+										"text": "\"v\" & projectversion"
+									}
+								}
+							],
+							"sid": 717288696163393
 						}
 					]
 				},
@@ -352,10 +377,10 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 275357894262723,
+							"sid": 621341523075720,
 							"parameters": {
 								"key": "\"size_pitch\"",
-								"value": "0"
+								"value": "1"
 							}
 						}
 					],
