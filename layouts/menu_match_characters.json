@@ -264,7 +264,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 268.5,
+						"x": 255.5,
 						"y": 396,
 						"width": 382,
 						"height": 574,
@@ -295,7 +295,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 679.5,
+						"x": 666.5,
 						"y": 396,
 						"width": 382,
 						"height": 574,
@@ -326,7 +326,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1240.5,
+						"x": 1253.5,
 						"y": 396,
 						"width": -382,
 						"height": 574,
@@ -357,7 +357,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1651.5,
+						"x": 1664.5,
 						"y": 396,
 						"width": -382,
 						"height": 574,
@@ -393,7 +393,7 @@
 					},
 					"uid": 194,
 					"instanceVariables": {
-						"action": "",
+						"action": "vs",
 						"index": 0,
 						"type": "menu_char_label"
 					},
@@ -570,6 +570,48 @@
 						"x": 1643,
 						"y": 738,
 						"width": 364,
+						"height": 76.31336243971487,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "pixel_spritefont",
+					"properties": {
+						"text": "",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 1.3,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 15,
+					"instanceVariables": {
+						"action": "ready",
+						"index": 0,
+						"type": "menu_char_label"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 960,
+						"y": 520.9793388429753,
+						"width": 209.47933884297504,
 						"height": 76.31336243971487,
 						"originX": 0.5,
 						"originY": 0.5,

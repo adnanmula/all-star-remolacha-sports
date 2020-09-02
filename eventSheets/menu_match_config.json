@@ -1566,6 +1566,28 @@
 											}
 										},
 										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 388341399948852,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"go\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 831604242406981,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"back\""
+											},
+											"isInverted": true
+										},
+										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
 											"sid": 341526371515478
@@ -1597,15 +1619,6 @@
 										"gamepad": "loopindex",
 										"button": "d-pad-right"
 									}
-								},
-								{
-									"id": "on-button-pressed",
-									"objectClass": "Gamepad",
-									"sid": 484380769311529,
-									"parameters": {
-										"gamepad": "loopindex",
-										"button": "button-a"
-									}
 								}
 							],
 							"actions": [],
@@ -1622,6 +1635,28 @@
 												"object": "pixel_spritefont",
 												"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
 											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 607252922101708,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"go\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 232516758537016,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"back\""
+											},
+											"isInverted": true
 										},
 										{
 											"id": "trigger-once-while-true",
@@ -1642,6 +1677,81 @@
 									"sid": 669760968895210
 								}
 							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 500502693715863,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 174797035297910,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 987255795217504,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 200715400530472
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "menuMatchConfigUpdateValue",
+											"sid": 492645196352017,
+											"parameters": [
+												"pixel_spritefont.action",
+												"1"
+											]
+										}
+									],
+									"sid": 979933045658800
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 782774116146372,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 557876780765369,
+									"parameters": {
+										"layout": "menu_main"
+									}
+								}
+							],
+							"sid": 882112437130944,
 							"isOrBlock": true
 						}
 					]
@@ -1682,6 +1792,28 @@
 										"object": "pixel_spritefont",
 										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 141956140401575,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"go\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 678545457594969,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -1708,30 +1840,6 @@
 							"parameters": {
 								"key": 68
 							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 747090309279154,
-							"parameters": {
-								"key": 69
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 491906082954785,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 654507766183948,
-							"parameters": {
-								"key": 13
-							}
 						}
 					],
 					"actions": [],
@@ -1748,6 +1856,28 @@
 										"object": "pixel_spritefont",
 										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
 									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 218711437723066,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"go\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 606330633998185,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -1761,6 +1891,65 @@
 								}
 							],
 							"sid": 103619466574977
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 236641540042710,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 780016176802856,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 353177108182992,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 962618056630841,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 735391319554661,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 402002850727040,
+									"parameters": [
+										"pixel_spritefont.action",
+										"1"
+									]
+								}
+							],
+							"sid": 273659995808225
 						}
 					],
 					"isOrBlock": true

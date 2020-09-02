@@ -72,6 +72,450 @@
 					"sid": 170482162091679
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 642100383805605,
+							"parameters": {
+								"key": "\"match_players\"",
+								"comparison": 0,
+								"value": "MATCH_PLAYERS_1V1"
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 485277689217038,
+							"parameters": {
+								"key": "\"player0_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 395422665350443,
+							"parameters": {
+								"key": "\"player1_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 255861267654334,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 243240605240035,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"ready\" & pixel_spritefont.type = \"menu_char_label\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 981025017163085,
+									"parameters": {
+										"text": "\"Ready...\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 798797580003076,
+									"parameters": {
+										"seconds": "3"
+									}
+								}
+							],
+							"sid": 682542425745380,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 984433284684141,
+											"parameters": {
+												"key": "\"player0_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 499352120341828,
+											"parameters": {
+												"key": "\"player1_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 875718317389766,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 250483709763692,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 616884978230623,
+													"parameters": {
+														"layout": "pitch_small"
+													}
+												}
+											],
+											"sid": 374062071643516
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 396393634089659,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 646149346820035,
+													"parameters": {
+														"layout": "pitch_medium"
+													}
+												}
+											],
+											"sid": 100774877876833
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 902145017063740,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 986926733545672,
+													"parameters": {
+														"layout": "pitch_big"
+													}
+												}
+											],
+											"sid": 987349663370875
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 475090532774262
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 834752276152225,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 801146296719971
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 805550783240349,
+							"parameters": {
+								"key": "\"match_players\"",
+								"comparison": 0,
+								"value": "MATCH_PLAYERS_2V2"
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 806605606699659,
+							"parameters": {
+								"key": "\"player0_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 127543929522622,
+							"parameters": {
+								"key": "\"player1_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 419756524061153,
+							"parameters": {
+								"key": "\"player2_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_gamepad",
+							"sid": 761081120287320,
+							"parameters": {
+								"key": "\"player3_character\"",
+								"comparison": 1,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 272967090899227,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 522498879922970,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"ready\" & pixel_spritefont.type = \"menu_char_label\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 152252961203233,
+									"parameters": {
+										"text": "\"Ready...\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 255857985588300,
+									"parameters": {
+										"seconds": "3"
+									}
+								}
+							],
+							"sid": 560188207198247,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 334590348120209,
+											"parameters": {
+												"key": "\"player0_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 891540422116761,
+											"parameters": {
+												"key": "\"player1_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 183864013477941,
+											"parameters": {
+												"key": "\"player2_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										},
+										{
+											"id": "compare-value",
+											"objectClass": "data_gamepad",
+											"sid": 892779942459015,
+											"parameters": {
+												"key": "\"player3_character\"",
+												"comparison": 1,
+												"value": "\"\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 909862968631129,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 151895657432241,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 351287951656215,
+													"parameters": {
+														"layout": "pitch_small"
+													}
+												}
+											],
+											"sid": 353969282182239
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 799345865647760,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 117218437327571,
+													"parameters": {
+														"layout": "pitch_medium"
+													}
+												}
+											],
+											"sid": 513424112833255
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 855232533501344,
+													"parameters": {
+														"key": "\"size_pitch\"",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 567757947912293,
+													"parameters": {
+														"layout": "pitch_big"
+													}
+												}
+											],
+											"sid": 627141836431638
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 473329949976950
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 117098008952435,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 843900557989276
+								}
+							]
+						}
+					]
+				},
+				{
 					"functionName": "menuCharacterCreateSelector",
 					"functionDescription": "Creates a character selector",
 					"functionCategory": "menu_character",
@@ -99,12 +543,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 824800790480542,
+									"sid": 239313503629422,
 									"parameters": {
 										"object-to-create": "menu_char_selector",
 										"layer": "\"main\"",
 										"x": "menu_char_portrait.X + random (-10, 10)",
-										"y": "menu_char_portrait.Y + random (-20, -10)"
+										"y": "menu_char_portrait.Y + random (-100, -60)"
 									}
 								},
 								{
@@ -168,12 +612,12 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 758113436113121,
+									"sid": 842318821486948,
 									"parameters": {
 										"object-to-create": "menu_char_selector",
 										"layer": "\"main\"",
 										"x": "menu_char_portrait.X + random (-10, 10)",
-										"y": "menu_char_portrait.Y + random (-20, -10)"
+										"y": "menu_char_portrait.Y + random (-100, -60)"
 									}
 								},
 								{
@@ -254,12 +698,12 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 673706883993241,
+											"sid": 821866000202077,
 											"parameters": {
 												"object-to-create": "menu_char_selector",
 												"layer": "\"main\"",
 												"x": "menu_char_portrait.X + random (-10, 10)",
-												"y": "menu_char_portrait.Y + random (-20, -10)"
+												"y": "menu_char_portrait.Y + random (-100, -60)"
 											}
 										},
 										{
@@ -323,12 +767,12 @@
 										{
 											"id": "create-object",
 											"objectClass": "System",
-											"sid": 742444308188020,
+											"sid": 467636597130017,
 											"parameters": {
 												"object-to-create": "menu_char_selector",
 												"layer": "\"main\"",
 												"x": "menu_char_portrait.X + random (-10, 10)",
-												"y": "menu_char_portrait.Y + random (-20, -10)"
+												"y": "menu_char_portrait.Y + random (-100, -60)"
 											}
 										},
 										{
@@ -1114,6 +1558,31 @@
 								}
 							],
 							"sid": 198045908884032
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 995682310897700,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"ready\" & pixel_spritefont.type = \"menu_char_label\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 191573978694205,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 350059839869678
 						}
 					],
 					"isOrBlock": true
@@ -1603,6 +2072,31 @@
 										}
 									],
 									"sid": 738734232055148
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 995682310897700,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.action = \"ready\" & pixel_spritefont.type = \"menu_char_label\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 191573978694205,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 350059839869678
 								}
 							]
 						}
