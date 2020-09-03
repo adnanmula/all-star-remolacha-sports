@@ -10,6 +10,10 @@
 			"includeSheet": "match"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "menu_pause"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_1",
 			"type": "number",

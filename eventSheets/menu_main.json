@@ -153,6 +153,14 @@
 						{
 							"callFunction": "menuConfigSetDefaultMatch",
 							"sid": 374173661746355
+						},
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 788121998402470,
+							"parameters": {
+								"time-scale": "1.0"
+							}
 						}
 					],
 					"sid": 749104560716369,

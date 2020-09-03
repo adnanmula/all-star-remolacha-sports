@@ -50,6 +50,15 @@
 									"parameters": {
 										"object": "player"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 526616557307560,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -461,72 +470,6 @@
 										}
 									],
 									"sid": 142905381524087
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 407016528328604,
-											"parameters": {
-												"key": 32
-											}
-										}
-									],
-									"actions": [],
-									"sid": 588562536852273,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-timer-running",
-													"objectClass": "player",
-													"sid": 548092803733673,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"dash\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "set-enabled",
-													"objectClass": "player",
-													"sid": 824171634242796,
-													"behaviorType": "Platform",
-													"parameters": {
-														"state": "disabled"
-													}
-												},
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "player",
-													"sid": 366228218205162,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "30",
-														"angle": "player.Angle - 90",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "player",
-													"sid": 305647945109242,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "dash_timer",
-														"type": "once",
-														"tag": "\"dash\""
-													}
-												}
-											],
-											"sid": 399227665907063
-										}
-									]
 								}
 							]
 						}
@@ -810,24 +753,6 @@
 										"layer": "\"main\"",
 										"x": "x",
 										"y": "y"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 901212249813734,
-									"disabled": true,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "player_km_origin_indicator",
-									"sid": 854142802417419,
-									"disabled": true,
-									"parameters": {
-										"z": "10"
 									}
 								}
 							],

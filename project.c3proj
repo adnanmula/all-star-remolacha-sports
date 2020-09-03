@@ -64,16 +64,16 @@
 		},
 		{
 			"type": "plugin",
-			"id": "NinePatch",
-			"name": "9-patch",
+			"id": "Spritefont2",
+			"name": "Sprite font",
 			"author": "Scirra",
 			"version": "r214",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Spritefont2",
-			"name": "Sprite font",
+			"id": "NinePatch",
+			"name": "9-patch",
 			"author": "Scirra",
 			"version": "r214",
 			"bundled": false
@@ -277,7 +277,6 @@
 					},
 					{
 						"items": [
-							"menu_match_config_frame",
 							"menu_match_config_selector"
 						],
 						"subfolders": [],
@@ -287,7 +286,9 @@
 						"items": [
 							"main_menu_selector",
 							"pixel_spritefont",
-							"backgroundGradient"
+							"backgroundGradient",
+							"background_black",
+							"menu_match_config_frame"
 						],
 						"subfolders": [],
 						"name": "main"
@@ -416,7 +417,8 @@
 					"menu_main",
 					"menu_match_config",
 					"menu_match_gamepad",
-					"menu_match_character"
+					"menu_match_character",
+					"menu_pause"
 				],
 				"subfolders": [],
 				"name": "menu"
