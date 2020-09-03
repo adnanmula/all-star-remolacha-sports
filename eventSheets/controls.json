@@ -24,7 +24,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Controls - General",
+			"title": "Controls - Common",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -156,7 +156,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Controls - Keyboard&Mouse",
+			"title": "Controls - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [

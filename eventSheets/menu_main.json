@@ -615,6 +615,140 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Main menu navigation - Keyboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 243858014148970,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 756772023256345,
+							"parameters": {
+								"variable": "menu_main_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 825733784648881
+						}
+					],
+					"sid": 804670111489369
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 960836357150104,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 528029753740998,
+							"parameters": {
+								"variable": "menu_main_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "mainMenuUpdate",
+							"sid": 889982488006513
+						}
+					],
+					"sid": 172695961427815
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 973358235624503,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 410135536112759,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 702888181044913,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 222871566947130,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 535771676938454,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 566340712198825,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "WIPgoToView",
+									"sid": 252180245886471,
+									"parameters": [
+										"pixel_spritefont.action"
+									]
+								}
+							],
+							"sid": 402107451901559
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 120552627335076
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Main menu navigation - Gamepad",
 			"description": "",
 			"isActiveOnStart": true,
@@ -795,140 +929,6 @@
 				}
 			],
 			"sid": 577776575781846
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Main menu navigation - Keyboard",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 410872870234442,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 331658037761582,
-							"parameters": {
-								"variable": "menu_main_current_index",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "mainMenuUpdate",
-							"sid": 194545352063218
-						}
-					],
-					"sid": 790694335328366
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 779141985277486,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 364582597231370,
-							"parameters": {
-								"variable": "menu_main_current_index",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "mainMenuUpdate",
-							"sid": 163400817794914
-						}
-					],
-					"sid": 970986644025927
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 100493714896147,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 632746687427255,
-							"parameters": {
-								"key": 69
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 518258772093367,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 743695448576524,
-							"parameters": {
-								"key": 13
-							}
-						}
-					],
-					"actions": [],
-					"sid": 102392822629586,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 205280691637785,
-									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "WIPgoToView",
-									"sid": 625605234809624,
-									"parameters": [
-										"pixel_spritefont.action"
-									]
-								}
-							],
-							"sid": 263090369095013
-						}
-					],
-					"isOrBlock": true
-				}
-			],
-			"sid": 970166223712661
 		}
 	],
 	"sid": 795016252309516

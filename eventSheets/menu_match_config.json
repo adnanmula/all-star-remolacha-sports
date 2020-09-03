@@ -1488,6 +1488,287 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Match menu - Keyboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 429329430411077,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [],
+					"sid": 513431343040585,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 974727932764184,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 312279737318350,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"go\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 313261496810424,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 938351198976525,
+									"parameters": [
+										"pixel_spritefont.action",
+										"0"
+									]
+								}
+							],
+							"sid": 661251878963783
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 654414614381214,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [],
+					"sid": 298984900973219,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 451364110002689,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 582882887943805,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"go\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 551601807740504,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 410687277621244,
+									"parameters": [
+										"pixel_spritefont.action",
+										"1"
+									]
+								}
+							],
+							"sid": 484872281549043
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 275878083175699,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 477445315978088,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 619494560151220,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 278640574522002,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 145820362631552,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 496152673435113,
+									"parameters": [
+										"pixel_spritefont.action",
+										"1"
+									]
+								}
+							],
+							"sid": 401917750817744
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 856833521731782,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 942637336088684,
+							"parameters": {
+								"variable": "menu_match_config_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuMatchConfigUpdate",
+							"sid": 660357227029239
+						}
+					],
+					"sid": 789251254710759
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 145264443896781,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 634156689042508,
+							"parameters": {
+								"variable": "menu_match_config_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuMatchConfigUpdate",
+							"sid": 471563244193537
+						}
+					],
+					"sid": 237632876786163
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 809648160549232,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 916270257008889,
+							"parameters": {
+								"layout": "menu_main"
+							}
+						}
+					],
+					"sid": 343472805456413,
+					"isOrBlock": true
+				}
+			],
+			"sid": 942591361265443
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Match menu - Gamepad",
 			"description": "",
 			"isActiveOnStart": true,
@@ -1842,287 +2123,6 @@
 				}
 			],
 			"sid": 862004467053616
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Match menu - Keyboard",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 358548325910704,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [],
-					"sid": 993005027285226,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 588495291187015,
-									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 141956140401575,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"go\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 678545457594969,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"back\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "menuMatchConfigUpdateValue",
-									"sid": 245384244672916,
-									"parameters": [
-										"pixel_spritefont.action",
-										"0"
-									]
-								}
-							],
-							"sid": 734444174682335
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 471634227325042,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [],
-					"sid": 380119989793715,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 411469881112273,
-									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 218711437723066,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"go\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 606330633998185,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"back\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "menuMatchConfigUpdateValue",
-									"sid": 105077426073420,
-									"parameters": [
-										"pixel_spritefont.action",
-										"1"
-									]
-								}
-							],
-							"sid": 103619466574977
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 236641540042710,
-							"parameters": {
-								"key": 69
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 780016176802856,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 353177108182992,
-							"parameters": {
-								"key": 13
-							}
-						}
-					],
-					"actions": [],
-					"sid": 962618056630841,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 735391319554661,
-									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "menuMatchConfigUpdateValue",
-									"sid": 402002850727040,
-									"parameters": [
-										"pixel_spritefont.action",
-										"1"
-									]
-								}
-							],
-							"sid": 273659995808225
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 986770028078570,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 151208458790771,
-							"parameters": {
-								"variable": "menu_match_config_current_index",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "menuMatchConfigUpdate",
-							"sid": 294937946239422
-						}
-					],
-					"sid": 462426002638284
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 424836283077932,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 958415459752341,
-							"parameters": {
-								"variable": "menu_match_config_current_index",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "menuMatchConfigUpdate",
-							"sid": 788556610900605
-						}
-					],
-					"sid": 843544809153076
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 816179052249733,
-							"parameters": {
-								"key": 27
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 314294714183840,
-							"parameters": {
-								"layout": "menu_main"
-							}
-						}
-					],
-					"sid": 806391644669960,
-					"isOrBlock": true
-				}
-			],
-			"sid": 147547378705767
 		}
 	],
 	"sid": 449976845993604
