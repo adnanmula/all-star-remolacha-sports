@@ -1,0 +1,20 @@
+{
+	"name": "menu_match_config_frame",
+	"plugin-id": "NinePatch",
+	"sid": 382211248882329,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 10,
+		"height": 10,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3893040,
+		"useCollisionPoly": true
+	}
+}

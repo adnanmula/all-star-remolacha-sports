@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  nginx:
+    build:
+      dockerfile: ./docker/nginx/Dockerfile
+      context: .
+    container_name: football_nginx
+    working_dir: /var/www/html
+    volumes:
+    - ./export/html:/var/www/html:ro
+    ports:
+    - ${PORT}:80

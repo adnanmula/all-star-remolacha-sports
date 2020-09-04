@@ -24,7 +24,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Controls - General",
+			"title": "Controls - Common",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -50,6 +50,15 @@
 									"parameters": {
 										"object": "player"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 526616557307560,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [],
@@ -61,7 +70,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 838519907508704,
+											"sid": 392902291750642,
 											"parameters": {
 												"first-value": "player.gamepad_index",
 												"comparison": 0,
@@ -147,14 +156,14 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Controls - Keyboard&Mouse",
+			"title": "Controls - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"functionName": "controlsInitializeMouseSettings",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -256,7 +265,7 @@
 				{
 					"functionName": "controlsProcessKeyboardAndMouseInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -461,72 +470,6 @@
 										}
 									],
 									"sid": 142905381524087
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 407016528328604,
-											"parameters": {
-												"key": 32
-											}
-										}
-									],
-									"actions": [],
-									"sid": 588562536852273,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-timer-running",
-													"objectClass": "player",
-													"sid": 548092803733673,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"dash\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "set-enabled",
-													"objectClass": "player",
-													"sid": 824171634242796,
-													"behaviorType": "Platform",
-													"parameters": {
-														"state": "disabled"
-													}
-												},
-												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "player",
-													"sid": 366228218205162,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "30",
-														"angle": "player.Angle - 90",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "player",
-													"sid": 305647945109242,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "dash_timer",
-														"type": "once",
-														"tag": "\"dash\""
-													}
-												}
-											],
-											"sid": 399227665907063
-										}
-									]
 								}
 							]
 						}
@@ -535,7 +478,7 @@
 				{
 					"functionName": "controlsProcessMouseInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -743,7 +686,7 @@
 				{
 					"functionName": "setNewMouseOrigin",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -811,24 +754,6 @@
 										"x": "x",
 										"y": "y"
 									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 901212249813734,
-									"disabled": true,
-									"parameters": {
-										"seconds": "0"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "player_km_origin_indicator",
-									"sid": 854142802417419,
-									"disabled": true,
-									"parameters": {
-										"z": "10"
-									}
 								}
 							],
 							"sid": 182513970310450
@@ -860,7 +785,7 @@
 				{
 					"functionName": "toggleMouseMode",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [],
@@ -904,7 +829,7 @@
 				{
 					"functionName": "controlsProcessGamepadInput",
 					"functionDescription": "",
-					"functionCategory": "",
+					"functionCategory": "input",
 					"functionReturnType": "none",
 					"functionIsAsync": false,
 					"functionParameters": [
@@ -1035,6 +960,46 @@
 										}
 									],
 									"sid": 794519248782469,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-jumping",
+													"objectClass": "player",
+													"sid": 806854786287204,
+													"behaviorType": "Platform",
+													"isInverted": true
+												},
+												{
+													"id": "is-falling",
+													"objectClass": "player",
+													"sid": 848850470965031,
+													"behaviorType": "Platform",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 141061062948384,
+													"parameters": {
+														"animation": "\"walking\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 803989246867860,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 452566989742458
+										}
+									],
 									"isOrBlock": true
 								},
 								{
@@ -1085,7 +1050,119 @@
 										}
 									],
 									"sid": 358677277860598,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-jumping",
+													"objectClass": "player",
+													"sid": 352923361788481,
+													"behaviorType": "Platform",
+													"isInverted": true
+												},
+												{
+													"id": "is-falling",
+													"objectClass": "player",
+													"sid": 778678289737168,
+													"behaviorType": "Platform",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 190917052228887,
+													"parameters": {
+														"animation": "\"walking\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 779666248786487,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 988434856808128
+										}
+									],
 									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "NO DPAD/JOY LEFT OR DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 760140988547821,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 162366149896851,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 331599094923475,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-right"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 715823945635804,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 177775023302606,
+											"parameters": {
+												"animation": "\"idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"callFunction": "setFeetDetector",
+											"sid": 777156383830789,
+											"parameters": [
+												"player.UID"
+											]
+										}
+									],
+									"sid": 216456053826118
 								},
 								{
 									"eventType": "comment",
@@ -1134,18 +1211,43 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 433556912162152,
+									"children": [
 										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 387901430503630,
-											"parameters": {
-												"animation": "\"kick\"",
-												"from": "beginning"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "player",
+													"sid": 722241033271643,
+													"parameters": {
+														"animation": "\"kick\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 331520764071566,
+													"parameters": {
+														"animation": "\"kick\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"callFunction": "setFeetDetector",
+													"sid": 596203443078613,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 757114542869327
 										}
-									],
-									"sid": 433556912162152
+									]
 								},
 								{
 									"eventType": "comment",
@@ -1164,87 +1266,41 @@
 											}
 										}
 									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 773660938756410,
-											"parameters": {
-												"animation": "\"lift\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 195053655907661
-								},
-								{
-									"eventType": "comment",
-									"text": "L3"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 242697004915001,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"button": "right-analog-button"
-											}
-										}
-									],
 									"actions": [],
-									"sid": 732474229574779,
+									"sid": 195053655907661,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-timer-running",
+													"id": "is-animation-playing",
 													"objectClass": "player",
-													"sid": 603762309657081,
-													"behaviorType": "Timer",
+													"sid": 974187425573292,
 													"parameters": {
-														"tag": "\"dash\""
+														"animation": "\"lift\""
 													},
 													"isInverted": true
 												}
 											],
 											"actions": [
 												{
-													"id": "set-enabled",
+													"id": "set-animation",
 													"objectClass": "player",
-													"sid": 246349324568730,
-													"behaviorType": "Platform",
+													"sid": 967894725708702,
 													"parameters": {
-														"state": "disabled"
+														"animation": "\"lift\"",
+														"from": "beginning"
 													}
 												},
 												{
-													"id": "apply-impulse-at-angle",
-													"objectClass": "player",
-													"sid": 489224472923244,
-													"behaviorType": "Physics",
-													"parameters": {
-														"impulse": "30",
-														"angle": "player.Angle - 90",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "player",
-													"sid": 453529413216697,
-													"behaviorType": "Timer",
-													"parameters": {
-														"duration": "dash_timer",
-														"type": "once",
-														"tag": "\"dash\""
-													}
+													"callFunction": "setFeetDetector",
+													"sid": 578318566703010,
+													"parameters": [
+														"player.UID"
+													]
 												}
 											],
-											"sid": 380447606082950
+											"sid": 417447751905389
 										}
 									]
 								}

@@ -1,9 +1,9 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 18100,
-	"name": "remolacha",
+	"savedWithRelease": 21400,
+	"name": "All-star remolacha sports",
 	"runtime": "c3",
-	"useWorker": false,
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
 		{
@@ -11,7 +11,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "gamepad",
 			"name": "Gamepad",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -43,15 +43,23 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
+			"id": "TiledBg",
+			"name": "Tiled Background",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -59,7 +67,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -67,7 +75,7 @@
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -75,7 +83,7 @@
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -83,7 +91,7 @@
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -91,7 +99,15 @@
 			"id": "Physics",
 			"name": "Physics",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -99,7 +115,7 @@
 			"id": "Timer",
 			"name": "Timer",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -107,7 +123,7 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		},
 		{
@@ -115,7 +131,7 @@
 			"id": "tint",
 			"name": "Tint",
 			"author": "Scirra",
-			"version": "r181",
+			"version": "r214",
 			"bundled": false
 		}
 	],
@@ -135,22 +151,39 @@
 			},
 			{
 				"items": [
-					"player1_fd",
-					"player2_fd",
 					"MarcosHeredia",
 					"PopiFresco",
-					"stickman3_fd",
 					"SrHuevo",
-					"player_km_origin_indicator"
+					"Buko",
+					"DankElf",
+					"TunicaOldman"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"player_km_origin_indicator"
+						],
+						"subfolders": [],
+						"name": "props"
+					},
+					{
+						"items": [
+							"player_fd_buko",
+							"player_fd_dankelf",
+							"player_fd_marcosheredia",
+							"player_fd_popifresco",
+							"player_fd_srhuevo",
+							"player_fd_tunicaoldman"
+						],
+						"subfolders": [],
+						"name": "feet_detector"
+					}
+				],
 				"name": "player"
 			},
 			{
 				"items": [
-					"solid_bound",
-					"match_scoreboard",
-					"match_timer"
+					"solid_bound"
 				],
 				"subfolders": [
 					{
@@ -175,7 +208,8 @@
 							{
 								"items": [
 									"goal_volley",
-									"goal_volley_detector"
+									"goal_volley_detector",
+									"goal_volley_barrier"
 								],
 								"subfolders": [],
 								"name": "volley"
@@ -198,6 +232,15 @@
 						],
 						"subfolders": [],
 						"name": "ball"
+					},
+					{
+						"items": [
+							"background_castle",
+							"background_forest",
+							"background_ground"
+						],
+						"subfolders": [],
+						"name": "bg"
 					}
 				],
 				"name": "props"
@@ -208,87 +251,37 @@
 					{
 						"items": [
 							"menu_char_portrait",
-							"menu_char_selector",
-							"menu_char_name",
-							"menu_char_portrait_big"
+							"menu_char_portrait_big",
+							"menu_char_selector"
 						],
-						"subfolders": [
-							{
-								"items": [
-									"menu_gamepad_selector"
-								],
-								"subfolders": [],
-								"name": "gamepad_selector"
-							}
-						],
-						"name": "char_selector"
+						"subfolders": [],
+						"name": "character"
 					},
 					{
 						"items": [
-							"menu_main_selector"
+							"menu_match_gamepad_icon",
+							"menu_match_gamepad_start"
 						],
 						"subfolders": [],
-						"name": "navigation"
+						"name": "gamepad"
 					},
 					{
-						"items": [],
-						"subfolders": [
-							{
-								"items": [
-									"menu_debug",
-									"menu_gamepad_debug",
-									"menu_title"
-								],
-								"subfolders": [],
-								"name": "text"
-							},
-							{
-								"items": [
-									"menu_main_play",
-									"menu_main_settings"
-								],
-								"subfolders": [],
-								"name": "button"
-							}
+						"items": [
+							"menu_match_config_selector"
 						],
-						"name": "main"
-					},
-					{
-						"items": [],
-						"subfolders": [
-							{
-								"items": [
-									"menu_matchconfig_goals_button",
-									"menu_matchconfig_size_ball_button",
-									"menu_matchconfig_size_character_button",
-									"menu_matchconfig_size_goal_button",
-									"menu_matchconfig_toCharSelect",
-									"menu_matchconfig_type",
-									"menu_matchconfig_win"
-								],
-								"subfolders": [],
-								"name": "button"
-							},
-							{
-								"items": [
-									"menu_matchconfig_goals_text",
-									"menu_matchconfig_label",
-									"menu_matchconfig_size_ball_text",
-									"menu_matchconfig_size_character_text",
-									"menu_matchconfig_size_goal_text"
-								],
-								"subfolders": [],
-								"name": "text"
-							}
-						],
+						"subfolders": [],
 						"name": "match_config"
 					},
 					{
 						"items": [
-							"menu_gamemode"
+							"main_menu_selector",
+							"pixel_spritefont",
+							"backgroundGradient",
+							"background_black",
+							"menu_match_config_frame"
 						],
 						"subfolders": [],
-						"name": "gamemode"
+						"name": "main"
 					}
 				],
 				"name": "menu"
@@ -308,7 +301,7 @@
 	"containers": [
 		{
 			"members": [
-				"player2_fd",
+				"player_fd_popifresco",
 				"PopiFresco"
 			],
 			"selectMode": "normal"
@@ -316,14 +309,14 @@
 		{
 			"members": [
 				"MarcosHeredia",
-				"player1_fd"
+				"player_fd_marcosheredia"
 			],
 			"selectMode": "normal"
 		},
 		{
 			"members": [
-				"SrHuevo",
-				"stickman3_fd"
+				"player_fd_srhuevo",
+				"SrHuevo"
 			],
 			"selectMode": "normal"
 		},
@@ -342,26 +335,65 @@
 				"goal_basket_solid"
 			],
 			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"DankElf",
+				"player_fd_dankelf"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"player_fd_tunicaoldman",
+				"TunicaOldman"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Buko",
+				"player_fd_buko"
+			],
+			"selectMode": "normal"
 		}
 	],
 	"families": {
 		"items": [
 			"player",
 			"feet_detector",
-			"menu_main_buttons",
-			"menu_gamemode_buttons",
 			"goal",
-			"goal_detector"
+			"goal_detector",
+			"pitch_background"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"main",
-			"menu",
 			"default"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"pitch_medium",
+					"pitch_small",
+					"pitch_big"
+				],
+				"subfolders": [],
+				"name": "pitch"
+			},
+			{
+				"items": [
+					"menu_main",
+					"menu_settings",
+					"menu_match_gamepad",
+					"menu_match_characters",
+					"menu_match_config"
+				],
+				"subfolders": [],
+				"name": "menu"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
@@ -373,9 +405,11 @@
 			{
 				"items": [
 					"menu_main",
-					"menu_navigation",
-					"menu_gamepad_selector",
-					"menu_character_selector"
+					"menu_match_config",
+					"menu_match_gamepad",
+					"menu_match_character",
+					"menu_pause",
+					"menu_settings"
 				],
 				"subfolders": [],
 				"name": "menu"
@@ -419,37 +453,58 @@
 				{
 					"name": "loading-logo.png",
 					"type": "image/png",
-					"sid": 388422432101060
+					"sid": 388422432101060,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
 				},
 				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 139958011698570
+					"sid": 139958011698570,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				},
 				{
 					"name": "icon-512.png",
 					"type": "image/png",
-					"sid": 555616852348101
+					"sid": 555616852348101,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				},
 				{
 					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 821217793226999
+					"sid": 821217793226999,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				},
 				{
 					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 288604151112678
+					"sid": 288604151112678,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				},
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 982194147625789
+					"sid": 982194147625789,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				},
 				{
 					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 474311748017190
+					"sid": 474311748017190,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
 				}
 			],
 			"subfolders": []
@@ -470,14 +525,14 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "0.0.1",
-		"author": "",
+		"version": "1.0.0",
+		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "",
-		"appId": "",
+		"appId": "com.adnanmula.remolacha",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
@@ -508,12 +563,13 @@
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"clearBackground": true,
-		"enhancedAccelerationPrecision": true
+		"enhancedAccelerationPrecision": true,
+		"cordovaiOSScheme": "file"
 	},
-	"viewportWidth": 640,
-	"viewportHeight": 360,
-	"firstLayout": "menu"
+	"viewportWidth": 1920,
+	"viewportHeight": 1080,
+	"firstLayout": "menu_main"
 }

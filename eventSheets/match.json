@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "temp_goal_volley_count",
+			"name": "goal_volley_count",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -26,7 +26,7 @@
 					"objectClass": "System",
 					"sid": 700560069873193,
 					"parameters": {
-						"variable": "temp_goal_volley_count",
+						"variable": "goal_volley_count",
 						"value": "0"
 					}
 				}
@@ -215,6 +215,15 @@
 							"parameters": {
 								"collisions": "disabled"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_volley_barrier",
+							"sid": 967379783598173,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 416710035776654,
@@ -237,10 +246,10 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football",
-									"sid": 383408649338677,
+									"sid": 751630981386059,
 									"parameters": {
-										"width": "40",
-										"height": "67"
+										"width": "Self.Width",
+										"height": "Self.Height * 0.6"
 									}
 								}
 							],
@@ -249,11 +258,6 @@
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 757510660285115
-								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
@@ -269,10 +273,10 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football",
-									"sid": 179978936884191,
+									"sid": 393484365922307,
 									"parameters": {
-										"width": "40",
-										"height": "140"
+										"width": "Self.Width",
+										"height": "Self.Height* 1.5"
 									}
 								}
 							],
@@ -281,11 +285,6 @@
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 684878299311595
-								},
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
@@ -301,10 +300,10 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football",
-									"sid": 342148614524425,
+									"sid": 173905196003634,
 									"parameters": {
-										"width": "40",
-										"height": "300"
+										"width": "Self.Width",
+										"height": "Self.Height * 3"
 									}
 								}
 							],
@@ -484,85 +483,19 @@
 								"instance-variable": "owner",
 								"value": "goal_basket.UID"
 							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_volley_barrier",
+							"sid": 432955157476307,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 357576099125256,
 					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 150715159844204,
-									"disabled": true,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "goal_basket",
-									"sid": 650532398830316,
-									"disabled": true,
-									"parameters": {
-										"width": "40",
-										"height": "67"
-									}
-								}
-							],
-							"sid": 258402094678624
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 459018189880627
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 191737075619283,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 253490446601390,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 408738994878913
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 685023282530872,
-									"parameters": {
-										"first-value": "size",
-										"comparison": 0,
-										"second-value": "2"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 871835429705990,
-							"disabled": true
-						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -631,12 +564,6 @@
 								}
 							],
 							"sid": 411697749135030
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 946637623300429
 						}
 					]
 				},
@@ -687,20 +614,9 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 255528290975542,
-									"disabled": true,
-									"parameters": {
-										"first-value": "goal_volley.Count",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
 									"sid": 359816902348106,
 									"parameters": {
-										"first-value": "temp_goal_volley_count",
+										"first-value": "goal_volley_count",
 										"comparison": 0,
 										"second-value": "0"
 									}
@@ -710,11 +626,11 @@
 								{
 									"id": "create-object",
 									"objectClass": "System",
-									"sid": 736004456420726,
+									"sid": 696378936948051,
 									"parameters": {
 										"object-to-create": "goal_volley",
 										"layer": "\"main\"",
-										"x": "LayoutWidth / 2",
+										"x": "LayoutWidth / 2 - goal_volley.Width/2",
 										"y": "LayoutHeight / 2"
 									}
 								},
@@ -733,12 +649,92 @@
 									"objectClass": "System",
 									"sid": 215673079286317,
 									"parameters": {
-										"variable": "temp_goal_volley_count",
+										"variable": "goal_volley_count",
 										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "goal_volley_barrier",
+									"sid": 227643770369192,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
 									}
 								}
 							],
-							"sid": 297503897625766
+							"sid": 297503897625766,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 944301436842444,
+											"parameters": {
+												"first-value": "size",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-height",
+											"objectClass": "goal_volley",
+											"sid": 366966241705863,
+											"parameters": {
+												"height": "Self.Height * 0.5"
+											}
+										}
+									],
+									"sid": 301185143334017
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 319966381821182,
+											"parameters": {
+												"first-value": "size",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 254737030703228
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 310808529998985,
+											"parameters": {
+												"first-value": "size",
+												"comparison": 0,
+												"second-value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-height",
+											"objectClass": "goal_volley",
+											"sid": 779860348559381,
+											"parameters": {
+												"height": "Self.Height * 1.5"
+											}
+										}
+									],
+									"sid": 516806997003072
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -941,12 +937,22 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 763666452739154,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"match_scoreboard\""
+									}
+								}
+							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "match_scoreboard",
-									"sid": 264678984967201,
+									"objectClass": "pixel_spritefont",
+									"sid": 896148957155152,
 									"parameters": {
 										"text": "score_1 & \" - \" & score_2"
 									}
@@ -1082,9 +1088,18 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 422047627152006,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"match_timer\""
+							}
+						},
+						{
 							"id": "is-timer-running",
-							"objectClass": "match_timer",
-							"sid": 975254785525397,
+							"objectClass": "pixel_spritefont",
+							"sid": 403530254890824,
 							"behaviorType": "Timer",
 							"parameters": {
 								"tag": "\"match_timer\""
@@ -1094,10 +1109,10 @@
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "match_timer",
-							"sid": 788950010865665,
+							"objectClass": "pixel_spritefont",
+							"sid": 748882134760099,
 							"parameters": {
-								"text": "zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") /60%60),2)&\":\"&zeropad(floor(match_timer.Timer.CurrentTime(\"match_timer\") %60),2)"
+								"text": "zeropad(floor(pixel_spritefont.Timer.CurrentTime(\"match_timer\") /60%60),2)&\":\"&zeropad(floor(pixel_spritefont.Timer.CurrentTime(\"match_timer\") %60),2)"
 							}
 						}
 					],
@@ -1108,8 +1123,8 @@
 					"conditions": [
 						{
 							"id": "on-timer",
-							"objectClass": "match_timer",
-							"sid": 989309162075041,
+							"objectClass": "pixel_spritefont",
+							"sid": 874215894640918,
 							"behaviorType": "Timer",
 							"parameters": {
 								"tag": "\"match_timer\""
@@ -1119,10 +1134,31 @@
 					"actions": [
 						{
 							"callFunction": "triggerEndMatch",
-							"sid": 460877133103852
+							"sid": 934282726289200
 						}
 					],
-					"sid": 619648165598585
+					"sid": 589668529826445
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-outside-layout",
+							"objectClass": "player",
+							"sid": 203886419643965
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "resetBall",
+							"sid": 480368582934891
+						},
+						{
+							"callFunction": "resetPlayers",
+							"sid": 228478064837439
+						}
+					],
+					"sid": 811652964700611
 				},
 				{
 					"functionName": "checkEndMatch",
@@ -1230,15 +1266,24 @@
 										"comparison": 4,
 										"second-value": "score_2"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 178368570566857,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"match_scoreboard\""
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "match_scoreboard",
-									"sid": 912740275896394,
+									"objectClass": "pixel_spritefont",
+									"sid": 922612927539636,
 									"parameters": {
-										"text": "data_gamepad.Get(\"player0_character\") & \"(player1) wins!\""
+										"text": "\"Team 1 wins!\""
 									}
 								}
 							],
@@ -1261,15 +1306,24 @@
 										"comparison": 4,
 										"second-value": "score_1"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 891917307693784,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"match_scoreboard\""
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "match_scoreboard",
-									"sid": 719911950386375,
+									"objectClass": "pixel_spritefont",
+									"sid": 573355343314054,
 									"parameters": {
-										"text": "data_gamepad.Get(\"player1_character\") & \"(player2) wins!\""
+										"text": "\"Team 2 wins!\""
 									}
 								}
 							],
@@ -1292,13 +1346,22 @@
 										"comparison": 0,
 										"second-value": "score_2"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 873316999527169,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"match_scoreboard\""
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-text",
-									"objectClass": "match_scoreboard",
-									"sid": 832840531200845,
+									"objectClass": "pixel_spritefont",
+									"sid": 721224297665026,
 									"parameters": {
 										"text": "\"Draw!\""
 									}
@@ -1321,9 +1384,9 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 352142432299508,
+									"sid": 136256523295131,
 									"parameters": {
-										"layout": "menu"
+										"layout": "menu_main"
 									}
 								}
 							],
@@ -1344,6 +1407,45 @@
 				0.5019607843137255,
 				0.25098039215686274,
 				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 877011678410776,
+					"parameters": {
+						"object": "goal"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 731641288779909,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-enabled",
+							"objectClass": "goal",
+							"sid": 592568129445512,
+							"behaviorType": "Physics"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "goal",
+							"sid": 634557576474291,
+							"parameters": {
+								"angle": "0"
+							}
+						}
+					],
+					"sid": 773637123643125
+				}
 			]
 		}
 	],

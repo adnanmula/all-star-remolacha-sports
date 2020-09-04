@@ -10,6 +10,10 @@
 			"includeSheet": "match"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "menu_pause"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_1",
 			"type": "number",
@@ -38,7 +42,43 @@
 					"sid": 977925960720504
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 129918805276159,
+					"parameters": {
+						"width": "640",
+						"height": "360"
+					}
+				},
+				{
+					"id": "set-solid-collision-filter",
+					"objectClass": "ball",
+					"sid": 292324275345830,
+					"parameters": {
+						"mode": "exclusive",
+						"tags": "\"barrier\""
+					}
+				},
+				{
+					"id": "set-image-offset-x",
+					"objectClass": "pitch_background",
+					"sid": 625815348653233,
+					"parameters": {
+						"offset-x": "random(0,100)"
+					}
+				},
+				{
+					"id": "scroll-to-position",
+					"objectClass": "System",
+					"sid": 450683563553000,
+					"parameters": {
+						"x": "LayoutWidth/2",
+						"y": "LayoutHeight/2"
+					}
+				}
+			],
 			"sid": 330663426654972,
 			"children": [
 				{
@@ -60,11 +100,6 @@
 							"id": "reset-global-variables",
 							"objectClass": "System",
 							"sid": 342438709360371
-						},
-						{
-							"callFunction": "mapFunctions",
-							"sid": 820531011775586,
-							"disabled": true
 						}
 					],
 					"sid": 718724352854851
@@ -81,13 +116,22 @@
 								"comparison": 0,
 								"second-value": "WIN_CONDITION_TIME"
 							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 587198540616287,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"match_timer\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "start-timer",
-							"objectClass": "match_timer",
-							"sid": 682650263740140,
+							"objectClass": "pixel_spritefont",
+							"sid": 901307114750862,
 							"behaviorType": "Timer",
 							"parameters": {
 								"duration": "data_match_config.Get(\"goal_amount\") * 60",
@@ -105,13 +149,22 @@
 							"id": "else",
 							"objectClass": "System",
 							"sid": 972521794222012
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 273317520013532,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"match_timer\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "match_timer",
-							"sid": 901626954041367,
+							"objectClass": "pixel_spritefont",
+							"sid": 594716125669654,
 							"parameters": {
 								"text": "\"\""
 							}
@@ -120,99 +173,165 @@
 					"sid": 454262827951489
 				},
 				{
-					"eventType": "variable",
-					"name": "size_ball",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 172813500609875
-				},
-				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 208180380963401,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"match_players\")",
+								"comparison": 0,
+								"second-value": "MATCH_PLAYERS_1V1"
+							}
+						}
+					],
 					"actions": [
 						{
-							"callFunction": "createGoal",
-							"sid": 448293709573911,
-							"parameters": [
-								"10",
-								"200",
-								"data_match_config.Get(\"size_goal\")",
-								"data_match_config.Get(\"match_type\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 948625290607753,
-							"parameters": [
-								"630",
-								"200",
-								"data_match_config.Get(\"size_goal\")",
-								"data_match_config.Get(\"match_type\")"
-							]
-						},
-						{
 							"callFunction": "createPlayer",
-							"sid": 123324153534841,
+							"sid": 539023177619564,
 							"parameters": [
-								"data_gamepad.Get(\"player0_gamepad_index\")",
+								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
-								"90",
-								"200",
-								"data_match_config.Get(\"size_player\")"
-							]
-						},
-						{
-							"callFunction": "createPlayer",
-							"sid": 789882196879274,
-							"parameters": [
-								"data_gamepad.Get(\"player1_gamepad_index\")",
-								"data_gamepad.Get(\"player1_character\")",
-								"500",
-								"200",
-								"data_match_config.Get(\"size_player\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 433377697332544,
-							"disabled": true,
-							"parameters": [
-								"10",
-								"200",
-								"1",
-								"MATCH_TYPE_VOLLEY"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 481480753221104,
-							"disabled": true,
-							"parameters": [
-								"630",
-								"200",
-								"1",
-								"MATCH_TYPE_VOLLEY"
-							]
-						},
-						{
-							"callFunction": "createPlayer",
-							"sid": 250955938105308,
-							"disabled": true,
-							"parameters": [
-								"-1",
-								"\"stickman3\"",
-								"90",
+								"LayoutWidth / 2 - LayoutWidth / 4",
 								"200",
 								"1"
 							]
 						},
 						{
+							"callFunction": "createPlayer",
+							"sid": 183800679905239,
+							"parameters": [
+								"data_gamepad.Get(\"player1_index\")",
+								"data_gamepad.Get(\"player1_character\")",
+								"LayoutWidth / 2 + LayoutWidth / 4",
+								"200",
+								"1"
+							]
+						}
+					],
+					"sid": 497641343298259
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 319764307925224,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"match_players\")",
+								"comparison": 0,
+								"second-value": "MATCH_PLAYERS_2V2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createPlayer",
+							"sid": 244159146720781,
+							"parameters": [
+								"data_gamepad.Get(\"player0_index\")",
+								"data_gamepad.Get(\"player0_character\")",
+								"LayoutWidth/4 - LayoutWidth/8",
+								"200",
+								"1"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 505105679850274,
+							"parameters": [
+								"data_gamepad.Get(\"player1_index\")",
+								"data_gamepad.Get(\"player1_character\")",
+								"LayoutWidth/4 + LayoutWidth/8",
+								"200",
+								"1"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 569676596766906,
+							"parameters": [
+								"data_gamepad.Get(\"player2_index\")",
+								"data_gamepad.Get(\"player2_character\")",
+								"LayoutWidth/2 + LayoutWidth/8",
+								"200",
+								"1"
+							]
+						},
+						{
+							"callFunction": "createPlayer",
+							"sid": 123210103738363,
+							"parameters": [
+								"data_gamepad.Get(\"player3_index\")",
+								"data_gamepad.Get(\"player3_character\")",
+								"LayoutWidth/4 * 3+ LayoutWidth/8",
+								"200",
+								"1"
+							]
+						}
+					],
+					"sid": 747485866031093
+				},
+				{
+					"eventType": "variable",
+					"name": "size_ball",
+					"type": "number",
+					"initialValue": "1",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 925903579619498
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 709081274895168,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"size_pitch\")",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 705347315712259,
+							"parameters": {
+								"width": "640",
+								"height": "360"
+							}
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 685570643751423,
+							"parameters": [
+								"10",
+								"200",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 398263208717374,
+							"parameters": [
+								"630",
+								"200",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 904289680233478,
+							"sid": 644293186736981,
 							"parameters": {
 								"seconds": "1"
 							}
@@ -220,7 +339,8 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 648928824948593,
+							"sid": 219226670931220,
+							"disabled": true,
 							"parameters": {
 								"variable": "size_ball",
 								"value": "data_match_config.Get(\"size_ball\")"
@@ -231,7 +351,146 @@
 							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 492573476546950
+					"sid": 468266215776606,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 817380119248396,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"size_pitch\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 395719870976095,
+							"parameters": {
+								"width": "960",
+								"height": "540"
+							}
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 773205632932372,
+							"parameters": [
+								"10",
+								"LayoutHeight - 50",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 625824913347722,
+							"parameters": [
+								"950",
+								"LayoutHeight - 50",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 839897812286313,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 862300052075495,
+							"disabled": true,
+							"parameters": {
+								"variable": "size_ball",
+								"value": "data_match_config.Get(\"size_ball\")"
+							}
+						},
+						{
+							"type": "script",
+							"script": "BallInstance.create(runtime, 480, 100, localVars.size_ball);"
+						}
+					],
+					"sid": 698722527793494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 843198430994836,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"size_pitch\")",
+								"comparison": 0,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 843823301508924,
+							"parameters": {
+								"width": "1280",
+								"height": "720"
+							}
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 762283570226471,
+							"parameters": [
+								"10",
+								"LayoutHeight - 50",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"callFunction": "createGoal",
+							"sid": 188275911567039,
+							"parameters": [
+								"1270",
+								"LayoutHeight - 50",
+								"data_match_config.Get(\"size_goal\")",
+								"data_match_config.Get(\"match_type\")"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 444393726004686,
+							"parameters": {
+								"seconds": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 801708872532124,
+							"disabled": true,
+							"parameters": {
+								"variable": "size_ball",
+								"value": "data_match_config.Get(\"size_ball\")"
+							}
+						},
+						{
+							"type": "script",
+							"script": "BallInstance.create(runtime, 640, 100, localVars.size_ball);"
+						}
+					],
+					"sid": 975796612942102
 				}
 			]
 		},
@@ -298,6 +557,14 @@
 								"x": "x",
 								"y": "y"
 							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "player",
+							"sid": 702089257664718,
+							"parameters": {
+								"scale": "1"
+							}
 						}
 					],
 					"sid": 957118365534833,
@@ -322,7 +589,43 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 897190192905345,
+									"behaviorType": "Physics",
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 747935729067894,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 773245035485407,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "player",
+									"sid": 547746300571521,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								}
+							],
 							"sid": 694646664824235,
 							"children": [
 								{
@@ -331,7 +634,169 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 591573799319650,
+											"sid": 430337780356068,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"SrHuevo\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 309094405538884,
+											"parameters": {
+												"width": "46",
+												"height": "69.75"
+											}
+										}
+									],
+									"sid": 820179559376503
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 633918485428249,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"MarcosHeredia\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 603945375463395,
+											"parameters": {
+												"width": "44",
+												"height": "98"
+											}
+										}
+									],
+									"sid": 376150788970801
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 666525284007083,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"TunicaOldman\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 292327725353278,
+											"parameters": {
+												"width": "52",
+												"height": "133"
+											}
+										}
+									],
+									"sid": 192729253254050
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 145910526851569,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"PopiFresco\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 110391173032303,
+											"parameters": {
+												"width": "46",
+												"height": "93"
+											}
+										}
+									],
+									"sid": 368297099592776
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 374387977890259,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"DankElf\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 903295486754445,
+											"parameters": {
+												"width": "39",
+												"height": "98"
+											}
+										}
+									],
+									"sid": 606806238882360
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 431535420993675,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"Buko\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 476401938615561,
+											"parameters": {
+												"width": "77",
+												"height": "110"
+											}
+										}
+									],
+									"sid": 886144910518850
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 936358911757641,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -343,24 +808,15 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 644038356091190,
-											"disabled": true,
-											"parameters": {
-												"width": "29",
-												"height": "58"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "player",
-											"sid": 294140438201771,
+											"sid": 150874425506991,
 											"parameters": {
 												"width": "player.Width * 0.5",
 												"height": "player.Height * 0.5"
 											}
 										}
 									],
-									"sid": 502688050682563
+									"sid": 642348429853610,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -368,12 +824,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 721652301388147
+											"sid": 693444322980919
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 763586525426232,
+											"sid": 115430221501388,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -385,24 +841,15 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 153248295163590,
-											"disabled": true,
-											"parameters": {
-												"width": "46.978",
-												"height": "93.956"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "player",
-											"sid": 694084650086730,
+											"sid": 158821963261249,
 											"parameters": {
 												"width": "player.Width * 1",
 												"height": "player.Height * 1"
 											}
 										}
 									],
-									"sid": 776886380443274
+									"sid": 806835058691361,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -410,12 +857,12 @@
 										{
 											"id": "else",
 											"objectClass": "System",
-											"sid": 498681978204148
+											"sid": 249728422461331
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 183450415683368,
+											"sid": 438077014031843,
 											"parameters": {
 												"first-value": "size",
 												"comparison": 0,
@@ -427,24 +874,15 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 985916827909691,
-											"disabled": true,
-											"parameters": {
-												"width": "68",
-												"height": "143"
-											}
-										},
-										{
-											"id": "set-size",
-											"objectClass": "player",
-											"sid": 511712703352757,
+											"sid": 484961652766750,
 											"parameters": {
 												"width": "player.Width * 1.5",
 												"height": "player.Height * 1.5"
 											}
 										}
 									],
-									"sid": 308012723388889
+									"sid": 541843042126517,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -452,7 +890,7 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 463203984142562,
+											"sid": 686745736462349,
 											"parameters": {
 												"first-value": "x",
 												"comparison": 4,
@@ -464,13 +902,13 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 877756293347349,
+											"sid": 909988714559522,
 											"parameters": {
 												"state": "mirrored"
 											}
 										}
 									],
-									"sid": 423131172539926
+									"sid": 909707897535201
 								},
 								{
 									"eventType": "block",
@@ -561,53 +999,195 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-evaluate",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 290455103112445,
+									"sid": 767175255261632,
 									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = data_gamepad.Get(\"player0_gamepad_index\")"
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1V1"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 758479382357110,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 254765262708108,
-									"parameters": {
-										"x": "90",
-										"y": "200"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 469937936843928,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 770777365846557,
+											"parameters": {
+												"x": "LayoutWidth / 2 - LayoutWidth / 4",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 253437323375227
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 161620712989580,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 854975032961299,
+											"parameters": {
+												"x": "LayoutWidth / 2 + LayoutWidth / 4",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 107272712176360
 								}
-							],
-							"sid": 598936074863066
+							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-evaluate",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 729013260524540,
+									"sid": 838549402814348,
 									"parameters": {
-										"object": "player",
-										"expression": "player.gamepad_index = data_gamepad.Get(\"player1_gamepad_index\")"
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_2V2"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 408576873143869,
+							"children": [
 								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 865548881357000,
-									"parameters": {
-										"x": "500",
-										"y": "200"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 823149434759691,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 227468275920901,
+											"parameters": {
+												"x": "LayoutWidth/4 - LayoutWidth/8",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 174076821338865
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 783396051747862,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 692959780557814,
+											"parameters": {
+												"x": "LayoutWidth/4 + LayoutWidth/8",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 742782230132677
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 999207601995749,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player2_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 407386078703110,
+											"parameters": {
+												"x": "LayoutWidth/2 + LayoutWidth/8",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 410789843981107
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 706715357131931,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player3_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 335855698597112,
+											"parameters": {
+												"x": "LayoutWidth/4 * 3 + LayoutWidth/8",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 476995938053423
 								}
-							],
-							"sid": 779791364496069
+							]
 						}
 					]
 				},
@@ -691,7 +1271,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 408487264082780,
+											"sid": 762510091033769,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "15",
@@ -748,7 +1328,7 @@
 										{
 											"id": "is-animation-playing",
 											"objectClass": "player",
-											"sid": 663225743869764,
+											"sid": 109321303851947,
 											"parameters": {
 												"animation": "\"lift\""
 											}
@@ -758,7 +1338,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 140753479906485,
+											"sid": 883080059989745,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "5",
@@ -767,7 +1347,7 @@
 											}
 										}
 									],
-									"sid": 100891138510154
+									"sid": 359065502068060
 								}
 							]
 						}
@@ -795,6 +1375,13 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "setFeetDetector",
+							"sid": 609497351990452,
+							"parameters": [
+								"player.UID"
+							]
 						}
 					],
 					"sid": 443230267201349
@@ -820,9 +1407,430 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"callFunction": "setFeetDetector",
+							"sid": 290634740321263,
+							"parameters": [
+								"player.UID"
+							]
 						}
 					],
 					"sid": 814049786008150
+				},
+				{
+					"functionName": "setFeetDetector",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 833856048930772
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 769259271763590,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 861575410943616,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 611386230244109,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 341015183908991,
+											"parameters": {
+												"object": "feet_detector",
+												"expression": "feet_detector.owner = player.UID"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "feet_detector",
+											"sid": 923853365608422,
+											"parameters": {
+												"width": "abs(player.Width) + 20",
+												"height": "player.Height / 3 + 20"
+											}
+										}
+									],
+									"sid": 242906089127988
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "ball",
+							"sid": 157442330662117
+						}
+					],
+					"actions": [],
+					"sid": 600755142838816,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "TYPE_HEAVY+"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 220435928921849,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 176479080515198,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "3"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 812741340303449,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.5"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 800913282278153,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.5"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 601308642593347,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 398770726779445,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "1"
+									}
+								}
+							],
+							"sid": 908020309466000
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_HEAVY"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 660601289954044,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 736486263717494,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "2"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 278303314768501,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.4"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 440610160981280,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.6"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 234325779770722,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0.1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 340558138061412,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.1"
+									}
+								}
+							],
+							"sid": 543176415793503
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_NORMAL"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 924169645281277,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 176957660586991,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "1"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 520935598492366,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.3"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 567996582523683,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0.75"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 858114237665513,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 580797344955462,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.01"
+									}
+								}
+							],
+							"sid": 113759323599432
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_LIGHT"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 270098098547823,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 932412763425368,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "1"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 724598045098466,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "1"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 441437455429604,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "0"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 216218119441148,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "1"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 492747695549021,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "1"
+									}
+								}
+							],
+							"sid": 788931272341386
+						},
+						{
+							"eventType": "comment",
+							"text": "TYPE_BOUNCY"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 406507384222282,
+									"parameters": {
+										"key": "\"type_ball\"",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "ball",
+									"sid": 517097199541525,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "0.8"
+									}
+								},
+								{
+									"id": "set-friction",
+									"objectClass": "ball",
+									"sid": 461507857253635,
+									"behaviorType": "Physics",
+									"parameters": {
+										"friction": "0.2"
+									}
+								},
+								{
+									"id": "set-elasticity",
+									"objectClass": "ball",
+									"sid": 279486442303449,
+									"behaviorType": "Physics",
+									"parameters": {
+										"elasticity": "1"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "ball",
+									"sid": 947005226418739,
+									"behaviorType": "Physics",
+									"parameters": {
+										"linear-damping": "0"
+									}
+								},
+								{
+									"id": "set-angular-damping",
+									"objectClass": "ball",
+									"sid": 330145454160055,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-damping": "0.01"
+									}
+								}
+							],
+							"sid": 626746513765445
+						}
+					]
 				}
 			],
 			"sid": 752841824824843,

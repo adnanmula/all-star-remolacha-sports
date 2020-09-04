@@ -1,0 +1,1085 @@
+{
+	"name": "menu_settings",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "menu_settings_current_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 689596538529018
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu settings - Common",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 840640876246322
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 507624756439184,
+							"parameters": {
+								"variable": "menu_settings_current_index",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 151454168611323
+				},
+				{
+					"functionName": "menuSettingsUpdate",
+					"functionDescription": "",
+					"functionCategory": "menu_settings",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 416213699955442,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 719415264887009,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "menu_match_config_selector",
+									"sid": 359391057021357,
+									"parameters": {
+										"y": "pixel_spritefont.Y"
+									}
+								}
+							],
+							"sid": 119787473786774
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 767349424251358,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 709997059020729,
+							"parameters": {
+								"variable": "menu_settings_current_index",
+								"value": "2"
+							}
+						},
+						{
+							"callFunction": "menuSettingsUpdate",
+							"sid": 212773033087708
+						}
+					],
+					"sid": 601209354600790
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 260780751495884,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 4,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 948478232143874,
+							"parameters": {
+								"variable": "menu_settings_current_index",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "menuSettingsUpdate",
+							"sid": 819735524608132
+						}
+					],
+					"sid": 401752259177783
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 880226365651072
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 373665725203683,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "pixel_spritefont",
+							"sid": 288395152772314,
+							"parameters": {
+								"text": "\"On\""
+							}
+						}
+					],
+					"sid": 886917634476574
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 265916173253654,
+							"isInverted": true
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 368553048081221,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "pixel_spritefont",
+							"sid": 114830247239180,
+							"parameters": {
+								"text": "\"Off\""
+							}
+						}
+					],
+					"sid": 241755602687962
+				}
+			],
+			"sid": 974218157478088
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu settings - Keyboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 714253655481682,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [],
+					"sid": 846663065922912,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 274924496898308,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 817166890211016,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"menu_settings_back\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 811835813062691,
+									"parameters": {
+										"layout": "menu_main"
+									}
+								}
+							],
+							"sid": 720849387423206
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 341847749369117,
+							"parameters": {
+								"key": 65
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 557027027844816,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 901409316203447,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 203748450948457,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 560441673335642,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 640662246218684,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 915439979231957
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 581900907829136,
+							"parameters": {
+								"key": 65
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 703566486188986,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 930785642525944,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 231875216183706,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 221184457210252
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 530980611911881
+						}
+					],
+					"sid": 795525355281549
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 353398015682599,
+							"parameters": {
+								"key": 68
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 540072923252579,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 194907336584418,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 704659340847751,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 481631260934369,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 315298545216386,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 619600100368423
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 667626445671774,
+							"parameters": {
+								"key": 68
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 651295461183803,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 606000332437137,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 211807479143398,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 163551789932649
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 246296223097530
+						}
+					],
+					"sid": 827842394455604
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 602883801260548,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 139676641156484,
+							"parameters": {
+								"variable": "menu_settings_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuSettingsUpdate",
+							"sid": 175980071296961
+						}
+					],
+					"sid": 665589651424217
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 849267845528385,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 800944890128430,
+							"parameters": {
+								"variable": "menu_settings_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuSettingsUpdate",
+							"sid": 467654086765457
+						}
+					],
+					"sid": 616169307417585
+				}
+			],
+			"sid": 539809723084208
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu settings - Gamepad",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 485663531192865
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for",
+					"objectClass": "System",
+					"sid": 920629724848722,
+					"parameters": {
+						"name": "\"\"",
+						"start-index": "0",
+						"end-index": "MAX_GAMEPAD"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 589119364121394,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 190585903859190,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-up"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 654360740793401,
+							"parameters": {
+								"gamepad": "loopindex",
+								"axis": "left-analog-y-axis",
+								"comparison": 2,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 855605980032447,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 789701449569140
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 848976439315753,
+									"parameters": {
+										"variable": "menu_settings_current_index",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "menuSettingsUpdate",
+									"sid": 353816497047138
+								}
+							],
+							"sid": 268920563385480
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 826627329783139,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-down"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 203972116157236,
+							"parameters": {
+								"gamepad": "loopindex",
+								"axis": "left-analog-y-axis",
+								"comparison": 4,
+								"value": "gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 402508480022948,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 517670832082719
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 473347495182498,
+									"parameters": {
+										"variable": "menu_settings_current_index",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "menuSettingsUpdate",
+									"sid": 590389045843749
+								}
+							],
+							"sid": 285309728414747
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 292003349178682,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 455475117597748,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 100172042777497,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 265480465824928,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 351695683171239,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 278050706846767,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 641380975231095
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 887288371614989,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 168916257695057,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 714124896149180,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 219177654104999,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 587549218863598
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 742025670791483
+						}
+					],
+					"sid": 333798987363416
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 654929420603598,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 644511774114429,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 407688705217837,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 798383201198884,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 420493755534057,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 545609311831737,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 392601119621586
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 964145464688001,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 260417316251430,
+							"parameters": {
+								"first-value": "menu_settings_current_index",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 532127079261585,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 385012896960234,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"menu_settings_fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 515112145139894
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 851354510497619
+						}
+					],
+					"sid": 212070673156179
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 389655415450824,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-right"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 823193479501154,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 252898601478643,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 554630490945927,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"go\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 369950827796132,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 376873071240881
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuMatchConfigUpdateValue",
+									"sid": 889181705847761,
+									"parameters": [
+										"pixel_spritefont.action",
+										"1"
+									]
+								}
+							],
+							"sid": 547920775261186
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 307942937692743,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 237805574276628,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 960823573516202,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 462015563404834,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"menu_settings_back\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 943552002034086,
+									"parameters": {
+										"layout": "menu_main"
+									}
+								}
+							],
+							"sid": 618802049067871
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 251630150971805,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "button-b"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 450602996242742,
+							"parameters": {
+								"layout": "menu_main"
+							}
+						}
+					],
+					"sid": 449913826243649,
+					"isOrBlock": true
+				}
+			]
+		}
+	],
+	"sid": 106729789081488
+}
