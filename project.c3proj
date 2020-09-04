@@ -418,7 +418,8 @@
 					"menu_match_config",
 					"menu_match_gamepad",
 					"menu_match_character",
-					"menu_pause"
+					"menu_pause",
+					"menu_settings"
 				],
 				"subfolders": [],
 				"name": "menu"

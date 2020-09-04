@@ -14,7 +14,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Match menu navigation - Common",
+			"title": "Match menu - Common",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [

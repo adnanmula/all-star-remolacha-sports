@@ -1,0 +1,16 @@
+{
+	"name": "menu_settings",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "menu_settings_current_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 689596538529018
+		}
+	],
+	"sid": 106729789081488
+}
