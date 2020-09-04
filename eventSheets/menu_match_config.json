@@ -695,7 +695,7 @@
 									"eventType": "variable",
 									"name": "min_value",
 									"type": "number",
-									"initialValue": "0",
+									"initialValue": "1",
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,

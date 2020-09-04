@@ -56,14 +56,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r214",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Spritefont2",
 			"name": "Sprite font",
 			"author": "Scirra",
@@ -112,16 +104,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"id": "bound",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"version": "r214",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r214",
 			"bundled": false
@@ -191,9 +183,7 @@
 			},
 			{
 				"items": [
-					"solid_bound",
-					"match_scoreboard",
-					"match_timer"
+					"solid_bound"
 				],
 				"subfolders": [
 					{
@@ -535,11 +525,11 @@
 	},
 	"properties": {
 		"description": "",
-		"version": "1.0",
-		"author": "",
+		"version": "1.0.0",
+		"author": "Adnan Mula",
 		"authorEmail": "",
 		"authorWebsite": "",
-		"appId": "com.adnanmula.beet",
+		"appId": "com.adnanmula.remolacha",
 		"pixelRounding": false,
 		"useLoaderLayout": false,
 		"fullscreenMode": "letterbox-scale",

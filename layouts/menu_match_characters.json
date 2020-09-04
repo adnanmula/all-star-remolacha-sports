@@ -264,7 +264,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 255.5,
+						"x": 235.5,
 						"y": 396,
 						"width": 382,
 						"height": 574,
@@ -295,7 +295,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 666.5,
+						"x": 646.5,
 						"y": 396,
 						"width": 382,
 						"height": 574,
@@ -326,7 +326,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1253.5,
+						"x": 1273.5,
 						"y": 396,
 						"width": -382,
 						"height": 574,
@@ -357,7 +357,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1664.5,
+						"x": 1684.5,
 						"y": 396,
 						"width": -382,
 						"height": 574,
@@ -397,7 +397,11 @@
 						"index": 0,
 						"type": "menu_char_label"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 418.5,
@@ -439,9 +443,13 @@
 						"index": 2,
 						"type": "menu_char_name"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 256,
+						"x": 236,
 						"y": 738,
 						"width": 364,
 						"height": 76.31336243971487,
@@ -481,9 +489,13 @@
 						"index": 0,
 						"type": "menu_char_name"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 675,
+						"x": 655,
 						"y": 738,
 						"width": 364,
 						"height": 76.31336243971487,
@@ -523,9 +535,13 @@
 						"index": 1,
 						"type": "menu_char_name"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 1239,
+						"x": 1259,
 						"y": 738,
 						"width": 364,
 						"height": 76.31336243971487,
@@ -565,9 +581,13 @@
 						"index": 3,
 						"type": "menu_char_name"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
-						"x": 1643,
+						"x": 1663,
 						"y": 738,
 						"width": 364,
 						"height": 76.31336243971487,
@@ -607,7 +627,11 @@
 						"index": 0,
 						"type": "menu_char_label"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 520.9793388429753,

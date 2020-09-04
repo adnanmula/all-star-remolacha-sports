@@ -116,13 +116,22 @@
 								"comparison": 0,
 								"second-value": "WIN_CONDITION_TIME"
 							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 587198540616287,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"match_timer\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "start-timer",
-							"objectClass": "match_timer",
-							"sid": 682650263740140,
+							"objectClass": "pixel_spritefont",
+							"sid": 901307114750862,
 							"behaviorType": "Timer",
 							"parameters": {
 								"duration": "data_match_config.Get(\"goal_amount\") * 60",
@@ -140,13 +149,22 @@
 							"id": "else",
 							"objectClass": "System",
 							"sid": 972521794222012
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 273317520013532,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"match_timer\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "match_timer",
-							"sid": 901626954041367,
+							"objectClass": "pixel_spritefont",
+							"sid": 594716125669654,
 							"parameters": {
 								"text": "\"\""
 							}
@@ -282,6 +300,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-canvas-size",
+							"objectClass": "System",
+							"sid": 705347315712259,
+							"parameters": {
+								"width": "640",
+								"height": "360"
+							}
+						},
+						{
 							"callFunction": "createGoal",
 							"sid": 685570643751423,
 							"parameters": [
@@ -324,7 +351,8 @@
 							"script": "BallInstance.create(runtime, 320, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 468266215776606
+					"sid": 468266215776606,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -352,20 +380,20 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 465485849101699,
+							"sid": 773205632932372,
 							"parameters": [
 								"10",
-								"200",
+								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 744733034738031,
+							"sid": 625824913347722,
 							"parameters": [
 								"950",
-								"200",
+								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]
@@ -421,20 +449,20 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 166529305499425,
+							"sid": 762283570226471,
 							"parameters": [
 								"10",
-								"200",
+								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 387331559163519,
+							"sid": 188275911567039,
 							"parameters": [
 								"1270",
-								"200",
+								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]

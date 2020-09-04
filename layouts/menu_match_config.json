@@ -120,7 +120,11 @@
 						"index": 0,
 						"type": "label"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 964,
 						"y": -134,
@@ -191,7 +195,11 @@
 						"index": 0,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 252.80810736971512,
@@ -233,7 +241,11 @@
 						"index": 1,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 324.8081073697151,
@@ -275,7 +287,11 @@
 						"index": 2,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 595,
 						"y": 395.8081073697151,
@@ -317,7 +333,11 @@
 						"index": 3,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 467.8081073697151,
@@ -359,7 +379,11 @@
 						"index": 4,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 539.8081073697151,
@@ -401,7 +425,11 @@
 						"index": 5,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 610.8081073697151,
@@ -443,7 +471,11 @@
 						"index": 6,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 682.8081073697151,
@@ -919,7 +951,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 252.80810736971512,
@@ -961,7 +997,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 324.8081073697151,
@@ -1003,7 +1043,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 395.8081073697151,
@@ -1045,7 +1089,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 467.8081073697151,
@@ -1087,7 +1135,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 539.8081073697151,
@@ -1129,7 +1181,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 610.8081073697151,
@@ -1171,7 +1227,11 @@
 						"index": 0,
 						"type": "menu_config_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 682.8081073697151,
@@ -1213,7 +1273,11 @@
 						"index": 7,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 754.8081073697151,
@@ -1255,7 +1319,11 @@
 						"index": 8,
 						"type": "menu_match_config"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 826.9173392843938,

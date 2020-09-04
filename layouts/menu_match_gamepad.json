@@ -341,7 +341,11 @@
 						"index": 0,
 						"type": "label"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 343,
 						"y": 96,
@@ -383,7 +387,11 @@
 						"index": 0,
 						"type": "label"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1560,
 						"y": 96,

@@ -149,7 +149,11 @@
 						"index": 0,
 						"type": "menu_settings_option"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 253.17165939007128,
@@ -253,7 +257,11 @@
 						"index": 0,
 						"type": "menu_settings_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 253.17165939007128,
@@ -295,7 +303,11 @@
 						"index": 2,
 						"type": "menu_settings_option"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 960,
 						"y": 369.1716593900712,
@@ -337,7 +349,11 @@
 						"index": 1,
 						"type": "menu_settings_option"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 548,
 						"y": 315,
@@ -379,7 +395,11 @@
 						"index": 1,
 						"type": "menu_settings_value"
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
 					"world": {
 						"x": 1291,
 						"y": 314,
