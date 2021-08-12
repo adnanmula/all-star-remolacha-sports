@@ -555,7 +555,8 @@
 								"object-name": "character_name",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
 						},
 						{

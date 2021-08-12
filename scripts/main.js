@@ -1,3 +1,4 @@
+import BallInstance from "./ball.js";
 
 runOnStartup(async runtime =>
 {

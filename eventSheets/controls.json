@@ -752,7 +752,8 @@
 										"object-to-create": "player_km_origin_indicator",
 										"layer": "\"main\"",
 										"x": "x",
-										"y": "y"
+										"y": "y",
+										"create-hierarchy": false
 									}
 								}
 							],

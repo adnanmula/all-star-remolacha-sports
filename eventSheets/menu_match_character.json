@@ -548,7 +548,8 @@
 										"object-to-create": "menu_char_selector",
 										"layer": "\"main\"",
 										"x": "menu_char_portrait.X + random (-10, 10)",
-										"y": "menu_char_portrait.Y + random (-100, -60)"
+										"y": "menu_char_portrait.Y + random (-100, -60)",
+										"create-hierarchy": false
 									}
 								},
 								{
@@ -617,7 +618,8 @@
 										"object-to-create": "menu_char_selector",
 										"layer": "\"main\"",
 										"x": "menu_char_portrait.X + random (-10, 10)",
-										"y": "menu_char_portrait.Y + random (-100, -60)"
+										"y": "menu_char_portrait.Y + random (-100, -60)",
+										"create-hierarchy": false
 									}
 								},
 								{
@@ -703,7 +705,8 @@
 												"object-to-create": "menu_char_selector",
 												"layer": "\"main\"",
 												"x": "menu_char_portrait.X + random (-10, 10)",
-												"y": "menu_char_portrait.Y + random (-100, -60)"
+												"y": "menu_char_portrait.Y + random (-100, -60)",
+												"create-hierarchy": false
 											}
 										},
 										{
@@ -772,7 +775,8 @@
 												"object-to-create": "menu_char_selector",
 												"layer": "\"main\"",
 												"x": "menu_char_portrait.X + random (-10, 10)",
-												"y": "menu_char_portrait.Y + random (-100, -60)"
+												"y": "menu_char_portrait.Y + random (-100, -60)",
+												"create-hierarchy": false
 											}
 										},
 										{

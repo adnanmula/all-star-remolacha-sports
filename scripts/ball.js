@@ -1,5 +1,4 @@
-
-class BallInstance extends ISpriteInstance
+export default class BallInstance
 {
 	static create(runtime, x, y, size)
 	{
@@ -10,7 +9,7 @@ class BallInstance extends ISpriteInstance
 		switch(size) {
 			case 0:
 				diameter = 20;
-			    break;
+				break;
 			case 1:
 				diameter = 40;
 				break;
@@ -18,7 +17,7 @@ class BallInstance extends ISpriteInstance
 				diameter = 60;
 				break;
 		}
-		
+
 		instance.width = diameter;
 		instance.height = diameter;
 	}

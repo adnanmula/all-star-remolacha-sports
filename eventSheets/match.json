@@ -179,7 +179,8 @@
 								"object-to-create": "goal_football",
 								"layer": "\"main\"",
 								"x": "x",
-								"y": "y"
+								"y": "y",
+								"create-hierarchy": false
 							}
 						},
 						{
@@ -464,7 +465,8 @@
 								"object-to-create": "goal_basket",
 								"layer": "\"main\"",
 								"x": "x > LayoutWidth/2 ? x - 30  : x + 30",
-								"y": "200"
+								"y": "200",
+								"create-hierarchy": false
 							}
 						},
 						{
@@ -631,7 +633,8 @@
 										"object-to-create": "goal_volley",
 										"layer": "\"main\"",
 										"x": "LayoutWidth / 2 - goal_volley.Width/2",
-										"y": "LayoutHeight / 2"
+										"y": "LayoutHeight / 2",
+										"create-hierarchy": false
 									}
 								},
 								{
@@ -748,7 +751,8 @@
 										"object-to-create": "goal_volley_detector",
 										"layer": "\"main\"",
 										"x": "x < (LayoutWidth / 2) ? (LayoutWidth/4) : (LayoutWidth/4) * 3",
-										"y": "LayoutHeight - 3"
+										"y": "LayoutHeight - 3",
+										"create-hierarchy": false
 									}
 								},
 								{
