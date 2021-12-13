@@ -4,7 +4,13 @@
 	"sid": 916246753504576,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 199213187965911
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -23,12 +29,12 @@
 						"imagePoints": [
 							{
 								"name": "crossbar",
-								"x": 0.5,
+								"x": 0.9933333333333335,
 								"y": 5.551115123125783e-17
 							},
 							{
 								"name": "goal_detector",
-								"x": 0.44666666666666666,
+								"x": -0.2,
 								"y": 0.5
 							}
 						],

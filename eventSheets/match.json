@@ -186,7 +186,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_football_detector",
-							"sid": 467982135771642,
+							"sid": 113975969003497,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -194,7 +194,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_football_solid",
-							"sid": 942452547731706,
+							"sid": 189746638167870,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -360,18 +360,18 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football_solid",
-									"sid": 446514113615379,
+									"sid": 843931855110274,
 									"parameters": {
-										"width": "goal_football.Width",
-										"height": "2"
+										"width": "goal_football.Width * 10",
+										"height": "10"
 									}
 								},
 								{
 									"id": "set-size",
 									"objectClass": "goal_football_detector",
-									"sid": 831819749854111,
+									"sid": 584708640178652,
 									"parameters": {
-										"width": "4",
+										"width": "60",
 										"height": "goal_football.Height"
 									}
 								},
@@ -834,7 +834,42 @@
 							}
 						}
 					],
-					"sid": 250985089517922
+					"sid": 250985089517922,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 288140111362624,
+									"parameters": {
+										"object": "solid_bound",
+										"expression": "solid_bound.tag = \"lateral\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-height",
+									"objectClass": "solid_bound",
+									"sid": 292448517794912,
+									"parameters": {
+										"height": "LayoutHeight"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "solid_bound",
+									"sid": 606934808885213,
+									"parameters": {
+										"y": "goal_football.ImagePointY(\"crossbar\") - LayoutHeight / 2"
+									}
+								}
+							],
+							"sid": 800515761729399
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -985,7 +1020,8 @@
 							"sid": 641754156510072
 						}
 					],
-					"sid": 533309464380414
+					"sid": 533309464380414,
+					"disabled": true
 				},
 				{
 					"functionName": "resetBall",

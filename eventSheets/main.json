@@ -275,16 +275,6 @@
 					"sid": 747485866031093
 				},
 				{
-					"eventType": "variable",
-					"name": "size_ball",
-					"type": "number",
-					"initialValue": "1",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 925903579619498
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -334,16 +324,6 @@
 							"sid": 644293186736981,
 							"parameters": {
 								"seconds": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 219226670931220,
-							"disabled": true,
-							"parameters": {
-								"variable": "size_ball",
-								"value": "data_match_config.Get(\"size_ball\")"
 							}
 						},
 						{
@@ -407,16 +387,6 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 862300052075495,
-							"disabled": true,
-							"parameters": {
-								"variable": "size_ball",
-								"value": "data_match_config.Get(\"size_ball\")"
-							}
-						},
-						{
 							"type": "script",
 							"script": "BallInstance.create(runtime, 480, 100, localVars.size_ball);"
 						}
@@ -473,16 +443,6 @@
 							"sid": 444393726004686,
 							"parameters": {
 								"seconds": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 801708872532124,
-							"disabled": true,
-							"parameters": {
-								"variable": "size_ball",
-								"value": "data_match_config.Get(\"size_ball\")"
 							}
 						},
 						{
@@ -1847,6 +1807,30 @@
 				0,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 523030460723972,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 374411924562905,
+					"parameters": {
+						"layout": "menu_main"
+					}
+				}
+			],
+			"sid": 367871802651845
 		}
 	],
 	"sid": 869789412645449

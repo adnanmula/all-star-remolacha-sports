@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 944770095440853,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "tag",
+			"type": "string",
+			"desc": "",
+			"sid": 816388832005242
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
@@ -31,6 +38,13 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 23,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "bottom",
+								"x": 0.5,
+								"y": 1
+							}
+						],
 						"duration": 1
 					}
 				],

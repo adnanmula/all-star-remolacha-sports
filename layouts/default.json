@@ -4,6 +4,7 @@
 		{
 			"name": "Layer 0",
 			"overriden": 0,
+			"subLayers": [],
 			"instances": [
 				{
 					"type": "goal_football_detector",
@@ -26,9 +27,9 @@
 						}
 					},
 					"world": {
-						"x": 70.44526205254834,
+						"x": 6.971989483610486,
 						"y": 78.97578524425391,
-						"width": 7,
+						"width": 30,
 						"height": 130.05239681636544,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -325,6 +326,12 @@
 								"bullet": false,
 								"enabled": true
 							}
+						},
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
 						}
 					},
 					"world": {
@@ -490,11 +497,11 @@
 						}
 					},
 					"world": {
-						"x": 60.7784478065509,
-						"y": 10.60596374318726,
-						"width": 75,
-						"height": 7,
-						"originX": 0.5,
+						"x": 98.43357440617223,
+						"y": 8.344111935606044,
+						"width": 185.86051065364535,
+						"height": 11.523703615162432,
+						"originX": 1,
 						"originY": 0.5,
 						"color": [
 							1,
@@ -1133,8 +1140,11 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		}
 	],
@@ -1144,5 +1154,8 @@
 	"width": 1280,
 	"height": 720,
 	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
 	"eventSheet": null
 }

@@ -4,6 +4,7 @@
 		{
 			"name": "bg",
 			"overriden": 0,
+			"subLayers": [],
 			"instances": [
 				{
 					"type": "backgroundGradient",
@@ -88,13 +89,17 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		},
 		{
 			"name": "main",
 			"overriden": 0,
+			"subLayers": [],
 			"instances": [
 				{
 					"type": "menu_match_config_selector",
@@ -500,8 +505,11 @@
 			"parallaxY": 1,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
 			"useRenderCells": false,
 			"blendMode": "normal",
+			"zElevation": 0,
 			"global": false
 		}
 	],
@@ -511,5 +519,8 @@
 	"width": 1920,
 	"height": 1080,
 	"unboundedScrolling": false,
+	"vpX": 0.5,
+	"vpY": 0.5,
+	"projection": "perspective",
 	"eventSheet": "menu_settings"
 }
