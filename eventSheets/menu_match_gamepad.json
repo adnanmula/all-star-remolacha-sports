@@ -1086,7 +1086,64 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 401172335011236,
+									"sid": 300712239021572,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1PRACTICE"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 166534456931599,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 801021528276266,
+											"parameters": {
+												"first-value": "current_left_side",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 728326399728109,
+											"parameters": {
+												"first-value": "current_right_side",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 987218382579205,
+											"parameters": {
+												"variable": "return",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 334153841545512,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 743316534209551,
 									"parameters": {
 										"first-value": "data_match_config.Get(\"match_players\")",
 										"comparison": 0,
@@ -1096,7 +1153,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 791177335007464,
+									"sid": 655490934821535,
 									"parameters": {
 										"first-value": "current_left_side",
 										"comparison": 0,
@@ -1106,7 +1163,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 770779571323715,
+									"sid": 521683642375564,
 									"parameters": {
 										"first-value": "current_right_side",
 										"comparison": 0,
@@ -1118,14 +1175,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 993687534796831,
+									"sid": 679012035938233,
 									"parameters": {
 										"variable": "return",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 166534456931599
+							"sid": 382967310973733
 						},
 						{
 							"eventType": "block",

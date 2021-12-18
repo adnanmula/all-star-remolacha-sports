@@ -83,6 +83,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MATCH_PLAYERS_1PRACTICE",
+			"type": "string",
+			"initialValue": "1PRACTICE",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 365301254691470
+		},
+		{
+			"eventType": "variable",
 			"name": "MATCH_PLAYERS_1V1",
 			"type": "string",
 			"initialValue": "PLAYERS_1V1",

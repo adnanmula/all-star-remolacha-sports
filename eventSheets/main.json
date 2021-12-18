@@ -178,11 +178,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 208180380963401,
+							"sid": 446913824512983,
 							"parameters": {
 								"first-value": "data_match_config.Get(\"match_players\")",
 								"comparison": 0,
-								"second-value": "MATCH_PLAYERS_1V1"
+								"second-value": "MATCH_PLAYERS_1PRACTICE"
 							}
 						}
 					],
@@ -197,10 +197,39 @@
 								"200",
 								"1"
 							]
+						}
+					],
+					"sid": 497641343298259
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 879212316570879,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"match_players\")",
+								"comparison": 0,
+								"second-value": "MATCH_PLAYERS_1V1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "createPlayer",
+							"sid": 664084584396026,
+							"parameters": [
+								"data_gamepad.Get(\"player0_index\")",
+								"data_gamepad.Get(\"player0_character\")",
+								"LayoutWidth / 2 - LayoutWidth / 4",
+								"200",
+								"1"
+							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 183800679905239,
+							"sid": 362737261027570,
 							"parameters": [
 								"data_gamepad.Get(\"player1_index\")",
 								"data_gamepad.Get(\"player1_character\")",
@@ -210,7 +239,7 @@
 							]
 						}
 					],
-					"sid": 497641343298259
+					"sid": 869127335438728
 				},
 				{
 					"eventType": "block",
@@ -962,11 +991,11 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 767175255261632,
+									"sid": 781257559920422,
 									"parameters": {
 										"first-value": "data_match_config.Get(\"match_players\")",
 										"comparison": 0,
-										"second-value": "MATCH_PLAYERS_1V1"
+										"second-value": "MATCH_PLAYERS_1PRACTICE"
 									}
 								}
 							],
@@ -998,6 +1027,51 @@
 										}
 									],
 									"sid": 253437323375227
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 429414475042574,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1V1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 207739916384535,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 886080710568059,
+											"parameters": {
+												"object": "player",
+												"expression": "player.gamepad_index = data_gamepad.Get(\"player0_index\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 477204276631434,
+											"parameters": {
+												"x": "LayoutWidth / 2 - LayoutWidth / 4",
+												"y": "200"
+											}
+										}
+									],
+									"sid": 273067947975232
 								},
 								{
 									"eventType": "block",
@@ -1005,7 +1079,7 @@
 										{
 											"id": "pick-by-evaluate",
 											"objectClass": "System",
-											"sid": 161620712989580,
+											"sid": 885652477343117,
 											"parameters": {
 												"object": "player",
 												"expression": "player.gamepad_index = data_gamepad.Get(\"player1_index\")"
@@ -1016,14 +1090,14 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 854975032961299,
+											"sid": 324930290314099,
 											"parameters": {
 												"x": "LayoutWidth / 2 + LayoutWidth / 4",
 												"y": "200"
 											}
 										}
 									],
-									"sid": 107272712176360
+									"sid": 207424720092648
 								}
 							]
 						},

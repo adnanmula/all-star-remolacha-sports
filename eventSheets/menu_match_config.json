@@ -223,50 +223,221 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-value",
-											"objectClass": "data_match_config",
-											"sid": 983532025531334,
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 548832720424832,
 											"parameters": {
-												"key": "index",
+												"first-value": "action",
 												"comparison": 0,
-												"value": "MATCH_PLAYERS_1V1"
+												"second-value": "0"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 950681370215820,
+									"children": [
 										{
-											"id": "set-key",
-											"objectClass": "data_match_config",
-											"sid": 711780773347861,
-											"parameters": {
-												"key": "index",
-												"value": "MATCH_PLAYERS_2V2"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 699431701829276,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_1PRACTICE"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 518160344321598,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_2V2"
+													}
+												}
+											],
+											"sid": 809415817250797
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 101106070949962
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 249670848900261,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_1V1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 823799597371159,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_1PRACTICE"
+													}
+												}
+											],
+											"sid": 516223031531157
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 863171972047946
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 553405414607691,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_2V2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 899098220932535,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_1V1"
+													}
+												}
+											],
+											"sid": 702192079899919
 										}
-									],
-									"sid": 950681370215820
+									]
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
+											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 393183951720323
-										}
-									],
-									"actions": [
-										{
-											"id": "set-key",
-											"objectClass": "data_match_config",
-											"sid": 257986498520250,
+											"sid": 529429116996530,
 											"parameters": {
-												"key": "index",
-												"value": "MATCH_PLAYERS_1V1"
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "1"
 											}
 										}
 									],
-									"sid": 281694393354767
+									"actions": [],
+									"sid": 112960454866414,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 630724972363208,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_1PRACTICE"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 318414222924240,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_1V1"
+													}
+												}
+											],
+											"sid": 321001754639034
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 156140861879418
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 155818769428544,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_1V1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 761758538806734,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_2V2"
+													}
+												}
+											],
+											"sid": 281665753606939
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 621139397420527
+												},
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 367408869354943,
+													"parameters": {
+														"key": "index",
+														"comparison": 0,
+														"value": "MATCH_PLAYERS_2V2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-key",
+													"objectClass": "data_match_config",
+													"sid": 227579730731842,
+													"parameters": {
+														"key": "index",
+														"value": "MATCH_PLAYERS_1PRACTICE"
+													}
+												}
+											],
+											"sid": 255725307383736
+										}
+									]
 								}
 							]
 						},
@@ -973,7 +1144,33 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 298130201590580,
+													"sid": 698025056658686,
+													"parameters": {
+														"first-value": "data_match_config.CurrentValue",
+														"comparison": 0,
+														"second-value": "MATCH_PLAYERS_1PRACTICE"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "pixel_spritefont",
+													"sid": 572040876954868,
+													"parameters": {
+														"text": "\"1 (Practice)\""
+													}
+												}
+											],
+											"sid": 963726618200218
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 457431404265100,
 													"parameters": {
 														"first-value": "data_match_config.CurrentValue",
 														"comparison": 0,
@@ -985,13 +1182,13 @@
 												{
 													"id": "set-text",
 													"objectClass": "pixel_spritefont",
-													"sid": 793776534339018,
+													"sid": 904197978737448,
 													"parameters": {
 														"text": "\"1v1\""
 													}
 												}
 											],
-											"sid": 963726618200218
+											"sid": 769044932830928
 										},
 										{
 											"eventType": "block",
@@ -1839,6 +2036,14 @@
 										{
 											"callFunction": "menuMatchConfigUpdate",
 											"sid": 372766653538674
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 226063263857700,
+											"parameters": {
+												"seconds": "0"
+											}
 										}
 									],
 									"sid": 309735488063970
