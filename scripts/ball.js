@@ -20,5 +20,6 @@ export default class BallInstance
 
 		instance.width = diameter;
 		instance.height = diameter;
+		instance.zElevation = -1;
 	}
 }

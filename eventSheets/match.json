@@ -1143,6 +1143,11 @@
 									"parameters": {
 										"mode": "enabled"
 									}
+								},
+								{
+									"id": "move-to-bottom",
+									"objectClass": "ball",
+									"sid": 563060639276675
 								}
 							],
 							"sid": 236964631118374
