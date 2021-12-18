@@ -75,7 +75,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -127,7 +127,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -135,7 +135,7 @@
 					},
 					"uid": 98,
 					"instanceVariables": {
-						"tag": "lateral"
+						"tag": "lateral-left"
 					},
 					"behaviors": {
 						"Solid": {
@@ -163,7 +163,7 @@
 						"x": -13,
 						"y": 264,
 						"width": 25.523033076478782,
-						"height": 515.7824675789,
+						"height": 569.7824675789,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -179,7 +179,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -187,7 +187,7 @@
 					},
 					"uid": 99,
 					"instanceVariables": {
-						"tag": "lateral"
+						"tag": "lateral-right"
 					},
 					"behaviors": {
 						"Solid": {
@@ -215,7 +215,7 @@
 						"x": 974,
 						"y": 270,
 						"width": 25.523033076478782,
-						"height": 515.782468,
+						"height": 569.782468,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -231,7 +231,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -561,7 +561,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -613,7 +613,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -665,7 +665,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -717,7 +717,7 @@
 				{
 					"type": "solid_bound",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,

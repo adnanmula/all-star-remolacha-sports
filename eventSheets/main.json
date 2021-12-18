@@ -389,38 +389,77 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 773205632932372,
-							"parameters": [
-								"10",
-								"LayoutHeight - 50",
-								"data_match_config.Get(\"size_goal\")",
-								"data_match_config.Get(\"match_type\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 625824913347722,
+							"sid": 777292402307712,
 							"parameters": [
 								"950",
 								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 839897812286313,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"type": "script",
-							"script": "BallInstance.create(runtime, 480, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 698722527793494
+					"sid": 698722527793494,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 324088175500799,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1V1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 906962579971590,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_2V2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createGoal",
+									"sid": 633488461175819,
+									"parameters": [
+										"10",
+										"LayoutHeight - 50",
+										"data_match_config.Get(\"size_goal\")",
+										"data_match_config.Get(\"match_type\")"
+									]
+								}
+							],
+							"sid": 291094363591202,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 809576954163097,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"type": "script",
+									"script": "BallInstance.create(runtime, 480, 100, localVars.size_ball);"
+								}
+							],
+							"sid": 734285932956973,
+							"isOrBlock": true
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -448,38 +487,77 @@
 						},
 						{
 							"callFunction": "createGoal",
-							"sid": 762283570226471,
-							"parameters": [
-								"10",
-								"LayoutHeight - 50",
-								"data_match_config.Get(\"size_goal\")",
-								"data_match_config.Get(\"match_type\")"
-							]
-						},
-						{
-							"callFunction": "createGoal",
-							"sid": 188275911567039,
+							"sid": 669342984767056,
 							"parameters": [
 								"1270",
 								"LayoutHeight - 50",
 								"data_match_config.Get(\"size_goal\")",
 								"data_match_config.Get(\"match_type\")"
 							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 444393726004686,
-							"parameters": {
-								"seconds": "1"
-							}
-						},
-						{
-							"type": "script",
-							"script": "BallInstance.create(runtime, 640, 100, localVars.size_ball);"
 						}
 					],
-					"sid": 975796612942102
+					"sid": 975796612942102,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 349603836297224,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_1V1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 661908661253771,
+									"parameters": {
+										"first-value": "data_match_config.Get(\"match_players\")",
+										"comparison": 0,
+										"second-value": "MATCH_PLAYERS_2V2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createGoal",
+									"sid": 355692093215793,
+									"parameters": [
+										"10",
+										"LayoutHeight - 50",
+										"data_match_config.Get(\"size_goal\")",
+										"data_match_config.Get(\"match_type\")"
+									]
+								}
+							],
+							"sid": 712081840222317,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 229540866430919,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"type": "script",
+									"script": "BallInstance.create(runtime, 640, 100, localVars.size_ball);"
+								}
+							],
+							"sid": 883283723610561,
+							"isOrBlock": true
+						}
+					]
 				}
 			]
 		},

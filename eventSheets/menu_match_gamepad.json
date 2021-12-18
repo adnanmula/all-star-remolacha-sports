@@ -1109,16 +1109,6 @@
 												"comparison": 0,
 												"second-value": "1"
 											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 728326399728109,
-											"parameters": {
-												"first-value": "current_right_side",
-												"comparison": 0,
-												"second-value": "1"
-											}
 										}
 									],
 									"actions": [
@@ -1132,8 +1122,7 @@
 											}
 										}
 									],
-									"sid": 334153841545512,
-									"isOrBlock": true
+									"sid": 334153841545512
 								}
 							]
 						},

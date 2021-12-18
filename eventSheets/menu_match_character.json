@@ -783,71 +783,90 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-random-instance",
-									"objectClass": "System",
-									"sid": 125430179575426,
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 956241544246846,
 									"parameters": {
-										"object": "menu_char_portrait"
+										"key": "\"match_players\"",
+										"comparison": 0,
+										"value": "MATCH_PLAYERS_1V1"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 234215176518405,
+							"children": [
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 842318821486948,
-									"parameters": {
-										"object-to-create": "menu_char_selector",
-										"layer": "\"main\"",
-										"x": "menu_char_portrait.X + random (-10, 10)",
-										"y": "menu_char_portrait.Y + random (-100, -60)",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "menu_char_selector",
-									"sid": 741368130642138,
-									"parameters": {
-										"instance-variable": "gamepad",
-										"value": "data_gamepad.Get(\"player1_index\")"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "menu_char_selector",
-									"sid": 754829499206872,
-									"parameters": {
-										"instance-variable": "player",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-scale",
-									"objectClass": "menu_char_selector",
-									"sid": 422242097591633,
-									"parameters": {
-										"scale": "4"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "menu_char_selector",
-									"sid": 279792848445287,
-									"parameters": {
-										"frame-number": "data_gamepad.Get(\"player1_index\") = -1 ? 4 : data_gamepad.Get(\"player1_index\")"
-									}
-								},
-								{
-									"callFunction": "menuCharacterSetCursorColor",
-									"sid": 219959115776696,
-									"parameters": [
-										"menu_char_selector.UID",
-										"menu_char_selector.AnimationFrame"
-									]
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-random-instance",
+											"objectClass": "System",
+											"sid": 428449910078138,
+											"parameters": {
+												"object": "menu_char_portrait"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 523893983602422,
+											"parameters": {
+												"object-to-create": "menu_char_selector",
+												"layer": "\"main\"",
+												"x": "menu_char_portrait.X + random (-10, 10)",
+												"y": "menu_char_portrait.Y + random (-100, -60)",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "menu_char_selector",
+											"sid": 452701356519003,
+											"parameters": {
+												"instance-variable": "gamepad",
+												"value": "data_gamepad.Get(\"player1_index\")"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "menu_char_selector",
+											"sid": 230911535875127,
+											"parameters": {
+												"instance-variable": "player",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "menu_char_selector",
+											"sid": 523785989350559,
+											"parameters": {
+												"scale": "4"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_char_selector",
+											"sid": 789677813889931,
+											"parameters": {
+												"frame-number": "data_gamepad.Get(\"player1_index\") = -1 ? 4 : data_gamepad.Get(\"player1_index\")"
+											}
+										},
+										{
+											"callFunction": "menuCharacterSetCursorColor",
+											"sid": 967757374842991,
+											"parameters": [
+												"menu_char_selector.UID",
+												"menu_char_selector.AnimationFrame"
+											]
+										}
+									],
+									"sid": 913554947210283
 								}
-							],
-							"sid": 998282852428590
+							]
 						},
 						{
 							"eventType": "block",
