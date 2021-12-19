@@ -1631,6 +1631,193 @@
 					"sid": 773637123643125
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player",
+					"sid": 729929649557185,
+					"parameters": {
+						"object": "goal_football_detector_camp"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 677054045638229
+				}
+			],
+			"actions": [
+				{
+					"id": "start-timer",
+					"objectClass": "player",
+					"sid": 814068020091201,
+					"behaviorType": "Timer",
+					"parameters": {
+						"duration": "5",
+						"type": "once",
+						"tag": "\"camp_guard\""
+					}
+				}
+			],
+			"sid": 874516316557642
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player",
+					"sid": 446143020807176,
+					"parameters": {
+						"object": "goal_football_detector_camp"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-timer",
+					"objectClass": "player",
+					"sid": 891200334595489,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"camp_guard\""
+					}
+				}
+			],
+			"sid": 874490476274922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "player",
+					"sid": 186333329887954,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"camp_guard\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 129802656918473,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-nearestfurthest",
+							"objectClass": "goal_football_detector_camp",
+							"sid": 777044083225578,
+							"parameters": {
+								"which": "nearest",
+								"x": "player.X",
+								"y": "player.Y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "goal_football_detector_camp",
+							"sid": 426127325222406,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "goal_football_detector_camp",
+							"sid": 669888544622422,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "2"
+							}
+						}
+					],
+					"sid": 248991197115022
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "player",
+							"sid": 246936913829893,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 174955365910383,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
+						{
+							"id": "apply-impulse-at-angle",
+							"objectClass": "player",
+							"sid": 566139661159332,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse": "10000",
+								"angle": "270",
+								"image-point": "0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 781651636022631,
+							"parameters": {
+								"seconds": "0.01"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "player",
+							"sid": 215064001634113,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "jump"
+							}
+						}
+					],
+					"sid": 715288517663832
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-flash-ended",
+					"objectClass": "goal_football_detector_camp",
+					"sid": 641802314933926,
+					"behaviorType": "Flash"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "goal_football_detector_camp",
+					"sid": 639487927192018,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 924166483812272
 		}
 	],
 	"sid": 250112746228024

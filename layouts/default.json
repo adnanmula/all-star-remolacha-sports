@@ -715,6 +715,9 @@
 							"properties": {
 								"destroy": false
 							}
+						},
+						"Flash": {
+							"properties": {}
 						}
 					},
 					"world": {
