@@ -89,46 +89,6 @@
 								"key": "\"player3_index\"",
 								"value": "0"
 							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 660628312140692,
-							"disabled": true,
-							"parameters": {
-								"key": "\"player0_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 461905330258837,
-							"disabled": true,
-							"parameters": {
-								"key": "\"player1_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 467833193284026,
-							"disabled": true,
-							"parameters": {
-								"key": "\"player2_ready\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_gamepad",
-							"sid": 249093272149971,
-							"disabled": true,
-							"parameters": {
-								"key": "\"player3_ready\"",
-								"value": "0"
-							}
 						}
 					],
 					"sid": 759214566047908
@@ -1108,6 +1068,16 @@
 												"first-value": "current_left_side",
 												"comparison": 0,
 												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 130861535163488,
+											"parameters": {
+												"first-value": "current_right_side",
+												"comparison": 0,
+												"second-value": "0"
 											}
 										}
 									],
