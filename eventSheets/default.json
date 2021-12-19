@@ -1,0 +1,27 @@
+{
+	"name": "default",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 638762900902239
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 924700169155886,
+					"parameters": {
+						"layout": "menu_main"
+					}
+				}
+			],
+			"sid": 619741399876650
+		}
+	],
+	"sid": 480259294954153
+}

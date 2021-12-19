@@ -36,6 +36,11 @@
 								"name": "goal_detector",
 								"x": -0.2,
 								"y": 0.5
+							},
+							{
+								"name": "camp_detector",
+								"x": 1.3266666666666658,
+								"y": 0.5
 							}
 						],
 						"duration": 1

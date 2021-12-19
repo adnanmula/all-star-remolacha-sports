@@ -193,7 +193,8 @@
 								"items": [
 									"goal_football",
 									"goal_football_detector",
-									"goal_football_solid"
+									"goal_football_solid",
+									"goal_football_detector_camp"
 								],
 								"subfolders": [],
 								"name": "football"
@@ -324,6 +325,7 @@
 			"members": [
 				"goal_football",
 				"goal_football_detector",
+				"goal_football_detector_camp",
 				"goal_football_solid"
 			],
 			"selectMode": "normal"
@@ -409,7 +411,8 @@
 					"menu_match_gamepad",
 					"menu_match_character",
 					"menu_pause",
-					"menu_settings"
+					"menu_settings",
+					"default"
 				],
 				"subfolders": [],
 				"name": "menu"

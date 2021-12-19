@@ -200,6 +200,14 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "goal_football_detector_camp",
+							"sid": 861892459314159,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "enabledisable-collisions",
 							"objectClass": "goal_football",
 							"sid": 691554295852209,
@@ -349,6 +357,14 @@
 										"instance-variable": "owner",
 										"value": "1"
 									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "goal_football_detector_camp",
+									"sid": 562774611937645,
+									"parameters": {
+										"state": "mirrored"
+									}
 								}
 							],
 							"sid": 411471392734060
@@ -388,6 +404,34 @@
 									"id": "pin-to-object",
 									"objectClass": "goal_football_detector",
 									"sid": 491694090532239,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "goal_football",
+										"mode": "position-angle"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "goal_football_detector_camp",
+									"sid": 280978139304632,
+									"parameters": {
+										"width": "60",
+										"height": "goal_football.Height"
+									}
+								},
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "goal_football_detector_camp",
+									"sid": 919089252346486,
+									"parameters": {
+										"object": "goal_football",
+										"image-point-optional": "\"camp_detector\""
+									}
+								},
+								{
+									"id": "pin-to-object",
+									"objectClass": "goal_football_detector_camp",
+									"sid": 945250665541022,
 									"behaviorType": "Pin",
 									"parameters": {
 										"pin-to": "goal_football",
