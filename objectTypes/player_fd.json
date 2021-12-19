@@ -1,7 +1,7 @@
 {
-	"name": "player_fd_srhuevo",
+	"name": "player_fd",
 	"plugin-id": "Sprite",
-	"sid": 870401816640873,
+	"sid": 918752280025235,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,12 +18,12 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 27,
+						"imageSpriteId": 6793501,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 796135657829869,
+				"sid": 796381196243690,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -46,45 +46,12 @@
 					},
 					"uid": 136,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "Buko"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},
@@ -116,45 +83,12 @@
 					},
 					"uid": 141,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "TunicaOldman"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},
@@ -186,45 +120,12 @@
 					},
 					"uid": 137,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "DankElf"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},
@@ -256,45 +157,12 @@
 					},
 					"uid": 140,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "SrHuevo"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},
@@ -326,45 +194,12 @@
 					},
 					"uid": 139,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "PopiFresco"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},
@@ -396,45 +231,12 @@
 					},
 					"uid": 138,
 					"instanceVariables": {
-						"gamepad_index": -1,
-						"name": "MarcosHeredia"
+						"owner": 0
 					},
 					"behaviors": {
-						"Platform": {
+						"Pin": {
 							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": true,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": false
-							}
-						},
-						"Physics": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 1,
-								"bullet": true,
-								"enabled": false
-							}
-						},
-						"Timer": {
-							"properties": {}
-						},
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": ""
+								"destroy": false
 							}
 						}
 					},

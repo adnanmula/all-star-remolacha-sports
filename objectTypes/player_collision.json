@@ -1,7 +1,7 @@
 {
-	"name": "player_fd_marcosheredia",
+	"name": "player_collision",
 	"plugin-id": "Sprite",
-	"sid": 118217494157789,
+	"sid": 746542110533035,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,20 +11,32 @@
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 10,
+						"width": 25,
+						"height": 50,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.48,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 25,
+						"imageSpriteId": 9745422,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.855
+							},
+							{
+								"name": "origin_up",
+								"x": 0.5,
+								"y": 0.32
+							}
+						],
 						"duration": 1
 					}
 				],
-				"sid": 333123295625181,
-				"name": "Animation 1",
+				"sid": 134283549792804,
+				"name": "default",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

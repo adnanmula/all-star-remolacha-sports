@@ -1,24 +1,29 @@
 {
-	"name": "feet_detector",
+	"name": "player_mask",
 	"plugin-id": "Sprite",
-	"sid": 652768303619510,
+	"sid": 599570540265262,
 	"instanceVariables": [
 		{
 			"name": "owner",
 			"type": "number",
 			"desc": "",
-			"sid": 432974652371258
+			"sid": 709532867447453
 		}
 	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Pin",
 			"name": "Pin",
-			"sid": 584930782375814
+			"sid": 669025890029828
 		}
 	],
 	"effectTypes": [],
 	"members": [
-		"player_fd"
+		"Buko",
+		"DankElf",
+		"MarcosHeredia",
+		"PopiFresco",
+		"SrHuevo",
+		"TunicaOldman"
 	]
 }

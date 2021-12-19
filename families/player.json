@@ -40,11 +40,6 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"PopiFresco",
-		"MarcosHeredia",
-		"SrHuevo",
-		"DankElf",
-		"TunicaOldman",
-		"Buko"
+		"player_collision"
 	]
 }

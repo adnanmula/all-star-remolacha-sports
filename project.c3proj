@@ -156,7 +156,9 @@
 					"SrHuevo",
 					"Buko",
 					"DankElf",
-					"TunicaOldman"
+					"TunicaOldman",
+					"player_collision",
+					"player_fd"
 				],
 				"subfolders": [
 					{
@@ -165,18 +167,6 @@
 						],
 						"subfolders": [],
 						"name": "props"
-					},
-					{
-						"items": [
-							"player_fd_buko",
-							"player_fd_dankelf",
-							"player_fd_marcosheredia",
-							"player_fd_popifresco",
-							"player_fd_srhuevo",
-							"player_fd_tunicaoldman"
-						],
-						"subfolders": [],
-						"name": "feet_detector"
 					}
 				],
 				"name": "player"
@@ -302,27 +292,6 @@
 	"containers": [
 		{
 			"members": [
-				"player_fd_popifresco",
-				"PopiFresco"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
-				"MarcosHeredia",
-				"player_fd_marcosheredia"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
-				"player_fd_srhuevo",
-				"SrHuevo"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
 				"goal_football",
 				"goal_football_detector",
 				"goal_football_detector_camp",
@@ -340,22 +309,8 @@
 		},
 		{
 			"members": [
-				"DankElf",
-				"player_fd_dankelf"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
-				"player_fd_tunicaoldman",
-				"TunicaOldman"
-			],
-			"selectMode": "normal"
-		},
-		{
-			"members": [
-				"Buko",
-				"player_fd_buko"
+				"player_collision",
+				"player_fd"
 			],
 			"selectMode": "normal"
 		}
@@ -366,7 +321,8 @@
 			"feet_detector",
 			"goal",
 			"goal_detector",
-			"pitch_background"
+			"pitch_background",
+			"player_mask"
 		],
 		"subfolders": []
 	},

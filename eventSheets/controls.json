@@ -857,6 +857,15 @@
 									"parameters": {
 										"unique-id": "player_uid"
 									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 926747718407654,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = player_uid"
+									}
 								}
 							],
 							"actions": [],
@@ -958,6 +967,14 @@
 											"parameters": {
 												"state": "mirrored"
 											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 840350121734604,
+											"parameters": {
+												"state": "mirrored"
+											}
 										}
 									],
 									"sid": 794519248782469,
@@ -983,7 +1000,7 @@
 											"actions": [
 												{
 													"id": "set-animation",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 141061062948384,
 													"parameters": {
 														"animation": "\"walking\"",
@@ -1048,6 +1065,14 @@
 											"parameters": {
 												"state": "not-mirrored"
 											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 276708862073835,
+											"parameters": {
+												"state": "not-mirrored"
+											}
 										}
 									],
 									"sid": 358677277860598,
@@ -1073,7 +1098,7 @@
 											"actions": [
 												{
 													"id": "set-animation",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 190917052228887,
 													"parameters": {
 														"animation": "\"walking\"",
@@ -1148,7 +1173,7 @@
 									"actions": [
 										{
 											"id": "set-animation",
-											"objectClass": "player",
+											"objectClass": "player_mask",
 											"sid": 177775023302606,
 											"parameters": {
 												"animation": "\"idle\"",
@@ -1220,7 +1245,7 @@
 											"conditions": [
 												{
 													"id": "is-animation-playing",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 722241033271643,
 													"parameters": {
 														"animation": "\"kick\""
@@ -1231,7 +1256,7 @@
 											"actions": [
 												{
 													"id": "set-animation",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 331520764071566,
 													"parameters": {
 														"animation": "\"kick\"",
@@ -1242,7 +1267,7 @@
 													"callFunction": "setFeetDetector",
 													"sid": 596203443078613,
 													"parameters": [
-														"player.UID"
+														"player_mask.UID"
 													]
 												}
 											],
@@ -1275,7 +1300,7 @@
 											"conditions": [
 												{
 													"id": "is-animation-playing",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 974187425573292,
 													"parameters": {
 														"animation": "\"lift\""
@@ -1286,7 +1311,7 @@
 											"actions": [
 												{
 													"id": "set-animation",
-													"objectClass": "player",
+													"objectClass": "player_mask",
 													"sid": 967894725708702,
 													"parameters": {
 														"animation": "\"lift\"",
@@ -1297,7 +1322,7 @@
 													"callFunction": "setFeetDetector",
 													"sid": 578318566703010,
 													"parameters": [
-														"player.UID"
+														"player_mask.UID"
 													]
 												}
 											],
