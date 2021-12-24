@@ -455,6 +455,81 @@
 				"repeatCount": 1,
 				"repeatTo": 0,
 				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 100,
+						"height": 150,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6450160,
+						"collisionPoly": {
+							"points": [
+								0.2,
+								0.13333333333333333,
+								0.5,
+								0.3333333333333333,
+								0.48,
+								0.3333333333333333,
+								0.58,
+								0.5,
+								0.54,
+								0.6933333333333334,
+								0.5,
+								0.9866666666666667,
+								0.06,
+								0.9466666666666667,
+								0.06,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 100,
+						"height": 150,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4493343,
+						"collisionPoly": {
+							"points": [
+								0.2,
+								0.13333333333333333,
+								0.5,
+								0.3333333333333333,
+								0.98,
+								0,
+								0.6,
+								0.5,
+								0.92,
+								0.9466666666666667,
+								0.5,
+								0.9866666666666667,
+								0.06,
+								0.9466666666666667,
+								0.06,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 742749884419999,
+				"name": "Stonks",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
 			}
 		],
 		"subfolders": []

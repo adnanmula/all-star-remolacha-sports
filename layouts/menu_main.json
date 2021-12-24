@@ -36,6 +36,43 @@
 					}
 				},
 				{
+					"type": "Stonks",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 45,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 892.7740710550103,
+						"y": 752.2231404958677,
+						"width": 395.9273045464843,
+						"height": 1021.7478827006049,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.884829298253872,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Buko",
 					"properties": {
 						"initially-visible": true,

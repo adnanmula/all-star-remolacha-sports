@@ -740,7 +740,7 @@
 				{
 					"type": "player_collision",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "default",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -832,6 +832,43 @@
 						"y": 329.90910676182324,
 						"width": 15.203156311034618,
 						"height": 51.5364776274353,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Stonks",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 26,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 32.384941048945166,
+						"y": 425.35730068817,
+						"width": 50.44126413776037,
+						"height": 130.1710042264784,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

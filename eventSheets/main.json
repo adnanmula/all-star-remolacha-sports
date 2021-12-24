@@ -724,7 +724,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "player",
-									"sid": 436598146692349,
+									"sid": 921104732990273,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -732,7 +732,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "feet_detector",
-									"sid": 185860683072799,
+									"sid": 836100838444620,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -847,6 +847,42 @@
 										}
 									],
 									"sid": 438952713032612
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 761590666626287,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"Stonks\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 761174879246754,
+											"parameters": {
+												"width": "52",
+												"height": "133"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player_mask",
+											"sid": 845147274727252,
+											"parameters": {
+												"width": "52",
+												"height": "133"
+											}
+										}
+									],
+									"sid": 992608348569576
 								},
 								{
 									"eventType": "block",
@@ -1067,6 +1103,14 @@
 												}
 											],
 											"actions": [
+												{
+													"id": "set-angle",
+													"objectClass": "player_mask",
+													"sid": 815864173739291,
+													"parameters": {
+														"angle": "0"
+													}
+												},
 												{
 													"id": "pin-to-object-properties",
 													"objectClass": "player_mask",

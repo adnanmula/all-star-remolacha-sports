@@ -83,7 +83,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1041.5,
+						"x": 960,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -114,7 +114,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1365.5,
+						"x": 1282,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -145,7 +145,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1203.5,
+						"x": 1121,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -176,7 +176,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 554.5,
+						"x": 477,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -207,7 +207,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 716.5,
+						"x": 638,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -238,7 +238,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 878.5,
+						"x": 799,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -642,6 +642,37 @@
 						"y": 520.9793388429753,
 						"width": 209.47933884297504,
 						"height": 76.31336243971487,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Stonks",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 28,
+					"instanceVariables": {
+						"character": "Stonks"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1443,
+						"y": 952,
+						"width": 129.97830695277284,
+						"height": 129.97830695277284,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
