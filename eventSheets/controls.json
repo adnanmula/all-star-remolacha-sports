@@ -1006,13 +1006,6 @@
 														"animation": "\"walking\"",
 														"from": "beginning"
 													}
-												},
-												{
-													"callFunction": "setFeetDetector",
-													"sid": 803989246867860,
-													"parameters": [
-														"player.UID"
-													]
 												}
 											],
 											"sid": 452566989742458
@@ -1104,13 +1097,6 @@
 														"animation": "\"walking\"",
 														"from": "beginning"
 													}
-												},
-												{
-													"callFunction": "setFeetDetector",
-													"sid": 779666248786487,
-													"parameters": [
-														"player.UID"
-													]
 												}
 											],
 											"sid": 988434856808128
@@ -1179,13 +1165,6 @@
 												"animation": "\"idle\"",
 												"from": "beginning"
 											}
-										},
-										{
-											"callFunction": "setFeetDetector",
-											"sid": 777156383830789,
-											"parameters": [
-												"player.UID"
-											]
 										}
 									],
 									"sid": 216456053826118
@@ -1262,13 +1241,6 @@
 														"animation": "\"kick\"",
 														"from": "beginning"
 													}
-												},
-												{
-													"callFunction": "setFeetDetector",
-													"sid": 596203443078613,
-													"parameters": [
-														"player_mask.UID"
-													]
 												}
 											],
 											"sid": 757114542869327
@@ -1317,18 +1289,45 @@
 														"animation": "\"lift\"",
 														"from": "beginning"
 													}
-												},
-												{
-													"callFunction": "setFeetDetector",
-													"sid": 578318566703010,
-													"parameters": [
-														"player_mask.UID"
-													]
 												}
 											],
 											"sid": 417447751905389
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "LT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 740265157195066,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "left-shoulder-trigger"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 950870925217416
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "skillExecute",
+											"sid": 929507000657986,
+											"parameters": [
+												"player.UID",
+												"player.skill0"
+											]
+										}
+									],
+									"sid": 699259219403028
 								}
 							]
 						}
@@ -1348,6 +1347,211 @@
 				0.5058823529411764,
 				1
 			]
+		},
+		{
+			"functionName": "skillExecute",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Player uid",
+					"sid": 155770115014752
+				},
+				{
+					"name": "skill",
+					"type": "string",
+					"initialValue": "",
+					"comment": "Skill to be executed",
+					"sid": 179342555031102
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 550907283594083,
+					"parameters": {
+						"type": "log",
+						"message": "\"Player: \" & playerUid & \" executed: \" & skill"
+					}
+				}
+			],
+			"sid": 251184040913478,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 928009927851649,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 422203632402607,
+							"parameters": {
+								"object": "player_mask",
+								"expression": "player_mask.owner = player.UID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 880733198122469,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 526755102822972,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"fundinaso\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 563746914419039,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-nearestfurthest",
+											"objectClass": "ball",
+											"sid": 166376529257139,
+											"parameters": {
+												"which": "nearest",
+												"x": "player.X",
+												"y": "player.Y"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 342443922783916,
+											"parameters": {
+												"first-value": "distance(player.X, player.Y, ball.X, ball.Y)",
+												"comparison": 2,
+												"second-value": "250"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 274759720168718,
+											"parameters": {
+												"object-to-create": "particle_fire",
+												"layer": "\"main\"",
+												"x": "ball.X",
+												"y": "ball.Y",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 297162942497930,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "particle_fire",
+											"sid": 368642440549280,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "ball",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "ball",
+											"sid": 736466809295675,
+											"parameters": {
+												"instance-variable": "onFire",
+												"value": "true"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "ball",
+											"sid": 259474857363734,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "100",
+												"angle": "angle(player_mask.X, player_mask.Y, ball.X, ball.Y)",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 911216271364333,
+											"parameters": {
+												"value": "1"
+											}
+										}
+									],
+									"sid": 233176480230594
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "ball",
+					"sid": 636336773569695,
+					"parameters": {
+						"object": "player"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "ball",
+					"sid": 444034049670655,
+					"parameters": {
+						"instance-variable": "onFire",
+						"value": "false"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "particle_fire",
+					"sid": 798258133291888
+				}
+			],
+			"sid": 826230187876802
 		}
 	],
 	"sid": 600060452567385

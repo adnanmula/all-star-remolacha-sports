@@ -1192,6 +1192,20 @@
 									"id": "move-to-bottom",
 									"objectClass": "ball",
 									"sid": 563060639276675
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "ball",
+									"sid": 770409572566500,
+									"parameters": {
+										"instance-variable": "onFire",
+										"value": "false"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particle_fire",
+									"sid": 890323715608948
 								}
 							],
 							"sid": 236964631118374

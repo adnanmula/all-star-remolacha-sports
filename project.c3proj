@@ -48,6 +48,14 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -228,7 +236,8 @@
 					},
 					{
 						"items": [
-							"ball"
+							"ball",
+							"particle_fire"
 						],
 						"subfolders": [],
 						"name": "ball"

@@ -127,7 +127,9 @@
 						"live-preview": false
 					},
 					"uid": 30,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"onFire": false
+					},
 					"behaviors": {
 						"Physics": {
 							"properties": {
@@ -749,7 +751,8 @@
 					"uid": 75,
 					"instanceVariables": {
 						"gamepad_index": -1,
-						"name": ""
+						"name": "",
+						"skill0": ""
 					},
 					"behaviors": {
 						"Platform": {
@@ -878,6 +881,57 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "particle_fire",
+					"properties": {
+						"rate": 30,
+						"spray-cone": 45,
+						"type": "continuous-spray",
+						"object": -1,
+						"live-preview": false,
+						"speed": 200,
+						"size": 10,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 30,
+						"y-randomiser": 30,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": 0,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 100,
+						"opacity-randomiser": 0,
+						"destroy-mode": "timeout-expired",
+						"timeout": 0.3
+					},
+					"uid": 77,
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 222.08357870836923,
+						"y": 190.13589940201246,
+						"width": 12.552656346140253,
+						"height": 11.497476728352638,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
 						"zElevation": 0
 					}
 				}

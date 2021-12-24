@@ -14,6 +14,12 @@
 			"type": "string",
 			"desc": "",
 			"sid": 357197027746233
+		},
+		{
+			"name": "skill0",
+			"type": "string",
+			"desc": "",
+			"sid": 958123450825148
 		}
 	],
 	"behaviorTypes": [

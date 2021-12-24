@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 493654549648314,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "onFire",
+			"type": "boolean",
+			"desc": "",
+			"sid": 274990260739644
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Physics",

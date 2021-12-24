@@ -724,7 +724,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "player",
-									"sid": 921104732990273,
+									"sid": 613702564763541,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -732,7 +732,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "feet_detector",
-									"sid": 836100838444620,
+									"sid": 792804173540026,
 									"parameters": {
 										"visibility": "invisible"
 									}
@@ -807,6 +807,15 @@
 											"parameters": {
 												"width": "44",
 												"height": "98"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 201811884558433,
+											"parameters": {
+												"instance-variable": "skill0",
+												"value": "\"fundinaso\""
 											}
 										}
 									],
@@ -1033,10 +1042,10 @@
 										{
 											"id": "set-size",
 											"objectClass": "feet_detector",
-											"sid": 274423888997875,
+											"sid": 433542755056068,
 											"parameters": {
-												"width": "player.Width",
-												"height": "((distance(player.ImagePointX(\"feet_detector\"), player.ImagePointY(\"feet_detector\"), player.X, player.Y + player.Height/2)) * 2) + 10"
+												"width": "abs(player.Width) + 20",
+												"height": "player.Height / 3 + 20"
 											}
 										},
 										{
@@ -1477,7 +1486,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 762510091033769,
+											"sid": 458794333872796,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "15",
@@ -1561,7 +1570,7 @@
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "ball",
-											"sid": 883080059989745,
+											"sid": 288295636438949,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "5",
@@ -1598,13 +1607,6 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
-						},
-						{
-							"callFunction": "setFeetDetector",
-							"sid": 609497351990452,
-							"parameters": [
-								"player_mask.UID"
-							]
 						}
 					],
 					"sid": 443230267201349
@@ -1630,81 +1632,9 @@
 								"animation": "\"idle\"",
 								"from": "beginning"
 							}
-						},
-						{
-							"callFunction": "setFeetDetector",
-							"sid": 290634740321263,
-							"parameters": [
-								"player_mask.UID"
-							]
 						}
 					],
 					"sid": 814049786008150
-				},
-				{
-					"functionName": "setFeetDetector",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 833856048930772
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 769259271763590,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 861575410943616,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 611386230244109,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-evaluate",
-											"objectClass": "System",
-											"sid": 341015183908991,
-											"parameters": {
-												"object": "feet_detector",
-												"expression": "feet_detector.owner = player.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-size",
-											"objectClass": "feet_detector",
-											"sid": 923853365608422,
-											"parameters": {
-												"width": "abs(player.Width) + 20",
-												"height": "player.Height / 3 + 20"
-											}
-										}
-									],
-									"sid": 242906089127988
-								}
-							]
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -2069,30 +1999,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 523030460723972,
-					"parameters": {
-						"key": 81
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 374411924562905,
-					"parameters": {
-						"layout": "menu_main"
-					}
-				}
-			],
-			"sid": 367871802651845
 		}
 	],
 	"sid": 869789412645449
