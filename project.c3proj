@@ -1,7 +1,7 @@
 {
 	"projectFormatVersion": 1,
 	"savedWithRelease": 27602,
-	"name": "All-star remolacha sports",
+	"name": "Remolacha sports",
 	"runtime": "c3",
 	"useWorker": "dom",
 	"bundleAddons": false,

@@ -462,7 +462,7 @@
 					]
 				},
 				{
-					"functionName": "WIPgoToView",
+					"functionName": "goToView",
 					"functionDescription": "",
 					"functionCategory": "menu",
 					"functionReturnType": "none",
@@ -709,14 +709,6 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 702888181044913,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
 							"sid": 222871566947130,
 							"parameters": {
 								"key": 13
@@ -741,7 +733,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "WIPgoToView",
+									"callFunction": "goToView",
 									"sid": 252180245886471,
 									"parameters": [
 										"pixel_spritefont.action"
@@ -923,7 +915,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "WIPgoToView",
+											"callFunction": "goToView",
 											"sid": 648501399418318,
 											"parameters": [
 												"pixel_spritefont.action"

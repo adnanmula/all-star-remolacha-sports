@@ -1459,6 +1459,17 @@
 										"gamepad": "loopindex",
 										"button": "d-pad-left"
 									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 545809764622350,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "-gamepad_deadzone"
+									}
 								}
 							],
 							"actions": [],
@@ -1475,6 +1486,11 @@
 												"object": "menu_match_gamepad_icon",
 												"expression": "menu_match_gamepad_icon.index = loopindex"
 											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 790081136896629
 										}
 									],
 									"actions": [
@@ -1503,6 +1519,17 @@
 										"gamepad": "loopindex",
 										"button": "d-pad-right"
 									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 146262515420506,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "gamepad_deadzone"
+									}
 								}
 							],
 							"actions": [],
@@ -1519,6 +1546,11 @@
 												"object": "menu_match_gamepad_icon",
 												"expression": "menu_match_gamepad_icon.index = loopindex"
 											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 360016454242728
 										}
 									],
 									"actions": [

@@ -2118,6 +2118,17 @@
 										"gamepad": "loopindex",
 										"button": "d-pad-left"
 									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 886341432363524,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "-gamepad_deadzone"
+									}
 								}
 							],
 							"actions": [],
@@ -2188,6 +2199,17 @@
 									"parameters": {
 										"gamepad": "loopindex",
 										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 939200669569193,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "gamepad_deadzone"
 									}
 								}
 							],

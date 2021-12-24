@@ -938,6 +938,17 @@
 								"gamepad": "loopindex",
 								"button": "d-pad-right"
 							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 877335963213738,
+							"parameters": {
+								"gamepad": "loopindex",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "gamepad_deadzone"
+							}
 						}
 					],
 					"actions": [],
