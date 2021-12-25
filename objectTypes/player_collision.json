@@ -30,6 +30,11 @@
 								"name": "origin_up",
 								"x": 0.5,
 								"y": 0.32
+							},
+							{
+								"name": "spawn_front_near",
+								"x": 1.42,
+								"y": 0.5
 							}
 						],
 						"duration": 1

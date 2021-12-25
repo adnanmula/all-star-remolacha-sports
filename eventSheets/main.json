@@ -1074,6 +1074,24 @@
 												"width": "77",
 												"height": "110"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 752779390835060,
+											"parameters": {
+												"instance-variable": "skill0",
+												"value": "\"ice_wall\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 847070873375644,
+											"parameters": {
+												"instance-variable": "skill0_cooldown",
+												"value": "1"
+											}
 										}
 									],
 									"sid": 751735058644520

@@ -938,7 +938,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "prop_skill_area",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -965,6 +965,66 @@
 						"y": 130,
 						"width": 250,
 						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "prop_skill_ice_wall",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						},
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 2,
+								"fade-out-time": 0.2,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.1,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 785.8411426441089,
+						"y": 142.3149066709476,
+						"width": 41.24864864864867,
+						"height": 236.8286482677413,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

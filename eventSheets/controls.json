@@ -1502,7 +1502,7 @@
 											"objectClass": "player",
 											"sid": 649893574670301,
 											"parameters": {
-												"object": "Sprite",
+												"object": "prop_skill_area",
 												"layer": "\"main\"",
 												"image-point": "0",
 												"create-hierarchy": false
@@ -1545,7 +1545,7 @@
 										},
 										{
 											"id": "set-size",
-											"objectClass": "Sprite",
+											"objectClass": "prop_skill_area",
 											"sid": 303352605542517,
 											"parameters": {
 												"width": "area",
@@ -1580,30 +1580,75 @@
 												"angle": "angle(player_mask.X, player_mask.Y, ball.X, ball.Y)",
 												"image-point": "0"
 											}
-										},
-										{
-											"id": "set-function-return-value",
-											"objectClass": "Functions",
-											"sid": 911216271364333,
-											"parameters": {
-												"value": "1"
-											}
-										},
-										{
-											"id": "start-timer",
-											"objectClass": "player",
-											"sid": 119661057487861,
-											"behaviorType": "Timer",
-											"parameters": {
-												"duration": "skill_cooldown",
-												"type": "once",
-												"tag": "skill_index"
-											}
 										}
 									],
 									"sid": 233176480230594
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 673260083010404,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"ice_wall\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "player",
+									"sid": 455878164825944,
+									"parameters": {
+										"object": "prop_skill_ice_wall",
+										"layer": "\"main\"",
+										"image-point": "\"spawn_front_near\"",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 692346287020355,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "prop_skill_ice_wall",
+									"sid": 374233022830642,
+									"parameters": {
+										"width": "50",
+										"height": "3000"
+									}
+								}
+							],
+							"sid": 998056225882367
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 587954341316364,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "skill_cooldown",
+										"type": "once",
+										"tag": "skill_index"
+									}
+								}
+							],
+							"sid": 565128002732408
 						}
 					]
 				}
