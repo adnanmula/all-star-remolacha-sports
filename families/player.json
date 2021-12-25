@@ -26,12 +26,6 @@
 			"type": "number",
 			"desc": "",
 			"sid": 681669803387890
-		},
-		{
-			"name": "skill0_current_cooldown",
-			"type": "number",
-			"desc": "",
-			"sid": 416049849019920
 		}
 	],
 	"behaviorTypes": [

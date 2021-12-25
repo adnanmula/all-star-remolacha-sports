@@ -1264,7 +1264,69 @@
 									"sid": 890323715608948
 								}
 							],
-							"sid": 236964631118374
+							"sid": 236964631118374,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "ball",
+											"sid": 263286964106157,
+											"parameters": {
+												"instance-variable": "onFire"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "ball",
+											"sid": 402096326820152,
+											"parameters": {
+												"instance-variable": "onFire",
+												"value": "false"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "particle_fire",
+											"sid": 972098288614573
+										}
+									],
+									"sid": 606856094944403
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "ball",
+											"sid": 280409227634149,
+											"parameters": {
+												"instance-variable": "onFundinaso"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "ball",
+											"sid": 540016778367085,
+											"parameters": {
+												"instance-variable": "onFundinaso",
+												"value": "false"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "particle_fire",
+											"sid": 364782199780818
+										}
+									],
+									"sid": 755844724158998
+								}
+							]
 						}
 					]
 				}

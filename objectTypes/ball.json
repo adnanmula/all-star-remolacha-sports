@@ -9,6 +9,12 @@
 			"type": "boolean",
 			"desc": "",
 			"sid": 274990260739644
+		},
+		{
+			"name": "onFundinaso",
+			"type": "boolean",
+			"desc": "",
+			"sid": 956071778099842
 		}
 	],
 	"behaviorTypes": [

@@ -136,6 +136,14 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
@@ -155,7 +163,8 @@
 	"objectTypes": {
 		"items": [
 			"hud_skill",
-			"hud_skill_mask"
+			"hud_skill_mask",
+			"Sprite"
 		],
 		"subfolders": [
 			{

@@ -128,7 +128,8 @@
 					},
 					"uid": 30,
 					"instanceVariables": {
-						"onFire": false
+						"onFire": false,
+						"onFundinaso": false
 					},
 					"behaviors": {
 						"Physics": {
@@ -753,8 +754,7 @@
 						"gamepad_index": -1,
 						"name": "",
 						"skill0": "",
-						"skill0_cooldown": 0,
-						"skill0_current_cooldown": 0
+						"skill0_cooldown": 0
 					},
 					"behaviors": {
 						"Platform": {
@@ -934,6 +934,46 @@
 							1
 						],
 						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Sprite",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 85,
+					"instanceVariables": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 570,
+						"y": 130,
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}

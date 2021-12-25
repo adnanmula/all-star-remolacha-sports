@@ -889,19 +889,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "player",
-											"sid": 263936207378290,
+											"sid": 309468707875332,
 											"parameters": {
 												"instance-variable": "skill0_cooldown",
-												"value": "1"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 386683112209108,
-											"parameters": {
-												"instance-variable": "skill0_current_cooldown",
-												"value": "0"
+												"value": "30"
 											}
 										}
 									],
