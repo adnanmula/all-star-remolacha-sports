@@ -1634,12 +1634,37 @@
 						},
 						{
 							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 215499356042709,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"random_tp_all\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteRandomTpAll",
+									"sid": 570478980695655,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 114426810816817
+						},
+						{
+							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
 									"id": "start-timer",
 									"objectClass": "player",
-									"sid": 587954341316364,
+									"sid": 139199812446007,
 									"behaviorType": "Timer",
 									"parameters": {
 										"duration": "skill_cooldown",
@@ -1648,9 +1673,114 @@
 									}
 								}
 							],
-							"sid": 565128002732408
+							"sid": 529082914676276
 						}
 					]
+				}
+			]
+		},
+		{
+			"functionName": "skillExecuteRandomTpAll",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 900990120169161
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 195495323062675,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "margin",
+					"type": "number",
+					"initialValue": "100",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 794927408371521
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 786721637447799,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 625927164963835,
+							"parameters": {
+								"x": "random(margin, LayoutWidth - margin)",
+								"y": "random(margin, LayoutHeight - margin)"
+							}
+						}
+					],
+					"sid": 463632858939507
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 166077018970038,
+							"parameters": {
+								"object": "ball"
+							}
+						},
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 264306823405622,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "resetBall",
+							"sid": 356217969312587
+						},
+						{
+							"id": "set-position",
+							"objectClass": "ball",
+							"sid": 466064686898323,
+							"parameters": {
+								"x": "random(margin, LayoutWidth - margin)",
+								"y": "random(margin, LayoutHeight - margin)"
+							}
+						},
+						{
+							"id": "apply-impulse-at-angle",
+							"objectClass": "ball",
+							"sid": 700975931419484,
+							"behaviorType": "Physics",
+							"parameters": {
+								"impulse": "15",
+								"angle": "player.Angle",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 226913787599528
 				}
 			]
 		},
@@ -1660,7 +1790,7 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "ball",
-					"sid": 636336773569695,
+					"sid": 902602897123397,
 					"parameters": {
 						"object": "player"
 					}
@@ -1670,7 +1800,7 @@
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "ball",
-					"sid": 444034049670655,
+					"sid": 995648272520344,
 					"parameters": {
 						"instance-variable": "onFire",
 						"value": "false"
@@ -1679,10 +1809,10 @@
 				{
 					"id": "destroy",
 					"objectClass": "particle_fire",
-					"sid": 798258133291888
+					"sid": 588276005862338
 				}
 			],
-			"sid": 826230187876802
+			"sid": 208414741666642
 		}
 	],
 	"sid": 600060452567385

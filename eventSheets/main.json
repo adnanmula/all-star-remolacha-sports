@@ -840,6 +840,24 @@
 												"width": "46",
 												"height": "69.75"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 447584420017086,
+											"parameters": {
+												"instance-variable": "skill0",
+												"value": "\"random_tp_all\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 108990301797870,
+											"parameters": {
+												"instance-variable": "skill0_cooldown",
+												"value": "1"
+											}
 										}
 									],
 									"sid": 743379202233041
@@ -889,10 +907,10 @@
 										{
 											"id": "set-instvar-value",
 											"objectClass": "player",
-											"sid": 309468707875332,
+											"sid": 547876793220770,
 											"parameters": {
 												"instance-variable": "skill0_cooldown",
-												"value": "30"
+												"value": "1"
 											}
 										}
 									],
@@ -1002,6 +1020,24 @@
 												"width": "46",
 												"height": "93"
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 695196879392435,
+											"parameters": {
+												"instance-variable": "skill0",
+												"value": "\"ice_wall\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 244730980540570,
+											"parameters": {
+												"instance-variable": "skill0_cooldown",
+												"value": "1"
+											}
 										}
 									],
 									"sid": 203413196908166
@@ -1073,24 +1109,6 @@
 											"parameters": {
 												"width": "77",
 												"height": "110"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 752779390835060,
-											"parameters": {
-												"instance-variable": "skill0",
-												"value": "\"ice_wall\""
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 847070873375644,
-											"parameters": {
-												"instance-variable": "skill0_cooldown",
-												"value": "1"
 											}
 										}
 									],
