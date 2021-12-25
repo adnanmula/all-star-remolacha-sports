@@ -744,9 +744,77 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 869895759898134,
+											"parameters": {
+												"key": "\"settings_show_hitbox\"",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "player",
+											"sid": 344859352679775,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "feet_detector",
+											"sid": 457037396498227,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 780441838661805
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 259089374410085,
+											"parameters": {
+												"key": "\"settings_show_hitbox\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "player",
+											"sid": 868120643986702,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "feet_detector",
+											"sid": 213690032254780,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 719490460511165
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 724600251450752,
+											"sid": 444743271384730,
 											"parameters": {
 												"first-value": "player.name",
 												"comparison": 0,
@@ -758,7 +826,7 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 309886812779559,
+											"sid": 557217984935697,
 											"parameters": {
 												"width": "46",
 												"height": "69.75"
@@ -767,14 +835,14 @@
 										{
 											"id": "set-size",
 											"objectClass": "player_mask",
-											"sid": 343607599126520,
+											"sid": 558462050279645,
 											"parameters": {
 												"width": "46",
 												"height": "69.75"
 											}
 										}
 									],
-									"sid": 780441838661805
+									"sid": 743379202233041
 								},
 								{
 									"eventType": "block",
@@ -816,6 +884,24 @@
 											"parameters": {
 												"instance-variable": "skill0",
 												"value": "\"fundinaso\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 263936207378290,
+											"parameters": {
+												"instance-variable": "skill0_cooldown",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 386683112209108,
+											"parameters": {
+												"instance-variable": "skill0_current_cooldown",
+												"value": "0"
 											}
 										}
 									],

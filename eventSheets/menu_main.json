@@ -179,6 +179,32 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "has-key",
+									"objectClass": "data_match_config",
+									"sid": 340035482195041,
+									"parameters": {
+										"key": "\"settings_show_hitbox\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data_match_config",
+									"sid": 219311544121667,
+									"parameters": {
+										"key": "\"settings_show_hitbox\"",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 221733017650026
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 809284761761864,
@@ -408,6 +434,15 @@
 							"parameters": {
 								"key": "\"size_pitch\"",
 								"value": "1"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data_match_config",
+							"sid": 163987671949217,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"value": "0"
 							}
 						}
 					],

@@ -31,7 +31,63 @@
 					}
 				}
 			],
-			"sid": 351459953049445
+			"sid": 351459953049445,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 305124327333231,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 941611424396569,
+							"parameters": {
+								"layer": "\"skills\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 945783894352822
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 586411577916846,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 685209996382346,
+							"parameters": {
+								"layer": "\"skills\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 770651102473211
+				}
+			]
 		},
 		{
 			"eventType": "group",

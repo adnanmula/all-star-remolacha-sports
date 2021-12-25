@@ -38,7 +38,34 @@
 							}
 						}
 					],
-					"sid": 151454168611323
+					"sid": 151454168611323,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 113185192797259,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"settings_show_hitbox\" & pixel_spritefont.type = \"menu_settings_value\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 660669280861532,
+									"parameters": {
+										"text": "data_match_config.Get(\"settings_show_hitbox\") = 0 ? \"No\" : \"Yes\""
+									}
+								}
+							],
+							"sid": 442643171060430
+						}
+					]
 				},
 				{
 					"functionName": "menuSettingsUpdate",
@@ -76,6 +103,153 @@
 								}
 							],
 							"sid": 119787473786774
+						}
+					]
+				},
+				{
+					"functionName": "menuSettingsUpdateValue",
+					"functionDescription": "",
+					"functionCategory": "menu_settings",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "index",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 680515266092553
+						},
+						{
+							"name": "action",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 302993940294856
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 108517864278585,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 635534394549173,
+									"parameters": {
+										"first-value": "index",
+										"comparison": 0,
+										"second-value": "\"settings_show_hitbox\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 986360112738767,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_value",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 516401449136018
+								},
+								{
+									"eventType": "variable",
+									"name": "max_value",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 908789910101425
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910977931664187,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 218919148581139,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) - 1 < min_value ? max_value : data_match_config.Get(index) - 1"
+											}
+										}
+									],
+									"sid": 777362752629280
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 197640805534650,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 411472197978941,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) + 1 > max_value ? min_value: data_match_config.Get(index) + 1"
+											}
+										}
+									],
+									"sid": 793976633408571
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 919943538609871,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.action = index & pixel_spritefont.type = \"menu_settings_value\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 701949197009806,
+											"parameters": {
+												"text": "data_match_config.Get(index) = 0 ? \"No\" : \"Yes\""
+											}
+										}
+									],
+									"sid": 469654453193789
+								}
+							]
 						}
 					]
 				},
@@ -152,10 +326,10 @@
 						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
-							"sid": 373665725203683,
+							"sid": 152898855363506,
 							"parameters": {
 								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0"
+								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0 & pixel_spritefont.action = \"settings_fullscreen\""
 							}
 						}
 					],
@@ -183,10 +357,10 @@
 						{
 							"id": "pick-by-evaluate",
 							"objectClass": "System",
-							"sid": 368553048081221,
+							"sid": 236978606504772,
 							"parameters": {
 								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0"
+								"expression": "pixel_spritefont.type = \"menu_settings_value\" &\npixel_spritefont.index = 0 & pixel_spritefont.action = \"settings_fullscreen\""
 							}
 						}
 					],
@@ -933,6 +1107,77 @@
 						{
 							"id": "on-button-pressed",
 							"objectClass": "Gamepad",
+							"sid": 207173165890969,
+							"parameters": {
+								"gamepad": "loopindex",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 839076033897050,
+							"parameters": {
+								"gamepad": "loopindex",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "-gamepad_deadzone"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 890545563744789,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 302233665987364,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "pixel_spritefont",
+									"sid": 321447625649283,
+									"parameters": {
+										"instance-variable": "action",
+										"comparison": 0,
+										"value": "\"back\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 473322187123772
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "menuSettingsUpdateValue",
+									"sid": 637522746367307,
+									"parameters": [
+										"pixel_spritefont.action",
+										"0"
+									]
+								}
+							],
+							"sid": 957699938514874
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
 							"sid": 389655415450824,
 							"parameters": {
 								"gamepad": "loopindex",
@@ -960,22 +1205,11 @@
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 252898601478643,
+									"sid": 353289337903824,
 									"parameters": {
 										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_match_config\" &\npixel_spritefont.index = menu_match_config_current_index"
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 554630490945927,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"go\""
-									},
-									"isInverted": true
 								},
 								{
 									"id": "compare-instance-variable",
@@ -996,8 +1230,8 @@
 							],
 							"actions": [
 								{
-									"callFunction": "menuMatchConfigUpdateValue",
-									"sid": 889181705847761,
+									"callFunction": "menuSettingsUpdateValue",
+									"sid": 333634956302589,
 									"parameters": [
 										"pixel_spritefont.action",
 										"1"

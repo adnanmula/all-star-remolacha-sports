@@ -153,7 +153,10 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"hud_skill",
+			"hud_skill_mask"
+		],
 		"subfolders": [
 			{
 				"items": [

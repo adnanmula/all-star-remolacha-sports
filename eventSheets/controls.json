@@ -1312,6 +1312,16 @@
 											}
 										},
 										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 536664506533509,
+											"parameters": {
+												"key": "\"enabled_skills\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
 											"sid": 950870925217416

@@ -333,7 +333,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "Effects:",
+						"text": "Show hitboxes:",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -350,7 +350,7 @@
 					},
 					"uid": 41,
 					"instanceVariables": {
-						"action": "menu_settings_effects",
+						"action": "settings_show_hitbox",
 						"index": 1,
 						"type": "menu_settings_option"
 					},
@@ -360,9 +360,9 @@
 						}
 					},
 					"world": {
-						"x": 548,
+						"x": 597,
 						"y": 315,
-						"width": 256,
+						"width": 354,
 						"height": 49.313362439714865,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -379,7 +379,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "None",
+						"text": "No",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -396,8 +396,8 @@
 					},
 					"uid": 42,
 					"instanceVariables": {
-						"action": "settings_effects",
-						"index": 1,
+						"action": "settings_show_hitbox",
+						"index": 0,
 						"type": "menu_settings_value"
 					},
 					"behaviors": {

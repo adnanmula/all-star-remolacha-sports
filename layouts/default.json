@@ -752,7 +752,9 @@
 					"instanceVariables": {
 						"gamepad_index": -1,
 						"name": "",
-						"skill0": ""
+						"skill0": "",
+						"skill0_cooldown": 0,
+						"skill0_current_cooldown": 0
 					},
 					"behaviors": {
 						"Platform": {
