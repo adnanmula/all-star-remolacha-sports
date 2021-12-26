@@ -590,22 +590,6 @@
 								"y": "y",
 								"create-hierarchy": false
 							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "player",
-							"sid": 507236350434129,
-							"parameters": {
-								"scale": "1"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "player_mask",
-							"sid": 121144190997554,
-							"parameters": {
-								"scale": "1"
-							}
 						}
 					],
 					"sid": 957118365534833,
@@ -639,6 +623,22 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-scale",
+									"objectClass": "player",
+									"sid": 598633517550699,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "player_mask",
+									"sid": 958304564074896,
+									"parameters": {
+										"scale": "1"
+									}
+								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "player",
@@ -1569,32 +1569,6 @@
 							]
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-timer",
-							"objectClass": "player",
-							"sid": 176829131780195,
-							"behaviorType": "Timer",
-							"parameters": {
-								"tag": "\"dash\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-enabled",
-							"objectClass": "player",
-							"sid": 755557683056902,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
-							}
-						}
-					],
-					"sid": 251566428578722
 				},
 				{
 					"eventType": "block",

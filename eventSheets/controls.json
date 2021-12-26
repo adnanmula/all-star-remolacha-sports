@@ -1167,6 +1167,16 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "is-timer-running",
+											"objectClass": "player",
+											"sid": 752574567124192,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"stun\""
+											},
+											"isInverted": true
+										},
+										{
 											"id": "compare-two-values",
 											"objectClass": "System",
 											"sid": 574765239308147,
@@ -1292,6 +1302,16 @@
 								{
 									"eventType": "block",
 									"conditions": [
+										{
+											"id": "is-timer-running",
+											"objectClass": "player",
+											"sid": 779772821927910,
+											"behaviorType": "Timer",
+											"parameters": {
+												"tag": "\"stun\""
+											},
+											"isInverted": true
+										},
 										{
 											"id": "is-button-down",
 											"objectClass": "Gamepad",
@@ -1663,27 +1683,12 @@
 							],
 							"actions": [
 								{
-									"callFunction": "createPlayer",
-									"sid": 872757146586734,
+									"callFunction": "skillExecuteMagicMarionette",
+									"sid": 591616219259082,
 									"parameters": [
 										"player.gamepad_index",
-										"player.name",
-										"random(100, LayoutWidth - 100)",
-										"random(100, LayoutHeight - 100)",
-										"1",
-										false
+										"player.name"
 									]
-								},
-								{
-									"id": "start-timer",
-									"objectClass": "player",
-									"sid": 223014307296467,
-									"behaviorType": "Timer",
-									"parameters": {
-										"duration": "3",
-										"type": "once",
-										"tag": "\"marionette_expiration\""
-									}
 								}
 							],
 							"sid": 703886008645648
@@ -1816,12 +1821,81 @@
 			]
 		},
 		{
+			"functionName": "skillExecuteMagicMarionette",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerGamepadIndex",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 793449140003207
+				},
+				{
+					"name": "playerName",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 324050665278182
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"callFunction": "createPlayer",
+					"sid": 151922652819550,
+					"parameters": [
+						"playerGamepadIndex",
+						"playerName",
+						"random(100, LayoutWidth - 100)",
+						"random(100, LayoutHeight - 100)",
+						"1",
+						false
+					]
+				}
+			],
+			"sid": 426575160738043,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-last-created",
+							"objectClass": "System",
+							"sid": 426751629317918,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "player",
+							"sid": 658163336104056,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "3",
+								"type": "once",
+								"tag": "\"marionette_expiration\""
+							}
+						}
+					],
+					"sid": 864356315253398
+				}
+			]
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "ball",
-					"sid": 902602897123397,
+					"sid": 539171868239821,
 					"parameters": {
 						"object": "player"
 					}
@@ -1831,7 +1905,7 @@
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "ball",
-					"sid": 995648272520344,
+					"sid": 845917122934874,
 					"parameters": {
 						"instance-variable": "onFire",
 						"value": "false"
@@ -1840,10 +1914,10 @@
 				{
 					"id": "destroy",
 					"objectClass": "particle_fire",
-					"sid": 588276005862338
+					"sid": 239897607645501
 				}
 			],
-			"sid": 208414741666642
+			"sid": 455298427226165
 		},
 		{
 			"functionName": "stunPlayer",
@@ -1869,7 +1943,17 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 271946134775237,
+					"parameters": {
+						"type": "log",
+						"message": "\"Stuning player \" & playerUid & \" for \" & duration"
+					}
+				}
+			],
 			"sid": 865740841955673,
 			"children": [
 				{
@@ -1904,9 +1988,170 @@
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player",
+							"sid": 872265044266645,
+							"parameters": {
+								"object": "particle_stun",
+								"layer": "\"main\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 125685482942836,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "particle_stun",
+							"sid": 609812535020005,
+							"parameters": {
+								"angle": "player.Angle + 90"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "particle_stun",
+							"sid": 518549127281429
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "particle_stun",
+							"sid": 403185861622406,
+							"parameters": {
+								"instance-variable": "owner",
+								"value": "player.UID"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "particle_stun",
+							"sid": 542143057747254,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
 						}
 					],
 					"sid": 590449306740611
+				}
+			]
+		},
+		{
+			"functionName": "stunPlayerArea",
+			"functionDescription": "",
+			"functionCategory": "player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "duration",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 331568389433813
+				},
+				{
+					"name": "radius",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 426895295421868
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 235918472703010
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 409604382778006
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 568968734030846,
+					"parameters": {
+						"type": "log",
+						"message": "\"Stunings players at < \" & radius & \" of \" & x & \"/\" & y &  \" for \" & duration"
+					}
+				}
+			],
+			"sid": 838435770749333,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 138388914636940,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 137368291306410,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 493620616998868,
+									"parameters": {
+										"first-value": "distance(x, y, player.X, player.Y)",
+										"comparison": 3,
+										"second-value": "radius"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "stunPlayer",
+									"sid": 415414838882896,
+									"parameters": [
+										"player.UID",
+										"duration"
+									]
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 917352765847793,
+									"parameters": {
+										"type": "log",
+										"message": "player.name & \"/\" & distance(x, y, player.X, player.Y)"
+									}
+								}
+							],
+							"sid": 748937312459500
+						}
+					]
 				}
 			]
 		},
@@ -1934,7 +2179,31 @@
 					}
 				}
 			],
-			"sid": 297209328601531
+			"sid": 297209328601531,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 385146981067407,
+							"parameters": {
+								"object": "particle_stun",
+								"expression": "particle_stun.owner = player.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "particle_stun",
+							"sid": 697768067953468
+						}
+					],
+					"sid": 380046851059706
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1949,14 +2218,105 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 802728539489110,
+			"children": [
 				{
-					"id": "destroy",
-					"objectClass": "player",
-					"sid": 771511171362950
+					"eventType": "variable",
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 923190784568950
+				},
+				{
+					"eventType": "variable",
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 279362735072193
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 297053467366718,
+							"parameters": {
+								"variable": "x",
+								"value": "player.X"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 191029168633742,
+							"parameters": {
+								"variable": "y",
+								"value": "player.Y"
+							}
+						}
+					],
+					"sid": 637667169070866
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player",
+							"sid": 473266483070502,
+							"parameters": {
+								"object": "prop_skill_area",
+								"layer": "\"main\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "prop_skill_area",
+							"sid": 557514062633043,
+							"parameters": {
+								"width": "250",
+								"height": "250"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "player",
+							"sid": 125170963009048
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 609992444321011,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"callFunction": "stunPlayerArea",
+							"sid": 858119305760093,
+							"parameters": [
+								"3",
+								"250",
+								"x",
+								"y"
+							]
+						}
+					],
+					"sid": 226787001145523
 				}
-			],
-			"sid": 802728539489110
+			]
 		}
 	],
 	"sid": 600060452567385

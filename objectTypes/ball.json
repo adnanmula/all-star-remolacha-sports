@@ -22,6 +22,11 @@
 			"behaviorId": "Physics",
 			"name": "Physics",
 			"sid": 693692031679167
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 809309094919959
 		}
 	],
 	"effectTypes": [],

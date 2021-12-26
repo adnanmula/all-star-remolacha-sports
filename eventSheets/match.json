@@ -1177,20 +1177,57 @@
 							"id": "is-outside-layout",
 							"objectClass": "ball",
 							"sid": 495459443818177
+						},
+						{
+							"id": "is-timer-running",
+							"objectClass": "ball",
+							"sid": 694389407847263,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"out_of_bounds\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "ball",
+							"sid": 835070882543208,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "5",
+								"type": "once",
+								"tag": "\"out_of_bounds\""
+							}
+						}
+					],
+					"sid": 533309464380414
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "ball",
+							"sid": 935349929112988,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"out_of_bounds\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "resetBall",
-							"sid": 467281466189334
+							"sid": 564839541226557
 						},
 						{
 							"callFunction": "resetPlayers",
-							"sid": 641754156510072
+							"sid": 729247620600604
 						}
 					],
-					"sid": 533309464380414,
-					"disabled": true
+					"sid": 410376361906415
 				},
 				{
 					"functionName": "resetBall",
@@ -1201,7 +1238,17 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 794661041413055,
+							"parameters": {
+								"type": "log",
+								"message": "\"Ball reseted\""
+							}
+						}
+					],
 					"sid": 205335213358813,
 					"children": [
 						{
@@ -1248,20 +1295,6 @@
 									"id": "move-to-bottom",
 									"objectClass": "ball",
 									"sid": 563060639276675
-								},
-								{
-									"id": "set-boolean-instvar",
-									"objectClass": "ball",
-									"sid": 770409572566500,
-									"parameters": {
-										"instance-variable": "onFire",
-										"value": "false"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "particle_fire",
-									"sid": 890323715608948
 								}
 							],
 							"sid": 236964631118374,
@@ -1439,6 +1472,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 710217528214406,
+							"parameters": {
+								"type": "log",
+								"message": "\"Player \" & player.UID & \" - \" & player.name & \" out of bounds\""
+							}
+						},
 						{
 							"callFunction": "resetBall",
 							"sid": 480368582934891

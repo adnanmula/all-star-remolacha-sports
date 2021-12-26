@@ -128,16 +128,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "bound",
-			"name": "Bound to layout",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"id": "bound",
+			"name": "Bound to layout",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -161,7 +161,9 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"particle_stun"
+		],
 		"subfolders": [
 			{
 				"items": [
