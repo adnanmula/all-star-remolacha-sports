@@ -14,6 +14,10 @@
 			"includeSheet": "menu_pause"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "player"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_1",
 			"type": "number",
@@ -922,27 +926,45 @@
 												"width": "46",
 												"height": "69.75"
 											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 447584420017086,
-											"parameters": {
-												"instance-variable": "skill0",
-												"value": "\"random_tp_all\""
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 108990301797870,
-											"parameters": {
-												"instance-variable": "skill0_cooldown",
-												"value": "1"
-											}
 										}
 									],
-									"sid": 743379202233041
+									"sid": 743379202233041,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 872331363873832,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 116632073865631,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"random_tp_all\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 663909458911444,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 320355454985125
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -976,27 +998,45 @@
 												"width": "44",
 												"height": "98"
 											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 201811884558433,
-											"parameters": {
-												"instance-variable": "skill0",
-												"value": "\"fundinaso\""
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 547876793220770,
-											"parameters": {
-												"instance-variable": "skill0_cooldown",
-												"value": "1"
-											}
 										}
 									],
-									"sid": 775043976992713
+									"sid": 775043976992713,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 153982769801709,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 904235701037086,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"fundinaso\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 280312705686498,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 879743191739952
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1138,27 +1178,45 @@
 												"width": "46",
 												"height": "93"
 											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 695196879392435,
-											"parameters": {
-												"instance-variable": "skill0",
-												"value": "\"ice_wall\""
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "player",
-											"sid": 244730980540570,
-											"parameters": {
-												"instance-variable": "skill0_cooldown",
-												"value": "1"
-											}
 										}
 									],
-									"sid": 203413196908166
+									"sid": 203413196908166,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 660183793649682,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 373303392535581,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"ice_wall\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 452038128206672,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 568818036484799
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1230,7 +1288,43 @@
 											}
 										}
 									],
-									"sid": 751735058644520
+									"sid": 751735058644520,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 333696300550414,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 795261265615770,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"cry_stun\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 773032208382343,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 318434729679824
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1414,6 +1508,21 @@
 					"actions": [],
 					"sid": 455544248805452,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 827843561643063,
+									"parameters": {
+										"object": "player"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 533119603914173
+						},
 						{
 							"eventType": "block",
 							"conditions": [

@@ -402,7 +402,8 @@
 			"main",
 			"controls",
 			"match",
-			"skills"
+			"skills",
+			"player"
 		],
 		"subfolders": [
 			{
