@@ -1252,7 +1252,43 @@
 											}
 										}
 									],
-									"sid": 795396151474400
+									"sid": 795396151474400,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 421179357167665,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 810779325829961,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"metronome\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 283323190120203,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 231925502173895
+										}
+									]
 								},
 								{
 									"eventType": "block",

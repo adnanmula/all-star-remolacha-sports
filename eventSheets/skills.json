@@ -212,6 +212,31 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
+									"sid": 488964688846977,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"metronome\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteMetronome",
+									"sid": 492104619651117,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 712255034083742
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
 									"sid": 114595950291078,
 									"parameters": {
 										"first-value": "skill",
@@ -749,9 +774,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 156293295157554,
+							"sid": 540215863401960,
 							"parameters": {
-								"seconds": "1"
+								"seconds": "0.5"
 							}
 						}
 					],
@@ -789,6 +814,197 @@
 								}
 							],
 							"sid": 365768798758977
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "skillExecuteMetronome",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 768942135108224
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 970876159661864,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "randomNumber",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 286474010074635
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 775029380819191,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 359896781959314,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 699752912078181,
+									"parameters": {
+										"variable": "randomNumber",
+										"value": "choose(0, 1, 2, 3, 4)"
+									}
+								}
+							],
+							"sid": 308793353038553
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 582399948484104,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteFundinaso",
+									"sid": 642952884298030,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 703560979742590
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 133453705369430,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteIceWall",
+									"sid": 690458905804497,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 452486296809457
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 426989068445559,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteRandomTpAll",
+									"sid": 790494919314372,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 497579170782280
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 647899861751323,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteMagicMarionette",
+									"sid": 837788202980517,
+									"parameters": [
+										"player.gamepad_index",
+										"player.name"
+									]
+								}
+							],
+							"sid": 107746760473605
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 538137820258605,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteCryStun",
+									"sid": 339885518766052,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 657698648407909
 						}
 					]
 				}
