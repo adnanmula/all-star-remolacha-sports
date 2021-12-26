@@ -12,16 +12,6 @@
 			"sid": 782733475678648
 		},
 		{
-			"eventType": "variable",
-			"name": "dash_timer",
-			"type": "number",
-			"initialValue": "0.1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": true,
-			"sid": 795091050763897
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Controls - Common",
@@ -1659,6 +1649,47 @@
 						},
 						{
 							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 896034724579463,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"magic_marionette\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "createPlayer",
+									"sid": 872757146586734,
+									"parameters": [
+										"player.gamepad_index",
+										"player.name",
+										"random(100, LayoutWidth - 100)",
+										"random(100, LayoutHeight - 100)",
+										"1",
+										false
+									]
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "player",
+									"sid": 223014307296467,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "3",
+										"type": "once",
+										"tag": "\"marionette_expiration\""
+									}
+								}
+							],
+							"sid": 703886008645648
+						},
+						{
+							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
@@ -1813,6 +1844,119 @@
 				}
 			],
 			"sid": 208414741666642
+		},
+		{
+			"functionName": "stunPlayer",
+			"functionDescription": "",
+			"functionCategory": "player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 871601428667424
+				},
+				{
+					"name": "duration",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 769464645242742
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 865740841955673,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 782572466589447,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "player",
+							"sid": 451803288313966,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "duration",
+								"type": "once",
+								"tag": "\"stun\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 876360107587549,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 590449306740611
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "player",
+					"sid": 591639145327145,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"stun\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "player",
+					"sid": 484095756859158,
+					"behaviorType": "Platform",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 297209328601531
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "player",
+					"sid": 248524354761097,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"marionette_expiration\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "player",
+					"sid": 771511171362950
+				}
+			],
+			"sid": 802728539489110
 		}
 	],
 	"sid": 600060452567385

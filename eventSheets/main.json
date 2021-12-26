@@ -44,6 +44,15 @@
 			],
 			"actions": [
 				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 489011884262290,
+					"parameters": {
+						"type": "log",
+						"message": "\"Started layer: \" & LayoutName"
+					}
+				},
+				{
 					"id": "set-canvas-size",
 					"objectClass": "System",
 					"sid": 129918805276159,
@@ -77,33 +86,14 @@
 						"x": "LayoutWidth/2",
 						"y": "LayoutHeight/2"
 					}
+				},
+				{
+					"callFunction": "resetGlobals",
+					"sid": 334377783253270
 				}
 			],
 			"sid": 330663426654972,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 496321124767572
-						}
-					],
-					"actions": [
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 226904534137647
-						},
-						{
-							"id": "reset-global-variables",
-							"objectClass": "System",
-							"sid": 342438709360371
-						}
-					],
-					"sid": 718724352854851
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -189,13 +179,14 @@
 					"actions": [
 						{
 							"callFunction": "createPlayer",
-							"sid": 539023177619564,
+							"sid": 460373530250515,
 							"parameters": [
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth / 2 - LayoutWidth / 4",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						}
 					],
@@ -218,24 +209,26 @@
 					"actions": [
 						{
 							"callFunction": "createPlayer",
-							"sid": 664084584396026,
+							"sid": 200812386851723,
 							"parameters": [
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth / 2 - LayoutWidth / 4",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 362737261027570,
+							"sid": 703674649856001,
 							"parameters": [
 								"data_gamepad.Get(\"player1_index\")",
 								"data_gamepad.Get(\"player1_character\")",
 								"LayoutWidth / 2 + LayoutWidth / 4",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						}
 					],
@@ -258,46 +251,50 @@
 					"actions": [
 						{
 							"callFunction": "createPlayer",
-							"sid": 244159146720781,
+							"sid": 293199081420780,
 							"parameters": [
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth/4 - LayoutWidth/8",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 505105679850274,
+							"sid": 728099374407081,
 							"parameters": [
 								"data_gamepad.Get(\"player1_index\")",
 								"data_gamepad.Get(\"player1_character\")",
 								"LayoutWidth/4 + LayoutWidth/8",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 569676596766906,
+							"sid": 663680607177684,
 							"parameters": [
 								"data_gamepad.Get(\"player2_index\")",
 								"data_gamepad.Get(\"player2_character\")",
 								"LayoutWidth/2 + LayoutWidth/8",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 123210103738363,
+							"sid": 819897040851731,
 							"parameters": [
 								"data_gamepad.Get(\"player3_index\")",
 								"data_gamepad.Get(\"player3_character\")",
 								"LayoutWidth/4 * 3+ LayoutWidth/8",
 								"200",
-								"1"
+								"1",
+								true
 							]
 						}
 					],
@@ -549,11 +546,27 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 500014680887371
+						},
+						{
+							"name": "withSkills",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 788294616791071
 						}
 					],
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 223345220637299,
+							"parameters": {
+								"type": "log",
+								"message": "\"Creating \" & character_name & \" for gamepad \" & gamepad_index & \" at \" & x & \"/\" & y"
+							}
+						},
 						{
 							"id": "create-object",
 							"objectClass": "System",
@@ -719,22 +732,6 @@
 									"sid": 790288461959597,
 									"parameters": {
 										"z": "1"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "player",
-									"sid": 613702564763541,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "feet_detector",
-									"sid": 792804173540026,
-									"parameters": {
-										"visibility": "invisible"
 									}
 								}
 							],
@@ -950,7 +947,43 @@
 											}
 										}
 									],
-									"sid": 438952713032612
+									"sid": 438952713032612,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 501988234310682,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 881326686496613,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"magic_marionette\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 806989207863612,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 233715590800439
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1179,6 +1212,15 @@
 												"pin-to": "player",
 												"mode": "position-angle"
 											}
+										},
+										{
+											"id": "set-destroy",
+											"objectClass": "feet_detector",
+											"sid": 933100637920686,
+											"behaviorType": "Pin",
+											"parameters": {
+												"destroy": true
+											}
 										}
 									],
 									"sid": 218426613707815,
@@ -1210,6 +1252,15 @@
 														"width-type": "no",
 														"height-type": "no",
 														"z": false
+													}
+												},
+												{
+													"id": "set-destroy",
+													"objectClass": "player_mask",
+													"sid": 978148232410680,
+													"behaviorType": "Pin",
+													"parameters": {
+														"destroy": true
 													}
 												}
 											],
@@ -1246,6 +1297,15 @@
 														"width-type": "no",
 														"height-type": "no",
 														"z": false
+													}
+												},
+												{
+													"id": "set-destroy",
+													"objectClass": "player_mask",
+													"sid": 947356208173534,
+													"behaviorType": "Pin",
+													"parameters": {
+														"destroy": true
 													}
 												}
 											],
@@ -2112,6 +2172,91 @@
 				0,
 				1
 			]
+		},
+		{
+			"functionName": "resetGlobals",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 693117191901957,
+					"parameters": {
+						"variable": "score_1",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 761549947552756,
+					"parameters": {
+						"variable": "score_2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 337671315634933,
+					"parameters": {
+						"variable": "goal_volley_count",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 813749957630295,
+					"parameters": {
+						"variable": "menu_settings_current_index",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 353828644643475,
+					"parameters": {
+						"variable": "menu_pause_current_index",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 237484266878999,
+					"parameters": {
+						"variable": "menu_pause_is_open",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 582889645444474,
+					"parameters": {
+						"variable": "menu_match_is_quick",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 107454674045092,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 166912316091587
 		}
 	],
 	"sid": 869789412645449

@@ -8,7 +8,7 @@
 			"initialValue": "30",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 357672608309814
 		},
 		{

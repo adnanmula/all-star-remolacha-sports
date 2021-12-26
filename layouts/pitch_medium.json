@@ -795,103 +795,102 @@
 			"global": false
 		},
 		{
-			"name": "hud",
+			"name": "skills",
 			"overriden": 0,
-			"subLayers": [
+			"subLayers": [],
+			"instances": [
 				{
-					"name": "skills",
-					"overriden": 0,
-					"subLayers": [],
-					"instances": [
-						{
-							"type": "hud_skill",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "fundinaso",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 78,
-							"instanceVariables": {
-								"player": 0
-							},
-							"behaviors": {},
-							"world": {
-								"x": 614.9128515440652,
-								"y": 25.455588821479452,
-								"width": 25,
-								"height": 25,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						},
-						{
-							"type": "hud_skill_mask",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "default",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 79,
-							"instanceVariables": {},
-							"behaviors": {},
-							"world": {
-								"x": 647.6251906238298,
-								"y": 25.948081485174697,
-								"width": 25,
-								"height": 25,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"angle": 0,
-								"zElevation": 0
-							}
-						}
-					],
-					"sid": 418832293716905,
-					"effectTypes": [],
-					"isInitiallyVisible": true,
-					"color": [
-						1,
-						1,
-						1,
-						1
-					],
-					"backgroundColor": [
-						0.3686274509803922,
-						0.3686274509803922,
-						0.3686274509803922,
-						1
-					],
-					"isTransparent": true,
-					"parallaxX": 1,
-					"parallaxY": 1,
-					"scaleRate": 1,
-					"forceOwnTexture": false,
-					"renderingMode": "3d",
-					"drawOrder": "z-order",
-					"useRenderCells": false,
-					"blendMode": "normal",
-					"zElevation": 0,
-					"global": false
+					"type": "hud_skill",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "fundinaso",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 78,
+					"instanceVariables": {
+						"player": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 612,
+						"y": -71,
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hud_skill_mask",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 645,
+						"y": -70,
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
+			"sid": 418832293716905,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "hud",
+			"overriden": 0,
+			"subLayers": [],
 			"instances": [
 				{
 					"type": "background_black",

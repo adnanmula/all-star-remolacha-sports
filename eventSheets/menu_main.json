@@ -38,7 +38,7 @@
 			"initialValue": "GOALS",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 155861514120440
 		},
 		{
@@ -48,7 +48,7 @@
 			"initialValue": "TIME",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 325499351075341
 		},
 		{
@@ -58,7 +58,7 @@
 			"initialValue": "TYPE_FOOTBALL",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 122250158420336
 		},
 		{
@@ -68,7 +68,7 @@
 			"initialValue": "TYPE_BASKET",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 698599106187882
 		},
 		{
@@ -78,7 +78,7 @@
 			"initialValue": "TYPE_VOLLEY",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 892113948566340
 		},
 		{
@@ -88,7 +88,7 @@
 			"initialValue": "1PRACTICE",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 365301254691470
 		},
 		{
@@ -98,7 +98,7 @@
 			"initialValue": "PLAYERS_1V1",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 541347491172090
 		},
 		{
@@ -108,7 +108,7 @@
 			"initialValue": "PLAYERS_2V2",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": false,
+			"isConstant": true,
 			"sid": 520824174821626
 		},
 		{
