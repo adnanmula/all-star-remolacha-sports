@@ -35,6 +35,11 @@
 								"name": "spawn_front_near",
 								"x": 1.42,
 								"y": 0.5
+							},
+							{
+								"name": "spawn_top",
+								"x": 0.5,
+								"y": 1.7763568394002505e-17
 							}
 						],
 						"duration": 1

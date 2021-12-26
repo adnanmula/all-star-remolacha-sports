@@ -401,7 +401,8 @@
 		"items": [
 			"main",
 			"controls",
-			"match"
+			"match",
+			"skills"
 		],
 		"subfolders": [
 			{

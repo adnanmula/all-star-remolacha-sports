@@ -499,6 +499,91 @@
 			]
 		},
 		{
+			"functionName": "resetGlobals",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 109675008249410,
+					"parameters": {
+						"variable": "score_1",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 821485850636104,
+					"parameters": {
+						"variable": "score_2",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 520768960707560,
+					"parameters": {
+						"variable": "goal_volley_count",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 935312187083131,
+					"parameters": {
+						"variable": "menu_settings_current_index",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 824386737990353,
+					"parameters": {
+						"variable": "menu_pause_current_index",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 529136758960602,
+					"parameters": {
+						"variable": "menu_pause_is_open",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 351339812300495,
+					"parameters": {
+						"variable": "menu_match_is_quick",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 647686666337588,
+					"parameters": {
+						"variable": "menu_match_config_current_index",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 115066969610628
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Player/Chars",
@@ -2146,91 +2231,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"functionName": "resetGlobals",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 693117191901957,
-					"parameters": {
-						"variable": "score_1",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 761549947552756,
-					"parameters": {
-						"variable": "score_2",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 337671315634933,
-					"parameters": {
-						"variable": "goal_volley_count",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 813749957630295,
-					"parameters": {
-						"variable": "menu_settings_current_index",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 353828644643475,
-					"parameters": {
-						"variable": "menu_pause_current_index",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 237484266878999,
-					"parameters": {
-						"variable": "menu_pause_is_open",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 582889645444474,
-					"parameters": {
-						"variable": "menu_match_is_quick",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 107454674045092,
-					"parameters": {
-						"variable": "menu_match_config_current_index",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 166912316091587
 		}
 	],
 	"sid": 869789412645449
