@@ -205,7 +205,7 @@
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6326968,
+						"imageSpriteId": 4691184,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -219,6 +219,36 @@
 				],
 				"sid": 892347230180993,
 				"name": "Stonks",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 35,
+						"height": 35,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7263322,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "corner",
+								"x": 0,
+								"y": 0
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 917223736487058,
+				"name": "Chopi",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

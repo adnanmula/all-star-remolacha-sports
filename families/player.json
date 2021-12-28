@@ -48,6 +48,16 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 949585911051359
+		},
+		{
+			"behaviorId": "custom",
+			"name": "Custom",
+			"sid": 171671858292356
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 482024457767198
 		}
 	],
 	"effectTypes": [],

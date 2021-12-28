@@ -63,15 +63,6 @@
 							}
 						},
 						{
-							"id": "set-enabled",
-							"objectClass": "player",
-							"sid": 876360107587549,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
 							"id": "spawn-another-object",
 							"objectClass": "player",
 							"sid": 854041551977593,
@@ -123,7 +114,58 @@
 							}
 						}
 					],
-					"sid": 590449306740611
+					"sid": 590449306740611,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 534116988149671,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"Chopi\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 349862765393262,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 689104184427252
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 364787962395652
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 582572262653939,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 103967982884196
+						}
+					]
 				}
 			]
 		},
@@ -178,23 +220,59 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 321166056635803,
+					"children": [
 						{
-							"id": "set-enabled",
-							"objectClass": "player",
-							"sid": 567183613560445,
-							"behaviorType": "Platform",
-							"parameters": {
-								"state": "enabled"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 308915629826368,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"Chopi\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 213795131203266,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 972777957587317
 						},
 						{
-							"id": "destroy",
-							"objectClass": "particle_stun",
-							"sid": 349567999466929
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 437088436408778
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 558975262862902,
+									"behaviorType": "Platform",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 798588538050625
 						}
-					],
-					"sid": 321166056635803
+					]
 				}
 			]
 		},

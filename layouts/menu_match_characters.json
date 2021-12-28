@@ -83,7 +83,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 960,
+						"x": 880.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -114,7 +114,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1282,
+						"x": 1199.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -145,7 +145,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1121,
+						"x": 1039.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -176,7 +176,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 477,
+						"x": 401.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -207,7 +207,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 638,
+						"x": 561.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -238,7 +238,7 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 799,
+						"x": 720.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,
@@ -669,7 +669,38 @@
 					},
 					"behaviors": {},
 					"world": {
-						"x": 1443,
+						"x": 1358.5,
+						"y": 952,
+						"width": 129.97830695277284,
+						"height": 129.97830695277284,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "menu_char_portrait",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Chopi",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 92,
+					"instanceVariables": {
+						"character": "Chopi"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 1518.5,
 						"y": 952,
 						"width": 129.97830695277284,
 						"height": 129.97830695277284,

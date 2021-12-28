@@ -776,7 +776,16 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "player",
-									"sid": 526064014859987,
+									"sid": 435240985073518,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 284408667075315,
 									"behaviorType": "Platform",
 									"parameters": {
 										"state": "enabled"
@@ -785,10 +794,19 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "player",
-									"sid": 435240985073518,
-									"behaviorType": "Solid",
+									"sid": 673989482695227,
+									"behaviorType": "Custom",
 									"parameters": {
-										"state": "enabled"
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 361949771845014,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
 									}
 								},
 								{
@@ -1359,6 +1377,105 @@
 												}
 											],
 											"sid": 318434729679824
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 199569254611408,
+											"parameters": {
+												"first-value": "player.name",
+												"comparison": 0,
+												"second-value": "\"Chopi\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-size",
+											"objectClass": "player",
+											"sid": 524323333999784,
+											"parameters": {
+												"width": "87",
+												"height": "87"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player_mask",
+											"sid": 268217258274195,
+											"parameters": {
+												"width": "87",
+												"height": "87"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "player",
+											"sid": 446069714771754,
+											"behaviorType": "Custom",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "player",
+											"sid": 931042370042273,
+											"behaviorType": "Platform",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "player",
+											"sid": 306162479419871,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"state": "enabled"
+											}
+										}
+									],
+									"sid": 447909034807212,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 734321007873458,
+													"parameters": {
+														"variable": "withSkills"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 388689520058800,
+													"parameters": {
+														"instance-variable": "skill0",
+														"value": "\"hook_stick\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "player",
+													"sid": 976939502122672,
+													"parameters": {
+														"instance-variable": "skill0_cooldown",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 320543299776893
 										}
 									]
 								},

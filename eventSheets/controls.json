@@ -902,18 +902,59 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 218791982216167,
+									"children": [
 										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 881384056939038,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "jump"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 494733953768744,
+													"parameters": {
+														"instance-variable": "name",
+														"comparison": 0,
+														"value": "\"Chopi\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 682765514760733,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "up"
+													}
+												}
+											],
+											"sid": 273529586379667
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 163564043320747
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 797356627593216,
+													"behaviorType": "Platform",
+													"parameters": {
+														"control": "jump"
+													}
+												}
+											],
+											"sid": 859228837311217
 										}
 									],
-									"sid": 218791982216167,
 									"isOrBlock": true
 								},
 								{
@@ -946,15 +987,6 @@
 									],
 									"actions": [
 										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 899690399652039,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "left"
-											}
-										},
-										{
 											"id": "set-mirrored",
 											"objectClass": "player",
 											"sid": 308924077985719,
@@ -977,32 +1009,83 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-jumping",
+													"id": "compare-instance-variable",
 													"objectClass": "player",
-													"sid": 806854786287204,
-													"behaviorType": "Platform",
-													"isInverted": true
-												},
-												{
-													"id": "is-falling",
-													"objectClass": "player",
-													"sid": 848850470965031,
-													"behaviorType": "Platform",
-													"isInverted": true
+													"sid": 612569906030740,
+													"parameters": {
+														"instance-variable": "name",
+														"comparison": 0,
+														"value": "\"Chopi\""
+													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-animation",
-													"objectClass": "player_mask",
-													"sid": 141061062948384,
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 886229349106754,
+													"behaviorType": "8Direction",
 													"parameters": {
-														"animation": "\"walking\"",
-														"from": "beginning"
+														"control": "left"
 													}
 												}
 											],
-											"sid": 452566989742458
+											"sid": 493497192318966
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 976461842017413
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 687224195987666,
+													"behaviorType": "Platform",
+													"parameters": {
+														"control": "left"
+													}
+												}
+											],
+											"sid": 457402472395206,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-jumping",
+															"objectClass": "player",
+															"sid": 195796633560591,
+															"behaviorType": "Platform",
+															"isInverted": true
+														},
+														{
+															"id": "is-falling",
+															"objectClass": "player",
+															"sid": 355197858399639,
+															"behaviorType": "Platform",
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "set-animation",
+															"objectClass": "player_mask",
+															"sid": 731672067034851,
+															"parameters": {
+																"animation": "\"walking\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 269161668694583
+												}
+											]
 										}
 									],
 									"isOrBlock": true
@@ -1037,15 +1120,6 @@
 									],
 									"actions": [
 										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 852885569877159,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "right"
-											}
-										},
-										{
 											"id": "set-mirrored",
 											"objectClass": "player",
 											"sid": 624298690073725,
@@ -1068,32 +1142,152 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-jumping",
+													"id": "compare-instance-variable",
 													"objectClass": "player",
-													"sid": 352923361788481,
-													"behaviorType": "Platform",
-													"isInverted": true
-												},
-												{
-													"id": "is-falling",
-													"objectClass": "player",
-													"sid": 778678289737168,
-													"behaviorType": "Platform",
-													"isInverted": true
+													"sid": 659177291888871,
+													"parameters": {
+														"instance-variable": "name",
+														"comparison": 0,
+														"value": "\"Chopi\""
+													}
 												}
 											],
 											"actions": [
 												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 707254640699009,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
+											"sid": 428892828158619
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 136028293995793
+												}
+											],
+											"actions": [],
+											"sid": 557931881712259,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-jumping",
+															"objectClass": "player",
+															"sid": 701191854864658,
+															"behaviorType": "Platform",
+															"isInverted": true
+														},
+														{
+															"id": "is-falling",
+															"objectClass": "player",
+															"sid": 587414003849614,
+															"behaviorType": "Platform",
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "simulate-control",
+															"objectClass": "player",
+															"sid": 339043301872830,
+															"behaviorType": "Platform",
+															"parameters": {
+																"control": "right"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "player_mask",
+															"sid": 933774645184843,
+															"parameters": {
+																"animation": "\"walking\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 496736738604187
+												}
+											]
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "DPAD/JOY DOWN"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 886685383271976,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-down"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 101801306427618,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 807504766343423,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 397443965475003,
+													"parameters": {
+														"instance-variable": "name",
+														"comparison": 0,
+														"value": "\"Chopi\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 233677157606193,
+													"behaviorType": "8Direction",
+													"parameters": {
+														"control": "down"
+													}
+												},
+												{
 													"id": "set-animation",
 													"objectClass": "player_mask",
-													"sid": 190917052228887,
+													"sid": 581236255229033,
 													"parameters": {
 														"animation": "\"walking\"",
 														"from": "beginning"
 													}
 												}
 											],
-											"sid": 988434856808128
+											"sid": 589495602591159
 										}
 									],
 									"isOrBlock": true
