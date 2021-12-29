@@ -1193,7 +1193,17 @@
 													"sid": 136028293995793
 												}
 											],
-											"actions": [],
+											"actions": [
+												{
+													"id": "simulate-control",
+													"objectClass": "player",
+													"sid": 229137011368626,
+													"behaviorType": "Platform",
+													"parameters": {
+														"control": "right"
+													}
+												}
+											],
 											"sid": 557931881712259,
 											"children": [
 												{
@@ -1215,15 +1225,6 @@
 														}
 													],
 													"actions": [
-														{
-															"id": "simulate-control",
-															"objectClass": "player",
-															"sid": 339043301872830,
-															"behaviorType": "Platform",
-															"parameters": {
-																"control": "right"
-															}
-														},
 														{
 															"id": "set-animation",
 															"objectClass": "player_mask",

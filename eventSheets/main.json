@@ -1495,10 +1495,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 388689520058800,
+													"sid": 502156743158206,
 													"parameters": {
 														"instance-variable": "skill0",
-														"value": "\"hook_stick\""
+														"value": "\"stick_hook\""
 													}
 												},
 												{
@@ -1709,8 +1709,86 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "unstunPlayer",
+									"sid": 387905288055332,
+									"parameters": [
+										"player.UID"
+									]
+								},
+								{
+									"callFunction": "unrootPlayer",
+									"sid": 750161480593765,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
 							"sid": 533119603914173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 288619784530344,
+									"parameters": {
+										"object": "prop_skill_hook"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_skill_hook",
+									"sid": 392036678612052
+								}
+							],
+							"sid": 575194267843679
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 677739357086695,
+									"parameters": {
+										"object": "prop_skill_ice_wall"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_skill_ice_wall",
+									"sid": 193488466513847
+								}
+							],
+							"sid": 134933076714227
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 828205690575665,
+									"parameters": {
+										"object": "prop_skill_area"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_skill_area",
+									"sid": 329560356448745
+								}
+							],
+							"sid": 749846416614573
 						},
 						{
 							"eventType": "block",

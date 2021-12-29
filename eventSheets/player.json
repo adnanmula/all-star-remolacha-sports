@@ -225,6 +225,15 @@
 							"id": "destroy",
 							"objectClass": "particle_stun",
 							"sid": 828098144482023
+						},
+						{
+							"id": "stop-timer",
+							"objectClass": "player",
+							"sid": 591327647350948,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"stun\""
+							}
 						}
 					],
 					"sid": 321166056635803,

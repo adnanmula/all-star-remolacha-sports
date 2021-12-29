@@ -921,10 +921,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 699752912078181,
+									"sid": 253567425050006,
 									"parameters": {
 										"variable": "randomNumber",
-										"value": "choose(0, 1, 2, 3, 4)"
+										"value": "choose(0, 1, 2, 3, 4, 5, 6)"
 									}
 								}
 							],
@@ -1080,6 +1080,31 @@
 								}
 							],
 							"sid": 843265676090947
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 229782805988831,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteAreaRoot",
+									"sid": 970886234596670,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 692660498506614
 						}
 					]
 				}
@@ -1103,7 +1128,76 @@
 			"eventType": "function-block",
 			"conditions": [],
 			"actions": [],
-			"sid": 956267308217801
+			"sid": 956267308217801,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 480667570600230,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player",
+							"sid": 940646029631692,
+							"parameters": {
+								"object": "prop_skill_hook",
+								"layer": "\"main\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "prop_skill_hook",
+							"sid": 983532923461504,
+							"parameters": {
+								"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "prop_skill_hook",
+							"sid": 176310682046795,
+							"parameters": {
+								"instance-variable": "owner",
+								"value": "player.UID"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "prop_skill_hook",
+							"sid": 870066467587514,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": false,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 818176357600991,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 629681192509248
+						}
+					]
+				}
+			]
 		},
 		{
 			"functionName": "skillExecuteAreaRoot",
@@ -1179,6 +1273,366 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Hook",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "prop_skill_hook",
+							"sid": 489269215186567,
+							"parameters": {
+								"instance-variable": "hasTarget"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-height",
+							"objectClass": "prop_skill_hook",
+							"sid": 893275328460613,
+							"parameters": {
+								"height": "Self.Height + 10"
+							}
+						}
+					],
+					"sid": 491934657263583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-height",
+									"objectClass": "prop_skill_hook",
+									"sid": 307973960940628,
+									"parameters": {
+										"comparison": 4,
+										"height": "250"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_skill_hook",
+									"sid": 344785880894172
+								}
+							],
+							"sid": 293267001288954
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_skill_hook",
+							"sid": 381821451345538,
+							"parameters": {
+								"object": "player"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 241926687623997,
+							"parameters": {
+								"first-value": "player.UID",
+								"comparison": 1,
+								"second-value": "prop_skill_hook.owner"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 622226145861674,
+							"parameters": {
+								"type": "log",
+								"message": "\"Hooked player (owner \" & prop_skill_hook.owner & \", target \" & player.UID"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "prop_skill_hook",
+							"sid": 727137066990890,
+							"parameters": {
+								"instance-variable": "hasTarget",
+								"value": "true"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "player",
+							"sid": 862532893142697,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "prop_skill_hook",
+								"image-point": "\"hook\"",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"callFunction": "stunPlayer",
+							"sid": 285802080778648,
+							"parameters": [
+								"player.UID",
+								"999"
+							]
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "prop_skill_hook",
+							"sid": 864468767284415,
+							"parameters": {
+								"instance-variable": "objectHooked",
+								"value": "player.ObjectTypeName"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "prop_skill_hook",
+							"sid": 400593538126770,
+							"parameters": {
+								"instance-variable": "objectHookedUid",
+								"value": "player.UID"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "prop_skill_hook",
+							"sid": 819710660805740,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "3",
+								"type": "once",
+								"tag": "\"hook_time\""
+							}
+						}
+					],
+					"sid": 649340563708887
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "prop_skill_hook",
+							"sid": 760223855595600,
+							"parameters": {
+								"object": "ball"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 361802757313876,
+							"parameters": {
+								"type": "log",
+								"message": "\"Hooked ball (owner \" & prop_skill_hook.owner & \")\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "prop_skill_hook",
+							"sid": 396613643739142,
+							"parameters": {
+								"instance-variable": "hasTarget",
+								"value": "true"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "ball",
+							"sid": 976190269635493,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "prop_skill_hook",
+								"image-point": "\"hook\"",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "prop_skill_hook",
+							"sid": 571616272298366,
+							"parameters": {
+								"instance-variable": "objectHooked",
+								"value": "ball.ObjectTypeName"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "prop_skill_hook",
+							"sid": 526586684273390,
+							"parameters": {
+								"instance-variable": "objectHookedUid",
+								"value": "ball.UID"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "prop_skill_hook",
+							"sid": 431448826367225,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "3",
+								"type": "once",
+								"tag": "\"hook_time\""
+							}
+						}
+					],
+					"sid": 154097983993888
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "prop_skill_hook",
+							"sid": 845497303346303,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"hook_time\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 928303778802358,
+							"parameters": {
+								"type": "log",
+								"message": "\"Hook expired (owner \" & prop_skill_hook.owner & \")\""
+							}
+						}
+					],
+					"sid": 488969593927797,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "prop_skill_hook",
+									"sid": 924533989521215,
+									"parameters": {
+										"instance-variable": "objectHooked",
+										"comparison": 0,
+										"value": "\"player_collision\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 625303597743164,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "player",
+											"sid": 280182896613908,
+											"parameters": {
+												"unique-id": "prop_skill_hook.objectHookedUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "unpin",
+											"objectClass": "player",
+											"sid": 891676964265338,
+											"behaviorType": "Pin"
+										},
+										{
+											"callFunction": "unstunPlayer",
+											"sid": 707126160303331,
+											"parameters": [
+												"player.UID"
+											]
+										}
+									],
+									"sid": 892523453323200
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "prop_skill_hook",
+									"sid": 847181077144918,
+									"parameters": {
+										"instance-variable": "objectHooked",
+										"comparison": 0,
+										"value": "\"ball\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 461049820136557,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-unique-id",
+											"objectClass": "ball",
+											"sid": 854912929342418,
+											"parameters": {
+												"unique-id": "prop_skill_hook.objectHookedUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "unpin",
+											"objectClass": "ball",
+											"sid": 710504435357269,
+											"behaviorType": "Pin"
+										}
+									],
+									"sid": 412883868373373
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "prop_skill_hook",
+									"sid": 292841136372876
+								}
+							],
+							"sid": 486703753751674
+						}
+					]
+				}
+			],
+			"sid": 900884157340023
 		}
 	],
 	"sid": 390105170594918

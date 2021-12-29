@@ -179,7 +179,8 @@
 	"objectTypes": {
 		"items": [
 			"particle_stun",
-			"particle_root"
+			"particle_root",
+			"prop_skill_hook"
 		],
 		"subfolders": [
 			{

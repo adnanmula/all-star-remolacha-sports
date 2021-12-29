@@ -27,6 +27,11 @@
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 809309094919959
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 611461606650670
 		}
 	],
 	"effectTypes": [],

@@ -148,6 +148,11 @@
 						},
 						"Timer": {
 							"properties": {}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -814,6 +819,11 @@
 								"default-controls": false,
 								"enabled": true
 							}
+						},
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
 						}
 					},
 					"world": {
@@ -1198,6 +1208,49 @@
 							1
 						],
 						"angle": 1.5708046496054877,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "prop_skill_hook",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"hasTarget": false,
+						"owner": 0,
+						"objectHooked": "",
+						"objectHookedUid": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 921,
+						"y": 69,
+						"width": 30,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.9700000000000003,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
 						"zElevation": 0
 					}
 				}
