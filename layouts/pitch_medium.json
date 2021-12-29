@@ -834,7 +834,7 @@
 				{
 					"type": "hud_skill",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "fundinaso",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -842,14 +842,15 @@
 					},
 					"uid": 78,
 					"instanceVariables": {
-						"player": 0
+						"playerIndex": 0,
+						"owner": 0
 					},
 					"behaviors": {},
 					"world": {
-						"x": 612,
-						"y": -71,
-						"width": 25,
-						"height": 25,
+						"x": 365.6022056755869,
+						"y": 47.45496823473719,
+						"width": 45,
+						"height": 45,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -872,13 +873,111 @@
 						"live-preview": false
 					},
 					"uid": 79,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"owner": 0
+					},
 					"behaviors": {},
 					"world": {
-						"x": 645,
-						"y": -70,
-						"width": 25,
-						"height": 25,
+						"x": 365.6022056755869,
+						"y": -71.08029331594909,
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 1,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hud_skill",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "fundinaso",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 111,
+					"instanceVariables": {
+						"playerIndex": 2,
+						"owner": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 137.6022056755869,
+						"y": 47.45496823473719,
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hud_skill",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "fundinaso",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 114,
+					"instanceVariables": {
+						"playerIndex": 1,
+						"owner": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 594.6022056755868,
+						"y": 47.45496823473719,
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "hud_skill",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "fundinaso",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 117,
+					"instanceVariables": {
+						"playerIndex": 3,
+						"owner": 0
+					},
+					"behaviors": {},
+					"world": {
+						"x": 822.6022056755868,
+						"y": 47.45496823473719,
+						"width": 45,
+						"height": 45,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

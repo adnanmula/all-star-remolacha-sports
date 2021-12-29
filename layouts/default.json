@@ -762,7 +762,8 @@
 						"gamepad_index": -1,
 						"name": "",
 						"skill0": "",
-						"skill0_cooldown": 0
+						"skill0_cooldown": 0,
+						"index": 0
 					},
 					"behaviors": {
 						"Platform": {

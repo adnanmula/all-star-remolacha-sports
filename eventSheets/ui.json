@@ -1,0 +1,237 @@
+{
+	"name": "ui",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 762090193123934
+				}
+			],
+			"actions": [],
+			"sid": 425592108329135,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 968292093528344,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 574623584963206,
+							"parameters": {
+								"layer": "\"skills\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 425589960347185
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 307174083418756,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 127153405067125,
+							"disabled": true,
+							"parameters": {
+								"layer": "\"skills\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 146926211129084,
+							"parameters": {
+								"seconds": "0"
+							}
+						}
+					],
+					"sid": 561529893034884,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 289065777321633,
+									"parameters": {
+										"object": "hud_skill"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 189964138375733,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 528645704648688,
+											"parameters": {
+												"object": "player",
+												"expression": "player.index = hud_skill.playerIndex"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "hud_skill",
+											"sid": 177522209859137,
+											"parameters": {
+												"instance-variable": "owner",
+												"value": "player.UID"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "hud_skill",
+											"sid": 705252426527027,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "hud_skill",
+											"sid": 211109551043364,
+											"parameters": {
+												"animation": "player.skill0",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "hud_skill",
+											"sid": 509296445458419,
+											"parameters": {
+												"object": "hud_skill_mask",
+												"layer": "\"skills\"",
+												"image-point": "\"spawn_mask\"",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 511517291074316,
+											"parameters": {
+												"seconds": "0"
+											}
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "hud_skill_mask",
+											"sid": 587234788627255
+										},
+										{
+											"id": "set-position",
+											"objectClass": "hud_skill_mask",
+											"sid": 200747122633815,
+											"parameters": {
+												"x": "hud_skill.X",
+												"y": "hud_skill.Y + (hud_skill.Height / 2)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "hud_skill_mask",
+											"sid": 413240520474794,
+											"parameters": {
+												"instance-variable": "owner",
+												"value": "player.UID"
+											}
+										}
+									],
+									"sid": 987579945659911
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 767904473881400,
+					"parameters": {
+						"interval-seconds": "0.5"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 804217106970385,
+					"parameters": {
+						"object": "player"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 548034995427539,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 238929451696483,
+							"parameters": {
+								"object": "hud_skill_mask",
+								"expression": "hud_skill_mask.owner = player.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-height",
+							"objectClass": "hud_skill_mask",
+							"sid": 225288752860339,
+							"parameters": {
+								"height": "(45 / player.skill0_cooldown) * player.Timer.CurrentTime(\"skill0\")"
+							}
+						}
+					],
+					"sid": 408456037937703
+				}
+			]
+		}
+	],
+	"sid": 506058899998445
+}

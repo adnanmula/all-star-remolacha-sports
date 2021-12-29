@@ -26,6 +26,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 681669803387890
+		},
+		{
+			"name": "index",
+			"type": "number",
+			"desc": "",
+			"sid": 599878796183808
 		}
 	],
 	"behaviorTypes": [

@@ -185,6 +185,7 @@
 							"callFunction": "createPlayer",
 							"sid": 460373530250515,
 							"parameters": [
+								"0",
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth / 2 - LayoutWidth / 4",
@@ -215,6 +216,7 @@
 							"callFunction": "createPlayer",
 							"sid": 200812386851723,
 							"parameters": [
+								"0",
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth / 2 - LayoutWidth / 4",
@@ -225,8 +227,9 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 703674649856001,
+							"sid": 142621235478638,
 							"parameters": [
+								"1",
 								"data_gamepad.Get(\"player1_index\")",
 								"data_gamepad.Get(\"player1_character\")",
 								"LayoutWidth / 2 + LayoutWidth / 4",
@@ -257,6 +260,7 @@
 							"callFunction": "createPlayer",
 							"sid": 293199081420780,
 							"parameters": [
+								"0",
 								"data_gamepad.Get(\"player0_index\")",
 								"data_gamepad.Get(\"player0_character\")",
 								"LayoutWidth/4 - LayoutWidth/8",
@@ -267,8 +271,9 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 728099374407081,
+							"sid": 112244348347020,
 							"parameters": [
+								"1",
 								"data_gamepad.Get(\"player1_index\")",
 								"data_gamepad.Get(\"player1_character\")",
 								"LayoutWidth/4 + LayoutWidth/8",
@@ -279,8 +284,9 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 663680607177684,
+							"sid": 145311414292634,
 							"parameters": [
+								"2",
 								"data_gamepad.Get(\"player2_index\")",
 								"data_gamepad.Get(\"player2_character\")",
 								"LayoutWidth/2 + LayoutWidth/8",
@@ -291,8 +297,9 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 819897040851731,
+							"sid": 401424085476872,
 							"parameters": [
+								"3",
 								"data_gamepad.Get(\"player3_index\")",
 								"data_gamepad.Get(\"player3_character\")",
 								"LayoutWidth/4 * 3+ LayoutWidth/8",
@@ -602,6 +609,13 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
+							"name": "index",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 546189703432302
+						},
+						{
 							"name": "gamepad_index",
 							"type": "number",
 							"initialValue": "0",
@@ -744,6 +758,15 @@
 									"parameters": {
 										"instance-variable": "name",
 										"value": "character_name"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 382173098432425,
+									"parameters": {
+										"instance-variable": "index",
+										"value": "index"
 									}
 								},
 								{
@@ -1333,10 +1356,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 283323190120203,
+													"sid": 228876979519165,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "2"
 													}
 												}
 											],
@@ -1405,10 +1428,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 773032208382343,
+													"sid": 907797625488021,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "3"
 													}
 												}
 											],

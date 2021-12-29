@@ -5,10 +5,16 @@
 	"isGlobal": false,
 	"instanceVariables": [
 		{
-			"name": "player",
+			"name": "playerIndex",
 			"type": "number",
 			"desc": "",
 			"sid": 804285814742703
+		},
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 386750918045948
 		}
 	],
 	"behaviorTypes": [],
@@ -27,11 +33,179 @@
 						"exportQuality": 0.8,
 						"imageSpriteId": 5317148,
 						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "spawn_mask",
+								"x": 0.5,
+								"y": 1
+							}
+						],
 						"duration": 1
 					}
 				],
 				"sid": 950244924340476,
 				"name": "fundinaso",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3013886,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 969592062251391,
+				"name": "random_tp_all",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 857980,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 845031233701237,
+				"name": "ice_wall",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6778440,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 913144125189898,
+				"name": "area_root",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3593077,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 930868328873823,
+				"name": "metronome",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5911852,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 877622863311281,
+				"name": "magic_marionette",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7708469,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 475574279939568,
+				"name": "stick_hook",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2321312,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 326005760177236,
+				"name": "cry_stun",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

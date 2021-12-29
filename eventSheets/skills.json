@@ -688,8 +688,9 @@
 			"actions": [
 				{
 					"callFunction": "createPlayer",
-					"sid": 151922652819550,
+					"sid": 507320888894263,
 					"parameters": [
+						"99",
 						"playerGamepadIndex",
 						"playerName",
 						"random(100, LayoutWidth - 100)",
@@ -824,9 +825,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 540215863401960,
+							"sid": 937088319416779,
 							"parameters": {
-								"seconds": "0.5"
+								"seconds": "0"
 							}
 						}
 					],
@@ -1342,6 +1343,15 @@
 							}
 						},
 						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "prop_skill_hook",
+							"sid": 818844743160260,
+							"parameters": {
+								"instance-variable": "hasTarget"
+							},
+							"isInverted": true
+						},
+						{
 							"id": "compare-two-values",
 							"objectClass": "System",
 							"sid": 241926687623997,
@@ -1435,6 +1445,15 @@
 							"parameters": {
 								"object": "ball"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "prop_skill_hook",
+							"sid": 386233844302419,
+							"parameters": {
+								"instance-variable": "hasTarget"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
