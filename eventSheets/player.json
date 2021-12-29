@@ -220,7 +220,13 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "particle_stun",
+							"sid": 828098144482023
+						}
+					],
 					"sid": 321166056635803,
 					"children": [
 						{
@@ -271,6 +277,249 @@
 								}
 							],
 							"sid": 798588538050625
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "rootPlayer",
+			"functionDescription": "",
+			"functionCategory": "player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 662948783767119
+				},
+				{
+					"name": "duration",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 799359215283665
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 523266206699313,
+					"parameters": {
+						"type": "log",
+						"message": "\"Rooting player \" & playerUid & \" for \" & duration"
+					}
+				}
+			],
+			"sid": 699538236074651,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 108569746711765,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "start-timer",
+							"objectClass": "player",
+							"sid": 416531972865703,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "duration",
+								"type": "once",
+								"tag": "\"root\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "player",
+							"sid": 903026292421225,
+							"parameters": {
+								"object": "particle_root",
+								"layer": "\"particles\"",
+								"image-point": "\"spawn_top\"",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 413177221069232,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "particle_root",
+							"sid": 553340408826736,
+							"parameters": {
+								"angle": "player.Angle + 90"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "particle_root",
+							"sid": 182151879353701,
+							"parameters": {
+								"instance-variable": "owner",
+								"value": "player.UID"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "particle_root",
+							"sid": 420698303928649,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 280215633260996,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 530989422032642,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"Chopi\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 234041397724916,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "player",
+									"sid": 676771582014745,
+									"behaviorType": "8Direction"
+								}
+							],
+							"sid": 829214057448113
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "unrootPlayer",
+			"functionDescription": "",
+			"functionCategory": "player",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 839415536362361
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 445007002508277,
+					"parameters": {
+						"type": "log",
+						"message": "\"Unrooting player \" & playerUid"
+					}
+				}
+			],
+			"sid": 376197774801561,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 985382285400653,
+							"parameters": {
+								"unique-id": "playerUid"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 351521244513026,
+							"parameters": {
+								"object": "particle_root",
+								"expression": "particle_root.owner = player.UID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "particle_root",
+							"sid": 399968158071640
+						}
+					],
+					"sid": 584443217525097,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "player",
+									"sid": 244069106011070,
+									"parameters": {
+										"instance-variable": "name",
+										"comparison": 0,
+										"value": "\"Chopi\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "player",
+									"sid": 230524726385888,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 737009751807924
 						}
 					]
 				}
@@ -404,6 +653,30 @@
 				}
 			],
 			"sid": 297209328601531
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-timer",
+					"objectClass": "player",
+					"sid": 711282006171741,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"root\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "unrootPlayer",
+					"sid": 179370186573930,
+					"parameters": [
+						"player.UID"
+					]
+				}
+			],
+			"sid": 659695433586975
 		},
 		{
 			"eventType": "block",

@@ -237,6 +237,56 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
+									"sid": 831165235643979,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"stick_hook\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteStickHook",
+									"sid": 342361204650836,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 999930878121301
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 431014502950787,
+									"parameters": {
+										"first-value": "skill",
+										"comparison": 0,
+										"second-value": "\"area_root\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteAreaRoot",
+									"sid": 150529155489149,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 682446488780308
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
 									"sid": 114595950291078,
 									"parameters": {
 										"first-value": "skill",
@@ -1005,6 +1055,126 @@
 								}
 							],
 							"sid": 657698648407909
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 812579399352717,
+									"parameters": {
+										"first-value": "randomNumber",
+										"comparison": 0,
+										"second-value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "skillExecuteStickHook",
+									"sid": 847581112118922,
+									"parameters": [
+										"player.UID"
+									]
+								}
+							],
+							"sid": 843265676090947
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "skillExecuteStickHook",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 758238254028946
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 956267308217801
+		},
+		{
+			"functionName": "skillExecuteAreaRoot",
+			"functionDescription": "",
+			"functionCategory": "skill",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 442089652192832
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 121361426748223,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "duration",
+					"type": "number",
+					"initialValue": "3",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 301111247559838
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 131492990718502,
+							"parameters": {
+								"object": "player"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 549982102918715,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 655247576007741,
+									"parameters": {
+										"first-value": "player.UID",
+										"comparison": 1,
+										"second-value": "playerUid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "rootPlayer",
+									"sid": 849935212636632,
+									"parameters": [
+										"player.UID",
+										"duration"
+									]
+								}
+							],
+							"sid": 238073807128217
 						}
 					]
 				}

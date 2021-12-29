@@ -909,50 +909,69 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-instance-variable",
+													"id": "is-timer-running",
 													"objectClass": "player",
-													"sid": 494733953768744,
+													"sid": 813083329836732,
+													"behaviorType": "Timer",
 													"parameters": {
-														"instance-variable": "name",
-														"comparison": 0,
-														"value": "\"Chopi\""
-													}
+														"tag": "\"root\""
+													},
+													"isInverted": true
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 273529586379667,
+											"children": [
 												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 682765514760733,
-													"behaviorType": "8Direction",
-													"parameters": {
-														"control": "up"
-													}
-												}
-											],
-											"sid": 273529586379667
-										},
-										{
-											"eventType": "block",
-											"conditions": [
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "player",
+															"sid": 583890589196452,
+															"parameters": {
+																"instance-variable": "name",
+																"comparison": 0,
+																"value": "\"Chopi\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "simulate-control",
+															"objectClass": "player",
+															"sid": 653061709357535,
+															"behaviorType": "8Direction",
+															"parameters": {
+																"control": "up"
+															}
+														}
+													],
+													"sid": 545006321642731
+												},
 												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 163564043320747
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 643903014953701
+														}
+													],
+													"actions": [
+														{
+															"id": "simulate-control",
+															"objectClass": "player",
+															"sid": 815594699435032,
+															"behaviorType": "Platform",
+															"parameters": {
+																"control": "jump"
+															}
+														}
+													],
+													"sid": 762074180237275
 												}
-											],
-											"actions": [
-												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 797356627593216,
-													"behaviorType": "Platform",
-													"parameters": {
-														"control": "jump"
-													}
-												}
-											],
-											"sid": 859228837311217
+											]
 										}
 									],
 									"isOrBlock": true

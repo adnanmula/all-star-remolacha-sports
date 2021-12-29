@@ -178,7 +178,8 @@
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
 		"items": [
-			"particle_stun"
+			"particle_stun",
+			"particle_root"
 		],
 		"subfolders": [
 			{
