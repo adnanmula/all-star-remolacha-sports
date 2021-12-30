@@ -812,9 +812,9 @@
 						},
 						"8Direction": {
 							"properties": {
-								"max-speed": 200,
-								"acceleration": 600,
-								"deceleration": 500,
+								"max-speed": 325,
+								"acceleration": 15000,
+								"deceleration": 15000,
 								"directions": "dir-8",
 								"set-angle": "no",
 								"default-controls": false,
@@ -904,8 +904,8 @@
 					"world": {
 						"x": 32.384941048945166,
 						"y": 425.35730068817,
-						"width": 50.44126413776037,
-						"height": 130.1710042264784,
+						"width": 52.06840169059135,
+						"height": 128.54386667364741,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

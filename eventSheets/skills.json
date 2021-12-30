@@ -755,7 +755,7 @@
 					"eventType": "variable",
 					"name": "duration",
 					"type": "number",
-					"initialValue": "5",
+					"initialValue": "3",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
@@ -1283,6 +1283,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "variable",
+					"name": "hook_duraiton",
+					"type": "number",
+					"initialValue": "5",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 445070293277882
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1424,10 +1434,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "prop_skill_hook",
-							"sid": 819710660805740,
+							"sid": 636756190880549,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "3",
+								"duration": "hook_duraiton",
 								"type": "once",
 								"tag": "\"hook_time\""
 							}
@@ -1510,10 +1520,10 @@
 						{
 							"id": "start-timer",
 							"objectClass": "prop_skill_hook",
-							"sid": 431448826367225,
+							"sid": 437960997011445,
 							"behaviorType": "Timer",
 							"parameters": {
-								"duration": "3",
+								"duration": "5",
 								"type": "once",
 								"tag": "\"hook_time\""
 							}

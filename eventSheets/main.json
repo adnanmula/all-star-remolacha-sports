@@ -996,10 +996,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 663909458911444,
+													"sid": 701341270164244,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "70"
 													}
 												}
 											],
@@ -1068,10 +1068,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 280312705686498,
+													"sid": 318647461981357,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "20"
 													}
 												}
 											],
@@ -1140,10 +1140,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 806989207863612,
+													"sid": 879702562995050,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "40"
 													}
 												}
 											],
@@ -1212,10 +1212,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 526235357209697,
+													"sid": 878811951047642,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "60"
 													}
 												}
 											],
@@ -1284,10 +1284,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 452038128206672,
+													"sid": 228300866919085,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "45"
 													}
 												}
 											],
@@ -1356,10 +1356,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 228876979519165,
+													"sid": 755530214053466,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "2"
+														"value": "15"
 													}
 												}
 											],
@@ -1428,10 +1428,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 907797625488021,
+													"sid": 316580885815212,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "3"
+														"value": "60"
 													}
 												}
 											],
@@ -1527,10 +1527,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 976939502122672,
+													"sid": 158823470515678,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "20"
 													}
 												}
 											],
