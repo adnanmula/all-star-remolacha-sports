@@ -812,7 +812,7 @@
 						},
 						"8Direction": {
 							"properties": {
-								"max-speed": 325,
+								"max-speed": 320,
 								"acceleration": 15000,
 								"deceleration": 15000,
 								"directions": "dir-8",
@@ -1239,8 +1239,8 @@
 						}
 					},
 					"world": {
-						"x": 921,
-						"y": 69,
+						"x": 910,
+						"y": 112,
 						"width": 30,
 						"height": 100,
 						"originX": 0.5,
