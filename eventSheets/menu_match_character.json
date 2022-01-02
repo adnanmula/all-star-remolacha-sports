@@ -791,6 +791,16 @@
 										"comparison": 0,
 										"value": "MATCH_PLAYERS_1V1"
 									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 961261730466733,
+									"parameters": {
+										"key": "\"match_players\"",
+										"comparison": 0,
+										"value": "MATCH_PLAYERS_2V2"
+									}
 								}
 							],
 							"actions": [],
@@ -866,7 +876,8 @@
 									],
 									"sid": 913554947210283
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
