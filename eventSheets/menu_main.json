@@ -439,10 +439,10 @@
 						{
 							"id": "add-key",
 							"objectClass": "data_match_config",
-							"sid": 163987671949217,
+							"sid": 976527240147363,
 							"parameters": {
 								"key": "\"enabled_skills\"",
-								"value": "0"
+								"value": "1"
 							}
 						}
 					],

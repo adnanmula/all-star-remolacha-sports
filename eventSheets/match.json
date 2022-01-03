@@ -1867,7 +1867,17 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 587594383500465,
+							"parameters": {
+								"object": "player_physics",
+								"expression": "player_physics.owner = player.UID"
+							}
+						}
+					],
 					"actions": [
 						{
 							"id": "simulate-control",
@@ -1888,7 +1898,7 @@
 						},
 						{
 							"id": "apply-impulse-at-angle",
-							"objectClass": "player",
+							"objectClass": "player_physics",
 							"sid": 566139661159332,
 							"behaviorType": "Physics",
 							"parameters": {

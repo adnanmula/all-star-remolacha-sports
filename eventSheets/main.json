@@ -683,6 +683,30 @@
 							}
 						},
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 354811366700816,
+							"parameters": {
+								"object-to-create": "player_physics",
+								"layer": "\"main\"",
+								"x": "player_collision.X",
+								"y": "player_collision.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 621050928170357,
+							"parameters": {
+								"object-to-create": "player_body_detector",
+								"layer": "\"main\"",
+								"x": "player_collision.X",
+								"y": "player_collision.Y",
+								"create-hierarchy": false
+							}
+						},
+						{
 							"id": "create-object-by-name",
 							"objectClass": "System",
 							"sid": 114515056974500,
@@ -711,6 +735,14 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
+									"sid": 823034568317532,
+									"parameters": {
+										"object": "player_physics"
+									}
+								},
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
 									"sid": 222389044907490,
 									"parameters": {
 										"object": "feet_detector"
@@ -723,9 +755,101 @@
 									"parameters": {
 										"object": "player_mask"
 									}
+								},
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
+									"sid": 375413789119301,
+									"parameters": {
+										"object": "player_body_detector"
+									}
 								}
 							],
 							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "player_physics",
+									"sid": 116659448867006,
+									"parameters": {
+										"width": "player.Width",
+										"height": "player.Height"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "player_physics",
+									"sid": 295466635898354,
+									"parameters": {
+										"x": "player.X",
+										"y": "player.Y"
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "player_physics",
+									"sid": 711249413010322,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "player",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "absolute",
+										"height-type": "absolute",
+										"z": false
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_physics",
+									"sid": 318575870606807,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "player.UID"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "player_body_detector",
+									"sid": 377016524599410,
+									"parameters": {
+										"width": "abs(player.Width) + 19",
+										"height": "player.Height + 22"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "player_body_detector",
+									"sid": 274049808367312,
+									"parameters": {
+										"x": "player.X",
+										"y": "player.Y"
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "player_body_detector",
+									"sid": 410633513742944,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "player",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player_body_detector",
+									"sid": 634790910779769,
+									"parameters": {
+										"instance-variable": "owner",
+										"value": "player.UID"
+									}
+								},
 								{
 									"id": "set-scale",
 									"objectClass": "player",
@@ -790,15 +914,6 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "player",
-									"sid": 846846551900156,
-									"behaviorType": "Physics",
-									"parameters": {
-										"mode": "enabled"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
 									"sid": 435240985073518,
 									"behaviorType": "Solid",
 									"parameters": {
@@ -812,15 +927,6 @@
 									"behaviorType": "Platform",
 									"parameters": {
 										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 673989482695227,
-									"behaviorType": "Custom",
-									"parameters": {
-										"state": "disabled"
 									}
 								},
 								{
@@ -843,15 +949,31 @@
 								{
 									"id": "set-z-elevation",
 									"objectClass": "player_mask",
-									"sid": 247777933771051,
+									"sid": 676680291115643,
+									"parameters": {
+										"z": "5"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player_physics",
+									"sid": 652875158564816,
+									"parameters": {
+										"z": "4"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player",
+									"sid": 659903675480075,
 									"parameters": {
 										"z": "3"
 									}
 								},
 								{
 									"id": "set-z-elevation",
-									"objectClass": "player",
-									"sid": 333029151472054,
+									"objectClass": "player_body_detector",
+									"sid": 772962880805837,
 									"parameters": {
 										"z": "2"
 									}
@@ -859,7 +981,7 @@
 								{
 									"id": "set-z-elevation",
 									"objectClass": "feet_detector",
-									"sid": 790288461959597,
+									"sid": 977371076772973,
 									"parameters": {
 										"z": "1"
 									}
@@ -873,7 +995,7 @@
 										{
 											"id": "compare-value",
 											"objectClass": "data_match_config",
-											"sid": 869895759898134,
+											"sid": 400787662412211,
 											"parameters": {
 												"key": "\"settings_show_hitbox\"",
 												"comparison": 0,
@@ -897,6 +1019,22 @@
 											"parameters": {
 												"visibility": "invisible"
 											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "player_physics",
+											"sid": 408791147815548,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "player_body_detector",
+											"sid": 475076983462069,
+											"parameters": {
+												"visibility": "invisible"
+											}
 										}
 									],
 									"sid": 780441838661805
@@ -907,7 +1045,7 @@
 										{
 											"id": "compare-value",
 											"objectClass": "data_match_config",
-											"sid": 259089374410085,
+											"sid": 418650188365912,
 											"parameters": {
 												"key": "\"settings_show_hitbox\"",
 												"comparison": 0,
@@ -928,6 +1066,22 @@
 											"id": "set-visible",
 											"objectClass": "feet_detector",
 											"sid": 213690032254780,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "player_physics",
+											"sid": 276706781762379,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "player_body_detector",
+											"sid": 531903593836174,
 											"parameters": {
 												"visibility": "visible"
 											}
@@ -1356,10 +1510,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 755530214053466,
+													"sid": 541708706715721,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "15"
+														"value": "1"
 													}
 												}
 											],
@@ -1470,15 +1624,6 @@
 											"parameters": {
 												"width": "87",
 												"height": "87"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "player",
-											"sid": 446069714771754,
-											"behaviorType": "Custom",
-											"parameters": {
-												"state": "disabled"
 											}
 										},
 										{
@@ -2138,7 +2283,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "player",
+							"objectClass": "player_body_detector",
 							"sid": 297055222575874,
 							"parameters": {
 								"object": "ball"
@@ -2146,7 +2291,7 @@
 						},
 						{
 							"id": "is-overlapping-another-object",
-							"objectClass": "player",
+							"objectClass": "player_body_detector",
 							"sid": 219805516445912,
 							"parameters": {
 								"object": "ball"
@@ -2162,23 +2307,15 @@
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 705782938762136
-								},
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 870273963272697,
-									"parameters": {
-										"unique-id": "feet_detector.owner"
-									}
+									"sid": 391044040479347
 								},
 								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 773523375764892,
+									"sid": 693823582422756,
 									"parameters": {
 										"object": "player_mask",
-										"expression": "player_mask.owner = feet_detector.owner"
+										"expression": "player_mask.owner = player_body_detector.owner"
 									}
 								}
 							],
@@ -2276,7 +2413,17 @@
 							"sid": 157442330662117
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-solid-collision-filter",
+							"objectClass": "ball",
+							"sid": 304138928096236,
+							"parameters": {
+								"mode": "exclusive",
+								"tags": "\"player\""
+							}
+						}
+					],
 					"sid": 600755142838816,
 					"children": [
 						{

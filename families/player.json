@@ -41,11 +41,6 @@
 			"sid": 833643288727227
 		},
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 979341130549079
-		},
-		{
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 989951049828751
@@ -54,11 +49,6 @@
 			"behaviorId": "solid",
 			"name": "Solid",
 			"sid": 949585911051359
-		},
-		{
-			"behaviorId": "custom",
-			"name": "Custom",
-			"sid": 171671858292356
 		},
 		{
 			"behaviorId": "EightDir",

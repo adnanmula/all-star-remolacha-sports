@@ -48,14 +48,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Particles",
-			"name": "Particles",
-			"author": "Scirra",
-			"version": "r276.2",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Tiled Background",
 			"author": "Scirra",
@@ -82,6 +74,14 @@
 			"type": "plugin",
 			"id": "Dictionary",
 			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -120,16 +120,16 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Flash",
-			"name": "Flash",
+			"id": "Timer",
+			"name": "Timer",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
-			"id": "Timer",
-			"name": "Timer",
+			"id": "Flash",
+			"name": "Flash",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -146,14 +146,6 @@
 			"type": "behavior",
 			"id": "Platform",
 			"name": "Platform",
-			"author": "Scirra",
-			"version": "r276.2",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "custom",
-			"name": "Custom",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -177,11 +169,7 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [
-			"particle_stun",
-			"particle_root",
-			"prop_skill_hook"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -204,7 +192,9 @@
 					"player_collision",
 					"player_fd",
 					"Stonks",
-					"Chopi"
+					"Chopi",
+					"player_body_detector",
+					"player_physics"
 				],
 				"subfolders": [
 					{
@@ -217,7 +207,8 @@
 					{
 						"items": [
 							"prop_skill_area",
-							"prop_skill_ice_wall"
+							"prop_skill_ice_wall",
+							"prop_skill_hook"
 						],
 						"subfolders": [],
 						"name": "skill"
@@ -273,8 +264,7 @@
 					},
 					{
 						"items": [
-							"ball",
-							"particle_fire"
+							"ball"
 						],
 						"subfolders": [],
 						"name": "ball"
@@ -348,6 +338,16 @@
 				],
 				"subfolders": [],
 				"name": "ui"
+			},
+			{
+				"items": [
+					"particle_fire",
+					"particle_root",
+					"particle_stun",
+					"particle_tp"
+				],
+				"subfolders": [],
+				"name": "particles"
 			}
 		]
 	},
@@ -604,7 +604,7 @@
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "progress-logo",
+		"loaderStyle": "splash",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "file",
 		"cordovaAndroidScheme": "file"

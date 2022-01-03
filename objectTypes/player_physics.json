@@ -1,24 +1,26 @@
 {
-	"name": "prop_skill_ice_wall",
+	"name": "player_physics",
 	"plugin-id": "Sprite",
-	"sid": 273594447483050,
+	"sid": 280145574470167,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"sid": 190323210943301
+		}
+	],
 	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 570555503804573
-		},
-		{
-			"behaviorId": "Fade",
-			"name": "Fade",
-			"sid": 754687174686259
-		},
 		{
 			"behaviorId": "Physics",
 			"name": "Physics",
-			"sid": 169020216809903
+			"sid": 162791262341294
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 355544624417156
 		}
 	],
 	"effectTypes": [],
@@ -27,31 +29,19 @@
 			{
 				"frames": [
 					{
-						"width": 5,
+						"width": 10,
 						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 586463,
-						"collisionPoly": {
-							"points": [
-								1,
-								0,
-								1,
-								1,
-								0,
-								1,
-								0,
-								0
-							]
-						},
+						"imageSpriteId": 6376330,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 527311036262363,
+				"sid": 281413723095817,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -604,6 +604,40 @@
 					],
 					"actions": [
 						{
+							"id": "spawn-another-object",
+							"objectClass": "player",
+							"sid": 454536836680848,
+							"parameters": {
+								"object": "particle_tp",
+								"layer": "\"particles\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "particle_tp",
+							"sid": 295757921091867,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "player",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 656656379927893,
+							"parameters": {
+								"seconds": "0.25"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "player",
 							"sid": 625927164963835,
@@ -636,6 +670,40 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "ball",
+							"sid": 393704057740820,
+							"parameters": {
+								"object": "particle_tp",
+								"layer": "\"particles\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "particle_tp",
+							"sid": 635526867077598,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "ball",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 513885848634276,
+							"parameters": {
+								"seconds": "0.1"
+							}
+						},
 						{
 							"id": "set-position",
 							"objectClass": "ball",
@@ -901,6 +969,16 @@
 					"sid": 286474010074635
 				},
 				{
+					"eventType": "variable",
+					"name": "skill",
+					"type": "string",
+					"initialValue": "metronome",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 354375381370469
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -952,6 +1030,15 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 625165288884130,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"fundinaso\""
+									}
 								}
 							],
 							"sid": 703560979742590
@@ -977,6 +1064,15 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 116269164000904,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"ice_wall\""
+									}
 								}
 							],
 							"sid": 452486296809457
@@ -1002,6 +1098,15 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 419849010718143,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"random_tp_all\""
+									}
 								}
 							],
 							"sid": 497579170782280
@@ -1028,6 +1133,15 @@
 										"player.gamepad_index",
 										"player.name"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 801340503155223,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"magic_marionette\""
+									}
 								}
 							],
 							"sid": 107746760473605
@@ -1053,6 +1167,15 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 127429242948292,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"cry_stun\""
+									}
 								}
 							],
 							"sid": 657698648407909
@@ -1078,6 +1201,15 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 569904179245689,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"stick_hook\""
+									}
 								}
 							],
 							"sid": 843265676090947
@@ -1103,9 +1235,44 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 581127959729555,
+									"parameters": {
+										"variable": "skill",
+										"value": "\"area_root\""
+									}
 								}
 							],
 							"sid": 692660498506614
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 704490522805518,
+									"parameters": {
+										"object": "hud_skill",
+										"expression": "hud_skill.owner = player.UID"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "hud_skill",
+									"sid": 743044535426449,
+									"parameters": {
+										"animation": "skill",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 892255114421978
 						}
 					]
 				}
