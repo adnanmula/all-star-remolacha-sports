@@ -130,17 +130,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 349862765393262,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "disabled"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 689104184427252
 						},
 						{
@@ -152,17 +142,7 @@
 									"sid": 364787962395652
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 582572262653939,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "disabled"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 103967982884196
 						}
 					]
@@ -252,17 +232,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 213795131203266,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "enabled"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 972777957587317
 						},
 						{
@@ -274,17 +244,7 @@
 									"sid": 437088436408778
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 558975262862902,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "enabled"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 798588538050625
 						}
 					]
@@ -420,23 +380,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 234041397724916,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "stop",
-									"objectClass": "player",
-									"sid": 676771582014745,
-									"behaviorType": "8Direction"
-								}
-							],
+							"actions": [],
 							"sid": 829214057448113
 						}
 					]
@@ -517,17 +461,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 230524726385888,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "enabled"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 737009751807924
 						}
 					]

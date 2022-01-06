@@ -685,18 +685,6 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 354811366700816,
-							"parameters": {
-								"object-to-create": "player_physics",
-								"layer": "\"main\"",
-								"x": "player_collision.X",
-								"y": "player_collision.Y",
-								"create-hierarchy": false
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
 							"sid": 621050928170357,
 							"parameters": {
 								"object-to-create": "player_body_detector",
@@ -735,14 +723,6 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 823034568317532,
-									"parameters": {
-										"object": "player_physics"
-									}
-								},
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
 									"sid": 222389044907490,
 									"parameters": {
 										"object": "feet_detector"
@@ -766,48 +746,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "player_physics",
-									"sid": 116659448867006,
-									"parameters": {
-										"width": "player.Width",
-										"height": "player.Height"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player_physics",
-									"sid": 295466635898354,
-									"parameters": {
-										"x": "player.X",
-										"y": "player.Y"
-									}
-								},
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "player_physics",
-									"sid": 711249413010322,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "player",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "absolute",
-										"height-type": "absolute",
-										"z": false
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "player_physics",
-									"sid": 318575870606807,
-									"parameters": {
-										"instance-variable": "owner",
-										"value": "player.UID"
-									}
-								},
 								{
 									"id": "set-size",
 									"objectClass": "player_body_detector",
@@ -912,33 +850,6 @@
 									}
 								},
 								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 435240985073518,
-									"behaviorType": "Solid",
-									"parameters": {
-										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 284408667075315,
-									"behaviorType": "Platform",
-									"parameters": {
-										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "player",
-									"sid": 361949771845014,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
 									"id": "set-collisions-enabled",
 									"objectClass": "player",
 									"sid": 424358643720821,
@@ -952,14 +863,6 @@
 									"sid": 676680291115643,
 									"parameters": {
 										"z": "5"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "player_physics",
-									"sid": 652875158564816,
-									"parameters": {
-										"z": "4"
 									}
 								},
 								{
@@ -984,6 +887,15 @@
 									"sid": 977371076772973,
 									"parameters": {
 										"z": "1"
+									}
+								},
+								{
+									"id": "set-density",
+									"objectClass": "player",
+									"sid": 487745413581172,
+									"behaviorType": "Physics",
+									"parameters": {
+										"density": "PLAYER_DENSITY"
 									}
 								}
 							],
@@ -1016,14 +928,6 @@
 											"id": "set-visible",
 											"objectClass": "feet_detector",
 											"sid": 457037396498227,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "player_physics",
-											"sid": 408791147815548,
 											"parameters": {
 												"visibility": "invisible"
 											}
@@ -1066,14 +970,6 @@
 											"id": "set-visible",
 											"objectClass": "feet_detector",
 											"sid": 213690032254780,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "player_physics",
-											"sid": 276706781762379,
 											"parameters": {
 												"visibility": "visible"
 											}
@@ -1639,24 +1535,6 @@
 											"parameters": {
 												"width": "87",
 												"height": "87"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "player",
-											"sid": 931042370042273,
-											"behaviorType": "Platform",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "player",
-											"sid": 306162479419871,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"state": "enabled"
 											}
 										}
 									],

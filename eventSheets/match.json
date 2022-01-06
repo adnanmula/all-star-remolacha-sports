@@ -1861,45 +1861,19 @@
 								"off-time": "0.1",
 								"duration": "2"
 							}
-						}
-					],
-					"sid": 248991197115022
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 587594383500465,
-							"parameters": {
-								"object": "player_physics",
-								"expression": "player_physics.owner = player.UID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "player",
-							"sid": 246936913829893,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "jump"
-							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 174955365910383,
+							"sid": 333459419617227,
 							"parameters": {
 								"seconds": "0.1"
 							}
 						},
 						{
 							"id": "apply-impulse-at-angle",
-							"objectClass": "player_physics",
-							"sid": 566139661159332,
+							"objectClass": "player",
+							"sid": 328137951946975,
 							"behaviorType": "Physics",
 							"parameters": {
 								"impulse": "10000",
@@ -1910,22 +1884,24 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 781651636022631,
+							"sid": 854893206633570,
 							"parameters": {
 								"seconds": "0.01"
 							}
 						},
 						{
-							"id": "simulate-control",
+							"id": "apply-impulse-at-angle",
 							"objectClass": "player",
-							"sid": 215064001634113,
-							"behaviorType": "Platform",
+							"sid": 793221437380027,
+							"behaviorType": "Physics",
 							"parameters": {
-								"control": "jump"
+								"impulse": "10000",
+								"angle": "270",
+								"image-point": "0"
 							}
 						}
 					],
-					"sid": 715288517663832
+					"sid": 248991197115022
 				}
 			]
 		},
