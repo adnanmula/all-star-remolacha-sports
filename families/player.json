@@ -32,6 +32,12 @@
 			"type": "number",
 			"desc": "",
 			"sid": 599878796183808
+		},
+		{
+			"name": "metronome_next",
+			"type": "string",
+			"desc": "",
+			"sid": 171017306399447
 		}
 	],
 	"behaviorTypes": [

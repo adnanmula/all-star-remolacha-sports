@@ -1510,11 +1510,26 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 541708706715721,
+													"sid": 813094084369213,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "1"
+														"value": "15"
 													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 103526298487247,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"callFunction": "skillMetronomeRandomizeNext",
+													"sid": 999230005292795,
+													"parameters": [
+														"player.UID"
+													]
 												}
 											],
 											"sid": 231925502173895

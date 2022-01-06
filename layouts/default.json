@@ -763,7 +763,8 @@
 						"name": "",
 						"skill0": "",
 						"skill0_cooldown": 0,
-						"index": 0
+						"index": 0,
+						"metronome_next": ""
 					},
 					"behaviors": {
 						"Platform": {
