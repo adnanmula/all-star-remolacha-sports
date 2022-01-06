@@ -271,11 +271,11 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 112244348347020,
+							"sid": 181520854380525,
 							"parameters": [
-								"1",
-								"data_gamepad.Get(\"player1_index\")",
-								"data_gamepad.Get(\"player1_character\")",
+								"2",
+								"data_gamepad.Get(\"player2_index\")",
+								"data_gamepad.Get(\"player2_character\")",
 								"LayoutWidth/4 + LayoutWidth/8",
 								"200",
 								"1",
@@ -284,11 +284,11 @@
 						},
 						{
 							"callFunction": "createPlayer",
-							"sid": 145311414292634,
+							"sid": 644916969541398,
 							"parameters": [
-								"2",
-								"data_gamepad.Get(\"player2_index\")",
-								"data_gamepad.Get(\"player2_character\")",
+								"1",
+								"data_gamepad.Get(\"player1_index\")",
+								"data_gamepad.Get(\"player1_character\")",
 								"LayoutWidth/2 + LayoutWidth/8",
 								"200",
 								"1",
@@ -2134,9 +2134,9 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 692959780557814,
+											"sid": 708677523965562,
 											"parameters": {
-												"x": "LayoutWidth/4 + LayoutWidth/8",
+												"x": "LayoutWidth/2 + LayoutWidth/8",
 												"y": "200"
 											}
 										}
@@ -2160,9 +2160,9 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 407386078703110,
+											"sid": 394368898931129,
 											"parameters": {
-												"x": "LayoutWidth/2 + LayoutWidth/8",
+												"x": "LayoutWidth/4 + LayoutWidth/8",
 												"y": "200"
 											}
 										}
