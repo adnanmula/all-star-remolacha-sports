@@ -22,7 +22,7 @@
 			"initialValue": "9999",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 883900306802166
 		},
 		{
@@ -37,12 +37,22 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "PLAYER_JUMP_ANGLE",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 162990719167043
+		},
+		{
+			"eventType": "variable",
 			"name": "PLAYER_MAX_VELOCITY_X",
 			"type": "number",
 			"initialValue": "200",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 167211758635090
 		},
 		{
@@ -52,7 +62,7 @@
 			"initialValue": "200",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 788366019070947
 		},
 		{
@@ -62,17 +72,17 @@
 			"initialValue": "360",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 932898430740651
 		},
 		{
 			"eventType": "variable",
 			"name": "PLAYER_DENSITY",
 			"type": "number",
-			"initialValue": "200",
+			"initialValue": "25",
 			"comment": "",
 			"isStatic": false,
-			"isConstant": true,
+			"isConstant": false,
 			"sid": 498473770171868
 		},
 		{
@@ -300,42 +310,6 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-instance-variable",
-															"objectClass": "player",
-															"sid": 583890589196452,
-															"parameters": {
-																"instance-variable": "name",
-																"comparison": 0,
-																"value": "\"Chopi\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "apply-force-at-angle",
-															"objectClass": "player",
-															"sid": 934550423769020,
-															"behaviorType": "Physics",
-															"parameters": {
-																"force": "PLAYER_MOVEMENT_FORCE",
-																"angle": "270",
-																"image-point": "0"
-															}
-														}
-													],
-													"sid": 545006321642731,
-													"disabled": true
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 603491670299354,
-															"disabled": true
-														},
-														{
 															"id": "trigger-once-while-true",
 															"objectClass": "System",
 															"sid": 131251005898002
@@ -345,21 +319,12 @@
 														{
 															"id": "apply-impulse-at-angle",
 															"objectClass": "player",
-															"sid": 302510973021830,
+															"sid": 830618243884190,
 															"behaviorType": "Physics",
 															"parameters": {
-																"impulse": "PLAYER_JUMP_IMPULSE",
-																"angle": "0",
+																"impulse": "JUMP_IMPULSE",
+																"angle": "270",
 																"image-point": "0"
-															}
-														},
-														{
-															"id": "log",
-															"objectClass": "Browser",
-															"sid": 112976291526860,
-															"parameters": {
-																"type": "log",
-																"message": "\"Player Jumping\""
 															}
 														}
 													],
@@ -400,9 +365,21 @@
 									],
 									"actions": [
 										{
+											"id": "apply-force-at-angle",
+											"objectClass": "player",
+											"sid": 814021124686065,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "MOVEMENT_FORCE",
+												"angle": "180",
+												"image-point": "0"
+											}
+										},
+										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 308924077985719,
+											"sid": 173554509471677,
+											"disabled": true,
 											"parameters": {
 												"state": "mirrored"
 											}
@@ -410,29 +387,10 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 840350121734604,
+											"sid": 962281178774110,
+											"disabled": true,
 											"parameters": {
 												"state": "mirrored"
-											}
-										},
-										{
-											"id": "apply-force-at-angle",
-											"objectClass": "player",
-											"sid": 736598490173401,
-											"behaviorType": "Physics",
-											"parameters": {
-												"force": "PLAYER_MOVEMENT_FORCE",
-												"angle": "180",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 397774180234860,
-											"parameters": {
-												"type": "log",
-												"message": "\"Player going left\""
 											}
 										}
 									],
@@ -469,9 +427,21 @@
 									],
 									"actions": [
 										{
+											"id": "apply-force-at-angle",
+											"objectClass": "player",
+											"sid": 216754124653818,
+											"behaviorType": "Physics",
+											"parameters": {
+												"force": "MOVEMENT_FORCE",
+												"angle": "0",
+												"image-point": "0"
+											}
+										},
+										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 624298690073725,
+											"sid": 498719015584517,
+											"disabled": true,
 											"parameters": {
 												"state": "not-mirrored"
 											}
@@ -479,29 +449,10 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 276708862073835,
+											"sid": 484343276459119,
+											"disabled": true,
 											"parameters": {
 												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "apply-force-at-angle",
-											"objectClass": "player",
-											"sid": 708168307797728,
-											"behaviorType": "Physics",
-											"parameters": {
-												"force": "PLAYER_MOVEMENT_FORCE",
-												"angle": "0",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 895123734668070,
-											"parameters": {
-												"type": "log",
-												"message": "\"Player going right\""
 											}
 										}
 									],
@@ -631,9 +582,101 @@
 												"animation": "\"idle\"",
 												"from": "beginning"
 											}
+										},
+										{
+											"id": "set-velocity",
+											"objectClass": "player",
+											"sid": 763840754763485,
+											"behaviorType": "Physics",
+											"parameters": {
+												"x-component": "0",
+												"y-component": "Self.Physics.VelocityY"
+											}
 										}
 									],
 									"sid": 216456053826118
+								},
+								{
+									"eventType": "comment",
+									"text": "BOTH DPAD/JOY LEFT AND DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 558950939281133,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 491093564028677,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 503463166488711,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 306277945120394,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"button": "d-pad-right"
+													}
+												},
+												{
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 350928975498635,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"axis": "left-analog-x-axis",
+														"comparison": 5,
+														"value": "gamepad_deadzone"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player_mask",
+													"sid": 356304590680252,
+													"parameters": {
+														"animation": "\"idle\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-velocity",
+													"objectClass": "player",
+													"sid": 879613496692066,
+													"behaviorType": "Physics",
+													"parameters": {
+														"x-component": "0",
+														"y-component": "Self.Physics.VelocityY"
+													}
+												}
+											],
+											"sid": 228748786463569,
+											"isOrBlock": true
+										}
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -932,7 +975,8 @@
 					}
 				}
 			],
-			"sid": 635649312649765
+			"sid": 635649312649765,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -959,7 +1003,8 @@
 					}
 				}
 			],
-			"sid": 697439866018317
+			"sid": 697439866018317,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -988,7 +1033,8 @@
 					}
 				}
 			],
-			"sid": 298573955055898
+			"sid": 298573955055898,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1017,7 +1063,8 @@
 					}
 				}
 			],
-			"sid": 996495683486501
+			"sid": 996495683486501,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1046,7 +1093,8 @@
 					}
 				}
 			],
-			"sid": 555817044556221
+			"sid": 555817044556221,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1075,7 +1123,470 @@
 					}
 				}
 			],
-			"sid": 791741216532209
+			"sid": 791741216532209,
+			"disabled": true
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_VELOCITY_X",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 190491644275977
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_VELOCITY_Y",
+			"type": "number",
+			"initialValue": "500",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 372876122637536
+		},
+		{
+			"eventType": "variable",
+			"name": "MAX_VELOCITY_ANGULAR",
+			"type": "number",
+			"initialValue": "1000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 263833404553088
+		},
+		{
+			"eventType": "variable",
+			"name": "MOVEMENT_FORCE",
+			"type": "number",
+			"initialValue": "10000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 724066338866580
+		},
+		{
+			"eventType": "variable",
+			"name": "JUMP_IMPULSE",
+			"type": "number",
+			"initialValue": "1000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 994357063495294
+		},
+		{
+			"eventType": "variable",
+			"name": "ROTATION_FORCE",
+			"type": "number",
+			"initialValue": "100000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 170235520643980
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 852410051437575,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "apply-force-at-angle",
+					"objectClass": "player",
+					"sid": 752852645019051,
+					"behaviorType": "Physics",
+					"parameters": {
+						"force": "MOVEMENT_FORCE",
+						"angle": "180",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 863011030620469
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 309909203376489,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "apply-force-at-angle",
+					"objectClass": "player",
+					"sid": 600700985034610,
+					"behaviorType": "Physics",
+					"parameters": {
+						"force": "MOVEMENT_FORCE",
+						"angle": "0",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 310147179176485
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 762326791193749,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "apply-impulse-at-angle",
+					"objectClass": "player",
+					"sid": 793030177988198,
+					"behaviorType": "Physics",
+					"parameters": {
+						"impulse": "JUMP_IMPULSE",
+						"angle": "270",
+						"image-point": "0"
+					}
+				}
+			],
+			"sid": 771648945235386
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 548446897962749,
+					"parameters": {
+						"key": 65
+					}
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 883636991089707,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 120090676012551,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "0",
+						"y-component": "Self.Physics.VelocityY"
+					}
+				}
+			],
+			"sid": 830499088974781,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 269104322382538,
+					"parameters": {
+						"key": 65
+					},
+					"isInverted": true
+				},
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 366374624731593,
+					"parameters": {
+						"key": 68
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 909207304491884,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "0",
+						"y-component": "Self.Physics.VelocityY"
+					}
+				}
+			],
+			"sid": 556638870004181,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-velocity",
+					"objectClass": "player",
+					"sid": 114864196169328,
+					"behaviorType": "Physics",
+					"parameters": {
+						"which": "x-velocity",
+						"comparison": 4,
+						"value": "MAX_VELOCITY_X"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 328946434730784,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "MAX_VELOCITY_X",
+						"y-component": "Self.Physics.VelocityY"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 158355075030730,
+					"parameters": {
+						"type": "log",
+						"message": "\"Limit right\""
+					}
+				}
+			],
+			"sid": 904412100979574
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-velocity",
+					"objectClass": "player",
+					"sid": 153408755354405,
+					"behaviorType": "Physics",
+					"parameters": {
+						"which": "x-velocity",
+						"comparison": 2,
+						"value": "-MAX_VELOCITY_X"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 599784458693187,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "-MAX_VELOCITY_X",
+						"y-component": "Self.Physics.VelocityY"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 683916154780487,
+					"parameters": {
+						"type": "log",
+						"message": "\"Limit left\""
+					}
+				}
+			],
+			"sid": 624272874063539
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-velocity",
+					"objectClass": "player",
+					"sid": 124467886313431,
+					"behaviorType": "Physics",
+					"parameters": {
+						"which": "y-velocity",
+						"comparison": 4,
+						"value": "MAX_VELOCITY_Y"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 627138502900899,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "Self.Physics.VelocityX",
+						"y-component": "MAX_VELOCITY_Y"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 397146721632225,
+					"parameters": {
+						"type": "log",
+						"message": "\"Y Limit down\""
+					}
+				}
+			],
+			"sid": 180005832750371
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-velocity",
+					"objectClass": "player",
+					"sid": 494344447386916,
+					"behaviorType": "Physics",
+					"parameters": {
+						"which": "y-velocity",
+						"comparison": 2,
+						"value": "-MAX_VELOCITY_Y"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-velocity",
+					"objectClass": "player",
+					"sid": 320347435788174,
+					"behaviorType": "Physics",
+					"parameters": {
+						"x-component": "Self.Physics.VelocityX",
+						"y-component": "-MAX_VELOCITY_Y"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 684542984792427,
+					"parameters": {
+						"type": "log",
+						"message": "\"Y Limit up\""
+					}
+				}
+			],
+			"sid": 991028025052320
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "player",
+					"sid": 847557143574336,
+					"parameters": {
+						"object": "ground_detector"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 347313734643130,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "player",
+							"sid": 266698567065287,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "x-velocity",
+								"comparison": 4,
+								"value": "MAX_VELOCITY_X / 4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-velocity",
+							"objectClass": "player",
+							"sid": 242010848779597,
+							"behaviorType": "Physics",
+							"parameters": {
+								"x-component": "MAX_VELOCITY_X / 4",
+								"y-component": "Self.Physics.VelocityY"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 810426952565842,
+							"parameters": {
+								"type": "log",
+								"message": "\"Slow limit right\""
+							}
+						}
+					],
+					"sid": 608155484288438,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-velocity",
+							"objectClass": "player",
+							"sid": 362299855080507,
+							"behaviorType": "Physics",
+							"parameters": {
+								"which": "x-velocity",
+								"comparison": 2,
+								"value": "-(MAX_VELOCITY_X / 4)"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-velocity",
+							"objectClass": "player",
+							"sid": 666743020367461,
+							"behaviorType": "Physics",
+							"parameters": {
+								"x-component": "-MAX_VELOCITY_X / 4",
+								"y-component": "Self.Physics.VelocityY"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 904198015512840,
+							"parameters": {
+								"type": "log",
+								"message": "\"Slow limit left\""
+							}
+						}
+					],
+					"sid": 873872064489166,
+					"isOrBlock": true
+				}
+			],
+			"isOrBlock": true
 		}
 	],
 	"sid": 600060452567385

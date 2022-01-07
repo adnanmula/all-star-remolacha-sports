@@ -850,9 +850,19 @@
 							"id": "set-enabled",
 							"objectClass": "goal_football",
 							"sid": 889731108315604,
+							"disabled": true,
 							"behaviorType": "Physics",
 							"parameters": {
 								"mode": "disabled"
+							}
+						},
+						{
+							"id": "set-immovable",
+							"objectClass": "goal_football",
+							"sid": 290329969540331,
+							"behaviorType": "Physics",
+							"parameters": {
+								"setting": "immovable"
 							}
 						},
 						{
@@ -1926,6 +1936,29 @@
 				}
 			],
 			"sid": 924166483812272
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "ball",
+					"sid": 717768987279869
+				}
+			],
+			"actions": [
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "ball",
+					"sid": 624467938615558,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "goal_football",
+						"state": "disable"
+					}
+				}
+			],
+			"sid": 648300252113510
 		}
 	],
 	"sid": 250112746228024

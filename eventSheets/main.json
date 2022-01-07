@@ -897,6 +897,16 @@
 									"parameters": {
 										"density": "PLAYER_DENSITY"
 									}
+								},
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "player",
+									"sid": 886784145658943,
+									"behaviorType": "Physics",
+									"parameters": {
+										"object": "goal_solid_detector",
+										"state": "disable"
+									}
 								}
 							],
 							"sid": 194069051459864,

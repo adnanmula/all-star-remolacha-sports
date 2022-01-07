@@ -201,7 +201,8 @@
 			},
 			{
 				"items": [
-					"solid_bound"
+					"solid_bound",
+					"ground_detector"
 				],
 				"subfolders": [
 					{
