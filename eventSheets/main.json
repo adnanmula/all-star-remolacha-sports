@@ -907,6 +907,15 @@
 										"object": "goal_solid_detector",
 										"state": "disable"
 									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "player",
+									"sid": 274181774108724,
+									"parameters": {
+										"instance-variable": "movementType",
+										"value": "\"platformer\""
+									}
 								}
 							],
 							"sid": 194069051459864,
@@ -1545,6 +1554,15 @@
 											"parameters": {
 												"width": "87",
 												"height": "87"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player",
+											"sid": 617407223388625,
+											"parameters": {
+												"instance-variable": "movementType",
+												"value": "\"flying\""
 											}
 										}
 									],

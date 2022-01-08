@@ -38,6 +38,12 @@
 			"type": "string",
 			"desc": "",
 			"sid": 171017306399447
+		},
+		{
+			"name": "movementType",
+			"type": "string",
+			"desc": "",
+			"sid": 609298281170658
 		}
 	],
 	"behaviorTypes": [

@@ -847,16 +847,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "goal_football",
-							"sid": 889731108315604,
-							"disabled": true,
-							"behaviorType": "Physics",
-							"parameters": {
-								"mode": "disabled"
-							}
-						},
-						{
 							"id": "set-immovable",
 							"objectClass": "goal_football",
 							"sid": 290329969540331,

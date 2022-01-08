@@ -764,7 +764,8 @@
 						"skill0": "",
 						"skill0_cooldown": 0,
 						"index": 0,
-						"metronome_next": ""
+						"metronome_next": "",
+						"movementType": ""
 					},
 					"behaviors": {
 						"Timer": {
