@@ -960,20 +960,48 @@
 									"isInverted": true
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 185478895541920,
+							"children": [
 								{
-									"id": "apply-impulse-at-angle",
-									"objectClass": "player",
-									"sid": 830618243884190,
-									"behaviorType": "Physics",
-									"parameters": {
-										"impulse": "JUMP_IMPULSE",
-										"angle": "270",
-										"image-point": "0"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
+											"sid": 171537975857570,
+											"parameters": {
+												"object": "ground_detector"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 520004668362360,
+											"parameters": {
+												"object": "goal_football_solid",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "player",
+											"sid": 277706463044627,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "JUMP_IMPULSE",
+												"angle": "270",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 184320214684573,
+									"isOrBlock": true
 								}
-							],
-							"sid": 185478895541920
+							]
 						}
 					]
 				},

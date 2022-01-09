@@ -1863,6 +1863,13 @@
 							}
 						},
 						{
+							"callFunction": "playerJump",
+							"sid": 301301975381520,
+							"parameters": [
+								"player.UID"
+							]
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 333459419617227,
