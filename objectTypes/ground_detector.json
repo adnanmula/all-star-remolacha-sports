@@ -1,47 +1,29 @@
 {
-	"name": "player_physics",
+	"name": "ground_detector",
 	"plugin-id": "Sprite",
-	"sid": 280145574470167,
+	"sid": 138308840182831,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "owner",
-			"type": "number",
-			"desc": "",
-			"sid": 190323210943301
-		}
-	],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 162791262341294
-		},
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 355544624417156
-		}
-	],
+	"instanceVariables": [],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 10,
-						"height": 10,
+						"width": 25,
+						"height": 25,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6376330,
+						"imageSpriteId": 2513479,
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 281413723095817,
+				"sid": 801404905304490,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

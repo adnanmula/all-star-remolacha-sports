@@ -632,12 +632,6 @@
 			"properties": {},
 			"uid": 62,
 			"instanceVariables": {}
-		},
-		{
-			"type": "data_controls",
-			"properties": {},
-			"uid": 46,
-			"instanceVariables": {}
 		}
 	],
 	"effectTypes": [],

@@ -19,18 +19,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 6106577,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -61,18 +49,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 6942077,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
@@ -96,18 +72,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 9155219,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
@@ -138,18 +102,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 8639077,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					},
@@ -162,18 +114,6 @@
 						"exportFormat": "png",
 						"exportQuality": 0.8,
 						"imageSpriteId": 7624070,
-						"collisionPoly": {
-							"points": [
-								0.07407407407407407,
-								0.016666666666666666,
-								0.9259259259259259,
-								0.016666666666666666,
-								0.9259259259259259,
-								1,
-								0.07407407407407407,
-								1
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}

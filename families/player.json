@@ -38,33 +38,29 @@
 			"type": "string",
 			"desc": "",
 			"sid": 171017306399447
+		},
+		{
+			"name": "movementType",
+			"type": "string",
+			"desc": "",
+			"sid": 609298281170658
 		}
 	],
 	"behaviorTypes": [
-		{
-			"behaviorId": "Platform",
-			"name": "Platform",
-			"sid": 833643288727227
-		},
 		{
 			"behaviorId": "Timer",
 			"name": "Timer",
 			"sid": 989951049828751
 		},
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 949585911051359
-		},
-		{
-			"behaviorId": "EightDir",
-			"name": "8Direction",
-			"sid": 482024457767198
-		},
-		{
 			"behaviorId": "Pin",
 			"name": "Pin",
 			"sid": 909664691646883
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 460680733771615
 		}
 	],
 	"effectTypes": [],

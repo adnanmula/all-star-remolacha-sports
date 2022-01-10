@@ -3,6 +3,10 @@
 	"events": [
 		{
 			"eventType": "include",
+			"includeSheet": "player"
+		},
+		{
+			"eventType": "include",
 			"includeSheet": "skills"
 		},
 		{
@@ -14,6 +18,76 @@
 			"isStatic": false,
 			"isConstant": true,
 			"sid": 782733475678648
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_MOVEMENT_FORCE",
+			"type": "number",
+			"initialValue": "9999",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 883900306802166
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_JUMP_IMPULSE",
+			"type": "number",
+			"initialValue": "1000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 590621854784027
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_JUMP_ANGLE",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 162990719167043
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_MAX_VELOCITY_X",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 167211758635090
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_MAX_VELOCITY_Y",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 788366019070947
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_MAX_VELOCITY_ANGULAR",
+			"type": "number",
+			"initialValue": "360",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 932898430740651
+		},
+		{
+			"eventType": "variable",
+			"name": "PLAYER_DENSITY",
+			"type": "number",
+			"initialValue": "25",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 498473770171868
 		},
 		{
 			"eventType": "group",
@@ -64,69 +138,24 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 392902291750642,
+											"sid": 110338455711634,
 											"parameters": {
 												"first-value": "player.gamepad_index",
-												"comparison": 0,
+												"comparison": 1,
 												"second-value": "-1"
 											}
-										}
-									],
-									"actions": [],
-									"sid": 870616432997613,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 114676336058567
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "controlsInitializeMouseSettings",
-													"sid": 214690283913906
-												}
-											],
-											"sid": 149303527990141
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"callFunction": "controlsProcessKeyboardAndMouseInput",
-													"sid": 754452626188207,
-													"parameters": [
-														"player.UID"
-													]
-												}
-											],
-											"sid": 659853430182510
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 828017413350129
 										}
 									],
 									"actions": [
 										{
 											"callFunction": "controlsProcessGamepadInput",
-											"sid": 713278509915959,
+											"sid": 697876842813776,
 											"parameters": [
 												"player.UID"
 											]
 										}
 									],
-									"sid": 699882911801813
+									"sid": 870616432997613
 								}
 							]
 						}
@@ -155,649 +184,8 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "controlsInitializeMouseSettings",
-					"functionDescription": "",
-					"functionCategory": "input",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 859474690702673,
-							"parameters": {
-								"key": "\"origin_x\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 855104384036210,
-							"parameters": {
-								"key": "\"origin_y\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 366109002743008,
-							"parameters": {
-								"key": "\"last_x\"",
-								"value": "Mouse.X"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 719081116051319,
-							"parameters": {
-								"key": "\"last_y\"",
-								"value": "Mouse.Y"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 360256173446451,
-							"parameters": {
-								"key": "\"idle_ticks\"",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 709987101370167,
-							"parameters": {
-								"key": "\"idle_ticks_threshold\"",
-								"value": "15"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 342364790618629,
-							"parameters": {
-								"key": "\"last_angle\"",
-								"value": "90"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 613276176566056,
-							"parameters": {
-								"key": "\"deadzone\"",
-								"value": "15"
-							}
-						},
-						{
-							"id": "add-key",
-							"objectClass": "data_controls",
-							"sid": 315882582885145,
-							"parameters": {
-								"key": "\"mode\"",
-								"value": "\"variable\""
-							}
-						},
-						{
-							"callFunction": "setNewMouseOrigin",
-							"sid": 406685744626619,
-							"parameters": [
-								"Mouse.X",
-								"Mouse.Y"
-							]
-						}
-					],
-					"sid": 200661241800158
-				},
-				{
-					"functionName": "controlsProcessKeyboardAndMouseInput",
-					"functionDescription": "",
-					"functionCategory": "input",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "player_uid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 419630763288368
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 362452314654860,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 109754764144493,
-									"parameters": {
-										"unique-id": "player_uid"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "controlsProcessMouseInput",
-									"sid": 845310321427281,
-									"parameters": [
-										"player_uid"
-									]
-								}
-							],
-							"sid": 493948337481525,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 180131931091339,
-											"parameters": {
-												"key": 87
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 704186238445261,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "jump"
-											}
-										}
-									],
-									"sid": 714690697515685
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 748448369171752,
-											"parameters": {
-												"key": 65
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 439827311643456,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "left"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 288294046745072,
-											"parameters": {
-												"state": "mirrored"
-											}
-										}
-									],
-									"sid": 855202385592238
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 123445011442864,
-											"parameters": {
-												"key": 68
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 899417807894041,
-											"behaviorType": "Platform",
-											"parameters": {
-												"control": "right"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 879031001174798,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 785407595499322
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 366197869063139,
-											"parameters": {
-												"mouse-button": "left"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 371760229112802,
-											"parameters": {
-												"animation": "\"kick\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 861547218864801
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 592841586823097,
-											"parameters": {
-												"mouse-button": "right"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 203047702374799,
-											"parameters": {
-												"animation": "\"lift\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 319858300200749
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 585846332018227,
-											"parameters": {
-												"mouse-button": "middle"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 939652087491287
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "toggleMouseMode",
-											"sid": 270589680940306
-										}
-									],
-									"sid": 142905381524087
-								}
-							]
-						}
-					]
-				},
-				{
-					"functionName": "controlsProcessMouseInput",
-					"functionDescription": "",
-					"functionCategory": "input",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "player_uid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 528951675252833
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 821830786797607,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 115335456055316,
-									"parameters": {
-										"unique-id": "player_uid"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 580200291697038,
-									"parameters": {
-										"first-value": "distance(data_controls.Get(\"origin_x\"), data_controls.Get(\"origin_y\"), Mouse.X, Mouse.Y)",
-										"comparison": 4,
-										"second-value": "data_controls.Get(\"deadzone\")"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-key",
-									"objectClass": "data_controls",
-									"sid": 242634076512035,
-									"parameters": {
-										"key": "\"last_angle\"",
-										"value": "angle(data_controls.Get(\"origin_x\"), data_controls.Get(\"origin_y\"), Mouse.X, Mouse.Y) + 90"
-									}
-								}
-							],
-							"sid": 940068210276405
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 291507284851192,
-									"parameters": {
-										"unique-id": "player_uid"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "player",
-									"sid": 540811953731282,
-									"parameters": {
-										"angle": "data_controls.Get(\"last_angle\")"
-									}
-								}
-							],
-							"sid": 118142767198327
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 861824171116650
-								}
-							],
-							"actions": [],
-							"sid": 340641563614288,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 721637236342033,
-											"parameters": {
-												"first-value": "data_controls.Get(\"last_x\")",
-												"comparison": 0,
-												"second-value": "Mouse.X"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 890715816791149,
-											"parameters": {
-												"first-value": "data_controls.Get(\"last_y\")",
-												"comparison": 0,
-												"second-value": "Mouse.Y"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-key",
-											"objectClass": "data_controls",
-											"sid": 164781248392672,
-											"parameters": {
-												"key": "\"idle_ticks\"",
-												"value": "data_controls.Get(\"idle_ticks\") + 1"
-											}
-										}
-									],
-									"sid": 443621809988560
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 559030202556507
-										}
-									],
-									"actions": [
-										{
-											"id": "set-key",
-											"objectClass": "data_controls",
-											"sid": 292216706302418,
-											"parameters": {
-												"key": "\"last_x\"",
-												"value": "Mouse.X"
-											}
-										},
-										{
-											"id": "set-key",
-											"objectClass": "data_controls",
-											"sid": 357282738570257,
-											"parameters": {
-												"key": "\"last_y\"",
-												"value": "Mouse.Y"
-											}
-										},
-										{
-											"id": "set-key",
-											"objectClass": "data_controls",
-											"sid": 649716351501426,
-											"parameters": {
-												"key": "\"idle_ticks\"",
-												"value": "0"
-											}
-										}
-									],
-									"sid": 863088877564155
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 412783226512397,
-									"parameters": {
-										"first-value": "data_controls.Get(\"idle_ticks\")",
-										"comparison": 5,
-										"second-value": "data_controls.Get(\"idle_ticks_threshold\")"
-									}
-								},
-								{
-									"id": "compare-value",
-									"objectClass": "data_controls",
-									"sid": 250773657763136,
-									"parameters": {
-										"key": "\"mode\"",
-										"comparison": 0,
-										"value": "\"variable\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "setNewMouseOrigin",
-									"sid": 878661408503601,
-									"parameters": [
-										"Mouse.X",
-										"Mouse.Y"
-									]
-								}
-							],
-							"sid": 136582471048324
-						}
-					]
-				},
-				{
-					"functionName": "setNewMouseOrigin",
-					"functionDescription": "",
-					"functionCategory": "input",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "x",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 459290777845918
-						},
-						{
-							"name": "y",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 691646790733123
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-key",
-							"objectClass": "data_controls",
-							"sid": 887706446915664,
-							"parameters": {
-								"key": "\"origin_x\"",
-								"value": "x"
-							}
-						},
-						{
-							"id": "set-key",
-							"objectClass": "data_controls",
-							"sid": 854639284643776,
-							"parameters": {
-								"key": "\"origin_y\"",
-								"value": "y"
-							}
-						}
-					],
-					"sid": 914034887429497,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 430148399836025,
-									"parameters": {
-										"first-value": "player_km_origin_indicator.Count",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 509488606946310,
-									"parameters": {
-										"object-to-create": "player_km_origin_indicator",
-										"layer": "\"main\"",
-										"x": "x",
-										"y": "y",
-										"create-hierarchy": false
-									}
-								}
-							],
-							"sid": 182513970310450
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 951237899899389
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "player_km_origin_indicator",
-									"sid": 878737250925331,
-									"parameters": {
-										"x": "x",
-										"y": "y"
-									}
-								}
-							],
-							"sid": 898339485324172
-						}
-					]
-				},
-				{
-					"functionName": "toggleMouseMode",
-					"functionDescription": "",
-					"functionCategory": "input",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-key",
-							"objectClass": "data_controls",
-							"sid": 661415045997351,
-							"parameters": {
-								"key": "\"mode\"",
-								"value": "data_controls.Get(\"mode\") = \"fixed\" ? \"variable\" : \"fixed\""
-							}
-						}
-					],
-					"sid": 868712993349914
+					"eventType": "comment",
+					"text": "Not compatible for now."
 				}
 			],
 			"sid": 543618043270986,
@@ -829,7 +217,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "player_uid",
+							"name": "playerUid",
 							"type": "number",
 							"initialValue": "0",
 							"comment": "",
@@ -849,7 +237,7 @@
 									"objectClass": "player",
 									"sid": 898277507348627,
 									"parameters": {
-										"unique-id": "player_uid"
+										"unique-id": "playerUid"
 									}
 								},
 								{
@@ -858,7 +246,7 @@
 									"sid": 926747718407654,
 									"parameters": {
 										"object": "player_mask",
-										"expression": "player_mask.owner = player_uid"
+										"expression": "player_mask.owner = playerUid"
 									}
 								}
 							],
@@ -909,69 +297,56 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-timer-running",
+													"id": "compare-instance-variable",
 													"objectClass": "player",
-													"sid": 813083329836732,
-													"behaviorType": "Timer",
+													"sid": 939894633144891,
 													"parameters": {
-														"tag": "\"root\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 273529586379667,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "player",
-															"sid": 583890589196452,
-															"parameters": {
-																"instance-variable": "name",
-																"comparison": 0,
-																"value": "\"Chopi\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "simulate-control",
-															"objectClass": "player",
-															"sid": 653061709357535,
-															"behaviorType": "8Direction",
-															"parameters": {
-																"control": "up"
-															}
-														}
-													],
-													"sid": 545006321642731
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
 												},
 												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "else",
-															"objectClass": "System",
-															"sid": 643903014953701
-														}
-													],
-													"actions": [
-														{
-															"id": "simulate-control",
-															"objectClass": "player",
-															"sid": 815594699435032,
-															"behaviorType": "Platform",
-															"parameters": {
-																"control": "jump"
-															}
-														}
-													],
-													"sid": 762074180237275
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 177359494584151
 												}
-											]
+											],
+											"actions": [
+												{
+													"callFunction": "playerJump",
+													"sid": 500950269426578,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 728121794525996
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 456502881875130,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveUp",
+													"sid": 498371881326166,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 313777471535740
 										}
 									],
 									"isOrBlock": true
@@ -1006,107 +381,14 @@
 									],
 									"actions": [
 										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 308924077985719,
-											"parameters": {
-												"state": "mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 840350121734604,
-											"parameters": {
-												"state": "mirrored"
-											}
-										}
-									],
-									"sid": 794519248782469,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "player",
-													"sid": 612569906030740,
-													"parameters": {
-														"instance-variable": "name",
-														"comparison": 0,
-														"value": "\"Chopi\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 886229349106754,
-													"behaviorType": "8Direction",
-													"parameters": {
-														"control": "left"
-													}
-												}
-											],
-											"sid": 493497192318966
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 976461842017413
-												}
-											],
-											"actions": [
-												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 687224195987666,
-													"behaviorType": "Platform",
-													"parameters": {
-														"control": "left"
-													}
-												}
-											],
-											"sid": 457402472395206,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-jumping",
-															"objectClass": "player",
-															"sid": 195796633560591,
-															"behaviorType": "Platform",
-															"isInverted": true
-														},
-														{
-															"id": "is-falling",
-															"objectClass": "player",
-															"sid": 355197858399639,
-															"behaviorType": "Platform",
-															"isInverted": true
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation",
-															"objectClass": "player_mask",
-															"sid": 731672067034851,
-															"parameters": {
-																"animation": "\"walking\"",
-																"from": "beginning"
-															}
-														}
-													],
-													"sid": 269161668694583
-												}
+											"callFunction": "playerMoveLeft",
+											"sid": 185997244729660,
+											"parameters": [
+												"player.UID"
 											]
 										}
 									],
+									"sid": 794519248782469,
 									"isOrBlock": true
 								},
 								{
@@ -1139,107 +421,14 @@
 									],
 									"actions": [
 										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 624298690073725,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 276708862073835,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 358677277860598,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "player",
-													"sid": 659177291888871,
-													"parameters": {
-														"instance-variable": "name",
-														"comparison": 0,
-														"value": "\"Chopi\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 707254640699009,
-													"behaviorType": "8Direction",
-													"parameters": {
-														"control": "right"
-													}
-												}
-											],
-											"sid": 428892828158619
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 136028293995793
-												}
-											],
-											"actions": [
-												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 229137011368626,
-													"behaviorType": "Platform",
-													"parameters": {
-														"control": "right"
-													}
-												}
-											],
-											"sid": 557931881712259,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-jumping",
-															"objectClass": "player",
-															"sid": 701191854864658,
-															"behaviorType": "Platform",
-															"isInverted": true
-														},
-														{
-															"id": "is-falling",
-															"objectClass": "player",
-															"sid": 587414003849614,
-															"behaviorType": "Platform",
-															"isInverted": true
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation",
-															"objectClass": "player_mask",
-															"sid": 933774645184843,
-															"parameters": {
-																"animation": "\"walking\"",
-																"from": "beginning"
-															}
-														}
-													],
-													"sid": 496736738604187
-												}
+											"callFunction": "playerMoveRight",
+											"sid": 916084606831522,
+											"parameters": [
+												"player.UID"
 											]
 										}
 									],
+									"sid": 358677277860598,
 									"isOrBlock": true
 								},
 								{
@@ -1279,35 +468,44 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "player",
-													"sid": 397443965475003,
+													"sid": 499662595087009,
 													"parameters": {
-														"instance-variable": "name",
+														"instance-variable": "movementType",
 														"comparison": 0,
-														"value": "\"Chopi\""
+														"value": "\"flying\""
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "simulate-control",
-													"objectClass": "player",
-													"sid": 233677157606193,
-													"behaviorType": "8Direction",
-													"parameters": {
-														"control": "down"
-													}
-												},
-												{
-													"id": "set-animation",
-													"objectClass": "player_mask",
-													"sid": 581236255229033,
-													"parameters": {
-														"animation": "\"walking\"",
-														"from": "beginning"
-													}
+													"callFunction": "playerMoveDown",
+													"sid": 218108557401839,
+													"parameters": [
+														"player.UID"
+													]
 												}
 											],
-											"sid": 589495602591159
+											"sid": 564146958640412
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 164111185810532
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerFall",
+													"sid": 459547234980734,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 632140904538619
 										}
 									],
 									"isOrBlock": true
@@ -1366,16 +564,84 @@
 									],
 									"actions": [
 										{
-											"id": "set-animation",
-											"objectClass": "player_mask",
-											"sid": 177775023302606,
-											"parameters": {
-												"animation": "\"idle\"",
-												"from": "beginning"
-											}
+											"callFunction": "playerStop",
+											"sid": 513802150434760,
+											"parameters": [
+												"player.UID"
+											]
 										}
 									],
 									"sid": 216456053826118
+								},
+								{
+									"eventType": "comment",
+									"text": "BOTH DPAD/JOY LEFT AND DPAD/JOY RIGHT"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 558950939281133,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-left"
+											}
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 491093564028677,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-x-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 503463166488711,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 306277945120394,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"button": "d-pad-right"
+													}
+												},
+												{
+													"id": "compare-axis",
+													"objectClass": "Gamepad",
+													"sid": 350928975498635,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"axis": "left-analog-x-axis",
+														"comparison": 5,
+														"value": "gamepad_deadzone"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerStop",
+													"sid": 997904109449868,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 228748786463569,
+											"isOrBlock": true
+										}
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1384,16 +650,6 @@
 								{
 									"eventType": "block",
 									"conditions": [
-										{
-											"id": "is-timer-running",
-											"objectClass": "player",
-											"sid": 752574567124192,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"stun\""
-											},
-											"isInverted": true
-										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
@@ -1407,12 +663,11 @@
 									],
 									"actions": [
 										{
-											"id": "set-angle",
-											"objectClass": "player",
-											"sid": 517991130338384,
-											"parameters": {
-												"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
-											}
+											"callFunction": "playerSpin",
+											"sid": 157100961610904,
+											"parameters": [
+												"player.UID"
+											]
 										}
 									],
 									"sid": 455970657145899
@@ -1434,36 +689,16 @@
 											}
 										}
 									],
-									"actions": [],
-									"sid": 433556912162152,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "player_mask",
-													"sid": 722241033271643,
-													"parameters": {
-														"animation": "\"kick\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "player_mask",
-													"sid": 331520764071566,
-													"parameters": {
-														"animation": "\"kick\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 757114542869327
+											"callFunction": "playerKick",
+											"sid": 253886355466781,
+											"parameters": [
+												"player.UID"
+											]
 										}
-									]
+									],
+									"sid": 433556912162152
 								},
 								{
 									"eventType": "comment",
@@ -1482,36 +717,16 @@
 											}
 										}
 									],
-									"actions": [],
-									"sid": 195053655907661,
-									"children": [
+									"actions": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-animation-playing",
-													"objectClass": "player_mask",
-													"sid": 974187425573292,
-													"parameters": {
-														"animation": "\"lift\""
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "player_mask",
-													"sid": 967894725708702,
-													"parameters": {
-														"animation": "\"lift\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 417447751905389
+											"callFunction": "playerLift",
+											"sid": 526649445810849,
+											"parameters": [
+												"player.UID"
+											]
 										}
-									]
+									],
+									"sid": 195053655907661
 								},
 								{
 									"eventType": "comment",

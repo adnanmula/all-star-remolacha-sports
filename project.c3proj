@@ -143,22 +143,6 @@
 			"bundled": false
 		},
 		{
-			"type": "behavior",
-			"id": "Platform",
-			"name": "Platform",
-			"author": "Scirra",
-			"version": "r277",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "EightDir",
-			"name": "8 Direction",
-			"author": "Scirra",
-			"version": "r277",
-			"bundled": false
-		},
-		{
 			"type": "effect",
 			"id": "tint",
 			"name": "Tint",
@@ -193,8 +177,7 @@
 					"player_fd",
 					"Stonks",
 					"Chopi",
-					"player_body_detector",
-					"player_physics"
+					"player_body_detector"
 				],
 				"subfolders": [
 					{
@@ -218,7 +201,8 @@
 			},
 			{
 				"items": [
-					"solid_bound"
+					"solid_bound",
+					"ground_detector"
 				],
 				"subfolders": [
 					{
@@ -325,8 +309,7 @@
 			{
 				"items": [
 					"data_gamepad",
-					"data_match_config",
-					"data_controls"
+					"data_match_config"
 				],
 				"subfolders": [],
 				"name": "data"
