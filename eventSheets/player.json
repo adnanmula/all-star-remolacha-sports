@@ -64,6 +64,831 @@
 		{
 			"eventType": "group",
 			"disabled": false,
+			"title": "Player - Actions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "playerMoveLeft",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 657769916323311
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 457888242284447,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 391218072935640,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 847614232733660,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 414027839832779,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "player",
+									"sid": 560207151966305,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "MOVEMENT_FORCE",
+										"angle": "180",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player",
+									"sid": 156134601232999,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player_mask",
+									"sid": 900441925798135,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 807520729726259
+						}
+					]
+				},
+				{
+					"functionName": "playerMoveRight",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 229638546552494
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 751550485969342,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 265178425608855,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 902027211912163,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 642093646690438,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "player",
+									"sid": 697535034192141,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "MOVEMENT_FORCE",
+										"angle": "0",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player",
+									"sid": 327096065428163,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "player_mask",
+									"sid": 159332623515487,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 392139289977961
+						}
+					]
+				},
+				{
+					"functionName": "playerMoveUp",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 660111342225056
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 566923863172343,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 506937313794219,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 805204546619557,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 211424479179445,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"root\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "player",
+									"sid": 594633602875287,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "MOVEMENT_FORCE",
+										"angle": "270",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 618553009925485
+						}
+					]
+				},
+				{
+					"functionName": "playerMoveDown",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 281101784863704
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 603900500769219,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 149029835061595,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 839392493081929,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 995273694553453,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"root\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "player",
+									"sid": 338996618051410,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "MOVEMENT_FORCE",
+										"angle": "90",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 434550161097328
+						}
+					]
+				},
+				{
+					"functionName": "playerJump",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 414108892716813
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 525774626697690,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 826500504314082,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 504488745129022,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 858159339898517,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"root\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 360021597287468,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
+											"sid": 475386002850138,
+											"parameters": {
+												"object": "ground_detector"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 576805914131474,
+											"parameters": {
+												"object": "goal_football_solid",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "player",
+											"sid": 516384088436188,
+											"behaviorType": "Physics",
+											"parameters": {
+												"impulse": "JUMP_IMPULSE",
+												"angle": "270",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 766059787668076,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "playerFall",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 155140814624010
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 315980677030243,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 756917353262359,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 284223500220662,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 343487783043987,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"root\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 696072763802667,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
+											"sid": 353013399268955,
+											"parameters": {
+												"object": "ground_detector"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 110795288013047,
+											"parameters": {
+												"object": "goal_football_solid",
+												"offset-x": "0",
+												"offset-y": "15"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 776679634196091,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-velocity",
+													"objectClass": "player",
+													"sid": 366558774581622,
+													"behaviorType": "Physics",
+													"parameters": {
+														"which": "y-velocity",
+														"comparison": 4,
+														"value": "0"
+													}
+												},
+												{
+													"id": "compare-velocity",
+													"objectClass": "player",
+													"sid": 753602758551203,
+													"behaviorType": "Physics",
+													"parameters": {
+														"which": "y-velocity",
+														"comparison": 2,
+														"value": "-20"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-velocity",
+													"objectClass": "player",
+													"sid": 733075367111473,
+													"behaviorType": "Physics",
+													"parameters": {
+														"x-component": "Self.Physics.VelocityX",
+														"y-component": "MAX_VELOCITY_Y * 2"
+													}
+												}
+											],
+											"sid": 749956840655683,
+											"isOrBlock": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "playerStop",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 959338883156298
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 935745618966952,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 554361353570928,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 631574382557316,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_mask",
+									"sid": 941532182627486,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 361304459253712,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "Self.Physics.VelocityY"
+									}
+								}
+							],
+							"sid": 167958213213975
+						}
+					]
+				},
+				{
+					"functionName": "playerKick",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 315398554395694
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 836951997504925,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 559788016208388,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 833562609251801,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player_mask",
+									"sid": 990893828014721,
+									"parameters": {
+										"animation": "\"kick\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 252842001936868,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_mask",
+									"sid": 778094484267894,
+									"parameters": {
+										"animation": "\"kick\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 906975465516058
+						}
+					]
+				},
+				{
+					"functionName": "playerLift",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 732676635219636
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 514946927302132,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 458131937856811,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 560268617734656,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player_mask",
+									"sid": 485943639239408,
+									"parameters": {
+										"animation": "\"lift\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 491905638140810,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player_mask",
+									"sid": 129651391735101,
+									"parameters": {
+										"animation": "\"lift\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 452254177989673
+						}
+					]
+				},
+				{
+					"functionName": "playerSpin",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 140132231282416
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 207469373782109,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 857306008915356,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 132564895661743,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "player",
+									"sid": 990661621923976,
+									"parameters": {
+										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+									}
+								},
+								{
+									"id": "apply-torque-towards-angle",
+									"objectClass": "player",
+									"sid": 341476834238807,
+									"disabled": true,
+									"behaviorType": "Physics",
+									"parameters": {
+										"torque": "1000",
+										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+									}
+								}
+							],
+							"sid": 691122189634690
+						}
+					]
+				}
+			],
+			"sid": 356694019303791
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
 			"title": "Player - Physics",
 			"description": "",
 			"isActiveOnStart": true,
@@ -408,6 +1233,71 @@
 									"sid": 168251225526764
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 176687703887392
+								}
+							],
+							"actions": [],
+							"sid": 472678164954798,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-velocity",
+											"objectClass": "player",
+											"sid": 177472589168975,
+											"behaviorType": "Physics",
+											"parameters": {
+												"which": "y-velocity",
+												"comparison": 4,
+												"value": "100"
+											}
+										},
+										{
+											"id": "compare-velocity",
+											"objectClass": "player",
+											"sid": 692110797091144,
+											"behaviorType": "Physics",
+											"parameters": {
+												"which": "y-velocity",
+												"comparison": 2,
+												"value": "MAX_VELOCITY_Y"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-velocity",
+											"objectClass": "player",
+											"sid": 411891526310136,
+											"behaviorType": "Physics",
+											"parameters": {
+												"x-component": "Self.Physics.VelocityX",
+												"y-component": "MAX_VELOCITY_Y "
+											}
+										},
+										{
+											"id": "log",
+											"objectClass": "Browser",
+											"sid": 327814457954093,
+											"parameters": {
+												"type": "log",
+												"message": "\"Fall at max\""
+											}
+										}
+									],
+									"sid": 954585655640039,
+									"disabled": true
+								}
+							]
 						}
 					],
 					"isOrBlock": true
@@ -507,6 +1397,16 @@
 							"sid": 462795464444351
 						},
 						{
+							"eventType": "variable",
+							"name": "radius",
+							"type": "number",
+							"initialValue": "125",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 851101566419401
+						},
+						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
@@ -549,10 +1449,10 @@
 								{
 									"id": "set-size",
 									"objectClass": "prop_skill_area",
-									"sid": 500210365667128,
+									"sid": 126891593270433,
 									"parameters": {
-										"width": "250",
-										"height": "250"
+										"width": "radius * 2",
+										"height": "radius * 2"
 									}
 								},
 								{
@@ -570,10 +1470,10 @@
 								},
 								{
 									"callFunction": "stunPlayerArea",
-									"sid": 832219953357737,
+									"sid": 807051933387603,
 									"parameters": [
 										"3",
-										"125",
+										"radius",
 										"x",
 										"y"
 									]
@@ -585,711 +1485,6 @@
 				}
 			],
 			"sid": 177877282386930
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Player - Actions",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"functionName": "playerMoveLeft",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 657769916323311
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 256237876985018,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 667918895056760,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 352136878395109,
-									"parameters": {
-										"object": "player_mask",
-										"expression": "player_mask.owner = playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 321825117109263,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-force-at-angle",
-									"objectClass": "player",
-									"sid": 259606633479620,
-									"behaviorType": "Physics",
-									"parameters": {
-										"force": "MOVEMENT_FORCE",
-										"angle": "180",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 819956700203888,
-									"parameters": {
-										"state": "mirrored"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player_mask",
-									"sid": 666937161343505,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 800886913956931
-						}
-					]
-				},
-				{
-					"functionName": "playerMoveRight",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 229638546552494
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 632366487877097,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 845678653570244,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 896029999507134,
-									"parameters": {
-										"object": "player_mask",
-										"expression": "player_mask.owner = playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 990531064844162,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-force-at-angle",
-									"objectClass": "player",
-									"sid": 517565180022545,
-									"behaviorType": "Physics",
-									"parameters": {
-										"force": "MOVEMENT_FORCE",
-										"angle": "0",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player",
-									"sid": 182097791491723,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								},
-								{
-									"id": "set-mirrored",
-									"objectClass": "player_mask",
-									"sid": 197606686086825,
-									"parameters": {
-										"state": "not-mirrored"
-									}
-								}
-							],
-							"sid": 386499925640196
-						}
-					]
-				},
-				{
-					"functionName": "playerMoveUp",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 660111342225056
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 527814802863594,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 493251194289311,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 670772850681541,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 409394646632193,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"root\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-force-at-angle",
-									"objectClass": "player",
-									"sid": 591297293136404,
-									"behaviorType": "Physics",
-									"parameters": {
-										"force": "MOVEMENT_FORCE",
-										"angle": "270",
-										"image-point": "0"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 128878594139861,
-									"parameters": {
-										"type": "log",
-										"message": "\"moving up\""
-									}
-								}
-							],
-							"sid": 811549006529808
-						}
-					]
-				},
-				{
-					"functionName": "playerMoveDown",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 281101784863704
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 923159705397835,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 712461790357130,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 757509597540556,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 210624879743012,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"root\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "apply-force-at-angle",
-									"objectClass": "player",
-									"sid": 441755401373602,
-									"behaviorType": "Physics",
-									"parameters": {
-										"force": "MOVEMENT_FORCE",
-										"angle": "90",
-										"image-point": "0"
-									}
-								}
-							],
-							"sid": 152714964032750
-						}
-					]
-				},
-				{
-					"functionName": "playerJump",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 414108892716813
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 433855216735739,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 852730859099225,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 879690500966789,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 379552974013861,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"root\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 185478895541920,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "player",
-											"sid": 171537975857570,
-											"parameters": {
-												"object": "ground_detector"
-											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "player",
-											"sid": 520004668362360,
-											"parameters": {
-												"object": "goal_football_solid",
-												"offset-x": "0",
-												"offset-y": "15"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "apply-impulse-at-angle",
-											"objectClass": "player",
-											"sid": 277706463044627,
-											"behaviorType": "Physics",
-											"parameters": {
-												"impulse": "JUMP_IMPULSE",
-												"angle": "270",
-												"image-point": "0"
-											}
-										}
-									],
-									"sid": 184320214684573,
-									"isOrBlock": true
-								}
-							]
-						}
-					]
-				},
-				{
-					"functionName": "playerStop",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 959338883156298
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 714704738202558,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 700685863806155,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 541654416990462,
-									"parameters": {
-										"object": "player_mask",
-										"expression": "player_mask.owner = playerUid"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "player_mask",
-									"sid": 177775023302606,
-									"parameters": {
-										"animation": "\"idle\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-velocity",
-									"objectClass": "player",
-									"sid": 763840754763485,
-									"behaviorType": "Physics",
-									"parameters": {
-										"x-component": "0",
-										"y-component": "Self.Physics.VelocityY"
-									}
-								}
-							],
-							"sid": 672202662933875
-						}
-					]
-				},
-				{
-					"functionName": "playerKick",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 315398554395694
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 782750334843087,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 712738527385711,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 464504927458561,
-									"parameters": {
-										"object": "player_mask",
-										"expression": "player_mask.owner = playerUid"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "player_mask",
-									"sid": 171954457775361,
-									"parameters": {
-										"animation": "\"kick\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 521065520913271,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "player_mask",
-									"sid": 868843530231062,
-									"parameters": {
-										"animation": "\"kick\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 338736909408455
-						}
-					]
-				},
-				{
-					"functionName": "playerLift",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 732676635219636
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 392143099596973,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 989582336199957,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 319896822719600,
-									"parameters": {
-										"object": "player_mask",
-										"expression": "player_mask.owner = playerUid"
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "player_mask",
-									"sid": 974187425573292,
-									"parameters": {
-										"animation": "\"lift\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 620516388385089,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "player_mask",
-									"sid": 501630474863190,
-									"parameters": {
-										"animation": "\"lift\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 716328037131840
-						}
-					]
-				},
-				{
-					"functionName": "playerSpin",
-					"functionDescription": "",
-					"functionCategory": "player",
-					"functionReturnType": "none",
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "playerUid",
-							"type": "number",
-							"initialValue": "0",
-							"comment": "",
-							"sid": 140132231282416
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 795037248842647,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 923135133992027,
-									"parameters": {
-										"unique-id": "playerUid"
-									}
-								},
-								{
-									"id": "is-timer-running",
-									"objectClass": "player",
-									"sid": 471690810265868,
-									"behaviorType": "Timer",
-									"parameters": {
-										"tag": "\"stun\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "player",
-									"sid": 517991130338384,
-									"parameters": {
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
-									}
-								},
-								{
-									"id": "apply-torque-towards-angle",
-									"objectClass": "player",
-									"sid": 923285517187339,
-									"disabled": true,
-									"behaviorType": "Physics",
-									"parameters": {
-										"torque": "1000",
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
-									}
-								}
-							],
-							"sid": 754019758950017
-						}
-					]
-				}
-			],
-			"sid": 636162439008866
 		},
 		{
 			"eventType": "group",

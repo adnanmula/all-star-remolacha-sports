@@ -486,6 +486,26 @@
 												}
 											],
 											"sid": 564146958640412
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 164111185810532
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerFall",
+													"sid": 459547234980734,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 632140904538619
 										}
 									],
 									"isOrBlock": true
