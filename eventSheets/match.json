@@ -1186,17 +1186,7 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 794661041413055,
-							"parameters": {
-								"type": "log",
-								"message": "\"Ball reseted\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 205335213358813,
 					"children": [
 						{
@@ -1420,15 +1410,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 710217528214406,
-							"parameters": {
-								"type": "log",
-								"message": "\"Player \" & player.UID & \" - \" & player.name & \" out of bounds\""
-							}
-						},
 						{
 							"callFunction": "resetBall",
 							"sid": 480368582934891

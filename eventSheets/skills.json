@@ -43,17 +43,7 @@
 			],
 			"eventType": "function-block",
 			"conditions": [],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 550907283594083,
-					"parameters": {
-						"type": "log",
-						"message": "\"Player: \" & playerUid & \" executed: \" & skill"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 251184040913478,
 			"children": [
 				{
@@ -1563,15 +1553,6 @@
 					],
 					"actions": [
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 622226145861674,
-							"parameters": {
-								"type": "log",
-								"message": "\"Hooked player (owner \" & prop_skill_hook.owner & \", target \" & player.UID"
-							}
-						},
-						{
 							"id": "set-boolean-instvar",
 							"objectClass": "prop_skill_hook",
 							"sid": 727137066990890,
@@ -1657,15 +1638,6 @@
 					],
 					"actions": [
 						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 361802757313876,
-							"parameters": {
-								"type": "log",
-								"message": "\"Hooked ball (owner \" & prop_skill_hook.owner & \")\""
-							}
-						},
-						{
 							"id": "set-boolean-instvar",
 							"objectClass": "prop_skill_hook",
 							"sid": 396613643739142,
@@ -1733,17 +1705,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 928303778802358,
-							"parameters": {
-								"type": "log",
-								"message": "\"Hook expired (owner \" & prop_skill_hook.owner & \")\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 488969593927797,
 					"children": [
 						{

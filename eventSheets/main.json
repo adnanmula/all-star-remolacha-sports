@@ -48,15 +48,6 @@
 			],
 			"actions": [
 				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 489011884262290,
-					"parameters": {
-						"type": "log",
-						"message": "\"Started layer: \" & LayoutName"
-					}
-				},
-				{
 					"id": "set-canvas-size",
 					"objectClass": "System",
 					"sid": 129918805276159,
@@ -661,15 +652,6 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 223345220637299,
-							"parameters": {
-								"type": "log",
-								"message": "\"Creating \" & character_name & \" for gamepad \" & gamepad_index & \" at \" & x & \"/\" & y"
-							}
-						},
 						{
 							"id": "create-object",
 							"objectClass": "System",

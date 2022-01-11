@@ -277,17 +277,6 @@
 												"gamepad": "player.gamepad_index",
 												"button": "button-a"
 											}
-										},
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 474849228895259,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"axis": "left-analog-y-axis",
-												"comparison": 3,
-												"value": "-gamepad_deadzone"
-											}
 										}
 									],
 									"actions": [],
@@ -339,14 +328,94 @@
 											],
 											"actions": [
 												{
-													"callFunction": "playerMoveUp",
-													"sid": 498371881326166,
+													"callFunction": "playerMoveAngle",
+													"sid": 110607183068032,
+													"parameters": [
+														"player.UID",
+														"270",
+														true
+													]
+												}
+											],
+											"sid": 313777471535740
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 339848584904674,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 3,
+												"value": "-gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 774670718552899,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 948635773558946,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 579368566529679
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerJump",
+													"sid": 707399867521723,
 													"parameters": [
 														"player.UID"
 													]
 												}
 											],
-											"sid": 313777471535740
+											"sid": 733828173219948
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 524591308517182,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 782059110184089,
+													"parameters": [
+														"player.UID",
+														"angle(0,0, Gamepad.Axis(player.gamepad_index, 0), Gamepad.Axis(player.gamepad_index, 1))",
+														false
+													]
+												}
+											],
+											"sid": 922588246229749
 										}
 									],
 									"isOrBlock": true
@@ -366,11 +435,73 @@
 												"gamepad": "player.gamepad_index",
 												"button": "d-pad-left"
 											}
+										}
+									],
+									"actions": [],
+									"sid": 794519248782469,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 357714938950780,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveLeft",
+													"sid": 598921237017922,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 237178049784081
 										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 864458324802187,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 589493553526508,
+													"parameters": [
+														"player.UID",
+														"180",
+														true
+													]
+												}
+											],
+											"sid": 746504778302167
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
 										{
 											"id": "compare-axis",
 											"objectClass": "Gamepad",
-											"sid": 890922394834250,
+											"sid": 945135919721663,
 											"parameters": {
 												"gamepad": "player.gamepad_index",
 												"axis": "left-analog-x-axis",
@@ -379,16 +510,62 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 117869644779702,
+									"children": [
 										{
-											"callFunction": "playerMoveLeft",
-											"sid": 185997244729660,
-											"parameters": [
-												"player.UID"
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 574052580054207,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveLeft",
+													"sid": 825051956007852,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 614621814279667
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 572200735706210,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 976299737447601,
+													"parameters": [
+														"player.UID",
+														"angle(0,0, Gamepad.Axis(player.gamepad_index, 0), Gamepad.Axis(player.gamepad_index, 1))",
+														true
+													]
+												}
+											],
+											"sid": 573437298203966
 										}
 									],
-									"sid": 794519248782469,
 									"isOrBlock": true
 								},
 								{
@@ -406,11 +583,77 @@
 												"gamepad": "player.gamepad_index",
 												"button": "d-pad-right"
 											}
+										}
+									],
+									"actions": [],
+									"sid": 358677277860598,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 177942231149943,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveRight",
+													"sid": 120345696511439,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 151994231463953
 										},
+										{
+											"eventType": "comment",
+											"text": "TODO calcular fuerza para contrarestar gravedad"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 587635134057073,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 182556075570728,
+													"parameters": [
+														"player.UID",
+														"0",
+														true
+													]
+												}
+											],
+											"sid": 932880575470978
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
 										{
 											"id": "compare-axis",
 											"objectClass": "Gamepad",
-											"sid": 953562635732608,
+											"sid": 102615912737065,
 											"parameters": {
 												"gamepad": "player.gamepad_index",
 												"axis": "left-analog-x-axis",
@@ -419,16 +662,62 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 311168760052151,
+									"children": [
 										{
-											"callFunction": "playerMoveRight",
-											"sid": 916084606831522,
-											"parameters": [
-												"player.UID"
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 325513471668767,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"platformer\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveRight",
+													"sid": 779366917418087,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 939981469455298
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 718318922149814,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 438828449890037,
+													"parameters": [
+														"player.UID",
+														"angle(0,0, Gamepad.Axis(player.gamepad_index, 0), Gamepad.Axis(player.gamepad_index, 1))",
+														true
+													]
+												}
+											],
+											"sid": 585870058938725
 										}
 									],
-									"sid": 358677277860598,
 									"isOrBlock": true
 								},
 								{
@@ -445,17 +734,6 @@
 											"parameters": {
 												"gamepad": "player.gamepad_index",
 												"button": "d-pad-down"
-											}
-										},
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 101801306427618,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"axis": "left-analog-y-axis",
-												"comparison": 5,
-												"value": "gamepad_deadzone"
 											}
 										}
 									],
@@ -478,10 +756,12 @@
 											],
 											"actions": [
 												{
-													"callFunction": "playerMoveDown",
-													"sid": 218108557401839,
+													"callFunction": "playerMoveAngle",
+													"sid": 887442486968845,
 													"parameters": [
-														"player.UID"
+														"player.UID",
+														"90",
+														false
 													]
 												}
 											],
@@ -506,6 +786,74 @@
 												}
 											],
 											"sid": 632140904538619
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 557498713667855,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 849039570663206,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 332686874002435,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerMoveAngle",
+													"sid": 829117821825029,
+													"parameters": [
+														"player.UID",
+														"90",
+														false
+													]
+												}
+											],
+											"sid": 251545974551036
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 230629950437691
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerFall",
+													"sid": 653430065692033,
+													"parameters": [
+														"player.UID"
+													]
+												}
+											],
+											"sid": 910960315543344
 										}
 									],
 									"isOrBlock": true
@@ -664,9 +1012,10 @@
 									"actions": [
 										{
 											"callFunction": "playerSpin",
-											"sid": 157100961610904,
+											"sid": 940486094524085,
 											"parameters": [
-												"player.UID"
+												"player.UID",
+												"angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
 											]
 										}
 									],

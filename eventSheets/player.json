@@ -375,6 +375,312 @@
 					]
 				},
 				{
+					"functionName": "playerMoveAngle",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 188633380051418
+						},
+						{
+							"name": "direction",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 106447483080505
+						},
+						{
+							"name": "removeVelocityY",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 494912028795818
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 672205596170747,
+							"parameters": {
+								"type": "log",
+								"message": "\"Moving at \" & direction"
+							}
+						}
+					],
+					"sid": 356157916762992,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 332940924879535,
+									"parameters": {
+										"unique-id": "playerUid"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 519834248333270,
+									"parameters": {
+										"object": "player_mask",
+										"expression": "player_mask.owner = playerUid"
+									}
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 463855834751783,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"stun\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "player",
+									"sid": 374066291970339,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"root\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "apply-force-at-angle",
+									"objectClass": "player",
+									"sid": 903619238454848,
+									"behaviorType": "Physics",
+									"parameters": {
+										"force": "MOVEMENT_FORCE",
+										"angle": "direction",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 229452116475599,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "Self.Physics.VelocityX",
+										"y-component": "0"
+									}
+								}
+							],
+							"sid": 269970401203469,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Right up"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 940022617341644,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 3,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 577525717486237,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 4,
+												"second-value": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 914063283085606,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 666364312325932,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 820332657006971
+								},
+								{
+									"eventType": "comment",
+									"text": "Right down"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 163283412283943,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 769797890167666,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 2,
+												"second-value": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 664899844608748,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 545102930958027,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 700457377320264
+								},
+								{
+									"eventType": "comment",
+									"text": "Left up"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 627710756306898,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 5,
+												"second-value": "180"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 733584195029106,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 2,
+												"second-value": "270"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 622326048061462,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 875260539200757,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 103685727662089
+								},
+								{
+									"eventType": "comment",
+									"text": "Left down"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 133019634970592,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 2,
+												"second-value": "180"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 974699519261287,
+											"parameters": {
+												"first-value": "direction",
+												"comparison": 4,
+												"second-value": "90"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "player",
+											"sid": 343576280043366,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "player_mask",
+											"sid": 501234344444151,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 984667051645920
+								}
+							]
+						}
+					]
+				},
+				{
 					"functionName": "playerJump",
 					"functionDescription": "",
 					"functionCategory": "player",
@@ -829,6 +1135,13 @@
 							"initialValue": "0",
 							"comment": "",
 							"sid": 140132231282416
+						},
+						{
+							"name": "direction",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 537103013205874
 						}
 					],
 					"eventType": "function-block",
@@ -862,9 +1175,9 @@
 								{
 									"id": "set-angle",
 									"objectClass": "player",
-									"sid": 990661621923976,
+									"sid": 133542887278436,
 									"parameters": {
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
+										"angle": "direction"
 									}
 								},
 								{
@@ -918,15 +1231,6 @@
 								"x-component": "MAX_VELOCITY_X",
 								"y-component": "Self.Physics.VelocityY"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 151453866932464,
-							"parameters": {
-								"type": "log",
-								"message": "\"Limit right\""
-							}
 						}
 					],
 					"sid": 246013532822851
@@ -955,15 +1259,6 @@
 							"parameters": {
 								"x-component": "-MAX_VELOCITY_X",
 								"y-component": "Self.Physics.VelocityY"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 475996105993372,
-							"parameters": {
-								"type": "log",
-								"message": "\"Limit left\""
 							}
 						}
 					],
@@ -994,15 +1289,6 @@
 								"x-component": "Self.Physics.VelocityX",
 								"y-component": "MAX_VELOCITY_Y"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 425383131998770,
-							"parameters": {
-								"type": "log",
-								"message": "\"Y Limit down\""
-							}
 						}
 					],
 					"sid": 226701919067719
@@ -1031,15 +1317,6 @@
 							"parameters": {
 								"x-component": "Self.Physics.VelocityX",
 								"y-component": "-MAX_VELOCITY_Y"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 812722401071228,
-							"parameters": {
-								"type": "log",
-								"message": "\"Y Limit up\""
 							}
 						}
 					],
@@ -1086,15 +1363,6 @@
 										"x-component": "MAX_VELOCITY_X / 4",
 										"y-component": "Self.Physics.VelocityY"
 									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 322198497434530,
-									"parameters": {
-										"type": "log",
-										"message": "\"Slow limit right\""
-									}
 								}
 							],
 							"sid": 799178453512178,
@@ -1124,15 +1392,6 @@
 									"parameters": {
 										"x-component": "-MAX_VELOCITY_X / 4",
 										"y-component": "Self.Physics.VelocityY"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 424238387779725,
-									"parameters": {
-										"type": "log",
-										"message": "\"Slow limit left\""
 									}
 								}
 							],
@@ -1181,15 +1440,6 @@
 												"x-component": "Self.Physics.VelocityX",
 												"y-component": "MAX_VELOCITY_Y / 4"
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 813609950675161,
-											"parameters": {
-												"type": "log",
-												"message": "\"Flying limit down\""
-											}
 										}
 									],
 									"sid": 643916835324830
@@ -1218,15 +1468,6 @@
 											"parameters": {
 												"x-component": "Self.Physics.VelocityX",
 												"y-component": "-MAX_VELOCITY_Y / 4"
-											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 983705841514693,
-											"parameters": {
-												"type": "log",
-												"message": "\"Flying limit up\""
 											}
 										}
 									],
@@ -1283,15 +1524,6 @@
 												"x-component": "Self.Physics.VelocityX",
 												"y-component": "MAX_VELOCITY_Y "
 											}
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 327814457954093,
-											"parameters": {
-												"type": "log",
-												"message": "\"Fall at max\""
-											}
 										}
 									],
 									"sid": 954585655640039,
@@ -1299,8 +1531,7 @@
 								}
 							]
 						}
-					],
-					"isOrBlock": true
+					]
 				}
 			],
 			"sid": 839352723068105
@@ -1517,17 +1748,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 846224626663829,
-							"parameters": {
-								"type": "log",
-								"message": "\"Stuning player \" & playerUid & \" for \" & duration"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 716499940232457,
 					"children": [
 						{
@@ -1627,17 +1848,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 365948122647921,
-							"parameters": {
-								"type": "log",
-								"message": "\"Unstuning player \" & playerUid"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 904649711265250,
 					"children": [
 						{
@@ -1705,17 +1916,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 246963025667388,
-							"parameters": {
-								"type": "log",
-								"message": "\"Rooting player \" & playerUid & \" for \" & duration"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 952288784934603,
 					"children": [
 						{
@@ -1815,17 +2016,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 260376755134336,
-							"parameters": {
-								"type": "log",
-								"message": "\"Unrooting player \" & playerUid"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 480364542031820,
 					"children": [
 						{
@@ -1907,17 +2098,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 367767257515800,
-							"parameters": {
-								"type": "log",
-								"message": "\"Stunings players at < \" & radius & \" of \" & x & \"/\" & y &  \" for \" & duration"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 680777893793030,
 					"children": [
 						{
@@ -1957,15 +2138,6 @@
 												"player.UID",
 												"duration"
 											]
-										},
-										{
-											"id": "log",
-											"objectClass": "Browser",
-											"sid": 149128068309051,
-											"parameters": {
-												"type": "log",
-												"message": "player.name & \"/\" & distance(x, y, player.X, player.Y)"
-											}
 										}
 									],
 									"sid": 106280187718019
