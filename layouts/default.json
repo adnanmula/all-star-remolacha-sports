@@ -1345,6 +1345,59 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "particle_fall",
+					"properties": {
+						"rate": 10,
+						"spray-cone": 0,
+						"type": "continuous-spray",
+						"object": -1,
+						"live-preview": false,
+						"speed": 500,
+						"size": 16,
+						"opacity": 100,
+						"grow-rate": 0,
+						"x-randomiser": 100,
+						"y-randomiser": 0,
+						"initial-speed-randomiser": 0,
+						"size-randomiser": 0,
+						"grow-rate-randomiser": 0,
+						"acceleration": -150,
+						"gravity": 0,
+						"angle-randomiser": 0,
+						"life-speed-randomiser": 800,
+						"opacity-randomiser": 0,
+						"destroy-mode": "fade-to-invisible",
+						"timeout": 0.3
+					},
+					"uid": 125,
+					"instanceVariables": {
+						"owner": 0
+					},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"world": {
+						"x": 496,
+						"y": 133,
+						"width": 100,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 4.71238898038469,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 647629974793800,

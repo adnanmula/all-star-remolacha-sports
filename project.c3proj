@@ -327,7 +327,8 @@
 					"particle_fire",
 					"particle_root",
 					"particle_stun",
-					"particle_tp"
+					"particle_tp",
+					"particle_fall"
 				],
 				"subfolders": [],
 				"name": "particles"

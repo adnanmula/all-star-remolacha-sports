@@ -838,6 +838,41 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "player",
+											"sid": 459355901021348,
+											"parameters": {
+												"object": "ground_detector"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 469310914207869,
+											"parameters": {
+												"object": "goal_football_solid",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "playerStopFall",
+											"sid": 320323122458423,
+											"parameters": [
+												"player.UID",
+												"0"
+											]
+										}
+									],
+									"sid": 699479861556789,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
 											"sid": 353013399268955,
 											"parameters": {
 												"object": "ground_detector"
@@ -898,9 +933,249 @@
 												}
 											],
 											"sid": 749956840655683,
+											"children": [
+												{
+													"eventType": "variable",
+													"name": "shouldCreateParticle",
+													"type": "boolean",
+													"initialValue": "true",
+													"comment": "",
+													"isStatic": false,
+													"isConstant": false,
+													"sid": 793656720424386
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 962381398234880,
+															"parameters": {
+																"first-value": "particle_fall.Count",
+																"comparison": 0,
+																"second-value": "0"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "player",
+															"sid": 880565464352601,
+															"parameters": {
+																"object": "particle_fall",
+																"layer": "\"particles\"",
+																"image-point": "\"spawn_down\"",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "particle_fall",
+															"sid": 134605822859440,
+															"parameters": {
+																"instance-variable": "owner",
+																"value": "playerUid"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "particle_fall",
+															"sid": 303827022624523,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "player",
+																"x": true,
+																"y": true,
+																"angle": false,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "particle_fall",
+															"sid": 319323883372944,
+															"parameters": {
+																"angle": "270"
+															}
+														}
+													],
+													"sid": 807215274269138
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "else",
+															"objectClass": "System",
+															"sid": 131170629180862
+														},
+														{
+															"id": "pick-by-evaluate",
+															"objectClass": "System",
+															"sid": 816879235886245,
+															"parameters": {
+																"object": "particle_fall",
+																"expression": "particle_fall.owner = playerUid"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 198082464815520,
+															"parameters": {
+																"variable": "shouldCreateParticle",
+																"value": "false"
+															}
+														}
+													],
+													"sid": 949546904100621
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 595381242969751,
+															"parameters": {
+																"variable": "shouldCreateParticle"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "player",
+															"sid": 374397217823163,
+															"parameters": {
+																"object": "particle_fall",
+																"layer": "\"particles\"",
+																"image-point": "\"spawn_down\"",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "set-instvar-value",
+															"objectClass": "particle_fall",
+															"sid": 781606795195013,
+															"parameters": {
+																"instance-variable": "owner",
+																"value": "playerUid"
+															}
+														},
+														{
+															"id": "pin-to-object-properties",
+															"objectClass": "particle_fall",
+															"sid": 369323743535360,
+															"behaviorType": "Pin",
+															"parameters": {
+																"pin-to": "player",
+																"x": true,
+																"y": true,
+																"angle": false,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														},
+														{
+															"id": "set-angle",
+															"objectClass": "particle_fall",
+															"sid": 593944828900545,
+															"parameters": {
+																"angle": "270"
+															}
+														}
+													],
+													"sid": 999225491230531
+												}
+											],
 											"isOrBlock": true
 										}
 									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"functionName": "playerStopFall",
+					"functionDescription": "",
+					"functionCategory": "player",
+					"functionReturnType": "none",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "playerUid",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 809210434708115
+						},
+						{
+							"name": "particleDelay",
+							"type": "number",
+							"initialValue": "0.3",
+							"comment": "",
+							"sid": 489023738033208
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 959836856835341,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 454384113836521,
+									"parameters": {
+										"object": "particle_fall"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 225816776289532,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 353020701555509,
+											"parameters": {
+												"first-value": "particle_fall.owner",
+												"comparison": 0,
+												"second-value": "playerUid"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 988175980411366,
+											"parameters": {
+												"seconds": "particleDelay"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "particle_fall",
+											"sid": 254343839565997
+										}
+									],
+									"sid": 184569523072909
 								}
 							]
 						}

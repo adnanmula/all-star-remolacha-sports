@@ -859,6 +859,75 @@
 									"isOrBlock": true
 								},
 								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 262001222018630,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "d-pad-down"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-axis",
+											"objectClass": "Gamepad",
+											"sid": 520495399064839,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"axis": "left-analog-y-axis",
+												"comparison": 5,
+												"value": "gamepad_deadzone"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 592945850728890,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "player",
+													"sid": 767127570463485,
+													"parameters": {
+														"instance-variable": "movementType",
+														"comparison": 0,
+														"value": "\"flying\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 494805499221798
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 975721405167889
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "playerStopFall",
+													"sid": 676579232136128,
+													"parameters": [
+														"playerUid",
+														"0.3"
+													]
+												}
+											],
+											"sid": 479283293997384
+										}
+									]
+								},
+								{
 									"eventType": "comment",
 									"text": "NO DPAD/JOY LEFT OR DPAD/JOY RIGHT"
 								},
