@@ -1,0 +1,139 @@
+{
+	"name": "SrHuevo",
+	"plugin-id": "Sprite",
+	"sid": 470434859441059,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 691962275727652,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 567020512469412,
+				"name": "kick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.5,
+								"y": 0.875
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 370316426747364,
+				"name": "lift",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 20,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9515377,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 20,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5202433,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 359653835243978,
+				"name": "walking",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

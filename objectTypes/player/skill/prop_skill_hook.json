@@ -1,0 +1,84 @@
+{
+	"name": "prop_skill_hook",
+	"plugin-id": "Sprite",
+	"sid": 162199281269226,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hasTarget",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 924201247294325
+		},
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 876148734124238
+		},
+		{
+			"name": "objectHooked",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 101413903217959
+		},
+		{
+			"name": "objectHookedUid",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 857192037338474
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 266574739398599
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 695379616613405
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 30,
+						"height": 100,
+						"originX": 0.5,
+						"originY": 0.9700000000000003,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2436691,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "hook",
+								"x": 0.5,
+								"y": 0.1
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 453892635986173,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

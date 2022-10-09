@@ -1,0 +1,45 @@
+{
+	"name": "hud_skill_mask",
+	"plugin-id": "Sprite",
+	"sid": 698028421030991,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "owner",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 404169382055612
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 25,
+						"height": 25,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5215572,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 687007835948416,
+				"name": "default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

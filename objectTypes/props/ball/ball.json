@@ -1,0 +1,88 @@
+{
+	"name": "ball",
+	"plugin-id": "Sprite",
+	"sid": 493654549648314,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "onFire",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 274990260739644
+		},
+		{
+			"name": "onFundinaso",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 956071778099842
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 693692031679167
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Timer",
+			"sid": 809309094919959
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 611461606650670
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 79,
+						"height": 79,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 0,
+						"collisionPoly": {
+							"points": [
+								0.13924050632911392,
+								0.13924050632911392,
+								0.5,
+								0,
+								0.8481012658227848,
+								0.13924050632911392,
+								0.9873417721518988,
+								0.5,
+								0.8481012658227848,
+								0.8481012658227848,
+								0.5,
+								0.9873417721518988,
+								0.13924050632911392,
+								0.8481012658227848,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 972124243009505,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

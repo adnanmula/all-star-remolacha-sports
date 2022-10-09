@@ -49,6 +49,7 @@
 					"functionDescription": "",
 					"functionCategory": "creator",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -141,6 +142,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -184,7 +186,8 @@
 								"layer": "\"main\"",
 								"x": "x",
 								"y": "y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -471,6 +474,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -514,7 +518,8 @@
 								"layer": "\"main\"",
 								"x": "x > LayoutWidth/2 ? x - 30  : x + 30",
 								"y": "200",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -622,6 +627,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -682,7 +688,8 @@
 										"layer": "\"main\"",
 										"x": "LayoutWidth / 2 - goal_volley.Width/2",
 										"y": "LayoutHeight / 2",
-										"create-hierarchy": false
+										"create-hierarchy": false,
+										"template-name": "\"\""
 									}
 								},
 								{
@@ -800,7 +807,8 @@
 										"layer": "\"main\"",
 										"x": "x < (LayoutWidth / 2) ? (LayoutWidth/4) : (LayoutWidth/4) * 3",
 										"y": "LayoutHeight - 3",
-										"create-hierarchy": false
+										"create-hierarchy": false,
+										"template-name": "\"\""
 									}
 								},
 								{
@@ -1182,6 +1190,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1426,6 +1435,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "number",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
@@ -1513,6 +1523,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",

@@ -1,0 +1,139 @@
+{
+	"name": "Buko",
+	"plugin-id": "Sprite",
+	"sid": 333878053110922,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 54,
+						"height": 77,
+						"originX": 0.46296296296296297,
+						"originY": 0.33766233766233766,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6909339,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.46296296296296297,
+								"y": 0.8246753246753247
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 549533785413032,
+				"name": "idle",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 53,
+						"height": 79,
+						"originX": 0.4339622641509434,
+						"originY": 0.3717948717948718,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 831229,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.4339622641509434,
+								"y": 0.8525641025641025
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 879870142913122,
+				"name": "kick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 54,
+						"height": 79,
+						"originX": 0.4444444444444444,
+						"originY": 0.3717948717948718,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6861193,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "feet_detector",
+								"x": 0.4444444444444444,
+								"y": 0.8525641025641025
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 108712014634279,
+				"name": "lift",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
+					{
+						"width": 55,
+						"height": 77,
+						"originX": 0.43636363636363634,
+						"originY": 0.33766233766233766,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6781734,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 51,
+						"height": 80,
+						"originX": 0.43137254901960786,
+						"originY": 0.3625,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4481598,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 621571331884911,
+				"name": "walking",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

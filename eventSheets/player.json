@@ -43,6 +43,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MOVEMENT_FLIYING_FORCE",
+			"type": "number",
+			"initialValue": "25000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 886105541522931
+		},
+		{
+			"eventType": "variable",
 			"name": "JUMP_IMPULSE",
 			"type": "number",
 			"initialValue": "1000",
@@ -73,6 +83,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -157,6 +168,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -241,6 +253,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -310,6 +323,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -379,6 +393,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -463,10 +478,10 @@
 								{
 									"id": "apply-force-at-angle",
 									"objectClass": "player",
-									"sid": 903619238454848,
+									"sid": 549018862296277,
 									"behaviorType": "Physics",
 									"parameters": {
-										"force": "MOVEMENT_FORCE",
+										"force": "MOVEMENT_FLIYING_FORCE",
 										"angle": "direction",
 										"image-point": "0"
 									}
@@ -685,6 +700,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -782,6 +798,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1109,6 +1126,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1186,6 +1204,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1252,6 +1271,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1327,6 +1347,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -1402,6 +1423,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2004,6 +2026,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2111,6 +2134,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2172,6 +2196,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2279,6 +2304,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -2340,6 +2366,7 @@
 					"functionDescription": "",
 					"functionCategory": "player",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
