@@ -7,42 +7,49 @@
 			"name": "gamepad_index",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 702767350279629
 		},
 		{
 			"name": "name",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 357197027746233
 		},
 		{
 			"name": "skill0",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 958123450825148
 		},
 		{
 			"name": "skill0_cooldown",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 681669803387890
 		},
 		{
 			"name": "index",
 			"type": "number",
 			"desc": "",
+			"show": true,
 			"sid": 599878796183808
 		},
 		{
 			"name": "metronome_next",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 171017306399447
 		},
 		{
 			"name": "movementType",
 			"type": "string",
 			"desc": "",
+			"show": true,
 			"sid": 609298281170658
 		}
 	],

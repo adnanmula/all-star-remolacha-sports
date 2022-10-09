@@ -505,6 +505,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [],
 			"eventType": "function-block",
@@ -597,6 +598,7 @@
 					"functionDescription": "",
 					"functionCategory": "creator",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
@@ -661,7 +663,8 @@
 								"layer": "\"main\"",
 								"x": "x",
 								"y": "y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -673,7 +676,8 @@
 								"layer": "\"main\"",
 								"x": "player_collision.X",
 								"y": "player_collision.Y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						},
 						{
@@ -685,7 +689,8 @@
 								"layer": "\"main\"",
 								"x": "x",
 								"y": "y",
-								"create-hierarchy": false
+								"create-hierarchy": false,
+								"template-name": "\"\""
 							}
 						}
 					],
@@ -1761,6 +1766,7 @@
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",

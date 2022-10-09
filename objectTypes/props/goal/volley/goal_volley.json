@@ -1,0 +1,43 @@
+{
+	"name": "goal_volley",
+	"plugin-id": "Sprite",
+	"sid": 937547023101095,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 497088035270801
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 12,
+						"height": 120,
+						"originX": 0.5833333333333334,
+						"originY": 0.5083333333333333,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 36,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 603376719649961,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -214,6 +214,7 @@
 					"functionDescription": "",
 					"functionCategory": "input",
 					"functionReturnType": "none",
+					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [
 						{

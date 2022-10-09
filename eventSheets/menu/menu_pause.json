@@ -1,0 +1,1445 @@
+{
+	"name": "menu_pause",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "menu_pause_is_open",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 194638152202801
+		},
+		{
+			"eventType": "variable",
+			"name": "menu_pause_current_index",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 154092753943648
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu pause - Common",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 903590077941674
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 247922627427669,
+							"parameters": {
+								"time-scale": "1.0"
+							}
+						},
+						{
+							"callFunction": "menuPauseHide",
+							"sid": 638457304997617
+						}
+					],
+					"sid": 728680907429033
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 937702278426327,
+							"parameters": {
+								"first-value": "menu_pause_current_index",
+								"comparison": 2,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 415853728502031,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "2"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 288552148148842
+						}
+					],
+					"sid": 856259682018589
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 188085721407229,
+							"parameters": {
+								"first-value": "menu_pause_current_index",
+								"comparison": 4,
+								"second-value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 952452624534151,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 455036103153547
+						}
+					],
+					"sid": 960349411468556
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 876093977352039,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 299845048037127,
+							"parameters": {
+								"time-scale": "0"
+							}
+						}
+					],
+					"sid": 468427131680814
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 516455275330431,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 704620526247868,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 857957781633086
+				},
+				{
+					"functionName": "menuPauseView",
+					"functionDescription": "",
+					"functionCategory": "menu_pause",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 695121580214452,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 631310259211433
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 836578594160361,
+							"parameters": {
+								"layer": "\"hud\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 915526149181751
+				},
+				{
+					"functionName": "menuPauseHide",
+					"functionDescription": "",
+					"functionCategory": "menu_pause",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 943989615663522,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 945899693350380,
+							"parameters": {
+								"layer": "\"hud\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 149010444307614
+						}
+					],
+					"sid": 297654352328530
+				},
+				{
+					"functionName": "menuPauseUpdate",
+					"functionDescription": "",
+					"functionCategory": "menu_pause",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 645656579751493,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 382718975569341,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "menu_match_config_selector",
+									"sid": 428831167562947,
+									"parameters": {
+										"y": "pixel_spritefont.Y"
+									}
+								}
+							],
+							"sid": 876333984386313
+						}
+					]
+				}
+			],
+			"sid": 854554342853689
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu pause - Keyboard",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 286790802179201,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 687015169118905,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 140589829600072,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 970060560030426,
+							"parameters": {
+								"variable": "menu_pause_is_open",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "menuPauseView",
+							"sid": 565778220934616
+						}
+					],
+					"sid": 397420326705635
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 157859514810734,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 299128628772726,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 791434772329043,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 121107318053209,
+							"parameters": {
+								"variable": "menu_pause_is_open",
+								"value": "false"
+							}
+						},
+						{
+							"callFunction": "menuPauseHide",
+							"sid": 824672309984972
+						}
+					],
+					"sid": 650481457655975
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 804025321193304,
+							"parameters": {
+								"key": 87
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 924601767496653,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 188592764625462,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 480056790847058
+						}
+					],
+					"sid": 301156122866971
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 384822908424624,
+							"parameters": {
+								"key": 83
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 527955708152530,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 352660957021756,
+							"parameters": {
+								"variable": "menu_pause_current_index",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "menuPauseUpdate",
+							"sid": 285231734225405
+						}
+					],
+					"sid": 472658119074650
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 517358949570038,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 984253195188650,
+							"parameters": {
+								"key": 69
+							}
+						}
+					],
+					"actions": [],
+					"sid": 989434877602565,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 180572267534108,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 247273126301964,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 508514061095262,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 992388609428634,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 283803424848684,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"resume\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 623504197795049,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 398470456984906,
+													"parameters": {
+														"variable": "menu_pause_is_open",
+														"value": "false"
+													}
+												},
+												{
+													"callFunction": "menuPauseHide",
+													"sid": 146396186952049
+												}
+											],
+											"sid": 824853166321303
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 604803564450052,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"main\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 744214840011717,
+													"parameters": {
+														"layout": "menu_main"
+													}
+												}
+											],
+											"sid": 990617138535187
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 935626188688856,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 476824786144836,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 206820610033404
+														}
+													],
+													"actions": [
+														{
+															"id": "request-fullscreen",
+															"objectClass": "Browser",
+															"sid": 532643761757014,
+															"parameters": {
+																"mode": "stretch-letterbox-scale",
+																"navigation-ui": "auto"
+															}
+														}
+													],
+													"sid": 292734066955462
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 450130779420518,
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "cancel-fullscreen",
+															"objectClass": "Browser",
+															"sid": 484994906104592
+														}
+													],
+													"sid": 566285985690029
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 104459142983484,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 454035869837091,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 231301628911661,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 792798162633084,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 717118844687613,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 929974739033688,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 816372032831129
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 535366768028608,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 553618991834468,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 533732837306969,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 622388888752216,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 834078987074011
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 752909293416761
+						}
+					],
+					"sid": 425845715475545
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 969390521429154,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 993359276707110,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 991277431301226,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 296481880478055,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 397588928542568,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 544913953835801,
+							"parameters": {
+								"mode": "stretch-letterbox-scale",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 193967024810331
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 888284832226147,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 886254856120842,
+							"parameters": {
+								"variable": "menu_pause_is_open"
+							}
+						},
+						{
+							"id": "pick-by-evaluate",
+							"objectClass": "System",
+							"sid": 192343284992898,
+							"parameters": {
+								"object": "pixel_spritefont",
+								"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 228290136877206,
+							"parameters": {
+								"first-value": "pixel_spritefont.action",
+								"comparison": 0,
+								"second-value": "\"fullscreen\""
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 318794818862777
+						}
+					],
+					"actions": [
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 436248413244073
+						}
+					],
+					"sid": 212597006220137
+				}
+			],
+			"sid": 885905137656697
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu pause - Gamepad",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 394764344593141,
+							"parameters": {
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 196654808504418,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 849106315160053,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-up"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 834856112257664,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 2,
+										"value": "-gamepad_deadzone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 450139285501913,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 387891616069194,
+											"parameters": {
+												"variable": "menu_pause_is_open"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 338052420047858
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 322793616288705,
+											"parameters": {
+												"variable": "menu_pause_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "menuPauseUpdate",
+											"sid": 915567725742170
+										}
+									],
+									"sid": 907283703183408
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 860817663429761,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-down"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 629201816948046,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 4,
+										"value": "gamepad_deadzone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 180717482181177,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 377560712417011,
+											"parameters": {
+												"variable": "menu_pause_is_open"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 540732634031148
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 539943407870756,
+											"parameters": {
+												"variable": "menu_pause_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "menuPauseUpdate",
+											"sid": 586975329550008
+										}
+									],
+									"sid": 905842429320846
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 112623328262973,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "start-menu"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 539721784641110,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 490664238470965,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 482275536165531,
+									"parameters": {
+										"variable": "menu_pause_is_open",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "menuPauseView",
+									"sid": 741894336928873
+								}
+							],
+							"sid": 791749703063581
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 907805689650088,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "start-menu"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 665620024285512,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 842353796986145,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 900860116837239,
+									"parameters": {
+										"variable": "menu_pause_is_open",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "menuPauseHide",
+									"sid": 939092422976752
+								}
+							],
+							"sid": 792202425906413
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 280548497629714,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 643963150010501,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 876111798843543,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 893616906503771,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 121067406184696,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 535954747970766,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"resume\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 520810537811921,
+													"parameters": {
+														"seconds": "0"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 848950504186176,
+													"parameters": {
+														"variable": "menu_pause_is_open",
+														"value": "false"
+													}
+												},
+												{
+													"callFunction": "menuPauseHide",
+													"sid": 244179621035225
+												}
+											],
+											"sid": 493261515371993
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 702954022742831,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"main\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 744546597019856,
+													"parameters": {
+														"layout": "menu_main"
+													}
+												}
+											],
+											"sid": 913380501396645
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 732195069791385,
+													"parameters": {
+														"first-value": "pixel_spritefont.action",
+														"comparison": 0,
+														"second-value": "\"fullscreen\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 935021281911804,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 836549874125922
+														}
+													],
+													"actions": [
+														{
+															"id": "request-fullscreen",
+															"objectClass": "Browser",
+															"sid": 749493277607740,
+															"parameters": {
+																"mode": "stretch-letterbox-scale",
+																"navigation-ui": "auto"
+															}
+														}
+													],
+													"sid": 483923482244671
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-fullscreen",
+															"objectClass": "Browser",
+															"sid": 624852098051350,
+															"isInverted": true
+														}
+													],
+													"actions": [
+														{
+															"id": "cancel-fullscreen",
+															"objectClass": "Browser",
+															"sid": 274296666827104
+														}
+													],
+													"sid": 724152663310601
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 325477167599020,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 392767911130399,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 951605449645724,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 449038141222342,
+									"parameters": {
+										"first-value": "pixel_spritefont.action",
+										"comparison": 0,
+										"second-value": "\"fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 720144662044545,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 937611519569419,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 868746473637232
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 174891385335470,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 227969910936630,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 285376186510533,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_pause_option\" & pixel_spritefont.index = menu_pause_current_index"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 349516554563153,
+									"parameters": {
+										"first-value": "pixel_spritefont.action",
+										"comparison": 0,
+										"second-value": "\"fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 454777419631832
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 101962448287830
+								}
+							],
+							"sid": 779930451124344
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 463454515219214,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 320067645325801,
+									"parameters": {
+										"variable": "menu_pause_is_open"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 459008334989688,
+									"parameters": {
+										"seconds": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 986660328006909,
+									"parameters": {
+										"variable": "menu_pause_is_open",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "menuPauseHide",
+									"sid": 868092869626997
+								}
+							],
+							"sid": 402101405745729
+						}
+					]
+				}
+			],
+			"sid": 417925091680347
+		}
+	],
+	"sid": 735644900307418
+}

@@ -10,6 +10,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -309,6 +310,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -412,7 +414,8 @@
 										"layer": "\"main\"",
 										"x": "ball.X",
 										"y": "ball.Y",
-										"create-hierarchy": false
+										"create-hierarchy": false,
+										"template-name": "\"\""
 									}
 								},
 								{
@@ -479,6 +482,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -555,6 +559,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -724,6 +729,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -794,6 +800,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -933,6 +940,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -996,6 +1004,7 @@
 			"functionDescription": "",
 			"functionCategory": "",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1295,6 +1304,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
@@ -1384,6 +1394,7 @@
 			"functionDescription": "",
 			"functionCategory": "skill",
 			"functionReturnType": "none",
+			"functionCopyPicked": false,
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
