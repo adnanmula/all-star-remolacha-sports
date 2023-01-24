@@ -288,9 +288,14 @@
 													}
 												},
 												{
-													"id": "trigger-once-while-true",
+													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 177359494584151
+													"sid": 463066368566414,
+													"parameters": {
+														"first-value": "Functions.playerIsJumping(player.UID)",
+														"comparison": 0,
+														"second-value": "0"
+													}
 												}
 											],
 											"actions": [
@@ -365,9 +370,14 @@
 													}
 												},
 												{
-													"id": "trigger-once-while-true",
+													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 579368566529679
+													"sid": 187292542144144,
+													"parameters": {
+														"first-value": "Functions.playerIsJumping(player.UID)",
+														"comparison": 0,
+														"second-value": "0"
+													}
 												}
 											],
 											"actions": [
@@ -776,7 +786,8 @@
 													]
 												}
 											],
-											"sid": 632140904538619
+											"sid": 632140904538619,
+											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -1335,6 +1346,111 @@
 								}
 							],
 							"sid": 401427746900659
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "playerIsJumping",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 786294816606729
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 447182542768218,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 256375346785827,
+							"parameters": {
+								"unique-id": "playerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 825814806261109,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 634143457454308,
+									"parameters": {
+										"first-value": "player.Physics.VelocityY",
+										"comparison": 2,
+										"second-value": "-10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 395054232584397,
+									"parameters": {
+										"value": "1"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 817756955319328,
+									"parameters": {
+										"type": "log",
+										"message": "\"Is jumping\""
+									}
+								}
+							],
+							"sid": 409021296066128
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 826363054266592
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 218830541518089,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 481751230036093,
+									"parameters": {
+										"type": "log",
+										"message": "\"Is not jumping\""
+									}
+								}
+							],
+							"sid": 188363049682609
 						}
 					]
 				}

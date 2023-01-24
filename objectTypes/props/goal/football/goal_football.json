@@ -29,8 +29,8 @@
 						"imagePoints": [
 							{
 								"name": "crossbar",
-								"x": 0.9933333333333335,
-								"y": 5.551115123125783e-17
+								"x": 0.5,
+								"y": 0
 							},
 							{
 								"name": "goal_detector",
@@ -41,6 +41,11 @@
 								"name": "camp_detector",
 								"x": 1.3266666666666658,
 								"y": 0.5
+							},
+							{
+								"name": "crossbar_mirrored",
+								"x": 0,
+								"y": 0
 							}
 						],
 						"duration": 1

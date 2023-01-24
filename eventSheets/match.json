@@ -201,7 +201,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_football_solid",
-							"sid": 189746638167870,
+							"sid": 115527370014719,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -383,9 +383,9 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football_solid",
-									"sid": 843931855110274,
+									"sid": 873186961774039,
 									"parameters": {
-										"width": "goal_football.Width * 10",
+										"width": "goal_football.Width",
 										"height": "10"
 									}
 								},

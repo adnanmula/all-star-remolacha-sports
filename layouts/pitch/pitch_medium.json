@@ -770,7 +770,7 @@
 				{
 					"type": "ground_detector",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -781,7 +781,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 470,
-						"y": 550,
+						"y": 567,
 						"width": 1117,
 						"height": 91,
 						"originX": 0.5,

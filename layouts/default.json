@@ -279,7 +279,7 @@
 						},
 						"Physics": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,
@@ -302,7 +302,7 @@
 						"y": 8.344111935606044,
 						"width": 185.86051065364535,
 						"height": 11.523703615162432,
-						"originX": 1,
+						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
 							1,

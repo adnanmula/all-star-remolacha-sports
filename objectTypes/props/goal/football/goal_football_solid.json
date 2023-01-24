@@ -29,7 +29,7 @@
 					{
 						"width": 10,
 						"height": 10,
-						"originX": 1,
+						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
