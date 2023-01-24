@@ -13,6 +13,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MAX_VELOCITY_X_ON_GROUND",
+			"type": "number",
+			"initialValue": "400",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 853679040597853
+		},
+		{
+			"eventType": "variable",
 			"name": "MAX_VELOCITY_Y",
 			"type": "number",
 			"initialValue": "500",
@@ -55,7 +65,7 @@
 			"eventType": "variable",
 			"name": "JUMP_IMPULSE",
 			"type": "number",
-			"initialValue": "1000",
+			"initialValue": "2000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -1522,10 +1532,10 @@
 						{
 							"id": "set-velocity",
 							"objectClass": "player",
-							"sid": 418737658710247,
+							"sid": 688715681471565,
 							"behaviorType": "Physics",
 							"parameters": {
-								"x-component": "MAX_VELOCITY_X",
+								"x-component": "MAX_VELOCITY_X_ON_GROUND",
 								"y-component": "Self.Physics.VelocityY"
 							}
 						}
@@ -1551,10 +1561,10 @@
 						{
 							"id": "set-velocity",
 							"objectClass": "player",
-							"sid": 893977480480008,
+							"sid": 792942491856386,
 							"behaviorType": "Physics",
 							"parameters": {
-								"x-component": "-MAX_VELOCITY_X",
+								"x-component": "-MAX_VELOCITY_X_ON_GROUND",
 								"y-component": "Self.Physics.VelocityY"
 							}
 						}
