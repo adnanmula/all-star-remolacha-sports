@@ -1409,15 +1409,6 @@
 									"parameters": {
 										"value": "1"
 									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 817756955319328,
-									"parameters": {
-										"type": "log",
-										"message": "\"Is jumping\""
-									}
 								}
 							],
 							"sid": 409021296066128
@@ -1438,15 +1429,6 @@
 									"sid": 218830541518089,
 									"parameters": {
 										"value": "0"
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 481751230036093,
-									"parameters": {
-										"type": "log",
-										"message": "\"Is not jumping\""
 									}
 								}
 							],
@@ -1501,15 +1483,6 @@
 								"angle": "90",
 								"image-point": "0"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 888034820359681,
-							"parameters": {
-								"type": "log",
-								"message": "\"Jugador cayendo\""
-							}
 						}
 					],
 					"sid": 806201437511229
@@ -1533,15 +1506,6 @@
 								"force": "300",
 								"angle": "90",
 								"image-point": "0"
-							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 894639254829862,
-							"parameters": {
-								"type": "log",
-								"message": "\"Jugador no cayendo\""
 							}
 						}
 					],

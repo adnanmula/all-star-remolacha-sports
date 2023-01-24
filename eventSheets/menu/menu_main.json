@@ -970,48 +970,6 @@
 				}
 			],
 			"sid": 577776575781846
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 807821921343508
-				}
-			],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 396601266936362,
-					"disabled": true,
-					"parameters": {
-						"type": "log",
-						"message": "angle(0,0, (Gamepad.Axis(player.gamepad_index, 0) +100) / 2, (Gamepad.Axis(player.gamepad_index, 1) + 100) / 2)"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 296327883997341,
-					"parameters": {
-						"type": "log",
-						"message": "\"1: \" & (Gamepad.Axis(player.gamepad_index, 0) +100) / 2"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 708170312626579,
-					"parameters": {
-						"type": "log",
-						"message": "\"2: \" & (Gamepad.Axis(player.gamepad_index, 1) +100) / 2"
-					}
-				}
-			],
-			"sid": 728756117525942,
-			"disabled": true
 		}
 	],
 	"sid": 795016252309516

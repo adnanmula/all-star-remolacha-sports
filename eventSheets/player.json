@@ -508,17 +508,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 672205596170747,
-							"parameters": {
-								"type": "log",
-								"message": "\"Moving at \" & direction"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 356157916762992,
 					"children": [
 						{
@@ -859,13 +849,33 @@
 												"offset-x": "0",
 												"offset-y": "15"
 											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 589390011989079,
+											"parameters": {
+												"object": "ball",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 789184767849556,
+											"parameters": {
+												"object": "player_collision",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
 										}
 									],
 									"actions": [
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "player",
-											"sid": 516384088436188,
+											"sid": 337598804667086,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "JUMP_IMPULSE",
