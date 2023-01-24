@@ -726,6 +726,14 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
+									"sid": 924882587056944,
+									"parameters": {
+										"object": "player_collision"
+									}
+								},
+								{
+									"id": "pick-last-created",
+									"objectClass": "System",
 									"sid": 375413789119301,
 									"parameters": {
 										"object": "player_body_detector"
@@ -733,48 +741,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "player_body_detector",
-									"sid": 377016524599410,
-									"parameters": {
-										"width": "abs(player.Width) + 19",
-										"height": "player.Height + 22"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player_body_detector",
-									"sid": 274049808367312,
-									"parameters": {
-										"x": "player.X",
-										"y": "player.Y"
-									}
-								},
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "player_body_detector",
-									"sid": 410633513742944,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "player",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "player_body_detector",
-									"sid": 634790910779769,
-									"parameters": {
-										"instance-variable": "owner",
-										"value": "player.UID"
-									}
-								},
 								{
 									"id": "set-scale",
 									"objectClass": "player",
@@ -858,14 +824,6 @@
 									"sid": 659903675480075,
 									"parameters": {
 										"z": "3"
-									}
-								},
-								{
-									"id": "set-z-elevation",
-									"objectClass": "player_body_detector",
-									"sid": 772962880805837,
-									"parameters": {
-										"z": "2"
 									}
 								},
 								{
@@ -1629,6 +1587,56 @@
 									"eventType": "block",
 									"conditions": [],
 									"actions": [
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player_body_detector",
+											"sid": 156481114269506,
+											"parameters": {
+												"z": "2"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player_body_detector",
+											"sid": 192349835113783,
+											"parameters": {
+												"width": "abs(player_collision.Width) * 1.5",
+												"height": "player_collision.Height * 1.2"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "player_body_detector",
+											"sid": 298253598469858,
+											"parameters": {
+												"x": "player_collision.X",
+												"y": "player_collision.Y"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "player_body_detector",
+											"sid": 485064783899267,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "player_collision",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_body_detector",
+											"sid": 626944615987999,
+											"parameters": {
+												"instance-variable": "owner",
+												"value": "player.UID"
+											}
+										},
 										{
 											"id": "set-size",
 											"objectClass": "feet_detector",

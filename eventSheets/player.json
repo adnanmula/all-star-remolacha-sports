@@ -169,7 +169,46 @@
 									}
 								}
 							],
-							"sid": 807520729726259
+							"sid": 807520729726259,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 703328239556165,
+											"parameters": {
+												"first-value": "Functions.playerIsFalling(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 218353780259742,
+											"parameters": {
+												"first-value": "Functions.playerIsJumping(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_mask",
+											"sid": 347337766005644,
+											"parameters": {
+												"animation": "\"walking\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 877598776501430
+								}
+							]
 						}
 					]
 				},
@@ -254,7 +293,46 @@
 									}
 								}
 							],
-							"sid": 392139289977961
+							"sid": 392139289977961,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 356891751356249,
+											"parameters": {
+												"first-value": "Functions.playerIsFalling(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 116159160322790,
+											"parameters": {
+												"first-value": "Functions.playerIsJumping(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_mask",
+											"sid": 946017584852763,
+											"parameters": {
+												"animation": "\"walking\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 529265512190902
+								}
+							]
 						}
 					]
 				},
