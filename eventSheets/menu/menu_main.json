@@ -276,10 +276,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 761518091866977,
+							"sid": 786944553326739,
 							"parameters": {
 								"variable": "menu_main_current_index",
-								"value": "4"
+								"value": "3"
 							}
 						},
 						{
@@ -295,11 +295,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 361523582372555,
+							"sid": 385056491085164,
 							"parameters": {
 								"first-value": "menu_main_current_index",
 								"comparison": 4,
-								"second-value": "4"
+								"second-value": "3"
 							}
 						}
 					],

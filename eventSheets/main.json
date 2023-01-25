@@ -726,14 +726,6 @@
 								{
 									"id": "pick-last-created",
 									"objectClass": "System",
-									"sid": 924882587056944,
-									"parameters": {
-										"object": "player_collision"
-									}
-								},
-								{
-									"id": "pick-last-created",
-									"objectClass": "System",
 									"sid": 375413789119301,
 									"parameters": {
 										"object": "player_body_detector"
@@ -860,6 +852,38 @@
 									"parameters": {
 										"instance-variable": "movementType",
 										"value": "\"platformer\""
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player_body_detector",
+									"sid": 915781655432355,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "feet_detector",
+									"sid": 391136083297410,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player",
+									"sid": 390059600544370,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player_mask",
+									"sid": 227427941205987,
+									"parameters": {
+										"z": "0"
 									}
 								}
 							],
@@ -1616,10 +1640,10 @@
 										{
 											"id": "pin-to-object-properties",
 											"objectClass": "player_body_detector",
-											"sid": 485064783899267,
+											"sid": 777304338825768,
 											"behaviorType": "Pin",
 											"parameters": {
-												"pin-to": "player_collision",
+												"pin-to": "player",
 												"x": true,
 												"y": true,
 												"angle": true,
@@ -1658,7 +1682,7 @@
 										{
 											"id": "pin-to-object",
 											"objectClass": "feet_detector",
-											"sid": 390681230130580,
+											"sid": 127995941037627,
 											"behaviorType": "Pin",
 											"parameters": {
 												"pin-to": "player",
@@ -1672,6 +1696,38 @@
 											"behaviorType": "Pin",
 											"parameters": {
 												"destroy": true
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player_body_detector",
+											"sid": 600043430423480,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "feet_detector",
+											"sid": 351791079080979,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player",
+											"sid": 335373764294760,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player_mask",
+											"sid": 543129411215588,
+											"parameters": {
+												"z": "0"
 											}
 										}
 									],
@@ -1732,14 +1788,25 @@
 													"id": "set-angle",
 													"objectClass": "player_mask",
 													"sid": 815864173739291,
+													"disabled": true,
 													"parameters": {
 														"angle": "0"
 													}
 												},
 												{
+													"id": "set-position",
+													"objectClass": "player_mask",
+													"sid": 568206147588179,
+													"disabled": true,
+													"parameters": {
+														"x": "player.X",
+														"y": "player.Y"
+													}
+												},
+												{
 													"id": "pin-to-object-properties",
 													"objectClass": "player_mask",
-													"sid": 120116338597644,
+													"sid": 902838022338499,
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "player",
@@ -1748,7 +1815,7 @@
 														"angle": true,
 														"width-type": "no",
 														"height-type": "no",
-														"z": false
+														"z": true
 													}
 												},
 												{
@@ -2693,6 +2760,73 @@
 				0.4666666666666667,
 				0,
 				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 796491862927131
+				}
+			],
+			"actions": [],
+			"sid": 965972289481587,
+			"disabled": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 631016817248420,
+							"parameters": {
+								"object": "player_mask"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 387184962021567,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-unique-id",
+									"objectClass": "player",
+									"sid": 259862034665369,
+									"parameters": {
+										"unique-id": "player_mask.owner"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "player_mask",
+									"sid": 124744180322758,
+									"parameters": {
+										"angle": "player.Angle"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "player_mask",
+									"sid": 217873688006018,
+									"parameters": {
+										"x": "player.X",
+										"y": "player.Y"
+									}
+								}
+							],
+							"sid": 533988634256077,
+							"disabled": true
+						}
+					]
+				}
 			]
 		}
 	],

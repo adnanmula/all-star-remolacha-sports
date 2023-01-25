@@ -17,7 +17,13 @@
 						"image-offset-y": -60,
 						"image-scale-x": 1,
 						"image-scale-y": 1.2,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 16,
 					"instanceVariables": {},
@@ -110,7 +116,7 @@
 					},
 					"world": {
 						"x": 629.9129882628384,
-						"y": 731.5793287594734,
+						"y": 738.5793287594734,
 						"width": 1343.5867787068742,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -483,7 +489,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 59,
 					"instanceVariables": {
@@ -529,7 +536,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 60,
 					"instanceVariables": {
@@ -780,9 +788,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 647,
+						"x": 668.2048809186242,
 						"y": 757,
-						"width": 1477.8731437241736,
+						"width": 1520.2829055614218,
 						"height": 112.99999999999999,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -1034,7 +1042,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 32,
 					"instanceVariables": {},
@@ -1134,7 +1148,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 35,
 					"instanceVariables": {
@@ -1180,7 +1195,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 36,
 					"instanceVariables": {
@@ -1226,7 +1242,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 37,
 					"instanceVariables": {

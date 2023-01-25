@@ -869,6 +869,16 @@
 												"offset-x": "0",
 												"offset-y": "15"
 											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 573312851708806,
+											"parameters": {
+												"object": "solid_bound",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
 										}
 									],
 									"actions": [

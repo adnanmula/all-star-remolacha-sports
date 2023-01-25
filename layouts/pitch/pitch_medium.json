@@ -17,7 +17,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 127,
 					"instanceVariables": {},
@@ -110,7 +116,7 @@
 					},
 					"world": {
 						"x": 480.4447706815114,
-						"y": 552.5500075611565,
+						"y": 558.5500075611565,
 						"width": 1005.6765248275395,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -483,7 +489,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 13,
 					"instanceVariables": {
@@ -529,7 +536,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 58,
 					"instanceVariables": {
@@ -780,9 +788,9 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 470,
+						"x": 454.3606608805889,
 						"y": 567,
-						"width": 1117,
+						"width": 1204.1452245641715,
 						"height": 91,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -1067,7 +1075,13 @@
 						"image-offset-y": 0,
 						"image-scale-x": 1,
 						"image-scale-y": 1,
-						"image-angle": 0
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
 					},
 					"uid": 24,
 					"instanceVariables": {},
@@ -1167,7 +1181,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 21,
 					"instanceVariables": {
@@ -1213,7 +1228,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 22,
 					"instanceVariables": {
@@ -1259,7 +1275,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 23,
 					"instanceVariables": {

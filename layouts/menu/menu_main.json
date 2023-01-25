@@ -381,7 +381,8 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 132,
 					"instanceVariables": {
@@ -427,7 +428,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 129,
 					"instanceVariables": {
@@ -442,7 +444,7 @@
 					},
 					"world": {
 						"x": 187,
-						"y": 839,
+						"y": 889,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -473,7 +475,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 131,
 					"instanceVariables": {
@@ -488,53 +491,7 @@
 					},
 					"world": {
 						"x": 187,
-						"y": 886,
-						"width": 256,
-						"height": 49.313362439714865,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "pixel_spritefont",
-					"properties": {
-						"text": "Tournament",
-						"enable-bbcode": false,
-						"character-width": 38,
-						"character-height": 48,
-						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
-						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
-						"scale": 1,
-						"character-spacing": 0,
-						"line-height": 0,
-						"horizontal-alignment": "left",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"initially-visible": true,
-						"origin": "center"
-					},
-					"uid": 133,
-					"instanceVariables": {
-						"action": "menu_tournament",
-						"index": 2,
-						"type": "main_menu_option"
-					},
-					"behaviors": {
-						"Timer": {
-							"properties": {}
-						}
-					},
-					"world": {
-						"x": 187,
-						"y": 934,
+						"y": 935,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -565,12 +522,13 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 134,
 					"instanceVariables": {
 						"action": "menu_settings",
-						"index": 3,
+						"index": 2,
 						"type": "main_menu_option"
 					},
 					"behaviors": {
@@ -580,7 +538,7 @@
 					},
 					"world": {
 						"x": 187,
-						"y": 981,
+						"y": 982,
 						"width": 256,
 						"height": 49.313362439714865,
 						"originX": 0.5,
@@ -611,12 +569,13 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 135,
 					"instanceVariables": {
 						"action": "menu_quit",
-						"index": 4,
+						"index": 3,
 						"type": "main_menu_option"
 					},
 					"behaviors": {
@@ -688,7 +647,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 18,
 					"instanceVariables": {
