@@ -26,6 +26,46 @@
 			],
 			"actions": [
 				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 712526373447428,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "goal_volley",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 355878863180836,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "ball",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 947378787833947,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "goal_football_solid",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 474920755539496,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "solid_bound",
+						"state": "disable"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 700560069873193,

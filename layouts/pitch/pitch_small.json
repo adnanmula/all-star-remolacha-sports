@@ -116,7 +116,7 @@
 					},
 					"world": {
 						"x": 328.4812855331711,
-						"y": 378.48026096741705,
+						"y": 378.480261,
 						"width": 727.1641281333248,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -322,7 +322,7 @@
 					},
 					"world": {
 						"x": 57.555837183543474,
-						"y": 376.64191296326067,
+						"y": 378.480261,
 						"width": 127.28639318657076,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -372,7 +372,7 @@
 					},
 					"world": {
 						"x": 587.556,
-						"y": 376.642,
+						"y": 378.480261,
 						"width": 127.28639318657076,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -422,7 +422,7 @@
 					},
 					"world": {
 						"x": 322.7340253566417,
-						"y": 376.642,
+						"y": 378.480261,
 						"width": 233.21518304391407,
 						"height": 34.83685292236629,
 						"originX": 0.5,
@@ -454,13 +454,27 @@
 								"enabled": false,
 								"tags": "barrier"
 							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
 						}
 					},
 					"world": {
 						"x": 319.2552318545528,
-						"y": 176.31500074109064,
-						"width": 30,
-						"height": 423.1178960788059,
+						"y": 175.67773910566993,
+						"width": 11,
+						"height": 368.6203145138568,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -580,8 +594,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 347.07657141739253,
-						"y": 393.21761403990183,
+						"x": 347.076571,
+						"y": 393.217614,
 						"width": 797.10888074478,
 						"height": 91,
 						"originX": 0.5,

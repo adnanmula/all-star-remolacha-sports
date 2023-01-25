@@ -879,6 +879,16 @@
 												"offset-x": "0",
 												"offset-y": "15"
 											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 802872858817653,
+											"parameters": {
+												"object": "goal_volley",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
 										}
 									],
 									"actions": [

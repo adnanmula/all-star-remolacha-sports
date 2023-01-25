@@ -1612,11 +1612,27 @@
 									"conditions": [],
 									"actions": [
 										{
-											"id": "set-z-elevation",
-											"objectClass": "player_body_detector",
-											"sid": 156481114269506,
+											"id": "set-angle",
+											"objectClass": "player",
+											"sid": 555672817955343,
 											"parameters": {
-												"z": "2"
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_mask",
+											"sid": 112661031382137,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_body_detector",
+											"sid": 227266283616733,
+											"parameters": {
+												"angle": "0"
 											}
 										},
 										{
@@ -1850,6 +1866,32 @@
 					"sid": 455544248805452,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "spawnHeight",
+							"type": "number",
+							"initialValue": "200",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 741786664703759
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 969734989667882,
+									"parameters": {
+										"variable": "spawnHeight",
+										"value": "LayoutHeight - 100"
+									}
+								}
+							],
+							"sid": 479479820128149
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1875,6 +1917,25 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 138523417960805,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "set-angular-velocity",
+									"objectClass": "player",
+									"sid": 225325134966039,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-velocity": "0"
+									}
 								}
 							],
 							"sid": 533119603914173
@@ -1885,7 +1946,7 @@
 								{
 									"id": "for-each",
 									"objectClass": "System",
-									"sid": 288619784530344,
+									"sid": 818112508520619,
 									"parameters": {
 										"object": "prop_skill_hook"
 									}
@@ -1895,10 +1956,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "prop_skill_hook",
-									"sid": 392036678612052
+									"sid": 778342798247701
 								}
 							],
-							"sid": 575194267843679
+							"sid": 317585332783717
 						},
 						{
 							"eventType": "block",
@@ -1976,10 +2037,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 770777365846557,
+											"sid": 544542870520606,
 											"parameters": {
 												"x": "LayoutWidth / 2 - LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2021,10 +2082,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 477204276631434,
+											"sid": 312670623150404,
 											"parameters": {
 												"x": "LayoutWidth / 2 - LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2047,10 +2108,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 324930290314099,
+											"sid": 638195016349073,
 											"parameters": {
 												"x": "LayoutWidth / 2 + LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2092,10 +2153,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 227468275920901,
+											"sid": 225535351853236,
 											"parameters": {
 												"x": "LayoutWidth/4 - LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2118,10 +2179,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 708677523965562,
+											"sid": 551394923871663,
 											"parameters": {
 												"x": "LayoutWidth/2 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2144,10 +2205,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 394368898931129,
+											"sid": 786009296258874,
 											"parameters": {
 												"x": "LayoutWidth/4 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2170,10 +2231,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 335855698597112,
+											"sid": 561649403331326,
 											"parameters": {
 												"x": "LayoutWidth/4 * 3 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2760,73 +2821,6 @@
 				0.4666666666666667,
 				0,
 				1
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 796491862927131
-				}
-			],
-			"actions": [],
-			"sid": 965972289481587,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 631016817248420,
-							"parameters": {
-								"object": "player_mask"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 387184962021567,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-unique-id",
-									"objectClass": "player",
-									"sid": 259862034665369,
-									"parameters": {
-										"unique-id": "player_mask.owner"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "player_mask",
-									"sid": 124744180322758,
-									"parameters": {
-										"angle": "player.Angle"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player_mask",
-									"sid": 217873688006018,
-									"parameters": {
-										"x": "player.X",
-										"y": "player.Y"
-									}
-								}
-							],
-							"sid": 533988634256077,
-							"disabled": true
-						}
-					]
-				}
 			]
 		}
 	],
