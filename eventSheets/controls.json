@@ -326,11 +326,11 @@
 											"actions": [
 												{
 													"callFunction": "playerMoveAngle",
-													"sid": 110607183068032,
+													"sid": 596169756828214,
 													"parameters": [
 														"player.UID",
 														"270",
-														true
+														false
 													]
 												}
 											],
@@ -731,10 +731,10 @@
 										{
 											"id": "is-button-down",
 											"objectClass": "Gamepad",
-											"sid": 736172459347041,
+											"sid": 951191109335638,
 											"parameters": {
 												"gamepad": "player.gamepad_index",
-												"button": "button-a"
+												"button": "d-pad-down"
 											}
 										}
 									],
@@ -767,27 +767,6 @@
 												}
 											],
 											"sid": 564146958640412
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 164111185810532
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerFall",
-													"sid": 459547234980734,
-													"parameters": [
-														"player.UID"
-													]
-												}
-											],
-											"sid": 632140904538619,
-											"disabled": true
 										}
 									],
 									"isOrBlock": true
@@ -827,108 +806,18 @@
 											"actions": [
 												{
 													"callFunction": "playerMoveAngle",
-													"sid": 829117821825029,
+													"sid": 795582981349050,
 													"parameters": [
 														"player.UID",
-														"90",
+														"angle(0,0, Gamepad.Axis(player.gamepad_index, 0), Gamepad.Axis(player.gamepad_index, 1))",
 														false
 													]
 												}
 											],
 											"sid": 251545974551036
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 230629950437691
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerFall",
-													"sid": 653430065692033,
-													"parameters": [
-														"player.UID"
-													]
-												}
-											],
-											"sid": 910960315543344,
-											"disabled": true
 										}
 									],
 									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 384837647096448,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"button": "button-a"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 520495399064839,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"axis": "left-analog-y-axis",
-												"comparison": 5,
-												"value": "gamepad_deadzone"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 592945850728890,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "player",
-													"sid": 767127570463485,
-													"parameters": {
-														"instance-variable": "movementType",
-														"comparison": 0,
-														"value": "\"flying\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 494805499221798
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 975721405167889
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerStopFall",
-													"sid": 676579232136128,
-													"parameters": [
-														"playerUid",
-														"0.3"
-													]
-												}
-											],
-											"sid": 479283293997384
-										}
-									]
 								},
 								{
 									"eventType": "comment",

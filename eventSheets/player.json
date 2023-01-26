@@ -55,7 +55,7 @@
 			"eventType": "variable",
 			"name": "MOVEMENT_FLIYING_FORCE",
 			"type": "number",
-			"initialValue": "25000",
+			"initialValue": "10000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -554,6 +554,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-animation",
+									"objectClass": "player_mask",
+									"sid": 385655248478081,
+									"parameters": {
+										"animation": "\"walking\"",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "apply-force-at-angle",
 									"objectClass": "player",
 									"sid": 549018862296277,
@@ -563,71 +572,35 @@
 										"angle": "direction",
 										"image-point": "0"
 									}
-								},
-								{
-									"id": "set-velocity",
-									"objectClass": "player",
-									"sid": 229452116475599,
-									"behaviorType": "Physics",
-									"parameters": {
-										"x-component": "Self.Physics.VelocityX",
-										"y-component": "0"
-									}
 								}
 							],
 							"sid": 269970401203469,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "Right up"
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 940022617341644,
+											"sid": 165960718554235,
 											"parameters": {
-												"first-value": "direction",
-												"comparison": 3,
-												"second-value": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 577525717486237,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 4,
-												"second-value": "270"
+												"variable": "removeVelocityY"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-mirrored",
+											"id": "set-velocity",
 											"objectClass": "player",
-											"sid": 914063283085606,
+											"sid": 126811355853191,
+											"behaviorType": "Physics",
 											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 666364312325932,
-											"parameters": {
-												"state": "not-mirrored"
+												"x-component": "Self.Physics.VelocityX",
+												"y-component": "0"
 											}
 										}
 									],
-									"sid": 820332657006971
-								},
-								{
-									"eventType": "comment",
-									"text": "Right down"
+									"sid": 789171838173004
 								},
 								{
 									"eventType": "block",
@@ -635,69 +608,21 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 163283412283943,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 4,
-												"second-value": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 769797890167666,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 2,
-												"second-value": "90"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 664899844608748,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 545102930958027,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 700457377320264
-								},
-								{
-									"eventType": "comment",
-									"text": "Left up"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 627710756306898,
+											"sid": 588227761891714,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 5,
-												"second-value": "180"
+												"second-value": "-90"
 											}
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 733584195029106,
+											"sid": 992174250468309,
 											"parameters": {
 												"first-value": "direction",
-												"comparison": 2,
-												"second-value": "270"
+												"comparison": 3,
+												"second-value": "90"
 											}
 										}
 									],
@@ -705,25 +630,21 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 622326048061462,
+											"sid": 848414472042551,
 											"parameters": {
-												"state": "mirrored"
+												"state": "not-mirrored"
 											}
 										},
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 875260539200757,
+											"sid": 234423950922579,
 											"parameters": {
-												"state": "mirrored"
+												"state": "not-mirrored"
 											}
 										}
 									],
-									"sid": 103685727662089
-								},
-								{
-									"eventType": "comment",
-									"text": "Left down"
+									"sid": 210453329572012
 								},
 								{
 									"eventType": "block",
@@ -731,17 +652,17 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 133019634970592,
+											"sid": 711478125940354,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 2,
-												"second-value": "180"
+												"second-value": "-90"
 											}
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 974699519261287,
+											"sid": 288631045084385,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 4,
@@ -753,7 +674,7 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 343576280043366,
+											"sid": 910715686674395,
 											"parameters": {
 												"state": "mirrored"
 											}
@@ -761,13 +682,14 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 501234344444151,
+											"sid": 267547459418651,
 											"parameters": {
 												"state": "mirrored"
 											}
 										}
 									],
-									"sid": 984667051645920
+									"sid": 519924418238968,
+									"isOrBlock": true
 								}
 							]
 						}
@@ -1593,17 +1515,6 @@
 									"sid": 133542887278436,
 									"parameters": {
 										"angle": "direction"
-									}
-								},
-								{
-									"id": "apply-torque-towards-angle",
-									"objectClass": "player",
-									"sid": 341476834238807,
-									"disabled": true,
-									"behaviorType": "Physics",
-									"parameters": {
-										"torque": "1000",
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
 									}
 								}
 							],
