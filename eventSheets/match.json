@@ -1867,15 +1867,6 @@
 						"type": "once",
 						"tag": "\"camp_guard\""
 					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 324747809567567,
-					"parameters": {
-						"type": "log",
-						"message": "\"AAAAA\""
-					}
 				}
 			],
 			"sid": 874516316557642
@@ -1901,15 +1892,6 @@
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "\"camp_guard\""
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 747569427335175,
-					"parameters": {
-						"type": "log",
-						"message": "\"BBBB\""
 					}
 				}
 			],

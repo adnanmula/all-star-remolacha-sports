@@ -1046,28 +1046,9 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-timer-running",
-											"objectClass": "player",
-											"sid": 779772821927910,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"stun\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 740265157195066,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"button": "left-shoulder-trigger"
-											}
-										},
-										{
 											"id": "compare-value",
 											"objectClass": "data_match_config",
-											"sid": 536664506533509,
+											"sid": 663955751864242,
 											"parameters": {
 												"key": "\"enabled_skills\"",
 												"comparison": 0,
@@ -1075,34 +1056,73 @@
 											}
 										},
 										{
-											"id": "is-timer-running",
-											"objectClass": "player",
-											"sid": 767910710055222,
-											"behaviorType": "Timer",
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 705103602099814,
 											"parameters": {
-												"tag": "\"skill0\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 950870925217416
+												"key": "\"enabled_skills\"",
+												"comparison": 0,
+												"value": "2"
+											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 439356588330228,
+									"children": [
 										{
-											"callFunction": "skillExecute",
-											"sid": 220630922634572,
-											"parameters": [
-												"player.UID",
-												"player.skill0",
-												"\"skill0\"",
-												"player.skill0_cooldown"
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-timer-running",
+													"objectClass": "player",
+													"sid": 258980832817423,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"stun\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 904153509855015,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"button": "left-shoulder-trigger"
+													}
+												},
+												{
+													"id": "is-timer-running",
+													"objectClass": "player",
+													"sid": 950359277171503,
+													"behaviorType": "Timer",
+													"parameters": {
+														"tag": "\"skill0\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 214307717299067
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "skillExecute",
+													"sid": 663052592083080,
+													"parameters": [
+														"player.UID",
+														"player.skill0",
+														"\"skill0\"",
+														"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 0.5"
+													]
+												}
+											],
+											"sid": 856087207842782
 										}
 									],
-									"sid": 699259219403028
+									"isOrBlock": true
 								}
 							]
 						}

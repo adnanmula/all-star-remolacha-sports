@@ -1066,7 +1066,7 @@
 									"eventType": "variable",
 									"name": "max_value",
 									"type": "number",
-									"initialValue": "1",
+									"initialValue": "2",
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
@@ -1768,6 +1768,32 @@
 														}
 													],
 													"sid": 273727042900216
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 664119108681015,
+															"parameters": {
+																"first-value": "data_match_config.CurrentValue",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "pixel_spritefont",
+															"sid": 365180885298280,
+															"parameters": {
+																"text": "\"Instant\""
+															}
+														}
+													],
+													"sid": 825263488656732
 												}
 											]
 										}

@@ -2014,6 +2014,21 @@
 								},
 								{
 									"id": "destroy",
+									"objectClass": "particle_root",
+									"sid": 364935704010516
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particle_stun",
+									"sid": 293014944197615
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particle_tp",
+									"sid": 660946463037077
+								},
+								{
+									"id": "destroy",
 									"objectClass": "player",
 									"sid": 327837450730485
 								},

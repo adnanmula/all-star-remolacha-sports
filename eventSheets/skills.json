@@ -977,12 +977,12 @@
 							"actions": [
 								{
 									"callFunction": "skillExecute",
-									"sid": 986584576366023,
+									"sid": 461897494434058,
 									"parameters": [
 										"player.UID",
 										"player.metronome_next",
 										"\"skill0\"",
-										"player.skill0_cooldown"
+										"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 0.5"
 									]
 								},
 								{
