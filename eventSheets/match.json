@@ -798,6 +798,15 @@
 									"parameters": {
 										"state": "enabled"
 									}
+								},
+								{
+									"id": "set-immovable",
+									"objectClass": "goal_volley_barrier",
+									"sid": 828800839892929,
+									"behaviorType": "Physics",
+									"parameters": {
+										"setting": "immovable"
+									}
 								}
 							],
 							"sid": 297503897625766,
@@ -863,9 +872,9 @@
 										{
 											"id": "set-height",
 											"objectClass": "goal_volley",
-											"sid": 779860348559381,
+											"sid": 552582911572844,
 											"parameters": {
-												"height": "Self.Height * 1.5"
+												"height": "Self.Height * 1.4"
 											}
 										}
 									],
@@ -1837,9 +1846,14 @@
 					}
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 677054045638229
+					"id": "is-timer-running",
+					"objectClass": "player",
+					"sid": 287211059757996,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"camp_guard\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1852,6 +1866,15 @@
 						"duration": "5",
 						"type": "once",
 						"tag": "\"camp_guard\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 324747809567567,
+					"parameters": {
+						"type": "log",
+						"message": "\"AAAAA\""
 					}
 				}
 			],
@@ -1878,6 +1901,15 @@
 					"behaviorType": "Timer",
 					"parameters": {
 						"tag": "\"camp_guard\""
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 747569427335175,
+					"parameters": {
+						"type": "log",
+						"message": "\"BBBB\""
 					}
 				}
 			],
