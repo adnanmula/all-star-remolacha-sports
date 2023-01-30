@@ -697,6 +697,86 @@
 					"sid": 957118365534833,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "skill_cooldown_random_tp",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 127300544204776
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_fundinaso",
+							"type": "number",
+							"initialValue": "20",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 774942069930747
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_marionette",
+							"type": "number",
+							"initialValue": "30",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 102032333625950
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_area_root",
+							"type": "number",
+							"initialValue": "30",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 650322126747941
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_ice_wall",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 873419111582641
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_metronome",
+							"type": "number",
+							"initialValue": "20",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 481266764597651
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_cry_stun",
+							"type": "number",
+							"initialValue": "50",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 785471307628418
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_hook",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 892419584087179
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -947,6 +1027,21 @@
 									],
 									"actions": [
 										{
+											"id": "move-to-bottom",
+											"objectClass": "player_body_detector",
+											"sid": 479455482942930
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "player",
+											"sid": 508475074957160
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "feet_detector",
+											"sid": 269512819571810
+										},
+										{
 											"id": "set-visible",
 											"objectClass": "player",
 											"sid": 868120643986702,
@@ -1034,10 +1129,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 701341270164244,
+													"sid": 157026003005923,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "70"
+														"value": "skill_cooldown_random_tp"
 													}
 												}
 											],
@@ -1106,10 +1201,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 318647461981357,
+													"sid": 488506125906121,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "20"
+														"value": "skill_cooldown_fundinaso"
 													}
 												}
 											],
@@ -1178,10 +1273,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 879702562995050,
+													"sid": 487814555983323,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "40"
+														"value": "skill_cooldown_marionette"
 													}
 												}
 											],
@@ -1250,10 +1345,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 878811951047642,
+													"sid": 463222166866517,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "60"
+														"value": "skill_cooldown_area_root"
 													}
 												}
 											],
@@ -1322,10 +1417,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 228300866919085,
+													"sid": 736597844038382,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "45"
+														"value": "skill_cooldown_ice_wall"
 													}
 												}
 											],
@@ -1394,10 +1489,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 813094084369213,
+													"sid": 401699581720365,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "15"
+														"value": "skill_cooldown_metronome"
 													}
 												},
 												{
@@ -1438,19 +1533,19 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 146429797257568,
+											"sid": 512700498990569,
 											"parameters": {
-												"width": "77",
-												"height": "110"
+												"width": "95",
+												"height": "134"
 											}
 										},
 										{
 											"id": "set-size",
 											"objectClass": "player_mask",
-											"sid": 790198205963888,
+											"sid": 577580170096894,
 											"parameters": {
-												"width": "77",
-												"height": "110"
+												"width": "95",
+												"height": "134"
 											}
 										}
 									],
@@ -1481,10 +1576,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 316580885815212,
+													"sid": 928166694874922,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "60"
+														"value": "skill_cooldown_cry_stun"
 													}
 												}
 											],
@@ -1562,10 +1657,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 158823470515678,
+													"sid": 438776941985421,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "20"
+														"value": "skill_cooldown_hook"
 													}
 												}
 											],
@@ -1800,25 +1895,6 @@
 												}
 											],
 											"actions": [
-												{
-													"id": "set-angle",
-													"objectClass": "player_mask",
-													"sid": 815864173739291,
-													"disabled": true,
-													"parameters": {
-														"angle": "0"
-													}
-												},
-												{
-													"id": "set-position",
-													"objectClass": "player_mask",
-													"sid": 568206147588179,
-													"disabled": true,
-													"parameters": {
-														"x": "player.X",
-														"y": "player.Y"
-													}
-												},
 												{
 													"id": "pin-to-object-properties",
 													"objectClass": "player_mask",

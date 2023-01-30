@@ -223,9 +223,9 @@
 						{
 							"id": "set-height",
 							"objectClass": "hud_skill_mask",
-							"sid": 225288752860339,
+							"sid": 642316827795023,
 							"parameters": {
-								"height": "(45 / player.skill0_cooldown) * player.Timer.CurrentTime(\"skill0\")"
+								"height": "(45 / (data_match_config.Get(\"enabled_skills\") = 2 ? 5 : player.skill0_cooldown)) * player.Timer.CurrentTime(\"skill0\")"
 							}
 						}
 					],
