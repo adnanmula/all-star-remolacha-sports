@@ -71,20 +71,20 @@
 			{
 				"frames": [
 					{
-						"width": 24,
-						"height": 60,
-						"originX": 0.5208333333333334,
-						"originY": 0.5,
+						"width": 42,
+						"height": 58,
+						"originX": 0.40595238095238095,
+						"originY": 0.46511627906976744,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6016070,
+						"imageSpriteId": 5230226,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "feet_detector",
-								"x": 0.5208333333333334,
-								"y": 0.8625
+								"x": 0.40595238095238095,
+								"y": 0.9709302325581395
 							}
 						],
 						"duration": 1
