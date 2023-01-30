@@ -1110,12 +1110,12 @@
 											"actions": [
 												{
 													"callFunction": "skillExecute",
-													"sid": 663052592083080,
+													"sid": 979632852494258,
 													"parameters": [
 														"player.UID",
 														"player.skill0",
 														"\"skill0\"",
-														"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 0.5"
+														"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 5"
 													]
 												}
 											],

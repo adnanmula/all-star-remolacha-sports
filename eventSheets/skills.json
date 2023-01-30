@@ -977,12 +977,12 @@
 							"actions": [
 								{
 									"callFunction": "skillExecute",
-									"sid": 461897494434058,
+									"sid": 761627628527792,
 									"parameters": [
 										"player.UID",
 										"player.metronome_next",
 										"\"skill0\"",
-										"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 0.5"
+										"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 5"
 									]
 								},
 								{
@@ -1377,15 +1377,7 @@
 							}
 						}
 					],
-					"sid": 818176357600991,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 629681192509248
-						}
-					]
+					"sid": 818176357600991
 				}
 			]
 		},

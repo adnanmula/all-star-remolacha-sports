@@ -709,7 +709,20 @@
 		}
 	],
 	"sid": 515564339232449,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "data_gamepad",
+			"properties": {},
+			"uid": 20,
+			"instanceVariables": {}
+		},
+		{
+			"type": "data_match_config",
+			"properties": {},
+			"uid": 62,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1920,
 	"height": 1080,
