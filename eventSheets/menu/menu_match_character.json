@@ -2,6 +2,10 @@
 	"name": "menu_match_character",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_gamepad_cursor_movement",
 			"type": "number",

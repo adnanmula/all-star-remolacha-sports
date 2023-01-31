@@ -2,6 +2,10 @@
 	"name": "menu_settings",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_settings_current_index",
 			"type": "number",

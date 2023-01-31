@@ -315,35 +315,6 @@
 					}
 				},
 				{
-					"type": "player_km_origin_indicator",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 47,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 52.93040860331105,
-						"y": 192.1872754346766,
-						"width": 5.923173553742858,
-						"height": 5.923173553742858,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "goal_volley",
 					"properties": {
 						"initially-visible": true,

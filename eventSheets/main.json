@@ -18,6 +18,10 @@
 			"includeSheet": "player"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_1",
 			"type": "number",

@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
@@ -142,7 +149,8 @@
 					"Browser",
 					"Gamepad",
 					"Keyboard",
-					"Mouse"
+					"Mouse",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "system"
@@ -162,13 +170,6 @@
 					"player_body_detector"
 				],
 				"subfolders": [
-					{
-						"items": [
-							"player_km_origin_indicator"
-						],
-						"subfolders": [],
-						"name": "props"
-					},
 					{
 						"items": [
 							"prop_skill_area",
@@ -388,7 +389,8 @@
 			"match",
 			"skills",
 			"player",
-			"ui"
+			"ui",
+			"sound"
 		],
 		"subfolders": [
 			{
@@ -441,7 +443,40 @@
 			"subfolders": []
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 755329420657571,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 781804211763283,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 801478436390920,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "4.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 901360597600719,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

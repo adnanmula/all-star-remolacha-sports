@@ -1,0 +1,218 @@
+{
+	"name": "sound",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "current_music_track",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 104115638420585
+		},
+		{
+			"eventType": "variable",
+			"name": "music_loaded",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 885460061636193
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Music",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "preloads-complete",
+							"objectClass": "Audio",
+							"sid": 227131032525367
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 107372038501767,
+							"parameters": {
+								"variable": "music_loaded"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 984665828323584
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 372498648671262
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 657165847573580,
+							"parameters": {
+								"variable": "current_music_track",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 703404079271101,
+							"parameters": {
+								"folder": "music",
+								"audio-file-name": "str(current_music_track)",
+								"loop": "not-looping",
+								"volume": "-5",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 852326825444826,
+							"parameters": {
+								"variable": "music_loaded",
+								"value": "true"
+							}
+						},
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 836866311186618,
+							"parameters": {
+								"type": "log",
+								"message": "\"Preload completed\""
+							}
+						}
+					],
+					"sid": 489751351088998
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-ended",
+							"objectClass": "Audio",
+							"sid": 403927945266978,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 278768406518662,
+							"parameters": {
+								"variable": "current_music_track",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 722468802320471,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 721283084410840,
+									"parameters": {
+										"variable": "current_music_track",
+										"comparison": 4,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 769761239226780,
+									"parameters": {
+										"variable": "current_music_track",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 514671091916039
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 900867039539840,
+									"parameters": {
+										"variable": "current_music_track",
+										"comparison": 2,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 248175705902406,
+									"parameters": {
+										"variable": "current_music_track",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 731241531485755
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 635916979073665,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "str(current_music_track)",
+										"loop": "not-looping",
+										"volume": "-5",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "log",
+									"objectClass": "Browser",
+									"sid": 742003691878227,
+									"parameters": {
+										"type": "log",
+										"message": "\"Playing: \" & current_music_track"
+									}
+								}
+							],
+							"sid": 282166426856387
+						}
+					]
+				}
+			],
+			"sid": 560682329316773
+		}
+	],
+	"sid": 225540897631576
+}

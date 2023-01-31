@@ -2,6 +2,10 @@
 	"name": "menu_match_config",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_match_config_current_index",
 			"type": "number",
