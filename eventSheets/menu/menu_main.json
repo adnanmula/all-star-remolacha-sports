@@ -209,6 +209,58 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "has-key",
+									"objectClass": "data_match_config",
+									"sid": 672622822754114,
+									"parameters": {
+										"key": "\"settings_enabled_music\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data_match_config",
+									"sid": 316439168152549,
+									"parameters": {
+										"key": "\"settings_enabled_music\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 797953501445228
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data_match_config",
+									"sid": 681243362490135,
+									"parameters": {
+										"key": "\"settings_enabled_sound\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data_match_config",
+									"sid": 101263275244424,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 818695376618912
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 809284761761864,

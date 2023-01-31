@@ -1320,7 +1320,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "Back :(",
+						"text": "Back",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,

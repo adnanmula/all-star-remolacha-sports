@@ -34,33 +34,43 @@
 						{
 							"id": "preloads-complete",
 							"objectClass": "Audio",
-							"sid": 227131032525367
+							"sid": 757316787943623
 						},
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 107372038501767,
+							"sid": 267514026436695,
 							"parameters": {
 								"variable": "music_loaded"
 							},
 							"isInverted": true
 						},
 						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 362325309926404,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"settings_enabled_music\")",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						},
+						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 984665828323584
+							"sid": 863479700915020
 						}
 					],
 					"actions": [
 						{
 							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 372498648671262
+							"sid": 213053382425848
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 657165847573580,
+							"sid": 769676553117173,
 							"parameters": {
 								"variable": "current_music_track",
 								"value": "1"
@@ -69,7 +79,7 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 703404079271101,
+							"sid": 492036611479590,
 							"parameters": {
 								"folder": "music",
 								"audio-file-name": "str(current_music_track)",
@@ -82,7 +92,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 852326825444826,
+							"sid": 833809598925704,
 							"parameters": {
 								"variable": "music_loaded",
 								"value": "true"
@@ -91,14 +101,14 @@
 						{
 							"id": "log",
 							"objectClass": "Browser",
-							"sid": 836866311186618,
+							"sid": 733157514180612,
 							"parameters": {
 								"type": "log",
 								"message": "\"Preload completed\""
 							}
 						}
 					],
-					"sid": 489751351088998
+					"sid": 756857671661295
 				},
 				{
 					"eventType": "block",
@@ -109,6 +119,16 @@
 							"sid": 403927945266978,
 							"parameters": {
 								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 544180556698528,
+							"parameters": {
+								"first-value": "data_match_config.Get(\"settings_enabled_music\")",
+								"comparison": 0,
+								"second-value": "1"
 							}
 						}
 					],
