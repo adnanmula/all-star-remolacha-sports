@@ -52,19 +52,19 @@
 								"comparison": 0,
 								"value": "1"
 							}
+						},
+						{
+							"id": "compare-value",
+							"objectClass": "data_match_config",
+							"sid": 604031024420874,
+							"parameters": {
+								"key": "\"enabled_skills\"",
+								"comparison": 0,
+								"value": "2"
+							}
 						}
 					],
 					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 127153405067125,
-							"disabled": true,
-							"parameters": {
-								"layer": "\"skills\"",
-								"visibility": "visible"
-							}
-						},
 						{
 							"id": "wait",
 							"objectClass": "System",
@@ -178,7 +178,8 @@
 								}
 							]
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			]
 		},
@@ -222,9 +223,9 @@
 						{
 							"id": "set-height",
 							"objectClass": "hud_skill_mask",
-							"sid": 225288752860339,
+							"sid": 642316827795023,
 							"parameters": {
-								"height": "(45 / player.skill0_cooldown) * player.Timer.CurrentTime(\"skill0\")"
+								"height": "(45 / (data_match_config.Get(\"enabled_skills\") = 2 ? 5 : player.skill0_cooldown)) * player.Timer.CurrentTime(\"skill0\")"
 							}
 						}
 					],

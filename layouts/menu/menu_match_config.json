@@ -118,7 +118,8 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 143,
 					"instanceVariables": {
@@ -193,7 +194,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 145,
 					"instanceVariables": {
@@ -239,7 +241,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 146,
 					"instanceVariables": {
@@ -285,7 +288,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 147,
 					"instanceVariables": {
@@ -331,7 +335,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 148,
 					"instanceVariables": {
@@ -377,7 +382,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 149,
 					"instanceVariables": {
@@ -423,7 +429,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 150,
 					"instanceVariables": {
@@ -469,7 +476,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 151,
 					"instanceVariables": {
@@ -949,7 +957,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 166,
 					"instanceVariables": {
@@ -995,7 +1004,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 167,
 					"instanceVariables": {
@@ -1041,7 +1051,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 168,
 					"instanceVariables": {
@@ -1087,7 +1098,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 169,
 					"instanceVariables": {
@@ -1133,7 +1145,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 170,
 					"instanceVariables": {
@@ -1179,7 +1192,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 171,
 					"instanceVariables": {
@@ -1225,7 +1239,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 172,
 					"instanceVariables": {
@@ -1271,7 +1286,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 174,
 					"instanceVariables": {
@@ -1304,7 +1320,7 @@
 				{
 					"type": "pixel_spritefont",
 					"properties": {
-						"text": "Back :(",
+						"text": "Back",
 						"enable-bbcode": false,
 						"character-width": 38,
 						"character-height": 48,
@@ -1317,7 +1333,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 175,
 					"instanceVariables": {
@@ -1363,7 +1380,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 80,
 					"instanceVariables": {
@@ -1471,7 +1489,8 @@
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 84,
 					"instanceVariables": {

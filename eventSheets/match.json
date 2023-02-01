@@ -26,6 +26,65 @@
 			],
 			"actions": [
 				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 712526373447428,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "goal_volley",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 355878863180836,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "ball",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 947378787833947,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "goal_football_solid",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 474920755539496,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "solid_bound",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "enabledisable-collisions",
+					"objectClass": "goal_volley_barrier",
+					"sid": 279036354291818,
+					"behaviorType": "Physics",
+					"parameters": {
+						"object": "player",
+						"state": "disable"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "goal_volley_barrier",
+					"sid": 692454020900841,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 700560069873193,
@@ -201,7 +260,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "goal_football_solid",
-							"sid": 189746638167870,
+							"sid": 115527370014719,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -383,9 +442,9 @@
 								{
 									"id": "set-size",
 									"objectClass": "goal_football_solid",
-									"sid": 843931855110274,
+									"sid": 873186961774039,
 									"parameters": {
-										"width": "goal_football.Width * 10",
+										"width": "goal_football.Width",
 										"height": "10"
 									}
 								},
@@ -661,7 +720,27 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "enabledisable-collisions",
+							"objectClass": "goal_volley_barrier",
+							"sid": 708633225822721,
+							"behaviorType": "Physics",
+							"parameters": {
+								"object": "player",
+								"state": "enable"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "goal_volley_barrier",
+							"sid": 240569424221178,
+							"behaviorType": "Physics",
+							"parameters": {
+								"mode": "enabled"
+							}
+						}
+					],
 					"sid": 221178815212334,
 					"children": [
 						{
@@ -718,6 +797,15 @@
 									"behaviorType": "Solid",
 									"parameters": {
 										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-immovable",
+									"objectClass": "goal_volley_barrier",
+									"sid": 828800839892929,
+									"behaviorType": "Physics",
+									"parameters": {
+										"setting": "immovable"
 									}
 								}
 							],
@@ -784,9 +872,9 @@
 										{
 											"id": "set-height",
 											"objectClass": "goal_volley",
-											"sid": 779860348559381,
+											"sid": 552582911572844,
 											"parameters": {
-												"height": "Self.Height * 1.5"
+												"height": "Self.Height * 1.4"
 											}
 										}
 									],
@@ -1123,6 +1211,36 @@
 								}
 							],
 							"sid": 671993039253764
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 886394783452611,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 400988851042643,
+									"parameters": {
+										"audio-file": "goal",
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								}
+							],
+							"sid": 292092023817157
 						}
 					]
 				},
@@ -1305,6 +1423,36 @@
 										}
 									],
 									"sid": 755844724158998
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 247765568561610,
+											"parameters": {
+												"key": "\"settings_enabled_sound\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 892002682779007,
+											"parameters": {
+												"audio-file": "chut",
+												"loop": "not-looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										}
+									],
+									"sid": 792214115882562
 								}
 							]
 						}
@@ -1669,6 +1817,36 @@
 						},
 						{
 							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 363844047326405,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 584938353633715,
+									"parameters": {
+										"audio-file": "goal",
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								}
+							],
+							"sid": 734513468269704
+						},
+						{
+							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
@@ -1758,9 +1936,14 @@
 					}
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 677054045638229
+					"id": "is-timer-running",
+					"objectClass": "player",
+					"sid": 287211059757996,
+					"behaviorType": "Timer",
+					"parameters": {
+						"tag": "\"camp_guard\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [

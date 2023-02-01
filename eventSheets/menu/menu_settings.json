@@ -2,6 +2,10 @@
 	"name": "menu_settings",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_settings_current_index",
 			"type": "number",
@@ -64,6 +68,56 @@
 								}
 							],
 							"sid": 442643171060430
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 182270925716379,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"settings_enabled_music\" & pixel_spritefont.type = \"menu_settings_value\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 413600055770248,
+									"parameters": {
+										"text": "data_match_config.Get(\"settings_enabled_music\") = 0 ? \"No\" : \"Yes\""
+									}
+								}
+							],
+							"sid": 594924818371525
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 677687988829638,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"settings_enabled_sound\" & pixel_spritefont.type = \"menu_settings_value\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 412172870988701,
+									"parameters": {
+										"text": "data_match_config.Get(\"settings_enabled_sound\") = 0 ? \"No\" : \"Yes\""
+									}
+								}
+							],
+							"sid": 788731770893788
 						}
 					]
 				},
@@ -252,6 +306,329 @@
 									"sid": 469654453193789
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 169727606077375,
+									"parameters": {
+										"first-value": "index",
+										"comparison": 0,
+										"second-value": "\"settings_enabled_music\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 862300108731994,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_value",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 647993483754098
+								},
+								{
+									"eventType": "variable",
+									"name": "max_value",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 209765765191610
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 457543803560002,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 451861025121271,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) - 1 < min_value ? max_value : data_match_config.Get(index) - 1"
+											}
+										}
+									],
+									"sid": 638426206024657
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 148607794006098,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 780620773913419,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) + 1 > max_value ? min_value: data_match_config.Get(index) + 1"
+											}
+										}
+									],
+									"sid": 459504881745115
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 684662822406962,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.action = index & pixel_spritefont.type = \"menu_settings_value\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 832473328480461,
+											"parameters": {
+												"text": "data_match_config.Get(index) = 0 ? \"No\" : \"Yes\""
+											}
+										}
+									],
+									"sid": 345176200698245
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 578750681942784,
+											"parameters": {
+												"key": "\"settings_enabled_music\"",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 278930880342788,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										}
+									],
+									"sid": 873555740193933
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 325783952181819,
+											"parameters": {
+												"key": "\"settings_enabled_music\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop-all",
+											"objectClass": "Audio",
+											"sid": 145864292328781
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 408023777837469,
+											"parameters": {
+												"audio-file": "1",
+												"loop": "not-looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"music\""
+											}
+										}
+									],
+									"sid": 914212869844144
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 878842938803777,
+									"parameters": {
+										"first-value": "index",
+										"comparison": 0,
+										"second-value": "\"settings_enabled_sound\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 160923905805567,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "min_value",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 822257649456953
+								},
+								{
+									"eventType": "variable",
+									"name": "max_value",
+									"type": "number",
+									"initialValue": "1",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 521814828866527
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 219928820482229,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 172785338644329,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) - 1 < min_value ? max_value : data_match_config.Get(index) - 1"
+											}
+										}
+									],
+									"sid": 146892699539481
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 977180748111464,
+											"parameters": {
+												"first-value": "action",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-key",
+											"objectClass": "data_match_config",
+											"sid": 794179088373504,
+											"parameters": {
+												"key": "index",
+												"value": "data_match_config.Get(index) + 1 > max_value ? min_value: data_match_config.Get(index) + 1"
+											}
+										}
+									],
+									"sid": 952454912829085
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 342924392496498,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.action = index & pixel_spritefont.type = \"menu_settings_value\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "pixel_spritefont",
+											"sid": 842178454823466,
+											"parameters": {
+												"text": "data_match_config.Get(index) = 0 ? \"No\" : \"Yes\""
+											}
+										}
+									],
+									"sid": 815884143383818
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 315266953456147,
+											"parameters": {
+												"key": "\"settings_enabled_sound\"",
+												"comparison": 0,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 910978834253251,
+											"parameters": {
+												"tag": "\"sound\""
+											}
+										}
+									],
+									"sid": 886784448851143
+								}
+							]
 						}
 					]
 				},
@@ -273,10 +650,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 709997059020729,
+							"sid": 653074284178070,
 							"parameters": {
 								"variable": "menu_settings_current_index",
-								"value": "2"
+								"value": "4"
 							}
 						},
 						{
@@ -292,11 +669,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 260780751495884,
+							"sid": 131225089665912,
 							"parameters": {
 								"first-value": "menu_settings_current_index",
 								"comparison": 4,
-								"second-value": "2"
+								"second-value": "4"
 							}
 						}
 					],
@@ -383,7 +760,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Menu settings - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
@@ -402,6 +779,7 @@
 					],
 					"actions": [],
 					"sid": 846663065922912,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -436,7 +814,8 @@
 									}
 								}
 							],
-							"sid": 720849387423206
+							"sid": 720849387423206,
+							"disabled": true
 						}
 					]
 				},
@@ -498,7 +877,8 @@
 							}
 						}
 					],
-					"sid": 915439979231957
+					"sid": 915439979231957,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -553,7 +933,8 @@
 							"sid": 530980611911881
 						}
 					],
-					"sid": 795525355281549
+					"sid": 795525355281549,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -613,7 +994,8 @@
 							}
 						}
 					],
-					"sid": 619600100368423
+					"sid": 619600100368423,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -668,7 +1050,8 @@
 							"sid": 246296223097530
 						}
 					],
-					"sid": 827842394455604
+					"sid": 827842394455604,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -697,7 +1080,8 @@
 							"sid": 175980071296961
 						}
 					],
-					"sid": 665589651424217
+					"sid": 665589651424217,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -726,7 +1110,8 @@
 							"sid": 467654086765457
 						}
 					],
-					"sid": 616169307417585
+					"sid": 616169307417585,
+					"disabled": true
 				}
 			],
 			"sid": 539809723084208
@@ -737,550 +1122,576 @@
 			"title": "Menu settings - Gamepad",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
-			"sid": 485663531192865
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "for",
-					"objectClass": "System",
-					"sid": 920629724848722,
-					"parameters": {
-						"name": "\"\"",
-						"start-index": "0",
-						"end-index": "MAX_GAMEPAD"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 589119364121394,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 190585903859190,
+							"id": "for",
+							"objectClass": "System",
+							"sid": 758075734516950,
 							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-up"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 654360740793401,
-							"parameters": {
-								"gamepad": "loopindex",
-								"axis": "left-analog-y-axis",
-								"comparison": 2,
-								"value": "-gamepad_deadzone"
+								"name": "\"\"",
+								"start-index": "0",
+								"end-index": "MAX_GAMEPAD"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 855605980032447,
+					"sid": 202493896472582,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 789701449569140
-								}
-							],
-							"actions": [
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 848976439315753,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 934340408169921,
 									"parameters": {
-										"variable": "menu_settings_current_index",
-										"value": "1"
+										"gamepad": "loopindex",
+										"button": "d-pad-up"
 									}
 								},
 								{
-									"callFunction": "menuSettingsUpdate",
-									"sid": 353816497047138
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 133687933356489,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 2,
+										"value": "-gamepad_deadzone"
+									}
 								}
 							],
-							"sid": 268920563385480
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 826627329783139,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-down"
-							}
+							"actions": [],
+							"sid": 202679914252933,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 905148485214587
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-eventvar",
+											"objectClass": "System",
+											"sid": 420074052874122,
+											"parameters": {
+												"variable": "menu_settings_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "menuSettingsUpdate",
+											"sid": 448507694135070
+										}
+									],
+									"sid": 880582973947335
+								}
+							],
+							"isOrBlock": true
 						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 203972116157236,
-							"parameters": {
-								"gamepad": "loopindex",
-								"axis": "left-analog-y-axis",
-								"comparison": 4,
-								"value": "gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 402508480022948,
-					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 517670832082719
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 473347495182498,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 569266597472694,
 									"parameters": {
-										"variable": "menu_settings_current_index",
-										"value": "1"
+										"gamepad": "loopindex",
+										"button": "d-pad-down"
 									}
 								},
 								{
-									"callFunction": "menuSettingsUpdate",
-									"sid": 590389045843749
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 245060114244875,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-y-axis",
+										"comparison": 4,
+										"value": "gamepad_deadzone"
+									}
 								}
 							],
-							"sid": 285309728414747
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 292003349178682,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-left"
-							}
+							"actions": [],
+							"sid": 185692733354700,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 861828876593226
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 907778488030462,
+											"parameters": {
+												"variable": "menu_settings_current_index",
+												"value": "1"
+											}
+										},
+										{
+											"callFunction": "menuSettingsUpdate",
+											"sid": 533958977712223
+										}
+									],
+									"sid": 800650476984276
+								}
+							],
+							"isOrBlock": true
 						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 455475117597748,
-							"parameters": {
-								"first-value": "menu_settings_current_index",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 100172042777497,
-							"parameters": {
-								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 265480465824928,
-							"parameters": {
-								"first-value": "pixel_spritefont.action",
-								"comparison": 0,
-								"second-value": "\"menu_settings_fullscreen\""
-							}
-						},
-						{
-							"id": "is-fullscreen",
-							"objectClass": "Browser",
-							"sid": 351695683171239,
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "request-fullscreen",
-							"objectClass": "Browser",
-							"sid": 278050706846767,
-							"parameters": {
-								"mode": "stretch-letterbox-scale",
-								"navigation-ui": "auto"
-							}
-						}
-					],
-					"sid": 641380975231095
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 887288371614989,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-left"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 168916257695057,
-							"parameters": {
-								"first-value": "menu_settings_current_index",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 714124896149180,
-							"parameters": {
-								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 219177654104999,
-							"parameters": {
-								"first-value": "pixel_spritefont.action",
-								"comparison": 0,
-								"second-value": "\"menu_settings_fullscreen\""
-							}
-						},
-						{
-							"id": "is-fullscreen",
-							"objectClass": "Browser",
-							"sid": 587549218863598
-						}
-					],
-					"actions": [
-						{
-							"id": "cancel-fullscreen",
-							"objectClass": "Browser",
-							"sid": 742025670791483
-						}
-					],
-					"sid": 333798987363416
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 654929420603598,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 644511774114429,
-							"parameters": {
-								"first-value": "menu_settings_current_index",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 407688705217837,
-							"parameters": {
-								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 798383201198884,
-							"parameters": {
-								"first-value": "pixel_spritefont.action",
-								"comparison": 0,
-								"second-value": "\"menu_settings_fullscreen\""
-							}
-						},
-						{
-							"id": "is-fullscreen",
-							"objectClass": "Browser",
-							"sid": 420493755534057,
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "request-fullscreen",
-							"objectClass": "Browser",
-							"sid": 545609311831737,
-							"parameters": {
-								"mode": "stretch-letterbox-scale",
-								"navigation-ui": "auto"
-							}
-						}
-					],
-					"sid": 392601119621586
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 964145464688001,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 260417316251430,
-							"parameters": {
-								"first-value": "menu_settings_current_index",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						},
-						{
-							"id": "pick-by-evaluate",
-							"objectClass": "System",
-							"sid": 532127079261585,
-							"parameters": {
-								"object": "pixel_spritefont",
-								"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 385012896960234,
-							"parameters": {
-								"first-value": "pixel_spritefont.action",
-								"comparison": 0,
-								"second-value": "\"menu_settings_fullscreen\""
-							}
-						},
-						{
-							"id": "is-fullscreen",
-							"objectClass": "Browser",
-							"sid": 515112145139894
-						}
-					],
-					"actions": [
-						{
-							"id": "cancel-fullscreen",
-							"objectClass": "Browser",
-							"sid": 851354510497619
-						}
-					],
-					"sid": 212070673156179
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 207173165890969,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-left"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 839076033897050,
-							"parameters": {
-								"gamepad": "loopindex",
-								"axis": "left-analog-x-axis",
-								"comparison": 2,
-								"value": "-gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 890545563744789,
-					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 302233665987364,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 359404395624293,
 									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
+										"gamepad": "loopindex",
+										"button": "d-pad-left"
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 321447625649283,
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 699979548414910,
 									"parameters": {
-										"instance-variable": "action",
+										"first-value": "menu_settings_current_index",
 										"comparison": 0,
-										"value": "\"back\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 473322187123772
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "menuSettingsUpdateValue",
-									"sid": 637522746367307,
-									"parameters": [
-										"pixel_spritefont.action",
-										"0"
-									]
-								}
-							],
-							"sid": 957699938514874
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 389655415450824,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "d-pad-right"
-							}
-						},
-						{
-							"id": "compare-axis",
-							"objectClass": "Gamepad",
-							"sid": 877335963213738,
-							"parameters": {
-								"gamepad": "loopindex",
-								"axis": "left-analog-x-axis",
-								"comparison": 4,
-								"value": "gamepad_deadzone"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 823193479501154,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-evaluate",
-									"objectClass": "System",
-									"sid": 353289337903824,
-									"parameters": {
-										"object": "pixel_spritefont",
-										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
+										"second-value": "0"
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 369950827796132,
-									"parameters": {
-										"instance-variable": "action",
-										"comparison": 0,
-										"value": "\"back\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 376873071240881
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "menuSettingsUpdateValue",
-									"sid": 333634956302589,
-									"parameters": [
-										"pixel_spritefont.action",
-										"1"
-									]
-								}
-							],
-							"sid": 547920775261186
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 307942937692743,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "button-a"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 237805574276628,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
 									"id": "pick-by-evaluate",
 									"objectClass": "System",
-									"sid": 960823573516202,
+									"sid": 560347044945823,
 									"parameters": {
 										"object": "pixel_spritefont",
 										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "pixel_spritefont",
-									"sid": 462015563404834,
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 415893629742588,
 									"parameters": {
-										"instance-variable": "action",
+										"first-value": "pixel_spritefont.action",
 										"comparison": 0,
-										"value": "\"menu_settings_back\""
+										"second-value": "\"menu_settings_fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 737929471385734,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 727311171609912,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 488423146629855
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 878893312795445,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-left"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 762885218990679,
+									"parameters": {
+										"first-value": "menu_settings_current_index",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 797614357987411,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 906017989522766,
+									"parameters": {
+										"first-value": "pixel_spritefont.action",
+										"comparison": 0,
+										"second-value": "\"menu_settings_fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 847803137602347
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 401923185207358
+								}
+							],
+							"sid": 216942791322923
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 815644917371273,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 791411488640197,
+									"parameters": {
+										"first-value": "menu_settings_current_index",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 604554191240608,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 136530946882631,
+									"parameters": {
+										"first-value": "pixel_spritefont.action",
+										"comparison": 0,
+										"second-value": "\"menu_settings_fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 698245630988315,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "request-fullscreen",
+									"objectClass": "Browser",
+									"sid": 450329294669843,
+									"parameters": {
+										"mode": "stretch-letterbox-scale",
+										"navigation-ui": "auto"
+									}
+								}
+							],
+							"sid": 396482197948762
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 944343751217564,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 202702111297619,
+									"parameters": {
+										"first-value": "menu_settings_current_index",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 377914400801103,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 347303799876185,
+									"parameters": {
+										"first-value": "pixel_spritefont.action",
+										"comparison": 0,
+										"second-value": "\"menu_settings_fullscreen\""
+									}
+								},
+								{
+									"id": "is-fullscreen",
+									"objectClass": "Browser",
+									"sid": 918336307670548
+								}
+							],
+							"actions": [
+								{
+									"id": "cancel-fullscreen",
+									"objectClass": "Browser",
+									"sid": 109340368544087
+								}
+							],
+							"sid": 133411690447397
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 187380910119756,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-left"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 888316078891481,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 2,
+										"value": "-gamepad_deadzone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 364910554998006,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 413739274307341,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 427806648717800,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"back\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 163541880137663
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "menuSettingsUpdateValue",
+											"sid": 161567524816599,
+											"parameters": [
+												"pixel_spritefont.action",
+												"0"
+											]
+										}
+									],
+									"sid": 596820094615467
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 342020935029176,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "d-pad-right"
+									}
+								},
+								{
+									"id": "compare-axis",
+									"objectClass": "Gamepad",
+									"sid": 276444635865570,
+									"parameters": {
+										"gamepad": "loopindex",
+										"axis": "left-analog-x-axis",
+										"comparison": 4,
+										"value": "gamepad_deadzone"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 254556546127895,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 714617821338685,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_settings_option\" &\r\npixel_spritefont.index = menu_settings_current_index"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 762112390060428,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"back\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 626071265408608
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "menuSettingsUpdateValue",
+											"sid": 885895255365194,
+											"parameters": [
+												"pixel_spritefont.action",
+												"1"
+											]
+										}
+									],
+									"sid": 934988867659584
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 748998386060054,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-a"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 622291090318229,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-evaluate",
+											"objectClass": "System",
+											"sid": 418015213291492,
+											"parameters": {
+												"object": "pixel_spritefont",
+												"expression": "pixel_spritefont.type = \"menu_settings_option\" &\npixel_spritefont.index = menu_settings_current_index"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "pixel_spritefont",
+											"sid": 171239353964203,
+											"parameters": {
+												"instance-variable": "action",
+												"comparison": 0,
+												"value": "\"menu_settings_back\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 761989006533310,
+											"parameters": {
+												"layout": "menu_main"
+											}
+										}
+									],
+									"sid": 487139403275059
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 598748884256206,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
 									}
 								}
 							],
@@ -1288,44 +1699,19 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 943552002034086,
+									"sid": 516510088727273,
 									"parameters": {
 										"layout": "menu_main"
 									}
 								}
 							],
-							"sid": 618802049067871
+							"sid": 570538522436542,
+							"isOrBlock": true
 						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 251630150971805,
-							"parameters": {
-								"gamepad": "loopindex",
-								"button": "button-b"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 450602996242742,
-							"parameters": {
-								"layout": "menu_main"
-							}
-						}
-					],
-					"sid": 449913826243649,
-					"isOrBlock": true
+					]
 				}
-			]
+			],
+			"sid": 485663531192865
 		}
 	],
 	"sid": 106729789081488

@@ -279,7 +279,7 @@
 						},
 						"Physics": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,
@@ -302,35 +302,6 @@
 						"y": 8.344111935606044,
 						"width": 185.86051065364535,
 						"height": 11.523703615162432,
-						"originX": 1,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "player_km_origin_indicator",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 47,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 52.93040860331105,
-						"y": 192.1872754346766,
-						"width": 5.923173553742858,
-						"height": 5.923173553742858,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -658,10 +629,10 @@
 						}
 					},
 					"world": {
-						"x": 359,
-						"y": 274.40875117194423,
-						"width": 77.16617258608332,
-						"height": 110.03324609497066,
+						"x": 366.8472900010332,
+						"y": 258.4002795698366,
+						"width": 95,
+						"height": 134,
 						"originX": 0.46296296296296297,
 						"originY": 0.33766233766233766,
 						"color": [
@@ -690,6 +661,20 @@
 							"properties": {
 								"enabled": true,
 								"tags": "barrier"
+							}
+						},
+						"Physics": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
 							}
 						}
 					},
@@ -797,7 +782,7 @@
 						"width": 40,
 						"height": 81,
 						"originX": 0.5,
-						"originY": 0.48,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,

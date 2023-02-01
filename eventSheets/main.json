@@ -18,6 +18,10 @@
 			"includeSheet": "player"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "score_1",
 			"type": "number",
@@ -697,6 +701,86 @@
 					"sid": 957118365534833,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "skill_cooldown_random_tp",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 127300544204776
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_fundinaso",
+							"type": "number",
+							"initialValue": "20",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 774942069930747
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_marionette",
+							"type": "number",
+							"initialValue": "30",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 102032333625950
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_area_root",
+							"type": "number",
+							"initialValue": "30",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 650322126747941
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_ice_wall",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 873419111582641
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_metronome",
+							"type": "number",
+							"initialValue": "20",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 481266764597651
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_cry_stun",
+							"type": "number",
+							"initialValue": "50",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 785471307628418
+						},
+						{
+							"eventType": "variable",
+							"name": "skill_cooldown_hook",
+							"type": "number",
+							"initialValue": "40",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 892419584087179
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -733,48 +817,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-size",
-									"objectClass": "player_body_detector",
-									"sid": 377016524599410,
-									"parameters": {
-										"width": "abs(player.Width) + 19",
-										"height": "player.Height + 22"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player_body_detector",
-									"sid": 274049808367312,
-									"parameters": {
-										"x": "player.X",
-										"y": "player.Y"
-									}
-								},
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "player_body_detector",
-									"sid": 410633513742944,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "player",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "player_body_detector",
-									"sid": 634790910779769,
-									"parameters": {
-										"instance-variable": "owner",
-										"value": "player.UID"
-									}
-								},
 								{
 									"id": "set-scale",
 									"objectClass": "player",
@@ -862,14 +904,6 @@
 								},
 								{
 									"id": "set-z-elevation",
-									"objectClass": "player_body_detector",
-									"sid": 772962880805837,
-									"parameters": {
-										"z": "2"
-									}
-								},
-								{
-									"id": "set-z-elevation",
 									"objectClass": "feet_detector",
 									"sid": 977371076772973,
 									"parameters": {
@@ -902,6 +936,38 @@
 									"parameters": {
 										"instance-variable": "movementType",
 										"value": "\"platformer\""
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player_body_detector",
+									"sid": 915781655432355,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "feet_detector",
+									"sid": 391136083297410,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player",
+									"sid": 390059600544370,
+									"parameters": {
+										"z": "0"
+									}
+								},
+								{
+									"id": "set-z-elevation",
+									"objectClass": "player_mask",
+									"sid": 227427941205987,
+									"parameters": {
+										"z": "0"
 									}
 								}
 							],
@@ -964,6 +1030,21 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "move-to-bottom",
+											"objectClass": "player_body_detector",
+											"sid": 479455482942930
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "player",
+											"sid": 508475074957160
+										},
+										{
+											"id": "move-to-top",
+											"objectClass": "feet_detector",
+											"sid": 269512819571810
+										},
 										{
 											"id": "set-visible",
 											"objectClass": "player",
@@ -1052,10 +1133,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 701341270164244,
+													"sid": 157026003005923,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "70"
+														"value": "skill_cooldown_random_tp"
 													}
 												}
 											],
@@ -1124,10 +1205,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 318647461981357,
+													"sid": 488506125906121,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "20"
+														"value": "skill_cooldown_fundinaso"
 													}
 												}
 											],
@@ -1196,10 +1277,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 879702562995050,
+													"sid": 487814555983323,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "40"
+														"value": "skill_cooldown_marionette"
 													}
 												}
 											],
@@ -1268,10 +1349,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 878811951047642,
+													"sid": 463222166866517,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "60"
+														"value": "skill_cooldown_area_root"
 													}
 												}
 											],
@@ -1340,10 +1421,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 228300866919085,
+													"sid": 736597844038382,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "45"
+														"value": "skill_cooldown_ice_wall"
 													}
 												}
 											],
@@ -1412,10 +1493,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 813094084369213,
+													"sid": 401699581720365,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "15"
+														"value": "skill_cooldown_metronome"
 													}
 												},
 												{
@@ -1456,19 +1537,19 @@
 										{
 											"id": "set-size",
 											"objectClass": "player",
-											"sid": 146429797257568,
+											"sid": 512700498990569,
 											"parameters": {
-												"width": "77",
-												"height": "110"
+												"width": "95",
+												"height": "134"
 											}
 										},
 										{
 											"id": "set-size",
 											"objectClass": "player_mask",
-											"sid": 790198205963888,
+											"sid": 577580170096894,
 											"parameters": {
-												"width": "77",
-												"height": "110"
+												"width": "95",
+												"height": "134"
 											}
 										}
 									],
@@ -1499,10 +1580,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 316580885815212,
+													"sid": 928166694874922,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "60"
+														"value": "skill_cooldown_cry_stun"
 													}
 												}
 											],
@@ -1580,10 +1661,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "player",
-													"sid": 158823470515678,
+													"sid": 438776941985421,
 													"parameters": {
 														"instance-variable": "skill0_cooldown",
-														"value": "20"
+														"value": "skill_cooldown_hook"
 													}
 												}
 											],
@@ -1630,6 +1711,72 @@
 									"conditions": [],
 									"actions": [
 										{
+											"id": "set-angle",
+											"objectClass": "player",
+											"sid": 555672817955343,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_mask",
+											"sid": 112661031382137,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "player_body_detector",
+											"sid": 227266283616733,
+											"parameters": {
+												"angle": "0"
+											}
+										},
+										{
+											"id": "set-size",
+											"objectClass": "player_body_detector",
+											"sid": 192349835113783,
+											"parameters": {
+												"width": "abs(player_collision.Width) * 1.5",
+												"height": "player_collision.Height * 1.2"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "player_body_detector",
+											"sid": 298253598469858,
+											"parameters": {
+												"x": "player_collision.X",
+												"y": "player_collision.Y"
+											}
+										},
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "player_body_detector",
+											"sid": 777304338825768,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "player",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "player_body_detector",
+											"sid": 626944615987999,
+											"parameters": {
+												"instance-variable": "owner",
+												"value": "player.UID"
+											}
+										},
+										{
 											"id": "set-size",
 											"objectClass": "feet_detector",
 											"sid": 433542755056068,
@@ -1650,7 +1797,7 @@
 										{
 											"id": "pin-to-object",
 											"objectClass": "feet_detector",
-											"sid": 390681230130580,
+											"sid": 127995941037627,
 											"behaviorType": "Pin",
 											"parameters": {
 												"pin-to": "player",
@@ -1664,6 +1811,38 @@
 											"behaviorType": "Pin",
 											"parameters": {
 												"destroy": true
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player_body_detector",
+											"sid": 600043430423480,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "feet_detector",
+											"sid": 351791079080979,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player",
+											"sid": 335373764294760,
+											"parameters": {
+												"z": "0"
+											}
+										},
+										{
+											"id": "set-z-elevation",
+											"objectClass": "player_mask",
+											"sid": 543129411215588,
+											"parameters": {
+												"z": "0"
 											}
 										}
 									],
@@ -1721,17 +1900,9 @@
 											],
 											"actions": [
 												{
-													"id": "set-angle",
-													"objectClass": "player_mask",
-													"sid": 815864173739291,
-													"parameters": {
-														"angle": "0"
-													}
-												},
-												{
 													"id": "pin-to-object-properties",
 													"objectClass": "player_mask",
-													"sid": 120116338597644,
+													"sid": 902838022338499,
 													"behaviorType": "Pin",
 													"parameters": {
 														"pin-to": "player",
@@ -1740,7 +1911,7 @@
 														"angle": true,
 														"width-type": "no",
 														"height-type": "no",
-														"z": false
+														"z": true
 													}
 												},
 												{
@@ -1775,6 +1946,32 @@
 					"sid": 455544248805452,
 					"children": [
 						{
+							"eventType": "variable",
+							"name": "spawnHeight",
+							"type": "number",
+							"initialValue": "200",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 741786664703759
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 969734989667882,
+									"parameters": {
+										"variable": "spawnHeight",
+										"value": "LayoutHeight - 100"
+									}
+								}
+							],
+							"sid": 479479820128149
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1800,6 +1997,25 @@
 									"parameters": [
 										"player.UID"
 									]
+								},
+								{
+									"id": "set-velocity",
+									"objectClass": "player",
+									"sid": 138523417960805,
+									"behaviorType": "Physics",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "set-angular-velocity",
+									"objectClass": "player",
+									"sid": 225325134966039,
+									"behaviorType": "Physics",
+									"parameters": {
+										"angular-velocity": "0"
+									}
 								}
 							],
 							"sid": 533119603914173
@@ -1810,7 +2026,7 @@
 								{
 									"id": "for-each",
 									"objectClass": "System",
-									"sid": 288619784530344,
+									"sid": 818112508520619,
 									"parameters": {
 										"object": "prop_skill_hook"
 									}
@@ -1820,10 +2036,10 @@
 								{
 									"id": "destroy",
 									"objectClass": "prop_skill_hook",
-									"sid": 392036678612052
+									"sid": 778342798247701
 								}
 							],
-							"sid": 575194267843679
+							"sid": 317585332783717
 						},
 						{
 							"eventType": "block",
@@ -1901,10 +2117,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 770777365846557,
+											"sid": 544542870520606,
 											"parameters": {
 												"x": "LayoutWidth / 2 - LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -1946,10 +2162,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 477204276631434,
+											"sid": 312670623150404,
 											"parameters": {
 												"x": "LayoutWidth / 2 - LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -1972,10 +2188,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 324930290314099,
+											"sid": 638195016349073,
 											"parameters": {
 												"x": "LayoutWidth / 2 + LayoutWidth / 4",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2017,10 +2233,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 227468275920901,
+											"sid": 225535351853236,
 											"parameters": {
 												"x": "LayoutWidth/4 - LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2043,10 +2259,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 708677523965562,
+											"sid": 551394923871663,
 											"parameters": {
 												"x": "LayoutWidth/2 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2069,10 +2285,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 394368898931129,
+											"sid": 786009296258874,
 											"parameters": {
 												"x": "LayoutWidth/4 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2095,10 +2311,10 @@
 										{
 											"id": "set-position",
 											"objectClass": "player",
-											"sid": 335855698597112,
+											"sid": 561649403331326,
 											"parameters": {
 												"x": "LayoutWidth/4 * 3 + LayoutWidth/8",
-												"y": "200"
+												"y": "spawnHeight"
 											}
 										}
 									],
@@ -2180,7 +2396,39 @@
 											}
 										}
 									],
-									"sid": 284223065494483
+									"sid": 284223065494483,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 503093316346971,
+													"parameters": {
+														"key": "\"settings_enabled_sound\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 880046298415286,
+													"parameters": {
+														"audio-file": "chut",
+														"loop": "not-looping",
+														"volume": "-15",
+														"stereo-pan": "0",
+														"tag-optional": "\"sound\""
+													}
+												}
+											],
+											"sid": 589525793526521
+										}
+									]
 								}
 							]
 						}
@@ -2256,7 +2504,39 @@
 											}
 										}
 									],
-									"sid": 359065502068060
+									"sid": 359065502068060,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 175856131456611,
+													"parameters": {
+														"key": "\"settings_enabled_sound\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 333934735146026,
+													"parameters": {
+														"audio-file": "chut",
+														"loop": "not-looping",
+														"volume": "-20",
+														"stereo-pan": "0",
+														"tag-optional": "\"sound\""
+													}
+												}
+											],
+											"sid": 398732597370267
+										}
+									]
 								}
 							]
 						}

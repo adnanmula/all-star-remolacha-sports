@@ -2,6 +2,10 @@
 	"name": "menu_match_character",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_gamepad_cursor_movement",
 			"type": "number",
@@ -148,32 +152,6 @@
 									"actions": [],
 									"sid": 875718317389766,
 									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-value",
-													"objectClass": "data_match_config",
-													"sid": 250483709763692,
-													"parameters": {
-														"key": "\"size_pitch\"",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "go-to-layout",
-													"objectClass": "System",
-													"sid": 616884978230623,
-													"parameters": {
-														"layout": "pitch_small"
-													}
-												}
-											],
-											"sid": 374062071643516
-										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -350,32 +328,6 @@
 									"actions": [],
 									"sid": 515580934814435,
 									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-value",
-													"objectClass": "data_match_config",
-													"sid": 551346932085768,
-													"parameters": {
-														"key": "\"size_pitch\"",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "go-to-layout",
-													"objectClass": "System",
-													"sid": 989381864216578,
-													"parameters": {
-														"layout": "pitch_small"
-													}
-												}
-											],
-											"sid": 127690586116419
-										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -592,32 +544,6 @@
 									"actions": [],
 									"sid": 909862968631129,
 									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-value",
-													"objectClass": "data_match_config",
-													"sid": 151895657432241,
-													"parameters": {
-														"key": "\"size_pitch\"",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "go-to-layout",
-													"objectClass": "System",
-													"sid": 351287951656215,
-													"parameters": {
-														"layout": "pitch_small"
-													}
-												}
-											],
-											"sid": 353969282182239
-										},
 										{
 											"eventType": "block",
 											"conditions": [

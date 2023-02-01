@@ -2,6 +2,10 @@
 	"name": "menu_match_config",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_match_config_current_index",
 			"type": "number",
@@ -1066,7 +1070,7 @@
 									"eventType": "variable",
 									"name": "max_value",
 									"type": "number",
-									"initialValue": "1",
+									"initialValue": "2",
 									"comment": "",
 									"isStatic": false,
 									"isConstant": false,
@@ -1768,6 +1772,32 @@
 														}
 													],
 													"sid": 273727042900216
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 664119108681015,
+															"parameters": {
+																"first-value": "data_match_config.CurrentValue",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-text",
+															"objectClass": "pixel_spritefont",
+															"sid": 365180885298280,
+															"parameters": {
+																"text": "\"Instant\""
+															}
+														}
+													],
+													"sid": 825263488656732
 												}
 											]
 										}
@@ -1852,7 +1882,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Match menu - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
@@ -1871,6 +1901,7 @@
 					],
 					"actions": [],
 					"sid": 513431343040585,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1917,7 +1948,8 @@
 									]
 								}
 							],
-							"sid": 661251878963783
+							"sid": 661251878963783,
+							"disabled": true
 						}
 					]
 				},
@@ -1935,6 +1967,7 @@
 					],
 					"actions": [],
 					"sid": 298984900973219,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -1981,7 +2014,8 @@
 									]
 								}
 							],
-							"sid": 484872281549043
+							"sid": 484872281549043,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -2016,6 +2050,7 @@
 					],
 					"actions": [],
 					"sid": 278640574522002,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -2040,7 +2075,8 @@
 									]
 								}
 							],
-							"sid": 401917750817744
+							"sid": 401917750817744,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -2072,7 +2108,8 @@
 							"sid": 660357227029239
 						}
 					],
-					"sid": 789251254710759
+					"sid": 789251254710759,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2101,7 +2138,8 @@
 							"sid": 471563244193537
 						}
 					],
-					"sid": 237632876786163
+					"sid": 237632876786163,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2126,6 +2164,7 @@
 						}
 					],
 					"sid": 343472805456413,
+					"disabled": true,
 					"isOrBlock": true
 				}
 			],

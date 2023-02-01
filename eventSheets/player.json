@@ -13,6 +13,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MAX_VELOCITY_X_ON_GROUND",
+			"type": "number",
+			"initialValue": "400",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 853679040597853
+		},
+		{
+			"eventType": "variable",
 			"name": "MAX_VELOCITY_Y",
 			"type": "number",
 			"initialValue": "500",
@@ -45,7 +55,7 @@
 			"eventType": "variable",
 			"name": "MOVEMENT_FLIYING_FORCE",
 			"type": "number",
-			"initialValue": "25000",
+			"initialValue": "10000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -55,7 +65,7 @@
 			"eventType": "variable",
 			"name": "JUMP_IMPULSE",
 			"type": "number",
-			"initialValue": "1000",
+			"initialValue": "2000",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -159,7 +169,46 @@
 									}
 								}
 							],
-							"sid": 807520729726259
+							"sid": 807520729726259,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 703328239556165,
+											"parameters": {
+												"first-value": "Functions.playerIsFalling(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 218353780259742,
+											"parameters": {
+												"first-value": "Functions.playerIsJumping(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_mask",
+											"sid": 347337766005644,
+											"parameters": {
+												"animation": "\"walking\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 877598776501430
+								}
+							]
 						}
 					]
 				},
@@ -244,7 +293,46 @@
 									}
 								}
 							],
-							"sid": 392139289977961
+							"sid": 392139289977961,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 356891751356249,
+											"parameters": {
+												"first-value": "Functions.playerIsFalling(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 116159160322790,
+											"parameters": {
+												"first-value": "Functions.playerIsJumping(player.UID)",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player_mask",
+											"sid": 946017584852763,
+											"parameters": {
+												"animation": "\"walking\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 529265512190902
+								}
+							]
 						}
 					]
 				},
@@ -420,17 +508,7 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 672205596170747,
-							"parameters": {
-								"type": "log",
-								"message": "\"Moving at \" & direction"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 356157916762992,
 					"children": [
 						{
@@ -476,6 +554,15 @@
 							],
 							"actions": [
 								{
+									"id": "set-animation",
+									"objectClass": "player_mask",
+									"sid": 385655248478081,
+									"parameters": {
+										"animation": "\"walking\"",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "apply-force-at-angle",
 									"objectClass": "player",
 									"sid": 549018862296277,
@@ -485,71 +572,35 @@
 										"angle": "direction",
 										"image-point": "0"
 									}
-								},
-								{
-									"id": "set-velocity",
-									"objectClass": "player",
-									"sid": 229452116475599,
-									"behaviorType": "Physics",
-									"parameters": {
-										"x-component": "Self.Physics.VelocityX",
-										"y-component": "0"
-									}
 								}
 							],
 							"sid": 269970401203469,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "Right up"
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 940022617341644,
+											"sid": 165960718554235,
 											"parameters": {
-												"first-value": "direction",
-												"comparison": 3,
-												"second-value": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 577525717486237,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 4,
-												"second-value": "270"
+												"variable": "removeVelocityY"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-mirrored",
+											"id": "set-velocity",
 											"objectClass": "player",
-											"sid": 914063283085606,
+											"sid": 126811355853191,
+											"behaviorType": "Physics",
 											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 666364312325932,
-											"parameters": {
-												"state": "not-mirrored"
+												"x-component": "Self.Physics.VelocityX",
+												"y-component": "0"
 											}
 										}
 									],
-									"sid": 820332657006971
-								},
-								{
-									"eventType": "comment",
-									"text": "Right down"
+									"sid": 789171838173004
 								},
 								{
 									"eventType": "block",
@@ -557,69 +608,21 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 163283412283943,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 4,
-												"second-value": "0"
-											}
-										},
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 769797890167666,
-											"parameters": {
-												"first-value": "direction",
-												"comparison": 2,
-												"second-value": "90"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-mirrored",
-											"objectClass": "player",
-											"sid": 664899844608748,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "player_mask",
-											"sid": 545102930958027,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 700457377320264
-								},
-								{
-									"eventType": "comment",
-									"text": "Left up"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 627710756306898,
+											"sid": 588227761891714,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 5,
-												"second-value": "180"
+												"second-value": "-90"
 											}
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 733584195029106,
+											"sid": 992174250468309,
 											"parameters": {
 												"first-value": "direction",
-												"comparison": 2,
-												"second-value": "270"
+												"comparison": 3,
+												"second-value": "90"
 											}
 										}
 									],
@@ -627,25 +630,21 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 622326048061462,
+											"sid": 848414472042551,
 											"parameters": {
-												"state": "mirrored"
+												"state": "not-mirrored"
 											}
 										},
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 875260539200757,
+											"sid": 234423950922579,
 											"parameters": {
-												"state": "mirrored"
+												"state": "not-mirrored"
 											}
 										}
 									],
-									"sid": 103685727662089
-								},
-								{
-									"eventType": "comment",
-									"text": "Left down"
+									"sid": 210453329572012
 								},
 								{
 									"eventType": "block",
@@ -653,17 +652,17 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 133019634970592,
+											"sid": 711478125940354,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 2,
-												"second-value": "180"
+												"second-value": "-90"
 											}
 										},
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 974699519261287,
+											"sid": 288631045084385,
 											"parameters": {
 												"first-value": "direction",
 												"comparison": 4,
@@ -675,7 +674,7 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player",
-											"sid": 343576280043366,
+											"sid": 910715686674395,
 											"parameters": {
 												"state": "mirrored"
 											}
@@ -683,13 +682,14 @@
 										{
 											"id": "set-mirrored",
 											"objectClass": "player_mask",
-											"sid": 501234344444151,
+											"sid": 267547459418651,
 											"parameters": {
 												"state": "mirrored"
 											}
 										}
 									],
-									"sid": 984667051645920
+									"sid": 519924418238968,
+									"isOrBlock": true
 								}
 							]
 						}
@@ -771,13 +771,53 @@
 												"offset-x": "0",
 												"offset-y": "15"
 											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 589390011989079,
+											"parameters": {
+												"object": "ball",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 789184767849556,
+											"parameters": {
+												"object": "player_collision",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 573312851708806,
+											"parameters": {
+												"object": "solid_bound",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "player",
+											"sid": 802872858817653,
+											"parameters": {
+												"object": "goal_volley",
+												"offset-x": "0",
+												"offset-y": "15"
+											}
 										}
 									],
 									"actions": [
 										{
 											"id": "apply-impulse-at-angle",
 											"objectClass": "player",
-											"sid": 516384088436188,
+											"sid": 337598804667086,
 											"behaviorType": "Physics",
 											"parameters": {
 												"impulse": "JUMP_IMPULSE",
@@ -1476,17 +1516,6 @@
 									"parameters": {
 										"angle": "direction"
 									}
-								},
-								{
-									"id": "apply-torque-towards-angle",
-									"objectClass": "player",
-									"sid": 341476834238807,
-									"disabled": true,
-									"behaviorType": "Physics",
-									"parameters": {
-										"torque": "1000",
-										"angle": "angle(0,0, Gamepad.Axis(player.gamepad_index, 2), Gamepad.Axis(player.gamepad_index, 3)) + 90"
-									}
 								}
 							],
 							"sid": 691122189634690
@@ -1522,10 +1551,10 @@
 						{
 							"id": "set-velocity",
 							"objectClass": "player",
-							"sid": 418737658710247,
+							"sid": 688715681471565,
 							"behaviorType": "Physics",
 							"parameters": {
-								"x-component": "MAX_VELOCITY_X",
+								"x-component": "MAX_VELOCITY_X_ON_GROUND",
 								"y-component": "Self.Physics.VelocityY"
 							}
 						}
@@ -1551,10 +1580,10 @@
 						{
 							"id": "set-velocity",
 							"objectClass": "player",
-							"sid": 893977480480008,
+							"sid": 792942491856386,
 							"behaviorType": "Physics",
 							"parameters": {
-								"x-component": "-MAX_VELOCITY_X",
+								"x-component": "-MAX_VELOCITY_X_ON_GROUND",
 								"y-component": "Self.Physics.VelocityY"
 							}
 						}
@@ -1771,62 +1800,6 @@
 									"sid": 168251225526764
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 176687703887392
-								}
-							],
-							"actions": [],
-							"sid": 472678164954798,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-velocity",
-											"objectClass": "player",
-											"sid": 177472589168975,
-											"behaviorType": "Physics",
-											"parameters": {
-												"which": "y-velocity",
-												"comparison": 4,
-												"value": "100"
-											}
-										},
-										{
-											"id": "compare-velocity",
-											"objectClass": "player",
-											"sid": 692110797091144,
-											"behaviorType": "Physics",
-											"parameters": {
-												"which": "y-velocity",
-												"comparison": 2,
-												"value": "MAX_VELOCITY_Y"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-velocity",
-											"objectClass": "player",
-											"sid": 411891526310136,
-											"behaviorType": "Physics",
-											"parameters": {
-												"x-component": "Self.Physics.VelocityX",
-												"y-component": "MAX_VELOCITY_Y "
-											}
-										}
-									],
-									"sid": 954585655640039,
-									"disabled": true
-								}
-							]
 						}
 					]
 				}
@@ -1985,6 +1958,21 @@
 								},
 								{
 									"id": "destroy",
+									"objectClass": "particle_root",
+									"sid": 364935704010516
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particle_stun",
+									"sid": 293014944197615
+								},
+								{
+									"id": "destroy",
+									"objectClass": "particle_tp",
+									"sid": 660946463037077
+								},
+								{
+									"id": "destroy",
 									"objectClass": "player",
 									"sid": 327837450730485
 								},
@@ -2007,7 +1995,39 @@
 									]
 								}
 							],
-							"sid": 162901715235823
+							"sid": 162901715235823,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 443786742874241,
+											"parameters": {
+												"key": "\"settings_enabled_sound\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 853496412606166,
+											"parameters": {
+												"audio-file": "marionette",
+												"loop": "not-looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										}
+									],
+									"sid": 156123591723583
+								}
+							]
 						}
 					]
 				}

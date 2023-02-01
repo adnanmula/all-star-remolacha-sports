@@ -273,7 +273,7 @@
 										{
 											"id": "is-button-down",
 											"objectClass": "Gamepad",
-											"sid": 335675693654719,
+											"sid": 571978306874550,
 											"parameters": {
 												"gamepad": "player.gamepad_index",
 												"button": "button-a"
@@ -297,9 +297,14 @@
 													}
 												},
 												{
-													"id": "trigger-once-while-true",
+													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 177359494584151
+													"sid": 463066368566414,
+													"parameters": {
+														"first-value": "Functions.playerIsJumping(player.UID)",
+														"comparison": 0,
+														"second-value": "0"
+													}
 												}
 											],
 											"actions": [
@@ -330,11 +335,11 @@
 											"actions": [
 												{
 													"callFunction": "playerMoveAngle",
-													"sid": 110607183068032,
+													"sid": 596169756828214,
 													"parameters": [
 														"player.UID",
 														"270",
-														true
+														false
 													]
 												}
 											],
@@ -375,9 +380,14 @@
 													}
 												},
 												{
-													"id": "trigger-once-while-true",
+													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 579368566529679
+													"sid": 187292542144144,
+													"parameters": {
+														"first-value": "Functions.playerIsJumping(player.UID)",
+														"comparison": 0,
+														"second-value": "0"
+													}
 												}
 											],
 											"actions": [
@@ -731,7 +741,7 @@
 										{
 											"id": "is-button-down",
 											"objectClass": "Gamepad",
-											"sid": 886685383271976,
+											"sid": 951191109335638,
 											"parameters": {
 												"gamepad": "player.gamepad_index",
 												"button": "d-pad-down"
@@ -767,26 +777,6 @@
 												}
 											],
 											"sid": 564146958640412
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 164111185810532
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerFall",
-													"sid": 459547234980734,
-													"parameters": [
-														"player.UID"
-													]
-												}
-											],
-											"sid": 632140904538619
 										}
 									],
 									"isOrBlock": true
@@ -826,107 +816,18 @@
 											"actions": [
 												{
 													"callFunction": "playerMoveAngle",
-													"sid": 829117821825029,
+													"sid": 795582981349050,
 													"parameters": [
 														"player.UID",
-														"90",
+														"angle(0,0, Gamepad.Axis(player.gamepad_index, 0), Gamepad.Axis(player.gamepad_index, 1))",
 														false
 													]
 												}
 											],
 											"sid": 251545974551036
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 230629950437691
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerFall",
-													"sid": 653430065692033,
-													"parameters": [
-														"player.UID"
-													]
-												}
-											],
-											"sid": 910960315543344
 										}
 									],
 									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 262001222018630,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"button": "d-pad-down"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "compare-axis",
-											"objectClass": "Gamepad",
-											"sid": 520495399064839,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"axis": "left-analog-y-axis",
-												"comparison": 5,
-												"value": "gamepad_deadzone"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 592945850728890,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "player",
-													"sid": 767127570463485,
-													"parameters": {
-														"instance-variable": "movementType",
-														"comparison": 0,
-														"value": "\"flying\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 494805499221798
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 975721405167889
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "playerStopFall",
-													"sid": 676579232136128,
-													"parameters": [
-														"playerUid",
-														"0.3"
-													]
-												}
-											],
-											"sid": 479283293997384
-										}
-									]
 								},
 								{
 									"eventType": "comment",
@@ -1106,6 +1007,33 @@
 												"gamepad": "player.gamepad_index",
 												"button": "right-shoulder-button"
 											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 238978342187694,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-trigger"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 979110591133188,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-trigger"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 947166532100716,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-x"
+											}
 										}
 									],
 									"actions": [
@@ -1117,7 +1045,8 @@
 											]
 										}
 									],
-									"sid": 433556912162152
+									"sid": 433556912162152,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1134,6 +1063,15 @@
 												"gamepad": "player.gamepad_index",
 												"button": "left-shoulder-button"
 											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 748674620720206,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-y"
+											}
 										}
 									],
 									"actions": [
@@ -1145,7 +1083,8 @@
 											]
 										}
 									],
-									"sid": 195053655907661
+									"sid": 195053655907661,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1155,28 +1094,9 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-timer-running",
-											"objectClass": "player",
-											"sid": 779772821927910,
-											"behaviorType": "Timer",
-											"parameters": {
-												"tag": "\"stun\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-button-down",
-											"objectClass": "Gamepad",
-											"sid": 740265157195066,
-											"parameters": {
-												"gamepad": "player.gamepad_index",
-												"button": "left-shoulder-trigger"
-											}
-										},
-										{
 											"id": "compare-value",
 											"objectClass": "data_match_config",
-											"sid": 536664506533509,
+											"sid": 663955751864242,
 											"parameters": {
 												"key": "\"enabled_skills\"",
 												"comparison": 0,
@@ -1184,34 +1104,92 @@
 											}
 										},
 										{
-											"id": "is-timer-running",
-											"objectClass": "player",
-											"sid": 767910710055222,
-											"behaviorType": "Timer",
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 705103602099814,
 											"parameters": {
-												"tag": "\"skill0\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 950870925217416
+												"key": "\"enabled_skills\"",
+												"comparison": 0,
+												"value": "2"
+											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 439356588330228,
+									"children": [
 										{
-											"callFunction": "skillExecute",
-											"sid": 220630922634572,
-											"parameters": [
-												"player.UID",
-												"player.skill0",
-												"\"skill0\"",
-												"player.skill0_cooldown"
-											]
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 904153509855015,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"button": "left-shoulder-trigger"
+													}
+												},
+												{
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 341185122660669,
+													"parameters": {
+														"gamepad": "player.gamepad_index",
+														"button": "button-b"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 856087207842782,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "player",
+															"sid": 694271033379172,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"stun\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-timer-running",
+															"objectClass": "player",
+															"sid": 534373175465194,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"skill0\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 492705099833314
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "skillExecute",
+															"sid": 895499701912158,
+															"parameters": [
+																"player.UID",
+																"player.skill0",
+																"\"skill0\"",
+																"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 5"
+															]
+														}
+													],
+													"sid": 169662230051044
+												}
+											],
+											"isOrBlock": true
 										}
 									],
-									"sid": 699259219403028
+									"isOrBlock": true
 								}
 							]
 						}
@@ -1261,6 +1239,255 @@
 				}
 			],
 			"sid": 455298427226165
+		},
+		{
+			"functionName": "playerIsFalling",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 321686957786715
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 457642634180611,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 806864833709813,
+							"parameters": {
+								"unique-id": "playerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 200234144217315,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 701693018528699,
+									"parameters": {
+										"first-value": "player.Physics.VelocityY",
+										"comparison": 4,
+										"second-value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 265628638963862,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 972019092538018
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 685155042090580
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 152058891282868,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 401427746900659
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "playerIsJumping",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "number",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "playerUID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 786294816606729
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 447182542768218,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "player",
+							"sid": 256375346785827,
+							"parameters": {
+								"unique-id": "playerUID"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 825814806261109,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 634143457454308,
+									"parameters": {
+										"first-value": "player.Physics.VelocityY",
+										"comparison": 2,
+										"second-value": "-10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 395054232584397,
+									"parameters": {
+										"value": "1"
+									}
+								}
+							],
+							"sid": 409021296066128
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 826363054266592
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 218830541518089,
+									"parameters": {
+										"value": "0"
+									}
+								}
+							],
+							"sid": 188363049682609
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 382912155675497
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 549036034201239,
+					"parameters": {
+						"object": "player"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 307064313882248,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 816183893781022,
+							"parameters": {
+								"first-value": "Functions.playerIsFalling(player.UID)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "player",
+							"sid": 563286066629698,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "1000",
+								"angle": "90",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 806201437511229
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 353595669703734
+						}
+					],
+					"actions": [
+						{
+							"id": "apply-force-at-angle",
+							"objectClass": "player",
+							"sid": 375998634316520,
+							"behaviorType": "Physics",
+							"parameters": {
+								"force": "300",
+								"angle": "90",
+								"image-point": "0"
+							}
+						}
+					],
+					"sid": 922907785917533
+				}
+			]
 		}
 	],
 	"sid": 600060452567385

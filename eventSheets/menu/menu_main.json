@@ -2,6 +2,10 @@
 	"name": "menu_main",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "sound"
+		},
+		{
 			"eventType": "variable",
 			"name": "menu_main_current_index",
 			"type": "number",
@@ -122,6 +126,16 @@
 			"sid": 628010239301572
 		},
 		{
+			"eventType": "variable",
+			"name": "controls_are_visible",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 862366005608491
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Main menu navigation - Common",
@@ -171,6 +185,15 @@
 							"parameters": {
 								"time-scale": "1.0"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 188788551810196,
+							"parameters": {
+								"variable": "controls_are_visible",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 749104560716369,
@@ -200,6 +223,58 @@
 								}
 							],
 							"sid": 221733017650026
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data_match_config",
+									"sid": 672622822754114,
+									"parameters": {
+										"key": "\"settings_enabled_music\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data_match_config",
+									"sid": 316439168152549,
+									"parameters": {
+										"key": "\"settings_enabled_music\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 797953501445228
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "data_match_config",
+									"sid": 681243362490135,
+									"parameters": {
+										"key": "\"settings_enabled_sound\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "data_match_config",
+									"sid": 101263275244424,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 818695376618912
 						},
 						{
 							"eventType": "block",
@@ -276,7 +351,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 761518091866977,
+							"sid": 817927944197487,
 							"parameters": {
 								"variable": "menu_main_current_index",
 								"value": "4"
@@ -295,7 +370,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 361523582372555,
+							"sid": 325789544273850,
 							"parameters": {
 								"first-value": "menu_main_current_index",
 								"comparison": 4,
@@ -596,23 +671,6 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 829751845554262,
-									"parameters": {
-										"first-value": "view",
-										"comparison": 0,
-										"second-value": "\"menu_tournament\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 855909752293295
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
 									"sid": 130879976722733,
 									"parameters": {
 										"first-value": "view",
@@ -639,6 +697,23 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
+									"sid": 693863172032752,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_controls\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 710737609440781
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
 									"sid": 587859300925447,
 									"parameters": {
 										"first-value": "view",
@@ -655,6 +730,91 @@
 								}
 							],
 							"sid": 601653282208061
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 606481657380950,
+									"parameters": {
+										"first-value": "view",
+										"comparison": 0,
+										"second-value": "\"menu_controls\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 623869625010853,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-visible",
+											"objectClass": "controls",
+											"sid": 111987381366101
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "controls",
+											"sid": 623832290844650,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 651080924973487,
+											"parameters": {
+												"variable": "controls_are_visible",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 783865522001059
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 424472408423378
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "controls",
+											"sid": 724930954814644,
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "controls",
+											"sid": 133916481794325,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 654365376278055,
+											"parameters": {
+												"variable": "controls_are_visible",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 382847152252059
+								}
+							]
 						}
 					]
 				}
@@ -663,7 +823,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Main menu navigation - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
@@ -695,7 +855,8 @@
 							"sid": 825733784648881
 						}
 					],
-					"sid": 804670111489369
+					"sid": 804670111489369,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -724,7 +885,8 @@
 							"sid": 889982488006513
 						}
 					],
-					"sid": 172695961427815
+					"sid": 172695961427815,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -756,6 +918,7 @@
 					],
 					"actions": [],
 					"sid": 535771676938454,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -779,7 +942,8 @@
 									]
 								}
 							],
-							"sid": 402107451901559
+							"sid": 402107451901559,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -842,6 +1006,15 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 605248376961700,
+											"parameters": {
+												"variable": "controls_are_visible"
+											},
+											"isInverted": true
+										},
+										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
 											"sid": 934555255264856
@@ -898,6 +1071,15 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 254504898677448,
+											"parameters": {
+												"variable": "controls_are_visible"
+											},
+											"isInverted": true
+										},
+										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
 											"sid": 823031220189486
@@ -934,6 +1116,15 @@
 										"gamepad": "loopindex",
 										"button": "button-a"
 									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 423796377832224,
+									"parameters": {
+										"gamepad": "loopindex",
+										"button": "button-b"
+									}
 								}
 							],
 							"actions": [],
@@ -943,25 +1134,62 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "pick-by-evaluate",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 444298022261210,
+											"sid": 916420571034647,
 											"parameters": {
-												"object": "pixel_spritefont",
-												"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
+												"variable": "controls_are_visible"
 											}
 										}
 									],
 									"actions": [
 										{
 											"callFunction": "goToView",
-											"sid": 648501399418318,
+											"sid": 672441886023297,
 											"parameters": [
-												"pixel_spritefont.action"
+												"\"menu_controls\""
 											]
 										}
 									],
-									"sid": 364265124493039
+									"sid": 983122097275817
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 773533854413226
+										}
+									],
+									"actions": [],
+									"sid": 715008581534956,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 165085909149686,
+													"parameters": {
+														"object": "pixel_spritefont",
+														"expression": "pixel_spritefont.type = \"main_menu_option\" & pixel_spritefont.index = menu_main_current_index"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "goToView",
+													"sid": 172101530191772,
+													"parameters": [
+														"pixel_spritefont.action"
+													]
+												}
+											],
+											"sid": 851913865550569
+										}
+									]
 								}
 							],
 							"isOrBlock": true
@@ -970,48 +1198,6 @@
 				}
 			],
 			"sid": 577776575781846
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 807821921343508
-				}
-			],
-			"actions": [
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 396601266936362,
-					"disabled": true,
-					"parameters": {
-						"type": "log",
-						"message": "angle(0,0, (Gamepad.Axis(player.gamepad_index, 0) +100) / 2, (Gamepad.Axis(player.gamepad_index, 1) + 100) / 2)"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 296327883997341,
-					"parameters": {
-						"type": "log",
-						"message": "\"1: \" & (Gamepad.Axis(player.gamepad_index, 0) +100) / 2"
-					}
-				},
-				{
-					"id": "log",
-					"objectClass": "Browser",
-					"sid": 708170312626579,
-					"parameters": {
-						"type": "log",
-						"message": "\"2: \" & (Gamepad.Axis(player.gamepad_index, 1) +100) / 2"
-					}
-				}
-			],
-			"sid": 728756117525942,
-			"disabled": true
 		}
 	],
 	"sid": 795016252309516

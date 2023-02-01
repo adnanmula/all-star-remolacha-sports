@@ -19,20 +19,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 8155435,
+						"imageSpriteId": 1137161,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -49,20 +49,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 3786187,
+						"imageSpriteId": 4408350,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -79,20 +79,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 2981272,
+						"imageSpriteId": 9967744,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -109,20 +109,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1790537,
+						"imageSpriteId": 7649516,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -139,20 +139,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5347598,
+						"imageSpriteId": 7820297,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -169,20 +169,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7321488,
+						"imageSpriteId": 4068465,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 1,
-								"y": 0
+								"x": 0.9807692307692307,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -199,20 +199,20 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 52,
+						"height": 52,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4691184,
+						"imageSpriteId": 5349375,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 0,
-								"y": 0
+								"x": 0.019230769230769232,
+								"y": 0.019230769230769232
 							}
 						],
 						"duration": 1
@@ -229,20 +229,20 @@
 			{
 				"frames": [
 					{
-						"width": 35,
-						"height": 35,
+						"width": 37,
+						"height": 37,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 7263322,
+						"imageSpriteId": 4875541,
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "corner",
-								"x": 0,
-								"y": 0
+								"x": 0.02702702702702703,
+								"y": 0.02702702702702703
 							}
 						],
 						"duration": 1

@@ -344,7 +344,8 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 182,
 					"instanceVariables": {
@@ -390,7 +391,8 @@
 						"vertical-alignment": "top",
 						"wrapping": "word",
 						"initially-visible": true,
-						"origin": "center"
+						"origin": "center",
+						"read-aloud": false
 					},
 					"uid": 183,
 					"instanceVariables": {
@@ -408,6 +410,53 @@
 						"y": 96,
 						"width": 359,
 						"height": 110,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "pixel_spritefont",
+					"properties": {
+						"text": "Gamepads are required, keyboard not supported",
+						"enable-bbcode": false,
+						"character-width": 38,
+						"character-height": 48,
+						"character-set": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#\"'&()[]|`\\/@°+=*$£€<>%",
+						"spacing-data": "[[13,\" \"],[10,\"i.:!'|\"],[12,\"°\"],[13,\"l,;\"],[17,\"1-()[]`\"],[20,\"fjt_\\\"=<>\"],[23,\"ILkr~+\"],[26,\"ABCDEFGHJKMNOPQRSTUVXYZabcdeghmnopqsuvwxyz023456789?\\/@$£%\"],[30,\"W&*\"],[32,\"€\"],[36,\"#\"]]",
+						"scale": 0.5,
+						"character-spacing": 0,
+						"line-height": 0,
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center",
+						"read-aloud": false
+					},
+					"uid": 133,
+					"instanceVariables": {
+						"action": "",
+						"index": 0,
+						"type": ""
+					},
+					"behaviors": {
+						"Timer": {
+							"properties": {}
+						}
+					},
+					"world": {
+						"x": 960,
+						"y": 1057.5,
+						"width": 580,
+						"height": 83.31336243971487,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
