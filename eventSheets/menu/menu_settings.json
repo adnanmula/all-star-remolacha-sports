@@ -68,6 +68,56 @@
 								}
 							],
 							"sid": 442643171060430
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 182270925716379,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"settings_enabled_music\" & pixel_spritefont.type = \"menu_settings_value\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 413600055770248,
+									"parameters": {
+										"text": "data_match_config.Get(\"settings_enabled_music\") = 0 ? \"No\" : \"Yes\""
+									}
+								}
+							],
+							"sid": 594924818371525
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-evaluate",
+									"objectClass": "System",
+									"sid": 677687988829638,
+									"parameters": {
+										"object": "pixel_spritefont",
+										"expression": "pixel_spritefont.action = \"settings_enabled_sound\" & pixel_spritefont.type = \"menu_settings_value\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "pixel_spritefont",
+									"sid": 412172870988701,
+									"parameters": {
+										"text": "data_match_config.Get(\"settings_enabled_sound\") = 0 ? \"No\" : \"Yes\""
+									}
+								}
+							],
+							"sid": 788731770893788
 						}
 					]
 				},

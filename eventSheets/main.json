@@ -2396,7 +2396,39 @@
 											}
 										}
 									],
-									"sid": 284223065494483
+									"sid": 284223065494483,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 503093316346971,
+													"parameters": {
+														"key": "\"settings_enabled_sound\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 880046298415286,
+													"parameters": {
+														"audio-file": "chut",
+														"loop": "not-looping",
+														"volume": "-15",
+														"stereo-pan": "0",
+														"tag-optional": "\"sound\""
+													}
+												}
+											],
+											"sid": 589525793526521
+										}
+									]
 								}
 							]
 						}
@@ -2472,7 +2504,39 @@
 											}
 										}
 									],
-									"sid": 359065502068060
+									"sid": 359065502068060,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-value",
+													"objectClass": "data_match_config",
+													"sid": 175856131456611,
+													"parameters": {
+														"key": "\"settings_enabled_sound\"",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 333934735146026,
+													"parameters": {
+														"audio-file": "chut",
+														"loop": "not-looping",
+														"volume": "-20",
+														"stereo-pan": "0",
+														"tag-optional": "\"sound\""
+													}
+												}
+											],
+											"sid": 398732597370267
+										}
+									]
 								}
 							]
 						}

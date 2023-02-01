@@ -1800,62 +1800,6 @@
 									"sid": 168251225526764
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 176687703887392
-								}
-							],
-							"actions": [],
-							"sid": 472678164954798,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-velocity",
-											"objectClass": "player",
-											"sid": 177472589168975,
-											"behaviorType": "Physics",
-											"parameters": {
-												"which": "y-velocity",
-												"comparison": 4,
-												"value": "100"
-											}
-										},
-										{
-											"id": "compare-velocity",
-											"objectClass": "player",
-											"sid": 692110797091144,
-											"behaviorType": "Physics",
-											"parameters": {
-												"which": "y-velocity",
-												"comparison": 2,
-												"value": "MAX_VELOCITY_Y"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-velocity",
-											"objectClass": "player",
-											"sid": 411891526310136,
-											"behaviorType": "Physics",
-											"parameters": {
-												"x-component": "Self.Physics.VelocityX",
-												"y-component": "MAX_VELOCITY_Y "
-											}
-										}
-									],
-									"sid": 954585655640039,
-									"disabled": true
-								}
-							]
 						}
 					]
 				}
@@ -2051,7 +1995,39 @@
 									]
 								}
 							],
-							"sid": 162901715235823
+							"sid": 162901715235823,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 443786742874241,
+											"parameters": {
+												"key": "\"settings_enabled_sound\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 853496412606166,
+											"parameters": {
+												"audio-file": "marionette",
+												"loop": "not-looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										}
+									],
+									"sid": 156123591723583
+								}
+							]
 						}
 					]
 				}

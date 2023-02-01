@@ -1211,6 +1211,36 @@
 								}
 							],
 							"sid": 671993039253764
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 886394783452611,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 400988851042643,
+									"parameters": {
+										"audio-file": "goal",
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								}
+							],
+							"sid": 292092023817157
 						}
 					]
 				},
@@ -1393,6 +1423,36 @@
 										}
 									],
 									"sid": 755844724158998
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-value",
+											"objectClass": "data_match_config",
+											"sid": 247765568561610,
+											"parameters": {
+												"key": "\"settings_enabled_sound\"",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 892002682779007,
+											"parameters": {
+												"audio-file": "chut",
+												"loop": "not-looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"sound\""
+											}
+										}
+									],
+									"sid": 792214115882562
 								}
 							]
 						}
@@ -1754,6 +1814,36 @@
 								}
 							],
 							"sid": 202323923177759
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-value",
+									"objectClass": "data_match_config",
+									"sid": 363844047326405,
+									"parameters": {
+										"key": "\"settings_enabled_sound\"",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 584938353633715,
+									"parameters": {
+										"audio-file": "goal",
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"sound\""
+									}
+								}
+							],
+							"sid": 734513468269704
 						},
 						{
 							"eventType": "block",

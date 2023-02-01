@@ -97,15 +97,6 @@
 								"variable": "music_loaded",
 								"value": "true"
 							}
-						},
-						{
-							"id": "log",
-							"objectClass": "Browser",
-							"sid": 733157514180612,
-							"parameters": {
-								"type": "log",
-								"message": "\"Preload completed\""
-							}
 						}
 					],
 					"sid": 756857671661295
@@ -151,11 +142,11 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 721283084410840,
+									"sid": 832333753975286,
 									"parameters": {
 										"variable": "current_music_track",
 										"comparison": 4,
-										"value": "4"
+										"value": "5"
 									}
 								}
 							],
@@ -190,10 +181,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 248175705902406,
+									"sid": 141202100415928,
 									"parameters": {
 										"variable": "current_music_track",
-										"value": "4"
+										"value": "5"
 									}
 								}
 							],
@@ -214,15 +205,6 @@
 										"volume": "-5",
 										"stereo-pan": "0",
 										"tag-optional": "\"music\""
-									}
-								},
-								{
-									"id": "log",
-									"objectClass": "Browser",
-									"sid": 742003691878227,
-									"parameters": {
-										"type": "log",
-										"message": "\"Playing: \" & current_music_track"
 									}
 								}
 							],

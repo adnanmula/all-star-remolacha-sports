@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32700,
+	"savedWithRelease": 32702,
 	"name": "Remolacha sports",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -439,7 +439,88 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "stun_area.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 334733703992153,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "wall.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 524387933914251,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "stun_2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 787883724695625,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "chut.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 849737311551701,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "fundinaso.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 835259573008133,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "pip.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 757945880916311,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "marionette.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 888981784426417,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "tp.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 809437128036500,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "stun.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 336909242109080,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "goal.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 572254157335826,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -472,6 +553,14 @@
 					"name": "4.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 901360597600719,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "5.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 642369297772711,
 					"file-info": {
 						"purpose": "none"
 					}
