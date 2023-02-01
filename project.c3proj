@@ -142,7 +142,9 @@
 	],
 	"uniqueId": "i257y2zgpf9",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"controls"
+		],
 		"subfolders": [
 			{
 				"items": [

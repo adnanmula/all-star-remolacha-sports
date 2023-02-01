@@ -760,7 +760,7 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Menu settings - Keyboard",
 			"description": "",
 			"isActiveOnStart": true,
@@ -779,6 +779,7 @@
 					],
 					"actions": [],
 					"sid": 846663065922912,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -813,7 +814,8 @@
 									}
 								}
 							],
-							"sid": 720849387423206
+							"sid": 720849387423206,
+							"disabled": true
 						}
 					]
 				},
@@ -875,7 +877,8 @@
 							}
 						}
 					],
-					"sid": 915439979231957
+					"sid": 915439979231957,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -930,7 +933,8 @@
 							"sid": 530980611911881
 						}
 					],
-					"sid": 795525355281549
+					"sid": 795525355281549,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -990,7 +994,8 @@
 							}
 						}
 					],
-					"sid": 619600100368423
+					"sid": 619600100368423,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1045,7 +1050,8 @@
 							"sid": 246296223097530
 						}
 					],
-					"sid": 827842394455604
+					"sid": 827842394455604,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1074,7 +1080,8 @@
 							"sid": 175980071296961
 						}
 					],
-					"sid": 665589651424217
+					"sid": 665589651424217,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1103,7 +1110,8 @@
 							"sid": 467654086765457
 						}
 					],
-					"sid": 616169307417585
+					"sid": 616169307417585,
+					"disabled": true
 				}
 			],
 			"sid": 539809723084208

@@ -269,6 +269,15 @@
 												"gamepad": "player.gamepad_index",
 												"button": "d-pad-up"
 											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 571978306874550,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-a"
+											}
 										}
 									],
 									"actions": [],
@@ -336,7 +345,8 @@
 											],
 											"sid": 313777471535740
 										}
-									]
+									],
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -997,6 +1007,33 @@
 												"gamepad": "player.gamepad_index",
 												"button": "right-shoulder-button"
 											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 238978342187694,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-trigger"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 979110591133188,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "right-shoulder-trigger"
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 947166532100716,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-x"
+											}
 										}
 									],
 									"actions": [
@@ -1008,7 +1045,8 @@
 											]
 										}
 									],
-									"sid": 433556912162152
+									"sid": 433556912162152,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1025,6 +1063,15 @@
 												"gamepad": "player.gamepad_index",
 												"button": "left-shoulder-button"
 											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 748674620720206,
+											"parameters": {
+												"gamepad": "player.gamepad_index",
+												"button": "button-y"
+											}
 										}
 									],
 									"actions": [
@@ -1036,7 +1083,8 @@
 											]
 										}
 									],
-									"sid": 195053655907661
+									"sid": 195053655907661,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "comment",
@@ -1073,16 +1121,6 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-timer-running",
-													"objectClass": "player",
-													"sid": 258980832817423,
-													"behaviorType": "Timer",
-													"parameters": {
-														"tag": "\"stun\""
-													},
-													"isInverted": true
-												},
-												{
 													"id": "is-button-down",
 													"objectClass": "Gamepad",
 													"sid": 904153509855015,
@@ -1092,34 +1130,63 @@
 													}
 												},
 												{
-													"id": "is-timer-running",
-													"objectClass": "player",
-													"sid": 950359277171503,
-													"behaviorType": "Timer",
+													"id": "is-button-down",
+													"objectClass": "Gamepad",
+													"sid": 341185122660669,
 													"parameters": {
-														"tag": "\"skill0\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 214307717299067
+														"gamepad": "player.gamepad_index",
+														"button": "button-b"
+													}
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 856087207842782,
+											"children": [
 												{
-													"callFunction": "skillExecute",
-													"sid": 979632852494258,
-													"parameters": [
-														"player.UID",
-														"player.skill0",
-														"\"skill0\"",
-														"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 5"
-													]
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-timer-running",
+															"objectClass": "player",
+															"sid": 694271033379172,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"stun\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-timer-running",
+															"objectClass": "player",
+															"sid": 534373175465194,
+															"behaviorType": "Timer",
+															"parameters": {
+																"tag": "\"skill0\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 492705099833314
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "skillExecute",
+															"sid": 895499701912158,
+															"parameters": [
+																"player.UID",
+																"player.skill0",
+																"\"skill0\"",
+																"data_match_config.Get(\"enabled_skills\") = 1 ? player.skill0_cooldown : 5"
+															]
+														}
+													],
+													"sid": 169662230051044
 												}
 											],
-											"sid": 856087207842782
+											"isOrBlock": true
 										}
 									],
 									"isOrBlock": true
