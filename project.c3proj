@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 32702,
+	"savedWithRelease": 36000,
 	"name": "Remolacha sports",
 	"runtime": "c3",
 	"useWorker": "dom",
@@ -328,23 +328,20 @@
 				"goal_football_detector",
 				"goal_football_detector_camp",
 				"goal_football_solid"
-			],
-			"selectMode": "normal"
+			]
 		},
 		{
 			"members": [
 				"goal_basket",
 				"goal_basket_detector",
 				"goal_basket_solid"
-			],
-			"selectMode": "normal"
+			]
 		},
 		{
 			"members": [
 				"player_collision",
 				"player_fd"
-			],
-			"selectMode": "normal"
+			]
 		}
 	],
 	"families": {
@@ -704,7 +701,8 @@
 		"cordovaiOSScheme": "file",
 		"cordovaAndroidScheme": "file",
 		"autoReloadScriptsOnPreview": false,
-		"exportFileStructure": "folders"
+		"exportFileStructure": "folders",
+		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1920,
 	"viewportHeight": 1080,
